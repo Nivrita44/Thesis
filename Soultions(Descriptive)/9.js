@@ -1,94 +1,165 @@
-function solve() {
-    let n = Bharadwaj.nextNumber();
-    let l = new Uint32Array(n);
+function solveProblem(n, l, edges) {
     let depth = new Uint32Array(n);
     let jump = new Uint32Array(n);
     let parent = new Uint32Array(n);
-    let maxVal = 0;
-
-    for (let i = 0; i < n; i++) {
-        l[i] = Bharadwaj.nextNumber() - 1;
-        maxVal = Math.max(maxVal, l[i]);
-    }
-
-    let adj = Array.from({ length: n }, () => []);
-    for (let i = 0; i < n - 1; i++) {
-        let a = Bharadwaj.nextNumber() - 1;
-        let b = Bharadwaj.nextNumber() - 1;
+    let maxVal = Math.max(...l);
+    
+    // Build adjacency list
+    let adj = new Array(n);
+    for (let i = 0; i < n; i++) adj[i] = [];
+    for (let [a, b] of edges) {
         adj[a].push(b);
         adj[b].push(a);
     }
-
-    let pos = Array.from({ length: maxVal + 1 }, () => []);
-    for (let i = 0; i < n; i++) pos[l[i]].push(i);
-
+    
+    // Position mapping
+    let pos = new Array(maxVal + 1);
+    for (let i = 0; i <= maxVal; i++) pos[i] = [];
+    for (let i = 0; i < n; i++) {
+        pos[l[i]].push(i);
+    }
+    
+    // BFS to compute depth, parent, and jump pointers
     let stack = [0];
     parent[0] = 0;
-
-    while (stack.length) {
+    
+    while (stack.length > 0) {
         let u = stack.pop();
         let ju = jump[u];
         let du = depth[u];
-        let fju = (ju === 0) ? u : ((2 * depth[ju] - du === depth[jump[ju]]) ? jump[ju] : u);
+        let fju;
+        
+        if (ju === 0) {
+            fju = u;
+        } else if (2 * depth[ju] - du === depth[jump[ju]]) {
+            fju = jump[ju];
+        } else {
+            fju = u;
+        }
+        
         for (let v of adj[u]) {
-            if (v !== parent[u]) {
+            if (parent[u] !== v) {
                 parent[v] = u;
+                stack.push(v);
                 depth[v] = du + 1;
                 jump[v] = fju;
-                stack.push(v);
             }
         }
     }
-
+    
     let last = maxVal;
-
+    
     for (let k = last - 1; k >= 0; k--) {
-        if (pos[k].length) {
+        if (pos[k].length > 0) {
             let te = null;
             let nte = null;
-
+            
             for (let u of pos[k]) {
                 if (te === null) {
                     te = u;
                 } else {
                     let nu = u;
                     let mte = te;
-
-                    if (depth[te] > depth[u]) [nu, te] = [te, nu];
-
-                    while (depth[nu] > depth[te]) {
-                        nu = (depth[jump[nu]] >= depth[te]) ? jump[nu] : parent[nu];
+                    
+                    if (depth[te] > depth[u]) {
+                        [nu, te] = [te, nu];
                     }
-
+                    
+                    while (depth[nu] > depth[te]) {
+                        nu = depth[jump[nu]] >= depth[te] ? jump[nu] : parent[nu];
+                    }
+                    
                     if (te !== nu) {
                         te = mte;
                         nte = u;
                         break;
                     } else {
-                        te = (depth[u] > depth[te]) ? u : mte;
+                        te = depth[u] > depth[te] ? u : mte;
                     }
                 }
             }
-
+            
             for (let v of pos[last]) {
-                if (depth[v] < depth[te]) return te + 1;
-
+                if (depth[v] < depth[te]) {
+                    return te + 1;
+                }
+                
                 let tempV = v;
                 while (depth[tempV] > depth[te]) {
-                    tempV = (depth[jump[tempV]] >= depth[te]) ? jump[tempV] : parent[tempV];
+                    tempV = depth[jump[tempV]] >= depth[te] ? jump[tempV] : parent[tempV];
                 }
-
-                if (tempV !== te) return te + 1;
-                if (nte !== null) return nte + 1;
+                
+                if (tempV !== te) {
+                    return te + 1;
+                }
+                
+                if (nte !== null) {
+                    return nte + 1;
+                }
             }
             last = k;
         }
     }
-
     return 0;
 }
 
-let t = Bharadwaj.nextNumber();
-let result = [];
-while (t--) result.push(solve());
-console.log(result.join('\n'));
+// Test function
+function test() {
+    const testCases = [
+        {
+            input: {
+                n: 4,
+                l: [2, 2, 4, 3],
+                edges: [[0, 1], [0, 2], [1, 3]]
+            },
+            expected: 2
+        },
+        {
+            input: {
+                n: 5,
+                l: [1, 2, 3, 4, 5],
+                edges: [[0, 1], [1, 2], [2, 3], [3, 4]]
+            },
+            expected: 0
+        },
+        {
+            input: {
+                n: 3,
+                l: [1, 2, 3],
+                edges: [[0, 1], [0, 2]]
+            },
+            expected: 2
+        },
+        {
+            input: {
+                n: 5,
+                l: [3, 1, 3, 4, 5],
+                edges: [[0, 1], [1, 2], [2, 3], [3, 4]]
+            },
+            expected: 2
+        },
+        {
+            input: {
+                n: 10,
+                l: [1, 2, 3, 2, 4, 3, 3, 4, 4, 3],
+                edges: [[0, 3], [3, 5], [6, 3], [5, 8], [5, 4], [6, 7], [0, 1], [1, 2], [1, 9]]
+            },
+            expected: 10
+        }
+    ];
+
+    console.log("Running Tests...\n");
+    testCases.forEach(({input, expected}, index) => {
+        const {n, l, edges} = input;
+        const result = solveProblem(n, l.map(x => x - 1), edges);
+        console.log(`Test Case ${index + 1}:`);
+        console.log(`Input: n=${n}, l=[${l}], edges=[${edges.map(e => `[${e}]`).join(', ')}]`);
+        console.log(`Expected: ${expected}`);
+        console.log(`Result: ${result}`);
+        console.log(`Status: ${result === expected ? "PASS" : "FAIL"}\n`);
+    });
+}
+
+test();
+
+// If Cirno wins the game, print any possible node she may choose in the first turn. Otherwise, print "0" (without quotes).

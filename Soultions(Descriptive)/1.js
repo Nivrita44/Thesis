@@ -37,3 +37,26 @@ function gcd(a, b) {
     }
     return b;
 }
+
+
+function test() {
+    const testCases = [
+        { x: 4, y: 6, k: 3, expected: 2 },
+        { x: 4, y: 5, k: 3, expected: -1 },
+        { x: 4, y: 6, k: 2, expected: -1 },
+        { x: 10, y: 45, k: 3, expected: 3 },
+        { x: 780, y: 23, k: 42, expected: 3 },
+        { x: 11, y: 270, k: 23, expected: 3 },
+        { x: 1, y: 982800, k:13, expected: 6 },
+        { x: 1, y: 6, k: 2, expected: -1 }
+    ];
+
+    for (const { x, y, k, expected } of testCases) {
+        const result = solve(x, y, k);
+        console.log(`x=${x}, y=${y}, k=${k}:`);
+        console.log(`  Expected: ${expected}, Got: ${result}`);
+        console.log(`  ${result === expected ? "PASS" : "FAIL"}`);
+    }
+}
+
+test();

@@ -1,12 +1,35 @@
-function coreLogic(n) {
-    const ops = [];
-    ops.push("mul 999999999");
-    ops.push("digit");
+function solveInteractiveProblem(n) {
+    const steps = [];
+    
     if (n === 81) {
-        ops.push("!");
+        steps.push("!");
     } else {
-        ops.push(`add ${n - 81}`);
-        ops.push("!");
+        steps.push(`add ${n - 81}`);
+        steps.push("!");
     }
-    return ops;
+    
+    return steps;
 }
+function runTests() {
+    const testCases = [
+        { input: 100, expected: ["add -19", "!"] },
+        { input: 0, expected: ["add -81", "!"] },
+        { input: 1, expected: ["add -80", "!"] },
+        { input: 5, expected: ["add -76", "!"] }
+    ];
+
+    console.log("Running Tests...\n");
+    testCases.forEach(({ input, expected }, i) => {
+        const result = solveInteractiveProblem(input);
+        console.log(`Test ${i+1}:`);
+        console.log(`Input: ${input}`);
+        console.log(`Expected: ${JSON.stringify(expected)}`);
+        console.log(`Received: ${JSON.stringify(result)}`);
+        console.log(`Status: ${JSON.stringify(result) === JSON.stringify(expected) ? "PASS" : "FAIL"}\n`);
+    });
+}
+
+ runTests();
+
+
+

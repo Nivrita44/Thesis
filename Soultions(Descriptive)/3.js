@@ -31,3 +31,21 @@ function gcd(a, b) {
     }
     return b;
 }
+
+function test() {
+    const inputs = [
+        [0, 1, 1, 2],
+        [0, 2, 0, 2],
+        [1, 3, 1, 3],
+        [0, 2, 1, 5],
+        [9, 98, 244, 353]
+    ];
+    const expectedOutputs = [1, 1, 4, 5, 374];
+
+    for (let i = 0; i < inputs.length; i++) {
+        const result = solve(...inputs[i]);
+        console.log(`Test ${i + 1}:`, result === expectedOutputs[i] ? "Passed" : "Failed");
+    }
+}
+
+test();

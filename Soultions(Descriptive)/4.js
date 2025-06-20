@@ -22,3 +22,18 @@ function solveLogic(a) {
     }
     return dp[0][n - 1];
 }
+function testSolveLogic() {
+    const testCases = [
+        { input: [2, 1, 2, 1, 1, 1], expected: 5 },
+        { input: [1, 2, 1, 3, 1, 5], expected: 30 },
+        { input: [9, 9, 8, 2, 4, 4, 3, 5, 3], expected: 732 },
+        { input: [9, 9, 3, 2, 4, 4, 8, 5, 3], expected: 696 }
+    ];
+
+    testCases.forEach(({ input, expected }, index) => {
+        const result = solveLogic(input);
+        console.log(`Test Case ${index + 1}:`, result === expected ? "Passed" : `Failed (Expected: ${expected}, Got: ${result})`);
+    });
+}
+
+testSolveLogic();
