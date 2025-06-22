@@ -1,44 +1,133 @@
-function computeMinimumCost(n, k, mtr) {
-    let v = [],
-        w = [];
+function solve(n, k, items) {
+    let minTotal = Infinity;
 
     for (let i = 0; i < n; i++) {
-        v.push(mtr[i].a + mtr[i].b);
-        w.push(mtr[i].a * mtr[i].b);
-    }
+        const dp = new Array(k + 1).fill(Infinity);
+        dp[0] = 0;
 
-    let ans = 1e15;
-
-    for (let i = 0; i < n; i++) {
-        let f = new Array(k + 1).fill(1e15);
-        f[0] = 0;
-
+        // Process all items except the current one (i)
         for (let j = 0; j < n; j++) {
             if (j === i) continue;
-            for (let p = k; p >= v[j]; p--) {
-                f[p] = Math.min(f[p], f[p - v[j]] + w[j]);
+            const v = items[j].a + items[j].b;
+            const w = items[j].a * items[j].b;
+            
+            for (let p = k; p >= v; p--) {
+                dp[p] = Math.min(dp[p], dp[p - v] + w);
             }
         }
 
-        for (let q = Math.max(k - v[i], 0); q <= k; q++) {
-            let u = k - q;
+        // Process the current item (i)
+        const v_i = items[i].a + items[i].b;
+        const max_q = Math.min(k, v_i);
+        
+        for (let q = Math.max(0, k - v_i); q <= k; q++) {
+            const u = k - q;
             let res = 0;
-            let aa = mtr[i].a;
-            let bb = mtr[i].b;
+            let a = items[i].a;
+            let b = items[i].b;
 
             for (let j = 0; j < u; j++) {
-                if (aa < bb) {
-                    bb--;
-                    res += aa;
+                if (a < b) {
+                    b--;
+                    res += a;
                 } else {
-                    aa--;
-                    res += bb;
+                    a--;
+                    res += b;
                 }
             }
 
-            ans = Math.min(ans, f[q] + res);
+            const total = dp[q] + res;
+            if (total < minTotal) {
+                minTotal = total;
+            }
         }
     }
 
-    return ans === 1e15 ? -1 : ans;
+    return minTotal === Infinity ? -1 : minTotal;
 }
+
+// Test function
+function test() {
+    const testCases = [
+        {
+            input: {
+                n: 1,
+                k: 4,
+                items: [{a: 6, b: 3}]
+            },
+            expected: 12
+        },
+        {
+            input: {
+                n: 5,
+                k: 10,
+                items: [
+                    {a: 1, b: 1},
+                    {a: 1, b: 1},
+                    {a: 1, b: 1},
+                    {a: 1, b: 1},
+                    {a: 1, b: 1}
+                ]
+            },
+            expected: 5
+        },
+        {
+            input: {
+                n: 2,
+                k: 100,
+                items: [
+                    {a: 1, b: 2},
+                    {a: 5, b: 6}
+                ]
+            },
+            expected: -1
+        },
+        {
+            input: {
+                n: 4,
+                k: 4,
+                items: [
+                    {a: 1, b: 5},
+                    {a: 4, b: 4},
+                    {a: 3, b: 11},
+                    {a: 2, b: 2}
+                ]
+            },
+            expected: 14
+        },
+        {
+            input: {
+                n: 4,
+                k: 4,
+                items: [
+                    {a: 3, b: 3},
+                    {a: 4, b: 4},
+                    {a: 2, b: 2},
+                    {a: 1, b: 1}
+                ]
+            },
+            expected: 17
+        }
+    ];
+
+    testCases.forEach((testCase, index) => {
+        const {n, k, items} = testCase.input;
+        const result = solve(n, k, items);
+        
+        console.log(`Test Case ${index + 1}:`);
+        console.log(`Input: n=${n}, k=${k}, items=${JSON.stringify(items)}`);
+        console.log(`Expected: ${testCase.expected}`);
+        console.log(`Actual: ${result}`);
+        
+        if (result === testCase.expected) {
+            console.log('✅ PASSED\n');
+        } else {
+            console.log('❌ FAILED\n');
+        }
+    });
+}
+
+// Run the tests
+test();
+
+// have to change

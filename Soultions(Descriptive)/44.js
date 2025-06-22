@@ -45,3 +45,20 @@ function solveGame(arr) {
 
 init();
 tsg();
+
+
+function testSolveGame() {
+    const testCases = [
+        { input: [3, [3, 2, 9]], expected: "Bob" },
+        { input: [4, [3, 3, 6, 1]], expected: "Alice" },
+        { input: [5, [1, 2, 3, 4, 5]], expected: "Bob" },
+    ];
+
+    testCases.forEach(({ input, expected }, index) => {
+        const [n, arr] = input;
+        const result = solveGame(arr);
+        console.log(`Test Case ${index + 1}:`, result === expected ? "Passed" : `Failed (Expected: ${expected}, Got: ${result})`);
+    });
+}
+
+testSolveGame();
