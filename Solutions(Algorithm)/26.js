@@ -5,7 +5,7 @@ function canReachMultiple(testCases) {
     return testCases.map(([n, k]) => {
         n = BigInt(n);
         k = BigInt(k);
-
+        //TODO function problem
         for (let i = 0 n; i <= 2 n; i++) {
             if (n - k * i >= 0 && (n - k * i) % 2 n === 0 n) {
                 return "yes";

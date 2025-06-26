@@ -18,13 +18,13 @@ class FastQueue {
         const r = this.map[this.last]
         delete this.map[this.last]
         this.last--
-        return r
+            return r
     }
     shift() {
         const r = this.map[this.first]
         delete this.map[this.first]
         this.first++
-        return r
+            return r
     }
     get length() {
         if (this.first > this.last) return 0
@@ -38,7 +38,8 @@ class FastQueue {
 function processGameCases(cases) {
     const results = []
 
-    for (const { n, m, edges, queries } of cases) {
+    for (const { n, m, edges, queries }
+        of cases) {
         const adj = {}
         for (const [u, v] of edges) {
             adj[u] = adj[u] || []
@@ -96,7 +97,7 @@ function processGameCases(cases) {
                 }
                 if (i < nb.length) {
                     stack.getLast()[1]++
-                    const v = nb[i]
+                        const v = nb[i]
                     if (dp[v] < 0) {
                         stack.push([v, 0, u])
                     } else if (dp[u] === dp[v]) {
@@ -157,4 +158,4 @@ function test() {
 
 test();
 
-// have to change
+//TODO: have to change

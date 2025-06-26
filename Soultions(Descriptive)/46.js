@@ -1,7 +1,8 @@
 function processModuloPairs(cases) {
     const results = [];
 
-    for (const { n, arr } of cases) {
+    for (const { n, arr }
+        of cases) {
         if (n === 1) {
             results.push("YES");
             continue;
@@ -107,4 +108,4 @@ function test() {
 
 test();
 
-//have to change
+//TODO: have to change
