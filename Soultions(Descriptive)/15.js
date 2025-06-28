@@ -39,3 +39,42 @@ function solve(n, m, k, arr) {
 function cal(l, r) {
     return r - l + 1;
 }
+
+function testSolve() {
+    const testCases = [
+        {
+            input: [6, 5, 3, [1, 2, 3]],
+            expected: "2 3 5"
+        },
+        {
+            input: [2, 1, 4, [2, 1, 1, 2]],
+            expected: "2 2 2 2"
+        },
+        {
+            input: [5, 3, 1, [3]],
+            expected: "2"
+        },
+        {
+            input: [3, 2, 4, [2, 1, 1, 1]],
+            expected: "2 3 3 3"
+        },
+        {
+            input: [18, 15, 4, [13, 15, 1, 16]],
+            expected: "2 4 6 8"
+        }
+    ];
+
+    testCases.forEach(({ input, expected }, index) => {
+        const result = solve(...input);
+        console.log(`Test Case ${index + 1}: ${result === expected ? "Passed" : "Failed"}`);
+        if (result !== expected) {
+            console.log(`  Expected: ${expected}`);
+            console.log(`  Got: ${result}`);
+        }
+    });
+}
+
+testSolve();
+
+
+//create e a test function in this file to test the above function. don;t use describe, it, chai. normal test function.

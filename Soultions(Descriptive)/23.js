@@ -1,59 +1,59 @@
-function* main() {
-    let input;
-    input = yield 1;
-    const t = +input;
-
-    for (let i = 0; i < t; i++) {
-        input = yield 1;
-        yield* solve(BigInt(input));
-    }
-
-    process.exit(0);
-}
-
-function* solve(n) {
-    const LOG = 60;
-    const a = yield* find(0n);
-    const b = yield* find(a);
-    const total = yield* ask(1, n);
-    const c = total ^ a ^ b;
-    output(a, b, c);
-
-    function* find(base) {
-        for (let i = LOG - 1; i >= 0; i--) {
-            const l = 2n ** BigInt(i);
-            if (l > n) continue;
-            let r = l + l - 1n;
-            if (r > n) r = n;
-
-            let xor = yield* ask(l, r);
-            if (l <= base && base <= r) xor ^= base;
-            if (xor) return yield* binarySearch(l, r, base);
+function solveQuery(l, r, i, k) {
+    const getXor = (n, i, k) => {
+      let ans = 0n;
+  
+      for (let r = 0n; r < n % 4n; r++) {
+        ans ^= n - (n % 4n) + r;
+      }
+  
+      n -= k + 1n;
+      if (n >= 0n) {
+        n = n / (1n << i);
+        n += 1n;
+  
+        for (let r = 0n; r < n % 4n; r++) {
+          ans ^= (n - (n % 4n) + r) * (1n << i);
         }
-    }
-}
-
-function* ask(...args) {
-    console.log(['xor', ...args].join(' '));
-    const r = yield 1;
-    return BigInt(r);
-}
-
-function output(...args) {
-    console.log(['ans', ...args].join(' '));
-}
-
-function* binarySearch(l, r, base) {
-    while (l <= r) {
-        const m = ((l + r) / 2n);
-        let xor = yield* ask(l, m);
-        if (l <= base && base <= m) xor ^= base;
-
-        if (!xor) {
-            l = m + 1n;
-        } else {
-            r = m - 1n;
+  
+        if (n % 2n === 1n) {
+          ans ^= k;
         }
+      }
+  
+      return ans;
+    };
+  
+    const result = getXor(r + 1n, i, k) ^ getXor(l, i, k);
+    return result;
+  }
+
+  function testSolveQuery() {
+    const testCases = [
+      { input: [1n, 3n, 1n, 0n], expected: 2n },
+      { input: [2n, 28n, 3n, 7n], expected: 2n },
+      { input: [15n, 43n, 1n, 0n], expected: 13n },
+      { input: [57n, 2007n, 1n, 0n], expected: 0n },
+      { input: [1010n, 1993n, 2n, 2n], expected: 4n },
+      { input: [1n, 1000000000n, 30n, 1543n], expected: 1000000519n },
+    ];
+  
+    let passed = true;
+  
+    for (let i = 0; i < testCases.length; i++) {
+      const { input, expected } = testCases[i];
+      const result = solveQuery(...input);
+      if (result === expected) {
+        console.log(`Test case ${i + 1}: ✅ Passed`);
+      } else {
+        console.log(`Test case ${i + 1}: ❌ Failed (Got ${result}, Expected ${expected})`);
+        passed = false;
+      }
     }
-    return r + 1n;
-}
+  
+    if (passed) {
+      console.log("All test cases passed! 🎉");
+    }
+  }
+  
+  testSolveQuery();
+  

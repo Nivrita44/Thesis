@@ -64,3 +64,39 @@ function solve() {
 
     writeInt(p, true);
 }
+
+function testSolve() {
+    const inputs = [
+        { n: 3, array: [8, 9, 10], expected: 2 },
+        { n: 4, array: [2, 3, 4, 5], expected: -1 },
+        { n: 2, array: [147, 154], expected: 7 },
+        { n: 5, array: [3, 6, 8, 25, 100000], expected: 3 }
+    ];
+
+    for (let test of inputs) {
+        let inputIndex = 0;
+        let output = [];
+        
+        global.readInt = () => {
+            if (inputIndex === 0) {
+                inputIndex++;
+                return test.n;
+            }
+            return test.array[inputIndex++ - 1];
+        };
+
+        global.writeInt = (value, newline) => {
+            output.push(value);
+        };
+
+        solve();
+
+        const result = output[0];
+        console.log(`Input: ${test.array}, Expected: ${test.expected}, Got: ${result}`);
+        console.assert(result === test.expected, `Test failed for input ${test.array}`);
+    }
+}
+
+testSolve();
+
+//ok. output can may. solution verified.

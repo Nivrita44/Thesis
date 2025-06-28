@@ -1,132 +1,148 @@
-function solve(n, k, items) {
-    let minTotal = Infinity;
-
-    for (let i = 0; i < n; i++) {
-        const dp = new Array(k + 1).fill(Infinity);
-        dp[0] = 0;
-
-        // Process all items except the current one (i)
-        for (let j = 0; j < n; j++) {
-            if (j === i) continue;
-            const v = items[j].a + items[j].b;
-            const w = items[j].a * items[j].b;
-
-            for (let p = k; p >= v; p--) {
-                dp[p] = Math.min(dp[p], dp[p - v] + w);
-            }
-        }
-
-        // Process the current item (i)
-        const v_i = items[i].a + items[i].b;
-        const max_q = Math.min(k, v_i);
-
-        for (let q = Math.max(0, k - v_i); q <= k; q++) {
-            const u = k - q;
-            let res = 0;
-            let a = items[i].a;
-            let b = items[i].b;
-
-            for (let j = 0; j < u; j++) {
-                if (a < b) {
-                    b--;
-                    res += a;
-                } else {
-                    a--;
-                    res += b;
-                }
-            }
-
-            const total = dp[q] + res;
-            if (total < minTotal) {
-                minTotal = total;
-            }
-        }
+function findMinimumTimeAtNodeOne(
+    nodes,
+    edgesCount,
+    edgeList,
+    initialTime,
+    timeThreshold1,
+    timeThreshold2
+  ) {
+    const adjacency = {};
+    for (let [u, v, l1, l2] of edgeList) {
+      if (!adjacency[u]) adjacency[u] = [];
+      if (!adjacency[v]) adjacency[v] = [];
+      adjacency[u].push([v, l1, l2]);
+      adjacency[v].push([u, l1, l2]);
     }
-
-    return minTotal === Infinity ? -1 : minTotal;
-}
-
-// Test function
-function test() {
-    const testCases = [{
-            input: {
-                n: 1,
-                k: 4,
-                items: [{ a: 6, b: 3 }]
-            },
-            expected: 12
-        },
-        {
-            input: {
-                n: 5,
-                k: 10,
-                items: [
-                    { a: 1, b: 1 },
-                    { a: 1, b: 1 },
-                    { a: 1, b: 1 },
-                    { a: 1, b: 1 },
-                    { a: 1, b: 1 }
-                ]
-            },
-            expected: 5
-        },
-        {
-            input: {
-                n: 2,
-                k: 100,
-                items: [
-                    { a: 1, b: 2 },
-                    { a: 5, b: 6 }
-                ]
-            },
-            expected: -1
-        },
-        {
-            input: {
-                n: 4,
-                k: 4,
-                items: [
-                    { a: 1, b: 5 },
-                    { a: 4, b: 4 },
-                    { a: 3, b: 11 },
-                    { a: 2, b: 2 }
-                ]
-            },
-            expected: 14
-        },
-        {
-            input: {
-                n: 4,
-                k: 4,
-                items: [
-                    { a: 3, b: 3 },
-                    { a: 4, b: 4 },
-                    { a: 2, b: 2 },
-                    { a: 1, b: 1 }
-                ]
-            },
-            expected: 17
+  
+    const visited = Array(nodes + 1).fill(false);
+    const maxTime = Array(nodes + 1).fill(-1);
+    const heap = [[nodes, initialTime]];
+    maxTime[nodes] = initialTime;
+  
+    const swap = (i, j) => {
+      [heap[i], heap[j]] = [heap[j], heap[i]];
+    };
+  
+    const isGreater = (i, j) => heap[i][1] > heap[j][1];
+  
+    const siftUp = (i) => {
+      if (i === 0) return;
+      const parent = Math.floor((i - 1) / 2);
+      if (isGreater(i, parent)) {
+        swap(i, parent);
+        siftUp(parent);
+      }
+    };
+  
+    const siftDown = (i) => {
+      const left = 2 * i + 1;
+      const right = left + 1;
+      let largest = i;
+  
+      if (left < heap.length && isGreater(left, largest)) largest = left;
+      if (right < heap.length && isGreater(right, largest)) largest = right;
+  
+      if (largest !== i) {
+        swap(i, largest);
+        siftDown(largest);
+      }
+    };
+  
+    while (!visited[1] && heap.length) {
+      while (heap.length && visited[heap[0][0]]) {
+        swap(0, heap.length - 1);
+        heap.pop();
+        siftDown(0);
+      }
+  
+      if (heap.length === 0) return maxTime[1];
+  
+      const [currentNode, currentTime] = heap[0];
+      swap(0, heap.length - 1);
+      heap.pop();
+      siftDown(0);
+      visited[currentNode] = true;
+  
+      const neighbors = adjacency[currentNode] || [];
+      for (let [neighbor, l1, l2] of neighbors) {
+        if (!visited[neighbor]) {
+          let newTime = -1;
+          if (currentTime > timeThreshold2) {
+            if (currentTime - l1 >= timeThreshold2) newTime = currentTime - l1;
+            else {
+              if (currentTime - l2 >= 0) newTime = currentTime - l2;
+              if (timeThreshold1 - l1 >= 0) newTime = Math.max(newTime, timeThreshold1 - l1);
+            }
+          } else if (currentTime >= timeThreshold1) {
+            if (currentTime - l2 >= 0) newTime = currentTime - l2;
+            if (timeThreshold1 - l1 >= 0) newTime = Math.max(newTime, timeThreshold1 - l1);
+          } else {
+            if (currentTime - l1 >= 0) newTime = currentTime - l1;
+          }
+  
+          if (newTime > maxTime[neighbor]) {
+            heap.push([neighbor, newTime]);
+            siftUp(heap.length - 1);
+            maxTime[neighbor] = newTime;
+          }
         }
+      }
+    }
+  
+    return maxTime[1];
+  }
+
+  function testSolve() {
+    const testCases = [
+      {
+        input: [5, 5, [[1, 5, 30, 100], [1, 2, 20, 50], [2, 3, 20, 50], [3, 4, 20, 50], [4, 5, 20, 50]], 100, 20, 80],
+        expected: 0,
+      },
+      {
+        input: [2, 1, [[1, 2, 55, 110]], 100, 50, 60],
+        expected: -1,
+      },
+      {
+        input: [4, 4, [[1, 2, 30, 100], [2, 4, 30, 100], [1, 3, 20, 50], [3, 4, 20, 50]], 100, 40, 60],
+        expected: 60,
+      },
+      {
+        input: [3, 3, [[1, 2, 1, 10], [2, 3, 10, 50], [1, 3, 20, 21]], 100, 80, 90],
+        expected: 80,
+      },
+      {
+        input: [3, 2, [[2, 1, 1, 3], [2, 3, 3, 4]], 58, 55, 57],
+        expected: 53,
+      },
+      {
+        input: [2, 1, [[2, 1, 6, 10]], 12, 9, 10],
+        expected: 3,
+      },
+      {
+        input: [5, 5, [[2, 1, 1, 8], [2, 3, 4, 8], [4, 2, 2, 4], [5, 3, 3, 4], [4, 5, 2, 6]], 8, 5, 6],
+        expected: 2,
+      },
     ];
-
-    testCases.forEach((testCase, index) => {
-        const { n, k, items } = testCase.input;
-        const result = solve(n, k, items);
-
-        console.log(`Test Case ${index + 1}:`);
-        console.log(`Input: n=${n}, k=${k}, items=${JSON.stringify(items)}`);
-        console.log(`Expected: ${testCase.expected}`);
-        console.log(`Actual: ${result}`);
-
-        if (result === testCase.expected) {
-            console.log('✅ PASSED\n');
-        } else {
-            console.log('❌ FAILED\n');
-        }
-    });
-}
-
-// Run the tests
-test();
-
-//TODO: have to change
+  
+    let allPassed = true;
+  
+    for (let i = 0; i < testCases.length; i++) {
+      const { input, expected } = testCases[i];
+      const result = findMinimumTimeAtNodeOne(...input);
+  
+      const passed = result === expected;
+      console.log(`Test Case ${i + 1}: ${passed ? "✅ Passed" : "❌ Failed"}`);
+      if (!passed) {
+        console.log(`  Expected: ${expected}`);
+        console.log(`  Got: ${result}`);
+        allPassed = false;
+      }
+    }
+  
+    if (allPassed) {
+      console.log("🎉 All test cases passed!");
+    }
+  }
+  
+  testSolve();
+  

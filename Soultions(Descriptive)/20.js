@@ -53,3 +53,19 @@ function solve(arr) {
     if (u > as) return -1;
     return u;
 }
+
+function test() {
+    const testCases = [
+        { input: [1, 1], expected: 0 },
+        { input: [1, 3, 2], expected: -1 },
+        { input: [2, 1, 2, 6], expected: 3 },
+    ];
+
+    for (let i = 0; i < testCases.length; i++) {
+        const { input, expected } = testCases[i];
+        const result = solve(input);
+        console.log(`Test Case ${i + 1}:`, result === expected ? "Passed" : `Failed (Expected: ${expected}, Got: ${result})`);
+    }
+}
+
+test();

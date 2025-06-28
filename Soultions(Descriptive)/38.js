@@ -50,3 +50,18 @@ function solve(s) {
 
     return ans;
 }
+
+function testSolve() {
+    const input = "0010010011";
+    const expectedOutput = 12;
+
+    const result = solve(input);
+
+    if (result === expectedOutput) {
+        console.log("Test passed!");
+    } else {
+        console.log(`Test failed! Expected ${expectedOutput}, but got ${result}`);
+    }
+}
+
+testSolve();

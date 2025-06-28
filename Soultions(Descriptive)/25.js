@@ -88,3 +88,33 @@ function nextPerm(a) {
     }
     return i !== -1;
 }
+
+function testSolve() {
+    const testCases = [
+        { input: [3, 3], expected: ['YES', '1 2 3', '2 3 1', '3 1 2'] },
+        { input: [4, 2], expected: ['YES', '1 2 3 4', '4 3 2 1'] },
+        { input: [5, 1], expected: ['NO'] }
+    ];
+
+    for (const { input, expected } of testCases) {
+        const [n, k] = input;
+        const result = solve(n, k);
+        if (result === null) {
+            console.log('NO');
+            if (expected[0] !== 'NO') {
+                console.error(`Test failed for input ${input}. Expected ${expected}, but got NO.`);
+            }
+        } else {
+            console.log('YES');
+            for (const line of result) {
+                console.log(line);
+            }
+            const output = ['YES', ...result];
+            if (JSON.stringify(output) !== JSON.stringify(expected)) {
+                console.error(`Test failed for input ${input}. Expected ${expected}, but got ${output}.`);
+            }
+        }
+    }
+}
+
+testSolve();

@@ -34,3 +34,17 @@ function solve(n, a, b) {
 
     return ans + dp[n - x][n - y];
 }
+
+function testSolve() {
+    const testCases = [
+        { input: [4, 2, 4], expected: 21 },
+        { input: [10, 210, 420], expected: 125 }
+    ];
+
+    testCases.forEach(({ input, expected }, index) => {
+        const result = solve(...input);
+        console.log(`Test Case ${index + 1}:`, result === expected ? "Passed" : `Failed (Expected ${expected}, Got ${result})`);
+    });
+}
+
+testSolve();

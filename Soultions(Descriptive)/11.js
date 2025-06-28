@@ -62,3 +62,45 @@ function shortestPathsFromEveryEdge(h, m, edges, queries) {
 
     return results;
 }
+
+function testShortestPathsFromEveryEdge() {
+    // Test case 1
+    const h1 = 4, m1 = 4;
+    const edges1 = [
+        { u: 1, v: 2, w: 2 },
+        { u: 2, v: 4, w: 2 },
+        { u: 1, v: 3, w: 4 },
+        { u: 3, v: 4, w: 1 }
+    ];
+    const queries1 = [
+        [1, 4, 2],
+        [2, 3, 1]
+    ];
+    const expectedOutput1 = [1, 2];
+    const result1 = shortestPathsFromEveryEdge(h1, m1, edges1, queries1);
+    console.assert(JSON.stringify(result1) === JSON.stringify(expectedOutput1), `Test case 1 failed: expected ${expectedOutput1}, got ${result1}`);
+
+    // Test case 2
+    const h2 = 6, m2 = 7;
+    const edges2 = [
+        { u: 1, v: 2, w: 10 },
+        { u: 2, v: 3, w: 3 },
+        { u: 3, v: 4, w: 9 },
+        { u: 4, v: 5, w: 2 },
+        { u: 5, v: 6, w: 1 },
+        { u: 2, v: 4, w: 10 },
+        { u: 4, v: 6, w: 10 }
+    ];
+    const queries2 = [
+        [1, 6, 3],
+        [1, 6, 2],
+        [2, 4, 1]
+    ];
+    const expectedOutput2 = [2, 9, 9];
+    const result2 = shortestPathsFromEveryEdge(h2, m2, edges2, queries2);
+    console.assert(JSON.stringify(result2) === JSON.stringify(expectedOutput2), `Test case 2 failed: expected ${expectedOutput2}, got ${result2}`);
+
+    console.log('All test cases passed!');
+}
+
+testShortestPathsFromEveryEdge();

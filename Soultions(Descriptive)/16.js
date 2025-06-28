@@ -55,3 +55,23 @@ function canTransform(s, a, b, ab, ba) {
 
     return (dA + dB) <= availableDrop ? "YES" : "NO";
 }
+
+function testCanTransform() {
+    const testCases = [
+        { input: ["A", 0, 0, 10, 10], expected: "NO" },
+        { input: ["B", 0, 1, 0, 0], expected: "YES" },
+        { input: ["ABA", 0, 0, 1, 1], expected: "NO" },
+        { input: ["ABBABAAB", 5, 5, 0, 0], expected: "YES" },
+        { input: ["ABABBAABBAAB", 1, 1, 2, 3], expected: "YES" },
+        { input: ["ABBBBAB", 0, 3, 2, 0], expected: "YES" },
+        { input: ["BAABBA", 1, 3, 2, 0], expected: "NO" },
+    ];
+
+    for (let i = 0; i < testCases.length; i++) {
+        const { input, expected } = testCases[i];
+        const result = canTransform(...input);
+        console.log(`Test case ${i + 1}:`, result === expected ? "PASSED" : `FAILED (Expected: ${expected}, Got: ${result})`);
+    }
+}
+
+testCanTransform();

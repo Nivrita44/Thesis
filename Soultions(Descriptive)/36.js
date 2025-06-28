@@ -52,3 +52,56 @@ function solve(n, m, k, queries) {
         return pow(2, total - 1n);
     }
 }
+
+function testSolve() {
+    const testCases = [
+        {
+            input: {
+                n: 3,
+                m: 3,
+                k: 6,
+                queries: [
+                    [1, 1, 0],
+                    [1, 2, 1],
+                    [1, 3, 0],
+                    [3, 1, 1],
+                    [3, 2, 0],
+                    [3, 3, 1]
+                ]
+            },
+            expected: 4
+        },
+        {
+            input: {
+                n: 3,
+                m: 4,
+                k: 12,
+                queries: [
+                    [1, 1, 0],
+                    [1, 2, 1],
+                    [1, 3, 0],
+                    [1, 4, 1],
+                    [2, 1, 1],
+                    [2, 2, 0],
+                    [2, 3, 1],
+                    [2, 4, 0],
+                    [3, 1, 0],
+                    [3, 2, 1],
+                    [3, 3, 0],
+                    [3, 4, 1]
+                ]
+            },
+            expected: 0
+        }
+    ];
+
+    for (const { input, expected } of testCases) {
+        const { n, m, k, queries } = input;
+        const result = solve(n, m, k, queries);
+        console.log(`Input: n=${n}, m=${m}, k=${k}, queries=${JSON.stringify(queries)}`);
+        console.log(`Expected: ${expected}, Got: ${result}`);
+        console.assert(result === expected, `Test failed for input: ${JSON.stringify(input)}`);
+    }
+}
+
+testSolve();

@@ -28,3 +28,20 @@ const solve = (x, y, z, k) => {
     }
     return ans;
 };
+
+const test = () => {
+    const inputs = [
+        [2, 3, 5, 5],
+        [10, 20, 40, 5],
+        [1, 60, 100, 10],
+        [60, 1, 100, 10]
+    ];
+    const expectedOutputs = [12, 190, 280, 160];
+
+    for (let i = 0; i < inputs.length; i++) {
+        const result = solve(...inputs[i]);
+        console.log(`Test case ${i + 1}:`, result === expectedOutputs[i] ? "Passed" : `Failed (Expected ${expectedOutputs[i]}, Got ${result})`);
+    }
+};
+
+test();

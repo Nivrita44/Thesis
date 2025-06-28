@@ -1,64 +1,123 @@
-class N {
-    constructor(v = null) {
-        if (v === null) {
-            this.c = 0;
-            this.x = 0;
-            this.n = 0;
-            this.a = 0;
-            this.i = 0;
-            this.f = 0;
+class SegmentNode {
+    constructor(value = null) {
+        if (value === null) {
+            this.count = 0;
+            this.maxSubarray = 0;
+            this.negativePrefix = 0;
+            this.positivePrefix = 0;
+            this.leftMin = 0;
+            this.rightMax = 0;
         } else {
-            this.c = 1;
-            this.x = 0;
-            this.n = v + 1;
-            this.a = v - 1;
-            this.i = v + 1;
-            this.f = v - 1;
+            this.count = 1;
+            this.maxSubarray = 0;
+            this.negativePrefix = value + 1;
+            this.positivePrefix = value - 1;
+            this.leftMin = value + 1;
+            this.rightMax = value - 1;
         }
     }
 
-    static m(l, r) {
-        let n = new N();
-        n.c = l.c + r.c;
-        n.n = Math.min(l.n, l.c + r.n);
-        n.a = Math.max(l.a, r.a - l.c);
-        n.i = Math.min(r.i, r.c + l.i);
-        n.f = Math.max(r.f, l.f - r.c);
-        n.x = Math.max(
-            l.x,
-            r.x,
-            -l.i + r.a + 1,
-            l.f - r.n + 1
+    static merge(leftNode, rightNode) {
+        const merged = new SegmentNode();
+        merged.count = leftNode.count + rightNode.count;
+        merged.negativePrefix = Math.min(leftNode.negativePrefix, leftNode.count + rightNode.negativePrefix);
+        merged.positivePrefix = Math.max(leftNode.positivePrefix, rightNode.positivePrefix - leftNode.count);
+        merged.leftMin = Math.min(rightNode.leftMin, rightNode.count + leftNode.leftMin);
+        merged.rightMax = Math.max(rightNode.rightMax, leftNode.rightMax - rightNode.count);
+        merged.maxSubarray = Math.max(
+            leftNode.maxSubarray,
+            rightNode.maxSubarray,
+            -leftNode.leftMin + rightNode.positivePrefix + 1,
+            leftNode.rightMax - rightNode.negativePrefix + 1
         );
-        return n;
+        return merged;
     }
 }
 
-class S {
-    constructor(n) {
-        this.s = n;
-        this.t = Array(4 * n).fill().map(() => new N());
+class SegmentTree {
+    constructor(size) {
+        this.size = size;
+        this.tree = Array(4 * size).fill().map(() => new SegmentNode());
     }
 
-    u(i, v) {
-        this._u(i, v, 0, 0, this.s - 1);
+    update(index, value) {
+        this._update(index, value, 0, 0, this.size - 1);
     }
 
-    _u(i, v, n, s, e) {
-        if (s === e) {
-            this.t[n] = new N(v);
+    _update(index, value, node, start, end) {
+        if (start === end) {
+            this.tree[node] = new SegmentNode(value);
             return;
         }
-        let m = (s + e) >> 1;
-        if (i <= m) {
-            this._u(i, v, 2 * n + 1, s, m);
+
+        const mid = (start + end) >> 1;
+        if (index <= mid) {
+            this._update(index, value, 2 * node + 1, start, mid);
         } else {
-            this._u(i, v, 2 * n + 2, m + 1, e);
+            this._update(index, value, 2 * node + 2, mid + 1, end);
         }
-        this.t[n] = N.m(this.t[2 * n + 1], this.t[2 * n + 2]);
+
+        this.tree[node] = SegmentNode.merge(this.tree[2 * node + 1], this.tree[2 * node + 2]);
     }
 
-    g() {
-        return this.t[0].x;
+    getMaxSubarrayLength() {
+        return this.tree[0].maxSubarray;
     }
 }
+
+
+function maxSubarrayLengths(testCases) {
+    const results = [];
+
+    for (const { size, queries, values, updates } of testCases) {
+        const segmentTree = new SegmentTree(size);
+
+        for (let i = 0; i < size; i++) {
+            segmentTree.update(i, values[i]);
+        }
+
+        const currentResult = [segmentTree.getMaxSubarrayLength()];
+
+        for (const [index, value] of updates) {
+            segmentTree.update(index - 1, value);  // 1-based to 0-based index
+            currentResult.push(segmentTree.getMaxSubarrayLength());
+        }
+
+        results.push(currentResult);
+    }
+
+    return results;
+}
+
+function test() {
+    const input = [
+        {
+            size: 2,
+            queries: 2,
+            values: [1, 10],
+            updates: [[1, 10], [2, 2]],
+        },
+        {
+            size: 5,
+            queries: 3,
+            values: [1, 2, 3, 4, 5],
+            updates: [[3, 7], [1, 4], [5, 2]],
+        },
+        {
+            size: 8,
+            queries: 5,
+            values: [7, 4, 2, 4, 8, 2, 1, 4],
+            updates: [[5, 4], [1, 10], [3, 2], [8, 11], [7, 7]],
+        }
+    ];
+
+    const output = maxSubarrayLengths(input);
+    for (const result of output) {
+        for (const value of result) {
+            console.log(value);
+        }
+    }
+}
+
+test();
+

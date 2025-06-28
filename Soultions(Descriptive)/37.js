@@ -1,3 +1,5 @@
+const MAXNODES = 1000000;
+
 function getBitLength(x) {
     return x.toString(2).length;
 }
@@ -78,7 +80,7 @@ function solve(n, k, A) {
         let nd = 1;
         for (let b = p - 1; b >= 0; b--) {
             const vb = (low[i] >> b) & 1;
-            const c = vb === 0 ? ch0[nd] : ch1[nd];
+            let c = vb === 0 ? ch0[nd] : ch1[nd];
             if (c === 0) {
                 nodeCount++;
                 if (vb === 0) ch0[nd] = nodeCount;
@@ -93,3 +95,25 @@ function solve(n, k, A) {
 
     return ans <= n ? ans.toString() : '-1';
 }
+
+function testSolve() {
+    const testCases = [
+        { input: [5, 0, [1, 2, 3, 4, 5]], expected: '1' },
+        { input: [5, 7, [1, 2, 3, 4, 5]], expected: '2' },
+        { input: [5, 8, [1, 2, 3, 4, 5]], expected: '-1' },
+        { input: [5, 7, [3, 5, 1, 4, 2]], expected: '4' },
+        { input: [5, 3, [3, 5, 1, 4, 2]], expected: '2' },
+        { input: [6, 71, [26, 56, 12, 45, 60, 27]], expected: '-1' },
+    ];
+
+    for (const { input, expected } of testCases) {
+        const [n, k, A] = input;
+        const result = solve(n, k, A);
+        console.log(`Input: n=${n}, k=${k}, A=${A}`);
+        console.log(`Expected: ${expected}, Got: ${result}`);
+        console.log(result === expected ? 'Test passed' : 'Test failed');
+        console.log('---');
+    }
+}
+
+testSolve();

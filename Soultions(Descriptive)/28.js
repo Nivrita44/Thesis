@@ -1,64 +1,86 @@
-const LG = 60
-let dp
-pre()
-
-function min(a, b) {
-    return a < b ? a : b
-}
-
-function pre() {
-    dp = Array(LG + 1).fill(0).map(() =>
-        Array(LG + 1).fill(0).map(() =>
-            Array(LG + 1).fill(Infinity)))
-
-    const ps = Array(LG + 1)
-    ps[0] = 1n
-    for (let i = 1; i <= LG; i++) {
-        ps[i] = ps[i - 1] + ps[i - 1]
+function minimumCostToEqualize(xBig, yBig) {
+    const MAX_BITS = 60;
+    const powersOfTwo = Array(MAX_BITS + 1).fill(1n);
+    for (let i = 1; i <= MAX_BITS; i++) {
+        powersOfTwo[i] = powersOfTwo[i - 1] * 2n;
     }
 
-    dp[0][0].fill(0n)
+    // Initialize DP table
+    const dp = Array.from({ length: MAX_BITS + 1 }, () =>
+        Array.from({ length: MAX_BITS + 1 }, () =>
+            Array(MAX_BITS + 1).fill(Infinity)
+        )
+    );
 
-    for (let i = 0; i <= LG; i++) {
-        for (let j = 0; j <= LG; j++) {
-            for (let first = LG; first >= 1; first--) {
-                if (dp[i][j][first] === Infinity) continue
-                const x = dp[i][j][first] + ps[first - 1]
-                update(i + first - 1, j, first - 1, x)
-                update(i, j + first - 1, first - 1, x)
-                update(i, j, first - 1, dp[i][j][first])
+    dp[0][0].fill(0n);
+
+    function update(i, j, k, val) {
+        if (i <= MAX_BITS && j <= MAX_BITS) {
+            dp[i][j][k] = dp[i][j][k] < val ? dp[i][j][k] : val;
+        }
+    }
+
+    // DP precomputation
+    for (let i = 0; i <= MAX_BITS; i++) {
+        for (let j = 0; j <= MAX_BITS; j++) {
+            for (let k = MAX_BITS; k >= 1; k--) {
+                if (dp[i][j][k] === Infinity) continue;
+                const cost = dp[i][j][k] + powersOfTwo[k - 1];
+                update(i + k - 1, j, k - 1, cost);
+                update(i, j + k - 1, k - 1, cost);
+                update(i, j, k - 1, dp[i][j][k]);
             }
-            for (let first = 1; first <= LG; first++) {
-                update(i, j, 0, dp[i][j][first])
+            for (let k = 1; k <= MAX_BITS; k++) {
+                update(i, j, 0, dp[i][j][k]);
             }
         }
     }
 
-    function update(i, j, k, x) {
-        if (i <= LG && j <= LG) {
-            dp[i][j][k] = min(dp[i][j][k], x)
+    // Map ancestors of x
+    const xAncestors = new Map();
+    let x = xBig;
+    for (let i = 0; i <= MAX_BITS; i++) {
+        xAncestors.set(x, i);
+        if (x === 0n) break;
+        x = x / 2n;
+    }
+
+    let y = yBig;
+    let answer = Infinity;
+    for (let i = 0; i <= MAX_BITS; i++) {
+        if (xAncestors.has(y)) {
+            const j = xAncestors.get(y);
+            answer = answer < dp[j][i][0] ? answer : dp[j][i][0];
         }
+        y = y / 2n;
+    }
+
+    return answer;
+}
+
+function testMinimumCostToEqualize() {
+    const testCases = [
+        { input: [0n, 1n], expected: 2n },
+        { input: [6n, 2n], expected: 6n },
+        { input: [3n, 3n], expected: 0n },
+        { input: [13n, 37n], expected: 26n },
+        { input: [4238659325782394n, 12983091057341925n], expected: 32764n }
+    ];
+
+    let allPassed = true;
+    testCases.forEach(({ input, expected }, index) => {
+        const result = minimumCostToEqualize(...input);
+        if (result === expected) {
+            console.log(`Test case ${index + 1}: ✅ Passed`);
+        } else {
+            console.log(`Test case ${index + 1}: ❌ Failed (Got ${result}, Expected ${expected})`);
+            allPassed = false;
+        }
+    });
+
+    if (allPassed) {
+        console.log("🎉 All test cases passed!");
     }
 }
 
-function solve(x, y) {
-    const map = new Map()
-    let temp = x
-    for (let i = 0; i <= LG; i++) {
-        map.set(temp, i)
-        if (!temp) break
-        temp /= 2n
-    }
-
-    temp = y
-    let ans = Infinity
-    for (let i = 0; i <= LG; i++) {
-        if (map.has(temp)) {
-            const j = map.get(temp)
-            ans = min(ans, dp[j][i][0])
-        }
-        temp /= 2n
-    }
-
-    return ans
-}
+testMinimumCostToEqualize();
