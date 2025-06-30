@@ -1,65 +1,65 @@
-function solve(n, m, a, b) {
-    a.sort((x, y) => x - y);
-    b.sort((x, y) => x - y);
+function solve(n, m, arrayA, arrayB) {
+    arrayA.sort((x, y) => x - y);
+    arrayB.sort((x, y) => x - y);
+
+    let diffA = [];
+    let diffB = [];
+
     
-    let a_l = [];
-    let b_l = [];
-    
-  
     for (let i = 0; i < Math.floor(n / 2); i++) {
-        a_l.push(a[n - 1 - i] - a[i]);
+        diffA.push(arrayA[n - 1 - i] - arrayA[i]);
     }
-    
+
     
     for (let i = 0; i < Math.floor(m / 2); i++) {
-        b_l.push(b[m - 1 - i] - b[i]);
+        diffB.push(arrayB[m - 1 - i] - arrayB[i]);
     }
-    
-    let k_max = Math.min(Math.floor((n + m) / 3), n, m);
-    let result = [k_max.toString()];
-    
-    let k = [];
-    let count_a = 0;
-    let count_b = 0;
-    let ans = 0;
-    
-    for (let i = 1; i <= k_max; i++) {
-        if (count_a > n - i) {
-            ans += b_l[count_b];
-            count_b++;
-            count_a--;
-            ans -= a_l[count_a];
+
+    const maxTeams = Math.min(Math.floor((n + m) / 3), n, m);
+    const resultLines = [maxTeams.toString()];
+
+    const maxDiffs = [];
+    let indexA = 0;
+    let indexB = 0;
+    let totalDifference = 0;
+
+    for (let teamSize = 1; teamSize <= maxTeams; teamSize++) {
+        if (indexA > n - teamSize) {
+            totalDifference += diffB[indexB];
+            indexB++;
+            indexA--;
+            totalDifference -= diffA[indexA];
         }
-        
-        if (count_b > m - i) {
-            ans += a_l[count_a];
-            count_a++;
-            count_b--;
-            ans -= b_l[count_b];
+
+        if (indexB > m - teamSize) {
+            totalDifference += diffA[indexA];
+            indexA++;
+            indexB--;
+            totalDifference -= diffB[indexB];
         }
-        
-        if (count_a === n - i) {
-            ans += b_l[count_b];
-            count_b++;
-        } else if (count_b === m - i) {
-            ans += a_l[count_a];
-            count_a++;
-        } else if (a_l[count_a] > b_l[count_b]) {
-            ans += a_l[count_a];
-            count_a++;
+
+        if (indexA === n - teamSize) {
+            totalDifference += diffB[indexB];
+            indexB++;
+        } else if (indexB === m - teamSize) {
+            totalDifference += diffA[indexA];
+            indexA++;
+        } else if (diffA[indexA] > diffB[indexB]) {
+            totalDifference += diffA[indexA];
+            indexA++;
         } else {
-            ans += b_l[count_b];
-            count_b++;
+            totalDifference += diffB[indexB];
+            indexB++;
         }
-        
-        k.push(ans);
+
+        maxDiffs.push(totalDifference);
     }
-    
-    if (k_max > 0) {
-        result.push(k.join(' '));
+
+    if (maxTeams > 0) {
+        resultLines.push(maxDiffs.join(' '));
     }
-    
-    return result.join('\n');
+
+    return resultLines.join('\n');
 }
 
 function test() {
@@ -87,7 +87,7 @@ function test() {
     ];
 
     console.log("Running Tests...\n");
-    testCases.forEach(({input, expected}, index) => {
+    testCases.forEach(({ input, expected }, index) => {
         const [n, m, a, b] = input;
         const result = solve(n, m, a, b);
         console.log(`Test Case ${index + 1}:`);
@@ -98,5 +98,4 @@ function test() {
     });
 }
 
- test();
-
+test();

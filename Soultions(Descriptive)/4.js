@@ -1,28 +1,36 @@
-function solveLogic(a) {
-    const n = a.length;
-    const dp = Array(n).fill(0).map(() => Array(n).fill(0));
-    let temp;
+function calculateMaxProductScore(array) {
+    const arrayLength = array.length;
+    
+    const dpTable = Array(arrayLength).fill(0).map(() => Array(arrayLength).fill(0));
+    let currentScore;
 
-    for (let step = 3; step <= n; step++) {
-        for (let i = 0; i + step - 1 < n; i++) {
-            const j = i + step - 1;
-            for (let k = i + 1; k < j; k++) {
-                temp = a[i] * a[j] * a[k]
-                    + (i + 1 <= k - 1 ? dp[i + 1][k - 1] : 0)
-                    + (k + 1 <= j - 1 ? dp[k + 1][j - 1] : 0);
-                dp[i][j] = Math.max(dp[i][j], temp);
+    
+    for (let subarrayLength = 3; subarrayLength <= arrayLength; subarrayLength++) {
+        for (let start = 0; start + subarrayLength - 1 < arrayLength; start++) {
+            const end = start + subarrayLength - 1;
+            
+            
+            for (let splitPoint = start + 1; splitPoint < end; splitPoint++) {
+                
+                currentScore = array[start] * array[end] * array[splitPoint]
+                    + (start + 1 <= splitPoint - 1 ? dpTable[start + 1][splitPoint - 1] : 0)
+                    + (splitPoint + 1 <= end - 1 ? dpTable[splitPoint + 1][end - 1] : 0);
+                dpTable[start][end] = Math.max(dpTable[start][end], currentScore);
 
-                temp = dp[i][k] + (k + 1 <= j ? dp[k + 1][j] : 0);
-                dp[i][j] = Math.max(dp[i][j], temp);
+                
+                currentScore = dpTable[start][splitPoint] + (splitPoint + 1 <= end ? dpTable[splitPoint + 1][end] : 0);
+                dpTable[start][end] = Math.max(dpTable[start][end], currentScore);
 
-                temp = (i <= k - 1 ? dp[i][k - 1] : 0) + dp[k][j];
-                dp[i][j] = Math.max(dp[i][j], temp);
+                
+                currentScore = (start <= splitPoint - 1 ? dpTable[start][splitPoint - 1] : 0) + dpTable[splitPoint][end];
+                dpTable[start][end] = Math.max(dpTable[start][end], currentScore);
             }
         }
     }
-    return dp[0][n - 1];
+    return dpTable[0][arrayLength - 1];
 }
-function testSolveLogic() {
+
+function runTestCases() {
     const testCases = [
         { input: [2, 1, 2, 1, 1, 1], expected: 5 },
         { input: [1, 2, 1, 3, 1, 5], expected: 30 },
@@ -31,9 +39,10 @@ function testSolveLogic() {
     ];
 
     testCases.forEach(({ input, expected }, index) => {
-        const result = solveLogic(input);
-        console.log(`Test Case ${index + 1}:`, result === expected ? "Passed" : `Failed (Expected: ${expected}, Got: ${result})`);
+        const result = calculateMaxProductScore(input);
+        console.log(`Test Case ${index + 1}:`, 
+            result === expected ? "Passed" : `Failed (Expected: ${expected}, Got: ${result})`);
     });
 }
 
-testSolveLogic();
+runTestCases();

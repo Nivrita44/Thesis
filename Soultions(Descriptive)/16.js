@@ -1,19 +1,19 @@
 function minDropsNeeded(v, need) {
-    let cnt = 0, sum = 0;
+    let count = 0, sum = 0;
     for (let x of v) {
         if (sum >= need) break;
         sum += x;
-        cnt++;
+        count++;
     }
-    return (sum >= need) ? cnt : 1000000000;
+    return (sum >= need) ? count : 1000000000;
 }
 
 function canTransform(s, a, b, ab, ba) {
-    let totA = (s.match(/A/g) || []).length;
-    let totB = (s.match(/B/g) || []).length;
-    let m = Math.max(totA - a, totB - b, 0);
+    let totalA = (s.match(/A/g) || []).length;
+    let totalB = (s.match(/B/g) || []).length;
+    let m = Math.max(totalA - a, totalB - b, 0);
 
-    let totPairs = 0;
+    let totalParis = 0;
     let addOdd = 0;
     let evenA = [];
     let evenB = [];
@@ -26,7 +26,7 @@ function canTransform(s, a, b, ab, ba) {
         let len = j - i + 1;
         if (len >= 2) {
             let p = Math.floor(len / 2);
-            totPairs += p;
+            totalParis += p;
             if (len % 2 === 1) {
                 addOdd += p;
             } else {
@@ -37,11 +37,11 @@ function canTransform(s, a, b, ab, ba) {
         i = j + 1;
     }
 
-    if (totPairs < m || m > ab + ba) {
+    if (totalParis < m || m > ab + ba) {
         return "NO";
     }
 
-    let availableDrop = totPairs - m;
+    let availableDrop = totalParis - m;
     let sumA = evenA.reduce((acc, val) => acc + val, 0);
     let needA = Math.max(sumA - ab, 0);
     let sumB = evenB.reduce((acc, val) => acc + val, 0);

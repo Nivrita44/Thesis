@@ -1,46 +1,58 @@
-function solve(n, m, k, arr) {
-    let l = n + 1, r = 0, ml = m, mr = m;
-    let skip = 0, has = 0;
-    const ans = Array(k);
+function processSelections(arraySize, currentPosition, queryCount, selectedIndices) {
+    let leftBoundary = arraySize + 1;
+    let rightBoundary = 0;
+    let leftMid = currentPosition;
+    let rightMid = currentPosition;
+    let hasMiddleSelected = false;
+    let middleSkipped = false;
 
-    for (let i = 0; i < k; i++) {
-        const x = arr[i];
-        if (has) {
-            if (x < l) l--;
-            if (x > r) r++;
+    const result = Array(queryCount);
+
+    for (let i = 0; i < queryCount; i++) {
+        const selectedIndex = selectedIndices[i];
+
+        if (hasMiddleSelected) {
+            if (selectedIndex < leftBoundary) leftBoundary--;
+            if (selectedIndex > rightBoundary) rightBoundary++;
         }
-        if (!skip) {
-            if (x < ml) ml--;
-            else if (x > mr) mr++;
-            else {
-                if (ml === mr) skip = 1;
-                has = 1;
-                l = Math.min(l, n);
-                r = Math.max(r, 1);
+
+        if (!middleSkipped) {
+            if (selectedIndex < leftMid) {
+                leftMid--;
+            } else if (selectedIndex > rightMid) {
+                rightMid++;
+            } else {
+                if (leftMid === rightMid) {
+                    middleSkipped = true;
+                }
+                hasMiddleSelected = true;
+                leftBoundary = Math.min(leftBoundary, arraySize);
+                rightBoundary = Math.max(rightBoundary, 1);
             }
         }
 
-        let total = 0;
-        if (skip) {
-            total += cal(1, r);
-            total += cal(Math.max(l, r + 1), n);
+        let visibleElements = 0;
+
+        if (middleSkipped) {
+            visibleElements += countRange(1, rightBoundary);
+            visibleElements += countRange(Math.max(leftBoundary, rightBoundary + 1), arraySize);
         } else {
-            total += cal(ml, mr);
-            total += cal(1, Math.min(r, ml - 1));
-            total += cal(Math.max(l, mr + 1), n);
+            visibleElements += countRange(leftMid, rightMid);
+            visibleElements += countRange(1, Math.min(rightBoundary, leftMid - 1));
+            visibleElements += countRange(Math.max(leftBoundary, rightMid + 1), arraySize);
         }
 
-        ans[i] = total;
+        result[i] = visibleElements;
     }
 
-    return ans.join(' ');
+    return result.join(' ');
 }
 
-function cal(l, r) {
-    return r - l + 1;
+function countRange(start, end) {
+    return end - start + 1;
 }
 
-function testSolve() {
+function testProcessSelections() {
     const testCases = [
         {
             input: [6, 5, 3, [1, 2, 3]],
@@ -65,16 +77,18 @@ function testSolve() {
     ];
 
     testCases.forEach(({ input, expected }, index) => {
-        const result = solve(...input);
-        console.log(`Test Case ${index + 1}: ${result === expected ? "Passed" : "Failed"}`);
-        if (result !== expected) {
+        const result = processSelections(...input);
+        const status = result === expected ? "Passed" : "Failed";
+        console.log(`Test Case ${index + 1}: ${status}`);
+        if (status === "Failed") {
             console.log(`  Expected: ${expected}`);
-            console.log(`  Got: ${result}`);
+            console.log(`  Got     : ${result}`);
         }
     });
 }
 
-testSolve();
+testProcessSelections();
+
 
 
 //create e a test function in this file to test the above function. don;t use describe, it, chai. normal test function.

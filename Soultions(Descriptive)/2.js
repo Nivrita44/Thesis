@@ -1,80 +1,98 @@
 const MOD = 1e9 + 7;
-const MOD_CUT = ((1 << 20) * (1 << 20)) % MOD;
+const MOD_APPROX = ((1 << 20) * (1 << 20)) % MOD;
 
-// Math operations
-function add(a, b) { return (a + b) % MOD; }
-function minus(a, b) { return add(add(a, -b), MOD); }
-function mul(a, b) {
-    let r = (a >> 20) * (b >> 20) * MOD_CUT
-          + (a & 0xfff00000) * (b & 0xfffff)
-          + (a & 0xfffff) * b;
-    return r % MOD;
+
+function modAdd(a, b) {
+    return (a + b) % MOD;
 }
 
-// Precompute prefix sums
-const N = 3e5;
-const prefix = new Array(N + 1).fill(0);
-const prefix2 = new Array(N + 1).fill(0);
-for (let i = 1; i <= N; i++) {
-    prefix[i] = (prefix[i - 1] + i) % MOD;
-    prefix2[i] = (prefix2[i - 1] + i * i) % MOD;
+function modSub(a, b) {
+    return modAdd(modAdd(a, -b), MOD);
 }
 
-// Helper functions
-function range(n, a, l, r) {
-    const c = r - l + 1;
-    const p1 = mul(a, minus(prefix2[r], prefix2[l - 1]));
-    const p2 = mul(n, minus(prefix[r], prefix[l - 1]));
-    const p3 = mul(a, c);
-    return minus(add(p2, p3), p1);
+function modMul(a, b) {
+    
+    let result = (a >> 20) * (b >> 20) * MOD_APPROX
+               + (a & 0xfff00000) * (b & 0xfffff)
+               + (a & 0xfffff) * b;
+    return result % MOD;
 }
 
-function cal(p, n) {
-    let x = n;
-    const q = [];
-    while (x > 0) {
-        q.unshift(x % p);
-        x = Math.floor(x / p);
+const MAX_N = 3e5;
+const prefixSum = new Array(MAX_N + 1).fill(0);
+const prefixSumSquares = new Array(MAX_N + 1).fill(0);
+
+for (let i = 1; i <= MAX_N; i++) {
+    prefixSum[i] = modAdd(prefixSum[i - 1], i);
+    prefixSumSquares[i] = modAdd(prefixSumSquares[i - 1], modMul(i, i));
+}
+
+function computeRangeSum(n, baseA, left, right) {
+    const count = right - left + 1;
+    const term1 = modMul(baseA, modSub(prefixSumSquares[right], prefixSumSquares[left - 1]));
+    const term2 = modMul(n, modSub(prefixSum[right], prefixSum[left - 1]));
+    const term3 = modMul(baseA, count);
+    return modSub(modAdd(term2, term3), term1);
+}
+
+
+function calculateBaseSum(baseP, n) {
+    let number = n;
+    const baseDigits = [];
+
+    while (number > 0) {
+        baseDigits.unshift(number % baseP);
+        number = Math.floor(number / baseP);
     }
-    let temp = 0, b = 1;
-    for (let i = 0; i < q.length; i++) {
-        temp = add(temp, mul(q[i], b));
-        b = mul(b, p);
+
+    let result = 0, basePower = 1;
+
+    for (let i = 0; i < baseDigits.length; i++) {
+        result = modAdd(result, modMul(baseDigits[i], basePower));
+        basePower = modMul(basePower, baseP);
     }
-    return temp;
+
+    return result;
 }
 
-// Main solution function
+
 function solve(n, k) {
-    let s = 0;
-    let kNum;
-    
+    let totalSum = 0;
+    let effectiveK;
+
     if (k > n) {
-        const times = (k - BigInt(n)) % BigInt(MOD);
-        s = mul(Number(times), n);
-        kNum = n;
+        const surplus = (k - BigInt(n)) % BigInt(MOD);
+        totalSum = modMul(Number(surplus), n);
+        effectiveK = n;
     } else {
-        kNum = Number(k);
+        effectiveK = Number(k);
     }
-    
-    let prev = kNum;
-    for (let a = 1; ; a++) {
-        let now = Math.floor(n / (a + 1)) + 1;
-        if (n >= now * now) break;
-        if (now <= kNum) {
-            s = add(s, range(n, a, Math.max(2, now), Math.min(kNum, prev)));
+
+    let previous = effectiveK;
+
+    for (let baseA = 1; ; baseA++) {
+        const lowerBound = Math.floor(n / (baseA + 1)) + 1;
+        if (n >= lowerBound * lowerBound) break;
+
+        if (lowerBound <= effectiveK) {
+            const from = Math.max(2, lowerBound);
+            const to = Math.min(effectiveK, previous);
+            totalSum = modAdd(totalSum, computeRangeSum(n, baseA, from, to));
         }
-        prev = now - 1;
+
+        previous = lowerBound - 1;
     }
-    
-    prev = Math.min(prev, kNum);
-    for (let p = 2; p <= prev; p++) {
-        s = add(s, cal(p, n));
+
+    previous = Math.min(previous, effectiveK);
+
+    for (let baseP = 2; baseP <= previous; baseP++) {
+        totalSum = modAdd(totalSum, calculateBaseSum(baseP, n));
     }
-    return s;
+
+    return totalSum;
 }
 
-/**************** TEST CASES ****************/
+
 function runTests() {
     const testCases = [
         { input: [9, 3n], expected: 10 },
@@ -86,40 +104,15 @@ function runTests() {
     ];
 
     console.log("Running Tests...\n");
-    testCases.forEach(({ input, expected }, i) => {
+
+    testCases.forEach(({ input, expected }, index) => {
         const result = solve(...input);
-        const status = result === expected ? "PASS" : "FAIL";
-        console.log(`Test ${i+1}: ${status}`);
-        console.log(`Input: ${input}`);
-        console.log(`Expected: ${expected}`);
-        console.log(`Received: ${result}\n`);
+        const pass = result === expected ? "PASS" : "FAIL";
+        console.log(`Test ${index + 1}: ${pass}`);
+        console.log(`  Input: n=${input[0]}, k=${input[1]}`);
+        console.log(`  Expected: ${expected}`);
+        console.log(`  Got: ${result}\n`);
     });
 }
 
-/**************** EXECUTION ****************/
-// Uncomment one of these based on how you want to use the file:
-
-// Option 1: Run tests directly
 runTests();
-
-// Option 2: For HackerRank submission (just the solve function)
-// module.exports = { solve };
-
-// Option 3: For command-line input (like original Kattio version)
-/*
-const readline = require('readline');
-const rl = readline.createInterface({
-    input: process.stdin,
-    output: process.stdout
-});
-
-rl.question('', (t) => {
-    for (let i = 0; i < +t; i++) {
-        rl.question('', (line) => {
-            const [n, k] = line.split(' ');
-            console.log(solve(+n, BigInt(k)));
-            if (i === +t - 1) rl.close();
-        });
-    }
-});
-*/

@@ -1,52 +1,68 @@
-function processMatrices(n, m, a, b) {
-    for (let t = 0; t < Math.min(n, m) + 1; t++) {
-        for (let i = 0; i < n; i++) {
-            let k = 0;
-            for (let j = 0; j < m; j++) {
-                k |= (a[i][j] ^ b[i][j]) & a[i][j];
+function transformMatrixToMatch(targetRows, targetCols, sourceMatrix, targetMatrix) {
+    const MAX_ITER = Math.min(targetRows, targetCols) + 1;
+
+    for (let iteration = 0; iteration < MAX_ITER; iteration++) {
+        for (let row = 0; row < targetRows; row++) {
+            let mismatchMask = 0;
+            for (let col = 0; col < targetCols; col++) {
+                mismatchMask |= (sourceMatrix[row][col] ^ targetMatrix[row][col]) & sourceMatrix[row][col];
             }
-            k = ((1n << 31n) - 1n) ^ BigInt(k);
-            for (let j = 0; j < m; j++) {
-                a[i][j] &= Number(k);
+
+            const clearMask = ((1n << 31n) - 1n) ^ BigInt(mismatchMask);
+            for (let col = 0; col < targetCols; col++) {
+                sourceMatrix[row][col] &= Number(clearMask);
             }
         }
 
-        for (let j = 0; j < m; j++) {
-            let k = 0;
-            for (let i = 0; i < n; i++) {
-                k |= (a[i][j] ^ b[i][j]) & b[i][j];
+        for (let col = 0; col < targetCols; col++) {
+            let mismatchMask = 0;
+            for (let row = 0; row < targetRows; row++) {
+                mismatchMask |= (sourceMatrix[row][col] ^ targetMatrix[row][col]) & targetMatrix[row][col];
             }
-            for (let i = 0; i < n; i++) {
-                a[i][j] |= k;
+
+            for (let row = 0; row < targetRows; row++) {
+                sourceMatrix[row][col] |= mismatchMask;
             }
         }
     }
 
-    for (let i = 0; i < n; i++) {
-        for (let j = 0; j < m; j++) {
-            if (a[i][j] !== b[i][j]) {
+    for (let row = 0; row < targetRows; row++) {
+        for (let col = 0; col < targetCols; col++) {
+            if (sourceMatrix[row][col] !== targetMatrix[row][col]) {
                 return "No\n";
             }
         }
     }
+
     return "Yes\n";
 }
 
-function testProcessMatrices() {
-    const inputs = [
-        { n: 1, m: 1, a: [[12]], b: [[13]] },
-        { n: 2, m: 2, a: [[10, 10], [42, 42]], b: [[21, 21], [21, 21]] },
-        { n: 2, m: 2, a: [[74, 10], [42, 106]], b: [[21, 85], [85, 21]] },
-        { n: 2, m: 4, a: [[1, 2, 3, 4], [5, 6, 7, 8]], b: [[3, 2, 3, 4], [1, 0, 1, 0]] }
+function testTransformMatrixToMatch() {
+    const testCases = [
+        {
+            input: { n: 1, m: 1, a: [[12]], b: [[13]] },
+            expected: "Yes\n"
+        },
+        {
+            input: { n: 2, m: 2, a: [[10, 10], [42, 42]], b: [[21, 21], [21, 21]] },
+            expected: "Yes\n"
+        },
+        {
+            input: { n: 2, m: 2, a: [[74, 10], [42, 106]], b: [[21, 85], [85, 21]] },
+            expected: "No\n"
+        },
+        {
+            input: { n: 2, m: 4, a: [[1, 2, 3, 4], [5, 6, 7, 8]], b: [[3, 2, 3, 4], [1, 0, 1, 0]] },
+            expected: "Yes\n"
+        }
     ];
 
-    const expectedOutputs = ["Yes\n", "Yes\n", "No\n", "Yes\n"];
-
-    for (let i = 0; i < inputs.length; i++) {
-        const { n, m, a, b } = inputs[i];
-        const result = processMatrices(n, m, a, b);
-        console.log(`Test ${i + 1}: ${result === expectedOutputs[i] ? "Passed" : "Failed"}`);
-    }
+    testCases.forEach(({ input, expected }, index) => {
+        const { n, m, a, b } = input;
+        const result = transformMatrixToMatch(n, m, a, b);
+        const status = result === expected ? "Passed" : `Failed`;
+        console.log(`Test ${index + 1}: ${status}`);
+    });
 }
 
-testProcessMatrices();
+testTransformMatrixToMatch();

@@ -1,57 +1,60 @@
-const MAXN = 200010;
-const UB = 1000000010;
-const LB = -UB;
+const MAX_ARRAY_SIZE = 200010;
+const UPPER_BOUND = 1000000010;
+const LOWER_BOUND = -UPPER_BOUND;
 
-let n;
-let a = new Uint32Array(MAXN);
+let currentArrayLength;
+let numberArrayStorage = new Uint32Array(MAX_ARRAY_SIZE);
 
-function c(x) {
-    let xi = x;
-    for (let i = n - 1; i >= 0; i--) {
-        x = 2 * x - a[i];
-        if (x < LB) return -1;
-        if (x > UB) return 1;
+function evaluateCandidateValue(candidate) {
+    let currentValue = candidate;
+    for (let index = currentArrayLength - 1; index >= 0; index--) {
+        currentValue = 2 * currentValue - numberArrayStorage[index];
+        if (currentValue < LOWER_BOUND) return -1;
+        if (currentValue > UPPER_BOUND) return 1;
     }
-    if (x < xi) return -1;
-    if (x > xi) return 1;
+    if (currentValue < candidate) return -1;
+    if (currentValue > candidate) return 1;
     return 0;
 }
 
-function b() {
-    let l = LB, h = UB;
-    while (h - l > 1) {
-        let m = (h + l) >> 1;
-        let r = c(m);
-        if (r === 0) return m;
-        else if (r < 0) l = m;
-        else h = m;
+function findBinarySearchSolution() {
+    let lowBound = LOWER_BOUND, highBound = UPPER_BOUND;
+    while (highBound - lowBound > 1) {
+        let midPoint = (highBound + lowBound) >> 1;
+        let result = evaluateCandidateValue(midPoint);
+        if (result === 0) return midPoint;
+        else if (result < 0) lowBound = midPoint;
+        else highBound = midPoint;
     }
-    return LB - 100;
+    return LOWER_BOUND - 100;
 }
 
-function solve(arr) {
-    n = arr.length;
-    a.set(arr);
+function solve(inputArray) {
+    currentArrayLength = inputArray.length;
+    numberArrayStorage.set(inputArray);
 
-    let as = 0;
-    for (let i = 0; i < n; i++) {
-        as += a[i];
+    let arraySumTotal = 0;
+    for (let index = 0; index < currentArrayLength; index++) {
+        arraySumTotal += numberArrayStorage[index];
     }
 
-    let x = b();
-    if (x < LB) return -1;
+    let solutionCandidate = findBinarySearchSolution();
+    if (solutionCandidate < LOWER_BOUND) return -1;
 
-    let m = UB + 100;
-    let u = 0;
-    for (let i = n - 1; i >= 0; i--) {
-        m = Math.min(m, x);
-        u += x;
-        x = 2 * x - a[i];
+    let minimumValueFound = UPPER_BOUND + 100;
+    let operationsCount = 0;
+    let currentSolutionValue = solutionCandidate;
+
+    for (let index = currentArrayLength - 1; index >= 0; index--) {
+        minimumValueFound = Math.min(minimumValueFound, currentSolutionValue);
+        operationsCount += currentSolutionValue;
+        currentSolutionValue = 2 * currentSolutionValue - numberArrayStorage[index];
     }
-    u -= n * m;
 
-    if (u > as) return -1;
-    return u;
+    operationsCount -= currentArrayLength * minimumValueFound;
+
+    if (operationsCount > arraySumTotal) return -1;
+    return operationsCount;
 }
 
 function test() {
