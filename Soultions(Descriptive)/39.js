@@ -1,24 +1,28 @@
-function solve(n, a) {
-    const s = new Set();
-    const x = a.includes(0) ? a.indexOf(0) : -1;
-    let mex = 0;
+function solve(arrayLength, array) {
+    const seen = new Set();
+    const firstZeroIndex = array.includes(0) ? array.indexOf(0) : -1;
+    let mex = 0; 
 
-    for (let j = n - 1; j >= 0; j--) {
-        if (a[j] < mex) {
+    
+    for (let i = arrayLength - 1; i >= 0; i--) {
+        if (array[i] < mex) {
             mex = 0;
             break;
         }
-        if (a[j] !== 0 || j === x) {
-            s.add(a[j]);
-            while (s.has(mex)) {
+
+        
+        if (array[i] !== 0 || i === firstZeroIndex) {
+            seen.add(array[i]);
+            while (seen.has(mex)) {
                 mex++;
             }
         }
     }
 
-    const zeroCount = a.filter(num => num === 0).length;
-    return n - zeroCount + (mex !== 0 ? 1 : 0);
+    const countZeros = array.filter(value => value === 0).length;
+    return arrayLength - countZeros + (mex !== 0 ? 1 : 0);
 }
+
 
 function testSolve() {
     const testCases = [

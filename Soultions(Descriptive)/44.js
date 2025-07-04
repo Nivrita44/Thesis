@@ -1,50 +1,50 @@
-const N = 1e7 + 10;
-let sg = new Uint32Array(N);
-let v = new Uint8Array(N);
-let f = new Uint32Array(N);
-let p = [];
+const MAX_SIZE = 1e7 + 10;
+const sgValues = new Uint32Array(MAX_SIZE);
+const isComposite = new Uint8Array(MAX_SIZE);
+const factor = new Uint32Array(MAX_SIZE);
+const primes = [];
 
-function init() {
-    let cnt = 0;
-    for (let i = 2; i < N; i++) {
-        if (!v[i]) {
-            p[cnt++] = i;
-            f[i] = i;
+function initializeSieve() {
+    let primeCount = 0;
+    for (let num = 2; num < MAX_SIZE; num++) {
+        if (!isComposite[num]) {
+            primes[primeCount++] = num;
+            factor[num] = num;
         }
-        for (let j = 0; j < cnt && i * p[j] < N; j++) {
-            v[i * p[j]] = 1;
-            if (i % p[j] === 0) {
-                f[i * p[j]] = f[i];
+        for (let j = 0; j < primeCount && num * primes[j] < MAX_SIZE; j++) {
+            isComposite[num * primes[j]] = 1;
+            if (num % primes[j] === 0) {
+                factor[num * primes[j]] = factor[num];
                 break;
             }
-            f[i * p[j]] = p[j];
+            factor[num * primes[j]] = primes[j];
         }
     }
 }
 
-function tsg() {
-    let max = 0;
-    for (let i = 1; i < N; i++) {
+function computeSGValues() {
+    let maxSG = 0;
+    for (let i = 1; i < MAX_SIZE; i++) {
         if (i & 1) {
-            if (!v[i]) {
-                sg[i] = ++max;
+            if (!isComposite[i]) {
+                sgValues[i] = ++maxSG;
             } else {
-                sg[i] = sg[f[i]];
+                sgValues[i] = sgValues[factor[i]];
             }
         }
     }
 }
 
 function solveGame(arr) {
-    let ans = 0;
+    let nimSum = 0;
     for (let i = 0; i < arr.length; i++) {
-        ans ^= sg[arr[i]];
+        nimSum ^= sgValues[arr[i]];
     }
-    return ans ? "Alice" : "Bob";
+    return nimSum ? "Alice" : "Bob";
 }
 
-init();
-tsg();
+initializeSieve();
+computeSGValues();
 
 
 function testSolveGame() {

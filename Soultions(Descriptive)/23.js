@@ -1,31 +1,35 @@
-function solveQuery(l, r, i, k) {
-    const getXor = (n, i, k) => {
-      let ans = 0n;
-  
-      for (let r = 0n; r < n % 4n; r++) {
-        ans ^= n - (n % 4n) + r;
+function solveQuery(left, right, bitIndex, xorConstant) {
+  const computeXor = (limit, bitIndex, xorConstant) => {
+      let xorResult = 0n;
+
+      
+      for (let rem = 0n; rem < limit % 4n; rem++) {
+          xorResult ^= limit - (limit % 4n) + rem;
       }
-  
-      n -= k + 1n;
-      if (n >= 0n) {
-        n = n / (1n << i);
-        n += 1n;
-  
-        for (let r = 0n; r < n % 4n; r++) {
-          ans ^= (n - (n % 4n) + r) * (1n << i);
-        }
-  
-        if (n % 2n === 1n) {
-          ans ^= k;
-        }
+
+      
+      limit -= xorConstant + 1n;
+      if (limit >= 0n) {
+          let shiftedCount = limit / (1n << bitIndex);
+          shiftedCount += 1n;
+
+          
+          for (let rem = 0n; rem < shiftedCount % 4n; rem++) {
+              xorResult ^= (shiftedCount - (shiftedCount % 4n) + rem) * (1n << bitIndex);
+          }
+
+          
+          if (shiftedCount % 2n === 1n) {
+              xorResult ^= xorConstant;
+          }
       }
-  
-      return ans;
-    };
-  
-    const result = getXor(r + 1n, i, k) ^ getXor(l, i, k);
-    return result;
-  }
+
+      return xorResult;
+  };
+
+  const finalXor = computeXor(right + 1n, bitIndex, xorConstant) ^ computeXor(left, bitIndex, xorConstant);
+  return finalXor;
+}
 
   function testSolveQuery() {
     const testCases = [

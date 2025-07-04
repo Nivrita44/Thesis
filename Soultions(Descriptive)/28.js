@@ -5,7 +5,7 @@ function minimumCostToEqualize(xBig, yBig) {
         powersOfTwo[i] = powersOfTwo[i - 1] * 2n;
     }
 
-    // Initialize DP table
+    
     const dp = Array.from({ length: MAX_BITS + 1 }, () =>
         Array.from({ length: MAX_BITS + 1 }, () =>
             Array(MAX_BITS + 1).fill(Infinity)
@@ -20,7 +20,6 @@ function minimumCostToEqualize(xBig, yBig) {
         }
     }
 
-    // DP precomputation
     for (let i = 0; i <= MAX_BITS; i++) {
         for (let j = 0; j <= MAX_BITS; j++) {
             for (let k = MAX_BITS; k >= 1; k--) {
@@ -36,7 +35,7 @@ function minimumCostToEqualize(xBig, yBig) {
         }
     }
 
-    // Map ancestors of x
+    
     const xAncestors = new Map();
     let x = xBig;
     for (let i = 0; i <= MAX_BITS; i++) {

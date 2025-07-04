@@ -1,45 +1,48 @@
-function solve(n, m, k, h, x) {
-    let ans = Infinity;
-    let lo = 1, hi = 1e9;
+function solve(numEnemies, maxHits, requiredEnemies, enemyHealth, enemyPositions) {
+    let minimumTime = Infinity;
+    let low = 1, high = 1e9;
 
-    while (lo <= hi) {
-        const mid = Math.floor((lo + hi) / 2);
-        const range = [];
+    while (low <= high) {
+        const midTime = Math.floor((low + high) / 2);
+        const attackRanges = [];
 
-        for (let j = 0; j < x.length; j++) {
-            const minDamage = Math.ceil(h[j] / mid);
-            const diff = m - minDamage;
-            const start = x[j] - diff;
-            const end = x[j] + diff;
-            if (start <= end) {
-                range.push([start, 1]);
-                range.push([end + 1, -1]);
+        for (let i = 0; i < numEnemies; i++) {
+            const hitsNeeded = Math.ceil(enemyHealth[i] / midTime);
+            const extraHits = maxHits - hitsNeeded;
+            const rangeStart = enemyPositions[i] - extraHits;
+            const rangeEnd = enemyPositions[i] + extraHits;
+
+            if (rangeStart <= rangeEnd) {
+                attackRanges.push([rangeStart, 1]);        // Start of range
+                attackRanges.push([rangeEnd + 1, -1]);     // End of range
             }
         }
 
-        range.sort((a, b) => a[0] - b[0]);
+        // Sort the attackRanges based on position
+        attackRanges.sort((a, b) => a[0] - b[0]);
 
-        let total = 0;
-        let found = false;
+        let activeCount = 0;
+        let isEnough = false;
 
-        for (let j = 0; j < range.length; j++) {
-            total += range[j][1];
-            if (total >= k) {
-                found = true;
+        for (let j = 0; j < attackRanges.length; j++) {
+            activeCount += attackRanges[j][1];
+            if (activeCount >= requiredEnemies) {
+                isEnough = true;
                 break;
             }
         }
 
-        if (found) {
-            ans = mid;
-            hi = mid - 1;
+        if (isEnough) {
+            minimumTime = midTime;
+            high = midTime - 1;
         } else {
-            lo = mid + 1;
+            low = midTime + 1;
         }
     }
 
-    return ans === Infinity ? -1 : ans;
+    return minimumTime === Infinity ? -1 : minimumTime;
 }
+
 
 function testSolve() {
     const testCases = [

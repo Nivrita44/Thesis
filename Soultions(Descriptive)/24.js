@@ -1,33 +1,53 @@
-const cal = (x, y, z, d) => {
-    return x * d + Math.ceil(z / d) * y;
+
+const calculateCost = (unitCost, overheadCost, remainingWork, divisor) => {
+    return unitCost * divisor + Math.ceil(remainingWork / divisor) * overheadCost;
 };
 
-const fun = (mn, mx, x, y, z) => {
-    if (mn === 0) mn++;
-    let ans2 = cal(x, y, z, mn);
-    for (let d = mn; d <= mx;) {
-        let cnt = Math.ceil(z / d);
-        ans2 = Math.min(ans2, x * d + cnt * y);
-        if (cnt === 1) break;
-        d = Math.floor((z + cnt - 2) / (cnt - 1));
+
+const optimizeCostInRange = (minDivisor, maxDivisor, unitCost, overheadCost, remainingWork) => {
+    if (minDivisor === 0) minDivisor++;
+
+    let minimumCost = calculateCost(unitCost, overheadCost, remainingWork, minDivisor);
+
+    for (let divisor = minDivisor; divisor <= maxDivisor;) {
+        const chunks = Math.ceil(remainingWork / divisor);
+        minimumCost = Math.min(minimumCost, unitCost * divisor + chunks * overheadCost);
+
+        if (chunks === 1) break;
+
+        divisor = Math.floor((remainingWork + chunks - 2) / (chunks - 1));
     }
-    return ans2;
+
+    return minimumCost;
 };
 
-const solve = (x, y, z, k) => {
-    let ans = Number.MAX_SAFE_INTEGER;
-    for (let cnt = 0;; cnt++) {
-        let nz = z - k * cnt * (cnt + 1) / 2;
-        let add = cnt * y;
-        if (nz <= 0) {
-            ans = Math.min(ans, add + k * cnt * x);
+
+const solve = (unitCost, overheadCost, totalWork, maxGroupSize) => {
+    let minimumTotalCost = Number.MAX_SAFE_INTEGER;
+
+    for (let groupCount = 0;; groupCount++) {
+        const remainingWork = totalWork - maxGroupSize * groupCount * (groupCount + 1) / 2;
+        let currentCost = groupCount * overheadCost;
+
+        if (remainingWork <= 0) {
+            minimumTotalCost = Math.min(minimumTotalCost, currentCost + maxGroupSize * groupCount * unitCost);
             break;
         }
-        add += fun(k * cnt, k * (cnt + 1) - 1, x, y, nz);
-        ans = Math.min(ans, add);
+
+        currentCost += optimizeCostInRange(
+            maxGroupSize * groupCount,
+            maxGroupSize * (groupCount + 1) - 1,
+            unitCost,
+            overheadCost,
+            remainingWork
+        );
+
+        minimumTotalCost = Math.min(minimumTotalCost, currentCost);
     }
-    return ans;
+
+    return minimumTotalCost;
 };
+
 
 const test = () => {
     const inputs = [

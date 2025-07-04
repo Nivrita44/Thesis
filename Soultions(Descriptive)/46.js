@@ -1,20 +1,21 @@
 function solveFunctional(k, sizes) {
-    const LOG = 20;
-    const arr = [...sizes].sort((a, b) => b - a);
+    const MAX_BIT = 20;
+    const sortedSizesDesc = [...sizes].sort((a, b) => b - a);
 
-    let ans = 0;
-    for (let j = 0; j < k; j++) {
-        let x = arr[j];
-        for (let i = LOG - 1; i >= 0; i--) {
-            const bit = 1 << i;
-            if ((ans & bit) === 0 && x >= bit) {
-                x -= bit;
-                ans |= bit;
+    let result = 0;
+    for (let index = 0; index < k; index++) {
+        let currentSize = sortedSizesDesc[index];
+        for (let bitPos = MAX_BIT - 1; bitPos >= 0; bitPos--) {
+            const bitMask = 1 << bitPos;
+            if ((result & bitMask) === 0 && currentSize >= bitMask) {
+                currentSize -= bitMask;
+                result |= bitMask;
             }
         }
     }
-    return ans;
+    return result;
 }
+
 
 
 function testSolve() {

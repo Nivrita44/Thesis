@@ -30,7 +30,7 @@ function pow(a, b) {
 }
 
 function solve(n, m, k, queries) {
-    let cnt = 0;
+    let count = 0;
     let black = 0;
 
     for (let i = 0; i < k; i++) {
@@ -39,14 +39,14 @@ function solve(n, m, k, queries) {
         const isCorner = (x === 1 && y === 1) || (x === 1 && y === m) ||
                          (x === n && y === 1) || (x === n && y === m);
         if (isBorder && !isCorner) {
-            cnt++;
+            count++;
             black += color;
         }
     }
 
     const total = BigInt(n) * BigInt(m) - BigInt(k);
 
-    if (cnt === 2 * (n + m - 4)) {
+    if (count === 2 * (n + m - 4)) {
         return (black & 1) ? 0 : pow(2, total);
     } else {
         return pow(2, total - 1n);

@@ -1,100 +1,112 @@
-const MAXNODES = 1000000;
+const MAX_NODES = 1_000_000;
+
 
 function getBitLength(x) {
     return x.toString(2).length;
 }
 
-function solve(n, k, A) {
-    if (k === 0) return '1';
+function solve(arrayLength, xorLimit, array) {
+    if (xorLimit === 0) return '1';
 
-    const p = getBitLength(k) - 1;
-    const shift = p + 1;
-    const pref0 = A[0] >> shift;
-    let ok = false;
-    for (let i = 1; i < n; i++) {
-        if ((A[i] >> shift) !== pref0) {
-            ok = true;
+    const highestSetBit = getBitLength(xorLimit) - 1;
+    const bitShift = highestSetBit + 1;
+    const prefixGroup = array[0] >> bitShift;
+
+    
+    let diversePrefixFound = false;
+    for (let i = 1; i < arrayLength; i++) {
+        if ((array[i] >> bitShift) !== prefixGroup) {
+            diversePrefixFound = true;
             break;
         }
     }
-    if (ok) return '2';
 
-    const rem = k ^ (1 << p);
-    const typ = A.map(x => (x >> p) & 1);
-    let low = p > 0 ? A.map(x => x & ((1 << p) - 1)) : new Array(n).fill(0);
+    if (diversePrefixFound) return '2';
 
-    let nodeCount = 1;
-    let ans = n + 1;
+    const remainingXor = xorLimit ^ (1 << highestSetBit); 
+    const typeBits = array.map(num => (num >> highestSetBit) & 1); 
+    const lowerBits = highestSetBit > 0
+        ? array.map(num => num & ((1 << highestSetBit) - 1))
+        : new Array(arrayLength).fill(0);
 
-    
-    const ch0 = new Uint32Array(MAXNODES + 5).fill(0);
-    const ch1 = new Uint32Array(MAXNODES + 5).fill(0);
-    const mx0 = new Uint32Array(MAXNODES + 5).fill(0);
-    const mx1 = new Uint32Array(MAXNODES + 5).fill(0);
+    let nodeCounter = 1;
+    let minimumLength = arrayLength + 1;
 
-    for (let i = 0; i < n; i++) {
-        const idx = i + 1;
-        const t0 = typ[i];
-        const t1 = t0 ^ 1;
+    const trieLeft = new Uint32Array(MAX_NODES + 5).fill(0);
+    const trieRight = new Uint32Array(MAX_NODES + 5).fill(0);
+    const maxIndexType0 = new Uint32Array(MAX_NODES + 5).fill(0);
+    const maxIndexType1 = new Uint32Array(MAX_NODES + 5).fill(0);
+
+    for (let i = 0; i < arrayLength; i++) {
+        const currentIndex = i + 1;
+        const currentType = typeBits[i];
+        const oppositeType = currentType ^ 1;
 
         
-        if ((t1 === 0 ? mx0[1] : mx1[1]) !== 0) {
-            let best = 0;
-            let nd = 1;
-            const v = low[i];
-            for (let b = p - 1; b >= 0 && nd; b--) {
-                const rb = (rem >> b) & 1;
-                const vb = (v >> b) & 1;
+        if ((oppositeType === 0 ? maxIndexType0[1] : maxIndexType1[1]) !== 0) {
+            let bestIndex = 0;
+            let node = 1;
+            const currentValue = lowerBits[i];
 
-                if (rb === 0) {
-                    const xb = vb ^ 1;
-                    const c = xb === 0 ? ch0[nd] : ch1[nd];
-                    if (c) {
-                        const val = t1 === 0 ? mx0[c] : mx1[c];
-                        if (val > best) best = val;
+            for (let bit = highestSetBit - 1; bit >= 0 && node; bit--) {
+                const requiredBit = (remainingXor >> bit) & 1;
+                const valueBit = (currentValue >> bit) & 1;
+
+                
+                if (requiredBit === 0) {
+                    const flippedBit = valueBit ^ 1;
+                    const child = flippedBit === 0 ? trieLeft[node] : trieRight[node];
+                    if (child) {
+                        const candidateIndex = oppositeType === 0 ? maxIndexType0[child] : maxIndexType1[child];
+                        if (candidateIndex > bestIndex) bestIndex = candidateIndex;
                     }
                 }
 
-                const xb = vb ^ rb;
-                nd = xb === 0 ? ch0[nd] : ch1[nd];
+                const nextBit = valueBit ^ requiredBit;
+                node = nextBit === 0 ? trieLeft[node] : trieRight[node];
             }
 
-            if (nd) {
-                const val = t1 === 0 ? mx0[nd] : mx1[nd];
-                if (val > best) best = val;
+            
+            if (node) {
+                const candidateIndex = oppositeType === 0 ? maxIndexType0[node] : maxIndexType1[node];
+                if (candidateIndex > bestIndex) bestIndex = candidateIndex;
             }
 
-            if (best) {
-                const length = idx - best + 1;
-                if (length < ans) {
-                    ans = length;
-                    if (ans === 2) break;
+            if (bestIndex) {
+                const segmentLength = currentIndex - bestIndex + 1;
+                if (segmentLength < minimumLength) {
+                    minimumLength = segmentLength;
+                    if (minimumLength === 2) break; 
                 }
             }
         }
 
         
-        if (t0 === 0) mx0[1] = idx;
-        else mx1[1] = idx;
+        if (currentType === 0) maxIndexType0[1] = currentIndex;
+        else maxIndexType1[1] = currentIndex;
 
-        let nd = 1;
-        for (let b = p - 1; b >= 0; b--) {
-            const vb = (low[i] >> b) & 1;
-            let c = vb === 0 ? ch0[nd] : ch1[nd];
-            if (c === 0) {
-                nodeCount++;
-                if (vb === 0) ch0[nd] = nodeCount;
-                else ch1[nd] = nodeCount;
-                c = nodeCount;
+        let node = 1;
+        for (let bit = highestSetBit - 1; bit >= 0; bit--) {
+            const bitValue = (lowerBits[i] >> bit) & 1;
+            let child = bitValue === 0 ? trieLeft[node] : trieRight[node];
+
+            if (child === 0) {
+                nodeCounter++;
+                if (bitValue === 0) trieLeft[node] = nodeCounter;
+                else trieRight[node] = nodeCounter;
+                child = nodeCounter;
             }
-            nd = c;
-            if (t0 === 0) mx0[nd] = idx;
-            else mx1[nd] = idx;
+
+            node = child;
+
+            if (currentType === 0) maxIndexType0[node] = currentIndex;
+            else maxIndexType1[node] = currentIndex;
         }
     }
 
-    return ans <= n ? ans.toString() : '-1';
+    return minimumLength <= arrayLength ? minimumLength.toString() : '-1';
 }
+
 
 function testSolve() {
     const testCases = [

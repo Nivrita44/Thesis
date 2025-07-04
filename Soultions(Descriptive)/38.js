@@ -14,41 +14,41 @@ function add(x) {
 }
 
 function ask(x) {
-    let ans = 0;
+    let answer = 0;
     while (x > 0) {
-        ans += sum[x];
+        answer += sum[x];
         x -= lowbit(x);
     }
-    return ans;
+    return answer;
 }
 
 function solve(s) {
     const n = s.length;
     const a = [];
 
-    for (const ch of s) {
-        if (ch === '0') {
+    for (const character of s) {
+        if (character === '0') {
             a.push(1);
         } else {
             a.push(-3);
         }
     }
 
-    let ans = 0;
+    let answer = 0;
     let pre_sum = 0;
     add(pre_sum + offset);
 
-    const cnt = new Map();
-    cnt.set(0, 1);
+    const count = new Map();
+    count.set(0, 1);
 
     for (let i = 0; i < n; i++) {
         pre_sum += a[i];
-        ans += (cnt.get(pre_sum + 1) || 0) + ask(pre_sum - 2 + offset);
-        cnt.set(pre_sum, (cnt.get(pre_sum) || 0) + 1);
+        answer += (count.get(pre_sum + 1) || 0) + ask(pre_sum - 2 + offset);
+        count.set(pre_sum, (count.get(pre_sum) || 0) + 1);
         add(pre_sum + offset);
     }
 
-    return ans;
+    return answer;
 }
 
 function testSolve() {

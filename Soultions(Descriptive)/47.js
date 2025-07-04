@@ -1,45 +1,46 @@
-function processScoreCases(cases) {
+function processScoreCases(testCases) {
     const results = [];
 
-    for (const { n, k, a, b } of cases) {
-        let l = 0, r = 1_000_000_001;
-        let remainingK = k;
-        const aCopy = [...a];
+    for (const { n, k, a, b } of testCases) {
+        let low = 0, high = 1_000_000_001;
+        let remainingOperations = k;
+        const initialValues = [...a];
 
-        while (r - l > 1) {
-            const mid = Math.floor((r + l) / 2);
-            let cnt = 0;
+        while (high - low > 1) {
+            const mid = Math.floor((high + low) / 2);
+            let totalIterations = 0;
             for (let i = 0; i < n; i++) {
-                cnt += Math.max(0, Math.floor((aCopy[i] - mid) / b[i]) + 1);
+                totalIterations += Math.max(0, Math.floor((initialValues[i] - mid) / b[i]) + 1);
             }
-            if (cnt <= k) {
-                r = mid;
+            if (totalIterations <= k) {
+                high = mid;
             } else {
-                l = mid;
+                low = mid;
             }
         }
 
-        let score = 0n;
-        const aUsed = [...a];
+        let totalScore = 0n;
+        const updatedValues = [...a];
 
         for (let i = 0; i < n; i++) {
-            let iters = Math.max(0, Math.floor((aUsed[i] - r) / b[i]) + 1);
-            remainingK -= iters;
-            score += BigInt(iters) * BigInt(aUsed[i] + aUsed[i] - (iters - 1) * b[i]) / 2n;
-            aUsed[i] -= b[i] * iters;
+            let iterations = Math.max(0, Math.floor((updatedValues[i] - high) / b[i]) + 1);
+            remainingOperations -= iterations;
+            totalScore += BigInt(iterations) * BigInt(updatedValues[i] + updatedValues[i] - (iterations - 1) * b[i]) / 2n;
+            updatedValues[i] -= b[i] * iterations;
         }
 
-        aUsed.sort((x, y) => y - x);
-        for (let i = 0; i < Math.min(n, remainingK); i++) {
-            if (aUsed[i] <= 0) break;
-            score += BigInt(aUsed[i]);
+        updatedValues.sort((x, y) => y - x);
+        for (let i = 0; i < Math.min(n, remainingOperations); i++) {
+            if (updatedValues[i] <= 0) break;
+            totalScore += BigInt(updatedValues[i]);
         }
 
-        results.push(score.toString());
+        results.push(totalScore.toString());
     }
 
     return results;
 }
+
 
 function test() {
     const cases = [

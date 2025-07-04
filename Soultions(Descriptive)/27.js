@@ -1,27 +1,35 @@
-function solve(n, points) {
-    const xs = new Map(), xys = new Map()
-    for (let i = 0; i < n; i++) {
-        const [x, y] = points[i]
-        xs.set(x, (xs.get(x) || 0) + 1)
-        xys.set(x + y, (xys.get(x + y) || 0) + 1)
+function solve(numPoints, pointList) {
+    const xFrequency = new Map();
+    const diagonalSumFrequency = new Map();
+
+    for (let i = 0; i < numPoints; i++) {
+        const [x, y] = pointList[i];
+
+        xFrequency.set(x, (xFrequency.get(x) || 0) + 1);
+        diagonalSumFrequency.set(x + y, (diagonalSumFrequency.get(x + y) || 0) + 1);
     }
 
-    let fx, fxy
-    for (const [x, count] of xs) {
-        if (count & 1) {
-            fx = x
-            break
-        }
-    }
-    for (const [xy, count] of xys) {
-        if (count & 1) {
-            fxy = xy
-            break
+    let uniqueX, uniqueY;
+
+    
+    for (const [xCoord, count] of xFrequency) {
+        if (count % 2 === 1) {
+            uniqueX = xCoord;
+            break;
         }
     }
 
-    return [fx, fxy - fx]
+    
+    for (const [diagonalSum, count] of diagonalSumFrequency) {
+        if (count % 2 === 1) {
+            uniqueY = diagonalSum - uniqueX;
+            break;
+        }
+    }
+
+    return [uniqueX, uniqueY];
 }
+
 
 function testSolve() {
     const testCases = [

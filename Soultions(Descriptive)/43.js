@@ -1,42 +1,42 @@
-function solveTreeDP(n, c, arr, edges) {
-    arr.unshift(0)
-    const adj = {}
-    for (let [u, v] of edges) {
-        adj[u] = adj[u] || []
-        adj[v] = adj[v] || []
-        adj[u].push(v)
-        adj[v].push(u)
+function solveTreeDP(nodeCount, cost, values, edges) {
+    values.unshift(0);
+    const adjacencyList = {};
+    for (const [u, v] of edges) {
+        adjacencyList[u] = adjacencyList[u] || [];
+        adjacencyList[v] = adjacencyList[v] || [];
+        adjacencyList[u].push(v);
+        adjacencyList[v].push(u);
     }
-    const dp0 = Array(n + 1).fill(0)
-    const dp1 = Array(n + 1).fill(0)
 
-    const stack = [
-        [1, 0, -1]
-    ]
-    while (stack.length) {
-        const [u, i, p] = stack[stack.length - 1]
-        const nb = adj[u] || []
-        if (i < nb.length) {
-            stack[stack.length - 1][1]++
-                const v = nb[i]
-            if (v !== p) {
-                stack.push([v, 0, u])
+    const dpExclude = Array(nodeCount + 1).fill(0);
+    const dpInclude = Array(nodeCount + 1).fill(0);
+
+    const stack = [[1, 0, -1]];
+
+    while (stack.length > 0) {
+        const [currentNode, nextChildIndex, parentNode] = stack[stack.length - 1];
+        const neighbors = adjacencyList[currentNode] || [];
+
+        if (nextChildIndex < neighbors.length) {
+            stack[stack.length - 1][1]++;
+            const childNode = neighbors[nextChildIndex];
+            if (childNode !== parentNode) {
+                stack.push([childNode, 0, currentNode]);
             }
         } else {
-            stack.pop()
-            dp1[u] = arr[u]
-            for (let v of nb) {
-                if (v === p) continue
-                dp0[u] += Math.max(dp0[v], dp1[v])
-                dp1[u] += Math.max(dp0[v], dp1[v] - 2 * c)
+            stack.pop();
+            dpInclude[currentNode] = values[currentNode];
+            for (const neighbor of neighbors) {
+                if (neighbor === parentNode) continue;
+                dpExclude[currentNode] += Math.max(dpExclude[neighbor], dpInclude[neighbor]);
+                dpInclude[currentNode] += Math.max(dpExclude[neighbor], dpInclude[neighbor] - 2 * cost);
             }
         }
     }
-    return Math.max(dp0[1], dp1[1]);
 
-
-
+    return Math.max(dpExclude[1], dpInclude[1]);
 }
+
 
 
 function testSolveTreeDP() {

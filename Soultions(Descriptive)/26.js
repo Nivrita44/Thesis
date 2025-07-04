@@ -1,47 +1,64 @@
-function solve(n, s) {
-    const parts = []
-    let o
-    for (let i = 0; i < n; i++) {
-        if (s[i] === s[i - 1]) {
-            o.c++
-            o.r = i
+function solve(length, binaryString) {
+    const segments = [];
+    let currentSegment;
+
+   
+    for (let i = 0; i < length; i++) {
+        if (binaryString[i] === binaryString[i - 1]) {
+            currentSegment.count++;
+            currentSegment.right = i;
         } else {
-            o = { c: 1, l: i, r: i }
-            parts.push(o)
+            currentSegment = { count: 1, left: i, right: i };
+            segments.push(currentSegment);
         }
     }
 
-    if (o.c === n && s[0] === '0') {
-        return sum(1, n - 1)
+    
+    if (currentSegment.count === length && binaryString[0] === '0') {
+        return arithmeticSum(1, length - 1);
     }
 
-    let temp, max = 0
-    for (let i = 0; i < parts.length; i++) {
-        o = parts[i]
-        if (+s[o.l]) {
-            if (o.c > 1) {
-                temp = 1 + Math.max(
-                    cal(parts[i - 1], 0),
-                    cal(parts[i + 1], 1),
-                )
+    let maxValue = 0;
+
+    
+    for (let i = 0; i < segments.length; i++) {
+        const segment = segments[i];
+
+        
+        if (binaryString[segment.left] === '1') {
+            let tempSum;
+
+            if (segment.count > 1) {
+                tempSum = 1 + Math.max(
+                    computeTailSum(segments[i - 1], false),
+                    computeTailSum(segments[i + 1], true)
+                );
             } else {
-                temp = 1 + cal(parts[i - 1], 0)
-                        + cal(parts[i + 1], 1)
+                tempSum = 1
+                    + computeTailSum(segments[i - 1], false)
+                    + computeTailSum(segments[i + 1], true);
             }
-            max = Math.max(max, temp)
+
+            maxValue = Math.max(maxValue, tempSum);
         }
     }
-    return max
 
-    function cal(o, up) {
-        if (!o) return 0
-        return up ? sum(o.l, o.c) : sum(n - 1 - o.r, o.c)
+    return maxValue;
+
+    
+    function computeTailSum(segment, isRightSide) {
+        if (!segment) return 0;
+        return isRightSide
+            ? arithmeticSum(segment.left, segment.count)
+            : arithmeticSum(length - 1 - segment.right, segment.count);
     }
 
-    function sum(first, k) {
-        return (first + first + k - 1) * k / 2
+    
+    function arithmeticSum(start, count) {
+        return (start + start + count - 1) * count / 2;
     }
 }
+
 
 function testSolve() {
     const testCases = [

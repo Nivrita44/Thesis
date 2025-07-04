@@ -1,55 +1,50 @@
-function solve(arr) {
-    const n = arr.length;
-    const has = {};
-    for (let i = 0; i < n; i++) {
-        const x = arr[i];
-        has[x] = 1;
+function solve(numbers) {
+    const length = numbers.length;
+    const presenceMap = {};
+    for (let i = 0; i < length; i++) {
+        presenceMap[numbers[i]] = true;
     }
-    arr.sort((a, b) => b - a);
-    
-    let lcm = arr[0];
-    for (let i = 1; i < n; i++) {
-        const x = arr[i];
-        lcm = getLCM(lcm, x);
-        if (lcm > 1e9) return n;
-    }
-    if (!has[lcm]) return n;
+    numbers.sort((a, b) => b - a);
 
-    const limit = Math.floor(Math.sqrt(lcm));
-    let r = 0;
-    for (let i = 1; i <= limit; i++) {
-        if (lcm % i) continue;
-        r = Math.max(r, cal(i), cal(lcm / i));
+    let currentLCM = numbers[0];
+    for (let i = 1; i < length; i++) {
+        currentLCM = getLCM(currentLCM, numbers[i]);
+        if (currentLCM > 1e9) return length;
     }
-    return r;
+    if (!presenceMap[currentLCM]) return length;
 
-    function cal(d) {
-        if (has[d]) return 0;
-        let c = 0, temp;
-        for (let i = 0; i < n; i++) {
-            if (!(d % arr[i])) {
-                temp = temp ? getLCM(temp, arr[i]) : arr[i];
-                c++;
+    const sqrtLimit = Math.floor(Math.sqrt(currentLCM));
+    let maxCount = 0;
+    for (let divisor = 1; divisor <= sqrtLimit; divisor++) {
+        if (currentLCM % divisor !== 0) continue;
+        maxCount = Math.max(maxCount, countMultiples(divisor), countMultiples(currentLCM / divisor));
+    }
+    return maxCount;
+
+    function countMultiples(divisor) {
+        if (presenceMap[divisor]) return 0;
+        let count = 0, combinedLCM;
+        for (let i = 0; i < length; i++) {
+            if (divisor % numbers[i] === 0) {
+                combinedLCM = combinedLCM ? getLCM(combinedLCM, numbers[i]) : numbers[i];
+                count++;
             }
         }
-        return (d === temp) ? c : 0;
+        return divisor === combinedLCM ? count : 0;
     }
 }
 
-function getLCM(lcm, x) {
-    return lcm / gcd(x, lcm) * x;
+function getLCM(a, b) {
+    return (a / gcd(a, b)) * b;
 }
 
 function gcd(a, b) {
-    if (a === 0) return b;
-    if (b === 0) return a;
-
-    while (a) {
-        const r = b % a;
-        b = a;
-        a = r;
+    while (b !== 0) {
+        const temp = b;
+        b = a % b;
+        a = temp;
     }
-    return b;
+    return a;
 }
 
 

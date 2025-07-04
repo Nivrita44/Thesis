@@ -1,144 +1,145 @@
 class FastQueue {
     constructor() {
-        this.map = {};
-        this.first = 0;
-        this.last = -1;
+        this.data = {};
+        this.front = 0;
+        this.back = -1;
     }
-    push(...args) {
+
+    push(...values) {
         let i = 0;
         if (!this.length) {
-            this.first = this.last = 0;
-            this.map[this.first] = args[i++];
+            this.front = this.back = 0;
+            this.data[this.front] = values[i++];
         }
-        for (; i < args.length; i++) {
-            this.map[++this.last] = args[i];
+        for (; i < values.length; i++) {
+            this.data[++this.back] = values[i];
         }
     }
-    unshift(...args) {
+
+    unshift(...values) {
         let i = 0;
         if (!this.length) {
-            this.first = this.last = 0;
-            this.map[this.first] = args[i++];
+            this.front = this.back = 0;
+            this.data[this.front] = values[i++];
         }
-        for (; i < args.length; i++) {
-            this.map[--this.first] = args[i];
+        for (; i < values.length; i++) {
+            this.data[--this.front] = values[i];
         }
     }
+
     pop() {
-        const r = this.map[this.last];
-        delete this.map[this.last];
-        this.last--;
-        return r;
+        const value = this.data[this.back];
+        delete this.data[this.back];
+        this.back--;
+        return value;
     }
+
     shift() {
-        const r = this.map[this.first];
-        delete this.map[this.first];
-        this.first++;
-        return r;
+        const value = this.data[this.front];
+        delete this.data[this.front];
+        this.front++;
+        return value;
     }
+
     get length() {
-        if (this.first > this.last) return 0;
-        return this.last - this.first + 1;
+        return this.front > this.back ? 0 : this.back - this.front + 1;
     }
-    get(x) {
-        return this.map[this.first + x];
+
+    get(index) {
+        return this.data[this.front + index];
     }
+
     getLast() {
-        return this.map[this.last];
+        return this.data[this.back];
     }
-    forEach(fn) {
-        for (let i = this.first; i <= this.last; i++) {
-            const r = fn(this.map[i], i - this.first);
-            if (r === false) break;
+
+    forEach(callback) {
+        for (let i = this.front; i <= this.back; i++) {
+            const result = callback(this.data[i], i - this.front);
+            if (result === false) break;
         }
     }
 }
 
-function solve(n, arr, queries) {
-    // Precompute cnt array
-    const cnt = Array(n + 1).fill(0);
-    for (let i = 1; i <= n; i++) {
-        cnt[i] = n + 1 - i;
+function solve(arraySize, array, queries) {
+    const triangleCounts = Array(arraySize + 1).fill(0);
+    for (let i = 1; i <= arraySize; i++) {
+        triangleCounts[i] = arraySize + 1 - i;
     }
 
-    // Precompute prefix sums for cnt
-    const pcnt = Array(n + 2).fill(0);
-    for (let i = 1; i <= n; i++) {
-        pcnt[i] = pcnt[i - 1] + cnt[i];
+    const trianglePrefix = Array(arraySize + 2).fill(0);
+    for (let i = 1; i <= arraySize; i++) {
+        trianglePrefix[i] = trianglePrefix[i - 1] + triangleCounts[i];
     }
 
-    // Compute total sum of all elements
-    let total = 0;
-    for (let i = 0; i < n; i++) {
-        total += (n - i) * arr[i];
+    let totalSum = 0;
+    for (let i = 0; i < arraySize; i++) {
+        totalSum += (arraySize - i) * array[i];
     }
 
-    // Compute sum array
-    const sum = Array(n + 1).fill(0);
-    sum[0] = 0;
-    let runningTotal = total;
-    for (let i = 1; i <= n; i++) {
-        sum[i] = runningTotal;
-        runningTotal -= (n - i + 1) * arr[i - 1];
+    const triangleWeightedSum = Array(arraySize + 1).fill(0);
+    let currentSum = totalSum;
+    for (let i = 1; i <= arraySize; i++) {
+        triangleWeightedSum[i] = currentSum;
+        currentSum -= (arraySize - i + 1) * array[i - 1];
     }
 
-    // Compute prefix sums for sum array
-    const psum = Array(n + 2).fill(0n);
-    for (let i = 1; i <= n; i++) {
-        psum[i] = psum[i - 1] + BigInt(sum[i]);
+    const prefixTriangleSum = Array(arraySize + 2).fill(0n);
+    for (let i = 1; i <= arraySize; i++) {
+        prefixTriangleSum[i] = prefixTriangleSum[i - 1] + BigInt(triangleWeightedSum[i]);
     }
 
-    // Compute prefix sums for arr
-    const pre = Array(n + 1).fill(0n);
-    for (let i = 1; i <= n; i++) {
-        pre[i] = pre[i - 1] + BigInt(arr[i - 1]);
+    const prefixArray = Array(arraySize + 1).fill(0n);
+    for (let i = 1; i <= arraySize; i++) {
+        prefixArray[i] = prefixArray[i - 1] + BigInt(array[i - 1]);
     }
 
-    // Compute prefix sums of prefix sums
-    const ppre = Array(n + 2).fill(0n);
-    for (let i = 1; i <= n; i++) {
-        ppre[i] = ppre[i - 1] + pre[i];
+    const prefixOfPrefix = Array(arraySize + 2).fill(0n);
+    for (let i = 1; i <= arraySize; i++) {
+        prefixOfPrefix[i] = prefixOfPrefix[i - 1] + prefixArray[i];
     }
 
-    // Process queries
-    const results = [];
-    for (const [l, r] of queries) {
-        const res = cal(r) - cal(l - 1);
-        results.push(res.toString());
+    const output = [];
+    for (const [left, right] of queries) {
+        const result = calculate(right) - calculate(left - 1);
+        output.push(result.toString());
     }
 
-    return results;
+    return output;
 
-    function binarySearch(l, r, fn) {
-        while (l <= r) {
-            const m = Math.floor((l + r) / 2);
-            if (fn(m)) {
-                l = m + 1;
+    function binarySearch(low, high, condition) {
+        while (low <= high) {
+            const mid = Math.floor((low + high) / 2);
+            if (condition(mid)) {
+                low = mid + 1;
             } else {
-                r = m - 1;
+                high = mid - 1;
             }
         }
-        return r;
+        return high;
     }
 
-    function cal(p) {
-        if (p <= 0) return 0n;
+    function calculate(position) {
+        if (position <= 0) return 0n;
 
-        const start = binarySearch(1, n, x => pcnt[x] <= p);
-        const rest = p - pcnt[start];
-        
-        let row, col;
-        if (rest) {
-            row = start + 1;
-            col = start + rest;
+        const baseIndex = binarySearch(1, arraySize, i => trianglePrefix[i] <= position);
+        const remaining = position - trianglePrefix[baseIndex];
+
+        let startRow, endCol;
+        if (remaining) {
+            startRow = baseIndex + 1;
+            endCol = baseIndex + remaining;
         } else {
-            row = start;
-            col = n;
+            startRow = baseIndex;
+            endCol = arraySize;
         }
 
-        return psum[row - 1] + (ppre[col] - ppre[row - 1]) - pre[row - 1] * BigInt(col - row + 1);
+        return prefixTriangleSum[startRow - 1]
+            + (prefixOfPrefix[endCol] - prefixOfPrefix[startRow - 1])
+            - prefixArray[startRow - 1] * BigInt(endCol - startRow + 1);
     }
 }
+
 
 // Test function
 function test() {
