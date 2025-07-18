@@ -1,0 +1,17 @@
+{
+    "$schema": "./node_modules/@stryker-mutator/core/schema/stryker-schema.json",
+    "testRunner": "jest",
+    "jest": {
+  "projectType": "custom",
+  "configFile": "jest.config.js",
+  "enableFindRelatedTests": false
+},
+        
+    "mutate": ["solutions-descriptive/1.js"],
+    "coverageAnalysis": "off",
+    "reporters": ["clear-text", "html"],
+    "commandRunner": {
+      "command": "jest tests-descriptive/1_prompt1.test.js"
+    }
+  }
+  
