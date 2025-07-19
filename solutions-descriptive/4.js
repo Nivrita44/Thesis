@@ -1,4 +1,4 @@
-function calculateMaxProductScore(array) {
+export function solve(array) {
     const arrayLength = array.length;
     
     const dpTable = Array(arrayLength).fill(0).map(() => Array(arrayLength).fill(0));
@@ -30,7 +30,7 @@ function calculateMaxProductScore(array) {
     return dpTable[0][arrayLength - 1];
 }
 
-function runTestCases() {
+function testing_test() {
     const testCases = [
         { input: [2, 1, 2, 1, 1, 1], expected: 5 },
         { input: [1, 2, 1, 3, 1, 5], expected: 30 },
@@ -39,10 +39,10 @@ function runTestCases() {
     ];
 
     testCases.forEach(({ input, expected }, index) => {
-        const result = calculateMaxProductScore(input);
+        const result = solve(input);
         console.log(`Test Case ${index + 1}:`, 
             result === expected ? "Passed" : `Failed (Expected: ${expected}, Got: ${result})`);
     });
 }
 
-runTestCases();
+testing_test();

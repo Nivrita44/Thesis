@@ -52,7 +52,7 @@
 
 
 
-function solve(range1Start, range1End, range2Start, range2End) {
+export function solve(range1Start, range1End, range2Start, range2End) {
     const segments1 = [], segments2 = [];
     computeSegments(segments1, range1Start, range1End, 0, 1 << 20);
     computeSegments(segments2, range2Start, range2End, 0, 1 << 20);

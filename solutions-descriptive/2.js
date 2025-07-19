@@ -56,7 +56,7 @@ function calculateBaseSum(baseP, n) {
 }
 
 
-function solve(n, k) {
+export function solve(n, k) {
     let totalSum = 0;
     let effectiveK;
 

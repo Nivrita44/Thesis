@@ -1,4 +1,4 @@
-function solve(x, y, maxFactorRatio) {
+export function solve(x, y, maxFactorRatio) {
     const commonGCD = gcd(x, y); 
     const stepsToX = minSteps(x / commonGCD);
     const stepsToY = minSteps(y / commonGCD);
@@ -79,4 +79,4 @@ function testing_test() {
 
 testing_test();
 
-module.exports = solve;
+

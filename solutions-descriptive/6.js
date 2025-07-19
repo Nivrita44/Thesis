@@ -44,7 +44,7 @@
 // test();
 
 
-function countSpecialXORSubarrays(arrayLength, numbers) {
+export function solve(arrayLength, numbers) {
     const MODULO = 1000000007;
     const prefixXOR = new Uint32Array(arrayLength + 1);
 
@@ -75,7 +75,7 @@ function countSpecialXORSubarrays(arrayLength, numbers) {
     return totalSpecialSubarrays;
 }
 
-function runXORSubarrayTests() {
+function testing_test() {
     const testCases = [
         { 
             description: "Small array with distinct elements",
@@ -110,7 +110,7 @@ function runXORSubarrayTests() {
     ];
 
     testCases.forEach(({ description, arrayLength, numbers, expected }) => {
-        const result = countSpecialXORSubarrays(arrayLength, numbers);
+        const result = solve(arrayLength, numbers);
         const testStatus = result === expected ? "PASSED" : "FAILED";
         
         console.log(`Test Case: ${description}`);
@@ -120,4 +120,4 @@ function runXORSubarrayTests() {
     });
 }
 
-runXORSubarrayTests();
+testing_test();

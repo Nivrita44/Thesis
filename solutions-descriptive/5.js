@@ -1,4 +1,4 @@
-function solveInteractiveProblem(n) {
+export function solve(n) {
     const steps = [];
     
     if (n === 81) {
@@ -10,7 +10,7 @@ function solveInteractiveProblem(n) {
     
     return steps;
 }
-function runTests() {
+function testing_test() {
     const testCases = [
         { input: 100, expected: ["add -19", "!"] },
         { input: 0, expected: ["add -81", "!"] },
@@ -20,7 +20,7 @@ function runTests() {
 
     console.log("Running Tests...\n");
     testCases.forEach(({ input, expected }, i) => {
-        const result = solveInteractiveProblem(input);
+        const result = solve(input);
         console.log(`Test ${i+1}:`);
         console.log(`Input: ${input}`);
         console.log(`Expected: ${JSON.stringify(expected)}`);
@@ -29,7 +29,7 @@ function runTests() {
     });
 }
 
- runTests();
+ testing_test();
 
 
 
