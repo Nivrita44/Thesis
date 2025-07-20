@@ -1,0 +1,7 @@
+Given a two-digit positive integer n, find the sum of its digits.
+
+Input
+The only line of test case contains a single two-digit positive integer n (10≤n≤99).
+
+Output
+For test case, output a single integer — the sum of the digits of n.

@@ -1,0 +1,8 @@
+Cube is given an integer n. She wants to know how many ordered pairs of positive integers (a,b) there are such that a=n−b. Since Cube is not very good at math, please help her!
+
+Input
+
+The only line of test case contains an integer n (2≤n≤100).
+
+Output
+For test case, output the number of ordered pairs (a,b) on a new line.
