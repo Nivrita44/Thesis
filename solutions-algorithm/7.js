@@ -1,5 +1,5 @@
 // Core logic function
-function Solve(n, s) {
+export function solve(n, s) {
     let running = [0];
     let power = 0;
 
@@ -19,7 +19,7 @@ function Solve(n, s) {
 }
 
 // Test function with your exact input/output
-function testSolve() {
+function testing_test() {
     const testCases = [
         { n: 5, s: [3, 3, 3, 0, 0], expected: 6 },
         { n: 6, s: [0, 3, 3, 0, 0, 3], expected: 6 },
@@ -30,7 +30,7 @@ function testSolve() {
 
     for (let i = 0; i < testCases.length; i++) {
         const { n, s, expected } = testCases[i];
-        const result = Solve(n, s);
+        const result = solve(n, s);
         const status = result === expected ? "PASS" : "FAIL";
         console.log(`Test ${i + 1}: Expected = ${expected}, Got = ${result} => ${status}`);
     }
@@ -38,5 +38,5 @@ function testSolve() {
 
 // Run tests when this script is executed directly
 if (require.main === module) {
-    testSolve();
+    testing_test();
 }

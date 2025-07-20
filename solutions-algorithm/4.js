@@ -1,5 +1,5 @@
 // Core logic function
-function Solve(arr) {
+export function solve(arr) {
     const lenOfArray = arr.length;
     const sortedArr = [...arr].sort((a, b) => a - b);
     const max1 = sortedArr[lenOfArray - 1];
@@ -17,7 +17,7 @@ function Solve(arr) {
 }
 
 // Test function
-function testSolve() {
+function testing_test() {
     const testCases = [
         { input: [4, 7, 3, 5], expected: [-3, 2, -4, -2] },
         { input: [1, 2], expected: [-1, 1] },
@@ -28,7 +28,7 @@ function testSolve() {
 
     for (let i = 0; i < testCases.length; i++) {
         const { input, expected } = testCases[i];
-        const result = Solve(input);
+        const result = solve(input);
         const pass = JSON.stringify(result) === JSON.stringify(expected);
         console.log(`Test ${i + 1}: Expected = [${expected}], Got = [${result}] => ${pass ? "PASS" : "FAIL"}`);
     }
@@ -36,5 +36,5 @@ function testSolve() {
 
 // Run tests when executed directly
 if (require.main === module) {
-    testSolve();
+    testing_test();
 }

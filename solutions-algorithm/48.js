@@ -1,5 +1,5 @@
 // Functional logic
-function maxNodesWithinCost(n, k, p, edges) {
+export function solve(n, k, p, edges) {
     const head = Array(n + 2).fill(-1);
     const ver = [];
     const nxt = [];
@@ -57,7 +57,7 @@ function maxNodesWithinCost(n, k, p, edges) {
 }
 
 // Test function
-function test() {
+function testing_test() {
     const tests = [{
             input: {
                 n: 5,
@@ -89,11 +89,11 @@ function test() {
 
     for (const { input, expected }
         of tests) {
-        const result = maxNodesWithinCost(input.n, input.k, input.p, input.edges);
+        const result = solve(input.n, input.k, input.p, input.edges);
         console.log(`Input: n=${input.n}, k=${input.k}, p=${input.p}, edges=${JSON.stringify(input.edges)}`);
         console.log(`Output: ${result} | Expected: ${expected} | ${result === expected ? "✅ PASS" : "❌ FAIL"}`);
     }
 }
 
 // Run tests
-test();
+testing_test();

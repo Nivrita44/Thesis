@@ -6,7 +6,7 @@
  * @param {number} k - The base for operations.
  * @returns {number}
  */
-function getMinCountOfOperations(num, k) {
+export function solve(num, k) {
     if (k === 1) {
         return num;
     }
@@ -24,11 +24,11 @@ function getMinCountOfOperations(num, k) {
  * @returns {number[]} - Array of results for each test case.
  */
 function solveCases(cases) {
-    return cases.map(([num, k]) => getMinCountOfOperations(num, k));
+    return cases.map(([num, k]) => solve(num, k));
 }
 
 // ✅ Test function
-function test() {
+function testing_test() {
     const input = [
         [5, 2],
         [3, 5],
@@ -53,4 +53,4 @@ function test() {
 }
 
 // Run the test
-test();
+testing_test();

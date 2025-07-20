@@ -1,5 +1,5 @@
 // Functional logic
-function generatePermutation(n, k) {
+export function solve(n, k) {
     if (k % 2 === 0 || k > 2 * n - 1) return -1;
 
     const a = Array.from({ length: n + 2 }, (_, i) => i); // 1-based indexing
@@ -19,7 +19,7 @@ function generatePermutation(n, k) {
 }
 
 // Test runner
-function test() {
+function testing_test() {
     const cases = [
         { input: [3, 3], expected: [2, 1, 3] },
         { input: [4, 1], expected: [1, 2, 3, 4] },
@@ -28,7 +28,7 @@ function test() {
 
     for (const { input, expected, expectedLength, expectedType }
         of cases) {
-        const result = generatePermutation(...input);
+        const result = solve(...input);
 
         let pass = false;
 
@@ -55,4 +55,4 @@ function test() {
 }
 
 // Run tests
-test();
+testing_test();

@@ -1,5 +1,5 @@
 // Functional Logic: Shortest Path in Weighted Graph using Dijkstra's Algorithm
-function findShortestPath(n, edges) {
+export function solve(n, edges) {
     const G = {};
     for (let i = 1; i <= n; i++) G[i] = [];
     for (const [a, b, w] of edges) {
@@ -58,7 +58,7 @@ class MinPriorityQueue {
 }
 
 // Test function to ensure correctness
-function test() {
+function testing_test() {
     const tests = [{
             input: {
                 n: 5,
@@ -96,10 +96,10 @@ function test() {
 
     for (const { input, expected }
         of tests) {
-        const result = findShortestPath(input.n, input.edges);
+        const result = solve(input.n, input.edges);
         console.log(`Output: ${result} | Expected: ${expected} | ${result === expected ? "PASS ✅" : "FAIL ❌"}`);
     }
 }
 
 // Run test cases
-test();
+testing_test();

@@ -1,7 +1,7 @@
 'use strict';
 
 // ✅ Pure function: takes an integer n and returns { count, parts[] }
-function splitNumber(n) {
+export function solve(n) {
     const count = n >> 1; // Math.floor(n / 2)
     const parts = [];
 
@@ -19,7 +19,7 @@ function splitNumber(n) {
 }
 
 // ✅ Test function
-function test() {
+function testing_test() {
     const testCases = [{
             input: 5,
             expected: {
@@ -53,7 +53,7 @@ function test() {
     console.log("Running Tests...\n");
 
     testCases.forEach(({ input, expected }, index) => {
-        const result = splitNumber(input);
+        const result = solve(input);
         const countMatch = result.count === expected.count;
         const partsMatch = JSON.stringify(result.parts) === JSON.stringify(expected.parts);
         const pass = countMatch && partsMatch;
@@ -69,4 +69,4 @@ function test() {
 }
 
 // Run test
-test();
+testing_test();

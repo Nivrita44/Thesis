@@ -1,13 +1,13 @@
 'use strict';
 
 // Pure function: calculates the average percentage of orange juice
-function averageJuicePercentage(types, percents) {
+export function solve(types, percents) {
     const sum = percents.reduce((acc, val) => acc + val, 0);
     return sum / types;
 }
 
 // Test function to validate the logic
-function test() {
+function testing_test() {
     const testCases = [{
             input: { types: 3, percents: [50, 50, 100] },
             expected: 66.66666666666667
@@ -29,7 +29,7 @@ function test() {
     console.log("Running Tests...\n");
 
     testCases.forEach(({ input, expected }, index) => {
-        const result = averageJuicePercentage(input.types, input.percents);
+        const result = solve(input.types, input.percents);
         const pass = Math.abs(result - expected) < 1e-9; // handle floating point precision
         console.log(`Test Case ${index + 1}:`);
         console.log(`Input: types = ${input.types}, percents = [${input.percents.join(', ')}]`);
@@ -40,4 +40,4 @@ function test() {
 }
 
 // Run the test
-test();
+testing_test();

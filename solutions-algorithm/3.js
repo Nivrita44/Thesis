@@ -1,5 +1,5 @@
 // Core function: q = number of elements, arr = array of numbers
-function Solve(q, arr) {
+export function solve(q, arr) {
     // Sort the array
     arr.sort((a, b) => a - b);
 
@@ -13,7 +13,7 @@ function Solve(q, arr) {
 }
 
 // Test function
-function testSolve() {
+function testing_test() {
     const testCases = [
         { q: 3, arr: [1, 2, 2], expected: "YES" },
         { q: 4, arr: [5, 5, 5, 5], expected: "YES" },
@@ -24,7 +24,7 @@ function testSolve() {
 
     for (let i = 0; i < testCases.length; i++) {
         const { q, arr, expected } = testCases[i];
-        const result = Solve(q, arr);
+        const result = solve(q, arr);
         const status = result === expected ? "PASS" : "FAIL";
         console.log(`Test ${i + 1}: Expected = ${expected}, Got = ${result} => ${status}`);
     }
@@ -32,5 +32,5 @@ function testSolve() {
 
 // Run tests if this script is run directlyn
 if (require.main === module) {
-    testSolve();
+    testing_test();
 }

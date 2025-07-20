@@ -1,7 +1,7 @@
 'use strict';
 
 // ✅ Pure logic function
-function findBalancedIndex(testCases) {
+export function solve(testCases) {
     return testCases.map(({ n, arr }) => {
         let totalTwos = arr.filter(x => x === 2).length;
 
@@ -24,7 +24,7 @@ function findBalancedIndex(testCases) {
 }
 
 // ✅ Test function
-function test() {
+function testing_test() {
     const testCases = [{
         input: [
             { n: 6, arr: [2, 2, 1, 2, 1, 2] },
@@ -37,7 +37,7 @@ function test() {
     console.log("Running Tests...\n");
 
     testCases.forEach(({ input, expected }, index) => {
-        const result = findBalancedIndex(input);
+        const result = solve(input);
         const pass = JSON.stringify(result) === JSON.stringify(expected);
 
         console.log(`Test Case ${index + 1}:`);
@@ -51,4 +51,4 @@ function test() {
 }
 
 // Run test
-test();
+testing_test();

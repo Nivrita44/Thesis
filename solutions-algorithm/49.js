@@ -1,10 +1,10 @@
 // Functional logic
-function isItPossibleToReachCell(n, m, k) {
+export function solve(n, m, k) {
     return n * m - 1 === k ? 'YES' : 'NO';
 }
 
 // Testing logic
-function test() {
+function testing_test() {
     const tests = [
         { input: [1, 1, 0], expected: 'YES' },
         { input: [1, 5, 5], expected: 'NO' },
@@ -15,11 +15,11 @@ function test() {
     ];
 
     tests.forEach(({ input, expected }, idx) => {
-        const result = isItPossibleToReachCell(...input);
+        const result = solve(...input);
         const pass = result === expected ? '✅ PASS' : '❌ FAIL';
         console.log(`Test ${idx + 1} | Input: ${input.join(' ')} | Output: ${result} | Expected: ${expected} | ${pass}`);
     });
 }
 
 // Run tests
-test();
+testing_test();

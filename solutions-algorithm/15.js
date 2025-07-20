@@ -1,7 +1,7 @@
 'use strict';
 
 // ✅ Pure function: Computes king's moves from s to t
-function kingMoves(s, t) {
+export function solve(s, t) {
     const start = s.split('');
     const end = t.split('');
 
@@ -42,7 +42,7 @@ function kingMoves(s, t) {
 }
 
 // ✅ Test function
-function test() {
+function testing_test() {
     const testCases = [{
             input: ['a8', 'h1'],
             expected: {
@@ -62,7 +62,7 @@ function test() {
 
     console.log("Running Tests...\n");
     testCases.forEach(({ input, expected }, index) => {
-        const result = kingMoves(...input);
+        const result = solve(...input);
         const countMatch = result.count === expected.count;
         const directionsMatch = JSON.stringify(result.directions) === JSON.stringify(expected.directions);
         const status = countMatch && directionsMatch ? "PASS" : "FAIL";
@@ -78,4 +78,4 @@ function test() {
 }
 
 // Run the test
-test();
+testing_test();

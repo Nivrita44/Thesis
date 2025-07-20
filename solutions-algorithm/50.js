@@ -1,5 +1,5 @@
 // Functional logic: Computes prefix sums and returns query results
-function substringValueSums(s, queries) {
+export function solve(s, queries) {
     const a = [0]; // prefix sum array
 
     for (let i = 0; i < s.length; i++) {
@@ -11,7 +11,7 @@ function substringValueSums(s, queries) {
 }
 
 // Test function
-function test() {
+function testing_test() {
     const tests = [{
             input: {
                 s: "abacaba",
@@ -42,7 +42,7 @@ function test() {
 
     for (let i = 0; i < tests.length; i++) {
         const { s, queries } = tests[i].input;
-        const result = substringValueSums(s, queries);
+        const result = solve(s, queries);
         const expected = tests[i].expected;
 
         const pass = JSON.stringify(result) === JSON.stringify(expected);
@@ -55,4 +55,4 @@ function test() {
 }
 
 // Run tests
-test();
+testing_test();

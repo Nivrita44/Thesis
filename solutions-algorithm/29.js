@@ -1,7 +1,7 @@
 'use strict';
 
 // Core logic
-function getDelays(pins) {
+export function solve(pins) {
     return pins.map(pin => {
         let curr = 1;
         let sum = 0;
@@ -15,7 +15,7 @@ function getDelays(pins) {
 }
 
 // Test function
-function test() {
+function testing_test() {
     const testCases = [{
             input: [
                 "1111",
@@ -40,7 +40,7 @@ function test() {
     console.log("Running Tests...\n");
 
     testCases.forEach(({ input, expected }, index) => {
-        const result = getDelays(input);
+        const result = solve(input);
         const pass = JSON.stringify(result) === JSON.stringify(expected);
 
         console.log(`Test Case ${index + 1}:`);
@@ -52,4 +52,4 @@ function test() {
     });
 }
 
-test();
+testing_test();

@@ -1,12 +1,12 @@
 // Pure logic function
-function amusingJoke(name1, name2, pile) {
+export function solve(name1, name2, pile) {
     const combined = (name1 + name2).split('').sort().join('');
     const target = pile.split('').sort().join('');
     return combined === target ? 'YES' : 'NO';
 }
 
 // Test function
-function testamusingJoke() {
+function testing_test() {
     const tests = [{
             input: ['SANTACLAUS', 'DEDMOROZ', 'SANTAMOROZDEDCLAUS'],
             expected: 'YES'
@@ -22,7 +22,7 @@ function testamusingJoke() {
     ];
 
     tests.forEach(({ input, expected }, index) => {
-        const result = amusingJoke(...input);
+        const result = solve(...input);
         const status = result === expected ? '✅' : '❌';
         console.log(`${status} Test ${index + 1}: Expected = ${expected}, Got = ${result}`);
     });
@@ -30,5 +30,5 @@ function testamusingJoke() {
 
 // Run tests when this file is executed directly
 if (require.main === module) {
-    testamusingJoke();
+   testing_test();
 }

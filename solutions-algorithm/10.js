@@ -1,5 +1,5 @@
 // Core logic function
-function Solve(n) {
+function solve(n) {
     let m = n;
     let ans = 0;
     let nonZeroParts = [];
@@ -29,7 +29,7 @@ function Solve(n) {
 }
 
 // Test function with your exact input/output
-function testSolve() {
+function testing_test() {
     const testCases = [{
             input: 5009,
             expected: {
@@ -68,7 +68,7 @@ function testSolve() {
     ];
 
     testCases.forEach(({ input, expected }, index) => {
-        const result = Solve(input);
+        const result = solve(input);
         const match =
             result.count === expected.count &&
             JSON.stringify(result.parts) === JSON.stringify(expected.parts);
@@ -86,5 +86,5 @@ function testSolve() {
 
 // Run test if executed directly
 if (require.main === module) {
-    testSolve();
+    testing_test();
 }

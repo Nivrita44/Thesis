@@ -1,5 +1,5 @@
 // Functional logic for each test case
-function minOperations(n, k, numbers) {
+export function solve(n, k, numbers) {
     let check = 1;
     for (let i = 0; i < numbers.length; i++) {
         if (check === numbers[i]) check++;
@@ -8,7 +8,7 @@ function minOperations(n, k, numbers) {
 }
 
 // Test function
-function test() {
+function testing_test() {
     const cases = [{
             input: { n: 3, k: 2, numbers: [1, 2, 3] },
             expected: 0
@@ -29,7 +29,7 @@ function test() {
 
     for (const { input, expected }
         of cases) {
-        const result = minOperations(input.n, input.k, input.numbers);
+        const result = solve(input.n, input.k, input.numbers);
         console.log(
             `Input: n=${input.n}, k=${input.k}, arr=[${input.numbers.join(' ')}] | Output: ${result} | Expected: ${expected} | ${
                 result === expected ? " PASS" : " FAIL"
@@ -39,4 +39,4 @@ function test() {
 }
 
 // Run test cases
-test();
+testing_test();

@@ -1,7 +1,7 @@
 "use strict";
 
 // Core logic function for Hackerrank-style use
-function lengthOfLIS(n, a) {
+export function solve(n, a) {
     const stack = [];
     for (let i = 0; i < n; i++) {
         let l = 0,
@@ -20,7 +20,7 @@ function lengthOfLIS(n, a) {
 }
 
 // Test function to ensure correctness
-function test() {
+function testing_test() {
     const tests = [
         { input: { n: 3, a: [3, 1, 2] }, expected: 2 },
         { input: { n: 5, a: [4, 2, 1, 3, 5] }, expected: 3 },
@@ -30,7 +30,7 @@ function test() {
 
     for (const { input, expected }
         of tests) {
-        const result = lengthOfLIS(input.n, input.a);
+        const result = solve(input.n, input.a);
         console.log(`Input: ${input.a.join(' ')}`);
         console.log(`Output: ${result} | Expected: ${expected} | ${result === expected ? "✅ PASS" : "❌ FAIL"}`);
         console.log('---');
@@ -38,4 +38,4 @@ function test() {
 }
 
 // Run tests
-test();
+testing_test();

@@ -1,7 +1,7 @@
 'use strict';
 
 // Pure function: performs the simulation and returns the final queue string
-function finalQueue(t, n, queue) {
+export function solve(t, n, queue) {
     let result = queue;
     for (let i = 0; i < n; i++) {
         result = result.replace(/BG/g, 'GB');
@@ -10,7 +10,7 @@ function finalQueue(t, n, queue) {
 }
 
 // Test function to validate correctness
-function test() {
+function testing_test() {
     const testCases = [{
             input: { t: 5, n: 1, queue: 'BGGBG' },
             expected: 'GBGGB'
@@ -23,7 +23,7 @@ function test() {
 
     console.log("Running Tests...\n");
     testCases.forEach(({ input, expected }, idx) => {
-        const result = finalQueue(input.t, input.n, input.queue);
+        const result = solve(input.t, input.n, input.queue);
         const pass = result === expected;
         console.log(
             `Test Case ${idx + 1}:\n` +
@@ -36,4 +36,4 @@ function test() {
 }
 
 // Run the test
-test();
+testing_test();

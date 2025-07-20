@@ -1,6 +1,6 @@
 'use strict';
 
-function solveTestCases(t, values) {
+export function solve(t, values) {
     const results = [];
 
     for (let i = 0; i < t; i++) {
@@ -24,7 +24,7 @@ function solveTestCases(t, values) {
 }
 
 // Test Function
-function test() {
+function testing_test() {
     const testCases = {
         input: {
             t: 5,
@@ -39,7 +39,7 @@ function test() {
         ]
     };
 
-    const result = solveTestCases(testCases.input.t, testCases.input.values);
+    const result = solve(testCases.input.t, testCases.input.values);
     console.log("Running Tests...\n");
 
     for (let i = 0; i < testCases.expected.length; i++) {
@@ -53,4 +53,4 @@ function test() {
     console.log(`\nOverall Status: ${overall ? "PASS" : "FAIL"}`);
 }
 
-test();
+testing_test();

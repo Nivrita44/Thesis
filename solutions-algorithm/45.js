@@ -1,6 +1,6 @@
 const MOD = 998244353;
 
-function countValidSequences(arr) {
+export function solve(arr) {
     const n = arr.length;
     const dp = Array.from({ length: n + 2 }, () =>
         Array.from({ length: n + 2 }, () => [undefined, undefined])
@@ -30,7 +30,7 @@ function countValidSequences(arr) {
     return dfs(2, 1, 1);
 }
 
-function test() {
+function testing_test() {
     const cases = [
         { input: [1, 2, 3], expected: 3 },
         { input: [1, 3, 2], expected: 1 },
@@ -40,7 +40,7 @@ function test() {
 
     for (const { input, expected }
         of cases) {
-        const result = countValidSequences(input);
+        const result = solve(input);
         console.log(
             `Input: ${input.join(" ")} | Output: ${result} | Expected: ${expected} | ${
                 result === expected ? "✅ PASS" : "❌ FAIL"
@@ -50,4 +50,4 @@ function test() {
 }
 
 // Run the test cases
-test();
+testing_test();

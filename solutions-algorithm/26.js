@@ -1,7 +1,7 @@
 'use strict';
 
 // ✅ Pure function: returns "yes" or "no" for each pair [n, k]
-function canReachMultiple(testCases) {
+export function solve(testCases) {
     return testCases.map(([n, k]) => {
         n = BigInt(n);
         k = BigInt(k);
@@ -16,7 +16,7 @@ function canReachMultiple(testCases) {
 }
 
 // ✅ Test function
-function test() {
+function testing_test() {
     const testCases = [{
             input: [
                 [5, 3],
@@ -39,7 +39,7 @@ function test() {
     console.log("Running Tests...\n");
 
     testCases.forEach(({ input, expected }, index) => {
-        const result = canReachMultiple(input);
+        const result = solve(input);
         const pass = JSON.stringify(result) === JSON.stringify(expected);
 
         console.log(`Test Case ${index + 1}:`);
@@ -52,4 +52,4 @@ function test() {
 }
 
 // Run the test
-test();
+testing_test();

@@ -1,11 +1,11 @@
 // Main logic function
-function Solve(arr) {
+export function solve(arr) {
     arr.sort((a, b) => a - b);
     return arr[arr.length - 1] + arr[arr.length - 2] - arr[0] - arr[1];
 }
 
 // Test function
-function testSolve() {
+function testing_test() {
     const testCases = [
         { input: [1, 2, 2, 3, 1, 5, 6, 1], expected: 9 },
         { input: [1, 2, 3, 100, 200], expected: 297 },
@@ -15,7 +15,7 @@ function testSolve() {
 
     for (let i = 0; i < testCases.length; i++) {
         const { input, expected } = testCases[i];
-        const result = Solve(input);
+        const result = solve(input);
         const status = result === expected ? "PASS" : "FAIL";
         console.log(`Test ${i + 1}: Expected = ${expected}, Got = ${result} => ${status}`);
     }
@@ -23,5 +23,5 @@ function testSolve() {
 
 // Run tests if this script is executed directly
 if (require.main === module) {
-    testSolve();
+    testing_test();
 }

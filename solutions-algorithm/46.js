@@ -1,5 +1,5 @@
 // Functional logic: Find max depth in organization chart/tree
-function getMaxDepth(n, managers) {
+export function solve(n, managers) {
     const graph = {};
     let maxDepth = 0;
 
@@ -24,7 +24,7 @@ function getMaxDepth(n, managers) {
 }
 
 // ✅ Test function to verify correctness
-function test() {
+function testing_test() {
     const tests = [{
             input: { n: 5, managers: [-1, 1, 2, 1, -1] },
             expected: 3
@@ -52,10 +52,10 @@ function test() {
 
     for (const { input, expected }
         of tests) {
-        const result = getMaxDepth(input.n, input.managers);
+        const result = solve(input.n, input.managers);
         console.log(`Input: ${input.managers.join(' ')} | Output: ${result} | Expected: ${expected} | ${result === expected ? "✅ PASS" : "❌ FAIL"}`);
     }
 }
 
 // Run test
-test();
+testing_test();

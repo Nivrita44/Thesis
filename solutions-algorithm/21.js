@@ -1,7 +1,7 @@
 'use strict';
 
 // Pure function: processes a list of [a, b, c] triples and returns results
-function checkSumTriplets(triplets) {
+export function solve(triplets) {
     return triplets.map(([a, b, c]) => {
         return (
             a + b === c ||
@@ -12,7 +12,7 @@ function checkSumTriplets(triplets) {
 }
 
 // Test function
-function test() {
+function testing_test() {
     const testCases = [{
         input: [
             [1, 4, 3],
@@ -37,7 +37,7 @@ function test() {
     console.log("Running Tests...\n");
 
     testCases.forEach(({ input, expected }, index) => {
-        const result = checkSumTriplets(input);
+        const result = solve(input);
         const pass = JSON.stringify(result) === JSON.stringify(expected);
         console.log(`Test Case ${index + 1}:`);
         input.forEach((triple, i) => {
@@ -49,4 +49,4 @@ function test() {
 }
 
 // Run test
-test();
+testing_test();

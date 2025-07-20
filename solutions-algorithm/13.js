@@ -1,15 +1,15 @@
 'use strict';
 
 // ✅ Pure function: Takes array of integers, returns array of results
-function subtractOne(numbers) {
+export function solve(numbers) {
     return numbers.map(n => n - 1);
 }
 
 // ✅ Test function: Verifies correctness
-function test() {
+function testing_test() {
     const input = [2, 4, 6];
     const expectedOutput = [1, 3, 5];
-    const result = subtractOne(input);
+    const result = solve(input);
 
     console.log("Running Tests...\n");
     result.forEach((val, idx) => {
@@ -21,4 +21,4 @@ function test() {
 }
 
 // Run the test
-test();
+testing_test();

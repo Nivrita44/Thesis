@@ -5,7 +5,7 @@
  * @param {Array} testCases - Array of test case objects with { N, A, B, C }
  * @returns {Array} - Array of answers for each test case.
  */
-function solveCases(testCases) {
+export function solve(testCases) {
     //TODO error has to fix
     const MODD = 1 _000_000_007;
     const results = [];
@@ -60,7 +60,7 @@ function solveCases(testCases) {
 }
 
 // ✅ Test function
-function test() {
+function testing_test() {
     const input = [{
             N: 7,
             A: [1, 2, 3, 4, 5, 6, 7],
@@ -119,7 +119,7 @@ function test() {
 
     const expected = [4, 1, 2, 2, 1, 8, 1, 2, 2];
 
-    const result = solveCases(input);
+    const result = solve(input);
     console.log("Running Tests...\n");
 
     let pass = true;
@@ -135,4 +135,4 @@ function test() {
 }
 
 // Run the test
-test();
+testing_test();

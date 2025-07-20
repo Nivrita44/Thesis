@@ -1,7 +1,7 @@
 'use strict';
 
 // ✅ Pure function: accepts an array of two-digit numbers, returns an array of sums
-function sumOfDigits(numbers) {
+export function solve(numbers) {
     return numbers.map(n => {
         const tens = Math.floor(n / 10);
         const ones = n % 10;
@@ -10,11 +10,11 @@ function sumOfDigits(numbers) {
 }
 
 // ✅ Test function with expected output
-function test() {
+function testing_test() {
     const input = [77, 21, 40, 34, 19, 84, 10, 99];
     const expectedOutput = [14, 3, 4, 7, 10, 12, 1, 18];
 
-    const result = sumOfDigits(input);
+    const result = solve(input);
 
     console.log("Running Test...\n");
     result.forEach((value, index) => {
@@ -23,4 +23,4 @@ function test() {
 }
 
 // Run the test
-test();
+testing_test();

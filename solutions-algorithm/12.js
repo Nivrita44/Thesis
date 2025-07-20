@@ -1,11 +1,11 @@
 'use strict';
 
-function calculateResult(n) {
+export function solve(n) {
     const result = (n % 2) + 8;
     return [result, n - result];
 }
 
-function test() {
+function testing_test() {
     const testCases = [
         { input: 12, expected: [8, 4] },
         { input: 23, expected: [9, 14] },
@@ -14,7 +14,7 @@ function test() {
 
     console.log("Running Tests...\n");
     testCases.forEach(({ input, expected }, index) => {
-        const result = calculateResult(input);
+        const result = solve(input);
         const pass = result[0] === expected[0] && result[1] === expected[1];
         console.log(
             `Test Case ${index + 1}: Input = ${input}\n` +
@@ -25,4 +25,4 @@ function test() {
     });
 }
 
-test();
+testing_test();

@@ -5,7 +5,7 @@
  * @param {Array} testCases - Array of test cases, each with a number `n` and array `a`
  * @returns {Array<number>} - The resulting max values for each test case
  */
-function solveCases(testCases) {
+export function solve(testCases) {
     const results = [];
 
     for (const { n, a }
@@ -45,7 +45,7 @@ function solveCases(testCases) {
 }
 
 // ✅ Test function
-function test() {
+function testing_test() {
     const testCases = [
         { n: 5, a: [2, 4, 6, 2, 5] },
         { n: 5, a: [5, 4, 4, 5, 1] },
@@ -54,7 +54,7 @@ function test() {
     ];
 
     const expected = [10, 11, 10, 1];
-    const result = solveCases(testCases);
+    const result = solve(testCases);
 
     console.log("Running Tests...\n");
     let pass = true;
@@ -71,4 +71,4 @@ function test() {
 }
 
 // Run the test
-test();
+testing_test();

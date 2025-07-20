@@ -1,7 +1,7 @@
 "use strict";
 
 //  Core logic function
-function minInversionAfterOneSwap(n, a) {
+export function solve(n, a) {
     const dp1 = Array.from({ length: n + 2 }, () => Array(n + 2).fill(0));
     const dp2 = Array.from({ length: n + 2 }, () => Array(n + 2).fill(0));
 
@@ -46,7 +46,7 @@ function minInversionAfterOneSwap(n, a) {
 }
 
 //  Test function
-function test() {
+function testing_test() {
     const tests = [{
             input: { n: 5, a: [4, 0, 3, 1, 2] },
             expected: [3, 2],
@@ -63,7 +63,7 @@ function test() {
 
     for (const { input, expected }
         of tests) {
-        const result = minInversionAfterOneSwap(input.n, input.a);
+        const result = solve(input.n, input.a);
         const pass = result[0] === expected[0] && result[1] === expected[1];
         console.log(
             `Input: ${input.a.join(" ")} | Output: ${result.join(" ")} | Expected: ${expected.join(" ")} | ${
@@ -74,4 +74,4 @@ function test() {
 }
 
 // Run tests
-test();
+testing_test();

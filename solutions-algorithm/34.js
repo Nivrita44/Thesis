@@ -5,15 +5,15 @@
  * @param {number[]} inputs - Array of integers
  * @returns {number[]} - Resulting array with each number minus one
  */
-function solveCases(inputs) {
+export function solve(inputs) {
     return inputs.map(x => x - 1);
 }
 
 // Test Function
-function test() {
+function testing_test() {
     const input = [10, 7, 21, 100, 2, 1000, 6];
     const expected = [9, 6, 20, 99, 1, 999, 5];
-    const result = solveCases(input);
+    const result = solve(input);
 
     console.log("Running Tests...\n");
     let allPass = true;
@@ -27,4 +27,4 @@ function test() {
 }
 
 // Run the test
-test();
+testing_test();

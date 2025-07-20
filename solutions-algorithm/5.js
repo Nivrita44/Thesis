@@ -1,4 +1,4 @@
-function Solve(arr) {
+export function solve(arr) {
     const n = arr.length;
     const seen = {};
     let moves = 0;
@@ -16,7 +16,7 @@ function Solve(arr) {
 }
 
 // Test function
-function testSolve() {
+function testing_test() {
     const testCases = [
         { input: [3, 1, 4, 3], expected: 1 },
         { input: [1, 1, 1, 1, 1], expected: 4 },
@@ -27,7 +27,7 @@ function testSolve() {
 
     for (let i = 0; i < testCases.length; i++) {
         const { input, expected } = testCases[i];
-        const result = Solve(input);
+        const result = solve(input);
         const status = result === expected ? "PASS" : "FAIL";
         console.log(`Test ${i + 1}: Expected = ${expected}, Got = ${result} => ${status}`);
     }
@@ -35,5 +35,5 @@ function testSolve() {
 
 // Run tests if file is executed directly
 if (require.main === module) {
-    testSolve();
+    testing_test();
 }

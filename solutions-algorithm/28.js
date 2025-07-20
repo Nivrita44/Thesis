@@ -1,7 +1,7 @@
 'use strict';
 
 // ✅ Pure function
-function calculateDistances(testCases) {
+export function solve(testCases) {
     const results = [];
 
     for (const { x, y, f }
@@ -26,7 +26,7 @@ function calculateDistances(testCases) {
 }
 
 //Test function
-function test() {
+function testing_test() {
     const testCases = [{
         input: [
             { x: [1, 1], y: [3, 3], f: [2, 2] },
@@ -43,7 +43,7 @@ function test() {
     console.log("Running Tests...\n");
 
     testCases.forEach(({ input, expected }, index) => {
-        const result = calculateDistances(input);
+        const result = solve(input);
         const pass = JSON.stringify(result) === JSON.stringify(expected);
 
         console.log(`Test Case ${index + 1}:`);
@@ -57,4 +57,4 @@ function test() {
 }
 
 // Run the test
-test();
+testing_test();

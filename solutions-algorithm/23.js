@@ -1,7 +1,7 @@
 'use strict';
 
 // Pure function
-function calculateMaxValues(testCases) {
+export function solve(testCases) {
     return testCases.map(([a, b, n]) => {
         const x = Math.floor((n - b) / a);
         return a * x + b;
@@ -9,7 +9,7 @@ function calculateMaxValues(testCases) {
 }
 
 // Test function
-function test() {
+function testing_test() {
     const testCases = [{
         input: [
             [7, 5, 12345],
@@ -33,7 +33,7 @@ function test() {
 
     console.log("Running Tests...\n");
     testCases.forEach(({ input, expected }, index) => {
-        const result = calculateMaxValues(input);
+        const result = solve(input);
         const pass = JSON.stringify(result) === JSON.stringify(expected);
 
         console.log(`Test Case ${index + 1}:`);
@@ -48,4 +48,4 @@ function test() {
 }
 
 // Run test
-test();
+testing_test();

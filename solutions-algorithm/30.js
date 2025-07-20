@@ -1,6 +1,6 @@
 'use strict';
 
-function solveNumbers(t, arr) {
+export function solve(t, arr) {
     const results = [];
 
     for (let i = 0; i < t; i++) {
@@ -27,7 +27,7 @@ function solveNumbers(t, arr) {
 }
 
 // ✅ Test function
-function test() {
+function testing_testtest() {
     const testCases = [{
             input: { t: 4, arr: [10, 4, 15, 9] },
             expected: [
@@ -50,7 +50,7 @@ function test() {
     console.log("Running Tests...\n");
 
     testCases.forEach(({ input, expected }, index) => {
-        const result = solveNumbers(input.t, input.arr);
+        const result = solve(input.t, input.arr);
         console.log(`Test Case ${index + 1}:`);
 
         for (let i = 0; i < expected.length; i++) {
@@ -65,6 +65,6 @@ function test() {
     });
 }
 
-test();
+testing_test();
 
 //TODO

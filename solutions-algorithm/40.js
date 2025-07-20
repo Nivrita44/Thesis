@@ -1,5 +1,5 @@
 // Function to compute GCD (NOD)
-function gcd(...args) {
+export function gcd(...args) {
     let x = args[0];
     for (let i = 1; i < args.length; i++) {
         let y = args[i];
