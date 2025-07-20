@@ -1,4 +1,4 @@
-function solve(numbers) {
+export function solve(numbers) {
     const length = numbers.length;
     const presenceMap = {};
     for (let i = 0; i < length; i++) {
@@ -48,7 +48,7 @@ function gcd(a, b) {
 }
 
 
-function test() {
+function testing_test() {
     const testCases = [
         {
             input: [1, 2, 4, 8, 16],
@@ -92,4 +92,4 @@ function test() {
 
 
 
-test();
+testing_test();

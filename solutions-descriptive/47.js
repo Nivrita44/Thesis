@@ -1,4 +1,4 @@
-function processScoreCases(testCases) {
+export function solve(testCases) {
     const results = [];
 
     for (const { n, k, a, b } of testCases) {
@@ -42,7 +42,7 @@ function processScoreCases(testCases) {
 }
 
 
-function test() {
+function testing_test() {
     const cases = [
         {
             n: 3, k: 4,
@@ -79,7 +79,7 @@ function test() {
         "47"
     ];
 
-    const actual = processScoreCases(cases);
+    const actual = solve(cases);
 
     console.log("✅ Output:");
     console.log(actual.join('\n'));
@@ -90,4 +90,4 @@ function test() {
     console.log("\n✅ Test Result:", actual.join('\n') === expected.join('\n') ? "Passed" : "Failed");
 }
 
-test();
+testing_test();

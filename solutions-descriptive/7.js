@@ -1,4 +1,4 @@
-function solve(lines) {
+export function solve(lines) {
     let n = parseInt(lines[0]);
     let tree = new Tree(n);
     for (let i = 1; i < n; i++) {
@@ -108,7 +108,7 @@ class Tree {
     }
 }
 
-function test() {
+function testing_test() {
     const testCases = [
         {
             input: [
@@ -153,4 +153,4 @@ function test() {
         console.log(result === expected ? "PASS" : "FAIL");
     }
 }
-test();
+testing_test();

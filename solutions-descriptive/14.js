@@ -26,7 +26,7 @@
 //     return t + Math.max(l - x, 0);
 // }
 
-// function testSolveLogic() {
+// function testing_testLogic() {
 //     const testCases = [
 //         { n: 1, k: 3, l: 5, a: [0], expected: 4 },
 //         { n: 3, k: 2, l: 5, a: [2, 5, 5], expected: 5 },
@@ -42,10 +42,10 @@
 //     });
 // }
 
-// testSolveLogic();
+// testing_testLogic();
 
 
-function calculateMinimumTime(stopCount, stepSize, totalLength, stopPositions) {
+export function solve(stopCount, stepSize, totalLength, stopPositions) {
     stepSize *= 2;
     totalLength *= 2;
     stopPositions = stopPositions.map(position => position * 2);
@@ -80,7 +80,7 @@ function calculateMinimumTime(stopCount, stepSize, totalLength, stopPositions) {
     return currentTime + Math.max(totalLength - currentPosition, 0);
 }
 
-function testCalculateMinimumTime() {
+function testing_test() {
     const testCases = [
         { stopCount: 1, stepSize: 3, totalLength: 5, stops: [0], expected: 4 },
         { stopCount: 3, stepSize: 2, totalLength: 5, stops: [2, 5, 5], expected: 5 },
@@ -91,10 +91,10 @@ function testCalculateMinimumTime() {
     ];
 
     testCases.forEach(({ stopCount, stepSize, totalLength, stops, expected }, index) => {
-        const result = calculateMinimumTime(stopCount, stepSize, totalLength, stops);
+        const result = solve(stopCount, stepSize, totalLength, stops);
         const status = result === expected ? "Passed" : `Failed (Expected ${expected}, Got ${result})`;
         console.log(`Test Case ${index + 1}: ${status}`);
     });
 }
 
-testCalculateMinimumTime();
+testing_test();

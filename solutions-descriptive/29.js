@@ -16,7 +16,8 @@ function maxOperations(start, target) {
     return 1 + Math.floor((start - temp) / smallestOdd);
 }
 
-function canReachTargetOperations(n, k, values) {
+//canReachTargetOperations -> solve
+export function solve(n, k, values) {
     const prefix = new Array(n).fill(0);
     for (let i = 1; i < n; i++) {
         prefix[i] = prefix[i - 1] + maxOperations(values[i - 1], values[i]);
@@ -37,7 +38,7 @@ function canReachTargetOperations(n, k, values) {
     return false;
 }
 
-function testCanReachTargetOperations() {
+function testing_test() {
     const testCases = [
         { n: 3, k: 3, values: [2, 1, 4], expected: "YES" },
         { n: 3, k: 7, values: [2, 1, 4], expected: "NO" },
@@ -50,7 +51,7 @@ function testCanReachTargetOperations() {
     ];
 
     for (const { n, k, values, expected } of testCases) {
-        const result = canReachTargetOperations(n, k, values) ? "YES" : "NO";
+        const result = solve(n, k, values) ? "YES" : "NO";
         console.log(`Input: n=${n}, k=${k}, values=${values}`);
         console.log(`Expected: ${expected}, Got: ${result}`);
         console.log(result === expected ? "Test Passed" : "Test Failed");
@@ -58,4 +59,4 @@ function testCanReachTargetOperations() {
     }
 }
 
-testCanReachTargetOperations();
+testing_test();

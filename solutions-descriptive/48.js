@@ -35,7 +35,7 @@ class FastQueue {
     }
 }
 
-function processGameCases(cases) {
+export function solve(cases) {
     const results = []
 
     for (const { n, m, edges, queries }
@@ -114,7 +114,7 @@ function processGameCases(cases) {
     return results
 }
 
-function test() {
+function testing_test() {
     const input = `
 3 3
 1 2
@@ -152,10 +152,10 @@ function test() {
         cases.push({ n, m, edges, queries })
     }
 
-    const output = processGameCases(cases)
+    const output = solve(cases)
     console.log(output.join('\n'))
 }
 
-test();
+testing_test();
 
 //TODO: have to change

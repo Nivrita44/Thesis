@@ -1,4 +1,4 @@
-function solve(n, m, arrayA, arrayB) {
+export function solve(n, m, arrayA, arrayB) {
     arrayA.sort((x, y) => x - y);
     arrayB.sort((x, y) => x - y);
 
@@ -62,7 +62,7 @@ function solve(n, m, arrayA, arrayB) {
     return resultLines.join('\n');
 }
 
-function test() {
+function testing_test() {
     const testCases = [
         {
             input: [1, 3, [0], [0, 1, -1]],
@@ -98,4 +98,4 @@ function test() {
     });
 }
 
-test();
+testing_test();

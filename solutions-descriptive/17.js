@@ -1,4 +1,4 @@
-function determineEdgeAssignment(totalNodes, totalEdges) {
+export function solve(totalNodes, totalEdges) {
     if (2 * totalNodes <= totalEdges) {
         return 'NO';
     }
@@ -19,29 +19,29 @@ function determineEdgeAssignment(totalNodes, totalEdges) {
     }).join('\n');
 }
 
-function testEdgeAssignment() {
+function testing_test() {
     // Test Case 1
     const nodes1 = 2;
     const edges1 = 2;
-    const result1 = determineEdgeAssignment(nodes1, edges1);
+    const result1 = solve(nodes1, edges1);
     console.log("Test Case 1 (2 nodes, 2 edges):");
     console.log(result1);
     
     // Test Case 2
     const nodes2 = 3;
     const edges2 = 7;
-    const result2 = determineEdgeAssignment(nodes2, edges2);
+    const result2 = solve(nodes2, edges2);
     console.log("\nTest Case 2 (3 nodes, 7 edges):");
     console.log(result2);
 
     // Test Case 3
     const nodes3 = 5;
     const edges3 = 4;
-    const result3 = determineEdgeAssignment(nodes3, edges3);
+    const result3 = solve(nodes3, edges3);
     console.log("\nTest Case 3 (5 nodes, 4 edges):");
     console.log(result3);
 }
 
-testEdgeAssignment();
+testing_test();
 
 //ok

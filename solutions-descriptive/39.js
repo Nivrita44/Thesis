@@ -1,4 +1,4 @@
-function solve(arrayLength, array) {
+export function solve(arrayLength, array) {
     const seen = new Set();
     const firstZeroIndex = array.includes(0) ? array.indexOf(0) : -1;
     let mex = 0; 
@@ -24,7 +24,7 @@ function solve(arrayLength, array) {
 }
 
 
-function testSolve() {
+function testing_test() {
     const testCases = [
         { n: 5, a: [4, 3, 2, 1, 0], expected: 5 },
         { n: 6, a: [4, 3, 3, 2, 1, 0], expected: 5 },
@@ -42,4 +42,4 @@ function testSolve() {
     });
 }
 
-testSolve();
+testing_test();

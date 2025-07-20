@@ -1,4 +1,4 @@
-function solvePatternSequence(nodeCount, pattern) {
+export function solve(nodeCount, pattern) {
     const positionGroups = {};
     let maxLabel = 0;
     for (let i = 0; i < nodeCount; i++) {
@@ -84,7 +84,7 @@ function fillSymmetric(used, result, indices, startValue, step, midIndex) {
     }
 }
 
-function testSolve() {
+function testing_test() {
     const testCases = [
         { input: [3, [1, 1, -1]], expected: [3, 2, 1] },
         { input: [5, [1, -1, 1, 2, 1]], expected: [4, 3, 5, 1, 2] },
@@ -97,7 +97,7 @@ function testSolve() {
 
     for (let i = 0; i < testCases.length; i++) {
         const { input, expected } = testCases[i];
-        const result = solvePatternSequence(...input);
+        const result = solve(...input);
         const isEqual = result.join(',') === expected.join(',');
 
         console.log(`Test Case ${i + 1}: ${isEqual ? '✅ Passed' : '❌ Failed'}`);
@@ -109,6 +109,6 @@ function testSolve() {
     }
 }
 
-testSolve();
+testing_test();
 
 //ok. output can many. solution verified.

@@ -5,7 +5,7 @@ function getBitLength(x) {
     return x.toString(2).length;
 }
 
-function solve(arrayLength, xorLimit, array) {
+export function solve(arrayLength, xorLimit, array) {
     if (xorLimit === 0) return '1';
 
     const highestSetBit = getBitLength(xorLimit) - 1;
@@ -108,7 +108,7 @@ function solve(arrayLength, xorLimit, array) {
 }
 
 
-function testSolve() {
+function testing_test() {
     const testCases = [
         { input: [5, 0, [1, 2, 3, 4, 5]], expected: '1' },
         { input: [5, 7, [1, 2, 3, 4, 5]], expected: '2' },
@@ -128,4 +128,4 @@ function testSolve() {
     }
 }
 
-testSolve();
+testing_test();

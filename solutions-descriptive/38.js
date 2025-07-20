@@ -22,7 +22,7 @@ function ask(x) {
     return answer;
 }
 
-function solve(s) {
+export function solve(s) {
     const n = s.length;
     const a = [];
 
@@ -51,7 +51,7 @@ function solve(s) {
     return answer;
 }
 
-function testSolve() {
+function testing_test() {
     const input = "0010010011";
     const expectedOutput = 12;
 
@@ -64,4 +64,4 @@ function testSolve() {
     }
 }
 
-testSolve();
+testing_test();

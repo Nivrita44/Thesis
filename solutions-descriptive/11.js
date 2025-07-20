@@ -1,4 +1,4 @@
-function shortestPathsFromEveryEdge(nodeCount, edgeCount, edgeList, queryList) {
+export function solve(nodeCount, edgeCount, edgeList, queryList) {
     const INF = 2e9 + 5;
 
     const graph = Array(nodeCount + 1).fill().map(() => []);
@@ -64,7 +64,7 @@ function shortestPathsFromEveryEdge(nodeCount, edgeCount, edgeList, queryList) {
     return answers;
 }
 
-function testShortestPathsFromEveryEdge() {
+function testing_test() {
     const nodeCount1 = 4, edgeCount1 = 4;
     const edges1 = [
         { u: 1, v: 2, w: 2 },
@@ -77,7 +77,7 @@ function testShortestPathsFromEveryEdge() {
         [2, 3, 1]
     ];
     const expected1 = [1, 2];
-    const result1 = shortestPathsFromEveryEdge(nodeCount1, edgeCount1, edges1, queries1);
+    const result1 = solve(nodeCount1, edgeCount1, edges1, queries1);
     console.assert(JSON.stringify(result1) === JSON.stringify(expected1), `Test case 1 failed: expected ${expected1}, got ${result1}`);
 
     const nodeCount2 = 6, edgeCount2 = 7;
@@ -96,10 +96,10 @@ function testShortestPathsFromEveryEdge() {
         [2, 4, 1]
     ];
     const expected2 = [2, 9, 9];
-    const result2 = shortestPathsFromEveryEdge(nodeCount2, edgeCount2, edges2, queries2);
+    const result2 = solve(nodeCount2, edgeCount2, edges2, queries2);
     console.assert(JSON.stringify(result2) === JSON.stringify(expected2), `Test case 2 failed: expected ${expected2}, got ${result2}`);
 
     console.log('All test cases passed!');
 }
 
-testShortestPathsFromEveryEdge();
+testing_test();

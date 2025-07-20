@@ -35,7 +35,7 @@ function computeSGValues() {
     }
 }
 
-function solveGame(arr) {
+export function solve(arr) {
     let nimSum = 0;
     for (let i = 0; i < arr.length; i++) {
         nimSum ^= sgValues[arr[i]];
@@ -47,7 +47,7 @@ initializeSieve();
 computeSGValues();
 
 
-function testSolveGame() {
+function testsolve() {
     const testCases = [
         { input: [3, [3, 2, 9]], expected: "Bob" },
         { input: [4, [3, 3, 6, 1]], expected: "Alice" },
@@ -56,9 +56,9 @@ function testSolveGame() {
 
     testCases.forEach(({ input, expected }, index) => {
         const [n, arr] = input;
-        const result = solveGame(arr);
+        const result = solve(arr);
         console.log(`Test Case ${index + 1}:`, result === expected ? "Passed" : `Failed (Expected: ${expected}, Got: ${result})`);
     });
 }
 
-testSolveGame();
+testsolve();

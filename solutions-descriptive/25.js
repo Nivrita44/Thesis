@@ -1,4 +1,6 @@
-function generatePermutations(n, k) {
+// generatePermutations -> solve
+
+export function solve(n, k) {
     if (n === 1) {
         if (k === 1) return [['1']];
         return null;
@@ -97,7 +99,7 @@ function nextPermutation(array) {
 }
 
 
-function testSolve() {
+function testing_test() {
     const testCases = [
         { input: [3, 3], expected: ['YES', '1 2 3', '2 3 1', '3 1 2'] },
         { input: [4, 2], expected: ['YES', '1 2 3 4', '4 3 2 1'] },
@@ -106,7 +108,7 @@ function testSolve() {
 
     for (const { input, expected } of testCases) {
         const [n, k] = input;
-        const result = generatePermutations(n, k);
+        const result = solve(n, k);
         if (result === null) {
             console.log('NO');
             if (expected[0] !== 'NO') {
@@ -125,4 +127,4 @@ function testSolve() {
     }
 }
 
-testSolve();
+testing_test();

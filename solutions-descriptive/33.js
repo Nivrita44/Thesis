@@ -1,4 +1,4 @@
-function solve() {
+export function solve() {
     const a = Kattio.nextNumber()
     const b = Kattio.nextNumber()
     const c = Kattio.nextNumber()
@@ -39,7 +39,7 @@ function gcd(a, b) {
     return b
 }
 
-function testSolve() {
+function testing_test() {
     const testCases = [
         { input: [0, 1, 1, 2], expected: 1 },
         { input: [0, 2, 0, 2], expected: 1 },
@@ -74,4 +74,4 @@ const Kattio = {
 };
 
 // Run the test function
-testSolve();
+testing_test();

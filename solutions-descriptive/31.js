@@ -14,7 +14,7 @@ function convolution(P, Q) {
     return R;
 }
 
-function power(P, k) {
+export function solve(P, k) {
     let len = P.length;
     let R = new Array(len).fill(0n);
     R[0] = 1n;
@@ -28,7 +28,7 @@ function power(P, k) {
     return R;
 }
 
-function test() {
+function testing_test() {
     const testCases = [
         { input: [500n, 500n], expected: [84693741n] },
         { input: [2n, 2n], expected: [2n] }
@@ -50,7 +50,7 @@ function test() {
             }
         }
 
-        let dpp = power(dp, n - 1n);
+        let dpp = solve(dp, n - 1n);
         let ans = 0n;
 
         for (let c = 0; c <= m; c++) {
@@ -65,4 +65,4 @@ function test() {
     console.log("✅ All tests completed.");
 }
 
-test();
+testing_test();

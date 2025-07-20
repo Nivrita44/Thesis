@@ -1,5 +1,6 @@
-function computeGCD(a, b) {
-    return b ? computeGCD(b, a % b) : a;
+//solve -> solve
+export function solve(a, b) {
+    return b ? solve(b, a % b) : a;
 }
 
 function calculateSumWithGCD(n, a, b) {
@@ -8,12 +9,12 @@ function calculateSumWithGCD(n, a, b) {
     let lastRowCoprimeIndex = 0, lastColCoprimeIndex = 0;
 
     for (let i = 1; i <= n; i++) {
-        rowGCD[i] = computeGCD(i, a);
+        rowGCD[i] = solve(i, a);
         if (rowGCD[i] === 1) lastRowCoprimeIndex = i;
     }
 
     for (let j = 1; j <= n; j++) {
-        colGCD[j] = computeGCD(j, b);
+        colGCD[j] = solve(j, b);
         if (colGCD[j] === 1) lastColCoprimeIndex = j;
     }
 
@@ -48,7 +49,7 @@ function calculateSumWithGCD(n, a, b) {
     return totalSum + dp[n - lastRowCoprimeIndex][n - lastColCoprimeIndex];
 }
 
-function testCalculateSumWithGCD() {
+function testing_test() {
     const testCases = [
         { input: [4, 2, 4], expected: 21 },
         { input: [10, 210, 420], expected: 125 }
@@ -61,4 +62,4 @@ function testCalculateSumWithGCD() {
     });
 }
 
-testCalculateSumWithGCD();
+testing_test();

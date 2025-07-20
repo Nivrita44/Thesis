@@ -19,7 +19,7 @@ function sieve() {
 
 let init = false;
 
-function solve() {
+export function solve() {
     if (!init) {
         sieve();
         init = true;
@@ -65,7 +65,7 @@ function solve() {
     writeInt(p, true);
 }
 
-function testSolve() {
+function testing_test() {
     const inputs = [
         { n: 3, array: [8, 9, 10], expected: 2 },
         { n: 4, array: [2, 3, 4, 5], expected: -1 },
@@ -97,6 +97,6 @@ function testSolve() {
     }
 }
 
-testSolve();
+testing_test();
 
-//ok. output can may. solution verified.
+//ok. output can many. solution verified.

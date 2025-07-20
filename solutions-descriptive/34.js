@@ -1,4 +1,4 @@
-function solve(setX, setY) {
+export function solve(setX, setY) {
     let totalX = 0, totalY = 0;
     let peakX = 0, peakY = 0;
 
@@ -58,7 +58,7 @@ function arraysMatch(arr1, arr2) {
     return true;
 }
 
-function testSolve() {
+function testing_test() {
     const testCases = [
         {
             input: {
@@ -109,6 +109,6 @@ function testSolve() {
     }
 }
 
-testSolve();
+testing_test();
 
 //ok. output can many. verified 

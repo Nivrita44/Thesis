@@ -12,7 +12,7 @@ function modPow(base, exponent) {
     return result;
 }
 
-function solve(testCases) {
+export function solve(testCases) {
     const results = [];
     const invBase = modPow(10000n, MOD - 2n);
     const invTwo = modPow(2n, MOD - 2n);

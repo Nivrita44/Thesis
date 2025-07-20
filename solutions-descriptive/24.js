@@ -1,10 +1,8 @@
-
-const calculateCost = (unitCost, overheadCost, remainingWork, divisor) => {
+function calculateCost(unitCost, overheadCost, remainingWork, divisor) {
     return unitCost * divisor + Math.ceil(remainingWork / divisor) * overheadCost;
-};
+}
 
-
-const optimizeCostInRange = (minDivisor, maxDivisor, unitCost, overheadCost, remainingWork) => {
+function optimizeCostInRange(minDivisor, maxDivisor, unitCost, overheadCost, remainingWork) {
     if (minDivisor === 0) minDivisor++;
 
     let minimumCost = calculateCost(unitCost, overheadCost, remainingWork, minDivisor);
@@ -19,10 +17,9 @@ const optimizeCostInRange = (minDivisor, maxDivisor, unitCost, overheadCost, rem
     }
 
     return minimumCost;
-};
+}
 
-
-const solve = (unitCost, overheadCost, totalWork, maxGroupSize) => {
+export function solve(unitCost, overheadCost, totalWork, maxGroupSize) {
     let minimumTotalCost = Number.MAX_SAFE_INTEGER;
 
     for (let groupCount = 0;; groupCount++) {
@@ -46,10 +43,9 @@ const solve = (unitCost, overheadCost, totalWork, maxGroupSize) => {
     }
 
     return minimumTotalCost;
-};
+}
 
-
-const test = () => {
+function testing_test() {
     const inputs = [
         [2, 3, 5, 5],
         [10, 20, 40, 5],
@@ -62,6 +58,6 @@ const test = () => {
         const result = solve(...inputs[i]);
         console.log(`Test case ${i + 1}:`, result === expectedOutputs[i] ? "Passed" : `Failed (Expected ${expectedOutputs[i]}, Got ${result})`);
     }
-};
+}
 
-test();
+testing_test();

@@ -20,7 +20,7 @@ class Queue {
     }
 }
 
-function solve() {
+export function solve() {
     let n = readInt();
     let adj = Array(n).fill().map(() => []);
     let indegree = new Uint32Array(n);
@@ -59,7 +59,7 @@ function solve() {
     writeInt(mx + 2, true);
 }
 
-function testSolve() {
+function testing_test() {
     const inputs = [
         { n: 2, edges: [2, 1] },
         { n: 5, edges: [2, 3, 4, 5, 1] },
@@ -92,4 +92,4 @@ function testSolve() {
     }
 }
 
-testSolve();
+testing_test();

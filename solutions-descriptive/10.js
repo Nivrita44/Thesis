@@ -1,6 +1,6 @@
 'use strict';
 
-function solve(n, l, r, edges) {
+export function solve(n, l, r, edges) {
     if (n === 1) return l[0];
     
     const deg = new Uint32Array(n);
@@ -47,7 +47,7 @@ function solve(n, l, r, edges) {
     return ans + l[h[hPos]];
 }
 
-function test() {
+function testing_test() {
     const testCases = [
         {
             input: {
@@ -117,4 +117,4 @@ function test() {
     });
 }
 
-test();
+testing_test();

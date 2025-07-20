@@ -1,4 +1,4 @@
-class SegmentNode {
+class solve {
     constructor(value = null) {
         if (value === null) {
             this.count = 0;
@@ -18,7 +18,7 @@ class SegmentNode {
     }
 
     static merge(leftNode, rightNode) {
-        const merged = new SegmentNode();
+        const merged = new solve();
         merged.count = leftNode.count + rightNode.count;
         merged.negativePrefix = Math.min(leftNode.negativePrefix, leftNode.count + rightNode.negativePrefix);
         merged.positivePrefix = Math.max(leftNode.positivePrefix, rightNode.positivePrefix - leftNode.count);
@@ -37,7 +37,7 @@ class SegmentNode {
 class SegmentTree {
     constructor(size) {
         this.size = size;
-        this.tree = Array(4 * size).fill().map(() => new SegmentNode());
+        this.tree = Array(4 * size).fill().map(() => new solve());
     }
 
     update(index, value) {
@@ -46,7 +46,7 @@ class SegmentTree {
 
     _update(index, value, node, start, end) {
         if (start === end) {
-            this.tree[node] = new SegmentNode(value);
+            this.tree[node] = new solve(value);
             return;
         }
 
@@ -57,7 +57,7 @@ class SegmentTree {
             this._update(index, value, 2 * node + 2, mid + 1, end);
         }
 
-        this.tree[node] = SegmentNode.merge(this.tree[2 * node + 1], this.tree[2 * node + 2]);
+        this.tree[node] = solve.merge(this.tree[2 * node + 1], this.tree[2 * node + 2]);
     }
 
     getMaxSubarrayLength() {

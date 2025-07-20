@@ -29,7 +29,7 @@ function pow(a, b) {
     return r;
 }
 
-function solve(n, m, k, queries) {
+export function solve(n, m, k, queries) {
     let count = 0;
     let black = 0;
 
@@ -53,7 +53,7 @@ function solve(n, m, k, queries) {
     }
 }
 
-function testSolve() {
+function testing_test() {
     const testCases = [
         {
             input: {
@@ -104,4 +104,4 @@ function testSolve() {
     }
 }
 
-testSolve();
+testing_test();

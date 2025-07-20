@@ -1,4 +1,4 @@
-function solveProblem(n, l, edges) {
+export function solve(n, l, edges) {
   let depth = new Uint32Array(n);
   let jump = new Uint32Array(n);
   let parent = new Uint32Array(n);
@@ -101,7 +101,7 @@ function solveProblem(n, l, edges) {
 }
 
 // Test function
-function test() {
+function testing_test() {
   const testCases = [
     {
       input: {
@@ -175,7 +175,7 @@ function test() {
   console.log("Running Tests...\n");
   testCases.forEach(({ input, expected }, index) => {
     const { n, l, edges } = input;
-    const result = solveProblem(
+    const result = solve(
       n,
       l.map((x) => x - 1),
       edges
@@ -192,6 +192,6 @@ function test() {
   });
 }
 
-test();
+testing_test();
 
 // If Cirno wins the game, print any possible node she may choose in the first turn. Otherwise, print "0" (without quotes).

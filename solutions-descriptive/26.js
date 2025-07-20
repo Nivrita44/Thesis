@@ -1,4 +1,4 @@
-function solve(length, binaryString) {
+export function solve(length, binaryString) {
     const segments = [];
     let currentSegment;
 
@@ -60,7 +60,7 @@ function solve(length, binaryString) {
 }
 
 
-function testSolve() {
+function testing_test() {
     const testCases = [
         { input: [3, '000'], expected: 3 },
         { input: [4, '0010'], expected: 9 },
@@ -77,4 +77,4 @@ function testSolve() {
     }
 }
 
-testSolve();
+testing_test();

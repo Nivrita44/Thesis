@@ -1,4 +1,4 @@
-function processSelections(arraySize, currentPosition, queryCount, selectedIndices) {
+export function solve(arraySize, currentPosition, queryCount, selectedIndices) {
     let leftBoundary = arraySize + 1;
     let rightBoundary = 0;
     let leftMid = currentPosition;
@@ -52,7 +52,7 @@ function countRange(start, end) {
     return end - start + 1;
 }
 
-function testProcessSelections() {
+function testing_test() {
     const testCases = [
         {
             input: [6, 5, 3, [1, 2, 3]],
@@ -77,7 +77,7 @@ function testProcessSelections() {
     ];
 
     testCases.forEach(({ input, expected }, index) => {
-        const result = processSelections(...input);
+        const result = solve(...input);
         const status = result === expected ? "Passed" : "Failed";
         console.log(`Test Case ${index + 1}: ${status}`);
         if (status === "Failed") {
@@ -87,7 +87,7 @@ function testProcessSelections() {
     });
 }
 
-testProcessSelections();
+testing_test();
 
 
 

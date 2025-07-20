@@ -1,5 +1,5 @@
 
-function countValidSubarrays(testCases) {
+export function solve(testCases) {
     const result = [];
     const maxLength = 100001;
     const prefixSum = new Int32Array(maxLength);
@@ -40,7 +40,7 @@ function countValidSubarrays(testCases) {
     return result;
 }
 
-function testCountValidSubarrays() {
+function testing_test() {
     const testCases = [
         [1, 1, 1, 1],
         [1, 10, 2, 3, 3],
@@ -48,7 +48,7 @@ function testCountValidSubarrays() {
     ];
 
     const expectedOutput = [10, 11, 42];
-    const actualOutput = countValidSubarrays(testCases);
+    const actualOutput = solve(testCases);
 
     const allPassed = actualOutput.every((val, idx) => val === expectedOutput[idx]);
 
@@ -61,5 +61,5 @@ function testCountValidSubarrays() {
     }
 }
 
-testCountValidSubarrays();
+testing_test();
 

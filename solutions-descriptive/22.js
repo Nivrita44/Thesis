@@ -1,4 +1,4 @@
-function solve(numEnemies, maxHits, requiredEnemies, enemyHealth, enemyPositions) {
+export function solve(numEnemies, maxHits, requiredEnemies, enemyHealth, enemyPositions) {
     let minimumTime = Infinity;
     let low = 1, high = 1e9;
 
@@ -44,7 +44,7 @@ function solve(numEnemies, maxHits, requiredEnemies, enemyHealth, enemyPositions
 }
 
 
-function testSolve() {
+function testing_test() {
     const testCases = [
         {
             input: [5, 5, 3, [7, 7, 7, 7, 7], [1, 2, 3, 4, 5]],
@@ -71,4 +71,4 @@ function testSolve() {
     }
 }
 
-testSolve();
+testing_test();

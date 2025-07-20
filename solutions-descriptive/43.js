@@ -1,4 +1,4 @@
-function solveTreeDP(nodeCount, cost, values, edges) {
+export function solve(nodeCount, cost, values, edges) {
     values.unshift(0);
     const adjacencyList = {};
     for (const [u, v] of edges) {
@@ -39,7 +39,7 @@ function solveTreeDP(nodeCount, cost, values, edges) {
 
 
 
-function testSolveTreeDP() {
+function testing_test() {
     const testCases = [
         {
             input: {
@@ -90,9 +90,9 @@ function testSolveTreeDP() {
 
     testCases.forEach(({ input, expected }, index) => {
         const { n, c, arr, edges } = input;
-        const result = solveTreeDP(n, c, arr, edges);
+        const result = solve(n, c, arr, edges);
         console.log(`Test Case ${index + 1}:`, result === expected ? 'Passed' : `Failed (Expected ${expected}, Got ${result})`);
     });
 }
 
-testSolveTreeDP();
+testing_test();

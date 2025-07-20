@@ -1,4 +1,4 @@
-function solveQuery(left, right, bitIndex, xorConstant) {
+export function solve(left, right, bitIndex, xorConstant) {
   const computeXor = (limit, bitIndex, xorConstant) => {
       let xorResult = 0n;
 
@@ -31,7 +31,7 @@ function solveQuery(left, right, bitIndex, xorConstant) {
   return finalXor;
 }
 
-  function testSolveQuery() {
+  function testing_test() {
     const testCases = [
       { input: [1n, 3n, 1n, 0n], expected: 2n },
       { input: [2n, 28n, 3n, 7n], expected: 2n },
@@ -45,7 +45,7 @@ function solveQuery(left, right, bitIndex, xorConstant) {
   
     for (let i = 0; i < testCases.length; i++) {
       const { input, expected } = testCases[i];
-      const result = solveQuery(...input);
+      const result = solve(...input);
       if (result === expected) {
         console.log(`Test case ${i + 1}: ✅ Passed`);
       } else {
@@ -59,5 +59,5 @@ function solveQuery(left, right, bitIndex, xorConstant) {
     }
   }
   
-  testSolveQuery();
+  testing_test();
   

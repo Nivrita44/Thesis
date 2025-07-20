@@ -1,17 +1,17 @@
-const swap = (arr, i, j) => {
+function swap(arr, i, j) {
     [arr[i], arr[j]] = [arr[j], arr[i]];
-};
+}
 
-const siftUp = (arr, i) => {
+function siftUp(arr, i) {
     if (i === 0) return;
     const p = Math.floor((i - 1) / 2);
     if (arr[p] > arr[i]) {
         swap(arr, i, p);
         siftUp(arr, p);
     }
-};
+}
 
-const siftDown = (arr, i) => {
+function siftDown(arr, i) {
     const l = 2 * i + 1;
     const r = l + 1;
     if (l >= arr.length) return;
@@ -30,9 +30,9 @@ const siftDown = (arr, i) => {
             siftDown(arr, l);
         }
     }
-};
+}
 
-const sol = (n, k, d) => {
+export function solve(n, k, d) {
     const heap = [];
     let sum = 0;
     for (let i = n - 1; i >= 0; i--) {
@@ -49,9 +49,9 @@ const sol = (n, k, d) => {
         }
     }
     return sum;
-};
+}
 
-const test = () => {
+function testing_test() {
     const inputs = [
         { n: 5, k: 2, d: [3, 6, 4, 1, 2], expected: 6 },
         { n: 7, k: 1, d: [3, 1, 4, 1, 5, 9, 2], expected: 16 },
@@ -61,9 +61,9 @@ const test = () => {
     ];
 
     inputs.forEach(({ n, k, d, expected }, index) => {
-        const result = sol(n, k, d);
+        const result = solve(n, k, d);
         console.log(`Test ${index + 1}:`, result === expected ? "Passed" : `Failed (Expected ${expected}, Got ${result})`);
     });
-};
+}
 
-test();
+testing_test();

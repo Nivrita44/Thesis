@@ -36,7 +36,7 @@ function rad(k) {
 }
 
 
-function processArray(a) {
+export function solve(a) {
     const MOD = 0x3b800001;
     const V = new Int32Array(1000001);
 
@@ -66,7 +66,7 @@ function processArray(a) {
     }
 }
 
-function testProcessArray() {
+function testing_test() {
     const testCases = [
         { input: [5, [2, 6, 3, 4, 6]], expected: 5 },
         { input: [5, [4, 196, 2662, 2197, 121]], expected: 2 },
@@ -77,9 +77,9 @@ function testProcessArray() {
         const { input, expected } = testCases[i];
         const n = input[0];
         const array = input[1];
-        const result = processArray(array);
+        const result = solve(array);
         console.log(`Test case ${i + 1}:`, result === expected ? "Passed" : `Failed (Expected ${expected}, got ${result})`);
     }
 }
 
-testProcessArray();
+testing_test();

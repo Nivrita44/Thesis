@@ -1,4 +1,4 @@
-function solve(numPoints, pointList) {
+export function solve(numPoints, pointList) {
     const xFrequency = new Map();
     const diagonalSumFrequency = new Map();
 
@@ -31,7 +31,7 @@ function solve(numPoints, pointList) {
 }
 
 
-function testSolve() {
+function testing_test() {
     const testCases = [
         {
             input: {
@@ -80,4 +80,4 @@ function testSolve() {
     }
 }
 
-testSolve();
+testing_test();

@@ -1,4 +1,5 @@
-function findMinimumTimeAtNodeOne(
+//findMinimumTimeAtNodeOne -> solve
+export function solve(
     nodes,
     edgesCount,
     edgeList,
@@ -128,7 +129,7 @@ function findMinimumTimeAtNodeOne(
   
     for (let i = 0; i < testCases.length; i++) {
       const { input, expected } = testCases[i];
-      const result = findMinimumTimeAtNodeOne(...input);
+      const result = solve(...input);
   
       const passed = result === expected;
       console.log(`Test Case ${i + 1}: ${passed ? "✅ Passed" : "❌ Failed"}`);

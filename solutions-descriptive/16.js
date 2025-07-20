@@ -1,4 +1,4 @@
-function minDropsNeeded(v, need) {
+export function solve(v, need) {
     let count = 0, sum = 0;
     for (let x of v) {
         if (sum >= need) break;
@@ -50,13 +50,13 @@ function canTransform(s, a, b, ab, ba) {
     evenA.sort((x, y) => y - x);
     evenB.sort((x, y) => y - x);
 
-    let dA = minDropsNeeded(evenA, needA);
-    let dB = minDropsNeeded(evenB, needB);
+    let dA = solve(evenA, needA);
+    let dB = solve(evenB, needB);
 
     return (dA + dB) <= availableDrop ? "YES" : "NO";
 }
 
-function testCanTransform() {
+function testing_test() {
     const testCases = [
         { input: ["A", 0, 0, 10, 10], expected: "NO" },
         { input: ["B", 0, 1, 0, 0], expected: "YES" },
@@ -74,4 +74,4 @@ function testCanTransform() {
     }
 }
 
-testCanTransform();
+testing_test();

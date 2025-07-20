@@ -1,4 +1,4 @@
-function transformMatrixToMatch(targetRows, targetCols, sourceMatrix, targetMatrix) {
+export function solve(targetRows, targetCols, sourceMatrix, targetMatrix) {
     const MAX_ITER = Math.min(targetRows, targetCols) + 1;
 
     for (let iteration = 0; iteration < MAX_ITER; iteration++) {
@@ -37,7 +37,7 @@ function transformMatrixToMatch(targetRows, targetCols, sourceMatrix, targetMatr
     return "Yes\n";
 }
 
-function testTransformMatrixToMatch() {
+function testing_test() {
     const testCases = [
         {
             input: { n: 1, m: 1, a: [[12]], b: [[13]] },
@@ -59,10 +59,10 @@ function testTransformMatrixToMatch() {
 
     testCases.forEach(({ input, expected }, index) => {
         const { n, m, a, b } = input;
-        const result = transformMatrixToMatch(n, m, a, b);
+        const result = solve(n, m, a, b);
         const status = result === expected ? "Passed" : `Failed`;
         console.log(`Test ${index + 1}: ${status}`);
     });
 }
 
-testTransformMatrixToMatch();
+testing_test();

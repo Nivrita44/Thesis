@@ -54,7 +54,7 @@ class Queue {
     }
 }
 
-function processGraphCases(input) {
+export function solve(input) {
     const lines = input.trim().split('\n');
     let idx = 0;
     const results = [];
@@ -141,7 +141,7 @@ function processGraphCases(input) {
     return results;
 }
 
-function test() {
+function testing_test() {
     const input = `
 2 1
 1 2
@@ -185,10 +185,10 @@ function test() {
 `.trim();
 
     const expectedOutput = [0, 3, 4, 6, 6, 21];
-    const actualOutput = processGraphCases(input);
+    const actualOutput = solve(input);
     console.log("✅ Output:", actualOutput);
     console.log("✅ Expected:", expectedOutput);
-    console.log(actualOutput.join('\n') === expectedOutput.join('\n') ? "✅ Test Passed" : "❌ Test Failed");
+    console.log(actualOutput.join('\n') === expectedOutput.join('\n') ? "✅ testing_test Passed" : "❌ testing_test Failed");
 }
 
-test();
+testing_test();

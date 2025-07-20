@@ -1,4 +1,4 @@
-function minimumCostToEqualize(xBig, yBig) {
+export function solve(xBig, yBig) {
     const MAX_BITS = 60;
     const powersOfTwo = Array(MAX_BITS + 1).fill(1n);
     for (let i = 1; i <= MAX_BITS; i++) {
@@ -57,7 +57,7 @@ function minimumCostToEqualize(xBig, yBig) {
     return answer;
 }
 
-function testMinimumCostToEqualize() {
+function testing_test() {
     const testCases = [
         { input: [0n, 1n], expected: 2n },
         { input: [6n, 2n], expected: 6n },
@@ -68,7 +68,7 @@ function testMinimumCostToEqualize() {
 
     let allPassed = true;
     testCases.forEach(({ input, expected }, index) => {
-        const result = minimumCostToEqualize(...input);
+        const result = solve(...input);
         if (result === expected) {
             console.log(`Test case ${index + 1}: ✅ Passed`);
         } else {
@@ -82,4 +82,4 @@ function testMinimumCostToEqualize() {
     }
 }
 
-testMinimumCostToEqualize();
+testing_test();

@@ -29,7 +29,7 @@ function findBinarySearchSolution() {
     return LOWER_BOUND - 100;
 }
 
-function solve(inputArray) {
+export function solve(inputArray) {
     currentArrayLength = inputArray.length;
     numberArrayStorage.set(inputArray);
 
@@ -57,7 +57,7 @@ function solve(inputArray) {
     return operationsCount;
 }
 
-function test() {
+function testing_test() {
     const testCases = [
         { input: [1, 1], expected: 0 },
         { input: [1, 3, 2], expected: -1 },
@@ -71,4 +71,4 @@ function test() {
     }
 }
 
-test();
+testing_test();

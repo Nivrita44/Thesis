@@ -61,7 +61,7 @@ class FastQueue {
     }
 }
 
-function solve(arraySize, array, queries) {
+export function solve(arraySize, array, queries) {
     const triangleCounts = Array(arraySize + 1).fill(0);
     for (let i = 1; i <= arraySize; i++) {
         triangleCounts[i] = arraySize + 1 - i;
@@ -142,7 +142,7 @@ function solve(arraySize, array, queries) {
 
 
 // Test function
-function test() {
+function testing_test() {
     const testCases = [
         {
             input: {
@@ -180,4 +180,4 @@ function test() {
 }
 
 // Run tests
-test();
+testing_test();
