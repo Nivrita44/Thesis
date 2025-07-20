@@ -12,7 +12,7 @@ export function gcd(...args) {
 }
 
 // Function to compute the desired result for one pair (a,b)
-function computeResult(a, b) {
+export function solve(a, b) {
     const n = gcd(a, b);
     let res = (a / n) * b;
     if (res === b) {
@@ -26,7 +26,7 @@ function computeResult(a, b) {
 }
 
 // Test function to verify correctness
-function test() {
+function testing_test() {
     const testCases = [
         { input: [2, 3], expected: 6 },
         { input: [1, 2], expected: 4 },
@@ -41,7 +41,7 @@ function test() {
     let allPassed = true;
     for (let i = 0; i < testCases.length; i++) {
         const { input, expected } = testCases[i];
-        const output = computeResult(input[0], input[1]);
+        const output = solve(input[0], input[1]);
         const pass = output === expected;
         console.log(
             `Test #${i + 1}: Input: ${input} | Output: ${output} | Expected: ${expected} | ${pass ? 'PASS ✅' : 'FAIL ❌'}`
@@ -57,4 +57,4 @@ function test() {
 }
 
 // Run tests
-test();
+testing_test();

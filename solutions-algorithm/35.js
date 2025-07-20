@@ -6,7 +6,7 @@
  * @param {number} k - The base for operations.
  * @returns {number}
  */
-export function solve(num, k) {
+ function calculation(num, k) {
     if (k === 1) {
         return num;
     }
@@ -23,8 +23,8 @@ export function solve(num, k) {
  * @param {Array<[number, number]>} cases - An array of [num, k] pairs.
  * @returns {number[]} - Array of results for each test case.
  */
-function solveCases(cases) {
-    return cases.map(([num, k]) => solve(num, k));
+export function solve(cases) {
+    return cases.map(([num, k]) => calculation(num, k));
 }
 
 // ✅ Test function
@@ -38,7 +38,7 @@ function testing_test() {
         [10, 1],
     ];
     const expected = [2, 3, 1, 4, 21, 10];
-    const result = solveCases(input);
+    const result = solve(input);
 
     console.log("Running Tests...\n");
     let allPass = true;
