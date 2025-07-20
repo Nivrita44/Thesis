@@ -1,0 +1,9 @@
+Let's define S(x) to be the sum of digits of number x written in decimal system. For example, S(5)=5, S(10)=1, S(322)=7.
+We will call an integer x interesting if S(x+1)<S(x). In each test you will be given one integer n. Your task is to calculate the number of integers x such that 1≤x≤n
+ and x is interesting.
+
+Input
+line contains one integer n (1≤n≤10^9) for the test case.
+
+Output
+Print the integer

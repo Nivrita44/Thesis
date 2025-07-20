@@ -1,0 +1,10 @@
+You are given an integer x. Your task is to find any integer y (1≤y<x) such that gcd(x,y)+y is maximum possible.
+
+Note that if there is more than one y which satisfies the statement, you are allowed to find any.
+gcd(a,b) is the Greatest Common Divisor of a and b. For example, gcd(6,4)=2.
+
+Input
+ the following line contains a single integer x (2≤x≤1000).
+
+Output
+For test case, output any y (1≤y<x), which satisfies the statement.
