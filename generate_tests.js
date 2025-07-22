@@ -175,7 +175,7 @@ async function main() {
 
     // --- Task 1: Generate tests from problem description only ---
     console.log("[Task 1/3] Generating tests from problem description...");
-    const prompt1 = `Generate Jest tests based on the following problem description.The function does NOT use stdin or stdout.Use ES module import syntax. The solution function 'solve' is in a file located at '../../solutions-descriptive/${solutionFile}'.\n\nProblem Description:\n---\n${problemContent}`;
+    const prompt1 = `Generate Jest tests based on the following problem description.The function does NOT use stdin or stdout.don't use any comment line. only clean code.Use ES module import syntax. The solution function 'solve' is in a file located at '../../solutions-descriptive/${solutionFile}'.\n\nProblem Description:\n---\n${problemContent}`;
 
     const testCode1 = await generateTestCode(prompt1);
     const testPath1 = path.join(
@@ -186,7 +186,7 @@ async function main() {
 
     // --- Task 2: Generate tests from solution code only ---
     console.log("[Task 2/3] Generating tests from solution code only...");
-    const prompt2 = `Generate Jest tests for the following Javascript code.Use ES module import syntax. The function to test is 'solve', located in '../../solutions-descriptive/${solutionFile}'. Analyze the code to identify edge cases, typical cases, and constraints.\n\nSolution Code:\n---\n${cleanedSolutionContent}`;
+    const prompt2 = `Generate Jest tests for the following Javascript code.don't use any comment line. only clean code.Use ES module import syntax. The function to test is 'solve', located in '../../solutions-descriptive/${solutionFile}'. Analyze the code to identify edge cases, typical cases, and constraints.\n\nSolution Code:\n---\n${cleanedSolutionContent}`;
     const testCode2 = await generateTestCode(prompt2);
     const testPath2 = path.join(
       PATHS.testsPrompt2,
@@ -198,7 +198,7 @@ async function main() {
     console.log(
       "[Task 3/3] Generating tests from both problem and solution..."
     );
-    const prompt3 = `Generate Jest tests using both the problem description and the provided solution code.Use ES module import syntax. The function 'solve' is in '../../solutions-descriptive/${solutionFile}'.. It does not use stdin or stdout. Create comprehensive tests that cover the requirements from the description and potential edge cases from the code.\n\nProblem Description:\n---\n${problemContent}\n\nSolution Code:\n---\n${cleanedSolutionContent}`;
+    const prompt3 = `Generate Jest tests using both the problem description and the provided solution code.don't use any comment line. only clean code.Use ES module import syntax. The function 'solve' is in '../../solutions-descriptive/${solutionFile}'.. It does not use stdin or stdout. Create comprehensive tests that cover the requirements from the description and potential edge cases from the code.\n\nProblem Description:\n---\n${problemContent}\n\nSolution Code:\n---\n${cleanedSolutionContent}`;
     const testCode3 = await generateTestCode(prompt3);
     const testPath3 = path.join(
       PATHS.testsPrompt3,
