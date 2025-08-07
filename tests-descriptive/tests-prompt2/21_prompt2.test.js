@@ -1,60 +1,126 @@
 import { solve } from '../../solutions-descriptive/21.js';
 
-test('single element array', () => {
-  expect(solve([2])).toBe(0);
-  expect(solve([3])).toBe(0);
-  expect(solve([1000000])).toBe(0);
-  expect(solve([1])).toBe(0);
+test('typical case 1', () => {
+  expect(solve([2, 6, 3, 4, 6])).toBe(5);
 });
 
-test('two elements, small coprime', () => {
-  expect(solve([2, 3])).toBe(1);
-  expect(solve([5, 7])).toBe(1);
-  expect(solve([11, 13])).toBe(1);
-  expect(solve([17, 19])).toBe(1);
+test('typical case 2', () => {
+  expect(solve([4, 196, 2662, 2197, 121])).toBe(2);
 });
 
-test('two elements, not coprime', () => {
-  expect(solve([2, 4])).toBe(0);
-  expect(solve([3, 9])).toBe(0);
-  expect(solve([10, 25])).toBe(0);
+test('minimal input 1', () => {
+  expect(solve([2, 3])).toBe(0);
 });
 
-test('three elements, all coprime', () => {
-  expect(solve([2, 3, 5])).toBe(2);
-  expect(solve([3, 5, 7])).toBe(2);
+test('all ones', () => {
+  expect(solve([1, 1, 1, 1, 1])).toBe(1);
 });
 
-test('three elements, some not coprime', () => {
-  expect(solve([2, 4, 3])).toBe(1);
-  expect(solve([2, 3, 6])).toBe(1);
-  expect(solve([5, 10, 3])).toBe(1);
+test('all distinct primes', () => {
+  expect(solve([2, 3, 5, 7, 11])).toBe(1);
 });
 
-test('array with all elements equal', () => {
-  expect(solve([2, 2])).toBe(0);
-  expect(solve([7, 7, 7])).toBe(0);
-  expect(solve([13, 13, 13, 13])).toBe(0);
+test('all same composite', () => {
+  expect(solve([6, 6, 6, 6])).toBe(4);
 });
 
-test('array with one as element', () => {
-  expect(solve([1, 2])).toBe(1);
-  expect(solve([1, 3, 5])).toBe(2);
-  expect(solve([1, 4, 5])).toBe(1);
+test('case with large primes', () => {
+  expect(solve([999983, 999979, 999961])).toBe(1);
 });
 
-test('includes 0s and large numbers', () => {
-  expect(solve([999983, 1000000])).toBe(1);
-  expect(solve([1000000, 1])).toBe(1);
+test('repeated primes and composites', () => {
+  expect(solve([2, 4, 8, 16, 32])).toBe(1);
 });
 
-test('edge: consecutive numbers', () => {
-  expect(solve([14, 15, 16])).toBe(2);
-  expect(solve([8, 9, 10])).toBe(2);
+test('array length 1', () => {
+  expect(solve([7])).toBe(1);
 });
 
-test('edge: primes and composites', () => {
-  expect(solve([2, 6, 5])).toBe(1);
-  expect(solve([3, 6, 7])).toBe(1);
-  expect(solve([7, 14, 21])).toBe(0);
+test('large diverse numbers', () => {
+  expect(solve([30, 42, 60, 66, 70])).toBe(8);
 });
+
+// ● all ones
+
+//     expect(received).toBe(expected) // Object.is equality
+
+//     Expected: 1
+//     Received: 0
+
+//       14 |
+//       15 | test('all ones', () => {
+//     > 16 |   expect(solve([1, 1, 1, 1, 1])).toBe(1);
+//          |                                  ^
+//       17 | });
+//       18 |
+//       19 | test('all distinct primes', () => {
+
+//       at Object.toBe (tests-descriptive/tests-prompt2/21_prompt2.test.js:16:34)
+
+//   ● all distinct primes
+
+//     expect(received).toBe(expected) // Object.is equality
+
+//     Expected: 1
+//     Received: 0
+
+//       18 |
+//       19 | test('all distinct primes', () => {
+//     > 20 |   expect(solve([2, 3, 5, 7, 11])).toBe(1);
+//          |                                   ^
+//       21 | });
+//       22 |
+//       23 | test('all same composite', () => {
+
+//       at Object.toBe (tests-descriptive/tests-prompt2/21_prompt2.test.js:20:35)
+
+//   ● case with large primes
+
+//     expect(received).toBe(expected) // Object.is equality
+
+//     Expected: 1
+//     Received: 0
+
+//       26 |
+//       27 | test('case with large primes', () => {
+//     > 28 |   expect(solve([999983, 999979, 999961])).toBe(1);
+//          |                                           ^
+//       29 | });
+//       30 |
+//       31 | test('repeated primes and composites', () => {
+
+//       at Object.toBe (tests-descriptive/tests-prompt2/21_prompt2.test.js:28:43)
+
+//   ● repeated primes and composites
+
+//     expect(received).toBe(expected) // Object.is equality
+
+//     Expected: 1
+//     Received: 8
+
+//       30 |
+//       31 | test('repeated primes and composites', () => {
+//     > 32 |   expect(solve([2, 4, 8, 16, 32])).toBe(1);
+//          |                                    ^
+//       33 | });
+//       34 |
+//       35 | test('array length 1', () => {
+
+//       at Object.toBe (tests-descriptive/tests-prompt2/21_prompt2.test.js:32:36)
+
+//   ● array length 1
+
+//     expect(received).toBe(expected) // Object.is equality
+
+//     Expected: 1
+//     Received: undefined
+
+//       34 |
+//       35 | test('array length 1', () => {
+//     > 36 |   expect(solve([7])).toBe(1);
+//          |                      ^
+//       37 | });
+//       38 |
+//       39 | test('large diverse numbers', () => {
+
+//       at Object.toBe (tests-descriptive/tests-prompt2/21_prompt2.test.js:36:22)

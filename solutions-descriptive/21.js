@@ -66,20 +66,20 @@ export function solve(a) {
     }
 }
 
-function testing_test() {
-    const testCases = [
-        { input: [5, [2, 6, 3, 4, 6]], expected: 5 },
-        { input: [5, [4, 196, 2662, 2197, 121]], expected: 2 },
-        { input: [2, [2, 3]], expected: 0 },
-    ];
+// function testing_test() {
+//     const testCases = [
+//         { input: [5, [2, 6, 3, 4, 6]], expected: 5 },
+//         { input: [5, [4, 196, 2662, 2197, 121]], expected: 2 },
+//         { input: [2, [2, 3]], expected: 0 },
+//     ];
 
-    for (let i = 0; i < testCases.length; i++) {
-        const { input, expected } = testCases[i];
-        const n = input[0];
-        const array = input[1];
-        const result = solve(array);
-        console.log(`Test case ${i + 1}:`, result === expected ? "Passed" : `Failed (Expected ${expected}, got ${result})`);
-    }
-}
+//     for (let i = 0; i < testCases.length; i++) {
+//         const { input, expected } = testCases[i];
+//         const n = input[0];
+//         const array = input[1];
+//         const result = solve(array);
+//         console.log(`Test case ${i + 1}:`, result === expected ? "Passed" : `Failed (Expected ${expected}, got ${result})`);
+//     }
+// }
 
-testing_test();
+// testing_test();

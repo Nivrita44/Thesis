@@ -99,3 +99,38 @@ test('enemies at overlapping positions', () => {
         [1, 1, 1]
     )).toBe(2);
 });
+
+
+// ● typical case - can beat required enemies
+
+//     expect(received).toBe(expected) // Object.is equality
+
+//     Expected: 4
+//     Received: 8
+
+//        8 |         [5, 8, 6],
+//        9 |         [0, 3, 5]
+//     > 10 |     )).toBe(4);
+//          |        ^
+//       11 | });
+//       12 |
+//       13 | test('all enemies with one hit', () => {
+
+//       at Object.toBe (tests-descriptive/tests-prompt2/22_prompt2.test.js:10:8)
+
+//   ● zero requiredEnemies (should always be possible in 1 time unit)
+
+//     expect(received).toBe(expected) // Object.is equality
+
+//     Expected: 1
+//     Received: 2
+
+//       58 |         [7, 10],
+//       59 |         [0, 2]
+//     > 60 |     )).toBe(1);
+//          |        ^
+//       61 | });
+//       62 |
+//       63 | test('enemy health all zeros (should need 0 hits, so minimum time is 1)', () => {
+
+//       at Object.toBe (tests-descriptive/tests-prompt2/22_prompt2.test.js:60:8)
