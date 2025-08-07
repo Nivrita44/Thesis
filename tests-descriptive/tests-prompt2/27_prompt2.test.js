@@ -91,3 +91,27 @@ test('unique point is last in input', () => {
     ])
   ).toEqual([11, 15]);
 });
+
+
+// returns unique point when all x coordinates same except one
+
+//     expect(received).toEqual(expected) // deep equality
+
+//     - Expected  - 1
+//     + Received  + 1
+
+//       Array [
+//         10,
+//     -   3,
+//     +   -1,
+//       ]
+
+//       30 |       [10, 3],
+//       31 |     ])
+//     > 32 |   ).toEqual([10, 3]);
+//          |     ^
+//       33 | });
+//       34 |
+//       35 | test('returns unique point when unique point is first', () => {
+
+//       at Object.toEqual (tests-descriptive/tests-prompt2/27_prompt2.test.js:32:5)

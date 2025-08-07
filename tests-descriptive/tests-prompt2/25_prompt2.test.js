@@ -79,3 +79,6 @@ test('n=4, k=6 (even k, even n) returns array', () => {
   expect(Array.isArray(result)).toBe(true);
   expect(result.length).toBe(6);
 });
+
+
+//all passed

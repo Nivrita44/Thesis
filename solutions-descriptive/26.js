@@ -60,21 +60,21 @@ export function solve(length, binaryString) {
 }
 
 
-function testing_test() {
-    const testCases = [
-        { input: [3, '000'], expected: 3 },
-        { input: [4, '0010'], expected: 9 },
-        { input: [7, '1011001'], expected: 10 },
-        { input: [4, '0001'], expected: 7 },
-        { input: [2, '11'], expected: 1 },
-        { input: [1, '0'], expected: 0 },
-    ];
+// function testing_test() {
+//     const testCases = [
+//         { input: [3, '000'], expected: 3 },
+//         { input: [4, '0010'], expected: 9 },
+//         { input: [7, '1011001'], expected: 10 },
+//         { input: [4, '0001'], expected: 7 },
+//         { input: [2, '11'], expected: 1 },
+//         { input: [1, '0'], expected: 0 },
+//     ];
 
-    for (let i = 0; i < testCases.length; i++) {
-        const { input, expected } = testCases[i];
-        const result = solve(...input);
-        console.log(`Test case ${i + 1}:`, result === expected ? 'Passed' : `Failed (Expected ${expected}, got ${result})`);
-    }
-}
+//     for (let i = 0; i < testCases.length; i++) {
+//         const { input, expected } = testCases[i];
+//         const result = solve(...input);
+//         console.log(`Test case ${i + 1}:`, result === expected ? 'Passed' : `Failed (Expected ${expected}, got ${result})`);
+//     }
+// }
 
-testing_test();
+// testing_test();

@@ -63,3 +63,154 @@ test('handles largest i and k', () => {
     Array.from({length: 1000}, (_, i) => i+1).reduce((a,b)=>a^b,0)
   ]);
 });
+
+
+// handles basic single query
+
+// TypeError: Cannot mix BigInt and other types, use explicit conversions
+
+//   28 |   };
+//   29 |
+// > 30 |   const finalXor = computeXor(right + 1n, bitIndex, xorConstant) ^ computeXor(left, bitIndex, xorConstant);
+//      |                                    ^
+//   31 |   return finalXor;
+//   32 | }
+//   33 |
+
+//   at solve (solutions-descriptive/23.js:30:36)
+//   at Object.solve (tests-descriptive/tests-prompt1/23_prompt1.test.js:4:10)
+
+// ● excludes k mod 2^i elements
+
+// TypeError: Cannot mix BigInt and other types, use explicit conversions
+
+//   28 |   };
+//   29 |
+// > 30 |   const finalXor = computeXor(right + 1n, bitIndex, xorConstant) ^ computeXor(left, bitIndex, xorConstant);
+//      |                                    ^
+//   31 |   return finalXor;
+//   32 | }
+//   33 |
+
+//   at solve (solutions-descriptive/23.js:30:36)
+//   at Object.solve (tests-descriptive/tests-prompt1/23_prompt1.test.js:10:10)
+
+// ● handles l equals r and single excluded
+
+// TypeError: Cannot mix BigInt and other types, use explicit conversions
+
+//   28 |   };
+//   29 |
+// > 30 |   const finalXor = computeXor(right + 1n, bitIndex, xorConstant) ^ computeXor(left, bitIndex, xorConstant);
+//      |                                    ^
+//   31 |   return finalXor;
+//   32 | }
+//   33 |
+
+//   at solve (solutions-descriptive/23.js:30:36)
+//   at Object.solve (tests-descriptive/tests-prompt1/23_prompt1.test.js:16:10)
+
+// ● handles l equals r with non-excluded
+
+// TypeError: Cannot mix BigInt and other types, use explicit conversions
+
+//   28 |   };
+//   29 |
+// > 30 |   const finalXor = computeXor(right + 1n, bitIndex, xorConstant) ^ computeXor(left, bitIndex, xorConstant);
+//      |                                    ^
+//   31 |   return finalXor;
+//   32 | }
+//   33 |
+
+//   at solve (solutions-descriptive/23.js:30:36)
+//   at Object.solve (tests-descriptive/tests-prompt1/23_prompt1.test.js:22:10)
+
+// ● handles full period mod
+
+// TypeError: Cannot mix BigInt and other types, use explicit conversions
+
+//   28 |   };
+//   29 |
+// > 30 |   const finalXor = computeXor(right + 1n, bitIndex, xorConstant) ^ computeXor(left, bitIndex, xorConstant);
+//      |                                    ^
+//   31 |   return finalXor;
+//   32 | }
+//   33 |
+
+//   at solve (solutions-descriptive/23.js:30:36)
+//   at Object.solve (tests-descriptive/tests-prompt1/23_prompt1.test.js:28:10)
+
+// ● handles k greater than 0
+
+// TypeError: Cannot mix BigInt and other types, use explicit conversions
+
+//   28 |   };
+//   29 |
+// > 30 |   const finalXor = computeXor(right + 1n, bitIndex, xorConstant) ^ computeXor(left, bitIndex, xorConstant);
+//      |                                    ^
+//   31 |   return finalXor;
+//   32 | }
+//   33 |
+
+//   at solve (solutions-descriptive/23.js:30:36)
+//   at Object.solve (tests-descriptive/tests-prompt1/23_prompt1.test.js:34:10)
+
+// ● handles large l and r
+
+// TypeError: Cannot mix BigInt and other types, use explicit conversions
+
+//   28 |   };
+//   29 |
+// > 30 |   const finalXor = computeXor(right + 1n, bitIndex, xorConstant) ^ computeXor(left, bitIndex, xorConstant);
+//      |                                    ^
+//   31 |   return finalXor;
+//   32 | }
+//   33 |
+
+//   at solve (solutions-descriptive/23.js:30:36)
+//   at Object.solve (tests-descriptive/tests-prompt1/23_prompt1.test.js:40:10)
+
+// ● handles full mod mask skip
+
+// TypeError: Cannot mix BigInt and other types, use explicit conversions
+
+//   28 |   };
+//   29 |
+// > 30 |   const finalXor = computeXor(right + 1n, bitIndex, xorConstant) ^ computeXor(left, bitIndex, xorConstant);
+//      |                                    ^
+//   31 |   return finalXor;
+//   32 | }
+//   33 |
+
+//   at solve (solutions-descriptive/23.js:30:36)
+//   at Object.solve (tests-descriptive/tests-prompt1/23_prompt1.test.js:48:10)
+
+// ● handles all numbers excluded
+
+// TypeError: Cannot mix BigInt and other types, use explicit conversions
+
+//   28 |   };
+//   29 |
+// > 30 |   const finalXor = computeXor(right + 1n, bitIndex, xorConstant) ^ computeXor(left, bitIndex, xorConstant);
+//      |                                    ^
+//   31 |   return finalXor;
+//   32 | }
+//   33 |
+
+//   at solve (solutions-descriptive/23.js:30:36)
+//   at Object.solve (tests-descriptive/tests-prompt1/23_prompt1.test.js:54:10)
+
+// ● handles largest i and k
+
+// TypeError: Cannot mix BigInt and other types, use explicit conversions
+
+//   28 |   };
+//   29 |
+// > 30 |   const finalXor = computeXor(right + 1n, bitIndex, xorConstant) ^ computeXor(left, bitIndex, xorConstant);
+//      |                                    ^
+//   31 |   return finalXor;
+//   32 | }
+//   33 |
+
+//   at solve (solutions-descriptive/23.js:30:36)
+//   at Object.solve (tests-descriptive/tests-prompt1/23_prompt1.test.js:60:10)

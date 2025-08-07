@@ -49,3 +49,37 @@ test('edge: negative bitIndex', () => {
   let val = solve(2n, 6n, -1n, 4n);
   expect(typeof val).toBe('bigint');
 });
+
+
+// edge: reverse range (left > right)
+
+//     expect(received).toBe(expected) // Object.is equality
+
+//     Expected: 0n
+//     Received: 4n
+
+//       24 |
+//       25 | test('edge: reverse range (left > right)', () => {
+//     > 26 |   expect(solve(5n, 3n, 2n, 1n)).toBe(0n);
+//          |                                 ^
+//       27 | });
+//       28 |
+//       29 | test('large values', () => {
+
+//       at Object.toBe (tests-descriptive/tests-prompt2/23_prompt2.test.js:26:33)
+
+//   ● edge: negative bitIndex
+
+//     RangeError: Division by zero
+
+//       11 |       limit -= xorConstant + 1n;
+//       12 |       if (limit >= 0n) {
+//     > 13 |           let shiftedCount = limit / (1n << bitIndex);
+//          |                                   ^
+//       14 |           shiftedCount += 1n;
+//       15 |
+//       16 |
+
+//       at computeXor (solutions-descriptive/23.js:13:35)
+//       at computeXor (solutions-descriptive/23.js:30:20)
+//       at Object.solve (tests-descriptive/tests-prompt2/23_prompt2.test.js:49:13)

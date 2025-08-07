@@ -144,3 +144,59 @@ test('n large odd, k odd', () => {
     expect(new Set(vals).size).toBe(n);
   });
 });
+
+
+// n=3, k=2
+
+//     TypeError: expect(received).toHaveLength(expected)
+
+//     Matcher error: received value must have a length property whose value must be a number
+
+//     Received has type:  set
+//     Received has value: Set {"1 2 3", "3 2 1"}
+
+//       28 |   const output = solve(3, 2);
+//       29 |   expect(output.length).toBe(2);
+//     > 30 |   expect(new Set(output)).toHaveLength(2);
+//          |                           ^
+//       31 |   const perms = new Set(output.map(s => s.split(' ').sort().join(' ')));
+//       32 |   expect(perms.has('1 2 3')).toBe(true);
+//       33 | });
+
+//       at Object.toHaveLength (tests-descriptive/tests-prompt3/25_prompt3.test.js:30:27)
+
+//   ● n=4, k=2
+
+//     TypeError: expect(received).toHaveLength(expected)
+
+//     Matcher error: received value must have a length property whose value must be a number
+
+//     Received has type:  set
+//     Received has value: Set {"1 2 3 4", "4 3 2 1"}
+
+//       58 |   const output = solve(4,2);
+//       59 |   expect(output.length).toBe(2);
+//     > 60 |   expect(new Set(output)).toHaveLength(2);
+//          |                           ^
+//       61 |   output.forEach(p => {
+//       62 |     const arr = p.split(' ').map(Number);
+//       63 |     expect(new Set(arr).size).toBe(4);
+
+//       at Object.toHaveLength (tests-descriptive/tests-prompt3/25_prompt3.test.js:60:27)
+
+//   ● n=8, k=4200 (no solution, as k > 8!)
+
+//     expect(received).toBe(expected) // Object.is equality
+
+//     Expected: null
+//     Received: ["1 2 3 4 5 6 7 8", "8 7 6 5 4 3 2 1", "1 2 3 4 5 6 8 7", "8 7 6 5 4 3 1 2", "1 2 3 4 5 7 6 8", "8 7 6 5 4 2 3 1", "1 2 3 4 5 7 8 6", "8 7 6 5 4 2 1 3", "1 2 3 4 5 8 6 7", "8 7 6 5 4 1 3 2", …]
+
+//       101 |
+//       102 | test('n=8, k=4200 (no solution, as k > 8!)', () => {
+//     > 103 |   expect(solve(8,4200)).toBe(null);
+//           |                         ^
+//       104 | });
+//       105 |
+//       106 | test('large n odd, k even', () => {
+
+//       at Object.toBe (tests-descriptive/tests-prompt3/25_prompt3.test.js:103:25)

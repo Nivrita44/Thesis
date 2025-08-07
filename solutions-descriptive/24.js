@@ -45,19 +45,19 @@ export function solve(unitCost, overheadCost, totalWork, maxGroupSize) {
     return minimumTotalCost;
 }
 
-function testing_test() {
-    const inputs = [
-        [2, 3, 5, 5],
-        [10, 20, 40, 5],
-        [1, 60, 100, 10],
-        [60, 1, 100, 10]
-    ];
-    const expectedOutputs = [12, 190, 280, 160];
+// function testing_test() {
+//     const inputs = [
+//         [2, 3, 5, 5],
+//         [10, 20, 40, 5],
+//         [1, 60, 100, 10],
+//         [60, 1, 100, 10]
+//     ];
+//     const expectedOutputs = [12, 190, 280, 160];
 
-    for (let i = 0; i < inputs.length; i++) {
-        const result = solve(...inputs[i]);
-        console.log(`Test case ${i + 1}:`, result === expectedOutputs[i] ? "Passed" : `Failed (Expected ${expectedOutputs[i]}, Got ${result})`);
-    }
-}
+//     for (let i = 0; i < inputs.length; i++) {
+//         const result = solve(...inputs[i]);
+//         console.log(`Test case ${i + 1}:`, result === expectedOutputs[i] ? "Passed" : `Failed (Expected ${expectedOutputs[i]}, Got ${result})`);
+//     }
+// }
 
-testing_test();
+// testing_test();

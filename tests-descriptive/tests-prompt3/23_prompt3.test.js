@@ -63,3 +63,224 @@ test('full 2^i chunk, skip one', () => {
 test('extremely large range, test performance', () => {
   expect(typeof solve(1n, 1000000000000000000n, 5, 23n)).toBe('bigint');
 });
+
+
+// basic example 1 - small i
+
+//     TypeError: Cannot mix BigInt and other types, use explicit conversions
+
+//       11 |       limit -= xorConstant + 1n;
+//       12 |       if (limit >= 0n) {
+//     > 13 |           let shiftedCount = limit / (1n << bitIndex);
+//          |                                         ^
+//       14 |           shiftedCount += 1n;
+//       15 |
+//       16 |
+
+//       at computeXor (solutions-descriptive/23.js:13:41)
+//       at computeXor (solutions-descriptive/23.js:30:20)
+//       at Object.solve (tests-descriptive/tests-prompt3/23_prompt3.test.js:4:10)
+
+//   ● basic example 2 - all excluded k
+
+//     TypeError: Cannot mix BigInt and other types, use explicit conversions
+
+//       11 |       limit -= xorConstant + 1n;
+//       12 |       if (limit >= 0n) {
+//     > 13 |           let shiftedCount = limit / (1n << bitIndex);
+//          |                                         ^
+//       14 |           shiftedCount += 1n;
+//       15 |
+//       16 |
+
+//       at computeXor (solutions-descriptive/23.js:13:41)
+//       at computeXor (solutions-descriptive/23.js:30:20)
+//       at Object.solve (tests-descriptive/tests-prompt3/23_prompt3.test.js:8:10)
+
+//   ● range where k is always excluded
+
+//     TypeError: Cannot mix BigInt and other types, use explicit conversions
+
+//       11 |       limit -= xorConstant + 1n;
+//       12 |       if (limit >= 0n) {
+//     > 13 |           let shiftedCount = limit / (1n << bitIndex);
+//          |                                         ^
+//       14 |           shiftedCount += 1n;
+//       15 |
+//       16 |
+
+//       at computeXor (solutions-descriptive/23.js:13:41)
+//       at computeXor (solutions-descriptive/23.js:30:20)
+//       at Object.solve (tests-descriptive/tests-prompt3/23_prompt3.test.js:12:10)
+
+//   ● single number, included
+
+//     TypeError: Cannot mix BigInt and other types, use explicit conversions
+
+//       11 |       limit -= xorConstant + 1n;
+//       12 |       if (limit >= 0n) {
+//     > 13 |           let shiftedCount = limit / (1n << bitIndex);
+//          |                                         ^
+//       14 |           shiftedCount += 1n;
+//       15 |
+//       16 |
+
+//       at computeXor (solutions-descriptive/23.js:13:41)
+//       at computeXor (solutions-descriptive/23.js:30:20)
+//       at Object.solve (tests-descriptive/tests-prompt3/23_prompt3.test.js:16:10)
+
+//   ● single number, excluded
+
+//     TypeError: Cannot mix BigInt and other types, use explicit conversions
+
+//       11 |       limit -= xorConstant + 1n;
+//       12 |       if (limit >= 0n) {
+//     > 13 |           let shiftedCount = limit / (1n << bitIndex);
+//          |                                         ^
+//       14 |           shiftedCount += 1n;
+//       15 |
+//       16 |
+
+//       at computeXor (solutions-descriptive/23.js:13:41)
+//       at computeXor (solutions-descriptive/23.js:30:20)
+//       at Object.solve (tests-descriptive/tests-prompt3/23_prompt3.test.js:20:10)
+
+//   ● larger range, simple exclusion
+
+//     TypeError: Cannot mix BigInt and other types, use explicit conversions
+
+//       11 |       limit -= xorConstant + 1n;
+//       12 |       if (limit >= 0n) {
+//     > 13 |           let shiftedCount = limit / (1n << bitIndex);
+//          |                                         ^
+//       14 |           shiftedCount += 1n;
+//       15 |
+//       16 |
+
+//       at computeXor (solutions-descriptive/23.js:13:41)
+//       at computeXor (solutions-descriptive/23.js:30:20)
+//       at Object.solve (tests-descriptive/tests-prompt3/23_prompt3.test.js:24:10)
+
+//   ● l = r = 0
+
+//     TypeError: Cannot mix BigInt and other types, use explicit conversions
+
+//       11 |       limit -= xorConstant + 1n;
+//       12 |       if (limit >= 0n) {
+//     > 13 |           let shiftedCount = limit / (1n << bitIndex);
+//          |                                         ^
+//       14 |           shiftedCount += 1n;
+//       15 |
+//       16 |
+
+//       at computeXor (solutions-descriptive/23.js:13:41)
+//       at computeXor (solutions-descriptive/23.js:30:20)
+//       at Object.solve (tests-descriptive/tests-prompt3/23_prompt3.test.js:28:10)
+
+//   ● i = 0, every number except k=0
+
+//     TypeError: Cannot mix BigInt and other types, use explicit conversions
+
+//       11 |       limit -= xorConstant + 1n;
+//       12 |       if (limit >= 0n) {
+//     > 13 |           let shiftedCount = limit / (1n << bitIndex);
+//          |                                         ^
+//       14 |           shiftedCount += 1n;
+//       15 |
+//       16 |
+
+//       at computeXor (solutions-descriptive/23.js:13:41)
+//       at computeXor (solutions-descriptive/23.js:30:20)
+//       at Object.solve (tests-descriptive/tests-prompt3/23_prompt3.test.js:32:10)
+
+//   ● entire possible k values are skipped
+
+//     TypeError: Cannot mix BigInt and other types, use explicit conversions
+
+//       11 |       limit -= xorConstant + 1n;
+//       12 |       if (limit >= 0n) {
+//     > 13 |           let shiftedCount = limit / (1n << bitIndex);
+//          |                                         ^
+//       14 |           shiftedCount += 1n;
+//       15 |
+//       16 |
+
+//       at computeXor (solutions-descriptive/23.js:13:41)
+//       at computeXor (solutions-descriptive/23.js:30:20)
+//       at Object.solve (tests-descriptive/tests-prompt3/23_prompt3.test.js:36:10)
+
+//   ● lower end BigInt
+
+//     TypeError: Cannot mix BigInt and other types, use explicit conversions
+
+//       11 |       limit -= xorConstant + 1n;
+//       12 |       if (limit >= 0n) {
+//     > 13 |           let shiftedCount = limit / (1n << bitIndex);
+//          |                                         ^
+//       14 |           shiftedCount += 1n;
+//       15 |
+//       16 |
+
+//       at computeXor (solutions-descriptive/23.js:13:41)
+//       at computeXor (solutions-descriptive/23.js:30:20)
+//       at Object.solve (tests-descriptive/tests-prompt3/23_prompt3.test.js:40:10)
+
+//   ● upper end BigInt
+
+//     TypeError: Cannot mix BigInt and other types, use explicit conversions
+
+//       11 |       limit -= xorConstant + 1n;
+//       12 |       if (limit >= 0n) {
+//     > 13 |           let shiftedCount = limit / (1n << bitIndex);
+//          |                                         ^
+//       14 |           shiftedCount += 1n;
+//       15 |
+//       16 |
+
+//       at computeXor (solutions-descriptive/23.js:13:41)
+//       at computeXor (solutions-descriptive/23.js:30:20)
+//       at Object.solve (tests-descriptive/tests-prompt3/23_prompt3.test.js:44:17)
+
+//   ● k = 0 middle of range
+
+//     TypeError: Cannot mix BigInt and other types, use explicit conversions
+
+//       11 |       limit -= xorConstant + 1n;
+//       12 |       if (limit >= 0n) {
+//     > 13 |           let shiftedCount = limit / (1n << bitIndex);
+//          |                                         ^
+//       14 |           shiftedCount += 1n;
+//       15 |
+//       16 |
+
+//       at computeXor (solutions-descriptive/23.js:13:41)
+//       at computeXor (solutions-descriptive/23.js:30:20)
+//       at Object.solve (tests-descriptive/tests-prompt3/23_prompt3.test.js:52:10)
+
+//   ● full 2^i chunk, skip one
+
+//     TypeError: Cannot mix BigInt and other types, use explicit conversions
+
+//       11 |       limit -= xorConstant + 1n;
+//       12 |       if (limit >= 0n) {
+//     > 13 |           let shiftedCount = limit / (1n << bitIndex);
+//          |                                         ^
+//       14 |           shiftedCount += 1n;
+//       15 |
+//       16 |
+
+//       at computeXor (solutions-descriptive/23.js:13:41)
+//       at computeXor (solutions-descriptive/23.js:30:20)
+//       at Object.solve (tests-descriptive/tests-prompt3/23_prompt3.test.js:60:10)
+
+//   ● extremely large range, test performance
+
+//     TypeError: Cannot mix BigInt and other types, use explicit conversions
+
+//       11 |       limit -= xorConstant + 1n;
+//       12 |       if (limit >= 0n) {
+//     > 13 |           let shiftedCount = limit / (1n << bitIndex);
+//          |                                         ^
+//       14 |           shiftedCount += 1n;
+//       15 |
+//       16 |
