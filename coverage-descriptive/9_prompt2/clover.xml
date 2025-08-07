@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1754548804718" clover="3.2.0">
+  <project timestamp="1754548804718" name="All files">
+    <metrics statements="61" coveredstatements="59" conditionals="26" coveredconditionals="22" methods="1" coveredmethods="1" elements="88" coveredelements="82" complexity="0" loc="61" ncloc="61" packages="1" files="1" classes="1"/>
+    <file name="9.js" path="C:\Users\ASUS\OneDrive\Documents\GitHub\Thesis\solutions-descriptive\9.js">
+      <metrics statements="61" coveredstatements="59" conditionals="26" coveredconditionals="22" methods="1" coveredmethods="1"/>
+      <line num="2" count="14" type="stmt"/>
+      <line num="3" count="14" type="stmt"/>
+      <line num="4" count="14" type="stmt"/>
+      <line num="5" count="14" type="stmt"/>
+      <line num="7" count="14" type="stmt"/>
+      <line num="8" count="53" type="stmt"/>
+      <line num="9" count="14" type="stmt"/>
+      <line num="10" count="39" type="stmt"/>
+      <line num="11" count="39" type="stmt"/>
+      <line num="14" count="14" type="stmt"/>
+      <line num="15" count="71" type="stmt"/>
+      <line num="16" count="14" type="stmt"/>
+      <line num="17" count="53" type="stmt"/>
+      <line num="20" count="14" type="stmt"/>
+      <line num="21" count="14" type="stmt"/>
+      <line num="23" count="14" type="stmt"/>
+      <line num="24" count="53" type="stmt"/>
+      <line num="25" count="53" type="stmt"/>
+      <line num="26" count="53" type="stmt"/>
+      <line num="29" count="53" type="cond" truecount="2" falsecount="0"/>
+      <line num="30" count="40" type="stmt"/>
+      <line num="31" count="13" type="cond" truecount="2" falsecount="0"/>
+      <line num="32" count="11" type="stmt"/>
+      <line num="34" count="2" type="stmt"/>
+      <line num="37" count="53" type="stmt"/>
+      <line num="38" count="78" type="cond" truecount="2" falsecount="0"/>
+      <line num="39" count="39" type="stmt"/>
+      <line num="40" count="39" type="stmt"/>
+      <line num="41" count="39" type="stmt"/>
+      <line num="42" count="39" type="stmt"/>
+      <line num="47" count="14" type="stmt"/>
+      <line num="49" count="14" type="stmt"/>
+      <line num="50" count="35" type="cond" truecount="2" falsecount="0"/>
+      <line num="51" count="11" type="stmt"/>
+      <line num="52" count="11" type="stmt"/>
+      <line num="54" count="11" type="stmt"/>
+      <line num="55" count="16" type="cond" truecount="2" falsecount="0"/>
+      <line num="56" count="11" type="stmt"/>
+      <line num="58" count="5" type="stmt"/>
+      <line num="59" count="5" type="stmt"/>
+      <line num="61" count="5" type="cond" truecount="1" falsecount="1"/>
+      <line num="62" count="0" type="stmt"/>
+      <line num="65" count="5" type="stmt"/>
+      <line num="66" count="7" type="cond" truecount="2" falsecount="0"/>
+      <line num="69" count="5" type="cond" truecount="2" falsecount="0"/>
+      <line num="70" count="1" type="stmt"/>
+      <line num="71" count="1" type="stmt"/>
+      <line num="72" count="1" type="stmt"/>
+      <line num="74" count="4" type="cond" truecount="1" falsecount="1"/>
+      <line num="79" count="11" type="stmt"/>
+      <line num="80" count="12" type="cond" truecount="2" falsecount="0"/>
+      <line num="81" count="5" type="stmt"/>
+      <line num="84" count="7" type="stmt"/>
+      <line num="85" count="7" type="stmt"/>
+      <line num="86" count="6" type="cond" truecount="1" falsecount="1"/>
+      <line num="89" count="7" type="cond" truecount="2" falsecount="0"/>
+      <line num="90" count="2" type="stmt"/>
+      <line num="93" count="5" type="cond" truecount="1" falsecount="1"/>
+      <line num="94" count="0" type="stmt"/>
+      <line num="97" count="4" type="stmt"/>
+      <line num="100" count="7" type="stmt"/>
+    </file>
+  </project>
+</coverage>

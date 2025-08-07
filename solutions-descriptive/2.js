@@ -11,10 +11,10 @@ function modSub(a, b) {
 }
 
 function modMul(a, b) {
-    
-    let result = (a >> 20) * (b >> 20) * MOD_APPROX
-               + (a & 0xfff00000) * (b & 0xfffff)
-               + (a & 0xfffff) * b;
+
+    let result = (a >> 20) * (b >> 20) * MOD_APPROX +
+        (a & 0xfff00000) * (b & 0xfffff) +
+        (a & 0xfffff) * b;
     return result % MOD;
 }
 
@@ -45,7 +45,8 @@ function calculateBaseSum(baseP, n) {
         number = Math.floor(number / baseP);
     }
 
-    let result = 0, basePower = 1;
+    let result = 0,
+        basePower = 1;
 
     for (let i = 0; i < baseDigits.length; i++) {
         result = modAdd(result, modMul(baseDigits[i], basePower));
@@ -61,7 +62,7 @@ export function solve(n, k) {
     let effectiveK;
 
     if (k > n) {
-        const surplus = (k - BigInt(n)) % BigInt(MOD);
+        const surplus = (BigInt(k) - BigInt(n)) % BigInt(MOD);
         totalSum = modMul(Number(surplus), n);
         effectiveK = n;
     } else {
@@ -70,7 +71,7 @@ export function solve(n, k) {
 
     let previous = effectiveK;
 
-    for (let baseA = 1; ; baseA++) {
+    for (let baseA = 1;; baseA++) {
         const lowerBound = Math.floor(n / (baseA + 1)) + 1;
         if (n >= lowerBound * lowerBound) break;
 
@@ -93,26 +94,26 @@ export function solve(n, k) {
 }
 
 
-function testing_test() {
-    const testCases = [
-        { input: [9, 3n], expected: 10 },
-        { input: [19, 84n], expected: 2006 },
-        { input: [9982, 44353n], expected: 120792461 },
-        { input: [100000, 1000000007n], expected: 584502117 },
-        { input: [17, 30n], expected: 775 },
-        { input: [777, 1000000000000000000n], expected: 46058362 },
-    ];
+// function testing_test() {
+//     const testCases = [
+//         { input: [9, 3n], expected: 10 },
+//         { input: [19, 84n], expected: 2006 },
+//         { input: [9982, 44353n], expected: 120792461 },
+//         { input: [100000, 1000000007n], expected: 584502117 },
+//         { input: [17, 30n], expected: 775 },
+//         { input: [777, 1000000000000000000n], expected: 46058362 },
+//     ];
 
-    console.log("Running Tests...\n");
+//     console.log("Running Tests...\n");
 
-    testCases.forEach(({ input, expected }, index) => {
-        const result = solve(...input);
-        const pass = result === expected ? "PASS" : "FAIL";
-        console.log(`Test ${index + 1}: ${pass}`);
-        console.log(`  Input: n=${input[0]}, k=${input[1]}`);
-        console.log(`  Expected: ${expected}`);
-        console.log(`  Got: ${result}\n`);
-    });
-}
+//     testCases.forEach(({ input, expected }, index) => {
+//         const result = solve(...input);
+//         const pass = result === expected ? "PASS" : "FAIL";
+//         console.log(`Test ${index + 1}: ${pass}`);
+//         console.log(`  Input: n=${input[0]}, k=${input[1]}`);
+//         console.log(`  Expected: ${expected}`);
+//         console.log(`  Got: ${result}\n`);
+//     });
+// }
 
-testing_test();
+// testing_test();

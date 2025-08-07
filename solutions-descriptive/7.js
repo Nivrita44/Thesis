@@ -107,50 +107,51 @@ class Tree {
         return this.adjItr(u).filter(v => v !== this.parent[u]);
     }
 }
+//code error
 
-function testing_test() {
-    const testCases = [
-        {
-            input: [
-            "3",
-            "1 2",
-            "3 2"
-            ],
-            expected: "0"
-        },
-        {
-            input: [
-            "5",
-            "2 3",
-            "1 5",
-            "4 2",
-            "1 2"
-            ],
-            expected: "4"
-        },
-        {
-            input: [
-            "11",
-            "2 1",
-            "2 3",
-            "2 4",
-            "4 5",
-            "6 5",
-            "5 7",
-            "4 8",
-            "8 9",
-            "7 10",
-            "10 11"
-            ],
-            expected: "29"
-        }
-        
-    ];
+// function testing_test() {
+//     const testCases = [
+//         {
+//             input: [
+//             "3",
+//             "1 2",
+//             "3 2"
+//             ],
+//             expected: "0"
+//         },
+//         {
+//             input: [
+//             "5",
+//             "2 3",
+//             "1 5",
+//             "4 2",
+//             "1 2"
+//             ],
+//             expected: "4"
+//         },
+//         {
+//             input: [
+//             "11",
+//             "2 1",
+//             "2 3",
+//             "2 4",
+//             "4 5",
+//             "6 5",
+//             "5 7",
+//             "4 8",
+//             "8 9",
+//             "7 10",
+//             "10 11"
+//             ],
+//             expected: "29"
+//         }
 
-    for (const { input, expected } of testCases) {
-        const result = solve(input);
-        console.log(`Input:\n${input.join('\n')}\nExpected: ${expected}, Got: ${result}`);
-        console.log(result === expected ? "PASS" : "FAIL");
-    }
-}
-testing_test();
+//     ];
+
+//     for (const { input, expected } of testCases) {
+//         const result = solve(input);
+//         console.log(`Input:\n${input.join('\n')}\nExpected: ${expected}, Got: ${result}`);
+//         console.log(result === expected ? "PASS" : "FAIL");
+//     }
+// }
+// testing_test();
