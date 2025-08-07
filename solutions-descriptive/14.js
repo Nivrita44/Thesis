@@ -80,21 +80,21 @@ export function solve(stopCount, stepSize, totalLength, stopPositions) {
     return currentTime + Math.max(totalLength - currentPosition, 0);
 }
 
-function testing_test() {
-    const testCases = [
-        { stopCount: 1, stepSize: 3, totalLength: 5, stops: [0], expected: 4 },
-        { stopCount: 3, stepSize: 2, totalLength: 5, stops: [2, 5, 5], expected: 5 },
-        { stopCount: 1, stepSize: 10, totalLength: 10, stops: [10], expected: 20 },
-        { stopCount: 10, stepSize: 1, totalLength: 10, stops: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9], expected: 0 },
-        { stopCount: 2, stepSize: 1, totalLength: 2, stops: [0, 0], expected: 2 },
-        { stopCount: 2, stepSize: 1, totalLength: 2, stops: [0, 2], expected: 1 },
-    ];
+// function testing_test() {
+//     const testCases = [
+//         { stopCount: 1, stepSize: 3, totalLength: 5, stops: [0], expected: 4 },
+//         { stopCount: 3, stepSize: 2, totalLength: 5, stops: [2, 5, 5], expected: 5 },
+//         { stopCount: 1, stepSize: 10, totalLength: 10, stops: [10], expected: 20 },
+//         { stopCount: 10, stepSize: 1, totalLength: 10, stops: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9], expected: 0 },
+//         { stopCount: 2, stepSize: 1, totalLength: 2, stops: [0, 0], expected: 2 },
+//         { stopCount: 2, stepSize: 1, totalLength: 2, stops: [0, 2], expected: 1 },
+//     ];
 
-    testCases.forEach(({ stopCount, stepSize, totalLength, stops, expected }, index) => {
-        const result = solve(stopCount, stepSize, totalLength, stops);
-        const status = result === expected ? "Passed" : `Failed (Expected ${expected}, Got ${result})`;
-        console.log(`Test Case ${index + 1}: ${status}`);
-    });
-}
+//     testCases.forEach(({ stopCount, stepSize, totalLength, stops, expected }, index) => {
+//         const result = solve(stopCount, stepSize, totalLength, stops);
+//         const status = result === expected ? "Passed" : `Failed (Expected ${expected}, Got ${result})`;
+//         console.log(`Test Case ${index + 1}: ${status}`);
+//     });
+// }
 
-testing_test();
+// testing_test();

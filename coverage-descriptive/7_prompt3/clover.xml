@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1754547769719" clover="3.2.0">
-  <project timestamp="1754547769719" name="All files">
+<coverage generated="1754572151831" clover="3.2.0">
+  <project timestamp="1754572151831" name="All files">
     <metrics statements="64" coveredstatements="64" conditionals="4" coveredconditionals="4" methods="9" coveredmethods="9" elements="77" coveredelements="77" complexity="0" loc="64" ncloc="64" packages="1" files="1" classes="1"/>
     <file name="7.js" path="C:\Users\ASUS\OneDrive\Documents\GitHub\Thesis\solutions-descriptive\7.js">
       <metrics statements="64" coveredstatements="64" conditionals="4" coveredconditionals="4" methods="9" coveredmethods="9"/>

@@ -52,42 +52,42 @@ function countRange(start, end) {
     return end - start + 1;
 }
 
-function testing_test() {
-    const testCases = [
-        {
-            input: [6, 5, 3, [1, 2, 3]],
-            expected: "2 3 5"
-        },
-        {
-            input: [2, 1, 4, [2, 1, 1, 2]],
-            expected: "2 2 2 2"
-        },
-        {
-            input: [5, 3, 1, [3]],
-            expected: "2"
-        },
-        {
-            input: [3, 2, 4, [2, 1, 1, 1]],
-            expected: "2 3 3 3"
-        },
-        {
-            input: [18, 15, 4, [13, 15, 1, 16]],
-            expected: "2 4 6 8"
-        }
-    ];
+// function testing_test() {
+//     const testCases = [
+//         {
+//             input: [6, 5, 3, [1, 2, 3]],
+//             expected: "2 3 5"
+//         },
+//         {
+//             input: [2, 1, 4, [2, 1, 1, 2]],
+//             expected: "2 2 2 2"
+//         },
+//         {
+//             input: [5, 3, 1, [3]],
+//             expected: "2"
+//         },
+//         {
+//             input: [3, 2, 4, [2, 1, 1, 1]],
+//             expected: "2 3 3 3"
+//         },
+//         {
+//             input: [18, 15, 4, [13, 15, 1, 16]],
+//             expected: "2 4 6 8"
+//         }
+//     ];
 
-    testCases.forEach(({ input, expected }, index) => {
-        const result = solve(...input);
-        const status = result === expected ? "Passed" : "Failed";
-        console.log(`Test Case ${index + 1}: ${status}`);
-        if (status === "Failed") {
-            console.log(`  Expected: ${expected}`);
-            console.log(`  Got     : ${result}`);
-        }
-    });
-}
+//     testCases.forEach(({ input, expected }, index) => {
+//         const result = solve(...input);
+//         const status = result === expected ? "Passed" : "Failed";
+//         console.log(`Test Case ${index + 1}: ${status}`);
+//         if (status === "Failed") {
+//             console.log(`  Expected: ${expected}`);
+//             console.log(`  Got     : ${result}`);
+//         }
+//     });
+// }
 
-testing_test();
+// testing_test();
 
 
 

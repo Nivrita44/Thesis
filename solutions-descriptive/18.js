@@ -8,7 +8,7 @@ export function solve(targetRows, targetCols, sourceMatrix, targetMatrix) {
                 mismatchMask |= (sourceMatrix[row][col] ^ targetMatrix[row][col]) & sourceMatrix[row][col];
             }
 
-            const clearMask = ((1n << 31n) - 1n) ^ BigInt(mismatchMask);
+            const clearMask = ((1 n << 31 n) - 1 n) ^ BigInt(mismatchMask);
             for (let col = 0; col < targetCols; col++) {
                 sourceMatrix[row][col] &= Number(clearMask);
             }
@@ -37,32 +37,32 @@ export function solve(targetRows, targetCols, sourceMatrix, targetMatrix) {
     return "Yes\n";
 }
 
-function testing_test() {
-    const testCases = [
-        {
-            input: { n: 1, m: 1, a: [[12]], b: [[13]] },
-            expected: "Yes\n"
-        },
-        {
-            input: { n: 2, m: 2, a: [[10, 10], [42, 42]], b: [[21, 21], [21, 21]] },
-            expected: "Yes\n"
-        },
-        {
-            input: { n: 2, m: 2, a: [[74, 10], [42, 106]], b: [[21, 85], [85, 21]] },
-            expected: "No\n"
-        },
-        {
-            input: { n: 2, m: 4, a: [[1, 2, 3, 4], [5, 6, 7, 8]], b: [[3, 2, 3, 4], [1, 0, 1, 0]] },
-            expected: "Yes\n"
-        }
-    ];
+// function testing_test() {
+//     const testCases = [
+//         {
+//             input: { n: 1, m: 1, a: [[12]], b: [[13]] },
+//             expected: "Yes\n"
+//         },
+//         {
+//             input: { n: 2, m: 2, a: [[10, 10], [42, 42]], b: [[21, 21], [21, 21]] },
+//             expected: "Yes\n"
+//         },
+//         {
+//             input: { n: 2, m: 2, a: [[74, 10], [42, 106]], b: [[21, 85], [85, 21]] },
+//             expected: "No\n"
+//         },
+//         {
+//             input: { n: 2, m: 4, a: [[1, 2, 3, 4], [5, 6, 7, 8]], b: [[3, 2, 3, 4], [1, 0, 1, 0]] },
+//             expected: "Yes\n"
+//         }
+//     ];
 
-    testCases.forEach(({ input, expected }, index) => {
-        const { n, m, a, b } = input;
-        const result = solve(n, m, a, b);
-        const status = result === expected ? "Passed" : `Failed`;
-        console.log(`Test ${index + 1}: ${status}`);
-    });
-}
+//     testCases.forEach(({ input, expected }, index) => {
+//         const { n, m, a, b } = input;
+//         const result = solve(n, m, a, b);
+//         const status = result === expected ? "Passed" : `Failed`;
+//         console.log(`Test ${index + 1}: ${status}`);
+//     });
+// }
 
-testing_test();
+// testing_test();

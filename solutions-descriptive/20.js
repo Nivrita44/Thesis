@@ -18,7 +18,8 @@ function evaluateCandidateValue(candidate) {
 }
 
 function findBinarySearchSolution() {
-    let lowBound = LOWER_BOUND, highBound = UPPER_BOUND;
+    let lowBound = LOWER_BOUND,
+        highBound = UPPER_BOUND;
     while (highBound - lowBound > 1) {
         let midPoint = (highBound + lowBound) >> 1;
         let result = evaluateCandidateValue(midPoint);
@@ -57,18 +58,18 @@ export function solve(inputArray) {
     return operationsCount;
 }
 
-function testing_test() {
-    const testCases = [
-        { input: [1, 1], expected: 0 },
-        { input: [1, 3, 2], expected: -1 },
-        { input: [2, 1, 2, 6], expected: 3 },
-    ];
+// function testing_test() {
+//     const testCases = [
+//         { input: [1, 1], expected: 0 },
+//         { input: [1, 3, 2], expected: -1 },
+//         { input: [2, 1, 2, 6], expected: 3 },
+//     ];
 
-    for (let i = 0; i < testCases.length; i++) {
-        const { input, expected } = testCases[i];
-        const result = solve(input);
-        console.log(`Test Case ${i + 1}:`, result === expected ? "Passed" : `Failed (Expected: ${expected}, Got: ${result})`);
-    }
-}
+//     for (let i = 0; i < testCases.length; i++) {
+//         const { input, expected } = testCases[i];
+//         const result = solve(input);
+//         console.log(`Test Case ${i + 1}:`, result === expected ? "Passed" : `Failed (Expected: ${expected}, Got: ${result})`);
+//     }
+// }
 
-testing_test();
+// testing_test();
