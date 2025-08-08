@@ -1,4 +1,4 @@
-import solve from '../../solutions-descriptive/49.js'
+import {solve} from '../../solutions-descriptive/49.js'
 
 test('single test case, simple tree', () => {
   const t = 1
@@ -138,3 +138,94 @@ test('edge case: minimal n=2', () => {
   }
   expect(solve(input)).toEqual([0])
 })
+
+
+// single test case, simple tree
+
+//     TypeError: input.trim is not a function
+
+//       56 |
+//       57 | export function solve(input) {
+//     > 58 |     const lines = input.trim().split('\n');
+//          |                         ^
+//       59 |     let idx = 0;
+//       60 |     const results = [];
+//       61 |
+
+//       at trim (solutions-descriptive/49.js:58:25)
+//       at Object.solve (tests-descriptive/tests-prompt1/49_prompt1.test.js:21:10)
+
+//   ● single test case, star graph
+
+//     TypeError: input.trim is not a function
+
+//       56 |
+//       57 | export function solve(input) {
+//     > 58 |     const lines = input.trim().split('\n');
+//          |                         ^
+//       59 |     let idx = 0;
+//       60 |     const results = [];
+//       61 |
+
+//       at trim (solutions-descriptive/49.js:58:25)
+//       at Object.solve (tests-descriptive/tests-prompt1/49_prompt1.test.js:43:10)
+
+//   ● cycle -- removing one edge still connected
+
+//     TypeError: input.trim is not a function
+
+//       56 |
+//       57 | export function solve(input) {
+//     > 58 |     const lines = input.trim().split('\n');
+//          |                         ^
+//       59 |     let idx = 0;
+//       60 |     const results = [];
+//       61 |
+
+//       at trim (solutions-descriptive/49.js:58:25)
+//       at Object.solve (tests-descriptive/tests-prompt1/49_prompt1.test.js:65:10)
+
+//   ● removal can split graph, minimal pairs
+
+//     TypeError: input.trim is not a function
+
+//       56 |
+//       57 | export function solve(input) {
+//     > 58 |     const lines = input.trim().split('\n');
+//          |                         ^
+//       59 |     let idx = 0;
+//       60 |     const results = [];
+//       61 |
+
+//       at trim (solutions-descriptive/49.js:58:25)
+//       at Object.solve (tests-descriptive/tests-prompt1/49_prompt1.test.js:88:10)
+
+//   ● multiple test cases
+
+//     TypeError: input.trim is not a function
+
+//       56 |
+//       57 | export function solve(input) {
+//     > 58 |     const lines = input.trim().split('\n');
+//          |                         ^
+//       59 |     let idx = 0;
+//       60 |     const results = [];
+//       61 |
+
+//       at trim (solutions-descriptive/49.js:58:25)
+//       at Object.solve (tests-descriptive/tests-prompt1/49_prompt1.test.js:120:10)
+
+//   ● edge case: minimal n=2
+
+//     TypeError: input.trim is not a function
+
+//       56 |
+//       57 | export function solve(input) {
+//     > 58 |     const lines = input.trim().split('\n');
+//          |                         ^
+//       59 |     let idx = 0;
+//       60 |     const results = [];
+//       61 |
+
+//       at trim (solutions-descriptive/49.js:58:25)
+//       at Object.solve (tests-descriptive/tests-prompt1/49_prompt1.test.js:139:10)

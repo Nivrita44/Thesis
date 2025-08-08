@@ -31,32 +31,33 @@ export function solve(n, k, values) {
     for (let i = 0; i < n; i++) {
         const totalOps = maxOperations(values[i], 0) + prefix[i] + suffix[i];
         if (totalOps >= k) {
-            return true;
+            return "YES";  // string
         }
     }
 
-    return false;
+    return "NO";  // string
 }
 
-function testing_test() {
-    const testCases = [
-        { n: 3, k: 3, values: [2, 1, 4], expected: "YES" },
-        { n: 3, k: 7, values: [2, 1, 4], expected: "NO" },
-        { n: 2, k: 15, values: [2, 16], expected: "YES" },
-        { n: 3, k: 10, values: [256, 32, 1], expected: "YES" },
-        { n: 3, k: 289, values: [768, 96, 1], expected: "YES" },
-        { n: 3, k: 290, values: [768, 96, 1], expected: "NO" },
-        { n: 5, k: 7, values: [5, 1, 6, 3, 10], expected: "YES" },
-        { n: 4, k: 6, values: [6, 8, 5, 10], expected: "YES" },
-    ];
 
-    for (const { n, k, values, expected } of testCases) {
-        const result = solve(n, k, values) ? "YES" : "NO";
-        console.log(`Input: n=${n}, k=${k}, values=${values}`);
-        console.log(`Expected: ${expected}, Got: ${result}`);
-        console.log(result === expected ? "Test Passed" : "Test Failed");
-        console.log("------------");
-    }
-}
+// function testing_test() {
+//     const testCases = [
+//         { n: 3, k: 3, values: [2, 1, 4], expected: "YES" },
+//         { n: 3, k: 7, values: [2, 1, 4], expected: "NO" },
+//         { n: 2, k: 15, values: [2, 16], expected: "YES" },
+//         { n: 3, k: 10, values: [256, 32, 1], expected: "YES" },
+//         { n: 3, k: 289, values: [768, 96, 1], expected: "YES" },
+//         { n: 3, k: 290, values: [768, 96, 1], expected: "NO" },
+//         { n: 5, k: 7, values: [5, 1, 6, 3, 10], expected: "YES" },
+//         { n: 4, k: 6, values: [6, 8, 5, 10], expected: "YES" },
+//     ];
 
-testing_test();
+//     for (const { n, k, values, expected } of testCases) {
+//         const result = solve(n, k, values);
+//         console.log(`Input: n=${n}, k=${k}, values=${values}`);
+//         console.log(`Expected: ${expected}, Got: ${result}`);
+//         console.log(result === expected ? "Test Passed" : "Test Failed");
+//         console.log("------------");
+//     }
+// }
+
+// testing_test();

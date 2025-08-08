@@ -4,7 +4,7 @@ export function solve(testCases) {
     for (const { n, k, a, b }
         of testCases) {
         let low = 0,
-            high = 1 _000_000_001;
+            high = 1000000001;
         let remainingOperations = k;
         const initialValues = [...a];
 
@@ -21,13 +21,13 @@ export function solve(testCases) {
             }
         }
 
-        let totalScore = 0 n;
+        let totalScore = 0;
         const updatedValues = [...a];
 
         for (let i = 0; i < n; i++) {
             let iterations = Math.max(0, Math.floor((updatedValues[i] - high) / b[i]) + 1);
             remainingOperations -= iterations;
-            totalScore += BigInt(iterations) * BigInt(updatedValues[i] + updatedValues[i] - (iterations - 1) * b[i]) / 2 n;
+            totalScore += BigInt(iterations) * BigInt(updatedValues[i] + updatedValues[i] - (iterations - 1) * b[i]) / 2n;
             updatedValues[i] -= b[i] * iterations;
         }
 
