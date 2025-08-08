@@ -228,3 +228,71 @@ test('all tanks fillable, unlimited p', () => {
     )
   ).toBe(1);
 });
+
+
+
+// ● edge case: p=0
+
+//     expect(received).toBe(expected) // Object.is equality
+
+//     Expected: 4
+//     Received: 2
+
+//       72 |       ]
+//       73 |     )
+//     > 74 |   ).toBe(4);
+//          |     ^
+//       75 | });
+//       76 |
+//       77 | test('star tree', () => {
+
+//       at Object.toBe (tests-algorithm/tests-prompt3/48_prompt3.test.js:74:5)
+
+//   ● all p too high for any selection
+
+//     expect(received).toBe(expected) // Object.is equality
+
+//     Expected: 1
+//     Received: 5
+
+//       121 |       ]
+//       122 |     )
+//     > 123 |   ).toBe(1);
+//           |     ^
+//       124 | });
+//       125 |
+//       126 | test('k exceeds number of non-root tanks', () => {
+
+//       at Object.toBe (tests-algorithm/tests-prompt3/48_prompt3.test.js:123:5)
+
+//   ● k exceeds number of non-root tanks
+
+//     expect(received).toBe(expected) // Object.is equality
+
+//     Expected: 3
+//     Received: 1
+
+//       136 |       ]
+//       137 |     )
+//     > 138 |   ).toBe(3);
+//           |     ^
+//       139 | });
+//       140 |
+//       141 | test('one water, sufficient p', () => {
+
+//       at Object.toBe (tests-algorithm/tests-prompt3/48_prompt3.test.js:138:5)
+
+//   ● all tanks fillable, unlimited p
+
+//     expect(received).toBe(expected) // Object.is equality
+
+//     Expected: 1
+//     Received: 4
+
+//       227 |       ]
+//       228 |     )
+//     > 229 |   ).toBe(1);
+//           |     ^
+//       230 | });
+
+//       at Object.toBe (tests-algorithm/tests-prompt3/48_prompt3.test.js:229:5)

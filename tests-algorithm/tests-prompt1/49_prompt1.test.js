@@ -59,3 +59,38 @@ test('n=5, m=2, k=8', () => {
 test('n=5, m=2, k=7', () => {
   expect(solve(5, 2, 7)).toBe('NO');
 });
+
+
+// large grid, smallest cost: n=100, m=100, k=9900
+
+//     expect(received).toBe(expected) // Object.is equality
+
+//     Expected: "YES"
+//     Received: "NO"
+
+//       38 |
+//       39 | test('large grid, smallest cost: n=100, m=100, k=9900', () => {
+//     > 40 |   expect(solve(100, 100, 9900)).toBe('YES');
+//          |                                 ^
+//       41 | });
+//       42 |
+//       43 | test('large grid, slightly more: n=100, m=100, k=9901', () => {
+
+//       at Object.toBe (tests-algorithm/tests-prompt1/49_prompt1.test.js:40:33)
+
+//   ● n=5, m=2, k=8
+
+//     expect(received).toBe(expected) // Object.is equality
+
+//     Expected: "YES"
+//     Received: "NO"
+
+//       54 |
+//       55 | test('n=5, m=2, k=8', () => {
+//     > 56 |   expect(solve(5, 2, 8)).toBe('YES');
+//          |                          ^
+//       57 | });
+//       58 |
+//       59 | test('n=5, m=2, k=7', () => {
+
+//       at Object.toBe (tests-algorithm/tests-prompt1/49_prompt1.test.js:56:26

@@ -59,3 +59,101 @@ test('n=10, large impossible k', () => {
 test('n=1, impossible k=2', () => {
   expect(solve(1, 2)).toBe(-1);
 });
+
+
+// ● n=2, k=2
+
+//     expect(received).toEqual(expected) // deep equality
+
+//     Expected: [2, 1]
+//     Received: -1
+
+//        6 |
+//        7 | test('n=2, k=2', () => {
+//     >  8 |   expect(solve(2, 2)).toEqual([2, 1]);
+//          |                       ^
+//        9 | });
+//       10 |
+//       11 | test('n=4, k=1', () => {
+
+//       at Object.toEqual (tests-algorithm/tests-prompt1/44_prompt1.test.js:8:23)
+
+//   ● n=4, k=5
+
+//     expect(received).toEqual(expected) // deep equality
+
+//     - Expected  - 1
+//     + Received  + 1
+
+//       Array [
+//         3,
+//     -   4,
+//         1,
+//         2,
+//     +   4,
+//       ]
+
+//       14 |
+//       15 | test('n=4, k=5', () => {
+//     > 16 |   expect(solve(4, 5)).toEqual([3, 4, 1, 2]);
+//          |                       ^
+//       17 | });
+//       18 |
+//       19 | test('n=3, k=3', () => {
+
+//       at Object.toEqual (tests-algorithm/tests-prompt1/44_prompt1.test.js:16:23)
+
+//   ● n=5, k=9
+
+//     expect(received).toEqual(expected) // deep equality
+
+//     - Expected  - 2
+//     + Received  + 2
+
+//       Array [
+//     +   3,
+//     +   1,
+//         4,
+//         5,
+//         2,
+//     -   3,
+//     -   1,
+//       ]
+
+//       22 |
+//       23 | test('n=5, k=9', () => {
+//     > 24 |   expect(solve(5, 9)).toEqual([4, 5, 2, 3, 1]);
+//          |                       ^
+//       25 | });
+//       26 |
+//       27 | test('n=3, k=2 (impossible)', () => {
+
+//       at Object.toEqual (tests-algorithm/tests-prompt1/44_prompt1.test.js:24:23)
+
+//   ● n=6, k=11
+
+//     expect(received).toEqual(expected) // deep equality
+
+//     - Expected  - 2
+//     + Received  + 2
+
+//       Array [
+//     +   2,
+//         4,
+//     +   1,
+//         5,
+//         6,
+//     -   2,
+//         3,
+//     -   1,
+//       ]
+
+//       50 |
+//       51 | test('n=6, k=11', () => {
+//     > 52 |   expect(solve(6, 11)).toEqual([4, 5, 6, 2, 3, 1]);
+//          |                        ^
+//       53 | });
+//       54 |
+//       55 | test('n=10, large impossible k', () => {
+
+//       at Object.toEqual (tests-algorithm/tests-prompt1/44_prompt1.test.js:52:24)

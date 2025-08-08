@@ -135,3 +135,22 @@ test('k is less than depth group', () => {
     )
   ).toBe(2);
 });
+
+
+
+// p=0 case
+
+//     expect(received).toBe(expected) // Object.is equality
+
+//     Expected: 3
+//     Received: 1
+
+//       102 |       ]
+//       103 |     )
+//     > 104 |   ).toBe(3);
+//           |     ^
+//       105 | });
+//       106 |
+//       107 | test('only root can be taken', () => {
+
+//       at Object.toBe (tests-algorithm/tests-prompt2/48_prompt2.test.js:104:5)

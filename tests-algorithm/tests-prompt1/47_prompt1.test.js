@@ -51,3 +51,21 @@ test('large n, already sorted', () => {
 test('large n, reversed', () => {
   expect(solve(10, 2, [10,9,8,7,6,5,4,3,2,1])).toBe(5);
 });
+
+
+// random permutation, k = 2
+
+// expect(received).toBe(expected) // Object.is equality
+
+// Expected: 3
+// Received: 2
+
+//   18 |
+//   19 | test('random permutation, k = 2', () => {
+// > 20 |   expect(solve(5, 2, [2, 5, 1, 3, 4])).toBe(3);
+//      |                                        ^
+//   21 | });
+//   22 |
+//   23 | test('minimal swap needed, k = 3', () => {
+
+//   at Object.toBe (tests-algorithm/tests-prompt1/47_prompt1.test.js:20:40)

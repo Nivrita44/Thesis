@@ -39,3 +39,37 @@ test('edge case: empty organization', () => {
 test('two employees, one is the manager of the other', () => {
   expect(solve(2, [-1, 1])).toBe(2);
 });
+
+
+// chain with alternating deep and shallow branches
+
+//     expect(received).toBe(expected) // Object.is equality
+
+//     Expected: 5
+//     Received: 4
+
+//       30 |
+//       31 | test('chain with alternating deep and shallow branches', () => {
+//     > 32 |   expect(solve(7, [-1, 1, 1, 2, 3, 3, 4])).toBe(5);
+//          |                                            ^
+//       33 | });
+//       34 |
+//       35 | test('edge case: empty organization', () => {
+
+//       at Object.toBe (tests-algorithm/tests-prompt2/46_prompt2.test.js:32:44)
+
+//   ● edge case: empty organization
+
+//     TypeError: graph[node] is not iterable
+
+//       15 |     function dfs(node, depth) {
+//       16 |         maxDepth = Math.max(maxDepth, depth);
+//     > 17 |         for (const child of graph[node]) {
+//          |                                  ^
+//       18 |             dfs(child, depth + 1);
+//       19 |         }
+//       20 |     }
+
+//       at dfs (solutions-algorithm/46.js:17:34)
+//       at dfs (solutions-algorithm/46.js:22:5)
+//       at Object.solve (tests-algorithm/tests-prompt2/46_prompt2.test.js:36:10)

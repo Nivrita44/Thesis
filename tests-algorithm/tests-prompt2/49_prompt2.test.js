@@ -67,3 +67,20 @@ test('returns YES for large input (100000, 1, 99999)', () => {
 test('returns NO for large input (100000, 100000, 9999999999)', () => {
   expect(solve(100000, 100000, 9999999999)).toBe('NO');
 });
+
+
+
+// returns NO for large input (100000, 100000, 9999999999)
+
+//     expect(received).toBe(expected) // Object.is equality
+
+//     Expected: "NO"
+//     Received: "YES"
+
+//       66 |
+//       67 | test('returns NO for large input (100000, 100000, 9999999999)', () => {
+//     > 68 |   expect(solve(100000, 100000, 9999999999)).toBe('NO');
+//          |                                             ^
+//       69 | });
+
+//       at Object.toBe (tests-algorithm/tests-prompt2/49_prompt2.test.js:68:45)

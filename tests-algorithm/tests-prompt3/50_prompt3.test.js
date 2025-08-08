@@ -123,3 +123,30 @@ test('Multiple queries with single length on large input', () => {
   for(let i=1;i<=10000;i+=1000)queries.push([i,i])
   expect(solve(s, queries)).toEqual(Array(10).fill(25))
 })
+
+
+// Multiple queries with overlap
+
+//     expect(received).toEqual(expected) // deep equality
+
+//     - Expected  - 2
+//     + Received  + 2
+
+//       Array [
+//         11,
+//     -   18,
+//     -   29,
+//     +   15,
+//     +   26,
+//         12,
+//       ]
+
+//       89 |     [5,11]
+//       90 |   ]
+//     > 91 |   expect(solve(s, queries)).toEqual([11,18,29,12])
+//          |                             ^
+//       92 | })
+//       93 |
+//       94 | test('Single character range (various positions)', () => {
+
+//       at Object.toEqual (tests-algorithm/tests-prompt3/50_prompt3.test.js:91:29)

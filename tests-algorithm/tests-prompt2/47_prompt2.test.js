@@ -51,3 +51,19 @@ test('Edge case: empty numbers array', () => {
 test('Numbers already in correct order but with extra values', () => {
     expect(solve(3, 2, [1, 2, 3, 4, 5])).toBe(0);
 });
+
+
+// Numbers already in correct order but with extra values
+
+//     expect(received).toBe(expected) // Object.is equality
+
+//     Expected: 0
+//     Received: -1
+
+//       50 |
+//       51 | test('Numbers already in correct order but with extra values', () => {
+//     > 52 |     expect(solve(3, 2, [1, 2, 3, 4, 5])).toBe(0);
+//          |                                          ^
+//       53 | });
+
+//       at Object.toBe (tests-algorithm/tests-prompt2/47_prompt2.test.js:52:42)

@@ -1,4 +1,4 @@
-import solve from '../../solutions-algorithm/46.js';
+import {solve} from '../../solutions-algorithm/46.js';
 
 test('single employee', () => {
   expect(solve(1, [-1])).toBe(1);
@@ -43,3 +43,21 @@ test('max depth chain', () => {
 test('all are roots', () => {
   expect(solve(3, [-1, -1, -1])).toBe(1);
 });
+
+
+// shallow hierarchy
+
+// expect(received).toBe(expected) // Object.is equality
+
+// Expected: 4
+// Received: 3
+
+//   22 |
+//   23 | test('shallow hierarchy', () => {
+// > 24 |   expect(solve(6, [-1, 1, 1, 2, 2, 3])).toBe(4);
+//      |                                         ^
+//   25 | });
+//   26 |
+//   27 | test('forest three roots', () => {
+
+//   at Object.toBe (tests-algorithm/tests-prompt1/46_prompt1.test.js:24:41)

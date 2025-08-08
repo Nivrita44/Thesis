@@ -92,3 +92,125 @@ test('minimum input values', () => {
   ];
   expect(solve(n, q, s, queries)).toEqual([26]);
 });
+
+
+
+// ● example 1
+
+//     TypeError: queries.map is not a function
+
+//        8 |     }
+//        9 |
+//     > 10 |     return queries.map(([l, r]) => a[r] - a[l - 1]);
+//          |                    ^
+//       11 | }
+//       12 |
+//       13 | // Test function
+
+//       at map (solutions-algorithm/50.js:10:20)
+//       at Object.solve (tests-algorithm/tests-prompt1/50_prompt1.test.js:12:10)
+
+//   ● single character, single query
+
+//     TypeError: queries.map is not a function
+
+//        8 |     }
+//        9 |
+//     > 10 |     return queries.map(([l, r]) => a[r] - a[l - 1]);
+//          |                    ^
+//       11 | }
+//       12 |
+//       13 | // Test function
+
+//       at map (solutions-algorithm/50.js:10:20)
+//       at Object.solve (tests-algorithm/tests-prompt1/50_prompt1.test.js:22:10)
+
+//   ● all same letter
+
+//     TypeError: queries.map is not a function
+
+//        8 |     }
+//        9 |
+//     > 10 |     return queries.map(([l, r]) => a[r] - a[l - 1]);
+//          |                    ^
+//       11 | }
+//       12 |
+//       13 | // Test function
+
+//       at map (solutions-algorithm/50.js:10:20)
+//       at Object.solve (tests-algorithm/tests-prompt1/50_prompt1.test.js:33:10)
+
+//   ● all letters of increasing alphabet, full range
+
+//     TypeError: queries.map is not a function
+
+//        8 |     }
+//        9 |
+//     > 10 |     return queries.map(([l, r]) => a[r] - a[l - 1]);
+//          |                    ^
+//       11 | }
+//       12 |
+//       13 | // Test function
+
+//       at map (solutions-algorithm/50.js:10:20)
+//       at Object.solve (tests-algorithm/tests-prompt1/50_prompt1.test.js:45:10)
+
+//   ● segment in the middle
+
+//     TypeError: queries.map is not a function
+
+//        8 |     }
+//        9 |
+//     > 10 |     return queries.map(([l, r]) => a[r] - a[l - 1]);
+//          |                    ^
+//       11 | }
+//       12 |
+//       13 | // Test function
+
+//       at map (solutions-algorithm/50.js:10:20)
+//       at Object.solve (tests-algorithm/tests-prompt1/50_prompt1.test.js:56:10)
+
+//   ● multiple queries overlapping
+
+//     TypeError: queries.map is not a function
+
+//        8 |     }
+//        9 |
+//     > 10 |     return queries.map(([l, r]) => a[r] - a[l - 1]);
+//          |                    ^
+//       11 | }
+//       12 |
+//       13 | // Test function
+
+//       at map (solutions-algorithm/50.js:10:20)
+//       at Object.solve (tests-algorithm/tests-prompt1/50_prompt1.test.js:69:10)
+
+//   ● query is a single occurrence of max letter "z"
+
+//     TypeError: queries.map is not a function
+
+//        8 |     }
+//        9 |
+//     > 10 |     return queries.map(([l, r]) => a[r] - a[l - 1]);
+//          |                    ^
+//       11 | }
+//       12 |
+//       13 | // Test function
+
+//       at map (solutions-algorithm/50.js:10:20)
+//       at Object.solve (tests-algorithm/tests-prompt1/50_prompt1.test.js:83:10)
+
+//   ● minimum input values
+
+//     TypeError: queries.map is not a function
+
+//        8 |     }
+//        9 |
+//     > 10 |     return queries.map(([l, r]) => a[r] - a[l - 1]);
+//          |                    ^
+//       11 | }
+//       12 |
+//       13 | // Test function
+
+//       at map (solutions-algorithm/50.js:10:20)
+//       at Object.solve (tests-algorithm/tests-prompt1/50_prompt1.test.js:93:10)

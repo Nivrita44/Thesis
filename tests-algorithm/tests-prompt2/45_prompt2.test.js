@@ -43,3 +43,56 @@ test('solve handles descending array', () => {
 test('solve handles empty array', () => {
     expect(solve([])).toBe(1);
 });
+
+
+
+// ● solve handles two decreasing elements
+
+//     expect(received).toBe(expected) // Object.is equality
+
+//     Expected: 0
+//     Received: 1
+
+//       26 |
+//       27 | test('solve handles two decreasing elements', () => {
+//     > 28 |     expect(solve([2, 1])).toBe(0);
+//          |                           ^
+//       29 | });
+//       30 |
+//       31 | test('solve handles all equal elements', () => {
+
+//       at Object.toBe (tests-algorithm/tests-prompt2/45_prompt2.test.js:28:27)
+
+//   ● solve handles all equal elements
+
+//     expect(received).toBe(expected) // Object.is equality
+
+//     Expected: 0
+//     Received: 1
+
+//       30 |
+//       31 | test('solve handles all equal elements', () => {
+//     > 32 |     expect(solve([5, 5, 5, 5])).toBe(0);
+//          |                                 ^
+//       33 | });
+//       34 |
+//       35 | test('solve handles longer strictly increasing array', () => {
+
+//       at Object.toBe (tests-algorithm/tests-prompt2/45_prompt2.test.js:32:33)
+
+//   ● solve handles descending array
+
+//     expect(received).toBe(expected) // Object.is equality
+
+//     Expected: 0
+//     Received: 1
+
+//       38 |
+//       39 | test('solve handles descending array', () => {
+//     > 40 |     expect(solve([5,4,3,2,1])).toBe(0);
+//          |                                ^
+//       41 | });
+//       42 |
+//       43 | test('solve handles empty array', () => {
+
+//       at Object.toBe (tests-algorithm/tests-prompt2/45_prompt2.test.js:40:32)
