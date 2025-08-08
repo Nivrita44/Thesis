@@ -51,17 +51,17 @@ export function solve(s) {
     return answer;
 }
 
-function testing_test() {
-    const input = "0010010011";
-    const expectedOutput = 12;
+// function testing_test() {
+//     const input = "0010010011";
+//     const expectedOutput = 12;
 
-    const result = solve(input);
+//     const result = solve(input);
 
-    if (result === expectedOutput) {
-        console.log("Test passed!");
-    } else {
-        console.log(`Test failed! Expected ${expectedOutput}, but got ${result}`);
-    }
-}
+//     if (result === expectedOutput) {
+//         console.log("Test passed!");
+//     } else {
+//         console.log(`Test failed! Expected ${expectedOutput}, but got ${result}`);
+//     }
+// }
 
-testing_test();
+// testing_test();

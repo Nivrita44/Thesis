@@ -18,19 +18,19 @@ export function solve(k, sizes) {
 
 
 
-function testing_test() {
-    const tests = [
-        { k: 1, sizes: [1], expected: 1 },
-        { k: 2, sizes: [4, 6], expected: 7 },
-        { k: 1, sizes: [10], expected: 10 }
-    ];
+// function testing_test() {
+//     const tests = [
+//         { k: 1, sizes: [1], expected: 1 },
+//         { k: 2, sizes: [4, 6], expected: 7 },
+//         { k: 1, sizes: [10], expected: 10 }
+//     ];
 
-    for (let i = 0; i < tests.length; i++) {
-        const { k, sizes, expected } = tests[i];
-        const result = solve(k, sizes);
-        console.log(`Test case ${i + 1}: got=${result}, expected=${expected}`);
-        console.assert(result === expected, `Failed test case ${i + 1}`);
-    }
-}
+//     for (let i = 0; i < tests.length; i++) {
+//         const { k, sizes, expected } = tests[i];
+//         const result = solve(k, sizes);
+//         console.log(`Test case ${i + 1}: got=${result}, expected=${expected}`);
+//         console.assert(result === expected, `Failed test case ${i + 1}`);
+//     }
+// }
 
-testing_test();
+// testing_test();

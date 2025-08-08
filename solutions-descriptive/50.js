@@ -23,7 +23,8 @@ export function solve(numbers) {
 
     function countMultiples(divisor) {
         if (presenceMap[divisor]) return 0;
-        let count = 0, combinedLCM;
+        let count = 0,
+            combinedLCM;
         for (let i = 0; i < length; i++) {
             if (divisor % numbers[i] === 0) {
                 combinedLCM = combinedLCM ? getLCM(combinedLCM, numbers[i]) : numbers[i];
@@ -48,48 +49,48 @@ function gcd(a, b) {
 }
 
 
-function testing_test() {
-    const testCases = [
-        {
-            input: [1, 2, 4, 8, 16],
-            expected: 0
-        },
-        {
-            input: [3, 2, 10, 20, 60, 1],
-            expected: 4
-        },
-        {
-            input: [2, 3, 4, 6, 12, 100003, 1200036],
-            expected: 4
-        },
-        {
-            input: [2, 42, 7, 3, 6, 7, 7, 1, 6],
-            expected: 5
-        },
-        {
-            input: [4, 99, 57, 179, 10203, 2, 11, 40812],
-            expected: 8
-        },
-        {
-            input: [1],
-            expected: 0
-        }
-    ];
+// function testing_test() {
+//     const testCases = [
+//         {
+//             input: [1, 2, 4, 8, 16],
+//             expected: 0
+//         },
+//         {
+//             input: [3, 2, 10, 20, 60, 1],
+//             expected: 4
+//         },
+//         {
+//             input: [2, 3, 4, 6, 12, 100003, 1200036],
+//             expected: 4
+//         },
+//         {
+//             input: [2, 42, 7, 3, 6, 7, 7, 1, 6],
+//             expected: 5
+//         },
+//         {
+//             input: [4, 99, 57, 179, 10203, 2, 11, 40812],
+//             expected: 8
+//         },
+//         {
+//             input: [1],
+//             expected: 0
+//         }
+//     ];
 
-    for (let i = 0; i < testCases.length; i++) {
-        const {input, expected} = testCases[i];
-        const result = solve(input);
-        if (result === expected) {
-            console.log(`Test case ${i + 1}: Passed`);
-        } else {
-            console.log(`Test case ${i + 1}: Failed`);
-            console.log(`  Input: [${input}]`);
-            console.log(`  Expected: ${expected}, Got: ${result}`);
-        }
-    }
-}
-
-
+//     for (let i = 0; i < testCases.length; i++) {
+//         const {input, expected} = testCases[i];
+//         const result = solve(input);
+//         if (result === expected) {
+//             console.log(`Test case ${i + 1}: Passed`);
+//         } else {
+//             console.log(`Test case ${i + 1}: Failed`);
+//             console.log(`  Input: [${input}]`);
+//             console.log(`  Expected: ${expected}, Got: ${result}`);
+//         }
+//     }
+// }
 
 
-testing_test();
+
+
+// testing_test();

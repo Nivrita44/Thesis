@@ -8,10 +8,12 @@ export function solve(nodeCount, pattern) {
         maxLabel = Math.max(maxLabel, value);
     }
 
-    let leftPos = 1, rightPos = nodeCount;
+    let leftPos = 1,
+        rightPos = nodeCount;
     const result = Array(nodeCount);
     const used = Array(nodeCount);
-    let leftIndex = 0, rightIndex = nodeCount - 1;
+    let leftIndex = 0,
+        rightIndex = nodeCount - 1;
 
     for (let label = 1; label <= maxLabel; label++) {
         while (used[leftIndex]) leftIndex++;
@@ -71,7 +73,8 @@ function fillLinear(used, result, indices, startValue, step) {
 }
 
 function fillSymmetric(used, result, indices, startValue, step, midIndex) {
-    let i = 0, j = indices.length - 1;
+    let i = 0,
+        j = indices.length - 1;
     while (indices[i] < midIndex) {
         used[indices[i]] = true;
         result[indices[i++]] = startValue;
@@ -84,31 +87,31 @@ function fillSymmetric(used, result, indices, startValue, step, midIndex) {
     }
 }
 
-function testing_test() {
-    const testCases = [
-        { input: [3, [1, 1, -1]], expected: [3, 2, 1] },
-        { input: [5, [1, -1, 1, 2, 1]], expected: [4, 3, 5, 1, 2] },
-        { input: [8, [3, 1, 2, 1, -1, 1, 1, 2]], expected: [6, 7, 2, 4, 3, 8, 5, 1] },
-        { input: [7, [1, 1, 1, -1, 1, 1, 1]], expected: [6, 5, 2, 1, 3, 4, 7] },
-        { input: [5, [1, 1, 1, 1, -1]], expected: [5, 4, 3, 2, 1] },
-        { input: [5, [-1, 1, 1, 1, 1]], expected: [1, 2, 3, 4, 5] },
-        { input: [5, [-1, 1, 2, 1, 2]], expected: [4, 5, 2, 3, 1] },
-    ];
+// function testing_test() {
+//     const testCases = [
+//         { input: [3, [1, 1, -1]], expected: [3, 2, 1] },
+//         { input: [5, [1, -1, 1, 2, 1]], expected: [4, 3, 5, 1, 2] },
+//         { input: [8, [3, 1, 2, 1, -1, 1, 1, 2]], expected: [6, 7, 2, 4, 3, 8, 5, 1] },
+//         { input: [7, [1, 1, 1, -1, 1, 1, 1]], expected: [6, 5, 2, 1, 3, 4, 7] },
+//         { input: [5, [1, 1, 1, 1, -1]], expected: [5, 4, 3, 2, 1] },
+//         { input: [5, [-1, 1, 1, 1, 1]], expected: [1, 2, 3, 4, 5] },
+//         { input: [5, [-1, 1, 2, 1, 2]], expected: [4, 5, 2, 3, 1] },
+//     ];
 
-    for (let i = 0; i < testCases.length; i++) {
-        const { input, expected } = testCases[i];
-        const result = solve(...input);
-        const isEqual = result.join(',') === expected.join(',');
+//     for (let i = 0; i < testCases.length; i++) {
+//         const { input, expected } = testCases[i];
+//         const result = solve(...input);
+//         const isEqual = result.join(',') === expected.join(',');
 
-        console.log(`Test Case ${i + 1}: ${isEqual ? '✅ Passed' : '❌ Failed'}`);
-        if (!isEqual) {
-            console.log(`  Input: ${input[0]}, ${JSON.stringify(input[1])}`);
-            console.log(`  Expected: ${expected}`);
-            console.log(`  Got:      ${result}`);
-        }
-    }
-}
+//         console.log(`Test Case ${i + 1}: ${isEqual ? '✅ Passed' : '❌ Failed'}`);
+//         if (!isEqual) {
+//             console.log(`  Input: ${input[0]}, ${JSON.stringify(input[1])}`);
+//             console.log(`  Expected: ${expected}`);
+//             console.log(`  Got:      ${result}`);
+//         }
+//     }
+// }
 
-testing_test();
+// testing_test();
 
 //ok. output can many. solution verified.

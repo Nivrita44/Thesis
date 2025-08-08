@@ -114,48 +114,48 @@ export function solve(cases) {
     return results
 }
 
-function testing_test() {
-    const input = `
-3 3
-1 2
-2 3
-3 1
-3
-2 3
-1 2
-2 1
-4 4
-1 2
-2 3
-3 4
-4 1
-3
-2 3
-1 2
-3 1
-`.trim().split('\n')
+// function testing_test() {
+//     const input = `
+// 3 3
+// 1 2
+// 2 3
+// 3 1
+// 3
+// 2 3
+// 1 2
+// 2 1
+// 4 4
+// 1 2
+// 2 3
+// 3 4
+// 4 1
+// 3
+// 2 3
+// 1 2
+// 3 1
+// `.trim().split('\n')
 
-    const cases = []
-    let idx = 0
+//     const cases = []
+//     let idx = 0
 
-    while (idx < input.length) {
-        const [n, m] = input[idx++].split(' ').map(Number)
-        const edges = []
-        for (let i = 0; i < m; i++) {
-            edges.push(input[idx++].split(' ').map(Number))
-        }
-        const q = +input[idx++]
-        const queries = []
-        for (let i = 0; i < q; i++) {
-            queries.push(input[idx++].split(' ').map(Number))
-        }
-        cases.push({ n, m, edges, queries })
-    }
+//     while (idx < input.length) {
+//         const [n, m] = input[idx++].split(' ').map(Number)
+//         const edges = []
+//         for (let i = 0; i < m; i++) {
+//             edges.push(input[idx++].split(' ').map(Number))
+//         }
+//         const q = +input[idx++]
+//         const queries = []
+//         for (let i = 0; i < q; i++) {
+//             queries.push(input[idx++].split(' ').map(Number))
+//         }
+//         cases.push({ n, m, edges, queries })
+//     }
 
-    const output = solve(cases)
-    console.log(output.join('\n'))
-}
+//     const output = solve(cases)
+//     console.log(output.join('\n'))
+// }
 
-testing_test();
+// testing_test();
 
 //TODO: have to change

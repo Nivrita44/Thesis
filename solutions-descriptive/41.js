@@ -84,17 +84,17 @@ export function solve(arraySize, array, queries) {
         currentSum -= (arraySize - i + 1) * array[i - 1];
     }
 
-    const prefixTriangleSum = Array(arraySize + 2).fill(0n);
+    const prefixTriangleSum = Array(arraySize + 2).fill(0 n);
     for (let i = 1; i <= arraySize; i++) {
         prefixTriangleSum[i] = prefixTriangleSum[i - 1] + BigInt(triangleWeightedSum[i]);
     }
 
-    const prefixArray = Array(arraySize + 1).fill(0n);
+    const prefixArray = Array(arraySize + 1).fill(0 n);
     for (let i = 1; i <= arraySize; i++) {
         prefixArray[i] = prefixArray[i - 1] + BigInt(array[i - 1]);
     }
 
-    const prefixOfPrefix = Array(arraySize + 2).fill(0n);
+    const prefixOfPrefix = Array(arraySize + 2).fill(0 n);
     for (let i = 1; i <= arraySize; i++) {
         prefixOfPrefix[i] = prefixOfPrefix[i - 1] + prefixArray[i];
     }
@@ -120,7 +120,7 @@ export function solve(arraySize, array, queries) {
     }
 
     function calculate(position) {
-        if (position <= 0) return 0n;
+        if (position <= 0) return 0 n;
 
         const baseIndex = binarySearch(1, arraySize, i => trianglePrefix[i] <= position);
         const remaining = position - trianglePrefix[baseIndex];
@@ -134,50 +134,50 @@ export function solve(arraySize, array, queries) {
             endCol = arraySize;
         }
 
-        return prefixTriangleSum[startRow - 1]
-            + (prefixOfPrefix[endCol] - prefixOfPrefix[startRow - 1])
-            - prefixArray[startRow - 1] * BigInt(endCol - startRow + 1);
+        return prefixTriangleSum[startRow - 1] +
+            (prefixOfPrefix[endCol] - prefixOfPrefix[startRow - 1]) -
+            prefixArray[startRow - 1] * BigInt(endCol - startRow + 1);
     }
 }
 
 
 // Test function
-function testing_test() {
-    const testCases = [
-        {
-            input: {
-                n: 4,
-                arr: [1, 2, 5, 10],
-                queries: [
-                    [1,1], [1,2], [1,3], [1,4], [1,5], [1,10],
-                    [5,10], [6,10], [2,8], [3,4], [3,10], [3,8],
-                    [5,6], [5,5], [1,8]
-                ]
-            },
-            expected: [
-                "1", "4", "12", "30", "32", "86",
-                "56", "54", "60", "26", "82", "57",
-                "9", "2", "61"
-            ]
-        }
-    ];
+// function testing_test() {
+//     const testCases = [
+//         {
+//             input: {
+//                 n: 4,
+//                 arr: [1, 2, 5, 10],
+//                 queries: [
+//                     [1,1], [1,2], [1,3], [1,4], [1,5], [1,10],
+//                     [5,10], [6,10], [2,8], [3,4], [3,10], [3,8],
+//                     [5,6], [5,5], [1,8]
+//                 ]
+//             },
+//             expected: [
+//                 "1", "4", "12", "30", "32", "86",
+//                 "56", "54", "60", "26", "82", "57",
+//                 "9", "2", "61"
+//             ]
+//         }
+//     ];
 
-    testCases.forEach((testCase, idx) => {
-        const {n, arr, queries} = testCase.input;
-        const results = solve(n, arr, queries);
-        
-        console.log(`Test Case ${idx + 1}:`);
-        console.log(`Input:`);
-        console.log(`n = ${n}, arr = [${arr}]`);
-        console.log(`queries = [${queries.map(q => `[${q}]`).join(', ')}]`);
-        console.log(`Expected Output:\n${testCase.expected.join('\n')}`);
-        console.log(`Actual Output:\n${results.join('\n')}`);
-        
-        const passed = JSON.stringify(results) === JSON.stringify(testCase.expected);
-        console.log(passed ? '✅ PASSED' : '❌ FAILED');
-        console.log();
-    });
-}
+//     testCases.forEach((testCase, idx) => {
+//         const {n, arr, queries} = testCase.input;
+//         const results = solve(n, arr, queries);
 
-// Run tests
-testing_test();
+//         console.log(`Test Case ${idx + 1}:`);
+//         console.log(`Input:`);
+//         console.log(`n = ${n}, arr = [${arr}]`);
+//         console.log(`queries = [${queries.map(q => `[${q}]`).join(', ')}]`);
+//         console.log(`Expected Output:\n${testCase.expected.join('\n')}`);
+//         console.log(`Actual Output:\n${results.join('\n')}`);
+
+//         const passed = JSON.stringify(results) === JSON.stringify(testCase.expected);
+//         console.log(passed ? '✅ PASSED' : '❌ FAILED');
+//         console.log();
+//     });
+// }
+
+// // Run tests
+// testing_test();

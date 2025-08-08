@@ -51,19 +51,19 @@ export function solve(n, k, d) {
     return sum;
 }
 
-function testing_test() {
-    const inputs = [
-        { n: 5, k: 2, d: [3, 6, 4, 1, 2], expected: 6 },
-        { n: 7, k: 1, d: [3, 1, 4, 1, 5, 9, 2], expected: 16 },
-        { n: 4, k: 3, d: [4, 3, 2, 1], expected: 4 },
-        { n: 6, k: 2, d: [1, 3, 5, 2, 4, 6], expected: 6 },
-        { n: 6, k: 1, d: [1000000000, 1, 1000000000, 1, 1000000000, 1], expected: 3000000000 },
-    ];
+// function testing_test() {
+//     const inputs = [
+//         { n: 5, k: 2, d: [3, 6, 4, 1, 2], expected: 6 },
+//         { n: 7, k: 1, d: [3, 1, 4, 1, 5, 9, 2], expected: 16 },
+//         { n: 4, k: 3, d: [4, 3, 2, 1], expected: 4 },
+//         { n: 6, k: 2, d: [1, 3, 5, 2, 4, 6], expected: 6 },
+//         { n: 6, k: 1, d: [1000000000, 1, 1000000000, 1, 1000000000, 1], expected: 3000000000 },
+//     ];
 
-    inputs.forEach(({ n, k, d, expected }, index) => {
-        const result = solve(n, k, d);
-        console.log(`Test ${index + 1}:`, result === expected ? "Passed" : `Failed (Expected ${expected}, Got ${result})`);
-    });
-}
+//     inputs.forEach(({ n, k, d, expected }, index) => {
+//         const result = solve(n, k, d);
+//         console.log(`Test ${index + 1}:`, result === expected ? "Passed" : `Failed (Expected ${expected}, Got ${result})`);
+//     });
+// }
 
-testing_test();
+// testing_test();

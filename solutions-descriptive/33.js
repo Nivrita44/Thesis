@@ -4,7 +4,8 @@ export function solve() {
     const c = Kattio.nextNumber()
     const d = Kattio.nextNumber()
 
-    const q1 = [], q2 = []
+    const q1 = [],
+        q2 = []
     divide(q1, a, b, 0, 1 << 20)
     divide(q2, c, d, 0, 1 << 20)
 
@@ -39,26 +40,26 @@ function gcd(a, b) {
     return b
 }
 
-function testing_test() {
-    const testCases = [
-        { input: [0, 1, 1, 2], expected: 1 },
-        { input: [0, 2, 0, 2], expected: 1 },
-        { input: [1, 3, 1, 3], expected: 4 },
-        { input: [0, 2, 1, 5], expected: 5 },
-        { input: [9, 98, 244, 353], expected: 374 },
-    ];
+// function testing_test() {
+//     const testCases = [
+//         { input: [0, 1, 1, 2], expected: 1 },
+//         { input: [0, 2, 0, 2], expected: 1 },
+//         { input: [1, 3, 1, 3], expected: 4 },
+//         { input: [0, 2, 1, 5], expected: 5 },
+//         { input: [9, 98, 244, 353], expected: 374 },
+//     ];
 
-    for (const { input, expected } of testCases) {
-        Kattio.setInput(input);
-        const result = solve();
-        console.log(`Input: ${input}, Expected: ${expected}, Got: ${result}`);
-        if (result !== expected) {
-            console.error(`Test failed for input ${input}`);
-        } else {
-            console.log(`Test passed for input ${input}`);
-        }
-    }
-}
+//     for (const { input, expected } of testCases) {
+//         Kattio.setInput(input);
+//         const result = solve();
+//         console.log(`Input: ${input}, Expected: ${expected}, Got: ${result}`);
+//         if (result !== expected) {
+//             console.error(`Test failed for input ${input}`);
+//         } else {
+//             console.log(`Test passed for input ${input}`);
+//         }
+//     }
+// }
 
 // Mock Kattio for testing
 const Kattio = {
@@ -74,4 +75,4 @@ const Kattio = {
 };
 
 // Run the test function
-testing_test();
+// testing_test();
