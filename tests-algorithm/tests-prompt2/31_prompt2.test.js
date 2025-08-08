@@ -35,3 +35,24 @@ test('handles minimum value n=1', () => {
 test('handles negative value (edge-abuse)', () => {
   expect(solve(1, [-4])).toEqual(['-4 -5 1 2']);
 });
+
+
+// handles negative value (edge-abuse)
+
+//     expect(received).toEqual(expected) // deep equality
+
+//     - Expected  - 1
+//     + Received  + 1
+
+//       Array [
+//     -   "-4 -5 1 2",
+//     +   "-4 -5",
+//       ]
+
+//       34 |
+//       35 | test('handles negative value (edge-abuse)', () => {
+//     > 36 |   expect(solve(1, [-4])).toEqual(['-4 -5 1 2']);
+//          |                          ^
+//       37 | });
+
+//       at Object.toEqual (tests-algorithm/tests-prompt2/31_prompt2.test.js:36:26)

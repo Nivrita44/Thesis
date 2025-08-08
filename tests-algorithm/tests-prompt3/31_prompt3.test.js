@@ -74,3 +74,36 @@ test('check for fixed points absence for n=5', () => {
     expect(arr[i]).not.toBe(i+1)
   }
 })
+
+
+// n=4
+
+//     expect(received).not.toEqual(expected) // deep equality
+
+//     Expected: not [1, 2, 3, 4]
+
+//       13 |   expect(new Set(output).size).toBe(4)
+//       14 |   expect(output.sort((a,b) => a-b)).toEqual([1,2,3,4])
+//     > 15 |   expect(output).not.toEqual([1,2,3,4])
+//          |                      ^
+//       16 |   expect(output).not.toEqual([2,3,4,1])
+//       17 | })
+//       18 |
+
+//       at Object.toEqual (tests-algorithm/tests-prompt3/31_prompt3.test.js:15:22)
+
+//   ● n=5
+
+//     expect(received).not.toEqual(expected) // deep equality
+
+//     Expected: not [1, 2, 3, 4, 5]
+
+//       21 |   expect(new Set(result).size).toBe(5)
+//       22 |   expect(result.sort((a,b)=>a-b)).toEqual([1,2,3,4,5])
+//     > 23 |   expect(result).not.toEqual([1,2,3,4,5])
+//          |                      ^
+//       24 |   expect(result).not.toEqual([2,3,4,5,1])
+//       25 |   expect(result).not.toEqual([3,4,5,1,2])
+//       26 | })
+
+//       at Object.toEqual (tests-algorithm/tests-prompt3/31_prompt3.test.js:23:22)

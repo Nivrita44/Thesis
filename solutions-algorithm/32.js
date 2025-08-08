@@ -7,7 +7,7 @@
  */
 export function solve(testCases) {
     //TODO error has to fix
-    const MODD = 1 _000_000_007;
+    const MODD = 1000000007;
     const results = [];
 
     for (const { N, A, B, C }

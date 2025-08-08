@@ -61,3 +61,26 @@ test('k equals num', () => {
   expect(solve([[5, 5]])).toEqual([1]);
   expect(solve([[10, 10]])).toEqual([1]);
 });
+
+
+// very large values
+
+//     expect(received).toEqual(expected) // deep equality
+
+//     - Expected  - 1
+//     + Received  + 1
+
+//       Array [
+//     -   8,
+//     +   13,
+//       ]
+
+//       46 | test('very large values', () => {
+//       47 |   expect(solve([[1000000, 10]])).toEqual([1]);
+//     > 48 |   expect(solve([[999999, 3]])).toEqual([8]);
+//          |                                ^
+//       49 | });
+//       50 |
+//       51 | test('all zero input', () => {
+
+//       at Object.toEqual (tests-algorithm/tests-prompt2/35_prompt2.test.js:48:32)

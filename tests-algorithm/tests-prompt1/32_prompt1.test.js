@@ -79,3 +79,154 @@ test('no predetermined, larger n', () => {
   const d = [0,0,0,0,0,0,0];
   expect(solve(n, a, b, d)).toBe(4);
 });
+
+
+// example 1
+
+//     TypeError: testCases is not iterable
+
+//       12 |
+//       13 |     for (const { N, A, B, C }
+//     > 14 |         of testCases) {
+//          |            ^
+//       15 |         const arrow = {};
+//       16 |         for (let i = 0; i < N; i++) {
+//       17 |             arrow[A[i]] = B[i];
+
+//       at testCases (solutions-algorithm/32.js:14:12)
+//       at Object.solve (tests-algorithm/tests-prompt1/32_prompt1.test.js:8:10)
+
+//   ● example 2
+
+//     TypeError: testCases is not iterable
+
+//       12 |
+//       13 |     for (const { N, A, B, C }
+//     > 14 |         of testCases) {
+//          |            ^
+//       15 |         const arrow = {};
+//       16 |         for (let i = 0; i < N; i++) {
+//       17 |             arrow[A[i]] = B[i];
+
+//       at testCases (solutions-algorithm/32.js:14:12)
+//       at Object.solve (tests-algorithm/tests-prompt1/32_prompt1.test.js:16:10)
+
+//   ● when all elements in d are predetermined
+
+//     TypeError: testCases is not iterable
+
+//       12 |
+//       13 |     for (const { N, A, B, C }
+//     > 14 |         of testCases) {
+//          |            ^
+//       15 |         const arrow = {};
+//       16 |         for (let i = 0; i < N; i++) {
+//       17 |             arrow[A[i]] = B[i];
+
+//       at testCases (solutions-algorithm/32.js:14:12)
+//       at Object.solve (tests-algorithm/tests-prompt1/32_prompt1.test.js:24:10)
+
+//   ● when all elements must be chosen from b
+
+//     TypeError: testCases is not iterable
+
+//       12 |
+//       13 |     for (const { N, A, B, C }
+//     > 14 |         of testCases) {
+//          |            ^
+//       15 |         const arrow = {};
+//       16 |         for (let i = 0; i < N; i++) {
+//       17 |             arrow[A[i]] = B[i];
+
+//       at testCases (solutions-algorithm/32.js:14:12)
+//       at Object.solve (tests-algorithm/tests-prompt1/32_prompt1.test.js:32:10)
+
+//   ● n=1, a and b equal, d is 0
+
+//     TypeError: testCases is not iterable
+
+//       12 |
+//       13 |     for (const { N, A, B, C }
+//     > 14 |         of testCases) {
+//          |            ^
+//       15 |         const arrow = {};
+//       16 |         for (let i = 0; i < N; i++) {
+//       17 |             arrow[A[i]] = B[i];
+
+//       at testCases (solutions-algorithm/32.js:14:12)
+//       at Object.solve (tests-algorithm/tests-prompt1/32_prompt1.test.js:40:10)
+
+//   ● n=1, d is predetermined
+
+//     TypeError: testCases is not iterable
+
+//       12 |
+//       13 |     for (const { N, A, B, C }
+//     > 14 |         of testCases) {
+//          |            ^
+//       15 |         const arrow = {};
+//       16 |         for (let i = 0; i < N; i++) {
+//       17 |             arrow[A[i]] = B[i];
+
+//       at testCases (solutions-algorithm/32.js:14:12)
+//       at Object.solve (tests-algorithm/tests-prompt1/32_prompt1.test.js:48:10)
+
+//   ● n=2, cross constraints
+
+//     TypeError: testCases is not iterable
+
+//       12 |
+//       13 |     for (const { N, A, B, C }
+//     > 14 |         of testCases) {
+//          |            ^
+//       15 |         const arrow = {};
+//       16 |         for (let i = 0; i < N; i++) {
+//       17 |             arrow[A[i]] = B[i];
+
+//       at testCases (solutions-algorithm/32.js:14:12)
+//       at Object.solve (tests-algorithm/tests-prompt1/32_prompt1.test.js:56:10)
+
+//   ● all d predetermined with alternate values
+
+//     TypeError: testCases is not iterable
+
+//       12 |
+//       13 |     for (const { N, A, B, C }
+//     > 14 |         of testCases) {
+//          |            ^
+//       15 |         const arrow = {};
+//       16 |         for (let i = 0; i < N; i++) {
+//       17 |             arrow[A[i]] = B[i];
+
+//       at testCases (solutions-algorithm/32.js:14:12)
+//       at Object.solve (tests-algorithm/tests-prompt1/32_prompt1.test.js:64:10)
+
+//   ● partial predetermined for longer arrays
+
+//     TypeError: testCases is not iterable
+
+//       12 |
+//       13 |     for (const { N, A, B, C }
+//     > 14 |         of testCases) {
+//          |            ^
+//       15 |         const arrow = {};
+//       16 |         for (let i = 0; i < N; i++) {
+//       17 |             arrow[A[i]] = B[i];
+
+//       at testCases (solutions-algorithm/32.js:14:12)
+//       at Object.solve (tests-algorithm/tests-prompt1/32_prompt1.test.js:72:10)
+
+//   ● no predetermined, larger n
+
+//     TypeError: testCases is not iterable
+
+//       12 |
+//       13 |     for (const { N, A, B, C }
+//     > 14 |         of testCases) {
+//          |            ^
+//       15 |         const arrow = {};
+//       16 |         for (let i = 0; i < N; i++) {
+//       17 |             arrow[A[i]] = B[i];
+
+//       at testCases (solutions-algorithm/32.js:14:12)
+//       at Object.solve (tests-algorithm/tests-prompt1/32_prompt1.test.js:80:10)

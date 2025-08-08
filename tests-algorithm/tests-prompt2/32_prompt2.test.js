@@ -119,3 +119,91 @@ test('solve with all C[] nonzero (all fixed)', () => {
 test('solve handles edge case: empty input', () => {
   expect(solve([])).toEqual([]);
 });
+
+
+// large positive values in a
+
+//     expect(received).toEqual(expected) // deep equality
+
+//     - Expected  - 1
+//     + Received  + 1
+
+//       Array [
+//     -   10006,
+//     +   3,
+//       ]
+
+//       25 |
+//       26 | test('large positive values in a', () => {
+//     > 27 |   expect(solve([{ n: 3, a: [100, 1000, 10000] }])).toEqual([10006]);
+//          |                                                    ^
+//       28 | });
+//       29 |
+//       30 | test('empty testCases array', () => {
+
+//       at Object.toEqual (tests-algorithm/tests-prompt2/33_prompt2.test.js:27:52)
+
+//   ● edge: duplicate reachable values
+
+//     expect(received).toEqual(expected) // deep equality
+
+//     - Expected  - 1
+//     + Received  + 1
+
+//       Array [
+//     -   6,
+//     +   5,
+//       ]
+
+//       33 |
+//       34 | test('edge: duplicate reachable values', () => {
+//     > 35 |   expect(solve([{ n: 3, a: [0, 2, 1] }])).toEqual([6]);
+//          |                                           ^
+//       36 | });
+//       37 |
+//       38 | test('edge: repeatedly reachable value', () => {
+
+//       at Object.toEqual (tests-algorithm/tests-prompt2/33_prompt2.test.js:35:43)
+
+//   ● edge: repeatedly reachable value
+
+//     expect(received).toEqual(expected) // deep equality
+
+//     - Expected  - 1
+//     + Received  + 1
+
+//       Array [
+//     -   4,
+//     +   3,
+//       ]
+
+//       37 |
+//       38 | test('edge: repeatedly reachable value', () => {
+//     > 39 |   expect(solve([{ n: 2, a: [1, 1] }])).toEqual([4]);
+//          |                                        ^
+//       40 | });
+//       41 |
+//       42 | test('n is large but a is only zeros', () => {
+
+//       at Object.toEqual (tests-algorithm/tests-prompt2/33_prompt2.test.js:39:40)
+
+//   ● various n and a
+
+//     expect(received).toEqual(expected) // deep equality
+
+//     - Expected  - 1
+//     + Received  + 1
+
+//       Array [
+//     +   2,
+//         5,
+//     -   6,
+//       ]
+
+//       48 |     { n: 2, a: [1, 3] },
+//       49 |     { n: 3, a: [2, 0, 1] }
+//     > 50 |   ])).toEqual([5, 6]);
+//          |       ^
+//       51 | });
+
+//       at Object.toEqual (tests-algorithm/tests-prompt2/33_prompt2.test.js:50:7)

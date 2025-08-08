@@ -55,3 +55,21 @@ test('returns NO for n = 8 (power of two)', () => {
 test('returns YES for n = 9 (odd and not 1)', () => {
   expect(solve(9)).toBe('YES');
 });
+
+
+// returns NO for small even n
+
+// expect(received).toBe(expected) // Object.is equality
+
+// Expected: "NO"
+// Received: "YES"
+
+//   34 |
+//   35 | test('returns NO for small even n', () => {
+// > 36 |   expect(solve(6)).toBe('NO');
+//      |                    ^
+//   37 | });
+//   38 |
+//   39 | test('returns YES for odd n = 7', () => {
+
+//   at Object.toBe (tests-algorithm/tests-prompt2/39_prompt2.test.js:36:20)

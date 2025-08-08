@@ -32,3 +32,5 @@ test('solve with negative n returns []', () => {
 test('solve with n=2 returns [1,3]', () => {
   expect(solve(2)).toEqual([1, 3]);
 });
+
+//all pass

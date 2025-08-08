@@ -67,3 +67,21 @@ test('large input descending', () => {
   const a = Array.from({length: n}, (_, i) => n - i);
   expect(solve(n, a)).toBe(1);
 });
+
+
+// repeat check [1, 4, 2, 3, 5]
+
+//     expect(received).toBe(expected) // Object.is equality
+
+//     Expected: 3
+//     Received: 4
+
+//       46 |
+//       47 | test('repeat check [1, 4, 2, 3, 5]', () => {
+//     > 48 |   expect(solve(5, [1,4,2,3,5])).toBe(3);
+//          |                                 ^
+//       49 | });
+//       50 |
+//       51 | test('maximal independent set size 1', () => {
+
+//       at Object.toBe (tests-algorithm/tests-prompt3/42_prompt3.test.js:48:33)

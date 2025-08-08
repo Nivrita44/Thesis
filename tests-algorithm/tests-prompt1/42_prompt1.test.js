@@ -65,3 +65,55 @@ test('n=100000 reversed', () => {
   const arr = Array.from({length: 100000}, (_, i) => 100000-i);
   expect(solve(100000, arr)).toBe(1);
 });
+
+
+  // n=5 with single swap needed
+
+  //     expect(received).toBe(expected) // Object.is equality
+
+  //     Expected: 3
+  //     Received: 4
+
+  //       42 |
+  //       43 | test('n=5 with single swap needed', () => {
+  //     > 44 |   expect(solve(5, [1,2,3,5,4])).toBe(3);
+  //          |                                 ^
+  //       45 | });
+  //       46 |
+  //       47 | test('n=6, all odd numbers first', () => {
+
+  //       at Object.toBe (tests-algorithm/tests-prompt1/42_prompt1.test.js:44:33)
+
+  //   ● n=6, all odd numbers first
+
+  //     expect(received).toBe(expected) // Object.is equality
+
+  //     Expected: 3
+  //     Received: 4
+
+  //       46 |
+  //       47 | test('n=6, all odd numbers first', () => {
+  //     > 48 |   expect(solve(6, [1,3,5,2,4,6])).toBe(3);
+  //          |                                   ^
+  //       49 | });
+  //       50 |
+  //       51 | test('n=6, all even then odd', () => {
+
+  //       at Object.toBe (tests-algorithm/tests-prompt1/42_prompt1.test.js:48:35)
+
+  //   ● n=7, sandwich
+
+  //     expect(received).toBe(expected) // Object.is equality
+
+  //     Expected: 2
+  //     Received: 4
+
+  //       54 |
+  //       55 | test('n=7, sandwich', () => {
+  //     > 56 |   expect(solve(7, [1,7,2,6,3,5,4])).toBe(2);
+  //          |                                     ^
+  //       57 | });
+  //       58 |
+  //       59 | test('n=100000 presorted', () => {
+
+  //       at Object.toBe (tests-algorithm/tests-prompt1/42_prompt1.test.js:56:37)

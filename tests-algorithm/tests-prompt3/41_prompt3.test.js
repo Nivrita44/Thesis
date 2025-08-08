@@ -158,3 +158,21 @@ test('graph with cycles', () => {
   const result = solve(n, edges)
   expect(result).toBe('1 2 3 4 5')
 })
+
+
+// handles undirected nature
+
+//     expect(received).toBe(expected) // Object.is equality
+
+//     Expected: "1 2 3"
+//     Received: "-1"
+
+//       127 |   ]
+//       128 |   const result = solve(n, edges)
+//     > 129 |   expect(result).toBe('1 2 3')
+//           |                  ^
+//       130 | })
+//       131 |
+//       132 | test('handles larger n, direct edge', () => {
+
+//       at Object.toBe (tests-algorithm/tests-prompt3/41_prompt3.test.js:129:18)

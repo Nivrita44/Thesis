@@ -54,3 +54,25 @@ test('Multiple test cases in one call', () => {
   ];
   expect(solve(input)).toEqual([2, 3, 1, 4, 21, 10, 1, 1]);
 });
+
+// Large n and k
+
+//     expect(received).toEqual(expected) // deep equality
+
+//     - Expected  - 1
+//     + Received  + 1
+
+//       Array [
+//     -   2,
+//     +   64,
+//       ]
+
+//       39 |   expect(solve([[1e9, 1e9]])).toEqual([1]);
+//       40 |   expect(solve([[1e9 - 1, 1e9]])).toEqual([999999999]);
+//     > 41 |   expect(solve([[1e9, 999999937]])).toEqual([2]);
+//          |                                     ^
+//       42 | });
+//       43 |
+//       44 | test('Multiple test cases in one call', () => {
+
+//       at Object.toEqual (tests-algorithm/tests-prompt3/35_prompt3.test.js:41:3

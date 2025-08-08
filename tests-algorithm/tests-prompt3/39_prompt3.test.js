@@ -75,3 +75,6 @@ test('n=1024 (2^10)', () => {
 test('n=1025 (even, divisible by 5, has odd divisor)', () => {
   expect(solve(1025)).toBe('YES');
 });
+
+
+//all pass

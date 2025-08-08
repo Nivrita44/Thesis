@@ -39,3 +39,154 @@ test('n=k+1', () => {
 test('n=0, k=5', () => {
   expect(solve(0, 5)).toBe(0);
 });
+
+
+// Example 1: n=10, k=2
+
+// TypeError: cases.map is not a function
+
+//   25 |  */
+//   26 | export function solve(cases) {
+// > 27 |     return cases.map(([num, k]) => calculation(num, k));
+//      |                  ^
+//   28 | }
+//   29 |
+//   30 | // ✅ Test function
+
+//   at map (solutions-algorithm/35.js:27:18)
+//   at Object.solve (tests-algorithm/tests-prompt1/35_prompt1.test.js:4:10)
+
+// ● Example 2: n=15, k=3
+
+// TypeError: cases.map is not a function
+
+//   25 |  */
+//   26 | export function solve(cases) {
+// > 27 |     return cases.map(([num, k]) => calculation(num, k));
+//      |                  ^
+//   28 | }
+//   29 |
+//   30 | // ✅ Test function
+
+//   at map (solutions-algorithm/35.js:27:18)
+//   at Object.solve (tests-algorithm/tests-prompt1/35_prompt1.test.js:8:10)
+
+// ● Edge Case: n=1, k=1
+
+// TypeError: cases.map is not a function
+
+//   25 |  */
+//   26 | export function solve(cases) {
+// > 27 |     return cases.map(([num, k]) => calculation(num, k));
+//      |                  ^
+//   28 | }
+//   29 |
+//   30 | // ✅ Test function
+
+//   at map (solutions-algorithm/35.js:27:18)
+//   at Object.solve (tests-algorithm/tests-prompt1/35_prompt1.test.js:12:10)
+
+// ● Edge Case: n=1, k=10^9
+
+// TypeError: cases.map is not a function
+
+//   25 |  */
+//   26 | export function solve(cases) {
+// > 27 |     return cases.map(([num, k]) => calculation(num, k));
+//      |                  ^
+//   28 | }
+//   29 |
+//   30 | // ✅ Test function
+
+//   at map (solutions-algorithm/35.js:27:18)
+//   at Object.solve (tests-algorithm/tests-prompt1/35_prompt1.test.js:16:10)
+
+// ● Edge Case: n=10^9, k=1
+
+// TypeError: cases.map is not a function
+
+//   25 |  */
+//   26 | export function solve(cases) {
+// > 27 |     return cases.map(([num, k]) => calculation(num, k));
+//      |                  ^
+//   28 | }
+//   29 |
+//   30 | // ✅ Test function
+
+//   at map (solutions-algorithm/35.js:27:18)
+//   at Object.solve (tests-algorithm/tests-prompt1/35_prompt1.test.js:20:10)
+
+// ● Large: n=100, k=10
+
+// TypeError: cases.map is not a function
+
+//   25 |  */
+//   26 | export function solve(cases) {
+// > 27 |     return cases.map(([num, k]) => calculation(num, k));
+//      |                  ^
+//   28 | }
+//   29 |
+//   30 | // ✅ Test function
+
+//   at map (solutions-algorithm/35.js:27:18)
+//   at Object.solve (tests-algorithm/tests-prompt1/35_prompt1.test.js:24:10)
+
+// ● Large: n=1000000, k=2
+
+// TypeError: cases.map is not a function
+
+//   25 |  */
+//   26 | export function solve(cases) {
+// > 27 |     return cases.map(([num, k]) => calculation(num, k));
+//      |                  ^
+//   28 | }
+//   29 |
+//   30 | // ✅ Test function
+
+//   at map (solutions-algorithm/35.js:27:18)
+//   at Object.solve (tests-algorithm/tests-prompt1/35_prompt1.test.js:28:10)
+
+// ● n=k
+
+// TypeError: cases.map is not a function
+
+//   25 |  */
+//   26 | export function solve(cases) {
+// > 27 |     return cases.map(([num, k]) => calculation(num, k));
+//      |                  ^
+//   28 | }
+//   29 |
+//   30 | // ✅ Test function
+
+//   at map (solutions-algorithm/35.js:27:18)
+//   at Object.solve (tests-algorithm/tests-prompt1/35_prompt1.test.js:32:10)
+
+// ● n=k+1
+
+// TypeError: cases.map is not a function
+
+//   25 |  */
+//   26 | export function solve(cases) {
+// > 27 |     return cases.map(([num, k]) => calculation(num, k));
+//      |                  ^
+//   28 | }
+//   29 |
+//   30 | // ✅ Test function
+
+//   at map (solutions-algorithm/35.js:27:18)
+//   at Object.solve (tests-algorithm/tests-prompt1/35_prompt1.test.js:36:10)
+
+// ● n=0, k=5
+
+// TypeError: cases.map is not a function
+
+//   25 |  */
+//   26 | export function solve(cases) {
+// > 27 |     return cases.map(([num, k]) => calculation(num, k));
+//      |                  ^
+//   28 | }
+//   29 |
+//   30 | // ✅ Test function
+
+//   at map (solutions-algorithm/35.js:27:18)
+//   at Object.solve (tests-algorithm/tests-prompt1/35_prompt1.test.js:40:10)

@@ -153,3 +153,21 @@ test('all pairs are swapped', () => {
     C: [0,0,0,0,0,0]
   }])[0]).toBe(8)
 })
+
+
+// multiple cycles, some fixed positions in cycles
+
+// expect(received).toBe(expected) // Object.is equality
+
+// Expected: 2
+// Received: 4
+
+//   117 |   const B = [2,1,4,3,6,5]
+//   118 |   const C = [0,0,3,0,0,0]
+// > 119 |   expect(solve([{ N, A, B, C }])[0]).toBe(2)
+//       |                                      ^
+//   120 | })
+//   121 |
+//   122 | test('no cycles have fixed positions', () => {
+
+//   at Object.toBe (tests-algorithm/tests-prompt3/32_prompt3.test.js:119:38)

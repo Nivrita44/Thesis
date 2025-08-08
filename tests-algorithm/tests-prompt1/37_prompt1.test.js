@@ -1,4 +1,4 @@
-import solve from '../../solutions-algorithm/37.js';
+import {solve} from '../../solutions-algorithm/37.js';
 
 test('n = 2', () => {
   const n = 2;
@@ -72,3 +72,4 @@ test('sequence values are unique', () => {
     expect(res.length).toBe(new Set(res).size);
   }
 });
+//all pass

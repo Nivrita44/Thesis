@@ -55,3 +55,111 @@ test('maximal constraints edge', () => {
 test('operation with large values and scattered possibility', () => {
   expect(solve([{ n: 7, a: [50, 8, 6, 1, 16, 12, 7] }])).toEqual([12]);
 });
+
+// no operation possible
+
+//     expect(received).toEqual(expected) // deep equality
+
+//     - Expected  - 1
+//     + Received  + 1
+
+//       Array [
+//     -   3,
+//     +   5,
+//       ]
+
+//       18 |
+//       19 | test('no operation possible', () => {
+//     > 20 |   expect(solve([{ n: 3, a: [1, 1, 1] }])).toEqual([3]);
+//          |                                           ^
+//       21 |   expect(solve([{ n: 4, a: [2, 2, 2, 2] }])).toEqual([4]);
+//       22 | });
+//       23 |
+
+//       at Object.toEqual (tests-algorithm/tests-prompt3/33_prompt3.test.js:20:43)
+
+//   ● greedy optimal extend case
+
+//     expect(received).toEqual(expected) // deep equality
+
+//     - Expected  - 1
+//     + Received  + 1
+
+//       Array [
+//     -   6,
+//     +   5,
+//       ]
+
+//       23 |
+//       24 | test('greedy optimal extend case', () => {
+//     > 25 |   expect(solve([{ n: 3, a: [3, 2, 1] }])).toEqual([6]);
+//          |                                           ^
+//       26 |   expect(solve([{ n: 3, a: [4, 3, 2] }])).toEqual([7]);
+//       27 | });
+//       28 |
+
+//       at Object.toEqual (tests-algorithm/tests-prompt3/33_prompt3.test.js:25:43)
+
+//   ● all same value equal to array size
+
+//     expect(received).toEqual(expected) // deep equality
+
+//     - Expected  - 1
+//     + Received  + 1
+
+//       Array [
+//     -   7,
+//     +   4,
+//       ]
+
+//       36 |
+//       37 | test('all same value equal to array size', () => {
+//     > 38 |   expect(solve([{ n: 4, a: [4, 4, 4, 4] }])).toEqual([7]);
+//          |                                              ^
+//       39 | });
+//       40 |
+//       41 | test('increasing sequence with big numbers', () => {
+
+//       at Object.toEqual (tests-algorithm/tests-prompt3/33_prompt3.test.js:38:46)
+
+//   ● operations can chain on extended array
+
+//     expect(received).toEqual(expected) // deep equality
+
+//     - Expected  - 1
+//     + Received  + 1
+
+//       Array [
+//     -   6,
+//     +   3,
+//       ]
+
+//       44 |
+//       45 | test('operations can chain on extended array', () => {
+//     > 46 |   expect(solve([{ n: 3, a: [3, 4, 3] }])).toEqual([6]);
+//          |                                           ^
+//       47 | });
+//       48 |
+//       49 | test('maximal constraints edge', () => {
+
+//       at Object.toEqual (tests-algorithm/tests-prompt3/33_prompt3.test.js:46:43)
+
+//   ● operation with large values and scattered possibility
+
+//     expect(received).toEqual(expected) // deep equality
+
+//     - Expected  - 1
+//     + Received  + 1
+
+//       Array [
+//     -   12,
+//     +   7,
+//       ]
+
+//       54 |
+//       55 | test('operation with large values and scattered possibility', () => {
+//     > 56 |   expect(solve([{ n: 7, a: [50, 8, 6, 1, 16, 12, 7] }])).toEqual([12]);
+//          |                                                          ^
+//       57 | });
+
+//       at Object.toEqual (tests-algorithm/tests-prompt3/33_prompt3.test.js:56:58)

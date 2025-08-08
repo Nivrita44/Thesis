@@ -101,3 +101,21 @@ test('edges with negative weight should work but likely wouldn\'t be present', (
   ];
   expect(solve(n, edges)).toBe('1 2 3');
 });
+
+
+// all edges have same weight, check lex smallest path
+
+//     expect(received).toBe(expected) // Object.is equality
+
+//     Expected: "1 2 3"
+//     Received: "1 3"
+
+//       83 |     [1, 3, 2],
+//       84 |   ];
+//     > 85 |   expect(solve(n, edges)).toBe('1 2 3');
+//          |                           ^
+//       86 | });
+//       87 |
+//       88 | test('edge case, start equals end', () => {
+
+//       at Object.toBe (tests-algorithm/tests-prompt2/41_prompt2.test.js:85:27)

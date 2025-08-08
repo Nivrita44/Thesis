@@ -88,3 +88,154 @@ test('solve works for x=997 (prime)', () => {
   const expecteds = bruteForce(x);
   expect(expecteds).toContain(result);
 });
+
+
+// solve returns correct maximal y for x=2
+
+//     TypeError: inputs.map is not a function
+
+//        7 |  */
+//        8 | export function solve(inputs) {
+//     >  9 |     return inputs.map(x => x - 1);
+//          |                   ^
+//       10 | }
+//       11 |
+//       12 | // Test Function
+
+//       at map (solutions-algorithm/34.js:9:19)
+//       at Object.solve (tests-algorithm/tests-prompt1/34_prompt1.test.js:24:18)
+
+//   ● solve returns correct maximal y for x=3
+
+//     TypeError: inputs.map is not a function
+
+//        7 |  */
+//        8 | export function solve(inputs) {
+//     >  9 |     return inputs.map(x => x - 1);
+//          |                   ^
+//       10 | }
+//       11 |
+//       12 | // Test Function
+
+//       at map (solutions-algorithm/34.js:9:19)
+//       at Object.solve (tests-algorithm/tests-prompt1/34_prompt1.test.js:31:18)
+
+//   ● solve returns correct maximal y for x=6
+
+//     TypeError: inputs.map is not a function
+
+//        7 |  */
+//        8 | export function solve(inputs) {
+//     >  9 |     return inputs.map(x => x - 1);
+//          |                   ^
+//       10 | }
+//       11 |
+//       12 | // Test Function
+
+//       at map (solutions-algorithm/34.js:9:19)
+//       at Object.solve (tests-algorithm/tests-prompt1/34_prompt1.test.js:38:18)
+
+//   ● solve returns correct maximal y for x=12
+
+//     TypeError: inputs.map is not a function
+
+//        7 |  */
+//        8 | export function solve(inputs) {
+//     >  9 |     return inputs.map(x => x - 1);
+//          |                   ^
+//       10 | }
+//       11 |
+//       12 | // Test Function
+
+//       at map (solutions-algorithm/34.js:9:19)
+//       at Object.solve (tests-algorithm/tests-prompt1/34_prompt1.test.js:45:18)
+
+//   ● solve works for x=25
+
+//     TypeError: inputs.map is not a function
+
+//        7 |  */
+//        8 | export function solve(inputs) {
+//     >  9 |     return inputs.map(x => x - 1);
+//          |                   ^
+//       10 | }
+//       11 |
+//       12 | // Test Function
+
+//       at map (solutions-algorithm/34.js:9:19)
+//       at Object.solve (tests-algorithm/tests-prompt1/34_prompt1.test.js:52:18)
+
+//   ● solve works for prime x=13
+
+//     TypeError: inputs.map is not a function
+
+//        7 |  */
+//        8 | export function solve(inputs) {
+//     >  9 |     return inputs.map(x => x - 1);
+//          |                   ^
+//       10 | }
+//       11 |
+//       12 | // Test Function
+
+//       at map (solutions-algorithm/34.js:9:19)
+//       at Object.solve (tests-algorithm/tests-prompt1/34_prompt1.test.js:59:18)
+
+//   ● solve works for x=100
+
+//     TypeError: inputs.map is not a function
+
+//        7 |  */
+//        8 | export function solve(inputs) {
+//     >  9 |     return inputs.map(x => x - 1);
+//          |                   ^
+//       10 | }
+//       11 |
+//       12 | // Test Function
+
+//       at map (solutions-algorithm/34.js:9:19)
+//       at Object.solve (tests-algorithm/tests-prompt1/34_prompt1.test.js:66:18)
+
+//   ● solve works for x=999
+
+//     TypeError: inputs.map is not a function
+
+//        7 |  */
+//        8 | export function solve(inputs) {
+//     >  9 |     return inputs.map(x => x - 1);
+//          |                   ^
+//       10 | }
+//       11 |
+//       12 | // Test Function
+
+//       at map (solutions-algorithm/34.js:9:19)
+//       at Object.solve (tests-algorithm/tests-prompt1/34_prompt1.test.js:73:18)
+
+//   ● solve works for x=1000
+
+//     TypeError: inputs.map is not a function
+
+//        7 |  */
+//        8 | export function solve(inputs) {
+//     >  9 |     return inputs.map(x => x - 1);
+//          |                   ^
+//       10 | }
+//       11 |
+//       12 | // Test Function
+
+//       at map (solutions-algorithm/34.js:9:19)
+//       at Object.solve (tests-algorithm/tests-prompt1/34_prompt1.test.js:80:18)
+
+//   ● solve works for x=997 (prime)
+
+//     TypeError: inputs.map is not a function
+
+//        7 |  */
+//        8 | export function solve(inputs) {
+//     >  9 |     return inputs.map(x => x - 1);
+//          |                   ^
+//       10 | }
+//       11 |
+//       12 | // Test Function
+
+//       at map (solutions-algorithm/34.js:9:19)
+//       at Object.solve (tests-algorithm/tests-prompt1/34_prompt1.test.js:87:18)

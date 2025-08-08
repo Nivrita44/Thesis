@@ -122,3 +122,5 @@ test('Output length is correct for various n', () => {
     expect(solve(n).length).toBe(n);
   }
 });
+
+//all pass

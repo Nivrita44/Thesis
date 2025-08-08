@@ -55,3 +55,36 @@ test('solve (3, 0): expect 0 (per implementation behavior)', () => {
 test('solve (0, 0): expect 0', () => {
   expect(solve(0, 0)).toBe(0);
 });
+
+
+// solve equal inputs: (7, 7) => 49
+
+//     expect(received).toBe(expected) // Object.is equality
+
+//     Expected: 49
+//     Received: 7
+
+//       34 |
+//       35 | test('solve equal inputs: (7, 7) => 49', () => {
+//     > 36 |   expect(solve(7, 7)).toBe(49);
+//          |                       ^
+//       37 | });
+//       38 |
+//       39 | test('solve minimal input: (1, 1) => 1', () => {
+
+//       at Object.toBe (tests-algorithm/tests-prompt2/40_prompt2.test.js:36:23)
+
+//   ● solve (0, 0): expect 0
+
+//     expect(received).toBe(expected) // Object.is equality
+
+//     Expected: 0
+//     Received: NaN
+
+//       54 |
+//       55 | test('solve (0, 0): expect 0', () => {
+//     > 56 |   expect(solve(0, 0)).toBe(0);
+//          |                       ^
+//       57 | });
+
+//       at Object.toBe (tests-algorithm/tests-prompt2/40_prompt2.test.js:56:23)
