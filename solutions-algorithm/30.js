@@ -27,44 +27,44 @@ export function solve(t, arr) {
 }
 
 // ✅ Test function
-function testing_testtest() {
-    const testCases = [{
-            input: { t: 4, arr: [10, 4, 15, 9] },
-            expected: [
-                "YES", "5 4 1",
-                "NO",
-                "YES", "8 5 2",
-                "NO"
-            ]
-        },
-        {
-            input: { t: 3, arr: [3, 5, 6] },
-            expected: [
-                "NO",
-                "YES", "2 2 1",
-                "YES", "2 3 1"
-            ]
-        }
-    ];
+// function testing_testtest() {
+//     const testCases = [{
+//             input: { t: 4, arr: [10, 4, 15, 9] },
+//             expected: [
+//                 "YES", "5 4 1",
+//                 "NO",
+//                 "YES", "8 5 2",
+//                 "NO"
+//             ]
+//         },
+//         {
+//             input: { t: 3, arr: [3, 5, 6] },
+//             expected: [
+//                 "NO",
+//                 "YES", "2 2 1",
+//                 "YES", "2 3 1"
+//             ]
+//         }
+//     ];
 
-    console.log("Running Tests...\n");
+//     console.log("Running Tests...\n");
 
-    testCases.forEach(({ input, expected }, index) => {
-        const result = solve(input.t, input.arr);
-        console.log(`Test Case ${index + 1}:`);
+//     testCases.forEach(({ input, expected }, index) => {
+//         const result = solve(input.t, input.arr);
+//         console.log(`Test Case ${index + 1}:`);
 
-        for (let i = 0; i < expected.length; i++) {
-            const exp = expected[i];
-            const res = result[i];
-            const status = res === exp ? "PASS ✅" : `FAIL ❌ (Expected: ${exp})`;
-            console.log(`Output: ${res} | ${status}`);
-        }
+//         for (let i = 0; i < expected.length; i++) {
+//             const exp = expected[i];
+//             const res = result[i];
+//             const status = res === exp ? "PASS ✅" : `FAIL ❌ (Expected: ${exp})`;
+//             console.log(`Output: ${res} | ${status}`);
+//         }
 
-        const passed = JSON.stringify(result) === JSON.stringify(expected);
-        console.log(`Overall Status: ${passed ? "PASS ✅" : "FAIL ❌"}\n`);
-    });
-}
+//         const passed = JSON.stringify(result) === JSON.stringify(expected);
+//         console.log(`Overall Status: ${passed ? "PASS ✅" : "FAIL ❌"}\n`);
+//     });
+// }
 
-testing_test();
+// testing_test();
 
 //TODO

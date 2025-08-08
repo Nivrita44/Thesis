@@ -57,43 +57,43 @@ export function solve(n, k, p, edges) {
 }
 
 // Test function
-function testing_test() {
-    const tests = [{
-            input: {
-                n: 5,
-                k: 1000,
-                p: 1000,
-                edges: [
-                    [1, 2],
-                    [1, 3],
-                    [3, 4],
-                    [3, 5]
+// function testing_test() {
+//     const tests = [{
+//             input: {
+//                 n: 5,
+//                 k: 1000,
+//                 p: 1000,
+//                 edges: [
+//                     [1, 2],
+//                     [1, 3],
+//                     [3, 4],
+//                     [3, 5]
 
-                ],
-            },
-            expected: 4
-        },
-        {
-            input: {
-                n: 3,
-                k: 1,
-                p: 2,
-                edges: [
-                    [1, 2],
-                    [1, 3]
-                ],
-            },
-            expected: 1
-        }
-    ];
+//                 ],
+//             },
+//             expected: 4
+//         },
+//         {
+//             input: {
+//                 n: 3,
+//                 k: 1,
+//                 p: 2,
+//                 edges: [
+//                     [1, 2],
+//                     [1, 3]
+//                 ],
+//             },
+//             expected: 1
+//         }
+//     ];
 
-    for (const { input, expected }
-        of tests) {
-        const result = solve(input.n, input.k, input.p, input.edges);
-        console.log(`Input: n=${input.n}, k=${input.k}, p=${input.p}, edges=${JSON.stringify(input.edges)}`);
-        console.log(`Output: ${result} | Expected: ${expected} | ${result === expected ? "✅ PASS" : "❌ FAIL"}`);
-    }
-}
+//     for (const { input, expected }
+//         of tests) {
+//         const result = solve(input.n, input.k, input.p, input.edges);
+//         console.log(`Input: n=${input.n}, k=${input.k}, p=${input.p}, edges=${JSON.stringify(input.edges)}`);
+//         console.log(`Output: ${result} | Expected: ${expected} | ${result === expected ? "✅ PASS" : "❌ FAIL"}`);
+//     }
+// }
 
-// Run tests
-testing_test();
+// // Run tests
+// testing_test();

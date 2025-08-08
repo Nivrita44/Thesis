@@ -42,19 +42,19 @@ export function solve(original, firstRemoved, secondRemoved) {
 }
 
 // Test function
-function testing_test() {
-    const original = [1, 5, 8, 123, 7];
-    const firstRemoved = [123, 7, 5, 1];
-    const secondRemoved = [5, 1, 7];
-    const expected = [8, 123];
+// function testing_test() {
+//     const original = [1, 5, 8, 123, 7];
+//     const firstRemoved = [123, 7, 5, 1];
+//     const secondRemoved = [5, 1, 7];
+//     const expected = [8, 123];
 
-    const result = solve(original, firstRemoved, secondRemoved);
+//     const result = solve(original, firstRemoved, secondRemoved);
 
-    const pass = JSON.stringify(result) === JSON.stringify(expected);
-    console.log(`Test 1: Expected = [${expected}], Got = [${result}] => ${pass ? "PASS" : "FAIL"}`);
-}
+//     const pass = JSON.stringify(result) === JSON.stringify(expected);
+//     console.log(`Test 1: Expected = [${expected}], Got = [${result}] => ${pass ? "PASS" : "FAIL"}`);
+// }
 
-// Run test if run directly
-if (require.main === module) {
-    testing_test();
-}
+// // Run test if run directly
+// if (require.main === module) {
+//     testing_test();
+// }

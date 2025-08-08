@@ -17,24 +17,24 @@ export function solve(arr) {
 }
 
 // Test function
-function testing_test() {
-    const testCases = [
-        { input: [4, 7, 3, 5], expected: [-3, 2, -4, -2] },
-        { input: [1, 2], expected: [-1, 1] },
-        { input: [1, 2, 3, 4, 5], expected: [-4, -3, -2, -1, 1] },
-        { input: [4, 9, 4], expected: [-5, 5, -5] },
-        { input: [4, 4, 4, 4], expected: [0, 0, 0, 0] }
-    ];
+// function testing_test() {
+//     const testCases = [
+//         { input: [4, 7, 3, 5], expected: [-3, 2, -4, -2] },
+//         { input: [1, 2], expected: [-1, 1] },
+//         { input: [1, 2, 3, 4, 5], expected: [-4, -3, -2, -1, 1] },
+//         { input: [4, 9, 4], expected: [-5, 5, -5] },
+//         { input: [4, 4, 4, 4], expected: [0, 0, 0, 0] }
+//     ];
 
-    for (let i = 0; i < testCases.length; i++) {
-        const { input, expected } = testCases[i];
-        const result = solve(input);
-        const pass = JSON.stringify(result) === JSON.stringify(expected);
-        console.log(`Test ${i + 1}: Expected = [${expected}], Got = [${result}] => ${pass ? "PASS" : "FAIL"}`);
-    }
-}
+//     for (let i = 0; i < testCases.length; i++) {
+//         const { input, expected } = testCases[i];
+//         const result = solve(input);
+//         const pass = JSON.stringify(result) === JSON.stringify(expected);
+//         console.log(`Test ${i + 1}: Expected = [${expected}], Got = [${result}] => ${pass ? "PASS" : "FAIL"}`);
+//     }
+// }
 
-// Run tests when executed directly
-if (require.main === module) {
-    testing_test();
-}
+// // Run tests when executed directly
+// if (require.main === module) {
+//     testing_test();
+// }

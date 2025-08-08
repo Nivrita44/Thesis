@@ -6,7 +6,7 @@
  * @param {number} k - The base for operations.
  * @returns {number}
  */
- function calculation(num, k) {
+function calculation(num, k) {
     if (k === 1) {
         return num;
     }
@@ -28,29 +28,29 @@ export function solve(cases) {
 }
 
 // ✅ Test function
-function testing_test() {
-    const input = [
-        [5, 2],
-        [3, 5],
-        [16, 4],
-        [100, 3],
-        [6492, 10],
-        [10, 1],
-    ];
-    const expected = [2, 3, 1, 4, 21, 10];
-    const result = solve(input);
+// function testing_test() {
+//     const input = [
+//         [5, 2],
+//         [3, 5],
+//         [16, 4],
+//         [100, 3],
+//         [6492, 10],
+//         [10, 1],
+//     ];
+//     const expected = [2, 3, 1, 4, 21, 10];
+//     const result = solve(input);
 
-    console.log("Running Tests...\n");
-    let allPass = true;
+//     console.log("Running Tests...\n");
+//     let allPass = true;
 
-    result.forEach((out, i) => {
-        const status = out === expected[i] ? "PASS " : `FAIL  (Expected: ${expected[i]}, Got: ${out})`;
-        if (out !== expected[i]) allPass = false;
-        console.log(`Test Case ${i + 1}: Output = ${out} | ${status}`);
-    });
+//     result.forEach((out, i) => {
+//         const status = out === expected[i] ? "PASS " : `FAIL  (Expected: ${expected[i]}, Got: ${out})`;
+//         if (out !== expected[i]) allPass = false;
+//         console.log(`Test Case ${i + 1}: Output = ${out} | ${status}`);
+//     });
 
-    console.log(`\nOverall Status: ${allPass ? "PASS " : "FAIL "}`);
-}
+//     console.log(`\nOverall Status: ${allPass ? "PASS " : "FAIL "}`);
+// }
 
-// Run the test
-testing_test();
+// // Run the test
+// testing_test();

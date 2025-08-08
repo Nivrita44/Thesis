@@ -1,5 +1,5 @@
 // Core logic function
-function solve(n) {
+export function solve(n) {
     let m = n;
     let ans = 0;
     let nonZeroParts = [];
@@ -28,7 +28,7 @@ function solve(n) {
     return { count: ans, parts: nonZeroParts };
 }
 
-// Test function with your exact input/output
+
 function testing_test() {
     const testCases = [{
             input: 5009,

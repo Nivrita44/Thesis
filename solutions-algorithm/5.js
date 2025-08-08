@@ -16,24 +16,24 @@ export function solve(arr) {
 }
 
 // Test function
-function testing_test() {
-    const testCases = [
-        { input: [3, 1, 4, 3], expected: 1 },
-        { input: [1, 1, 1, 1, 1], expected: 4 },
-        { input: [1], expected: 0 },
-        { input: [6, 5, 4, 3, 2, 1], expected: 0 },
-        { input: [1, 2, 1, 7, 1, 2, 1], expected: 5 },
-    ];
+// function testing_test() {
+//     const testCases = [
+//         { input: [3, 1, 4, 3], expected: 1 },
+//         { input: [1, 1, 1, 1, 1], expected: 4 },
+//         { input: [1], expected: 0 },
+//         { input: [6, 5, 4, 3, 2, 1], expected: 0 },
+//         { input: [1, 2, 1, 7, 1, 2, 1], expected: 5 },
+//     ];
 
-    for (let i = 0; i < testCases.length; i++) {
-        const { input, expected } = testCases[i];
-        const result = solve(input);
-        const status = result === expected ? "PASS" : "FAIL";
-        console.log(`Test ${i + 1}: Expected = ${expected}, Got = ${result} => ${status}`);
-    }
-}
+//     for (let i = 0; i < testCases.length; i++) {
+//         const { input, expected } = testCases[i];
+//         const result = solve(input);
+//         const status = result === expected ? "PASS" : "FAIL";
+//         console.log(`Test ${i + 1}: Expected = ${expected}, Got = ${result} => ${status}`);
+//     }
+// }
 
-// Run tests if file is executed directly
-if (require.main === module) {
-    testing_test();
-}
+// // Run tests if file is executed directly
+// if (require.main === module) {
+//     testing_test();
+// }

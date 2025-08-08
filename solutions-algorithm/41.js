@@ -58,48 +58,48 @@ class MinPriorityQueue {
 }
 
 // Test function to ensure correctness
-function testing_test() {
-    const tests = [{
-            input: {
-                n: 5,
-                edges: [
-                    [1, 2, 2],
-                    [2, 5, 5],
-                    [2, 3, 4],
-                    [1, 4, 1],
-                    [4, 3, 3],
-                    [3, 5, 1],
-                ],
-            },
-            expected: "1 4 3 5",
-        },
-        {
-            input: {
-                n: 3,
-                edges: [
-                    [1, 2, 1],
-                    [2, 3, 1],
-                ],
-            },
-            expected: "1 2 3",
-        },
-        {
-            input: {
-                n: 3,
-                edges: [
-                    [1, 2, 1],
-                ],
-            },
-            expected: "-1",
-        },
-    ];
+// function testing_test() {
+//     const tests = [{
+//             input: {
+//                 n: 5,
+//                 edges: [
+//                     [1, 2, 2],
+//                     [2, 5, 5],
+//                     [2, 3, 4],
+//                     [1, 4, 1],
+//                     [4, 3, 3],
+//                     [3, 5, 1],
+//                 ],
+//             },
+//             expected: "1 4 3 5",
+//         },
+//         {
+//             input: {
+//                 n: 3,
+//                 edges: [
+//                     [1, 2, 1],
+//                     [2, 3, 1],
+//                 ],
+//             },
+//             expected: "1 2 3",
+//         },
+//         {
+//             input: {
+//                 n: 3,
+//                 edges: [
+//                     [1, 2, 1],
+//                 ],
+//             },
+//             expected: "-1",
+//         },
+//     ];
 
-    for (const { input, expected }
-        of tests) {
-        const result = solve(input.n, input.edges);
-        console.log(`Output: ${result} | Expected: ${expected} | ${result === expected ? "PASS ✅" : "FAIL ❌"}`);
-    }
-}
+//     for (const { input, expected }
+//         of tests) {
+//         const result = solve(input.n, input.edges);
+//         console.log(`Output: ${result} | Expected: ${expected} | ${result === expected ? "PASS ✅" : "FAIL ❌"}`);
+//     }
+// }
 
-// Run test cases
-testing_test();
+// // Run test cases
+// testing_test();

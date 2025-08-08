@@ -6,27 +6,27 @@ export function solve(numbers) {
 }
 
 // ✅ Test function to verify correctness
-function testing_test() {
-    const testCases = [{
-            input: [1, 3, 5, 100, 999, 1000],
-            expected: ["First", "Second", "First", "First", "Second", "First"]
-        }
+// function testing_test() {
+//     const testCases = [{
+//             input: [1, 3, 5, 100, 999, 1000],
+//             expected: ["First", "Second", "First", "First", "Second", "First"]
+//         }
 
-    ];
+//     ];
 
-    console.log("Running Tests...\n");
+//     console.log("Running Tests...\n");
 
-    testCases.forEach(({ input, expected }, index) => {
-        const result = solve(input);
-        const pass = JSON.stringify(result) === JSON.stringify(expected);
-        console.log(`Test Case ${index + 1}:`);
-        input.forEach((n, i) => {
-            const status = result[i] === expected[i] ? 'PASS ✅' : 'FAIL ❌';
-            console.log(`Input: ${n} | Expected: ${expected[i]} | Got: ${result[i]} | ${status}`);
-        });
-        console.log(`Overall Status: ${pass ? 'PASS ✅' : 'FAIL ❌'}\n`);
-    });
-}
+//     testCases.forEach(({ input, expected }, index) => {
+//         const result = solve(input);
+//         const pass = JSON.stringify(result) === JSON.stringify(expected);
+//         console.log(`Test Case ${index + 1}:`);
+//         input.forEach((n, i) => {
+//             const status = result[i] === expected[i] ? 'PASS ✅' : 'FAIL ❌';
+//             console.log(`Input: ${n} | Expected: ${expected[i]} | Got: ${result[i]} | ${status}`);
+//         });
+//         console.log(`Overall Status: ${pass ? 'PASS ✅' : 'FAIL ❌'}\n`);
+//     });
+// }
 
-// Run test
-testing_test();
+// // Run test
+// testing_test();

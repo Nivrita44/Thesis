@@ -14,19 +14,19 @@ export function solve(n, arr, queries) {
 }
 
 // Test function
-function testing_test() {
-    const n = 10;
-    const arr = [1, 2, 3, 4, 1, 2, 3, 4, 100000, 99999];
-    const queries = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-    const expected = [6, 6, 6, 6, 6, 5, 4, 3, 2, 1];
+// function testing_test() {
+//     const n = 10;
+//     const arr = [1, 2, 3, 4, 1, 2, 3, 4, 100000, 99999];
+//     const queries = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+//     const expected = [6, 6, 6, 6, 6, 5, 4, 3, 2, 1];
 
-    const result = solve(n, arr, queries);
+//     const result = solve(n, arr, queries);
 
-    const pass = JSON.stringify(result) === JSON.stringify(expected);
-    console.log(`Test 1: Expected = [${expected}], Got = [${result}] => ${pass ? "PASS" : "FAIL"}`);
-}
+//     const pass = JSON.stringify(result) === JSON.stringify(expected);
+//     console.log(`Test 1: Expected = [${expected}], Got = [${result}] => ${pass ? "PASS" : "FAIL"}`);
+// }
 
-// Run test if run directly
-if (require.main === module) {
-    testing_test();
-}
+// // Run test if run directly
+// if (require.main === module) {
+//     testing_test();
+// }

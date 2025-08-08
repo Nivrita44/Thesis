@@ -19,40 +19,40 @@ export function solve(n, k) {
 }
 
 // Test runner
-function testing_test() {
-    const cases = [
-        { input: [3, 3], expected: [2, 1, 3] },
-        { input: [4, 1], expected: [1, 2, 3, 4] },
-        { input: [5, 6], expected: -1 }
-    ];
+// function testing_test() {
+//     const cases = [
+//         { input: [3, 3], expected: [2, 1, 3] },
+//         { input: [4, 1], expected: [1, 2, 3, 4] },
+//         { input: [5, 6], expected: -1 }
+//     ];
 
-    for (const { input, expected, expectedLength, expectedType }
-        of cases) {
-        const result = solve(...input);
+//     for (const { input, expected, expectedLength, expectedType }
+//         of cases) {
+//         const result = solve(...input);
 
-        let pass = false;
+//         let pass = false;
 
-        if (expected !== undefined) {
-            if (Array.isArray(expected)) {
-                pass = JSON.stringify(result) === JSON.stringify(expected);
-            } else {
-                pass = result === expected;
-            }
-        } else {
-            pass =
-                (expectedType === "array" && Array.isArray(result)) &&
-                (expectedLength === undefined || result.length === expectedLength);
-        }
+//         if (expected !== undefined) {
+//             if (Array.isArray(expected)) {
+//                 pass = JSON.stringify(result) === JSON.stringify(expected);
+//             } else {
+//                 pass = result === expected;
+//             }
+//         } else {
+//             pass =
+//                 (expectedType === "array" && Array.isArray(result)) &&
+//                 (expectedLength === undefined || result.length === expectedLength);
+//         }
 
-        console.log(
-                `Input: ${input.join(" ")} | Output: ${Array.isArray(result) ? result.join(" ") : result} | ${
-                expected !== undefined
-                    ? `Expected: ${Array.isArray(expected) ? expected.join(" ") : expected}`
-                    : `Type: ${expectedType}, Length: ${expectedLength}`
-            } | ${pass ? "✅ PASS" : "❌ FAIL"}`
-        );
-    }
-}
+//         console.log(
+//                 `Input: ${input.join(" ")} | Output: ${Array.isArray(result) ? result.join(" ") : result} | ${
+//                 expected !== undefined
+//                     ? `Expected: ${Array.isArray(expected) ? expected.join(" ") : expected}`
+//                     : `Type: ${expectedType}, Length: ${expectedLength}`
+//             } | ${pass ? "✅ PASS" : "❌ FAIL"}`
+//         );
+//     }
+// }
 
-// Run tests
-testing_test();
+// // Run tests
+// testing_test();

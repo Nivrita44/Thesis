@@ -42,40 +42,40 @@ export function solve(s, t) {
 }
 
 // ✅ Test function
-function testing_test() {
-    const testCases = [{
-            input: ['a8', 'h1'],
-            expected: {
-                count: 7,
-                directions: ['RD', 'RD', 'RD', 'RD', 'RD', 'RD', 'RD']
-            }
-        },
-        {
-            input: ['b2', 'b4'],
-            expected: {
-                count: 2,
-                directions: ['U', 'U']
-            }
-        }
+// function testing_test() {
+//     const testCases = [{
+//             input: ['a8', 'h1'],
+//             expected: {
+//                 count: 7,
+//                 directions: ['RD', 'RD', 'RD', 'RD', 'RD', 'RD', 'RD']
+//             }
+//         },
+//         {
+//             input: ['b2', 'b4'],
+//             expected: {
+//                 count: 2,
+//                 directions: ['U', 'U']
+//             }
+//         }
 
-    ];
+//     ];
 
-    console.log("Running Tests...\n");
-    testCases.forEach(({ input, expected }, index) => {
-        const result = solve(...input);
-        const countMatch = result.count === expected.count;
-        const directionsMatch = JSON.stringify(result.directions) === JSON.stringify(expected.directions);
-        const status = countMatch && directionsMatch ? "PASS" : "FAIL";
+//     console.log("Running Tests...\n");
+//     testCases.forEach(({ input, expected }, index) => {
+//         const result = solve(...input);
+//         const countMatch = result.count === expected.count;
+//         const directionsMatch = JSON.stringify(result.directions) === JSON.stringify(expected.directions);
+//         const status = countMatch && directionsMatch ? "PASS" : "FAIL";
 
-        console.log(`Test Case ${index + 1}:`);
-        console.log(`Input: ${input[0]} -> ${input[1]}`);
-        console.log(`Expected Count: ${expected.count}`);
-        console.log(`Actual Count:   ${result.count}`);
-        console.log(`Expected Moves: ${expected.directions.join(', ')}`);
-        console.log(`Actual Moves:   ${result.directions.join(', ')}`);
-        console.log(`Status: ${status}\n`);
-    });
-}
+//         console.log(`Test Case ${index + 1}:`);
+//         console.log(`Input: ${input[0]} -> ${input[1]}`);
+//         console.log(`Expected Count: ${expected.count}`);
+//         console.log(`Actual Count:   ${result.count}`);
+//         console.log(`Expected Moves: ${expected.directions.join(', ')}`);
+//         console.log(`Actual Moves:   ${result.directions.join(', ')}`);
+//         console.log(`Status: ${status}\n`);
+//     });
+// }
 
-// Run the test
-testing_test();
+// // Run the test
+// testing_test();

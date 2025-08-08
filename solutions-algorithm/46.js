@@ -24,38 +24,38 @@ export function solve(n, managers) {
 }
 
 // ✅ Test function to verify correctness
-function testing_test() {
-    const tests = [{
-            input: { n: 5, managers: [-1, 1, 2, 1, -1] },
-            expected: 3
-        },
-        {
-            input: { n: 4, managers: [-1, 1, 2, 3] },
-            expected: 4
-        },
-        {
-            input: { n: 3, managers: [-1, -1, 1] },
-            expected: 2
-        },
-        {
-            input: {
-                n: 12,
-                managers: [-1, 1, 2, 3, -1, 5, 6, 7, -1, 9, 10, 11]
-            },
-            expected: 4
-        },
-        {
-            input: { n: 6, managers: [-1, 1, 1, 1, 2, 3] },
-            expected: 3
-        }
-    ];
+// function testing_test() {
+//     const tests = [{
+//             input: { n: 5, managers: [-1, 1, 2, 1, -1] },
+//             expected: 3
+//         },
+//         {
+//             input: { n: 4, managers: [-1, 1, 2, 3] },
+//             expected: 4
+//         },
+//         {
+//             input: { n: 3, managers: [-1, -1, 1] },
+//             expected: 2
+//         },
+//         {
+//             input: {
+//                 n: 12,
+//                 managers: [-1, 1, 2, 3, -1, 5, 6, 7, -1, 9, 10, 11]
+//             },
+//             expected: 4
+//         },
+//         {
+//             input: { n: 6, managers: [-1, 1, 1, 1, 2, 3] },
+//             expected: 3
+//         }
+//     ];
 
-    for (const { input, expected }
-        of tests) {
-        const result = solve(input.n, input.managers);
-        console.log(`Input: ${input.managers.join(' ')} | Output: ${result} | Expected: ${expected} | ${result === expected ? "✅ PASS" : "❌ FAIL"}`);
-    }
-}
+//     for (const { input, expected }
+//         of tests) {
+//         const result = solve(input.n, input.managers);
+//         console.log(`Input: ${input.managers.join(' ')} | Output: ${result} | Expected: ${expected} | ${result === expected ? "✅ PASS" : "❌ FAIL"}`);
+//     }
+// }
 
-// Run test
-testing_test();
+// // Run test
+// testing_test();

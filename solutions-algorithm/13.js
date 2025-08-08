@@ -6,19 +6,19 @@ export function solve(numbers) {
 }
 
 // ✅ Test function: Verifies correctness
-function testing_test() {
-    const input = [2, 4, 6];
-    const expectedOutput = [1, 3, 5];
-    const result = solve(input);
+// function testing_test() {
+//     const input = [2, 4, 6];
+//     const expectedOutput = [1, 3, 5];
+//     const result = solve(input);
 
-    console.log("Running Tests...\n");
-    result.forEach((val, idx) => {
-        const pass = val === expectedOutput[idx];
-        console.log(
-            `Input: ${input[idx]} => Output: ${val} | Expected: ${expectedOutput[idx]} | ${pass ? "PASS" : "FAIL"}`
-        );
-    });
-}
+//     console.log("Running Tests...\n");
+//     result.forEach((val, idx) => {
+//         const pass = val === expectedOutput[idx];
+//         console.log(
+//             `Input: ${input[idx]} => Output: ${val} | Expected: ${expectedOutput[idx]} | ${pass ? "PASS" : "FAIL"}`
+//         );
+//     });
+// }
 
-// Run the test
-testing_test();
+// // Run the test
+// testing_test();

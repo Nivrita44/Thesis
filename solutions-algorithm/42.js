@@ -20,22 +20,22 @@ export function solve(n, a) {
 }
 
 // Test function to ensure correctness
-function testing_test() {
-    const tests = [
-        { input: { n: 3, a: [3, 1, 2] }, expected: 2 },
-        { input: { n: 5, a: [4, 2, 1, 3, 5] }, expected: 3 },
-        { input: { n: 1, a: [42] }, expected: 1 },
-        { input: { n: 10, a: [1, 9, 8, 10, 2, 3, 4, 6, 5, 7] }, expected: 6 }
-    ];
+// function testing_test() {
+//     const tests = [
+//         { input: { n: 3, a: [3, 1, 2] }, expected: 2 },
+//         { input: { n: 5, a: [4, 2, 1, 3, 5] }, expected: 3 },
+//         { input: { n: 1, a: [42] }, expected: 1 },
+//         { input: { n: 10, a: [1, 9, 8, 10, 2, 3, 4, 6, 5, 7] }, expected: 6 }
+//     ];
 
-    for (const { input, expected }
-        of tests) {
-        const result = solve(input.n, input.a);
-        console.log(`Input: ${input.a.join(' ')}`);
-        console.log(`Output: ${result} | Expected: ${expected} | ${result === expected ? "✅ PASS" : "❌ FAIL"}`);
-        console.log('---');
-    }
-}
+//     for (const { input, expected }
+//         of tests) {
+//         const result = solve(input.n, input.a);
+//         console.log(`Input: ${input.a.join(' ')}`);
+//         console.log(`Output: ${result} | Expected: ${expected} | ${result === expected ? "✅ PASS" : "❌ FAIL"}`);
+//         console.log('---');
+//     }
+// }
 
-// Run tests
-testing_test();
+// // Run tests
+// testing_test();

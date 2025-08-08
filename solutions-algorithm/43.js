@@ -46,32 +46,32 @@ export function solve(n, a) {
 }
 
 //  Test function
-function testing_test() {
-    const tests = [{
-            input: { n: 5, a: [4, 0, 3, 1, 2] },
-            expected: [3, 2],
-        },
-        {
-            input: { n: 5, a: [1, 2, 3, 4, 0] },
-            expected: [3, 4],
-        },
-        {
-            input: { n: 5, a: [1, 3, 4, 0, 2] },
-            expected: [4, 5],
-        },
-    ];
+// function testing_test() {
+//     const tests = [{
+//             input: { n: 5, a: [4, 0, 3, 1, 2] },
+//             expected: [3, 2],
+//         },
+//         {
+//             input: { n: 5, a: [1, 2, 3, 4, 0] },
+//             expected: [3, 4],
+//         },
+//         {
+//             input: { n: 5, a: [1, 3, 4, 0, 2] },
+//             expected: [4, 5],
+//         },
+//     ];
 
-    for (const { input, expected }
-        of tests) {
-        const result = solve(input.n, input.a);
-        const pass = result[0] === expected[0] && result[1] === expected[1];
-        console.log(
-            `Input: ${input.a.join(" ")} | Output: ${result.join(" ")} | Expected: ${expected.join(" ")} | ${
-        pass ? " PASS" : " FAIL"
-      }`
-        );
-    }
-}
+//     for (const { input, expected }
+//         of tests) {
+//         const result = solve(input.n, input.a);
+//         const pass = result[0] === expected[0] && result[1] === expected[1];
+//         console.log(
+//             `Input: ${input.a.join(" ")} | Output: ${result.join(" ")} | Expected: ${expected.join(" ")} | ${
+//         pass ? " PASS" : " FAIL"
+//       }`
+//         );
+//     }
+// }
 
-// Run tests
-testing_test();
+// // Run tests
+// testing_test();

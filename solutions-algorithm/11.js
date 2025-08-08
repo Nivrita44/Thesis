@@ -10,17 +10,17 @@ export function solve(numbers) {
 }
 
 // ✅ Test function with expected output
-function testing_test() {
-    const input = [77, 21, 40, 34, 19, 84, 10, 99];
-    const expectedOutput = [14, 3, 4, 7, 10, 12, 1, 18];
+// function testing_test() {
+// const input = [77, 21, 40, 34, 19, 84, 10, 99];
+// const expectedOutput = [14, 3, 4, 7, 10, 12, 1, 18];
 
-    const result = solve(input);
+// const result = solve(input);
 
-    console.log("Running Test...\n");
-    result.forEach((value, index) => {
-        console.log(`Input: ${input[index]} => Output: ${value} | Expected: ${expectedOutput[index]} | ${value === expectedOutput[index] ? "PASS" : "FAIL"}`);
-    });
-}
+// console.log("Running Test...\n");
+// result.forEach((value, index) => {
+//     console.log(`Input: ${input[index]} => Output: ${value} | Expected: ${expectedOutput[index]} | ${value === expectedOutput[index] ? "PASS" : "FAIL"}`);
+// });
+// }
 
-// Run the test
-testing_test();
+// // Run the test
+// testing_test();

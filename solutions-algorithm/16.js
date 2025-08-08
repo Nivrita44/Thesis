@@ -19,54 +19,54 @@ export function solve(n) {
 }
 
 // ✅ Test function
-function testing_test() {
-    const testCases = [{
-            input: 5,
-            expected: {
-                count: 2,
-                parts: [3, 2]
-            }
-        },
-        {
-            input: 6,
-            expected: {
-                count: 3,
-                parts: [2, 2, 2]
-            }
-        },
-        {
-            input: 7,
-            expected: {
-                count: 3,
-                parts: [3, 2, 2]
-            }
-        },
-        {
-            input: 2,
-            expected: {
-                count: 1,
-                parts: [2]
-            }
-        }
-    ];
+// function testing_test() {
+//     const testCases = [{
+//             input: 5,
+//             expected: {
+//                 count: 2,
+//                 parts: [3, 2]
+//             }
+//         },
+//         {
+//             input: 6,
+//             expected: {
+//                 count: 3,
+//                 parts: [2, 2, 2]
+//             }
+//         },
+//         {
+//             input: 7,
+//             expected: {
+//                 count: 3,
+//                 parts: [3, 2, 2]
+//             }
+//         },
+//         {
+//             input: 2,
+//             expected: {
+//                 count: 1,
+//                 parts: [2]
+//             }
+//         }
+//     ];
 
-    console.log("Running Tests...\n");
+//     console.log("Running Tests...\n");
 
-    testCases.forEach(({ input, expected }, index) => {
-        const result = solve(input);
-        const countMatch = result.count === expected.count;
-        const partsMatch = JSON.stringify(result.parts) === JSON.stringify(expected.parts);
-        const pass = countMatch && partsMatch;
+//     testCases.forEach(({ input, expected }, index) => {
+//         const result = solve(input);
+//         const countMatch = result.count === expected.count;
+//         const partsMatch = JSON.stringify(result.parts) === JSON.stringify(expected.parts);
+//         const pass = countMatch && partsMatch;
 
-        console.log(`Test Case ${index + 1}:`);
-        console.log(`Input: ${input}`);
-        console.log(`Expected Count: ${expected.count}`);
-        console.log(`Actual Count:   ${result.count}`);
-        console.log(`Expected Parts: ${expected.parts.join(' ')}`);
-        console.log(`Actual Parts:   ${result.parts.join(' ')}`);
-        console.log(`Status: ${pass ? "PASS" : "FAIL"}\n`);
-    });
-}
+//         console.log(`Test Case ${index + 1}:`);
+//         console.log(`Input: ${input}`);
+//         console.log(`Expected Count: ${expected.count}`);
+//         console.log(`Actual Count:   ${result.count}`);
+//         console.log(`Expected Parts: ${expected.parts.join(' ')}`);
+//         console.log(`Actual Parts:   ${result.parts.join(' ')}`);
+//         console.log(`Status: ${pass ? "PASS" : "FAIL"}\n`);
+//     });
+// }
 
-// Run test
-testing_test();
+// // Run test
+// testing_test();

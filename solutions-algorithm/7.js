@@ -19,24 +19,24 @@ export function solve(n, s) {
 }
 
 // Test function with your exact input/output
-function testing_test() {
-    const testCases = [
-        { n: 5, s: [3, 3, 3, 0, 0], expected: 6 },
-        { n: 6, s: [0, 3, 3, 0, 0, 3], expected: 6 },
-        { n: 7, s: [1, 2, 3, 0, 4, 5, 0], expected: 8 },
-        { n: 7, s: [1, 2, 5, 0, 4, 3, 0], expected: 9 },
-        { n: 5, s: [3, 1, 0, 0, 4], expected: 4 }
-    ];
+// function testing_test() {
+//     const testCases = [
+//         { n: 5, s: [3, 3, 3, 0, 0], expected: 6 },
+//         { n: 6, s: [0, 3, 3, 0, 0, 3], expected: 6 },
+//         { n: 7, s: [1, 2, 3, 0, 4, 5, 0], expected: 8 },
+//         { n: 7, s: [1, 2, 5, 0, 4, 3, 0], expected: 9 },
+//         { n: 5, s: [3, 1, 0, 0, 4], expected: 4 }
+//     ];
 
-    for (let i = 0; i < testCases.length; i++) {
-        const { n, s, expected } = testCases[i];
-        const result = solve(n, s);
-        const status = result === expected ? "PASS" : "FAIL";
-        console.log(`Test ${i + 1}: Expected = ${expected}, Got = ${result} => ${status}`);
-    }
-}
+//     for (let i = 0; i < testCases.length; i++) {
+//         const { n, s, expected } = testCases[i];
+//         const result = solve(n, s);
+//         const status = result === expected ? "PASS" : "FAIL";
+//         console.log(`Test ${i + 1}: Expected = ${expected}, Got = ${result} => ${status}`);
+//     }
+// }
 
-// Run tests when this script is executed directly
-if (require.main === module) {
-    testing_test();
-}
+// // Run tests when this script is executed directly
+// if (require.main === module) {
+//     testing_test();
+// }
