@@ -57,29 +57,29 @@ export function solve(xBig, yBig) {
     return answer;
 }
 
-function testing_test() {
-    const testCases = [
-        { input: [0n, 1n], expected: 2n },
-        { input: [6n, 2n], expected: 6n },
-        { input: [3n, 3n], expected: 0n },
-        { input: [13n, 37n], expected: 26n },
-        { input: [4238659325782394n, 12983091057341925n], expected: 32764n }
-    ];
+// function testing_test() {
+//     const testCases = [
+//         { input: [0n, 1n], expected: 2n },
+//         { input: [6n, 2n], expected: 6n },
+//         { input: [3n, 3n], expected: 0n },
+//         { input: [13n, 37n], expected: 26n },
+//         { input: [4238659325782394n, 12983091057341925n], expected: 32764n }
+//     ];
 
-    let allPassed = true;
-    testCases.forEach(({ input, expected }, index) => {
-        const result = solve(...input);
-        if (result === expected) {
-            console.log(`Test case ${index + 1}: ✅ Passed`);
-        } else {
-            console.log(`Test case ${index + 1}: ❌ Failed (Got ${result}, Expected ${expected})`);
-            allPassed = false;
-        }
-    });
+//     let allPassed = true;
+//     testCases.forEach(({ input, expected }, index) => {
+//         const result = solve(...input);
+//         if (result === expected) {
+//             console.log(`Test case ${index + 1}: ✅ Passed`);
+//         } else {
+//             console.log(`Test case ${index + 1}: ❌ Failed (Got ${result}, Expected ${expected})`);
+//             allPassed = false;
+//         }
+//     });
 
-    if (allPassed) {
-        console.log("🎉 All test cases passed!");
-    }
-}
+//     if (allPassed) {
+//         console.log("🎉 All test cases passed!");
+//     }
+// }
 
-testing_test();
+// testing_test();

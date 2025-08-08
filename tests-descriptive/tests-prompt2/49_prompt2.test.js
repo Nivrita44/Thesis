@@ -73,3 +73,115 @@ test('bridge edge in the graph', () => {
 test('empty input', () => {
   expect(solve('')).toEqual([]);
 });
+
+
+
+
+  // four nodes, disconnected two edges
+
+  //     expect(received).toEqual(expected) // deep equality
+
+  //     - Expected  - 1
+  //     + Received  + 1
+
+  //       Array [
+  //     -   0,
+  //     +   3,
+  //       ]
+
+  //       18 |
+  //       19 | test('four nodes, disconnected two edges', () => {
+  //     > 20 |   expect(solve('4 2\n1 2\n3 4')).toEqual([0]);
+  //          |                                  ^
+  //       21 | });
+  //       22 |
+  //       23 | test('four nodes, star', () => {
+
+  //       at Object.toEqual (tests-descriptive/tests-prompt2/49_prompt2.test.js:20:34)
+
+  //   ● multiple test cases
+
+  //     expect(received).toEqual(expected) // deep equality
+
+  //     - Expected  - 1
+  //     + Received  + 1
+
+  //       Array [
+  //         3,
+  //     -   0,
+  //     +   3,
+  //       ]
+
+  //       53 |     '3 4'
+  //       54 |   ].join('\n');
+  //     > 55 |   expect(solve(input)).toEqual([3, 0]);
+  //          |                        ^
+  //       56 | });
+  //       57 |
+  //       58 | test('disconnected components', () => {
+
+  //       at Object.toEqual (tests-descriptive/tests-prompt2/49_prompt2.test.js:55:24)
+
+  //   ● disconnected components
+
+  //     expect(received).toEqual(expected) // deep equality
+
+  //     - Expected  - 1
+  //     + Received  + 1
+
+  //       Array [
+  //     -   0,
+  //     +   10,
+  //       ]
+
+  //       57 |
+  //       58 | test('disconnected components', () => {
+  //     > 59 |   expect(solve('6 3\n1 2\n3 4\n5 6')).toEqual([0]);
+  //          |                                       ^
+  //       60 | });
+  //       61 |
+  //       62 | test('large complete graph n=10', () => {
+
+  //       at Object.toEqual (tests-descriptive/tests-prompt2/49_prompt2.test.js:59:39)
+
+  //   ● bridge edge in the graph
+
+  //     expect(received).toEqual(expected) // deep equality
+
+  //     - Expected  - 1
+  //     + Received  + 1
+
+  //       Array [
+  //     -   3,
+  //     +   2,
+  //       ]
+
+  //       68 |
+  //       69 | test('bridge edge in the graph', () => {
+  //     > 70 |   expect(solve('4 3\n1 2\n2 3\n3 4')).toEqual([3]);
+  //          |                                       ^
+  //       71 | });
+  //       72 |
+  //       73 | test('empty input', () => {
+
+  //       at Object.toEqual (tests-descriptive/tests-prompt2/49_prompt2.test.js:70:39)
+
+  //   ● empty input
+
+  //     expect(received).toEqual(expected) // deep equality
+
+  //     - Expected  - 1
+  //     + Received  + 3
+
+  //     - Array []
+  //     + Array [
+  //     +   -0,
+  //     + ]
+
+  //       72 |
+  //       73 | test('empty input', () => {
+  //     > 74 |   expect(solve('')).toEqual([]);
+  //          |                     ^
+  //       75 | });
+
+  //       at Object.toEqual (tests-descriptive/tests-prompt2/49_prompt2.test.js:74:21)

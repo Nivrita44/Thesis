@@ -1,66 +1,70 @@
 import { solve } from '../../solutions-descriptive/28.js';
 
-test('x and y are equal (simple case)', () => {
-  expect(solve(5n, 5n)).toBe(0n);
-  expect(solve(123456789123456789n, 123456789123456789n)).toBe(0n);
+test('x=0n, y=1n (description case)', () => {
+  expect(solve(0n, 1n)).toBe(2n);
+});
+
+test('x=6n, y=2n', () => {
+  expect(solve(6n, 2n)).toBe(6n);
+});
+
+test('x=3n, y=3n (already equal)', () => {
+  expect(solve(3n, 3n)).toBe(0n);
+});
+
+test('x=13n, y=37n', () => {
+  expect(solve(13n, 37n)).toBe(26n);
+});
+
+test('x=4238659325782394n, y=12983091057341925n (large random values)', () => {
+  expect(solve(4238659325782394n, 12983091057341925n)).toBe(32764n);
+});
+
+test('x=0n, y=0n (both zero)', () => {
   expect(solve(0n, 0n)).toBe(0n);
 });
 
-test('one value is zero', () => {
-  expect(solve(0n, 1n)).toBe(1n);
-  expect(solve(1n, 0n)).toBe(1n);
-  expect(solve(0n, 7n)).toBe(1n);
-  expect(solve(15n, 0n)).toBe(1n);
+test('x=100000000000000000n, y=0n (upper bound)', () => {
+  expect(solve(100000000000000000n, 0n)).toBe(262144n);
 });
 
-test('simple small numbers', () => {
-  expect(solve(4n, 2n)).toBe(2n);
-  expect(solve(8n, 1n)).toBe(7n);
-  expect(solve(16n, 2n)).toBe(6n);
-  expect(solve(5n, 1n)).toBe(3n);
+test('x=1n, y=2n (small consecutive numbers)', () => {
+  expect(solve(1n, 2n)).toBe(2n);
 });
 
-test('small difference', () => {
-  expect(solve(6n, 7n)).toBe(1n);
-  expect(solve(15n, 14n)).toBe(1n);
+test('x=1n, y=100000000000000000n (extreme difference)', () => {
+  expect(solve(1n, 100000000000000000n)).toBe(262144n);
 });
 
-test('large difference, large numbers', () => {
-  expect(solve(100000000000000000n, 1n)).toBe(17n);
-  expect(solve(99999999999999999n, 8n)).toBe(16n);
-});
 
-test('power of two numbers', () => {
-  expect(solve(16n, 8n)).toBe(2n);
-  expect(solve(32n, 8n)).toBe(6n);
-});
+// x=100000000000000000n, y=0n (upper bound)
 
-test('x is much greater than y', () => {
-  expect(solve(100000000000000000n, 2n)).toBe(17n);
-  expect(solve(99999999999999999n, 7n)).toBe(16n);
-});
+// expect(received).toBe(expected) // Object.is equality
 
-test('y is much greater than x', () => {
-  expect(solve(1n, 100000000000000000n)).toBe(17n);
-  expect(solve(7n, 99999999999999999n)).toBe(16n);
-});
+// Expected: 262144n
+// Received: 3582n
 
-test('both numbers are very large and equal', () => {
-  expect(solve(100000000000000000n, 100000000000000000n)).toBe(0n);
-});
+//   26 |
+//   27 | test('x=100000000000000000n, y=0n (upper bound)', () => {
+// > 28 |   expect(solve(100000000000000000n, 0n)).toBe(262144n);
+//      |                                          ^
+//   29 | });
+//   30 |
+//   31 | test('x=1n, y=2n (small consecutive numbers)', () => {
 
-test('edge cases on MAX_BITS', () => {
-  expect(solve(1n << 60n, 0n)).toBe(1n);
-  expect(solve(0n, 1n << 60n)).toBe(1n);
-  expect(solve(1n << 59n, 1n)).toBe(60n);
-});
+//   at Object.toBe (tests-descriptive/tests-prompt3/28_prompt3.test.js:28:42)
 
-test('Just 1 apart', () => {
-  expect(solve(11n, 10n)).toBe(1n);
-  expect(solve(1024n, 1023n)).toBe(1n);
-});
+// ● x=1n, y=100000000000000000n (extreme difference)
 
-test('Case where greedy is not enough', () => {
-  expect(solve(100n, 33n)).toBe(5n);
-  expect(solve(10000n, 125n)).toBe(7n);
-});
+// expect(received).toBe(expected) // Object.is equality
+
+// Expected: 262144n
+// Received: 3070n
+
+//   34 |
+//   35 | test('x=1n, y=100000000000000000n (extreme difference)', () => {
+// > 36 |   expect(solve(1n, 100000000000000000n)).toBe(262144n);
+//      |                                          ^
+//   37 | });
+
+//   at Object.toBe (tests-descriptive/tests-prompt3/28_prompt3.test.js:36:42)

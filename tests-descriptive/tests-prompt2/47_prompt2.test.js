@@ -71,3 +71,157 @@ test('large values', () => {
   ];
   expect(solve(testCases)).toEqual(['2899999997']);
 });
+
+
+
+
+// typical case with distinct a and b
+
+//     TypeError: Cannot mix BigInt and other types, use explicit conversions
+
+//       28 |             let iterations = Math.max(0, Math.floor((updatedValues[i] - high) / b[i]) + 1);
+//       29 |             remainingOperations -= iterations;
+//     > 30 |             totalScore += BigInt(iterations) * BigInt(updatedValues[i] + updatedValues[i] - (iterations - 1) * b[i]) / 2n;
+//          |                                                                                                                     ^
+//       31 |             updatedValues[i] -= b[i] * iterations;
+//       32 |         }
+//       33 |
+
+//       at solve (solutions-descriptive/47.js:30:117)
+//       at Object.solve (tests-descriptive/tests-prompt2/47_prompt2.test.js:7:10)
+
+//   ● all zeros in a
+
+//     TypeError: Cannot mix BigInt and other types, use explicit conversions
+
+//       28 |             let iterations = Math.max(0, Math.floor((updatedValues[i] - high) / b[i]) + 1);
+//       29 |             remainingOperations -= iterations;
+//     > 30 |             totalScore += BigInt(iterations) * BigInt(updatedValues[i] + updatedValues[i] - (iterations - 1) * b[i]) / 2n;
+//          |                                                                                                                     ^
+//       31 |             updatedValues[i] -= b[i] * iterations;
+//       32 |         }
+//       33 |
+
+//       at solve (solutions-descriptive/47.js:30:117)
+//       at Object.solve (tests-descriptive/tests-prompt2/47_prompt2.test.js:14:10)
+
+//   ● all zeros in b
+
+//     TypeError: Cannot mix BigInt and other types, use explicit conversions
+
+//       28 |             let iterations = Math.max(0, Math.floor((updatedValues[i] - high) / b[i]) + 1);
+//       29 |             remainingOperations -= iterations;
+//     > 30 |             totalScore += BigInt(iterations) * BigInt(updatedValues[i] + updatedValues[i] - (iterations - 1) * b[i]) / 2n;
+//          |                                                                                                                     ^
+//       31 |             updatedValues[i] -= b[i] * iterations;
+//       32 |         }
+//       33 |
+
+//       at solve (solutions-descriptive/47.js:30:117)
+//       at Object.solve (tests-descriptive/tests-prompt2/47_prompt2.test.js:21:10)
+
+//   ● k is zero, no operations allowed
+
+//     TypeError: Cannot mix BigInt and other types, use explicit conversions
+
+//       28 |             let iterations = Math.max(0, Math.floor((updatedValues[i] - high) / b[i]) + 1);
+//       29 |             remainingOperations -= iterations;
+//     > 30 |             totalScore += BigInt(iterations) * BigInt(updatedValues[i] + updatedValues[i] - (iterations - 1) * b[i]) / 2n;
+//          |                                                                                                                     ^
+//       31 |             updatedValues[i] -= b[i] * iterations;
+//       32 |         }
+//       33 |
+
+//       at solve (solutions-descriptive/47.js:30:117)
+//       at Object.solve (tests-descriptive/tests-prompt2/47_prompt2.test.js:28:10)
+
+//   ● one element, one operation
+
+//     TypeError: Cannot mix BigInt and other types, use explicit conversions
+
+//       28 |             let iterations = Math.max(0, Math.floor((updatedValues[i] - high) / b[i]) + 1);
+//       29 |             remainingOperations -= iterations;
+//     > 30 |             totalScore += BigInt(iterations) * BigInt(updatedValues[i] + updatedValues[i] - (iterations - 1) * b[i]) / 2n;
+//          |                                                                                                                     ^
+//       31 |             updatedValues[i] -= b[i] * iterations;
+//       32 |         }
+//       33 |
+
+//       at solve (solutions-descriptive/47.js:30:117)
+//       at Object.solve (tests-descriptive/tests-prompt2/47_prompt2.test.js:35:10)
+
+//   ● large n, b[i] is 1
+
+//     TypeError: Cannot mix BigInt and other types, use explicit conversions
+
+//       28 |             let iterations = Math.max(0, Math.floor((updatedValues[i] - high) / b[i]) + 1);
+//       29 |             remainingOperations -= iterations;
+//     > 30 |             totalScore += BigInt(iterations) * BigInt(updatedValues[i] + updatedValues[i] - (iterations - 1) * b[i]) / 2n;
+//          |                                                                                                                     ^
+//       31 |             updatedValues[i] -= b[i] * iterations;
+//       32 |         }
+//       33 |
+
+//       at solve (solutions-descriptive/47.js:30:117)
+//       at Object.solve (tests-descriptive/tests-prompt2/47_prompt2.test.js:44:10)
+
+//   ● b[i] greater than a[i]
+
+//     TypeError: Cannot mix BigInt and other types, use explicit conversions
+
+//       28 |             let iterations = Math.max(0, Math.floor((updatedValues[i] - high) / b[i]) + 1);
+//       29 |             remainingOperations -= iterations;
+//     > 30 |             totalScore += BigInt(iterations) * BigInt(updatedValues[i] + updatedValues[i] - (iterations - 1) * b[i]) / 2n;
+//          |                                                                                                                     ^
+//       31 |             updatedValues[i] -= b[i] * iterations;
+//       32 |         }
+//       33 |
+
+//       at solve (solutions-descriptive/47.js:30:117)
+//       at Object.solve (tests-descriptive/tests-prompt2/47_prompt2.test.js:51:10)
+
+//   ● all elements same a, same b
+
+//     TypeError: Cannot mix BigInt and other types, use explicit conversions
+
+//       28 |             let iterations = Math.max(0, Math.floor((updatedValues[i] - high) / b[i]) + 1);
+//       29 |             remainingOperations -= iterations;
+//     > 30 |             totalScore += BigInt(iterations) * BigInt(updatedValues[i] + updatedValues[i] - (iterations - 1) * b[i]) / 2n;
+//          |                                                                                                                     ^
+//       31 |             updatedValues[i] -= b[i] * iterations;
+//       32 |         }
+//       33 |
+
+//       at solve (solutions-descriptive/47.js:30:117)
+//       at Object.solve (tests-descriptive/tests-prompt2/47_prompt2.test.js:58:10)
+
+//   ● operation count more than all elements sum
+
+//     TypeError: Cannot mix BigInt and other types, use explicit conversions
+
+//       28 |             let iterations = Math.max(0, Math.floor((updatedValues[i] - high) / b[i]) + 1);
+//       29 |             remainingOperations -= iterations;
+//     > 30 |             totalScore += BigInt(iterations) * BigInt(updatedValues[i] + updatedValues[i] - (iterations - 1) * b[i]) / 2n;
+//          |                                                                                                                     ^
+//       31 |             updatedValues[i] -= b[i] * iterations;
+//       32 |         }
+//       33 |
+
+//       at solve (solutions-descriptive/47.js:30:117)
+//       at Object.solve (tests-descriptive/tests-prompt2/47_prompt2.test.js:65:10)
+
+//   ● large values
+
+//     TypeError: Cannot mix BigInt and other types, use explicit conversions
+
+//       28 |             let iterations = Math.max(0, Math.floor((updatedValues[i] - high) / b[i]) + 1);
+//       29 |             remainingOperations -= iterations;
+//     > 30 |             totalScore += BigInt(iterations) * BigInt(updatedValues[i] + updatedValues[i] - (iterations - 1) * b[i]) / 2n;
+//          |                                                                                                                     ^
+//       31 |             updatedValues[i] -= b[i] * iterations;
+//       32 |         }
+//       33 |
+
+//       at solve (solutions-descriptive/47.js:30:117)
+//       at Object.solve (tests-descriptive/tests-prompt2/47_prompt2.test.js:72:10)
+
