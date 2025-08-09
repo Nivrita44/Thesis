@@ -11,83 +11,83 @@ import { fileURLToPath } from "url";
 // --- CONFIGURATION ---
 dotenv.config();
 
-const __filename = fileURLToPath(import.meta.url);
+const __filename = fileURLToPath(
+    import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const CLAUDE_API_KEY = process.env.CLAUDE_API_KEYY;
 if (!CLAUDE_API_KEY) {
-  console.error("Error: CLAUDE_API_KEY not found in .env file.");
-  process.exit(1);
+    console.error("Error: CLAUDE_API_KEY not found in .env file.");
+    process.exit(1);
 }
 
 const anthropic = new Anthropic({
-  apiKey: CLAUDE_API_KEY
+    apiKey: CLAUDE_API_KEY
 });
 
 const LLM_MODEL = "claude-3-5-sonnet-20241022";
 
 const PATHS = {
-  dataset: path.join(__dirname, "dataset.csv"),
-  problems: path.join(__dirname, "problems-descriptive"),
-  solutions: path.join(__dirname, "solutions-descriptive"),
-  testsPrompt1: path.join(__dirname, "Claude", "tests-descriptive", "tests-prompt1"),
-  testsPrompt2: path.join(__dirname, "Claude", "tests-descriptive", "tests-prompt2"),
-  testsPrompt3: path.join(__dirname, "Claude", "tests-descriptive", "tests-prompt3"),
+    dataset: path.join(__dirname, "dataset.csv"),
+    problems: path.join(__dirname, "problems-algorithm"),
+    solutions: path.join(__dirname, "solutions-algorithm"),
+    testsPrompt1: path.join(__dirname, "Claude", "tests-algorithm", "tests-prompt1"),
+    testsPrompt2: path.join(__dirname, "Claude", "tests-algorithm", "tests-prompt2"),
+    testsPrompt3: path.join(__dirname, "Claude", "tests-algorithm", "tests-prompt3"),
 };
 
 // --- HELPER FUNCTIONS ---
 
 async function readDataset() {
-  return new Promise((resolve, reject) => {
-    const results = [];
-    createReadStream(PATHS.dataset)
-      .pipe(
-        csv({
-          mapHeaders: ({ header }) => header.trim(),
-          mapValues: ({ value }) => value.trim(),
-        })
-      )
-      .on("data", (data) => results.push(data))
-      .on("end", () => resolve(results))
-      .on("error", (error) => reject(error));
-  });
+    return new Promise((resolve, reject) => {
+        const results = [];
+        createReadStream(PATHS.dataset)
+            .pipe(
+                csv({
+                    mapHeaders: ({ header }) => header.trim(),
+                    mapValues: ({ value }) => value.trim(),
+                })
+            )
+            .on("data", (data) => results.push(data))
+            .on("end", () => resolve(results))
+            .on("error", (error) => reject(error));
+    });
 }
 
 function cleanSolutionCode(code) {
-  let cleanedCode = code.replace(
-    /function testing_test\(\) {[\s\S]*?}\s*testing_test\(\);/s,
-    ""
-  );
-  cleanedCode = cleanedCode.replace(/module\.exports\s*=\s*solve;/s, "");
-  cleanedCode = cleanedCode.replace(/export\s+default\s+solve\s*;/s, "");
-  if (!/export\s+function\s+solve/.test(cleanedCode)) {
-    cleanedCode = cleanedCode.replace(
-      /function\s+solve\s*\(/,
-      "export function solve("
+    let cleanedCode = code.replace(
+        /function testing_test\(\) {[\s\S]*?}\s*testing_test\(\);/s,
+        ""
     );
-  }
-  return cleanedCode.trim();
+    cleanedCode = cleanedCode.replace(/module\.exports\s*=\s*solve;/s, "");
+    cleanedCode = cleanedCode.replace(/export\s+default\s+solve\s*;/s, "");
+    if (!/export\s+function\s+solve/.test(cleanedCode)) {
+        cleanedCode = cleanedCode.replace(
+            /function\s+solve\s*\(/,
+            "export function solve("
+        );
+    }
+    return cleanedCode.trim();
 }
 
 function cleanLLMResponse(responseText) {
-  const codeBlockRegex = /```(?:javascript|js)\s*([\s\S]*?)```/i;
-  const match = responseText.match(codeBlockRegex);
-  if (match && match[1]) {
-    return match[1].trim();
-  }
-  return responseText.trim();
+    const codeBlockRegex = /```(?:javascript|js)\s*([\s\S]*?)```/i;
+    const match = responseText.match(codeBlockRegex);
+    if (match && match[1]) {
+        return match[1].trim();
+    }
+    return responseText.trim();
 }
 
 async function generateTestCode(prompt) {
-  try {
-    console.log("  Sending request to Claude...");
-    const response = await anthropic.messages.create({
-      model: LLM_MODEL,
-      max_tokens: 1500,
-      messages: [
-        {
-          role: "user",
-          content: `SYSTEM:
+    try {
+        console.log("  Sending request to Claude...");
+        const response = await anthropic.messages.create({
+            model: LLM_MODEL,
+            max_tokens: 1500,
+            messages: [{
+                role: "user",
+                content: `SYSTEM:
 You are an expert software developer specializing in writing Jest test cases.
 The function to be tested is named 'solve' with signature 'function solve' and it returns some type according to the parameter type.
 It does NOT use stdin or stdout. Write Jest test cases that directly call this function and use expect(...).toBe(...) assertions.
@@ -95,58 +95,57 @@ Only output raw JavaScript code.
 
 USER:
 ${prompt}`
-        }
-      ]
-    });
-    const generatedText = response.content[0].text;
-    console.log("  Received response from Claude.");
-    return cleanLLMResponse(generatedText);
-  } catch (error) {
-    console.error("  Error calling Claude API:", error);
-    return `// Failed to generate tests: ${error.message}`;
-  }
+            }]
+        });
+        const generatedText = response.content[0].text;
+        console.log("  Received response from Claude.");
+        return cleanLLMResponse(generatedText);
+    } catch (error) {
+        console.error("  Error calling Claude API:", error);
+        return `// Failed to generate tests: ${error.message}`;
+    }
 }
 
 async function saveTestFile(filePath, content) {
-  try {
-    const dir = path.dirname(filePath);
-    await fs.mkdir(dir, { recursive: true });
-    await fs.writeFile(filePath, content, "utf-8");
-    console.log(`  Successfully saved test file to: ${filePath}`);
-  } catch (error) {
-    console.error(`  Error saving file ${filePath}:`, error);
-  }
+    try {
+        const dir = path.dirname(filePath);
+        await fs.mkdir(dir, { recursive: true });
+        await fs.writeFile(filePath, content, "utf-8");
+        console.log(`  Successfully saved test file to: ${filePath}`);
+    } catch (error) {
+        console.error(`  Error saving file ${filePath}:`, error);
+    }
 }
 
 // --- MAIN EXECUTION LOGIC ---
 async function main() {
-  console.log("Starting test generation process...");
-  const dataset = await readDataset();
+    console.log("Starting test generation process...");
+    const dataset = await readDataset();
 
-  for (const row of dataset) {
-    const { problem_path: problemFile, solution_path: solutionFile } = row;
-    if (!problemFile || !solutionFile) continue;
+    for (const row of dataset) {
+        const { problem_path: problemFile, solution_path: solutionFile } = row;
+        if (!problemFile || !solutionFile) continue;
 
-    const problemId = path.basename(problemFile, ".txt");
-    console.log(`\nProcessing Problem ID: ${problemId}`);
+        const problemId = path.basename(problemFile, ".txt");
+        console.log(`\nProcessing Problem ID: ${problemId}`);
 
-    const problemContent = await fs.readFile(
-      path.join(PATHS.problems, problemFile),
-      "utf-8"
-    );
-    const solutionContent = await fs.readFile(
-      path.join(PATHS.solutions, solutionFile),
-      "utf-8"
-    );
-    const cleanedSolutionContent = cleanSolutionCode(solutionContent);
+        const problemContent = await fs.readFile(
+            path.join(PATHS.problems, problemFile),
+            "utf-8"
+        );
+        const solutionContent = await fs.readFile(
+            path.join(PATHS.solutions, solutionFile),
+            "utf-8"
+        );
+        const cleanedSolutionContent = cleanSolutionCode(solutionContent);
 
-    // --- Task 1: Generate tests from problem description only ---
-    console.log("[Task 1/3] Generating tests from problem description...");
-    const prompt1 = `
+        // --- Task 1: Generate tests from problem description only ---
+        console.log("[Task 1/3] Generating tests from problem description...");
+        const prompt1 = `
 Generate clean, working Jest test cases for the following programming problem.
 
 Assume the solution function is called 'solve'. It is exported from a JavaScript file using ES module syntax:
-import { solve } from '../../solutions-descriptive/${solutionFile}'
+import { solve } from '../../solutions-algorithm/${solutionFile}'
 
 Requirements:
 - The function does NOT use stdin or stdout.
@@ -172,17 +171,17 @@ Problem Description:
 ---
 ${problemContent}
 `;
-    const testCode1 = await generateTestCode(prompt1);
-    const testPath1 = path.join(
-      PATHS.testsPrompt1,
-      `${problemId}_prompt1.test.js`
-    );
-    await saveTestFile(testPath1, testCode1);
+        const testCode1 = await generateTestCode(prompt1);
+        const testPath1 = path.join(
+            PATHS.testsPrompt1,
+            `${problemId}_prompt1.test.js`
+        );
+        await saveTestFile(testPath1, testCode1);
 
-    // --- Task 2: Generate tests from solution code only ---
-    console.log("[Task 2/3] Generating tests from solution code only...");
-    const prompt2 = `
-Generate Jest test cases for the following JavaScript function named 'solve'. It is defined in '../../solutions-descriptive/${solutionFile}'.
+        // --- Task 2: Generate tests from solution code only ---
+        console.log("[Task 2/3] Generating tests from solution code only...");
+        const prompt2 = `
+Generate Jest test cases for the following JavaScript function named 'solve'. It is defined in '../../solutions-algorithm/${solutionFile}'.
 
 Requirements:
 - Do not use any comment lines. Only return clean code.
@@ -200,17 +199,17 @@ Solution Code:
 ---
 ${cleanedSolutionContent}
 `;
-    const testCode2 = await generateTestCode(prompt2);
-    const testPath2 = path.join(
-      PATHS.testsPrompt2,
-      `${problemId}_prompt2.test.js`
-    );
-    await saveTestFile(testPath2, testCode2);
+        const testCode2 = await generateTestCode(prompt2);
+        const testPath2 = path.join(
+            PATHS.testsPrompt2,
+            `${problemId}_prompt2.test.js`
+        );
+        await saveTestFile(testPath2, testCode2);
 
-    // --- Task 3: Generate tests from both problem and solution ---
-    console.log("[Task 3/3] Generating tests from both problem and solution...");
-    const prompt3 = `
-Generate Jest test cases for a function called 'solve', defined in '../../solutions-descriptive/${solutionFile}'.
+        // --- Task 3: Generate tests from both problem and solution ---
+        console.log("[Task 3/3] Generating tests from both problem and solution...");
+        const prompt3 = `
+Generate Jest test cases for a function called 'solve', defined in '../../solutions-algorithm/${solutionFile}'.
 
 Use both the problem description and the solution code to generate accurate, meaningful test coverage.
 
@@ -234,15 +233,15 @@ Solution Code:
 ---
 ${cleanedSolutionContent}
 `;
-    const testCode3 = await generateTestCode(prompt3);
-    const testPath3 = path.join(
-      PATHS.testsPrompt3,
-      `${problemId}_prompt3.test.js`
-    );
-    await saveTestFile(testPath3, testCode3);
-  }
+        const testCode3 = await generateTestCode(prompt3);
+        const testPath3 = path.join(
+            PATHS.testsPrompt3,
+            `${problemId}_prompt3.test.js`
+        );
+        await saveTestFile(testPath3, testCode3);
+    }
 
-  console.log("\nTest generation process finished!");
+    console.log("\nTest generation process finished!");
 }
 
 main().catch(console.error);
