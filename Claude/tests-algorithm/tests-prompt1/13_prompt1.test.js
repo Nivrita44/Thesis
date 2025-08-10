@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-algorithm/13.js'
+import { solve } from '../../../solutions-algorithm/13.js'
 
 test('example case n=4 should return 3 pairs', () => {
   expect(solve(4n)).toBe(3n);

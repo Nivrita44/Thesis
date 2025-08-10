@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-algorithm/34.js';
+import { solve } from '../../../solutions-algorithm/34.js';
 
 function bruteForce(x) {
   let maxSum = 0;

@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-algorithm/45.js';
+import { solve } from '../../../solutions-algorithm/45.js';
 
 describe('solve function test cases', () => {
     test('basic ascending sequence', () => {

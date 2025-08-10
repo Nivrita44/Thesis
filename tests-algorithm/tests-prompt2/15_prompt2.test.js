@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-algorithm/15.js';
+import { solve } from '../../../solutions-algorithm/15.js';
 
 test('king diagonal move: a8 to h1', () => {
   const result = solve('a8', 'h1');

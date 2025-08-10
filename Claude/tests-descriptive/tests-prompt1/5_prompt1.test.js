@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-descriptive/5.js'
+import { solve } from '../../../solutions-descriptive/5.js'
 
 test('basic case n=5', () => {
   expect(solve(5n)).toBe(4n);

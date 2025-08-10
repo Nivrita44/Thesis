@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-algorithm/49.js'
+import { solve } from '../../../solutions-algorithm/49.js'
 
 test('example case - 2x2 grid with k=3', () => {
   expect(solve(2n, 2n, 3n)).toBe('YES');

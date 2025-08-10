@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-descriptive/7.js'
+import { solve } from '../../../solutions-descriptive/7.js'
 
 test('example tree with 3 vertices in line', () => {
   expect(solve(3, [[1, 2], [2, 3]])).toBe(1n);

@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-descriptive/49.js';
+import { solve } from '../../../solutions-descriptive/49.js';
 
 test('example test case from description', () => {
     const input = `2 1

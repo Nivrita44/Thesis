@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-descriptive/49.js';
+import { solve } from '../../../solutions-descriptive/49.js';
 
 test('basic graph with single edge', () => {
     const input = `2 1\n1 2`;

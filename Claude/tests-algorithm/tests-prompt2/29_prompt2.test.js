@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-algorithm/29.js';
+import { solve } from '../../../solutions-algorithm/29.js';
 
 describe('PIN Movement Calculator Tests', () => {
     test('basic pin sequence with all same digits', () => {

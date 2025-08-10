@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-algorithm/22.js'
+import { solve } from '../../../solutions-algorithm/22.js'
 
 test('example case n=4', () => {
   expect(solve(4n)).toBe("First");

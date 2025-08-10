@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-algorithm/31.js';
+import { solve } from '../../../solutions-algorithm/31.js';
 
 test('handles single simple case n=4', () => {
   expect(solve(1, [4])).toEqual(['4 3 1 2']);

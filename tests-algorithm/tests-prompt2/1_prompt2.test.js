@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-algorithm/1.js';
+import { solve } from '../../../solutions-algorithm/1.js';
 
 test('sorts expression with descending numbers', () => {
   expect(solve("3+2+1")).toBe("1+2+3");

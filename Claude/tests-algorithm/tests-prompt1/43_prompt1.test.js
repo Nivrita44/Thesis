@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-algorithm/43.js'
+import { solve } from '../../../solutions-algorithm/43.js'
 
 test('example from description', () => {
   expect(solve([2, 0, 1])).toBe([1n, 1n]);

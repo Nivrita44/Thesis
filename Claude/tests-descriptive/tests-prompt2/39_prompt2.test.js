@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-descriptive/39.js';
+import { solve } from '../../../solutions-descriptive/39.js';
 
 describe('solve function', () => {
     test('typical case with sequential numbers including zero', () => {

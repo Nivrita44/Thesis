@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-descriptive/19.js';
+import { solve } from '../../../solutions-descriptive/19.js';
 
 test('GCD of 48 and 18', () => {
     expect(solve(48, 18)).toBe(6);

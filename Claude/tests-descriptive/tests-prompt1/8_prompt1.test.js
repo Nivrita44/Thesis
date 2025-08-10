@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-descriptive/8.js'
+import { solve } from '../../../solutions-descriptive/8.js'
 
 test('example case from description', () => {
   expect(solve(2, 2, [1, 3], [2, 4])).toEqual([1, 2]);

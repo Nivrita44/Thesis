@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-algorithm/11.js'
+import { solve } from '../../../solutions-algorithm/11.js'
 
 test('basic two-digit numbers', () => {
   expect(solve([10])).toBe([1])

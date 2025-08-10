@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-algorithm/41.js';
+import { solve } from '../../../solutions-algorithm/41.js';
 
 test('example path with 4 vertices and 4 edges', () => {
   expect(solve(4, 4, [[1,2,1], [4,1,2], [2,3,2], [3,4,3]])).toBe(6n);

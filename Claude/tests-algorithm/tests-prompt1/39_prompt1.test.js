@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-algorithm/39.js'
+import { solve } from '../../../solutions-algorithm/39.js'
 
 test('example case n=6 has odd divisor 3', () => {
   expect(solve(6n)).toBe('YES');

@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-algorithm/31.js';
+import { solve } from '../../../solutions-algorithm/31.js';
 
 test('n=2 returns -1', () => {
   expect(solve(2)).toBe(-1);

@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-algorithm/17.js'
+import { solve } from '../../../solutions-algorithm/17.js'
 
 test('returns 3 for 3, 2 otherwise (example case)', () => {
   expect(solve([3, 15])).toEqual([3, 2]);

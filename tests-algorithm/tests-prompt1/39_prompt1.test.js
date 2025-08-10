@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-algorithm/39.js';
+import { solve } from '../../../solutions-algorithm/39.js';
 
 test('n=6, has odd divisor >1 (3)', () => {
   expect(solve(6)).toBe('YES');

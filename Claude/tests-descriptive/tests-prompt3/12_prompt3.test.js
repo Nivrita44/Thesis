@@ -1,4 +1,4 @@
-import { maxSubarrayLengths } from '../../solutions-descriptive/12.js';
+import { maxSubarrayLengths } from '../../../solutions-descriptive/12.js';
 
 describe('maxSubarrayLengths', () => {
     test('basic test case with 2 sweaters', () => {

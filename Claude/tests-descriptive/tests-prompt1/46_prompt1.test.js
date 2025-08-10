@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-descriptive/46.js';
+import { solve } from '../../../solutions-descriptive/46.js';
 
 test('example from description - small valid case', () => {
   expect(solve(4, [1, 2, 3, 4])).toBe('NO');

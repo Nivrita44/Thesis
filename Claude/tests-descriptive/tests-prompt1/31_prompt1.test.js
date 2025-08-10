@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-descriptive/31.js'
+import { solve } from '../../../solutions-descriptive/31.js'
 
 test('basic example with 2x2 deck', () => {
   expect(solve(2n, 2n)).toBe(2n);

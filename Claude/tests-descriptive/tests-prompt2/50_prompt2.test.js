@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-descriptive/50.js';
+import { solve } from '../../../solutions-descriptive/50.js';
 
 describe('solve function tests', () => {
     test('basic array with powers of 2', () => {

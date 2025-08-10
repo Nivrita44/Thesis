@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-algorithm/1.js';
+import { solve } from '../../../solutions-algorithm/1.js';
 
 test('single number', () => {
   expect(solve('1')).toBe('1');

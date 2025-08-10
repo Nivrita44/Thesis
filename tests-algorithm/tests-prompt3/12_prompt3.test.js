@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-algorithm/12.js';
+import { solve } from '../../../solutions-algorithm/12.js';
 
 test('n=12 (smallest possible)', () => {
   const [x, y] = solve(12);

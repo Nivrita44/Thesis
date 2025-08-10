@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-descriptive/44.js'
+import { solve } from '../../../solutions-descriptive/44.js'
 
 test('Example case from description - single pile with non-prime stones', () => {
   expect(solve(1, [4])).toBe('Alice');

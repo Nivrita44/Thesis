@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-algorithm/10.js';
+import { solve } from '../../../solutions-algorithm/10.js';
 
 test('solve for 5009', () => {
   const res = solve(5009);

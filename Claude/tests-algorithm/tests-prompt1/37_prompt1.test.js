@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-algorithm/37.js'
+import { solve } from '../../../solutions-algorithm/37.js'
 
 test('example from description with n=2', () => {
   expect(solve(2n)).toEqual([1n, 2n]);

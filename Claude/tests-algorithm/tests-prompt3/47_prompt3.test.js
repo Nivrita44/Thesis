@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-algorithm/47.js';
+import { solve } from '../../../solutions-algorithm/47.js';
 
 describe('solve', () => {
     test('already sorted permutation returns 0', () => {

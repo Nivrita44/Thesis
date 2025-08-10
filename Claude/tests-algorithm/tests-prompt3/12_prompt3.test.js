@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-algorithm/12.js';
+import { solve } from '../../../solutions-algorithm/12.js';
 
 describe('solve', () => {
   test('basic case n=12', () => {

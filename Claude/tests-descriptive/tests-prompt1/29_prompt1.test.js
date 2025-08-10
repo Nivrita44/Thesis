@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-descriptive/29.js'
+import { solve } from '../../../solutions-descriptive/29.js'
 
 test('example from description', () => {
   expect(solve(3, 4, [12, 4])).toBe("YES"); 

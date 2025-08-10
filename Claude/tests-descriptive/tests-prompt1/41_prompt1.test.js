@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-descriptive/41.js'
+import { solve } from '../../../solutions-descriptive/41.js'
 
 test('matches example case from description', () => {
   expect(solve([1n, 2n, 5n, 10n], 1n, 10n)).toBe(86n);

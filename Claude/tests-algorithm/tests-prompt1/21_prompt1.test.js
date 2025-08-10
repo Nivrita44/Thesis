@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-algorithm/21.js'
+import { solve } from '../../../solutions-algorithm/21.js'
 
 test('basic example where sum exists', () => {
   expect(solve(1n, 2n, 3n)).toBe('YES');

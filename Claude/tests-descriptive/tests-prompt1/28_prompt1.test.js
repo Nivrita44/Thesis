@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-descriptive/28.js'
+import { solve } from '../../../solutions-descriptive/28.js'
 
 test('example case with x = 9, y = 12', () => {
   expect(solve(9n, 12n)).toBe(4n);

@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-algorithm/6.js';
+import { solve } from '../../../solutions-algorithm/6.js';
 
 test('All elements same', () => {
     expect(solve(4, [3, 3, 3, 3])).toBe(0);

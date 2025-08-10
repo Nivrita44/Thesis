@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-algorithm/47.js';
+import { solve } from '../../../solutions-algorithm/47.js';
 
 test('already sorted permutation (n=3, k=2)', () => {
   expect(solve(3, 2, [1, 2, 3])).toBe(0);

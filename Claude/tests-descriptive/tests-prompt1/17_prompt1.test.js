@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-descriptive/17.js';
+import { solve } from '../../../solutions-descriptive/17.js';
 
 test('basic example from description', () => {
   expect(solve(2, 2)).toEqual({

@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-descriptive/44.js';
+import { solve } from '../../../solutions-descriptive/44.js';
 
 describe('Stone Game Test Cases', () => {
 

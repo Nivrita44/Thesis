@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-algorithm/38.js';
+import { solve } from '../../../solutions-algorithm/38.js';
 
 describe('GCD of Range Tests', () => {
 

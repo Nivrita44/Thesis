@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-algorithm/18.js'
+import { solve } from '../../../solutions-algorithm/18.js'
 
 test('example with l=1, r=4', () => {
   expect(solve(1n, 4n)).toEqual([2n, 4n]);

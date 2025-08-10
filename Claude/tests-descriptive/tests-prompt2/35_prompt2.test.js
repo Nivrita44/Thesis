@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-descriptive/35.js';
+import { solve } from '../../../solutions-descriptive/35.js';
 
 describe('solve function tests', () => {
     test('basic case with n=5, k=2', () => {

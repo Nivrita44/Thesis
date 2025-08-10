@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-descriptive/5.js';
+import { solve } from '../../../solutions-descriptive/5.js';
 
 describe('solve', () => {
     test('n equals 81 returns just completion command', () => {

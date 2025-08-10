@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-descriptive/37.js'
+import { solve } from '../../../solutions-descriptive/37.js'
 
 test('example case from description', () => {
   expect(solve(4n, 4n, [1n, 2n, 3n, 2n])).toBe(2n);

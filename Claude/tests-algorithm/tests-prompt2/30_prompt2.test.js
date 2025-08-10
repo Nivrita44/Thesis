@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-algorithm/30.js';
+import { solve } from '../../../solutions-algorithm/30.js';
 
 describe('solve', () => {
     test('basic case with valid partitions', () => {

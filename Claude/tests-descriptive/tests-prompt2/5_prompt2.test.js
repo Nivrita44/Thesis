@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-descriptive/5.js';
+import { solve } from '../../../solutions-descriptive/5.js';
 
 describe('solve function tests', () => {
     test('exactly 81 should return only exclamation', () => {

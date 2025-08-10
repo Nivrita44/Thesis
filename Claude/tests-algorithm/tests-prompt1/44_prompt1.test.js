@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-algorithm/44.js'
+import { solve } from '../../../solutions-algorithm/44.js'
 
 test('example with n=4 k=1 should return sorted array', () => {
   expect(solve(4n, 1n)).toEqual([1n, 2n, 3n, 4n]);

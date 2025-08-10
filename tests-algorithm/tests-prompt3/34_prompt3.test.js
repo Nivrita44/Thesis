@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-algorithm/34.js'
+import { solve } from '../../../solutions-algorithm/34.js'
 
 test('returns x-1 for single input as per problem guarantee', () => {
   expect(solve([10])).toEqual([9])

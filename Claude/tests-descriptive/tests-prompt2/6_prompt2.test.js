@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-descriptive/6.js';
+import { solve } from '../../../solutions-descriptive/6.js';
 
 describe('solve function tests', () => {
     test('small array with distinct elements', () => {

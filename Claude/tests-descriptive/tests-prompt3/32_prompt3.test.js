@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-descriptive/32.js';
+import { solve } from '../../../solutions-descriptive/32.js';
 
 describe('solve', () => {
     test('example case 1', () => {

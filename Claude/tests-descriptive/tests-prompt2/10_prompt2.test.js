@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-descriptive/10.js';
+import { solve } from '../../../solutions-descriptive/10.js';
 
 describe('solve', () => {
     test('basic tree with 4 nodes', () => {

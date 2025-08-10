@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-algorithm/44.js';
+import { solve } from '../../../solutions-algorithm/44.js';
 
 test('returns the correct array for n=3, k=3', () => {
   expect(solve(3, 3)).toStrictEqual([2, 1, 3]);

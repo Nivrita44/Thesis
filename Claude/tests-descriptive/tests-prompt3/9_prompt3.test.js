@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-descriptive/9.js';
+import { solve } from '../../../solutions-descriptive/9.js';
 
 describe('Tree Game Node Selection', () => {
     test('basic tree with 4 nodes', () => {

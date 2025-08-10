@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-algorithm/2.js';
+import { solve } from '../../../solutions-algorithm/2.js';
 
 test('basic YES case', () => {
   expect(solve('SANTACLAUS', 'DEDMOROZ', 'SANTAMOROZDEDCLAUS')).toBe('YES');

@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-algorithm/16.js';
+import { solve } from '../../../solutions-algorithm/16.js';
 
 describe('Bachgold Problem', () => {
     test('n = 5 should return 2 parts: [3, 2]', () => {

@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-algorithm/31.js';
+import { solve } from '../../../solutions-algorithm/31.js';
 
 describe('Funny Permutation Tests', () => {
     test('Example from description', () => {

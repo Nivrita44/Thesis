@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-algorithm/37.js';
+import { solve } from '../../../solutions-algorithm/37.js';
 
 test('n = 2 returns strictly increasing sequence within 1..100 with distinct ai mod i', () => {
   const res = solve(2);

@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-algorithm/48.js';
+import { solve } from '../../../solutions-algorithm/48.js';
 
 describe('Tree Water Game', () => {
     test('example case 1', () => {

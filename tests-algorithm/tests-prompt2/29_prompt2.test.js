@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-algorithm/29.js';
+import { solve } from '../../../solutions-algorithm/29.js';
 
 test('single pin, ascending digits', () => {
     expect(solve(['1234'])).toEqual([10]);

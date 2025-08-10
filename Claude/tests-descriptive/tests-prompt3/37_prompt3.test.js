@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-descriptive/37.js';
+import { solve } from '../../../solutions-descriptive/37.js';
 
 test('xor limit of 0 returns 1', () => {
     expect(solve(5, 0, [1, 2, 3, 4, 5])).toBe('1');

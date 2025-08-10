@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-algorithm/36.js';
+import { solve } from '../../../solutions-algorithm/36.js';
 
 test('n=2 smallest case', () => {
   const n = 2;

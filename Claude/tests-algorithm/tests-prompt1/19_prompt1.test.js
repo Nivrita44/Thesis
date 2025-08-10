@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-algorithm/19.js'
+import { solve } from '../../../solutions-algorithm/19.js'
 
 test('example case from description with x=5', () => {
   expect(solve(5n)).toBe(1n);

@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-algorithm/8.js'
+import { solve } from '../../../solutions-algorithm/8.js'
 
 test('example case', () => {
   expect(solve([1, 2, 3, 1, 2], [1, 2, 3, 4, 5])).toEqual([3, 3, 2, 2, 1]);

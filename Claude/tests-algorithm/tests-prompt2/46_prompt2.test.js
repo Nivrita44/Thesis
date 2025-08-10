@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-algorithm/46.js';
+import { solve } from '../../../solutions-algorithm/46.js';
 
 describe('Organization Chart Max Depth', () => {
     test('simple tree with multiple levels', () => {

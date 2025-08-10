@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-algorithm/48.js'
+import { solve } from '../../../solutions-algorithm/48.js'
 
 test('example case', () => {
   expect(solve(4n, 2n, 3n, [[1,2], [1,3], [2,4]])).toBe(2n);

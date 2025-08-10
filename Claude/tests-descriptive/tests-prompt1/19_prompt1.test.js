@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-descriptive/19.js'
+import { solve } from '../../../solutions-descriptive/19.js'
 
 test('example case - n=2, a=2, b=2', () => {
   expect(solve(2n, 2n, 2n)).toBe(6n);

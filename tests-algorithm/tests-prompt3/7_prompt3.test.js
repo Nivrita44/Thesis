@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-algorithm/7.js';
+import { solve } from '../../../solutions-algorithm/7.js';
 
 test('all bonus cards, no hero', () => {
   expect(solve(5, [1, 2, 3, 4, 5])).toBe(0);

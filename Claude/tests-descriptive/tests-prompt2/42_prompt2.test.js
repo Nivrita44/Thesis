@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-descriptive/42.js';
+import { solve } from '../../../solutions-descriptive/42.js';
 
 describe('solve', () => {
     test('single number with 50% probability', () => {

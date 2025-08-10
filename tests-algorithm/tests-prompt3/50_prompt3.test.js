@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-algorithm/50.js'
+import { solve } from '../../../solutions-algorithm/50.js'
 
 test('Example 1: abacaba', () => {
   const s = "abacaba"

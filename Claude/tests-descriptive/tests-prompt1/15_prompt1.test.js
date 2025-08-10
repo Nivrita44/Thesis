@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-descriptive/15.js'
+import { solve } from '../../../solutions-descriptive/15.js'
 
 test('example case', () => {
   expect(solve(4n, 2n, 3n, [1n, 3n, 2n])).toEqual([3n, 4n, 3n]);

@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-algorithm/14.js'
+import { solve } from '../../../solutions-algorithm/14.js'
 
 test('single swap', () => {
     expect(solve(1, 2, 'BG')).toBe('GB')

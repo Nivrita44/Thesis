@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-algorithm/39.js';
+import { solve } from '../../../solutions-algorithm/39.js';
 
 describe('solve function tests', () => {
     test('returns NO for input 1', () => {

@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-descriptive/10.js';
+import { solve } from '../../../solutions-descriptive/10.js';
 
 test('example case', () => {
   expect(solve(4, [[1,3], [0,2], [1,3], [0,4]], [[1,2], [2,3], [1,4]])).toBe(2n);

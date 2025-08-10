@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-descriptive/8.js';
+import { solve } from '../../../solutions-descriptive/8.js';
 
 describe('solve', () => {
     test('basic example with 1 point on y=0 and 3 points on y=2', () => {

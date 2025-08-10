@@ -1,3 +1,5 @@
+import { solve } from '../../../solutions-descriptive/16.js';
+
 test('example case - ABAB can be split as [AB, AB]', () => {
   expect(solve('ABAB', 0, 0, 2, 0)).toBe('YES');
 });

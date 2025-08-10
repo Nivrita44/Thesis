@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-descriptive/35.js';
+import { solve } from '../../../solutions-descriptive/35.js';
 
 describe('Kaitenzushi buffet', () => {
     test('Example case 1', () => {

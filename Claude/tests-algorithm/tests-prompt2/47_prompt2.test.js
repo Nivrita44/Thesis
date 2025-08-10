@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-algorithm/47.js';
+import { solve } from '../../../solutions-algorithm/47.js';
 
 describe('solve function tests', () => {
     test('all numbers in sequence', () => {

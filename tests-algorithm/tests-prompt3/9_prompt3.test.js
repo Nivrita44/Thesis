@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-algorithm/9.js';
+import { solve } from '../../../solutions-algorithm/9.js';
 
 test('case 1: simple, unique numbers', () => {
   const original = [1, 5, 8, 123, 7];

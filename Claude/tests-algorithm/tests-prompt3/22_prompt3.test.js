@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-algorithm/22.js';
+import { solve } from '../../../solutions-algorithm/22.js';
 
 describe('Game Winner Calculator Tests', () => {
     test('example test case from description', () => {

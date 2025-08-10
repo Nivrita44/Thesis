@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-algorithm/10.js';
+import { solve } from '../../../solutions-algorithm/10.js';
 
 describe('solve', () => {
     test('single digit number', () => {

@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-algorithm/3.js'
+import { solve } from '../../../solutions-algorithm/3.js'
 
 test('Single element array', () => {
     expect(solve(1, [1])).toBe('YES')

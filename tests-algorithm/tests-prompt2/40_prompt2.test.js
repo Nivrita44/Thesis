@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-algorithm/40.js';
+import { solve } from '../../../solutions-algorithm/40.js';
 
 test('solve typical case: (2, 3) => 6', () => {
   expect(solve(2, 3)).toBe(6);

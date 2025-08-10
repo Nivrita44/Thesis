@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-descriptive/41.js';
+import { solve } from '../../../solutions-descriptive/41.js';
 
 describe('solve function tests', () => {
     test('basic test case with small array', () => {

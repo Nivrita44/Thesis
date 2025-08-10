@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-descriptive/17.js';
+import { solve } from '../../../solutions-descriptive/17.js';
 
 describe('solve function test cases', () => {
     test('basic valid case with 2 nodes and 2 edges', () => {

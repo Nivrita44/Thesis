@@ -1,3 +1,5 @@
+import { solve } from '../../../solutions-algorithm/3.js'
+
 test('example with [2, 2, 2, 2] should return YES', () => {
   expect(solve([2, 2, 2, 2])).toBe('YES');
 });

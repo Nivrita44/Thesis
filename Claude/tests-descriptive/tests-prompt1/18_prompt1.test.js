@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-descriptive/18.js'
+import { solve } from '../../../solutions-descriptive/18.js'
 
 test('example from description - 2x2 matrices', () => {
   expect(solve(2, 2, [[1, 2], [3, 4]], [[3, 2], [3, 4]])).toBe('YES');

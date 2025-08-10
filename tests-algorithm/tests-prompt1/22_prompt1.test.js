@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-algorithm/22.js';
+import { solve } from '../../../solutions-algorithm/22.js';
 
 test('n = 1', () => {
     expect(solve([1])).toEqual(['First']);

@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-algorithm/32.js';
+import { solve } from '../../../solutions-algorithm/32.js';
 
 describe('Permutation Cycle Tests', () => {
 

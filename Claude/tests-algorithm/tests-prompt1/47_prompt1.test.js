@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-algorithm/47.js'
+import { solve } from '../../../solutions-algorithm/47.js'
 
 test('example case with k=2', () => {
   expect(solve(5n, 2n, [2n, 5n, 1n, 3n, 4n])).toBe(3n);

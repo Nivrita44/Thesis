@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-algorithm/6.js';
+import { solve } from '../../../solutions-algorithm/6.js';
 
 describe('solve function tests', () => {
     test('typical case with mixed numbers', () => {

@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-algorithm/4.js';
+import { solve } from '../../../solutions-algorithm/4.js';
 
 test('typical case [4, 7, 3, 5]', () => {
     expect(solve([4, 7, 3, 5])).toEqual([-3, 2, -4, -2]);

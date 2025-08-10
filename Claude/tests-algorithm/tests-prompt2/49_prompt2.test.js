@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-algorithm/49.js';
+import { solve } from '../../../solutions-algorithm/49.js';
 
 describe('solve function tests', () => {
     test('basic case where equation holds true', () => {

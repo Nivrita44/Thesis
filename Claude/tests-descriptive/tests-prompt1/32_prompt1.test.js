@@ -1,3 +1,5 @@
+import { solve } from '../../../solutions-descriptive/32.js';
+
 describe('Problem 32 Tests', () => {
   test('example case from description', () => {
     expect(solve([8, 10])).toBe(3n);

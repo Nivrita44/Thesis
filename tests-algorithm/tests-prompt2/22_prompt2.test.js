@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-algorithm/22.js';
+import { solve } from '../../../solutions-algorithm/22.js';
 
 test('solves typical numbers', () => {
   expect(solve([1, 3, 5, 100, 999, 1000])).toEqual(["First", "Second", "First", "First", "Second", "First"]);

@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-algorithm/17.js';
+import { solve } from '../../../solutions-algorithm/17.js';
 
 describe('solve function tests', () => {
     test('basic case with mix of 3 and non-3 numbers', () => {

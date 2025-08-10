@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-descriptive/48.js';
+import { solve } from '../../../solutions-descriptive/48.js';
 
 test('simple graph with 3 vertices and 2 edges', () => {
   expect(solve(3, 2, [[1, 2], [2, 3]])).toBe('Alice');

@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-algorithm/5.js';
+import { solve } from '../../../solutions-algorithm/5.js';
 
 describe('solve', () => {
     test('example from description - sequence with one duplicate', () => {

@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-algorithm/48.js';
+import { solve } from '../../../solutions-algorithm/48.js';
 
 test('basic test 1', () => {
   expect(

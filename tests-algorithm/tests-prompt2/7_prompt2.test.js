@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-algorithm/7.js';
+import { solve } from '../../../solutions-algorithm/7.js';
 
 test('case: all input nonzero', () => {
     expect(solve(3, [1, 2, 3])).toBe(0);

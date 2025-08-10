@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-descriptive/14.js';
+import { solve } from '../../../solutions-descriptive/14.js';
 
 describe('solve function test cases', () => {
     test('basic case with single stop', () => {

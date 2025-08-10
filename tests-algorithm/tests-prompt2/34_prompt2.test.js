@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-algorithm/34.js';
+import { solve } from '../../../solutions-algorithm/34.js';
 
 test('solves: typical positive numbers', () => {
   expect(solve([10, 7, 21, 100, 2, 1000, 6])).toEqual([9, 6, 20, 99, 1, 999, 5]);

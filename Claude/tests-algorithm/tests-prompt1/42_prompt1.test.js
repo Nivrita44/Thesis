@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-algorithm/42.js';
+import { solve } from '../../../solutions-algorithm/42.js';
 
 test('example from description with [2,3,1]', () => {
   expect(solve([2n, 3n, 1n])).toBe(2n);

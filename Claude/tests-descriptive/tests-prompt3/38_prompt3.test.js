@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-descriptive/38.js';
+import { solve } from '../../../solutions-descriptive/38.js';
 
 describe('solve', () => {
     test('example case with string "0010010011"', () => {

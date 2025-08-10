@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-algorithm/41.js';
+import { solve } from '../../../solutions-algorithm/41.js';
 
 describe('Shortest Path in Weighted Graph', () => {
     test('basic path with multiple possible routes', () => {

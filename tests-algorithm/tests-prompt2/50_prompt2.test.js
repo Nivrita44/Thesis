@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-algorithm/50.js';
+import { solve } from '../../../solutions-algorithm/50.js';
 
 test('Typical case 1: abacaba, queries [[1,3],[2,5],[1,7]]', () => {
   expect(solve('abacaba', [

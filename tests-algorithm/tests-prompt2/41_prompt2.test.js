@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-algorithm/41.js';
+import { solve } from '../../../solutions-algorithm/41.js';
 
 test('typical case, multiple paths, pick shortest', () => {
   const n = 5;

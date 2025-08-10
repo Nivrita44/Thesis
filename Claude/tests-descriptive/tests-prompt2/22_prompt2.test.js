@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-descriptive/22.js';
+import { solve } from '../../../solutions-descriptive/22.js';
 
 describe('Enemy Attack Range Calculator', () => {
     test('basic case with 3 enemies', () => {

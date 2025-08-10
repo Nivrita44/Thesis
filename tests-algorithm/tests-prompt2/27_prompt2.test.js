@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-algorithm/27.js';
+import { solve } from '../../../solutions-algorithm/27.js';
 
 test('example case 1', () => {
     expect(solve([1, 9, 10, 34, 880055535])).toEqual([0, 1, 1, 3, 88005553]);

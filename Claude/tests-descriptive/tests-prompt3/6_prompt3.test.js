@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-descriptive/6.js';
+import { solve } from '../../../solutions-descriptive/6.js';
 
 describe('solve', () => {
     test('example test case with small array [1,7,9]', () => {

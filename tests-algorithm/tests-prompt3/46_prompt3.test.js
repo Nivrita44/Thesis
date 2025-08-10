@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-algorithm/46.js';
+import { solve } from '../../../solutions-algorithm/46.js';
 
 test('basic small case: n=1, no manager', () => {
   expect(solve(1, [-1])).toBe(1);

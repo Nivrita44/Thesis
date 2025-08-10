@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-descriptive/21.js';
+import { solve } from '../../../solutions-descriptive/21.js';
 
 describe('Natlan Path Counter', () => {
     test('example test case 1', () => {

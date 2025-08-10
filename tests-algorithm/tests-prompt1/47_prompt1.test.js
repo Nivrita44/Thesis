@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-algorithm/47.js';
+import { solve } from '../../../solutions-algorithm/47.js';
 
 test('already sorted, k = 1', () => {
   expect(solve(5, 1, [1, 2, 3, 4, 5])).toBe(0);

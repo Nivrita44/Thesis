@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-descriptive/2.js';
+import { solve } from '../../../solutions-descriptive/2.js';
 
 describe('Base Conversion Sum Tests', () => {
   test('basic small case', () => {

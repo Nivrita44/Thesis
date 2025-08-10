@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-descriptive/36.js';
+import { solve } from '../../../solutions-descriptive/36.js';
 
 describe('Black and White Floor Pattern Tests', () => {
     test('3x3 grid with 6 painted cells', () => {

@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-algorithm/24.js';
+import { solve } from '../../../solutions-algorithm/24.js';
 
 describe('solve function tests', () => {
     test('basic positive numbers', () => {

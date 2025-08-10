@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-algorithm/40.js';
+import { solve } from '../../../solutions-algorithm/40.js';
 
 describe('solve function', () => {
     test('handles coprime numbers', () => {

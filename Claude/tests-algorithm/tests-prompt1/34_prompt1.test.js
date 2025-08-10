@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-algorithm/34.js'
+import { solve } from '../../../solutions-algorithm/34.js'
 
 test('example with x=8', () => {
   expect(solve(8n)).toBe(6n);

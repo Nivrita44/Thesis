@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-descriptive/21.js';
+import { solve } from '../../../solutions-descriptive/21.js';
 
 describe('solve', () => {
     test('basic test case with small numbers', () => {

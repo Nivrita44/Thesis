@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-algorithm/42.js';
+import { solve } from '../../../solutions-algorithm/42.js';
 
 test('simple permutation [3,1,2]', () => {
   expect(solve(3, [3, 1, 2])).toBe(2);

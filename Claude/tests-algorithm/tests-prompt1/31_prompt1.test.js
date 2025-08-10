@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-algorithm/31.js'
+import { solve } from '../../../solutions-algorithm/31.js'
 
 test('example case n=4 should return valid funny permutation', () => {
   expect(solve(4n)).toEqual([4n, 3n, 1n, 2n]);

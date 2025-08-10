@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-descriptive/7.js';
+import { solve } from '../../../solutions-descriptive/7.js';
 
 describe('Triangle Tree Path Tests', () => {
 

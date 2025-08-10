@@ -1,3 +1,5 @@
+import { solve } from '../../../solutions-algorithm/1.js';
+
 describe('Problem: Xenia and Math', () => {
   test('example case 3+2+1', () => {
     expect(solve('3+2+1')).toBe('1+2+3');

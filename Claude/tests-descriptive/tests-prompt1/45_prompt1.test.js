@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-descriptive/45.js'
+import { solve } from '../../../solutions-descriptive/45.js'
 
 test('example case with 3 intersections', () => {
   expect(solve(3, 3, 10n, 3n, 5n, [[1, 2, 1n, 3n], [2, 3, 2n, 4n], [1, 3, 5n, 7n]])).toBe(2n);

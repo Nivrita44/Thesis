@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-algorithm/27.js';
+import { solve } from '../../../solutions-algorithm/27.js';
 
 test('Single small values including non-interesting and first interesting', () => {
     expect(solve([1])).toEqual([0]);

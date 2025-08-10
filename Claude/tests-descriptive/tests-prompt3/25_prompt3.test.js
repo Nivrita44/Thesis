@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-descriptive/25.js';
+import { solve } from '../../../solutions-descriptive/25.js';
 
 describe('k-harmonic permutations', () => {
     test('base case n=1, k=1', () => {

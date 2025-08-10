@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-algorithm/22.js';
+import { solve } from '../../../solutions-algorithm/22.js';
 
 describe('solve function tests', () => {
     test('basic sequence with mixed numbers', () => {

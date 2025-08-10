@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-algorithm/30.js';
+import { solve } from '../../../solutions-algorithm/30.js';
 
 describe('Monocarp Sum Tests', () => {
     test('example test case 1', () => {

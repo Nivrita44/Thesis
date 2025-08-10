@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-algorithm/23.js';
+import { solve } from '../../../solutions-algorithm/23.js';
 
 test('Sample cases from problem description and solution', () => {
   const input = [

@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-algorithm/12.js';
+import { solve } from '../../../solutions-algorithm/12.js';
 
 describe('solve function tests', () => {
     test('even number input returns [8, n-8]', () => {

@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-algorithm/38.js';
+import { solve } from '../../../solutions-algorithm/38.js';
 
 test('returns n when n and y are equal (small number)', () => {
   expect(solve("1", "1")).toBe("1");

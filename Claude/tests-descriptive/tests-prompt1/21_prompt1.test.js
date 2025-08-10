@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-descriptive/21.js'
+import { solve } from '../../../solutions-descriptive/21.js'
 
 test('example case with 4 cities', () => {
   expect(solve(4n, [2n, 4n, 6n, 8n])).toBe(4n);

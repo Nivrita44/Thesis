@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-algorithm/44.js';
+import { solve } from '../../../solutions-algorithm/44.js';
 
 test('n=3 k=3, should return a valid permutation with 3 mergesort calls', () => {
   const result = solve(3, 3);

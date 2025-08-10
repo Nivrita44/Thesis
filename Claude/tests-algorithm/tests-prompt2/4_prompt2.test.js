@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-algorithm/4.js';
+import { solve } from '../../../solutions-algorithm/4.js';
 
 describe('solve function tests', () => {
     test('basic array with distinct values', () => {

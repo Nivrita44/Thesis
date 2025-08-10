@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-algorithm/46.js';
+import { solve } from '../../../solutions-algorithm/46.js';
 
 describe('solve', () => {
     test('example case with 5 employees and 2 managers', () => {

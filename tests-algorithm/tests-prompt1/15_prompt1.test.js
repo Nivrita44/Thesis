@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-algorithm/15.js';
+import { solve } from '../../../solutions-algorithm/15.js';
 
 test('sample 1: e2 to e4', () => {
     const result = solve('e2', 'e4');

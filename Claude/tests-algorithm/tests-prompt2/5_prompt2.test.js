@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-algorithm/5.js';
+import { solve } from '../../../solutions-algorithm/5.js';
 
 describe('solve function', () => {
     test('array with one duplicate element returns correct position', () => {

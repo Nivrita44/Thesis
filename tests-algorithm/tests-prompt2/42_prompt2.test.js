@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-algorithm/42.js';
+import { solve } from '../../../solutions-algorithm/42.js';
 
 test('single element', () => {
   expect(solve(1, [42])).toBe(1);

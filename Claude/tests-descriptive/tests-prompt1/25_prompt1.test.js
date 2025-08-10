@@ -1,3 +1,5 @@
+import { solve } from '../../../solutions-descriptive/25.js';
+
 describe('Reyhaneh k-Harmonic Set Tests', () => {
   test('n=2, k=2 - Example case', () => {
     expect(solve(2n, 2n)).toBe('NO');

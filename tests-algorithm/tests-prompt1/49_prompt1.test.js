@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-algorithm/49.js';
+import { solve } from '../../../solutions-algorithm/49.js';
 
 test('example 1: n=3, m=3, k=8', () => {
   expect(solve(3, 3, 8)).toBe('YES');

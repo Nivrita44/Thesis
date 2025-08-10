@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-algorithm/6.js'
+import { solve } from '../../../solutions-algorithm/6.js'
 
 test('example case from description', () => {
   expect(solve([5, 5, 5, 5])).toBe(0n);

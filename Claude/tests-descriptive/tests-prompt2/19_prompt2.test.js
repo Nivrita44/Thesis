@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-descriptive/19.js';
+import { solve } from '../../../solutions-descriptive/19.js';
 
 describe('GCD function tests', () => {
     test('Basic GCD calculation of coprime numbers', () => {

@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-descriptive/6.js'
+import { solve } from '../../../solutions-descriptive/6.js'
 
 test('example case from description', () => {
   expect(solve([1, 2, 3])).toBe(21n);

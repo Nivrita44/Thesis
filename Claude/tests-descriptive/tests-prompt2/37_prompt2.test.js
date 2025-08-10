@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-descriptive/37.js';
+import { solve } from '../../../solutions-descriptive/37.js';
 
 describe('solve function tests', () => {
     test('xorLimit = 0 should always return 1', () => {

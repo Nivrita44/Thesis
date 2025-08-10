@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-algorithm/2.js';
+import { solve } from '../../../solutions-algorithm/2.js';
 
 describe('Name Combination Checker', () => {
     test('valid combination with perfect match', () => {

@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-algorithm/21.js';
+import { solve } from '../../../solutions-algorithm/21.js';
 
 test('example and basic functionality cases', () => {
   expect(

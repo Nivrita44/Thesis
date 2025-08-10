@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-algorithm/38.js'
+import { solve } from '../../../solutions-algorithm/38.js'
 
 test('example case where a=3, b=5 should return 1', () => {
   expect(solve(3n, 5n)).toBe(1n);

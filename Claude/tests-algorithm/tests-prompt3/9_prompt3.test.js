@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-algorithm/9.js';
+import { solve } from '../../../solutions-algorithm/9.js';
 
 describe('Compilation Error Finder', () => {
     test('example case from description', () => {

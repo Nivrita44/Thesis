@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-algorithm/37.js';
+import { solve } from '../../../solutions-algorithm/37.js';
 
 describe('solve function tests', () => {
     test('typical case with n=3', () => {

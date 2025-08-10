@@ -1,3 +1,5 @@
+import { solve } from '../../../solutions-descriptive/4.js';
+
 describe('Polygon Score Game Tests', () => {
   test('example from description - small triangle', () => {
     expect(solve(3n, [1n, 2n, 3n])).toBe(6n);

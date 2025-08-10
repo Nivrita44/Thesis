@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-algorithm/24.js';
+import { solve } from '../../../solutions-algorithm/24.js';
 
 test('n=2', () => {
     expect(solve([2])).toEqual([1]);

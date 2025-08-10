@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-algorithm/19.js';
+import { solve } from '../../../solutions-algorithm/19.js';
 
 describe('solve', () => {
     test('exact multiple of 5 returns minimal steps', () => {

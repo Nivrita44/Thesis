@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-algorithm/4.js'
+import { solve } from '../../../solutions-algorithm/4.js'
 
 test('example case with 4 participants', () => {
   expect(solve(4n, [3n, 7n, 5n, 6n])).toEqual(['-4', '-1', '-2', '-1']);

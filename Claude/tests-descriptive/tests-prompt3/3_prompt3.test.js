@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-descriptive/3.js';
+import { solve } from '../../../solutions-descriptive/3.js';
 
 describe('Quadtree Region Coverage', () => {
     test('single unit square region', () => {

@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-descriptive/27.js';
+import { solve } from '../../../solutions-descriptive/27.js';
 
 describe('Point Pattern Finder Tests', () => {
     test('basic case with 7 points', () => {

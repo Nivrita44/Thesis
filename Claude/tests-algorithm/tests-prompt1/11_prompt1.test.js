@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-algorithm/11.js'
+import { solve } from '../../../solutions-algorithm/11.js'
 
 test('example case - sum digits of 47', () => {
   expect(solve(47n)).toBe(11n);

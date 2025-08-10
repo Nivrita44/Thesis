@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-algorithm/15.js';
+import { solve } from '../../../solutions-algorithm/15.js';
 
 describe('Chess King Movement', () => {
     test('diagonal movement from a8 to h1', () => {

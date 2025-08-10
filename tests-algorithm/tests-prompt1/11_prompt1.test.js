@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-algorithm/11.js'
+import { solve } from '../../../solutions-algorithm/11.js'
 
 test('sum of digits for 10', () => {
     expect(solve([10])).toEqual([1])

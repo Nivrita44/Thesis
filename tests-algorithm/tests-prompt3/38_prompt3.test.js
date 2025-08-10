@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-algorithm/38.js';
+import { solve } from '../../../solutions-algorithm/38.js';
 
 test('returns a when a equals b (single number)', () => {
   expect(solve("1", "1")).toBe("1");

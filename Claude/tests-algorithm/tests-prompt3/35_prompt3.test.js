@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-algorithm/35.js';
+import { solve } from '../../../solutions-algorithm/35.js';
 
 describe('Operation Count Calculator', () => {
     test('basic example from description', () => {

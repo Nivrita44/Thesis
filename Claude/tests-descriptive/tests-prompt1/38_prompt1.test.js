@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-descriptive/38.js';
+import { solve } from '../../../solutions-descriptive/38.js';
 
 test('example from description - 00101', () => {
   expect(solve("00101")).toBe(4n);

@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-algorithm/4.js';
+import { solve } from '../../../solutions-algorithm/4.js';
 
 describe('solve', () => {
     test('example test case 1', () => {

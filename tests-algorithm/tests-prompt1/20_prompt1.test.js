@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-algorithm/20.js';
+import { solve } from '../../../solutions-algorithm/20.js';
 
 test('single drink 100%', () => {
   expect(solve(1, [100])).toBe(100);

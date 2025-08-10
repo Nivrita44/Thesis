@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-descriptive/9.js';
+import { solve } from '../../../solutions-descriptive/9.js';
 
 describe('solve function tests', () => {
     test('basic tree with identical values', () => {

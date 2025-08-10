@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-algorithm/50.js';
+import { solve } from '../../../solutions-algorithm/50.js';
 
 describe('solve', () => {
     test('basic test with multiple queries', () => {

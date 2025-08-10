@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-algorithm/12.js';
+import { solve } from '../../../solutions-algorithm/12.js';
 
 test('even input', () => {
     expect(solve(10)).toEqual([8, 2]);

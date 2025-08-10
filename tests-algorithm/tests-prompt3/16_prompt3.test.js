@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-algorithm/16.js';
+import { solve } from '../../../solutions-algorithm/16.js';
 
 test('n=2 (smallest even)', () => {
     const res = solve(2);

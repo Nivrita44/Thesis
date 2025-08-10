@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-descriptive/47.js';
+import { solve } from '../../../solutions-descriptive/47.js';
 
 test('example from description', () => {
   expect(solve([3, 2, 4], [1, 2, 1], 3n)).toBe(9n);

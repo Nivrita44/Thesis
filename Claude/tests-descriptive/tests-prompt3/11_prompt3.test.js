@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-descriptive/11.js';
+import { solve } from '../../../solutions-descriptive/11.js';
 
 describe('Graph Path Weight Tests', () => {
     test('Simple 4-node graph example', () => {

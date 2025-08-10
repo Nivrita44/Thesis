@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-algorithm/7.js'
+import { solve } from '../../../solutions-algorithm/7.js'
 
 test('example case with hero and bonus cards', () => {
   expect(solve([0, 4, 0, 3, 0])).toBe(7n);

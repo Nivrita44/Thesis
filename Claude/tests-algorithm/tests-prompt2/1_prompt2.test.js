@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-algorithm/1.js';
+import { solve } from '../../../solutions-algorithm/1.js';
 
 describe('solve function tests', () => {
     test('sorts three numbers in ascending order', () => {

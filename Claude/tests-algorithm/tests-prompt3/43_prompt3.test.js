@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-algorithm/43.js';
+import { solve } from '../../../solutions-algorithm/43.js';
 
 describe('Insertion Sort Swaps', () => {
     test('example case 1', () => {

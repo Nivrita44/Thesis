@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-algorithm/48.js';
+import { solve } from '../../../solutions-algorithm/48.js';
 
 describe('solve function tests', () => {
     test('basic tree with multiple levels', () => {

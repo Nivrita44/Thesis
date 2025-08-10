@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-algorithm/18.js';
+import { solve } from '../../../solutions-algorithm/18.js';
 
 describe('solve function tests', () => {
     test('basic valid cases with solutions', () => {

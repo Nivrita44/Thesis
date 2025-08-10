@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-algorithm/29.js';
+import { solve } from '../../../solutions-algorithm/29.js';
 
 describe('PIN code minimum seconds', () => {
     test('Example test case with single code "1234"', () => {

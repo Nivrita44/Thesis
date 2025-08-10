@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1754841565925" clover="3.2.0">
+  <project timestamp="1754841565926" name="All files">
+    <metrics statements="10" coveredstatements="10" conditionals="10" coveredconditionals="10" methods="1" coveredmethods="1" elements="21" coveredelements="21" complexity="0" loc="10" ncloc="10" packages="1" files="1" classes="1"/>
+    <file name="28.js" path="E:\desktop\Thesis\solutions-algorithm\28.js">
+      <metrics statements="10" coveredstatements="10" conditionals="10" coveredconditionals="10" methods="1" coveredmethods="1"/>
+      <line num="5" count="8" type="stmt"/>
+      <line num="7" count="8" type="stmt"/>
+      <line num="9" count="8" type="stmt"/>
+      <line num="11" count="8" type="cond" truecount="5" falsecount="0"/>
+      <line num="13" count="2" type="stmt"/>
+      <line num="14" count="6" type="cond" truecount="5" falsecount="0"/>
+      <line num="16" count="1" type="stmt"/>
+      <line num="19" count="5" type="stmt"/>
+      <line num="22" count="8" type="stmt"/>
+      <line num="25" count="8" type="stmt"/>
+    </file>
+  </project>
+</coverage>

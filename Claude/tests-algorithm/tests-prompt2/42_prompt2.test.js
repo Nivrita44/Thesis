@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-algorithm/42.js';
+import { solve } from '../../../solutions-algorithm/42.js';
 
 describe('solve function tests', () => {
     test('basic ascending sequence', () => {

@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-descriptive/26.js'
+import { solve } from '../../../solutions-descriptive/26.js'
 
 test('example from description - 3x3 grid', () => {
   expect(solve(3n, "101")).toBe(2n);

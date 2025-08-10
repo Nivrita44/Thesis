@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-descriptive/12.js'
+import { solve } from '../../../solutions-descriptive/12.js'
 
 test('example from description', () => {
   expect(solve([3, 1, 5], [[2, 4]])).toEqual([1n, 1n]);

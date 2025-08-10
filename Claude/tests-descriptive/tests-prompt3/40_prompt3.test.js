@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-descriptive/40.js';
+import { solve } from '../../../solutions-descriptive/40.js';
 
 describe('Local Min/Max Permutation Tests', () => {
 

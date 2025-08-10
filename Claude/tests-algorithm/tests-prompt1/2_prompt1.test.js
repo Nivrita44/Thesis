@@ -1,3 +1,5 @@
+import { solve } from '../../../solutions-algorithm/2.js';
+
 test('example with matching letters SANTACLAUS+DEDMOROZ -> SANTAMOROZDEDCLAUS', () => {
   expect(solve('SANTACLAUS', 'DEDMOROZ', 'SANTAMOROZDEDCLAUS')).toBe('YES');
 });

@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-algorithm/32.js'
+import { solve } from '../../../solutions-algorithm/32.js'
 
 test('Sample and edge test cases for the pizza permutation problem', () => {
   const MOD = 1000000007

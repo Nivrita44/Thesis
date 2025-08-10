@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-algorithm/20.js';
+import { solve } from '../../../solutions-algorithm/20.js';
 
 describe('Orange Juice Cocktail Tests', () => {
     test('example case from description', () => {

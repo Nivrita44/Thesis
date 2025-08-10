@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-algorithm/14.js';
+import { solve } from '../../../solutions-algorithm/14.js';
 
 describe('Queue Arrangement Tests', () => {
     test('Example case 1', () => {

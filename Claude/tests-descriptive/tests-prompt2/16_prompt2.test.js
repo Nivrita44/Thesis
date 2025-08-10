@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-descriptive/16.js';
+import { solve } from '../../../solutions-descriptive/16.js';
 
 describe('solve function tests', () => {
     test('basic case with sufficient sum', () => {

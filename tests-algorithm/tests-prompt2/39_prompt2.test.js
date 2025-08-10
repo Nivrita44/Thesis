@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-algorithm/39.js';
+import { solve } from '../../../solutions-algorithm/39.js';
 
 test('returns NO for n = 1', () => {
   expect(solve(1)).toBe('NO');

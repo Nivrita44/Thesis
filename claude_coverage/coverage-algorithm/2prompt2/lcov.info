@@ -1,0 +1,16 @@
+TN:
+SF:solutions-algorithm\2.js
+FN:2,solve
+FNF:1
+FNH:1
+FNDA:8,solve
+DA:3,8
+DA:4,8
+DA:5,8
+LF:3
+LH:3
+BRDA:5,0,0,5
+BRDA:5,0,1,3
+BRF:2
+BRH:2
+end_of_record

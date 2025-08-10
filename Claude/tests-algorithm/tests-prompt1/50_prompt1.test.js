@@ -1,3 +1,5 @@
+import { solve } from '../../../solutions-algorithm/50.js';
+
 test('example case', () => {
   expect(solve('abbcb', 1, 5)).toBe(10n);
 });

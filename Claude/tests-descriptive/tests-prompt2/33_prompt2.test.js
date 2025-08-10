@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-descriptive/33.js';
+import { solve } from '../../../solutions-descriptive/33.js';
 
 describe('solve function tests', () => {
     beforeEach(() => {

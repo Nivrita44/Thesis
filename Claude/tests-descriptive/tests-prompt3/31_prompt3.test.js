@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-descriptive/31.js';
+import { solve } from '../../../solutions-descriptive/31.js';
 
 const MOD = BigInt(998244353);
 

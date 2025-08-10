@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-descriptive/46.js';
+import { solve } from '../../../solutions-descriptive/46.js';
 
 describe('solve', () => {
     test('basic bitmask case with k=2 and small numbers', () => {

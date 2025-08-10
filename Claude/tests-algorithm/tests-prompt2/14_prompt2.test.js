@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-algorithm/14.js';
+import { solve } from '../../../solutions-algorithm/14.js';
 
 describe('solve', () => {
     test('basic case with single swap', () => {

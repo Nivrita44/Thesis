@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-descriptive/32.js';
+import { solve } from '../../../solutions-descriptive/32.js';
 
 describe('Prime Factor Tests', () => {
   const setupTest = (n, array) => {

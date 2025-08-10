@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-algorithm/41.js'
+import { solve } from '../../../solutions-algorithm/41.js'
 
 test('basic shortest path example', () => {
   const n = 5

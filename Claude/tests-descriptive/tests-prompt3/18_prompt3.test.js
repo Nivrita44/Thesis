@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-descriptive/18.js';
+import { solve } from '../../../solutions-descriptive/18.js';
 
 describe('Matrix Transformation Tests', () => {
     test('1x1 matrix simple case', () => {

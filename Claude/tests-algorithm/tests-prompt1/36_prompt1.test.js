@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-algorithm/36.js'
+import { solve } from '../../../solutions-algorithm/36.js'
 
 test('example with n=3 returns valid prime m where sum is not prime', () => {
   expect(solve(3n)).toBe(2n);

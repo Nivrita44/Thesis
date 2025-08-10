@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-algorithm/7.js'
+import { solve } from '../../../solutions-algorithm/7.js'
 
 test('single hero card only', () => {
     expect(solve(1, [0])).toBe(0)

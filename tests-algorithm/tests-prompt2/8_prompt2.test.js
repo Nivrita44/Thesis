@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-algorithm/8.js';
+import { solve } from '../../../solutions-algorithm/8.js';
 
 test('typical case with duplicates', () => {
   expect(

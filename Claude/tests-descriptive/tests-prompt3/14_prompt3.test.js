@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-descriptive/14.js';
+import { solve } from '../../../solutions-descriptive/14.js';
 
 describe('Crow and Scarecrows', () => {
     test('example case: single scarecrow at start', () => {

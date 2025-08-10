@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-algorithm/5.js';
+import { solve } from '../../../solutions-algorithm/5.js';
 
 test('typical case with one duplicate near end', () => {
     expect(solve([3, 1, 4, 3])).toBe(1);

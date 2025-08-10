@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-algorithm/3.js';
+import { solve } from '../../../solutions-algorithm/3.js';
 
 describe('solve', () => {
     test('example case with sequential numbers', () => {

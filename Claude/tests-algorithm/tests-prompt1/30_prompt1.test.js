@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-algorithm/30.js'
+import { solve } from '../../../solutions-algorithm/30.js'
 
 test('basic example - sum of 17', () => {
   expect(solve(17n)).toEqual([1n, 4n, 12n]);

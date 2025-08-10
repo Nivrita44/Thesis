@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-algorithm/19.js';
+import { solve } from '../../../solutions-algorithm/19.js';
 
 test('solves for x = 1', () => {
   expect(solve(1)).toBe(1);

@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-algorithm/43.js';
+import { solve } from '../../../solutions-algorithm/43.js';
 
 describe('solve function tests', () => {
     test('basic case with some inversions', () => {

@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-descriptive/26.js';
+import { solve } from '../../../solutions-descriptive/26.js';
 
 describe('solve function tests', () => {
     test('all zeros string', () => {

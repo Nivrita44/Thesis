@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-algorithm/16.js'
+import { solve } from '../../../solutions-algorithm/16.js'
 
 test('example case n=6', () => {
   expect(solve(6n)).toEqual([3n, 2n, 2n]);

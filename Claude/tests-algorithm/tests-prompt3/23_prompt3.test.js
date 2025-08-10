@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-algorithm/23.js';
+import { solve } from '../../../solutions-algorithm/23.js';
 
 describe('solve', () => {
     test('example case with multiple inputs', () => {

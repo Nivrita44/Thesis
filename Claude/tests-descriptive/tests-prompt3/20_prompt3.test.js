@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-descriptive/20.js';
+import { solve } from '../../../solutions-descriptive/20.js';
 
 describe('solve', () => {
     test('example case: equal array [1, 1]', () => {

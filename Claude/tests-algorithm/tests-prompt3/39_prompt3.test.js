@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-algorithm/39.js';
+import { solve } from '../../../solutions-algorithm/39.js';
 
 describe('solve', () => {
     test('returns NO for n=2 (power of 2)', () => {

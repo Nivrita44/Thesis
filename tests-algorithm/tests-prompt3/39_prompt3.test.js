@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-algorithm/39.js';
+import { solve } from '../../../solutions-algorithm/39.js';
 
 test('n=2 (smallest case)', () => {
   expect(solve(2)).toBe('NO');

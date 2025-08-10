@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-descriptive/4.js';
+import { solve } from '../../../solutions-descriptive/4.js';
 
 describe('solve', () => {
     test('basic example with 6 vertices', () => {

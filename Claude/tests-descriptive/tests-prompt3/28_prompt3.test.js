@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-descriptive/28.js';
+import { solve } from '../../../solutions-descriptive/28.js';
 
 describe('solve', () => {
     test('basic example 1 - x=0, y=1', () => {

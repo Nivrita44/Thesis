@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-descriptive/30.js';
+import { solve } from '../../../solutions-descriptive/30.js';
 
 describe('solve', () => {
     test('basic permutation with 2 elements', () => {

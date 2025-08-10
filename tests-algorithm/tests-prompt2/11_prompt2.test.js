@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-algorithm/11.js';
+import { solve } from '../../../solutions-algorithm/11.js';
 
 test('solve with typical two-digit numbers', () => {
   expect(solve([77, 21, 40, 34, 19, 84, 10, 99])).toEqual([14, 3, 4, 7, 10, 12, 1, 18]);

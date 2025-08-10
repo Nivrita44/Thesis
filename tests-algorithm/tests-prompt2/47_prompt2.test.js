@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-algorithm/47.js';
+import { solve } from '../../../solutions-algorithm/47.js';
 
 test('All numbers in order, no operations needed', () => {
     expect(solve(3, 2, [1, 2, 3])).toBe(0);

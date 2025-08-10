@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-algorithm/6.js';
+import { solve } from '../../../solutions-algorithm/6.js';
 
 test('typical case with mixed values', () => {
     expect(solve(8, [1, 2, 2, 3, 1, 5, 6, 1])).toBe(9);

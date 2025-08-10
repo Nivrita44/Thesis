@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-descriptive/3.js';
+import { solve } from '../../../solutions-descriptive/3.js';
 
 describe('solve function tests', () => {
     test('basic adjacent ranges', () => {

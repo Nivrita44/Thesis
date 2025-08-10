@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-algorithm/7.js';
+import { solve } from '../../../solutions-algorithm/7.js';
 
 describe('solve function tests', () => {
     test('basic case with zeros at end', () => {

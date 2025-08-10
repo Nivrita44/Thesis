@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-descriptive/38.js';
+import { solve } from '../../../solutions-descriptive/38.js';
 
 describe('solve function tests', () => {
     test('basic case with small string "0010"', () => {

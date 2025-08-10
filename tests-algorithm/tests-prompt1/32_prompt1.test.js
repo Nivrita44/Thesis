@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-algorithm/32.js';
+import { solve } from '../../../solutions-algorithm/32.js';
 
 test('example 1', () => {
   const n = 3;

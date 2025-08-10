@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-algorithm/40.js';
+import { solve } from '../../../solutions-algorithm/40.js';
 
 describe('solve', () => {
     test('example case: a=2, b=3 should return 6', () => {

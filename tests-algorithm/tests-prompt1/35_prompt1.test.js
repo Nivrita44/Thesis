@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-algorithm/35.js';
+import { solve } from '../../../solutions-algorithm/35.js';
 
 test('Example 1: n=10, k=2', () => {
   expect(solve(10, 2)).toBe(2);

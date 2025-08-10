@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-algorithm/42.js';
+import { solve } from '../../../solutions-algorithm/42.js';
 
 describe('Independent Set in Bubble Sort Graph', () => {
     test('Example case 1', () => {

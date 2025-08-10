@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-algorithm/18.js';
+import { solve } from '../../../solutions-algorithm/18.js';
 
 describe('LCM Pair Finder', () => {
     test('basic example case', () => {

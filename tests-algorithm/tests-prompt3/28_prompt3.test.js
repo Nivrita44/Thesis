@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-algorithm/28.js'
+import { solve } from '../../../solutions-algorithm/28.js'
 
 test('basic non-blocking Manhattan path', () => {
   const input = [

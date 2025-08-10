@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-descriptive/11.js'
+import { solve } from '../../../solutions-descriptive/11.js'
 
 test('basic example case', () => {
   expect(solve(

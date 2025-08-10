@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-algorithm/17.js'
+import { solve } from '../../../solutions-algorithm/17.js'
 
 test('example case n=6', () => {
   expect(solve(6n)).toBe(3n);

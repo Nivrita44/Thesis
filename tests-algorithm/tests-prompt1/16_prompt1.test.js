@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-algorithm/16.js';
+import { solve } from '../../../solutions-algorithm/16.js';
 
 test('solve returns correct result for n=2', () => {
     expect(solve(2)).toEqual({ count: 1, parts: [2] });

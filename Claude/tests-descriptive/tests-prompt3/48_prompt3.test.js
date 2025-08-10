@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-descriptive/48.js';
+import { solve } from '../../../solutions-descriptive/48.js';
 
 describe('Solve', () => {
     test('Triangle graph - not bipartite', () => {

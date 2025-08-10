@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-algorithm/33.js';
+import { solve } from '../../../solutions-algorithm/33.js';
 
 test('typical cases', () => {
   const testCases = [

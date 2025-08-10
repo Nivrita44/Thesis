@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-algorithm/2.js';
+import { solve } from '../../../solutions-algorithm/2.js';
 
 test('returns YES when pile is exact combination of sorted name1 and name2', () => {
     expect(solve('SANTACLAUS', 'DEDMOROZ', 'SANTAMOROZDEDCLAUS')).toBe('YES');

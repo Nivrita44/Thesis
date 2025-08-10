@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-descriptive/27.js';
+import { solve } from '../../../solutions-descriptive/27.js';
 
 describe('Lightbulb Treasure Finder', () => {
     test('example test case', () => {

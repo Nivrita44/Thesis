@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-algorithm/27.js'
+import { solve } from '../../../solutions-algorithm/27.js'
 
 test('example case n=10 should find 1 interesting number', () => {
   expect(solve(10n)).toBe(1n);

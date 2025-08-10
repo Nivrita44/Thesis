@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-algorithm/45.js';
+import { solve } from '../../../solutions-algorithm/45.js';
 
 describe('BFS Graph Count Tests', () => {
     test('example case with [1, 2, 3]', () => {

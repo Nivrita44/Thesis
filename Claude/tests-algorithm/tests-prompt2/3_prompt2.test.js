@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-algorithm/3.js';
+import { solve } from '../../../solutions-algorithm/3.js';
 
 describe('solve function tests', () => {
     test('array with consecutive numbers should return YES', () => {

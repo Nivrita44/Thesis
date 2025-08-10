@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-descriptive/47.js';
+import { solve } from '../../../solutions-descriptive/47.js';
 
 describe('solve', () => {
     test('basic case with small numbers', () => {

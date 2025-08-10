@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-algorithm/25.js'
+import { solve } from '../../../solutions-algorithm/25.js'
 
 test('example case with k=2 where product of first 2 equals product of last 2', () => {
   expect(solve(4, [1, 2, 1, 2])).toBe(2n);

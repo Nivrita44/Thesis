@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-algorithm/19.js'
+import { solve } from '../../../solutions-algorithm/19.js'
 
 test('x = 1 (minimum boundary)', () => {
   expect(solve(1)).toBe(1)

@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-algorithm/20.js';
+import { solve } from '../../../solutions-algorithm/20.js';
 
 test('average of [50, 50, 100] over 3 types', () => {
   expect(solve(3, [50, 50, 100])).toBe(66.66666666666667);

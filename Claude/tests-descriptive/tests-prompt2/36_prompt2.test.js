@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-descriptive/36.js';
+import { solve } from '../../../solutions-descriptive/36.js';
 
 test('3x3 grid with 6 queries and all border cells colored', () => {
   expect(solve(3, 3, 6, [

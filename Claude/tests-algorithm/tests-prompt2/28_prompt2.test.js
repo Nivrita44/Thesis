@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-algorithm/28.js';
+import { solve } from '../../../solutions-algorithm/28.js';
 
 describe('solve function tests', () => {
     test('normal case - diagonal path without fence', () => {

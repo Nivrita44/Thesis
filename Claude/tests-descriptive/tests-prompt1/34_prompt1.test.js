@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-descriptive/34.js';
+import { solve } from '../../../solutions-descriptive/34.js';
 
 test('example case from description with simple array', () => {
   expect(solve(3, [1, 2, 3], [1, 2, 0])).toBe(3);

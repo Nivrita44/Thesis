@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-algorithm/9.js';
+import { solve } from '../../../solutions-algorithm/9.js';
 test('case 1', () => {
     expect(
         solve([1, 2, 3], [2, 1], [1])

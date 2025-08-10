@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-algorithm/49.js';
+import { solve } from '../../../solutions-algorithm/49.js';
 
 test('minimum grid, zero cost', () => {
   expect(solve(1, 1, 0)).toBe('YES');

@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-algorithm/44.js';
+import { solve } from '../../../solutions-algorithm/44.js';
 
 describe('solve', () => {
     test('Example case with n=3, k=3', () => {

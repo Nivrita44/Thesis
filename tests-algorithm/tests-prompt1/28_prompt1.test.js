@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-algorithm/28.js';
+import { solve } from '../../../solutions-algorithm/28.js';
 
 test('A and B not aligned, F not on path', () => {
     const input = [

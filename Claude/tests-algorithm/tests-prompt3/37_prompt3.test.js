@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-algorithm/37.js';
+import { solve } from '../../../solutions-algorithm/37.js';
 
 describe('Increasing Sequence Tests', () => {
     test('Example case n=3', () => {

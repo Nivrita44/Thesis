@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-algorithm/23.js'
+import { solve } from '../../../solutions-algorithm/23.js'
 
 test('example case', () => {
   expect(solve(7n, 5n, 12345n)).toBe(12339n);

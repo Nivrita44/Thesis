@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-descriptive/30.js';
+import { solve } from '../../../solutions-descriptive/30.js';
 
 describe('Spider Plushie Exchange', () => {
     test('basic cycle test case', () => {

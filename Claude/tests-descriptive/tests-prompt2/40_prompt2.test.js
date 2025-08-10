@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-descriptive/40.js';
+import { solve } from '../../../solutions-descriptive/40.js';
 
 describe('solve', () => {
     test('basic case with 3 nodes', () => {

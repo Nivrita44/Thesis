@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-algorithm/25.js';
+import { solve } from '../../../solutions-algorithm/25.js';
 
 describe('solve function tests', () => {
     test('basic case with even number of 2s', () => {

@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-descriptive/23.js';
+import { solve } from '../../../solutions-descriptive/23.js';
 
 describe('XORificator Tests', () => {
     test('basic range with i=1, k=0', () => {

@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-algorithm/37.js';
+import { solve } from '../../../solutions-algorithm/37.js';
 
 test('solve with n=3 returns [1,3,5]', () => {
   expect(solve(3)).toEqual([1, 3, 5]);

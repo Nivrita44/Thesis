@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-descriptive/43.js';
+import { solve } from '../../../solutions-descriptive/43.js';
 
 describe('Sheriff of Nottingham Camps', () => {
     test('basic example case', () => {

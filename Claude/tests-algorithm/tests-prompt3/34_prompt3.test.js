@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-algorithm/34.js';
+import { solve } from '../../../solutions-algorithm/34.js';
 
 describe('solve', () => {
     test('returns array with each number decremented by 1', () => {

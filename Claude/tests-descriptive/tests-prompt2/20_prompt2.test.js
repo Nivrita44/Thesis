@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-descriptive/20.js';
+import { solve } from '../../../solutions-descriptive/20.js';
 
 describe('solve function tests', () => {
     test('simple array with valid solution', () => {

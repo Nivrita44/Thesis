@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-algorithm/42.js';
+import { solve } from '../../../solutions-algorithm/42.js';
 
 test('n=2 sorted', () => {
   expect(solve(2, [1, 2])).toBe(2);

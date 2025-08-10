@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-descriptive/45.js';
+import { solve } from '../../../solutions-descriptive/45.js';
 
 describe('solve', () => {
     test('basic path with multiple options', () => {

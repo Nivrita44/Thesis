@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-algorithm/20.js';
+import { solve } from '../../../solutions-algorithm/20.js';
 
 test('average of [50, 50, 100] (n=3)', () => {
   expect(solve(3, [50, 50, 100])).toBeCloseTo(66.66666666666667, 10);

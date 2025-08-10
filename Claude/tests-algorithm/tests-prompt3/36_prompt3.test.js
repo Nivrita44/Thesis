@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-algorithm/36.js';
+import { solve } from '../../../solutions-algorithm/36.js';
 
 describe('Prime Number Finding Tests', () => {
   test('Given n=2, returns a prime m where 2+m is not prime', () => {

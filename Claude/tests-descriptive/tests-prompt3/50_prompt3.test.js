@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-descriptive/50.js';
+import { solve } from '../../../solutions-descriptive/50.js';
 
 describe('Longest Special Subsequence', () => {
     test('Example case with powers of 2', () => {

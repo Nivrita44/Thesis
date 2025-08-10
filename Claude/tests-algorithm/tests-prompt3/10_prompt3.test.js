@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-algorithm/10.js';
+import { solve } from '../../../solutions-algorithm/10.js';
 
 describe('Round Number Sum Tests', () => {
     test('single digit number returns itself', () => {

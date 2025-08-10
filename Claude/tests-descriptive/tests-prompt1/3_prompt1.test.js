@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-descriptive/3.js'
+import { solve } from '../../../solutions-descriptive/3.js'
 
 test('example case from description - 2x2 square', () => {
   expect(solve(0n, 2n, 0n, 2n)).toBe(4n);

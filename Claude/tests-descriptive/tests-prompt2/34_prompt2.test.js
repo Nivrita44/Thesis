@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-descriptive/34.js';
+import { solve } from '../../../solutions-descriptive/34.js';
 
 describe('solve', () => {
     test('basic case with valid modulo solution', () => {

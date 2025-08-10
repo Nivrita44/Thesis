@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-descriptive/40.js';
+import { solve } from '../../../solutions-descriptive/40.js';
 
 test('example case with n=5', () => {
   expect(solve(5, [2, 1, 1, -1, 1])).toEqual([3, 5, 2, 1, 4]);

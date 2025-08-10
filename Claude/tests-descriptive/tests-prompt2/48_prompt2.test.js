@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-descriptive/48.js';
+import { solve } from '../../../solutions-descriptive/48.js';
 
 describe('Graph Coloring and Query Handling', () => {
     test('non-bipartite triangle graph', () => {

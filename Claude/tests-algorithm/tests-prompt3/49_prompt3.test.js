@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-algorithm/49.js';
+import { solve } from '../../../solutions-algorithm/49.js';
 
 describe('Grid Path Cost', () => {
     test('1x1 grid with 0 cost', () => {

@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-descriptive/13.js';
+import { solve } from '../../../solutions-descriptive/13.js';
 
 describe('Good Subarrays Counter', () => {
     test('basic example with all equal elements', () => {

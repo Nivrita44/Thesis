@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-algorithm/6.js';
+import { solve } from '../../../solutions-algorithm/6.js';
 
 test('test with strictly increasing array', () => {
     expect(solve(5, [1, 2, 3, 4, 5])).toBe(6);

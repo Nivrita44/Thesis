@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-algorithm/34.js';
+import { solve } from '../../../solutions-algorithm/34.js';
 
 describe('solve - Subtract 1 from each number', () => {
     test('common case with positive integers', () => {

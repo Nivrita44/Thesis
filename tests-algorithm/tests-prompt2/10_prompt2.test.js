@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-algorithm/10.js';
+import { solve } from '../../../solutions-algorithm/10.js';
 
 test('solve returns correct result for 5009', () => {
     expect(solve(5009)).toEqual({ count: 2, parts: [9, 5000] });

@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-algorithm/46.js';
+import { solve } from '../../../solutions-algorithm/46.js';
 
 test('typical organization chart with multiple roots and varying management levels', () => {
   expect(solve(5, [-1, 1, 2, 1, -1])).toBe(3);

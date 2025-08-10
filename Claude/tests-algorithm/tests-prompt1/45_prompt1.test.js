@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-algorithm/45.js'
+import { solve } from '../../../solutions-algorithm/45.js'
 
 test('example case with N=4, A=[1,2,3,4]', () => {
   expect(solve([1, 2, 3, 4])).toBe(1n);

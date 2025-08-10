@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-algorithm/23.js';
+import { solve } from '../../../solutions-algorithm/23.js';
 
 describe('solve function tests', () => {
     test('basic test case with small numbers', () => {

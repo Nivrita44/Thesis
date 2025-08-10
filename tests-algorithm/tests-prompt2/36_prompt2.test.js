@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-algorithm/36.js'
+import { solve } from '../../../solutions-algorithm/36.js'
 
 test('typical case: add two numbers', () => {
   expect(solve("11", "123")).toBe("134")
