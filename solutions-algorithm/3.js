@@ -6,11 +6,12 @@ export function solve(q, arr) {
     let gaps = 0;
     for (let i = 0; i < arr.length - 1; i++) {
         if (arr[i + 1] - arr[i] > 1) {
-            gaps++;
+            return "NO";
         }
     }
-    return gaps >= 1 ? "NO" : "YES";
+    return "YES";
 }
+
 
 // Test function
 // function testing_test() {

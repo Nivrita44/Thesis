@@ -1,48 +1,50 @@
-import { solve } from '../../../solutions-algorithm/12.js'
+import { solve } from '../../../solutions-algorithm/12.js';
 
-test('example case n=12', () => {
-  expect(solve(12n)).toEqual([4n, 8n]);
-});
+describe('solve function tests', () => {
+    test('example case =12', () => {
+        expect(solve(12)).toEqual([4, 8]);
+    });
 
-test('minimal input n=12', () => {
-  expect(solve(12n)).toEqual([4n, 8n]);
-});
+    test('miimal iput =12', () => {
+        expect(solve(12)).toEqual([4, 8]);
+    });
 
-test('edge case n=13', () => {
-  expect(solve(13n)).toEqual([4n, 9n]);
-});
+    test('edge case =13', () => {
+        expect(solve(13)).toEqual([4, 9]);
+    });
 
-test('medium value n=100', () => {
-  const [x, y] = solve(100n);
-  expect(x + y).toBe(100n);
-  expect(x).toBeLessThan(100n);
-  expect(y).toBeLessThan(100n);
-});
+    test('medium value =100', () => {
+        const [x, y] = solve(100);
+        expect(x + y).toBe(100);
+        expect(x).toBeLessThan(100);
+        expect(y).toBeLessThan(100);
+    });
 
-test('large value n=999999', () => {
-  const [x, y] = solve(999999n);
-  expect(x + y).toBe(999999n);
-  expect(x).toBeLessThan(999999n);
-  expect(y).toBeLessThan(999999n);
-});
+    test('large value =999999', () => {
+        const [x, y] = solve(999999);
+        expect(x + y).toBe(999999);
+        expect(x).toBeLessThan(999999);
+        expect(y).toBeLessThan(999999);
+    });
 
-test('numbers around 50', () => {
-  const [x, y] = solve(50n);
-  expect(x + y).toBe(50n);
-  expect(x).toBeLessThan(50n);
-  expect(y).toBeLessThan(50n);
-});
+    test('umbers aroud 50', () => {
+        const [x, y] = solve(50);
+        expect(x + y).toBe(50);
+        expect(x).toBeLessThan(50);
+        expect(y).toBeLessThan(50);
+    });
 
-test('power of 2 case n=128', () => {
-  const [x, y] = solve(128n);
-  expect(x + y).toBe(128n);
-  expect(x).toBeLessThan(128n);
-  expect(y).toBeLessThan(128n);
-});
+    test('power of 2 case =128', () => {
+        const [x, y] = solve(128);
+        expect(x + y).toBe(128);
+        expect(x).toBeLessThan(128);
+        expect(y).toBeLessThan(128);
+    });
 
-test('prime number input n=97', () => {
-  const [x, y] = solve(97n);
-  expect(x + y).toBe(97n);
-  expect(x).toBeLessThan(97n);
-  expect(y).toBeLessThan(97n);
+    test('prime umber iput =97', () => {
+        const [x, y] = solve(97);
+        expect(x + y).toBe(97);
+        expect(x).toBeLessThan(97);
+        expect(y).toBeLessThan(97);
+    });
 });

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1754841453575" clover="3.2.0">
-  <project timestamp="1754841453576" name="All files">
+<coverage generated="1755444875345" clover="3.2.0">
+  <project timestamp="1755444875345" name="All files">
     <metrics statements="2" coveredstatements="1" conditionals="2" coveredconditionals="0" methods="2" coveredmethods="1" elements="6" coveredelements="2" complexity="0" loc="2" ncloc="2" packages="1" files="1" classes="1"/>
-    <file name="18.js" path="E:\desktop\Thesis\solutions-algorithm\18.js">
+    <file name="18.js" path="C:\Users\ASUS\OneDrive\Documents\GitHub\Thesis\solutions-algorithm\18.js">
       <metrics statements="2" coveredstatements="1" conditionals="2" coveredconditionals="0" methods="2" coveredmethods="1"/>
       <line num="5" count="8" type="stmt"/>
       <line num="6" count="0" type="cond" truecount="0" falsecount="2"/>

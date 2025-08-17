@@ -1,33 +1,49 @@
-import { solve } from '../../../solutions-algorithm/23.js'
+import { solve } from '../../../solutions-algorithm/23.js';
 
 test('example case', () => {
-  expect(solve(7n, 5n, 12345n)).toBe(12339n);
+    expect(solve([
+        [7, 5, 12345]
+    ])).toEqual([12339]);
 });
 
 test('minimal possible values', () => {
-  expect(solve(2n, 0n, 2n)).toBe(2n);
+    expect(solve([
+        [2, 0, 2]
+    ])).toEqual([2]);
 });
 
 test('y equals x-1', () => {
-  expect(solve(5n, 4n, 100n)).toBe(99n);
+    expect(solve([
+        [5, 4, 100]
+    ])).toEqual([99]);
 });
 
 test('y equals 0', () => {
-  expect(solve(4n, 0n, 16n)).toBe(16n);
+    expect(solve([
+        [4, 0, 16]
+    ])).toEqual([16]);
 });
 
 test('n equals y', () => {
-  expect(solve(10n, 5n, 5n)).toBe(5n);
+    expect(solve([
+        [10, 5, 5]
+    ])).toEqual([5]);
 });
 
 test('large numbers', () => {
-  expect(solve(1000000000n, 999999999n, 1000000000n)).toBe(999999999n);
+    expect(solve([
+        [1000000000, 999999999, 1000000000]
+    ])).toEqual([999999999]);
 });
 
 test('n much larger than x', () => {
-  expect(solve(3n, 2n, 1000n)).toBe(998n);
+    expect(solve([
+        [3, 2, 1000]
+    ])).toEqual([998]);
 });
 
-test('x equals n', () => {
-  expect(solve(100n, 50n, 100n)).toBe(50n);
+test('x equals', () => {
+    expect(solve([
+        [100, 50, 100]
+    ])).toEqual([50]);
 });

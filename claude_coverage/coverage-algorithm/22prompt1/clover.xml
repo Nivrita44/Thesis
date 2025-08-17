@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1754841496723" clover="3.2.0">
-  <project timestamp="1754841496723" name="All files">
-    <metrics statements="1" coveredstatements="1" conditionals="2" coveredconditionals="0" methods="2" coveredmethods="1" elements="5" coveredelements="2" complexity="0" loc="1" ncloc="1" packages="1" files="1" classes="1"/>
-    <file name="22.js" path="E:\desktop\Thesis\solutions-algorithm\22.js">
-      <metrics statements="1" coveredstatements="1" conditionals="2" coveredconditionals="0" methods="2" coveredmethods="1"/>
-      <line num="5" count="9" type="cond" truecount="0" falsecount="2"/>
+<coverage generated="1755446043355" clover="3.2.0">
+  <project timestamp="1755446043356" name="All files">
+    <metrics statements="1" coveredstatements="1" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="2" elements="5" coveredelements="5" complexity="0" loc="1" ncloc="1" packages="1" files="1" classes="1"/>
+    <file name="22.js" path="C:\Users\ASUS\OneDrive\Documents\GitHub\Thesis\solutions-algorithm\22.js">
+      <metrics statements="1" coveredstatements="1" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="2"/>
+      <line num="5" count="9" type="cond" truecount="2" falsecount="0"/>
     </file>
   </project>
 </coverage>

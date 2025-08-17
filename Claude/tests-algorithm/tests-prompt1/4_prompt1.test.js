@@ -1,33 +1,36 @@
 import { solve } from '../../../solutions-algorithm/4.js'
 
-test('example case with 4 participants', () => {
-  expect(solve(4n, [3n, 7n, 5n, 6n])).toEqual(['-4', '-1', '-2', '-1']);
+
+test('example case with 4 participats', () => {
+    expect(solve([3, 7, 5, 6])).toEqual([-4, -1, -2, -1]);
 });
 
-test('minimum case with 2 participants', () => {
-  expect(solve(2n, [1n, 2n])).toEqual(['-1', '1']);
+test('miimum case with 2 participats', () => {
+    expect(solve([1, 2])).toEqual([-1, 1]);
 });
 
-test('all equal strengths', () => {
-  expect(solve(3n, [5n, 5n, 5n])).toEqual(['0', '0', '0']);
+test('all equal stregths', () => {
+    expect(solve([5, 5, 5])).toEqual([0, 0, 0]);
 });
 
-test('large ascending strengths', () => {
-  expect(solve(5n, [1n, 2n, 3n, 4n, 5n])).toEqual(['-4', '-3', '-2', '-1', '4']);
+test('large ascedig stregths', () => {
+    expect(solve([1, 2, 3, 4, 5])).toEqual([-4, -3, -2, -1,
+        4
+    ]);
 });
 
-test('maximum strength at start', () => {
-  expect(solve(4n, [9n, 1n, 4n, 3n])).toEqual(['5', '-8', '-5', '-6']);
+test('maximum stregth at start', () => {
+    expect(solve([9, 1, 4, 3])).toEqual([5, -8, -5, -6]);
 });
 
-test('maximum strength in middle', () => {
-  expect(solve(5n, [4n, 8n, 10n, 3n, 5n])).toEqual(['-6', '-2', '2', '-7', '-5']);
+test('maximum stregth i middle', () => {
+    expect(solve([4, 8, 10, 3, 5])).toEqual([-6, -2, 2, -7, -5]);
 });
 
-test('large numbers near upper bound', () => {
-  expect(solve(3n, [1000000000n, 999999999n, 999999998n])).toEqual(['1', '-1', '-2']);
+test('large umbers ear upper boud', () => {
+    expect(solve([1000000000, 999999999, 999999998])).toEqual([1, -1, -2]);
 });
 
-test('alternating high-low values', () => {
-  expect(solve(6n, [8n, 2n, 7n, 3n, 9n, 1n])).toEqual(['-1', '-7', '-2', '-6', '1', '-8']);
+test('alteratig high-low values', () => {
+    expect(solve([8, 2, 7, 3, 9, 1])).toEqual([-1, -7, -2, -6, 1, -8]);
 });

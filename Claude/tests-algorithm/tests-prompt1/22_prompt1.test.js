@@ -1,37 +1,37 @@
-import { solve } from '../../../solutions-algorithm/22.js'
+import { solve } from '../../../solutions-algorithm/22.js';
 
-test('example case n=4', () => {
-  expect(solve(4n)).toBe("First");
+test('example case=4', () => {
+    expect(solve([4])).toEqual(["First"]);
 });
 
-test('edge case n=1000', () => {
-  expect(solve(1000n)).toBe("First");
+test('edge case=1000', () => {
+    expect(solve([1000])).toEqual(["First"]);
 });
 
-test('minimum value n=1', () => {
-  expect(solve(1n)).toBe("First");
+test('minimum value=1', () => {
+    expect(solve([1])).toEqual(["First"]);
 });
 
-test('when n is already divisible by 3', () => {
-  expect(solve(3n)).toBe("First");
+test('when is already divisible by 3', () => {
+    expect(solve([3])).toEqual(["First"]);
 });
 
 test('when optimal play leads to Vova win', () => {
-  expect(solve(5n)).toBe("Second");
+    expect(solve([5])).toEqual(["Second"]);
 });
 
-test('generic case n=10', () => {
-  expect(solve(10n)).toBe("First");
+test('generic case=10', () => {
+    expect(solve([10])).toEqual(["First"]);
 });
 
-test('generic case n=17', () => {
-  expect(solve(17n)).toBe("First");
+test('generic case=17', () => {
+    expect(solve([17])).toEqual(["First"]);
 });
 
 test('tricky case one move from divisible by 3', () => {
-  expect(solve(8n)).toBe("First");
+    expect(solve([8])).toEqual(["First"]);
 });
 
-test('large case n=999', () => {
-  expect(solve(999n)).toBe("First");
+test('large case=999', () => {
+    expect(solve([999])).toEqual(["First"]);
 });

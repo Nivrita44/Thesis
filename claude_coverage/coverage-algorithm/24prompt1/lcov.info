@@ -3,9 +3,9 @@ SF:solutions-algorithm\24.js
 FN:4,solve
 FN:5,(anonymous_1)
 FNF:2
-FNH:1
+FNH:2
 FNDA:9,solve
-FNDA:0,(anonymous_1)
+FNDA:9,(anonymous_1)
 DA:5,9
 LF:1
 LH:1

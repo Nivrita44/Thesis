@@ -1,17 +1,11 @@
-import {
-    solve
-} from '../../solutions-algorithm/4.js';
+import { solve } from '../../../solutions-algorithm/4.js';
 
 test('sample test 1', () => {
-    expect(solve([
-        1, 2
-    ])).toEqual([-1, 1]);
+    expect(solve([1, 2])).toEqual([-1, 1]);
 });
 
 test('sample test 2', () => {
-    expect(solve(
-        [5, 7, 7]
-    )).toEqual([-2, 0, 0]);
+    expect(solve([5, 7, 7])).toEqual([-2, 0, 0]);
 });
 
 test('sample test 3', () => {
@@ -56,9 +50,9 @@ test('max at the start', () => {
  √ second max duplicate                                                                                                  
  √ max at the end (1 ms)                                                                                                 
  × max at the start (1 ms)                                                                                               
-                                                                                                                         
+
  ● sample test 3                                                                                                         
-                                                                                                                         
+
    expect(received).toEqual(expected) // deep equality
 
    - Expected  - 3

@@ -1,33 +1,33 @@
-import { solve } from '../../../solutions-algorithm/17.js'
+import { solve } from '../../../solutions-algorithm/17.js';
 
-test('example case n=6', () => {
-  expect(solve(6n)).toBe(3n);
+test('example case=6', () => {
+    expect(solve([6])).toEqual([3]);
 });
 
-test('minimum input n=2', () => {
-  expect(solve(2n)).toBe(2n);
+test('minimum input=2', () => {
+    expect(solve([2])).toEqual([2]);
 });
 
-test('maximum input n=100', () => {
-  expect(solve(100n)).toBe(4n);
+test('maximum input=100', () => {
+    expect(solve([100])).toEqual([4]);
 });
 
 test('n=10 should return 4', () => {
-  expect(solve(10n)).toBe(4n);
+    expect(solve([10])).toEqual([4]);
 });
 
 test('n=20 should return 4', () => {
-  expect(solve(20n)).toBe(4n);
+    expect(solve([20])).toEqual([4]);
 });
 
-test('edge case n=3', () => {
-  expect(solve(3n)).toBe(3n);
+test('edge case=3', () => {
+    expect(solve([3])).toEqual([3]);
 });
 
 test('n=50 should return 4', () => {
-  expect(solve(50n)).toBe(4n);
+    expect(solve([50])).toEqual([4]);
 });
 
 test('n=15 should return 4', () => {
-  expect(solve(15n)).toBe(4n);
+    expect(solve([15])).toEqual([4]);
 });

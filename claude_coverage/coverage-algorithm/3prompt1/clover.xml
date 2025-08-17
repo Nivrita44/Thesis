@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1754841279948" clover="3.2.0">
-  <project timestamp="1754841279949" name="All files">
-    <metrics statements="6" coveredstatements="1" conditionals="4" coveredconditionals="0" methods="2" coveredmethods="1" elements="12" coveredelements="2" complexity="0" loc="6" ncloc="6" packages="1" files="1" classes="1"/>
-    <file name="3.js" path="E:\desktop\Thesis\solutions-algorithm\3.js">
-      <metrics statements="6" coveredstatements="1" conditionals="4" coveredconditionals="0" methods="2" coveredmethods="1"/>
-      <line num="4" count="9" type="stmt"/>
-      <line num="6" count="0" type="stmt"/>
-      <line num="7" count="0" type="stmt"/>
-      <line num="8" count="0" type="cond" truecount="0" falsecount="2"/>
-      <line num="9" count="0" type="stmt"/>
-      <line num="12" count="0" type="cond" truecount="0" falsecount="2"/>
+<coverage generated="1755442047781" clover="3.2.0">
+  <project timestamp="1755442047781" name="All files">
+    <metrics statements="6" coveredstatements="6" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="2" elements="10" coveredelements="10" complexity="0" loc="6" ncloc="6" packages="1" files="1" classes="1"/>
+    <file name="3.js" path="C:\Users\ASUS\OneDrive\Documents\GitHub\Thesis\solutions-algorithm\3.js">
+      <metrics statements="6" coveredstatements="6" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="2"/>
+      <line num="4" count="74" type="stmt"/>
+      <line num="6" count="9" type="stmt"/>
+      <line num="7" count="9" type="stmt"/>
+      <line num="8" count="66" type="cond" truecount="2" falsecount="0"/>
+      <line num="9" count="3" type="stmt"/>
+      <line num="12" count="6" type="stmt"/>
     </file>
   </project>
 </coverage>

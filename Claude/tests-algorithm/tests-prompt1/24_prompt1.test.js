@@ -1,37 +1,37 @@
-import { solve } from '../../../solutions-algorithm/24.js'
+import { solve } from '../../../solutions-algorithm/24.js';
 
-test('should return 2 for n=4 as example case', () => {
-  expect(solve(4n)).toBe(2n);
+test('should return 2 for 4 as example case', () => {
+    expect(solve([4])).toEqual([2]);
 });
 
-test('should return 1 for n=2 as minimal case', () => {
-  expect(solve(2n)).toBe(1n);
+test('should return 1 for 2 as minimal case', () => {
+    expect(solve([2])).toEqual([1]);
 });
 
-test('should return 500000 for n=1000000 as upper bound case', () => {
-  expect(solve(1000000n)).toBe(500000n);
+test('should return 500000 for 1000000 as upper bound case', () => {
+    expect(solve([1000000])).toEqual([500000]);
 });
 
-test('should return 3 for n=6 as typical case', () => {
-  expect(solve(6n)).toBe(3n);
+test('should return 3 for 6 as typical case', () => {
+    expect(solve([6])).toEqual([3]);
 });
 
-test('should return 4 for n=8 as typical case', () => {
-  expect(solve(8n)).toBe(4n);
+test('should return 4 for 8 as typical case', () => {
+    expect(solve([8])).toEqual([4]);
 });
 
-test('should return 5 for n=10 as typical case', () => {
-  expect(solve(10n)).toBe(5n);
+test('should return 5 for 10 as typical case', () => {
+    expect(solve([10])).toEqual([5]);
 });
 
-test('should return 6 for n=12 as typical case', () => {
-  expect(solve(12n)).toBe(6n);
+test('should return 6 for 12 as typical case', () => {
+    expect(solve([12])).toEqual([6]);
 });
 
-test('should return 100 for n=200 as larger case', () => {
-  expect(solve(200n)).toBe(100n);
+test('should return 100 for 200 as larger case', () => {
+    expect(solve([200])).toEqual([100]);
 });
 
-test('should return 42 for n=84 as tricky case', () => {
-  expect(solve(84n)).toBe(42n);
+test('should return 42 for 84 as tricky case', () => {
+    expect(solve([84])).toEqual([42]);
 });
