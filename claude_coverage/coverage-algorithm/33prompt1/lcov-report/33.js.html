@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">8.33% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>2/24</span>
+                <span class='fraction'>24/24</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/6</span>
+                <span class='fraction'>6/6</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">9.09% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>2/22</span>
+                <span class='fraction'>22/22</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -144,42 +144,42 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">10x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">10x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-yes">12x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-yes">40x</span>
+<span class="cline-any cline-yes">40x</span>
+<span class="cline-any cline-yes">16x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">24x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-yes">31x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">26x</span>
+<span class="cline-any cline-yes">26x</span>
+<span class="cline-any cline-yes">19x</span>
+<span class="cline-any cline-yes">19x</span>
+<span class="cline-any cline-yes">19x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -221,38 +221,38 @@ export function solve(testCases) {
 &nbsp;
     for (const { n, a }
         of testCases) {
-        const s = <span class="cstat-no" title="statement not covered" >new Set();</span>
-        const d = <span class="cstat-no" title="statement not covered" >new Map();</span>
-<span class="cstat-no" title="statement not covered" >        s.add(n);</span>
-        let ans = <span class="cstat-no" title="statement not covered" >n;</span>
-        const q = <span class="cstat-no" title="statement not covered" >[n];</span>
+        const s = new Set();
+        const d = new Map();
+        s.add(n);
+        let ans = n;
+        const q = [n];
 &nbsp;
-<span class="cstat-no" title="statement not covered" >        for (let i = <span class="cstat-no" title="statement not covered" >0;</span> i &lt; n; i++) {</span>
-            let e = <span class="cstat-no" title="statement not covered" >a[i] + i;</span>
-<span class="cstat-no" title="statement not covered" >            if (d.has(e)) {</span>
-<span class="cstat-no" title="statement not covered" >                d.get(e).push(i);</span>
+        for (let i = 0; i &lt; n; i++) {
+            let e = a[i] + i;
+            if (d.has(e)) {
+                d.get(e).push(i);
             } else {
-<span class="cstat-no" title="statement not covered" >                d.set(e, [i]);</span>
+                d.set(e, [i]);
             }
         }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >        for (const x of q) {</span>
-<span class="cstat-no" title="statement not covered" >            if (!d.has(x)) <span class="cstat-no" title="statement not covered" >continue;</span></span>
+        for (const x of q) {
+            if (!d.has(x)) continue;
 &nbsp;
-<span class="cstat-no" title="statement not covered" >            for (const y of d.get(x)) {</span>
-                const val = <span class="cstat-no" title="statement not covered" >x + y;</span>
-<span class="cstat-no" title="statement not covered" >                if (!s.has(val)) {</span>
-<span class="cstat-no" title="statement not covered" >                    q.push(val);</span>
-<span class="cstat-no" title="statement not covered" >                    s.add(val);</span>
-<span class="cstat-no" title="statement not covered" >                    ans = Math.max(ans, val);</span>
+            for (const y of d.get(x)) {
+                const val = x + y;
+                if (!s.has(val)) {
+                    q.push(val);
+                    s.add(val);
+                    ans = Math.max(ans, val);
                 }
             }
         }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >        results.push(ans);</span>
+        results.push(ans);
     }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    return results;</span>
+    return results;
 }
 &nbsp;
 // ✅ Test function
@@ -289,7 +289,7 @@ export function solve(testCases) {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-08-10T16:00:17.059Z
+                at 2025-08-17T17:05:22.413Z
             </div>
         <script src="prettify.js"></script>
         <script>

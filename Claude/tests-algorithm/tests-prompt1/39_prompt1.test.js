@@ -1,33 +1,33 @@
 import { solve } from '../../../solutions-algorithm/39.js'
 
-test('example case n=6 has odd divisor 3', () => {
-  expect(solve(6n)).toBe('YES');
+test('example case=6 has odd divisor 3', () => {
+    expect(solve(6)).toBe('YES');
 });
 
-test('example case n=4 has no odd divisors', () => {
-  expect(solve(4n)).toBe('NO');
+test('example case=4 haso odd divisors', () => {
+    expect(solve(4)).toBe('NO');
 });
 
-test('minimum input n=2', () => {
-  expect(solve(2n)).toBe('NO');
+test('minimum input=2', () => {
+    expect(solve(2)).toBe('NO');
 });
 
-test('large input near upper bound', () => {
-  expect(solve(999999999999999n)).toBe('YES');
+test('large inputear upper bound', () => {
+    expect(solve(999999999999999)).toBe('YES');
 });
 
-test('power of 2 has no odd divisors', () => {
-  expect(solve(1024n)).toBe('NO');
+test('power of 2 haso odd divisors', () => {
+    expect(solve(1024)).toBe('NO');
 });
 
-test('odd number always has odd divisor', () => {
-  expect(solve(15n)).toBe('YES');
+test('oddumber always has odd divisor', () => {
+    expect(solve(15)).toBe('YES');
 });
 
-test('product of odd and even numbers', () => {
-  expect(solve(30n)).toBe('YES');
+test('product of odd and evenumbers', () => {
+    expect(solve(30)).toBe('YES');
 });
 
 test('large power of 2', () => {
-  expect(solve(2n ** 40n)).toBe('NO');
+    expect(solve(2 ** 40)).toBe('NO');
 });

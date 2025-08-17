@@ -1,37 +1,57 @@
 import { solve } from '../../../solutions-algorithm/33.js';
 
-test('example case from description', () => {
-  expect(solve(3n, [3n, 2n, 1n])).toBe(3n);
-});
+describe('solve', () => {
+    test('example case from description', () => {
+        const input = [{ n: 3, a: [3, 2, 1] }];
+        expect(solve(input)).toEqual([3]);
+    });
 
-test('minimum input case', () => {
-  expect(solve(1n, [1n])).toBe(1n);
-});
+    test('minimum input case', () => {
+        const input = [{ n: 1, a: [1] }];
+        expect(solve(input)).toEqual([1]);
+    });
 
-test('case where operation can be performed once', () => {
-  expect(solve(4n, [4n, 3n, 2n, 1n])).toBe(6n);
-});
+    test('case where operation can be performed once', () => {
+        const input = [{ n: 4, a: [4, 3, 2, 1] }];
+        expect(solve(input)).toEqual([6]);
+    });
 
-test('case where multiple operations are possible', () => {
-  expect(solve(5n, [5n, 4n, 3n, 2n, 1n])).toBe(10n);
-});
+    test('case where multiple operations are possible', () => {
+        const input = [{ n: 5, a: [5, 4, 3, 2, 1] }];
+        expect(solve(input)).toEqual([10]);
+    });
 
-test('case with non-sequential numbers', () => {
-  expect(solve(4n, [2n, 4n, 1n, 3n])).toBe(4n);
-});
+    test('case with non-sequential numbers', () => {
+        const input = [{ n: 4, a: [2, 4, 1, 3] }];
+        expect(solve(input)).toEqual([4]);
+    });
 
-test('large input case', () => {
-  expect(solve(6n, [6n, 5n, 4n, 3n, 2n, 1n])).toBe(15n);
-});
+    test('large input case', () => {
+        const input = [{ n: 6, a: [6, 5, 4, 3, 2, 1] }];
+        expect(solve(input)).toEqual([15]);
+    });
 
-test('case with repeated numbers', () => {
-  expect(solve(4n, [2n, 2n, 2n, 2n])).toBe(4n);
-});
+    test('case with repeated numbers', () => {
+        const input = [{ n: 4, a: [2, 2, 2, 2] }];
+        expect(solve(input)).toEqual([4]);
+    });
 
-test('edge case with maximum single value', () => {
-  expect(solve(2n, [1000000000000n, 1n])).toBe(2n);
-});
+    test('edge case with maximum single value', () => {
+        const input = [{ n: 2, a: [1000000000000, 1] }];
+        expect(solve(input)).toEqual([2]);
+    });
 
-test('case where no operations are possible', () => {
-  expect(solve(3n, [1n, 1n, 1n])).toBe(3n);
+    test('case where all operations are possible', () => {
+        const input = [{ n: 3, a: [1, 1, 1] }];
+        expect(solve(input)).toEqual([3]);
+    });
+
+    test('multiple test cases together', () => {
+        const input = [
+            { n: 3, a: [3, 2, 1] },
+            { n: 1, a: [1] },
+            { n: 4, a: [2, 4, 1, 3] }
+        ];
+        expect(solve(input)).toEqual([3, 1, 4]);
+    });
 });

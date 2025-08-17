@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">40% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>12/30</span>
+                <span class='fraction'>30/30</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/10</span>
+                <span class='fraction'>10/10</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">33.33% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>1/3</span>
+                <span class='fraction'>3/3</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">45% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>9/20</span>
+                <span class='fraction'>20/20</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -143,42 +143,42 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">8x</span>
-<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">54x</span>
+<span class="cline-any cline-yes">54x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">8x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">38x</span>
+<span class="cline-any cline-yes">220x</span>
+<span class="cline-any cline-yes">220x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">8x</span>
-<span class="cline-any cline-yes">8x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">38x</span>
+<span class="cline-any cline-yes">91x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">8x</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">38x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">91x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">91x</span>
+<span class="cline-any cline-yes">85x</span>
+<span class="cline-any cline-yes">23x</span>
+<span class="cline-any cline-yes">23x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -219,22 +219,22 @@
 &nbsp;
 //  Core logic function
 export function solve(n, a) {
-    const dp1 = Array.from({ length: n + 2 }, <span class="fstat-no" title="function not covered" >()</span> =&gt; <span class="cstat-no" title="statement not covered" >Array(n + 2).fill(0))</span>;
-    const dp2 = Array.from({ length: n + 2 }, <span class="fstat-no" title="function not covered" >()</span> =&gt; <span class="cstat-no" title="statement not covered" >Array(n + 2).fill(0))</span>;
+    const dp1 = Array.from({ length: n + 2 }, () =&gt; Array(n + 2).fill(0));
+    const dp2 = Array.from({ length: n + 2 }, () =&gt; Array(n + 2).fill(0));
 &nbsp;
     // Precompute dp1 and dp2
     for (let i = 1; i &lt;= n; i++) {
-<span class="cstat-no" title="statement not covered" >        for (let j = <span class="cstat-no" title="statement not covered" >1;</span> j &lt;= n; j++) {</span>
-<span class="cstat-no" title="statement not covered" >            dp1[i][j] = dp1[i][j - 1] + (a[j - 1] &lt; a[i - 1] ? 1 : 0);</span>
-<span class="cstat-no" title="statement not covered" >            dp2[i][j] = dp2[i][j - 1] + (a[j - 1] &gt; a[i - 1] ? 1 : 0);</span>
+        for (let j = 1; j &lt;= n; j++) {
+            dp1[i][j] = dp1[i][j - 1] + (a[j - 1] &lt; a[i - 1] ? 1 : 0);
+            dp2[i][j] = dp2[i][j - 1] + (a[j - 1] &gt; a[i - 1] ? 1 : 0);
         }
     }
 &nbsp;
     //  Fix: Compute total inversion count correctly
     let sm = 0;
     for (let i = 0; i &lt; n; i++) {
-<span class="cstat-no" title="statement not covered" >        for (let j = <span class="cstat-no" title="statement not covered" >i + 1;</span> j &lt; n; j++) {</span>
-<span class="cstat-no" title="statement not covered" >            if (a[i] &gt; a[j]) <span class="cstat-no" title="statement not covered" >sm++;</span></span>
+        for (let j = i + 1; j &lt; n; j++) {
+            if (a[i] &gt; a[j]) sm++;
         }
     }
 &nbsp;
@@ -242,19 +242,19 @@ export function solve(n, a) {
     let cnt = 0;
 &nbsp;
     for (let i = 1; i &lt;= n; i++) {
-<span class="cstat-no" title="statement not covered" >        for (let j = <span class="cstat-no" title="statement not covered" >i + 1;</span> j &lt;= n; j++) {</span>
+        for (let j = i + 1; j &lt;= n; j++) {
             const p =
-<span class="cstat-no" title="statement not covered" >                sm +</span>
+                sm +
                 (dp1[j][j - 1] - dp1[j][i]) -
                 (dp2[j][j] - dp2[j][i]) -
                 1 -
                 (dp1[i][j - 1] - dp1[i][i]) +
                 (dp2[i][j] - dp2[i][i]);
 &nbsp;
-<span class="cstat-no" title="statement not covered" >            if (p === mx) <span class="cstat-no" title="statement not covered" >cnt++;</span></span>
-            else <span class="cstat-no" title="statement not covered" >if (p &lt; mx) {</span>
-<span class="cstat-no" title="statement not covered" >                mx = p;</span>
-<span class="cstat-no" title="statement not covered" >                cnt = 1;</span>
+            if (p === mx) cnt++;
+            else if (p &lt; mx) {
+                mx = p;
+                cnt = 1;
             }
         }
     }
@@ -298,7 +298,7 @@ export function solve(n, a) {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-08-10T16:02:17.276Z
+                at 2025-08-17T17:37:04.004Z
             </div>
         <script src="prettify.js"></script>
         <script>

@@ -3,9 +3,9 @@ SF:solutions-algorithm\50.js
 FN:2,solve
 FN:10,(anonymous_1)
 FNF:2
-FNH:1
+FNH:2
 FNDA:9,solve
-FNDA:0,(anonymous_1)
+FNDA:9,(anonymous_1)
 DA:3,9
 DA:5,9
 DA:6,71

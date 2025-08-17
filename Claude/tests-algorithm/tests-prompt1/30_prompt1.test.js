@@ -1,37 +1,37 @@
-import { solve } from '../../../solutions-algorithm/30.js'
+import { solve } from '../../../solutions-algorithm/30.js';
 
 test('basic example - sum of 17', () => {
-  expect(solve(17n)).toEqual([1n, 4n, 12n]);
+    expect(solve(1, [17])).toEqual(['YES', '1 4 12']);
 });
 
 test('minimum valid number that works - 7', () => {
-  expect(solve(7n)).toEqual([1n, 2n, 4n]);
+    expect(solve(1, [7])).toEqual(['YES', '1 2 4']);
 });
 
 test('edge case - very small number 3', () => {
-  expect(solve(3n)).toBe('NO');
+    expect(solve(1, [3])).toEqual(['NO']);
 });
 
 test('large number case', () => {
-  expect(solve(1000000000n)).toEqual([1n, 4n, 999999995n]);
+    expect(solve(1, [1000000000])).toEqual(['YES', '1 4 999999995']);
 });
 
 test('number barely enough for three distinct numbers', () => {
-  expect(solve(8n)).toEqual([1n, 2n, 5n]);
+    expect(solve(1, [8])).toEqual(['YES', '1 2 5']);
 });
 
 test('medium sized number', () => {
-  expect(solve(42n)).toEqual([1n, 4n, 37n]);
+    expect(solve(1, [42])).toEqual(['YES', '1 4 37']);
 });
 
 test('tricky case with many multiples of 3', () => {
-  expect(solve(20n)).toEqual([1n, 4n, 15n]);
+    expect(solve(1, [20])).toEqual(['YES', '1 4 15']);
 });
 
 test('random valid case 1', () => {
-  expect(solve(100n)).toEqual([1n, 4n, 95n]);
+    expect(solve(1, [100])).toEqual(['YES', '1 4 95']);
 });
 
 test('random valid case 2', () => {
-  expect(solve(50n)).toEqual([1n, 4n, 45n]);
+    expect(solve(1, [50])).toEqual(['YES', '1 4 45']);
 });

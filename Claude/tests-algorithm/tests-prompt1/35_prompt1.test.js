@@ -1,37 +1,55 @@
 import { solve } from '../../../solutions-algorithm/35.js'
 
 test('example case', () => {
-  expect(solve(27n, 3n)).toBe(3n);
+    expect(solve([
+        [27, 3]
+    ])).toEqual([3]);
 });
 
 test('n equals k case', () => {
-  expect(solve(5n, 5n)).toBe(1n);
+    expect(solve([
+        [5, 5]
+    ])).toEqual([1]);
 });
 
 test('large input case', () => {
-  expect(solve(1000000000n, 2n)).toBe(14n);
+    expect(solve([
+        [1000000000, 2]
+    ])).toEqual([14]);
 });
 
-test('minimal case n=1', () => {
-  expect(solve(1n, 2n)).toBe(1n);
+test('minimal case=1', () => {
+    expect(solve([
+        [1, 2]
+    ])).toEqual([1]);
 });
 
 test('power of k case', () => {
-  expect(solve(16n, 2n)).toBe(1n);
+    expect(solve([
+        [16, 2]
+    ])).toEqual([1]);
 });
 
 test('requires multiple operations of same power', () => {
-  expect(solve(15n, 4n)).toBe(4n);
+    expect(solve([
+        [15, 4]
+    ])).toEqual([4]);
 });
 
 test('n less than k case', () => {
-  expect(solve(3n, 5n)).toBe(3n);
+    expect(solve([
+        [3, 5]
+    ])).toEqual([3]);
 });
 
-test('consecutive powers needed', () => {
-  expect(solve(12n, 2n)).toBe(2n);
+test('consecutive powerseeded', () => {
+    expect(solve([
+        [12, 2]
+    ])).toEqual([2]);
 });
 
 test('requires mix of different powers', () => {
-  expect(solve(63n, 3n)).toBe(4n);
+    expect(solve([
+        [63, 3]
+    ])).toEqual([4]);
 });

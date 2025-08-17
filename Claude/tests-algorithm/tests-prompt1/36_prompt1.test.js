@@ -1,33 +1,44 @@
-import { solve } from '../../../solutions-algorithm/36.js'
+import { solve } from '../../../solutions-algorithm/36.js';
 
-test('example with n=3 returns valid prime m where sum is not prime', () => {
-  expect(solve(3n)).toBe(2n);
-});
 
-test('smallest possible input n=2', () => {
-  expect(solve(2n)).toBe(3n);
-});
+describe('solve', () => {
+    test('example with=3 returns valid prime m where sum isot prime', () => {
+        expect(solve(BigInt(3))).toBe(BigInt(2));
 
-test('large prime input near upper bound', () => {
-  expect(solve(99991n)).toBe(2n);
-});
+    });
 
-test('common small prime n=5', () => {
-  expect(solve(5n)).toBe(2n);
-});
+    test('smallest possible input=2', () => {
+        expect(solve(BigInt(2))).toBe(BigInt(3));
 
-test('prime n=11 returns prime where sum is composite', () => {
-  expect(solve(11n)).toBe(2n);
-});
+    });
 
-test('medium prime n=47', () => {
-  expect(solve(47n)).toBe(2n);
-});
+    test('large prime inputear upper bound', () => {
+        expect(solve(BigInt(99991))).toBe(BigInt(2));
 
-test('larger prime n=997', () => {
-  expect(solve(997n)).toBe(2n);
-});
+    });
 
-test('prime near 1000: n=1009', () => {
-  expect(solve(1009n)).toBe(2n);
+    test('common small prime=5', () => {
+        expect(solve(BigInt(5))).toBe(BigInt(2));
+
+    });
+
+    test('prime=11 returns prime where sum is composite', () => {
+        expect(solve(BigInt(11))).toBe(BigInt(2));
+
+    });
+
+    test('medium prime=47', () => {
+        expect(solve(BigInt(47))).toBe(BigInt(2));
+
+    });
+
+    test('larger prime=997', () => {
+        expect(solve(BigInt(997))).toBe(BigInt(2));
+
+    });
+
+    test('primeear 1000:=1009', () => {
+        expect(solve(BigInt(1009))).toBe(BigInt(2));
+
+    });
 });

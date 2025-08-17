@@ -1,37 +1,73 @@
-import { solve } from '../../../solutions-algorithm/28.js'
+import { solve } from '../../../solutions-algorithm/28.js';
 
 test('example case', () => {
-  expect(solve(2, 2, 4, 2, 3, 2)).toBe(4n);
+    expect(solve([{
+        x: [2, 2],
+        y: [4, 2],
+        f: [3, 2]
+    }])).toEqual([4]);
 });
 
 test('edge case with blocked path', () => {
-  expect(solve(1, 1, 3, 1, 2, 1)).toBe(4n);
+    expect(solve([{
+        x: [1, 1],
+        y: [3, 1],
+        f: [2, 1]
+    }])).toEqual([4]);
 });
 
 test('large coordinates', () => {
-  expect(solve(1, 1, 1000, 1000, 500, 500)).toBe(1998n);
+    expect(solve([{
+        x: [1, 1],
+        y: [1000, 1000],
+        f: [500, 500]
+    }])).toEqual([1998]);
 });
 
 test('minimal distance case', () => {
-  expect(solve(1, 1, 1, 2, 3, 3)).toBe(1n);
+    expect(solve([{
+        x: [1, 1],
+        y: [1, 2],
+        f: [3, 3]
+    }])).toEqual([1]);
 });
 
 test('forbidden cell not affecting path', () => {
-  expect(solve(1, 1, 5, 1, 1, 5)).toBe(4n);
+    expect(solve([{
+        x: [1, 1],
+        y: [5, 1],
+        f: [1, 5]
+    }])).toEqual([4]);
 });
 
 test('diagonal path blocked', () => {
-  expect(solve(1, 1, 3, 3, 2, 2)).toBe(4n);
+    expect(solve([{
+        x: [1, 1],
+        y: [3, 3],
+        f: [2, 2]
+    }])).toEqual([4]);
 });
 
 test('same row different columns', () => {
-  expect(solve(1, 5, 5, 5, 3, 4)).toBe(4n);
+    expect(solve([{
+        x: [1, 5],
+        y: [5, 5],
+        f: [3, 4]
+    }])).toEqual([4]);
 });
 
 test('same column different rows', () => {
-  expect(solve(3, 1, 3, 5, 4, 3)).toBe(4n);
+    expect(solve([{
+        x: [3, 1],
+        y: [3, 5],
+        f: [4, 3]
+    }])).toEqual([4]);
 });
 
 test('points forming right angle', () => {
-  expect(solve(1, 1, 5, 3, 3, 2)).toBe(6n);
+    expect(solve([{
+        x: [1, 1],
+        y: [5, 3],
+        f: [3, 2]
+    }])).toEqual([6]);
 });
