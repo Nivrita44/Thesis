@@ -1,4 +1,4 @@
-import { solve } from '../../../solutions-algorithm/30.js';
+import { solve } from '../../solutions-algorithm/30.js';
 
 test('n=6 impossible', () => {
     expect(solve(1, [6])).toEqual(["NO"]);

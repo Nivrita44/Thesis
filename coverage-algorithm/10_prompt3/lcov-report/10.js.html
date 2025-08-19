@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">93.33% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>17/17</span>
+                <span class='fraction'>14/15</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">85.71% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>4/4</span>
+                <span class='fraction'>6/7</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">93.33% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>17/17</span>
+                <span class='fraction'>14/15</span>
             </div>
         
             
@@ -152,34 +152,44 @@
 <a name='L87'></a><a href='#L87'>87</a>
 <a name='L88'></a><a href='#L88'>88</a>
 <a name='L89'></a><a href='#L89'>89</a>
-<a name='L90'></a><a href='#L90'>90</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L90'></a><a href='#L90'>90</a>
+<a name='L91'></a><a href='#L91'>91</a>
+<a name='L92'></a><a href='#L92'>92</a>
+<a name='L93'></a><a href='#L93'>93</a>
+<a name='L94'></a><a href='#L94'>94</a>
+<a name='L95'></a><a href='#L95'>95</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">29x</span>
+<span class="cline-any cline-yes">29x</span>
 <span class="cline-any cline-yes">18x</span>
 <span class="cline-any cline-yes">18x</span>
-<span class="cline-any cline-yes">18x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">18x</span>
-<span class="cline-any cline-yes">56x</span>
-<span class="cline-any cline-yes">34x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">56x</span>
-<span class="cline-any cline-yes">56x</span>
+<span class="cline-any cline-yes">29x</span>
+<span class="cline-any cline-yes">29x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">18x</span>
-<span class="cline-any cline-yes">18x</span>
-<span class="cline-any cline-yes">18x</span>
-<span class="cline-any cline-yes">56x</span>
-<span class="cline-any cline-yes">34x</span>
+<span class="cline-any cline-yes">9x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">56x</span>
-<span class="cline-any cline-yes">56x</span>
-<span class="cline-any cline-yes">56x</span>
+<span class="cline-any cline-yes">9x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">18x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -243,35 +253,33 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">// Core logic function
 export function solve(n) {
+    // Ensure valid number
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (typeof n !== 'number' || n &lt; 0 || !Number.isInteger(n)) {
+<span class="cstat-no" title="statement not covered" >        return [0, []];</span>
+    }
+&nbsp;
     let m = n;
-    let ans = 0;
-    let nonZeroParts = [];
+    let count = 0;
+    let parts = [];
+    let place = 1;
 &nbsp;
-    // Count non-zero digits
-    while (m &gt;= 0.99) {
-        if (m % 10 !== 0) {
-            ans++;
+    while (m &gt; 0) {
+        const digit = m % 10;
+        if (digit !== 0) {
+            parts.push(digit * place);
+            count++;
         }
-        m -= m % 10;
-        m /= 10;
+        m = Math.floor(m / 10);
+        place *= 10;
     }
 &nbsp;
-    // Rebuild parts
-    m = n;
-    let l = 1;
-    while (m &gt;= 0.99) {
-        if (m % 10 !== 0) {
-            nonZeroParts.push(l * (m % 10));
-        }
-        m -= m % 10;
-        m /= 10;
-        l *= 10;
-    }
+    // Reverse to keep left-to-right order (like 4000 before 20)
+    parts.reverse();
 &nbsp;
-    return { count: ans, parts: nonZeroParts };
+    return [count, parts];
 }
 &nbsp;
-// Test function with your exact input/output
+&nbsp;
 // function testing_test() {
 //     const testCases = [{
 //             input: 5009,
@@ -312,9 +320,15 @@ export function solve(n) {
 &nbsp;
 //     testCases.forEach(({ input, expected }, index) =&gt; {
 //         const result = solve(input);
-//         const match =
-//             result.count === expected.count &amp;&amp;
-//             JSON.stringify(result.parts) === JSON.stringify(expected.parts);
+        
+//         // Compare arrays without using JSON.stringify for BigInt compatibility
+//         const partsMatch = result.parts.length === expected.parts.length &amp;&amp; 
+//             result.parts.every((part, i) =&gt; {
+//                 // Convert to string for comparison to handle both BigInt and Number
+//                 return String(part) === String(expected.parts[i]);
+//             });
+            
+//         const match = result.count === expected.count &amp;&amp; partsMatch;
 &nbsp;
 //         console.log(`Test ${index + 1}: ${match ? "PASS" : "FAIL"}`);
 //         if (!match) {
@@ -327,8 +341,9 @@ export function solve(n) {
 //     });
 // }
 &nbsp;
-// // Run test if executed directly
-// if (require.main === module) {
+// Run test if executed directly
+// Check if this file is being run directly
+// if (import.meta.url === new URL(import.meta.url).href) {
 //     testing_test();
 // }</pre></td></tr></table></pre>
 
@@ -337,7 +352,7 @@ export function solve(n) {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-08-08T05:53:55.281Z
+                at 2025-08-19T10:48:08.018Z
             </div>
         <script src="prettify.js"></script>
         <script>

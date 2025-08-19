@@ -1,41 +1,48 @@
-import solve from '../../solutions-algorithm/26.js';
+import { solve } from '../../solutions-algorithm/26.js';
 
-test('returns YES for n=10, k=3', () => {
-  expect(solve(10, 3).toLowerCase()).toBe('yes');
+test('example: n = 7, k = 3', () => {
+  expect(solve([[7n, 3n]])[0]).toBe('yes');
 });
 
-test('returns NO for n=7, k=4', () => {
-  expect(solve(7, 4).toLowerCase()).toBe('no');
+test('minimal lower-bound: n = 1, k = 3', () => {
+  expect(solve([[1n, 3n]])[0]).toBe('no');
 });
 
-test('returns YES for n=9, k=7', () => {
-  expect(solve(9, 7).toLowerCase()).toBe('yes');
+test('upper-bound large case: n = 1000000000000000000, k = 3', () => {
+  expect(solve([[1000000000000000000n, 3n]])[0]).toBe('yes');
 });
 
-test('returns YES for n=8, k=3', () => {
-  expect(solve(8, 3).toLowerCase()).toBe('yes');
+test('edge case: n = k = 1000000000000000000', () => {
+  expect(solve([[1000000000000000000n, 1000000000000000000n]])[0]).toBe('yes');
 });
 
-test('returns YES for n=1000000000000000000, k=3', () => {
-  expect(solve(1000000000000000000n, 3).toLowerCase()).toBe('yes');
+test('tricky case: n = 7, k = 5', () => {
+  expect(solve([[7n, 5n]])[0]).toBe('yes');
 });
 
-test('returns YES for n=999999999999999997, k=999999999999999995', () => {
-  expect(solve(999999999999999997n, 999999999999999995n).toLowerCase()).toBe('yes');
+test('random case: n = 8, k = 5', () => {
+  expect(solve([[8n, 5n]])[0]).toBe('yes');
 });
 
-test('returns NO for n=11, k=5', () => {
-  expect(solve(11, 5).toLowerCase()).toBe('no');
+test('random case: n = 9, k = 4', () => {
+  expect(solve([[9n, 4n]])[0]).toBe('yes');
 });
 
-test('returns YES for n=12, k=5', () => {
-  expect(solve(12, 5).toLowerCase()).toBe('yes');
+test('impossible case: n = 11, k = 6', () => {
+  expect(solve([[11n, 6n]])[0]).toBe('no');
 });
 
-test('returns YES for n=1, k=999999999999999999', () => {
-  expect(solve(1, 999999999999999999n).toLowerCase()).toBe('yes');
+test('minimal k, solvable: n = 10, k = 3', () => {
+  expect(solve([[10n, 3n]])[0]).toBe('yes');
 });
 
-test('returns NO for n=3, k=4', () => {
-  expect(solve(3, 4).toLowerCase()).toBe('no');
-});
+
+// √ example: n = 7, k = 3 (4 ms)
+//   √ minimal lower-bound: n = 1, k = 3 (1 ms)
+//   √ upper-bound large case: n = 1000000000000000000, k = 3 (1 ms)
+//   √ edge case: n = k = 1000000000000000000 (1 ms)
+//   √ tricky case: n = 7, k = 5 (1 ms)
+//   √ random case: n = 8, k = 5 (1 ms)
+//   × random case: n = 9, k = 4 (6 ms)
+//   √ impossible case: n = 11, k = 6 (1 ms)
+//   √ minimal k, solvable: n = 10, k = 3 (1 ms)

@@ -6,8 +6,8 @@ export function solve(testCases) {
         n = BigInt(n);
         k = BigInt(k);
         //TODO function problem
-        for (let i = 0 n; i <= 2 n; i++) {
-            if (n - k * i >= 0 n && (n - k * i) % 2 n === 0 n) {
+        for (let i = 0n; i <= 2n; i++) {
+            if (n - k * i >= 0n && (n - k * i) % 2n === 0n) {
                 return "yes";
             }
         }

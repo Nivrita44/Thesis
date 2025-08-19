@@ -1,45 +1,48 @@
-import { solve } from '../../../solutions-algorithm/36.js'
+import { solve } from '../../solutions-algorithm/36.js';
 
-test('typical case: add two numbers', () => {
-  expect(solve("11", "123")).toBe("134")
-})
+test('typical 5-digit number', () => {
+  expect(solve('75619')).toEqual(['9', '7', '561']);
+});
 
-test('adding with carry over', () => {
-  expect(solve("456", "77")).toBe("533")
-})
+test('2-digit number', () => {
+  expect(solve('89')).toEqual(['9', '8']);
+});
 
-test('adding two large numbers', () => {
-  expect(solve("999", "999")).toBe("1998")
-})
+test('3-digit number', () => {
+  expect(solve('123')).toEqual(['3', '1', '2']);
+});
 
-test('adding zero to a number', () => {
-  expect(solve("0", "1234")).toBe("1234")
-  expect(solve("5678", "0")).toBe("5678")
-})
+test('single-digit number', () => {
+  expect(solve('5')).toEqual(['5', '5']);
+});
 
-test('adding two single digit numbers', () => {
-  expect(solve("5", "3")).toBe("8")
-})
+test('number with zeroes', () => {
+  expect(solve('30507')).toEqual(['7', '3', '050']);
+});
 
-test('numbers with different lengths', () => {
-  expect(solve("1", "9999")).toBe("10000")
-})
+test('leading/trailing spaces in input', () => {
+  expect(solve('   42   ')).toEqual(['2', '4']);
+});
 
-test('very large numbers', () => {
-  expect(solve("12345678901234567890", "98765432109876543210")).toBe("111111111011111111100")
-})
-
-test('both numbers are zero', () => {
-  expect(solve("0", "0")).toBe("0")
-})
-
-test('leading zeros in input', () => {
-  expect(solve("00012", "0008")).toBe("20")
-  expect(solve("00000", "00000")).toBe("0")
-})
+test('very large number', () => {
+  expect(solve('12345678901234567890')).toEqual(['0', '1', '234567890123456789']);
+});
 
 test('empty string input', () => {
-  expect(solve("", "5")).toBe("5")
-  expect(solve("5", "")).toBe("5")
-  expect(solve("", "")).toBe("0")
-})
+  expect(solve('')).toEqual(['', '']);
+});
+
+test('multiple lines (should only use first line)', () => {
+  expect(solve('9999\n8888')).toEqual(['9', '9', '99']);
+});
+
+
+// √ typical 5-digit number (9 ms)
+//   √ 2-digit number
+//   √ 3-digit number (2 ms)
+//   √ single-digit number (1 ms)
+//   √ number with zeroes (1 ms)
+//   √ leading/trailing spaces in input (3 ms)
+//   √ very large number (1 ms)
+//   × empty string input (5 ms)
+//   √ multiple lines (should only use first line)

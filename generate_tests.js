@@ -14,22 +14,22 @@ dotenv.config();
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const CLAUDE_API_KEY = process.env.CLAUDE_API_KEYY;
-if (!CLAUDE_API_KEY) {
-  console.error("Error: CLAUDE_API_KEY not found in .env file.");
+const OPENAI_API_KEY = process.env.OPENAI_API_KEYY;
+if (!OPENAI_API_KEY) {
+  console.error("Error: OPENAI_API_KEY not found in .env file.");
   process.exit(1);
 }
 
-const openai = new OpenAI({ apiKey: CLAUDE_API_KEY });
+const openai = new OpenAI({ apiKey: OPENAI_API_KEY });
 const LLM_MODEL = "gpt-4.1";
 
 const PATHS = {
   dataset: path.join(__dirname, "dataset.csv"),
-  problems: path.join(__dirname, "problems-descriptive"),
-  solutions: path.join(__dirname, "solutions-descriptive"),
-  testsPrompt1: path.join(__dirname, "tests-descriptive", "tests-prompt1"),
-  testsPrompt2: path.join(__dirname, "tests-descriptive", "tests-prompt2"),
-  testsPrompt3: path.join(__dirname, "tests-descriptive", "tests-prompt3"),
+  problems: path.join(__dirname, "problems-algorithm"),
+  solutions: path.join(__dirname, "solutions-algorithm"),
+  testsPrompt1: path.join(__dirname, "tests-algorithm", "tests-prompt1"),
+  testsPrompt2: path.join(__dirname, "tests-algorithm", "tests-prompt2"),
+  testsPrompt3: path.join(__dirname, "tests-algorithm", "tests-prompt3"),
 };
 
 // --- HELPER FUNCTIONS ---
@@ -178,7 +178,7 @@ async function main() {
 Generate clean, working Jest test cases for the following programming problem.
 
 Assume the solution function is called 'solve'. It is exported from a JavaScript file using ES module syntax:
-import { solve } from '../../solutions-descriptive/${solutionFile}'
+import { solve } from '../../solutions-algorithm/${solutionFile}'
 
 Requirements:
 - The function does NOT use stdin or stdout.
@@ -216,7 +216,7 @@ ${problemContent}
     console.log("[Task 2/3] Generating tests from solution code only...");
 
     const prompt2 = `
-Generate Jest test cases for the following JavaScript function named 'solve'. It is defined in '../../solutions-descriptive/${solutionFile}'.
+Generate Jest test cases for the following JavaScript function named 'solve'. It is defined in '../../solutions-algorithm/${solutionFile}'.
 
 Requirements:
 - Do not use any comment lines. Only return clean code.
@@ -248,7 +248,7 @@ ${cleanedSolutionContent}
     );
 
     const prompt3 = `
-Generate Jest test cases for a function called 'solve', defined in '../../solutions-descriptive/${solutionFile}'.
+Generate Jest test cases for a function called 'solve', defined in '../../solutions-algorithm/${solutionFile}'.
 
 Use both the problem description and the solution code to generate accurate, meaningful test coverage.
 
