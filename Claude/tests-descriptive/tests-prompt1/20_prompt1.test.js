@@ -1,37 +1,37 @@
 import { solve } from '../../../solutions-descriptive/20.js'
 
 test('example case with three elements', () => {
-  expect(solve([2n, 4n, 1n])).toBe(2n);
+    expect(solve([2, 4, 1])).toBe(2);
 });
 
 test('already equal elements', () => {
-  expect(solve([3n, 3n, 3n, 3n])).toBe(0n);
+    expect(solve([3, 3, 3, 3])).toBe(0);
 });
 
 test('impossible case', () => {
-  expect(solve([1n, 10n])).toBe(-1n);
+    expect(solve([1, 10])).toBe(-1);
 });
 
 test('minimal case with two elements', () => {
-  expect(solve([1n, 1n])).toBe(0n);
+    expect(solve([1, 1])).toBe(0);
 });
 
 test('large input case', () => {
-  expect(solve([100000000n, 100000000n, 100000001n])).toBe(2n);
+    expect(solve([100000000, 100000000, 100000001])).toBe(2);
 });
 
 test('tricky case with alternating values', () => {
-  expect(solve([5n, 1n, 5n, 1n])).toBe(4n);
+    expect(solve([5, 1, 5, 1])).toBe(4);
 });
 
 test('generic case with five elements', () => {
-  expect(solve([3n, 5n, 2n, 4n, 1n])).toBe(6n);
+    expect(solve([3, 5, 2, 4, 1])).toBe(6);
 });
 
 test('edge case with all different values', () => {
-  expect(solve([1n, 2n, 3n, 4n])).toBe(4n);
+    expect(solve([1, 2, 3, 4])).toBe(4);
 });
 
 test('case with one large element', () => {
-  expect(solve([2n, 8n, 3n])).toBe(5n);
+    expect(solve([2, 8, 3])).toBe(5);
 });

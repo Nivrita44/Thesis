@@ -10,11 +10,11 @@ param(
 
 # --- Configuration ---
 # The base directory where the generated tests are stored.
-$BASE_TEST_DIR = "Claude/tests-algorithm"
+$BASE_TEST_DIR = "Claude/tests-descriptive"
 # The base directory where the coverage reports will be saved.
-$BASE_COVERAGE_DIR = "claude_coverage/coverage-algorithm"
+$BASE_COVERAGE_DIR = "claude_coverage/coverage-descriptive"
 # The base directory where the terminal output logs will be saved.
-$BASE_LOG_DIR = "claude_logs/coverage-algorithm"
+$BASE_LOG_DIR = "claude_logs/coverage-descriptive"
 
 # --- Main Logic ---
 

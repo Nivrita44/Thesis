@@ -1,33 +1,33 @@
 import { solve } from '../../../solutions-descriptive/5.js'
 
-test('basic case n=5', () => {
-  expect(solve(5n)).toBe(4n);
+test('basic case=5', () => {
+    expect(solve(5)).toBe(4);
 });
 
-test('single digit n=9', () => {
-  expect(solve(9n)).toBe(4n);
+test('single digit=9', () => {
+    expect(solve(9)).toBe(4);
 });
 
-test('large number n=999999999', () => {
-  expect(solve(999999999n)).toBe(8n);
+test('largeumber=999999999', () => {
+    expect(solve(999999999)).toBe(8);
 });
 
-test('minimum n=1', () => {
-  expect(solve(1n)).toBe(3n);
+test('minimum=1', () => {
+    expect(solve(1)).toBe(3);
 });
 
-test('power of 10 n=1000000000', () => {
-  expect(solve(1000000000n)).toBe(8n);
+test('power of 10=1000000000', () => {
+    expect(solve(1000000000)).toBe(8);
 });
 
-test('number requiring digit sum n=123', () => {
-  expect(solve(123n)).toBe(6n);
+test('number requiring digit sum=123', () => {
+    expect(solve(123)).toBe(6);
 });
 
-test('prime number n=997', () => {
-  expect(solve(997n)).toBe(6n);
+test('primeumber=997', () => {
+    expect(solve(997)).toBe(6);
 });
 
-test('number with many factors n=360', () => {
-  expect(solve(360n)).toBe(6n);
+test('number with many factors=360', () => {
+    expect(solve(360)).toBe(6);
 });

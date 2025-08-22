@@ -1,29 +1,47 @@
-import { solve } from '../../../solutions-descriptive/7.js'
+import { solve } from '../../../solutions-descriptive/7.js';
 
-test('example tree with 3 vertices in line', () => {
-  expect(solve(3, [[1, 2], [2, 3]])).toBe(1n);
-});
+describe('solve', () => {
 
-test('minimal tree with 2 vertices', () => {
-  expect(solve(2, [[1, 2]])).toBe(0n);
-});
+    test('example tree with 3 vertices in line', () => {
+        const input = ['3', '1 2', '2 3'];
+        const output = '1';
+        expect(solve(input)).toBe(output);
+    });
 
-test('star tree with root in center', () => {
-  expect(solve(4, [[1, 2], [1, 3], [1, 4]])).toBe(3n);
-});
+    test('minimal tree with 2 vertices', () => {
+        const input = ['2', '1 2'];
+        const output = '0';
+        expect(solve(input)).toBe(output);
+    });
 
-test('balanced binary tree', () => {
-  expect(solve(7, [[1, 2], [1, 3], [2, 4], [2, 5], [3, 6], [3, 7]])).toBe(15n);
-});
+    test('star tree with root in center', () => {
+        const input = ['4', '1 2', '1 3', '1 4'];
+        const output = '3';
+        expect(solve(input)).toBe(output);
+    });
 
-test('long chain tree', () => {
-  expect(solve(5, [[1, 2], [2, 3], [3, 4], [4, 5]])).toBe(6n);
-});
+    test('balanced binary tree', () => {
+        const input = ['7', '1 2', '1 3', '2 4', '2 5', '3 6', '3 7'];
+        const output = '15';
+        expect(solve(input)).toBe(output);
+    });
 
-test('tree with multiple branches at different levels', () => {
-  expect(solve(6, [[1, 2], [2, 3], [3, 4], [2, 5], [5, 6]])).toBe(9n);
-});
+    test('long chain tree', () => {
+        const input = ['5', '1 2', '2 3', '3 4', '4 5'];
+        const output = '6';
+        expect(solve(input)).toBe(output);
+    });
 
-test('maximum size tree with 10 vertices', () => {
-  expect(solve(10, [[1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [7, 8], [8, 9], [9, 10]])).toBe(36n);
+    test('tree with multiple branches at different levels', () => {
+        const input = ['6', '1 2', '2 3', '3 4', '2 5', '5 6'];
+        const output = '9';
+        expect(solve(input)).toBe(output);
+    });
+
+    test('maximum size tree with 10 vertices', () => {
+        const input = ['10', '1 2', '2 3', '3 4', '4 5', '5 6', '6 7', '7 8', '8 9', '9 10'];
+        const output = '36';
+        expect(solve(input)).toBe(output);
+    });
+
 });

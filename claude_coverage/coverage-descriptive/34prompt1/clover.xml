@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1754839008797" clover="3.2.0">
-  <project timestamp="1754839008797" name="All files">
+<coverage generated="1755839130363" clover="3.2.0">
+  <project timestamp="1755839130363" name="All files">
     <metrics statements="35" coveredstatements="11" conditionals="27" coveredconditionals="4" methods="6" coveredmethods="1" elements="68" coveredelements="16" complexity="0" loc="35" ncloc="35" packages="1" files="1" classes="1"/>
-    <file name="34.js" path="E:\desktop\Thesis\solutions-descriptive\34.js">
+    <file name="34.js" path="C:\Users\ASUS\OneDrive\Documents\GitHub\Thesis\solutions-descriptive\34.js">
       <metrics statements="35" coveredstatements="11" conditionals="27" coveredconditionals="4" methods="6" coveredmethods="1"/>
       <line num="2" count="8" type="stmt"/>
       <line num="3" count="8" type="stmt"/>

@@ -1,37 +1,37 @@
 import { solve } from '../../../solutions-descriptive/3.js'
 
 test('example case from description - 2x2 square', () => {
-  expect(solve(0n, 2n, 0n, 2n)).toBe(4n);
+    expect(solve(0, 2, 0, 2)).toBe(4);
 });
 
 test('minimal 1x1 square', () => {
-  expect(solve(0n, 1n, 0n, 1n)).toBe(1n);
+    expect(solve(0, 1, 0, 1)).toBe(1);
 });
 
 test('edge case - maximal 1M x 1M square', () => {
-  expect(solve(0n, 1000000n, 0n, 1000000n)).toBe(4n);
+    expect(solve(0, 1000000, 0, 1000000)).toBe(4);
 });
 
 test('rectangular region - 1x2', () => {
-  expect(solve(0n, 1n, 0n, 2n)).toBe(2n);
+    expect(solve(0, 1, 0, 2)).toBe(2);
 });
 
 test('offset square region', () => {
-  expect(solve(1n, 3n, 1n, 3n)).toBe(4n);
+    expect(solve(1, 3, 1, 3)).toBe(4);
 });
 
-test('large non-power-of-2 region', () => {
-  expect(solve(0n, 3n, 0n, 3n)).toBe(9n);
+test('largeon-power-of-2 region', () => {
+    expect(solve(0, 3, 0, 3)).toBe(9);
 });
 
 test('asymmetric region', () => {
-  expect(solve(1n, 4n, 2n, 6n)).toBe(12n);
+    expect(solve(1, 4, 2, 6)).toBe(12);
 });
 
-test('misaligned region requiring many nodes', () => {
-  expect(solve(3n, 7n, 3n, 7n)).toBe(16n);
+test('misaligned region requiring manyodes', () => {
+    expect(solve(3, 7, 3, 7)).toBe(16);
 });
 
 test('rectangular region with odd dimensions', () => {
-  expect(solve(2n, 5n, 3n, 8n)).toBe(15n);
+    expect(solve(2, 5, 3, 8)).toBe(15);
 });

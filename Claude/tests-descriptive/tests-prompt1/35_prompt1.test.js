@@ -1,33 +1,33 @@
 import { solve } from '../../../solutions-descriptive/35.js'
 
 test('example case from description', () => {
-  expect(solve(5n, 2n, [1n, 2n, 3n, 4n, 5n])).toBe(9n);
+    expect(solve(5, 2, [1, 2, 3, 4, 5])).toBe(9);
 });
 
 test('minimal case', () => {
-  expect(solve(2n, 1n, [1n, 2n])).toBe(2n);
+    expect(solve(2, 1, [1, 2])).toBe(2);
 });
 
 test('edge case with all same values', () => {
-  expect(solve(4n, 2n, [5n, 5n, 5n, 5n])).toBe(10n);
+    expect(solve(4, 2, [5, 5, 5, 5])).toBe(10);
 });
 
 test('large case with maximum values', () => {
-  expect(solve(6n, 3n, [1000000000n, 1000000000n, 1000000000n, 1000000000n, 1000000000n, 1000000000n])).toBe(2000000000n);
+    expect(solve(6, 3, [1000000000, 1000000000, 1000000000, 1000000000, 1000000000, 1000000000])).toBe(2000000000);
 });
 
 test('case with alternating values', () => {
-  expect(solve(6n, 2n, [1n, 10n, 2n, 20n, 3n, 30n])).toBe(60n);
+    expect(solve(6, 2, [1, 10, 2, 20, 3, 30])).toBe(60);
 });
 
 test('case with decreasing values', () => {
-  expect(solve(5n, 2n, [100n, 80n, 60n, 40n, 20n])).toBe(180n);
+    expect(solve(5, 2, [100, 80, 60, 40, 20])).toBe(180);
 });
 
 test('tricky case with optimal selection', () => {
-  expect(solve(7n, 3n, [5n, 8n, 3n, 10n, 2n, 1n, 4n])).toBe(18n);
+    expect(solve(7, 3, [5, 8, 3, 10, 2, 1, 4])).toBe(18);
 });
 
-test('case with prime numbers', () => {
-  expect(solve(6n, 2n, [2n, 3n, 5n, 7n, 11n, 13n])).toBe(31n);
+test('case with primeumbers', () => {
+    expect(solve(6, 2, [2, 3, 5, 7, 11, 13])).toBe(31);
 });

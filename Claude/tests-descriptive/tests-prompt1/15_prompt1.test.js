@@ -1,33 +1,33 @@
 import { solve } from '../../../solutions-descriptive/15.js'
 
 test('example case', () => {
-  expect(solve(4n, 2n, 3n, [1n, 3n, 2n])).toEqual([3n, 4n, 3n]);
+    expect(solve(4, 2, 3, [1, 3, 2])).toBe('3 4 3 ');
 });
 
-test('minimal case n=2', () => {
-  expect(solve(2n, 1n, 1n, [2n])).toEqual([2n]);
+test('minimal case=2', () => {
+    expect(solve(2, 1, 1, [2])).toBe('2');
 });
 
-test('large n case', () => {
-  expect(solve(1000000000n, 500000000n, 2n, [1n, 2n])).toEqual([2n, 3n]);
+test('large case', () => {
+    expect(solve(1000000000, 500000000, 2, [1, 2])).toBe('2 3');
 });
 
 test('joker at start position', () => {
-  expect(solve(5n, 1n, 3n, [2n, 3n, 4n])).toEqual([2n, 3n, 4n]);
+    expect(solve(5, 1, 3, [2, 3, 4])).toBe('2 3 4');
 });
 
 test('joker at end position', () => {
-  expect(solve(5n, 5n, 3n, [1n, 2n, 3n])).toEqual([2n, 3n, 4n]);
+    expect(solve(5, 5, 3, [1, 2, 3])).toBe('2 3 4');
 });
 
 test('all positions affect joker', () => {
-  expect(solve(3n, 2n, 3n, [1n, 2n, 3n])).toEqual([2n, 2n, 2n]);
+    expect(solve(3, 2, 3, [1, 2, 3])).toBe('2 2 2');
 });
 
 test('no positions affect joker', () => {
-  expect(solve(5n, 3n, 2n, [1n, 5n])).toEqual([1n, 1n]);
+    expect(solve(5, 3, 2, [1, 5])).toBe('1 1');
 });
 
 test('alternating positions', () => {
-  expect(solve(6n, 4n, 4n, [1n, 3n, 5n, 2n])).toEqual([2n, 3n, 3n, 4n]);
+    expect(solve(6, 4, 4, [1, 3, 5, 2])).toBe('2 3 3 4');
 });

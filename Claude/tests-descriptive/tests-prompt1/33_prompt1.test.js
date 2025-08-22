@@ -1,37 +1,52 @@
-import { solve } from '../../../solutions-descriptive/33.js'
+import { solve } from '../../../solutions-descriptive/33.js';
 
-test('example case from problem description', () => {
-  expect(solve(0n, 2n, 0n, 2n)).toBe(1n);
-});
+describe('solve function tests', () => {
+    beforeEach(() => {
+        Kattio.index = 0;
+    });
 
-test('edge case with minimal width and height', () => {
-  expect(solve(0n, 1n, 0n, 1n)).toBe(1n);
-});
+    test('example case from problem description', () => {
+        Kattio.setInput([0, 2, 0, 2]);
+        expect(solve()).toBe(1);
+    });
 
-test('large rectangle covering multiple powers of 2', () => {
-  expect(solve(0n, 8n, 0n, 8n)).toBe(1n);
-});
+    test('edge case with minimal width and height', () => {
+        Kattio.setInput([0, 1, 0, 1]);
+        expect(solve()).toBe(1);
+    });
 
-test('asymmetric rectangle spanning different quadrants', () => {
-  expect(solve(1n, 3n, 1n, 4n)).toBe(4n);
-});
+    test('large rectangle covering multiple powers of 2', () => {
+        Kattio.setInput([0, 8, 0, 8]);
+        expect(solve()).toBe(1);
+    });
 
-test('rectangle with odd coordinates', () => {
-  expect(solve(3n, 7n, 2n, 6n)).toBe(8n);
-});
+    test('asymmetric rectangle spanning different quadrants', () => {
+        Kattio.setInput([1, 3, 1, 4]);
+        expect(solve()).toBe(4);
+    });
 
-test('rectangle crossing power of 2 boundary', () => {
-  expect(solve(2n, 5n, 2n, 5n)).toBe(9n);
-});
+    test('rectangle with odd coordinates', () => {
+        Kattio.setInput([3, 7, 2, 6]);
+        expect(solve()).toBe(8);
+    });
 
-test('small rectangle not aligned with power of 2', () => {
-  expect(solve(1n, 2n, 1n, 2n)).toBe(1n);
-});
+    test('rectangle crossing power of 2 boundary', () => {
+        Kattio.setInput([2, 5, 2, 5]);
+        expect(solve()).toBe(9);
+    });
 
-test('rectangle requiring multiple splits', () => {
-  expect(solve(1n, 6n, 1n, 6n)).toBe(12n);
-});
+    test('small rectangle not aligned with power of 2', () => {
+        Kattio.setInput([1, 2, 1, 2]);
+        expect(solve()).toBe(1);
+    });
 
-test('maximum size rectangle', () => {
-  expect(solve(0n, 1000000n, 0n, 1000000n)).toBe(1n);
+    test('rectangle requiring multiple splits', () => {
+        Kattio.setInput([1, 6, 1, 6]);
+        expect(solve()).toBe(12);
+    });
+
+    test('maximum size rectangle', () => {
+        Kattio.setInput([0, 1000000, 0, 1000000]);
+        expect(solve()).toBe(1);
+    });
 });

@@ -1,33 +1,33 @@
 import { solve } from '../../../solutions-descriptive/14.js'
 
 test('example case', () => {
-  expect(solve(3n, 2n, 5n, [0n, 2n, 3n])).toBe(6n);
+    expect(solve(3, 2, 5, [0, 2, 3])).toBe(6);
 });
 
 test('single scarecrow case', () => {
-  expect(solve(1n, 3n, 10n, [0n])).toBe(14n);
+    expect(solve(1, 3, 10, [0])).toBe(14);
 });
 
 test('large values case', () => {
-  expect(solve(4n, 100000n, 100000n, [0n, 25000n, 50000n, 75000n])).toBe(200000n);
+    expect(solve(4, 100000, 100000, [0, 25000, 50000, 75000])).toBe(200000);
 });
 
 test('minimum values case', () => {
-  expect(solve(1n, 1n, 1n, [0n])).toBe(2n);
+    expect(solve(1, 1, 1, [0])).toBe(2);
 });
 
 test('all scarecrows at start case', () => {
-  expect(solve(5n, 2n, 10n, [0n, 0n, 0n, 0n, 0n])).toBe(16n);
+    expect(solve(5, 2, 10, [0, 0, 0, 0, 0])).toBe(16);
 });
 
 test('scarecrows spread evenly case', () => {
-  expect(solve(4n, 3n, 12n, [0n, 4n, 8n, 12n])).toBe(12n);
+    expect(solve(4, 3, 12, [0, 4, 8, 12])).toBe(12);
 });
 
 test('target equals k case', () => {
-  expect(solve(2n, 5n, 5n, [0n, 2n])).toBe(6n);
+    expect(solve(2, 5, 5, [0, 2])).toBe(6);
 });
 
 test('single gap larger than k case', () => {
-  expect(solve(3n, 2n, 8n, [0n, 1n, 7n])).toBe(10n);
+    expect(solve(3, 2, 8, [0, 1, 7])).toBe(10);
 });

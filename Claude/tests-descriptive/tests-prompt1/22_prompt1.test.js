@@ -1,33 +1,33 @@
 import { solve } from '../../../solutions-descriptive/22.js'
 
 test('example case from description', () => {
-  expect(solve(3n, 3n, 2n, [7n, 3n, 6n], [2n, 4n, 5n])).toBe(3n);
+    expect(solve(3, 3, 2, [7, 3, 6], [2, 4, 5])).toBe(3);
 });
 
 test('edge case - single enemy', () => {
-  expect(solve(1n, 5n, 1n, [10n], [3n])).toBe(2n);
+    expect(solve(1, 5, 1, [10], [3])).toBe(2);
 });
 
-test('upper bound case - large number of enemies', () => {
-  expect(solve(5n, 2n, 3n, [10n, 10n, 10n, 10n, 10n], [1n, 3n, 5n, 7n, 9n])).toBe(-1n);
+test('upper bound case - largeumber of enemies', () => {
+    expect(solve(5, 2, 3, [10, 10, 10, 10, 10], [1, 3, 5, 7, 9])).toBe(-1);
 });
 
 test('minimal case - k=1 with minimum damage', () => {
-  expect(solve(2n, 1n, 1n, [1n, 1n], [1n, 2n])).toBe(1n);
+    expect(solve(2, 1, 1, [1, 1], [1, 2])).toBe(1);
 });
 
 test('impossible case - damage too small', () => {
-  expect(solve(3n, 1n, 3n, [10n, 10n, 10n], [1n, 2n, 3n])).toBe(-1n);
+    expect(solve(3, 1, 3, [10, 10, 10], [1, 2, 3])).toBe(-1);
 });
 
 test('all enemies in same position', () => {
-  expect(solve(3n, 4n, 2n, [5n, 5n, 5n], [2n, 3n, 4n])).toBe(2n);
+    expect(solve(3, 4, 2, [5, 5, 5], [2, 3, 4])).toBe(2);
 });
 
 test('enemies spread far apart', () => {
-  expect(solve(4n, 3n, 2n, [5n, 5n, 5n, 5n], [1n, 10n, 20n, 30n])).toBe(2n);
+    expect(solve(4, 3, 2, [5, 5, 5, 5], [1, 10, 20, 30])).toBe(2);
 });
 
-test('exact damage needed', () => {
-  expect(solve(2n, 5n, 2n, [10n, 10n], [1n, 2n])).toBe(2n);
+test('exact damageeeded', () => {
+    expect(solve(2, 5, 2, [10, 10], [1, 2])).toBe(2);
 });

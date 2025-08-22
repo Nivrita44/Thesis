@@ -1,35 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1754838919068" clover="3.2.0">
-  <project timestamp="1754838919069" name="All files">
+<coverage generated="1755836959816" clover="3.2.0">
+  <project timestamp="1755836959816" name="All files">
     <metrics statements="32" coveredstatements="32" conditionals="10" coveredconditionals="9" methods="3" coveredmethods="3" elements="45" coveredelements="44" complexity="0" loc="32" ncloc="32" packages="1" files="1" classes="1"/>
-    <file name="22.js" path="E:\desktop\Thesis\solutions-descriptive\22.js">
+    <file name="22.js" path="C:\Users\ASUS\OneDrive\Documents\GitHub\Thesis\solutions-descriptive\22.js">
       <metrics statements="32" coveredstatements="32" conditionals="10" coveredconditionals="9" methods="3" coveredmethods="3"/>
       <line num="2" count="12" type="stmt"/>
       <line num="3" count="12" type="stmt"/>
       <line num="5" count="12" type="stmt"/>
-      <line num="6" count="128" type="stmt"/>
-      <line num="7" count="128" type="stmt"/>
-      <line num="9" count="128" type="stmt"/>
-      <line num="10" count="548" type="stmt"/>
-      <line num="11" count="540" type="stmt"/>
-      <line num="12" count="540" type="stmt"/>
-      <line num="13" count="540" type="stmt"/>
-      <line num="15" count="540" type="cond" truecount="2" falsecount="0"/>
-      <line num="16" count="530" type="stmt"/>
-      <line num="17" count="530" type="stmt"/>
-      <line num="22" count="2287" type="stmt"/>
-      <line num="24" count="120" type="stmt"/>
-      <line num="25" count="120" type="stmt"/>
-      <line num="27" count="120" type="stmt"/>
-      <line num="28" count="594" type="stmt"/>
-      <line num="29" count="594" type="cond" truecount="2" falsecount="0"/>
-      <line num="30" count="59" type="stmt"/>
-      <line num="31" count="59" type="stmt"/>
-      <line num="35" count="120" type="cond" truecount="2" falsecount="0"/>
-      <line num="36" count="59" type="stmt"/>
-      <line num="37" count="59" type="stmt"/>
-      <line num="39" count="61" type="stmt"/>
-      <line num="43" count="4" type="cond" truecount="2" falsecount="0"/>
+      <line num="6" count="359" type="stmt"/>
+      <line num="7" count="359" type="stmt"/>
+      <line num="9" count="359" type="stmt"/>
+      <line num="10" count="1228" type="stmt"/>
+      <line num="11" count="1228" type="stmt"/>
+      <line num="12" count="1228" type="stmt"/>
+      <line num="13" count="1228" type="stmt"/>
+      <line num="15" count="1228" type="cond" truecount="2" falsecount="0"/>
+      <line num="16" count="1209" type="stmt"/>
+      <line num="17" count="1209" type="stmt"/>
+      <line num="22" count="4171" type="stmt"/>
+      <line num="24" count="359" type="stmt"/>
+      <line num="25" count="359" type="stmt"/>
+      <line num="27" count="359" type="stmt"/>
+      <line num="28" count="1550" type="stmt"/>
+      <line num="29" count="1550" type="cond" truecount="2" falsecount="0"/>
+      <line num="30" count="203" type="stmt"/>
+      <line num="31" count="203" type="stmt"/>
+      <line num="35" count="359" type="cond" truecount="2" falsecount="0"/>
+      <line num="36" count="203" type="stmt"/>
+      <line num="37" count="203" type="stmt"/>
+      <line num="39" count="156" type="stmt"/>
+      <line num="43" count="12" type="cond" truecount="2" falsecount="0"/>
       <line num="48" count="1" type="stmt"/>
       <line num="67" count="1" type="stmt"/>
       <line num="68" count="4" type="stmt"/>

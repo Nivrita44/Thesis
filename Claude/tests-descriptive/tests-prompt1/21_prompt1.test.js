@@ -1,33 +1,33 @@
 import { solve } from '../../../solutions-descriptive/21.js'
 
 test('example case with 4 cities', () => {
-  expect(solve(4n, [2n, 4n, 6n, 8n])).toBe(4n);
+    expect(solve([2, 4, 6, 8])).toBe(4);
 });
 
 test('minimal case with 2 cities', () => {
-  expect(solve(2n, [2n, 4n])).toBe(1n);
+    expect(solve([2, 4])).toBe(1);
 });
 
 test('large case with many cities', () => {
-  expect(solve(6n, [2n, 4n, 6n, 8n, 10n, 12n])).toBe(32n);
+    expect(solve([2, 4, 6, 8, 10, 12])).toBe(32);
 });
 
-test('prime numbers case with few paths', () => {
-  expect(solve(5n, [2n, 3n, 5n, 7n, 11n])).toBe(0n);
+test('primeumbers case with few paths', () => {
+    expect(solve([2, 3, 5, 7, 11])).toBe(0);
 });
 
-test('all numbers coprime', () => {
-  expect(solve(4n, [2n, 9n, 25n, 49n])).toBe(0n);
+test('allumbers coprime', () => {
+    expect(solve([2, 9, 25, 49])).toBe(0);
 });
 
 test('mixed GCD relationships', () => {
-  expect(solve(5n, [6n, 8n, 12n, 15n, 18n])).toBe(8n);
+    expect(solve([6, 8, 12, 15, 18])).toBe(8);
 });
 
 test('consecutive multiples', () => {
-  expect(solve(4n, [3n, 6n, 9n, 12n])).toBe(4n);
+    expect(solve([3, 6, 9, 12])).toBe(4);
 });
 
-test('powers of same number', () => {
-  expect(solve(5n, [2n, 4n, 8n, 16n, 32n])).toBe(16n);
+test('powers of sameumber', () => {
+    expect(solve([2, 4, 8, 16, 32])).toBe(16);
 });

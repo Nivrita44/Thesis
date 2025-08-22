@@ -1,33 +1,33 @@
 import { solve } from '../../../solutions-descriptive/24.js'
 
 test('example case with x=2, y=3, z=8, k=2', () => {
-  expect(solve(2n, 3n, 8n, 2n)).toBe(13n);
+    expect(solve(2, 3, 8, 2)).toBe(13);
 });
 
 test('minimal case with all values 1', () => {
-  expect(solve(1n, 1n, 1n, 1n)).toBe(2n);
+    expect(solve(1, 1, 1, 1)).toBe(2);
 });
 
 test('edge case with equal values', () => {
-  expect(solve(5n, 5n, 5n, 5n)).toBe(15n);
+    expect(solve(5, 5, 5, 5)).toBe(15);
 });
 
 test('large case within bounds', () => {
-  expect(solve(100000000n, 100000000n, 100000000n, 100000000n)).toBe(500000000n);
+    expect(solve(100000000, 100000000, 100000000, 100000000)).toBe(500000000);
 });
 
 test('case where attacking immediately is optimal', () => {
-  expect(solve(10n, 1n, 1n, 5n)).toBe(1n);
+    expect(solve(10, 1, 1, 5)).toBe(1);
 });
 
 test('case requiring maximum k upgrades', () => {
-  expect(solve(1n, 2n, 10n, 3n)).toBe(11n);
+    expect(solve(1, 2, 10, 3)).toBe(11);
 });
 
 test('case with high health but cheap attacks', () => {
-  expect(solve(5n, 1n, 20n, 4n)).toBe(20n);
+    expect(solve(5, 1, 20, 4)).toBe(20);
 });
 
 test('balanced case with moderate values', () => {
-  expect(solve(3n, 4n, 15n, 3n)).toBe(22n);
+    expect(solve(3, 4, 15, 3)).toBe(22);
 });
