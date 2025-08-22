@@ -174,3 +174,24 @@ test('large star n=1000', () => {
   for (let i = 2; i <= 1000; ++i) input.push(`1 ${i}`)
   expect(solve(input)).toBe('499500')
 })
+
+
+
+
+// √ n = 1 (single node) (2 ms)
+//   √ n = 2 (root and one child)
+//   √ n = 3, chain tree
+//   × n = 3, star tree (4 ms)
+//   √ n = 4, chain (1 ms)
+//   × n = 4, star (8 ms)
+//   × n = 4, unbalanced (1 ms)
+//   × n = 5, balanced binary tree (1 ms)
+//   √ n = 5, degenerate chain
+//   √ n = 6, more children
+//   × n = 7, perfect binary tree
+//   × star tree, n=10 (1 ms)
+//   √ chain tree, n=10
+//   × two branches from root
+//   × a bushy tree, 6 nodes (1 ms)
+//   √ large chain n=1000 (9 ms)
+//   × large star n=1000 (9 ms)

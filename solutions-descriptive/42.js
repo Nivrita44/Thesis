@@ -1,143 +1,148 @@
-const MOD = 1000000007n;
-const MAX_EXP = 200005;
+const M = 1000000007n;
+const MAX = 200005;
 
-function modPow(base, exponent) {
-    let result = 1n;
-    base %= MOD;
-    while (exponent > 0n) {
-        if (exponent & 1n) result = (result * base) % MOD;
-        base = (base * base) % MOD;
-        exponent >>= 1n;
+function powmod(a, b) {
+    let res = 1n;
+    a %= M;
+    while (b > 0n) {
+        if (b & 1n) res = (res * a) % M;
+        a = (a * a) % M;
+        b >>= 1n;
     }
-    return result;
+    return res;
 }
 
-export function solve(testCases) {
-    const results = [];
-    const invBase = modPow(10000n, MOD - 2n);
-    const invTwo = modPow(2n, MOD - 2n);
-    const invEight = modPow(8n, MOD - 2n);
+let inv10000 = powmod(10000n, M - 2n);
+let inv2 = powmod(2n, M - 2n);
+let inv8 = powmod(8n, M - 2n);
 
-    const invPowers = new Array(MAX_EXP).fill(1n);
-    for (let i = 1; i < MAX_EXP; i++) {
-        invPowers[i] = (invPowers[i - 1] * invBase) % MOD;
-    }
-
-    const bitPairs = [];
-    for (let first = 0; first < 10; first++) {
-        for (let second = first + 1; second < 10; second++) {
-            bitPairs.push([first, second]);
-        }
-    }
-
-    const pow2Squared = new Array(10).fill(1n);
-    for (let bit = 0; bit < 10; bit++) {
-        pow2Squared[bit] = modPow(2n, BigInt(2 * bit));
-    }
-
-    const pow2SumPairs = new Array(bitPairs.length).fill(1n);
-    for (let i = 0; i < bitPairs.length; i++) {
-        const [first, second] = bitPairs[i];
-        pow2SumPairs[i] = modPow(2n, BigInt(first + second));
-    }
-
-    for (const { n, a, p } of testCases) {
-        const productPerBit = new Array(10).fill(1n);
-        const countPerBit = new Array(10).fill(0);
-
-        const pairsCount = bitPairs.length;
-        const productA = new Array(pairsCount).fill(1n);
-        const productB = new Array(pairsCount).fill(1n);
-        const productC = new Array(pairsCount).fill(1n);
-        const countA = new Array(pairsCount).fill(0);
-        const countB = new Array(pairsCount).fill(0);
-        const countC = new Array(pairsCount).fill(0);
-
-        for (let i = 0; i < n; i++) {
-            const ai = BigInt(a[i]);
-            const pi = BigInt(p[i]);
-            const adjustedVal = (10000n - 2n * pi + MOD) % MOD;
-
-            for (let bit = 0; bit < 10; bit++) {
-                if ((ai >> BigInt(bit)) & 1n) {
-                    productPerBit[bit] = (productPerBit[bit] * adjustedVal) % MOD;
-                    countPerBit[bit]++;
-                }
-            }
-
-            for (let idx = 0; idx < pairsCount; idx++) {
-                const [firstBit, secondBit] = bitPairs[idx];
-                const bitFirstSet = (ai >> BigInt(firstBit)) & 1n;
-                const bitSecondSet = (ai >> BigInt(secondBit)) & 1n;
-
-                if (bitFirstSet && !bitSecondSet) {
-                    productA[idx] = (productA[idx] * adjustedVal) % MOD;
-                    countA[idx]++;
-                }
-                if (bitSecondSet && !bitFirstSet) {
-                    productB[idx] = (productB[idx] * adjustedVal) % MOD;
-                    countB[idx]++;
-                }
-                if (bitFirstSet && bitSecondSet) {
-                    productC[idx] = (productC[idx] * adjustedVal) % MOD;
-                    countC[idx]++;
-                }
-            }
-        }
-
-        for (let bit = 0; bit < 10; bit++) {
-            if (countPerBit[bit] > 0) {
-                productPerBit[bit] = (productPerBit[bit] * invPowers[countPerBit[bit]]) % MOD;
-            }
-        }
-
-        for (let idx = 0; idx < pairsCount; idx++) {
-            if (countA[idx] > 0) productA[idx] = (productA[idx] * invPowers[countA[idx]]) % MOD;
-            if (countB[idx] > 0) productB[idx] = (productB[idx] * invPowers[countB[idx]]) % MOD;
-            if (countC[idx] > 0) productC[idx] = (productC[idx] * invPowers[countC[idx]]) % MOD;
-        }
-
-        const expectedBitValues = new Array(10).fill(0n);
-        for (let bit = 0; bit < 10; bit++) {
-            expectedBitValues[bit] = (((1n + MOD - productPerBit[bit]) % MOD) * invTwo) % MOD;
-        }
-
-        const expectedPairValues = new Array(pairsCount).fill(0n);
-        for (let idx = 0; idx < pairsCount; idx++) {
-            let termOne = (1n + productC[idx]) % MOD;
-            termOne = (termOne * (1n + MOD - productA[idx])) % MOD;
-            termOne = (termOne * (1n + MOD - productB[idx])) % MOD;
-
-            let termTwo = (1n + MOD - productC[idx]) % MOD;
-            termTwo = (termTwo * (1n + productA[idx])) % MOD;
-            termTwo = (termTwo * (1n + productB[idx])) % MOD;
-
-            expectedPairValues[idx] = (((termOne + termTwo) % MOD) * invEight) % MOD;
-        }
-
-        let sumSingleBits = 0n;
-        let sumBitPairs = 0n;
-        for (let bit = 0; bit < 10; bit++) {
-            sumSingleBits = (sumSingleBits + pow2Squared[bit] * expectedBitValues[bit]) % MOD;
-        }
-        for (let idx = 0; idx < pairsCount; idx++) {
-            sumBitPairs = (sumBitPairs + pow2SumPairs[idx] * expectedPairValues[idx]) % MOD;
-        }
-
-        const answer = (sumSingleBits + 2n * sumBitPairs) % MOD;
-        results.push(Number(answer));
-    }
-
-    return results;
+let inv_pows = new BigInt64Array(MAX);
+inv_pows[0] = 1n;
+for (let i = 1; i < MAX; i++) {
+    inv_pows[i] = (inv_pows[i - 1] * inv10000) % M;
 }
 
-// Test cases
-const testCases = [
-    { n: 1, a: [2], p: [5000] },
-    { n: 2, a: [1, 1], p: [1000, 2000] },
-    { n: 6, a: [343, 624, 675, 451, 902, 820], p: [6536, 5326, 7648, 2165, 9430, 5428] },
-    { n: 1, a: [1], p: [10000] }
-];
+let pairs = [];
+for (let j = 0; j < 10; j++) {
+    for (let l = j + 1; l < 10; l++) {
+        pairs.push([j, l]);
+    }
+}
 
-const results = solve(testCases);
-console.log(results); // [500000007, 820000006, 280120536, 1]
+let pow2_2j = new BigInt64Array(10);
+pow2_2j.fill(1n);
+for (let j = 0; j < 10; j++) {
+    pow2_2j[j] = powmod(2n, BigInt(2 * j));
+}
+
+let pow2_jl = new BigInt64Array(45);
+pow2_jl.fill(1n);
+for (let i = 0; i < 45; i++) {
+    pow2_jl[i] = powmod(2n, BigInt(pairs[i][0] + pairs[i][1]));
+}
+
+export function solve(n, a, p) {
+    let Pj = new BigInt64Array(10);
+    Pj.fill(1n);
+    let kj = new Uint32Array(10);
+
+    let sz = pairs.length;
+    let PA = new BigInt64Array(sz);
+    PA.fill(1n);
+    let PB = new BigInt64Array(sz);
+    PB.fill(1n);
+    let PC = new BigInt64Array(sz);
+    PC.fill(1n);
+    let kA = new Uint32Array(sz);
+    let kB = new Uint32Array(sz);
+    let kC = new Uint32Array(sz);
+
+    for (let i = 0; i < n; i++) {
+        let ai = a[i], pi = p[i];
+        let val = (10000n - 2n * BigInt(pi) + M) % M;
+
+        for (let j = 0; j < 10; j++) {
+            if ((ai >> j) & 1) {
+                Pj[j] = (Pj[j] * val) % M;
+                kj[j]++;
+            }
+        }
+
+        for (let idx = 0; idx < sz; idx++) {
+            let j = pairs[idx][0], l = pairs[idx][1];
+            let sj = (ai >> j) & 1, sl = (ai >> l) & 1;
+
+            if (sj && !sl) {
+                PA[idx] = (PA[idx] * val) % M;
+                kA[idx]++;
+            }
+            if (sl && !sj) {
+                PB[idx] = (PB[idx] * val) % M;
+                kB[idx]++;
+            }
+            if (sj && sl) {
+                PC[idx] = (PC[idx] * val) % M;
+                kC[idx]++;
+            }
+        }
+    }
+
+    for (let j = 0; j < 10; j++) {
+        if (kj[j] > 0) {
+            Pj[j] = (Pj[j] * inv_pows[kj[j]]) % M;
+        }
+    }
+
+    for (let idx = 0; idx < sz; idx++) {
+        if (kA[idx] > 0) PA[idx] = (PA[idx] * inv_pows[kA[idx]]) % M;
+        if (kB[idx] > 0) PB[idx] = (PB[idx] * inv_pows[kB[idx]]) % M;
+        if (kC[idx] > 0) PC[idx] = (PC[idx] * inv_pows[kC[idx]]) % M;
+    }
+
+    let Ebj = new BigInt64Array(10);
+    for (let j = 0; j < 10; j++) {
+        Ebj[j] = ((1n + M - Pj[j]) % M * inv2) % M;
+    }
+    let Ebl = new BigInt64Array(45);
+    for (let idx = 0; idx < sz; idx++) {
+        let term1 = (1n + PC[idx]) % M;
+        term1 = (term1 * (1n + M - PA[idx])) % M;
+        term1 = (term1 * (1n + M - PB[idx])) % M;
+        let term2 = (1n + M - PC[idx]) % M;
+        term2 = (term2 * (1n + PA[idx])) % M;
+        term2 = (term2 * (1n + PB[idx])) % M;
+        Ebl[idx] = ((term1 + term2) % M * inv8) % M;
+    }
+
+    let sum1 = 0n, sum2 = 0n;
+    for (let j = 0; j < 10; j++) {
+        sum1 = (sum1 + pow2_2j[j] * Ebj[j]) % M;
+    }
+    for (let idx = 0; idx < sz; idx++) {
+        sum2 = (sum2 + pow2_jl[idx] * Ebl[idx]) % M;
+    }
+
+    let res = (sum1 + 2n * sum2) % M;
+    return Number(res);
+}
+
+// function testing_test() {
+//     const tests = [
+//         { n: 2, a: [1,2], p: [5000,5000], expected: 500000007 },
+//         { n: 2, a: [1, 1], p: [1000, 2000], expected: 820000006 },
+//         { n: 6, a: [343, 624, 675, 451, 902, 820], p: [6536, 5326, 7648, 2165, 9430, 5428], expected: 280120536 },
+//         { n: 1, a: [1], p: [10000], expected: 1 }
+//     ];
+
+//     tests.forEach((test, index) => {
+//         const result = solve(test.n, test.a, test.p);
+//         console.log(`Test case ${index + 1}:`);
+//         console.log(`Input: n=${test.n}, a=${test.a}, p=${test.p}`);
+//         console.log(`Expected: ${test.expected}, Got: ${result}`);
+//         console.log(`Status: ${result === test.expected ? 'PASS' : 'FAIL'}`);
+//         console.log('---');
+//     });
+// }
+
+// // Run the test cases
+// testing_test();

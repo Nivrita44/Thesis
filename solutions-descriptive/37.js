@@ -1,4 +1,4 @@
-const MAX_NODES = 1 _000_000;
+const MAX_NODES = 1000000;
 
 
 function getBitLength(x) {

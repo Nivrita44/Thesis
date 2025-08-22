@@ -83,3 +83,26 @@ test('Edge: nx1 impossible', () => {
   const b = Array(1000).fill([3]);
   expect(solve(1000,1,a,b)).toBe("No\n");
 });
+
+
+
+
+// √ 1x1 same matrix (4 ms)
+//   × 1x1 impossible different value (4 ms)
+//   √ 2x2 simple possible (1 ms)
+//   × 2x2 impossible, higher bit (1 ms)
+//   √ 2x2 possible with column OR
+//   √ 2x2 possible with row AND
+//   √ 3x3 already matches
+//   × 3x3 requiring alternating operations (1 ms)
+//   √ 3x3 impossible (increase unknown bit)
+//   √ maximum bit values possible
+//   × minimum and maximum value with impossible transformation (1 ms)
+//   √ n*m=1 (1 ms)
+//   × Impossible due to bit flip needed
+//   √ Unique bits on diagonal - transformation possible
+//   × All ones to all zeros impossible (1 ms)
+//   √ Edge: 1x1000 with possible operation (2 ms)
+//   × Edge: 1x1000 impossible (2 ms)
+//   √ Edge: nx1 possible (2 ms)
+//   × Edge: nx1 impossible (3 ms)

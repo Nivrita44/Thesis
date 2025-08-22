@@ -1,73 +1,31 @@
-This is an interactive problem.
+There are n
+ cities in a row, numbered 1,2,…,n
+ left to right.
 
-Consider an undirected connected graph consisting of n
- vertices and m
- edges. Each vertex can be colored with one of three colors: 1, 2, or 3. Initially, all vertices are uncolored.
-
-Alice and Bob are playing a game consisting of n
- rounds. In each round, the following two-step process happens:
-
-1.Alice chooses two different colors.
-2. Bob chooses an uncolored vertex and colors it with one of the two colors chosen by Alice.
-
-Alice wins if there exists an edge connecting two vertices of the same color. Otherwise, Bob wins.
-
-You are given the graph. Your task is to decide which player you wish to play as and win the game.
+At time 1
+, you conquer exactly one city, called the starting city.
+At time 2,3,…,n
+, you can choose a city adjacent to the ones conquered so far and conquer it.
+You win if, for each i
+, you conquer city i
+ at a time no later than ai
+. A winning strategy may or may not exist, also depending on the starting city. How many starting cities allow you to win?
 
 Input
 
 
-The first line of each test case contains two integers n
-, m
- (1≤n≤10^4
-, n−1≤m≤min(n⋅(n−1)/2,10^4)
-) — the number of vertices and the number of edges in the graph, respectively.
+The first line of each test case contains a single integer n
+ (1≤n≤2⋅10^5
+) — the number of cities.
 
-Each of the next m
- lines of each test case contains two integers ui
-, vi
- (1≤ui,vi≤n
-) — the edges of the graph. It is guaranteed that the graph is connected and there are no multiple edges or self-loops.
+The second line of each test case contains n
+ integers a1,a2,…,an
+ (1≤ai≤n
+) — the deadlines for conquering the cities.
 
 It is guaranteed that the sum of n
- and the sum of m
- over all test cases does not exceed 104
+ over all test cases does not exceed 2⋅10^5
 .
 
-Interaction
-For each test case, you need to output a single line containing either "Alice" or "Bob", representing the player you choose.
-
-Then for each of the following n
- rounds, the following two-step process happens:
-
-Alice (either you or the interactor) will output two integers a
- and b
- (1≤a,b≤3
-, a≠b
-) — the colors chosen by Alice.
-Bob (either you or the interactor) will output two integers i
- and c
- (1≤i≤n
-, c=a
- or c=b
-) — the vertex and the color chosen by Bob. Vertex i
- must be a previously uncolored vertex.
-If any of your outputs are invalid, the jury will output "-1" and you will receive a Wrong Answer verdict.
-
-At the end of all n
- turns, if you have lost the game, the jury will output "-1" and you will receive a Wrong Answer verdict.
-
-If your program has received a −1
- instead of a valid value, it must terminate immediately. Otherwise, you may receive an arbitrary verdict because your solution might be reading from a closed stream.
-
-Note that if you are playing as Alice, and there already exists an edge connected two vertices of the same color, the interactor will not terminate early and you will keep playing all n
- rounds.
-
-After outputting, do not forget to output end of line and flush the output. Otherwise, you will get Idleness limit exceeded. To do this, use:
-
-fflush(stdout) or cout.flush() in C++;
-System.out.flush() in Java;
-flush(output) in Pascal;
-stdout.flush() in Python;
-see documentation for other languages.
-In this problem, hacks are disabled.
+Output
+For each test case, output a single integer: the number of starting cities that allow you to win.

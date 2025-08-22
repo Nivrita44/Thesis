@@ -52,3 +52,16 @@ test('multiple identical queries', () => {
   const res = solve(2, [4,5], [[1,2],[1,2]]);
   expect(res).toEqual(["13","13"]);
 });
+
+
+
+// √ basic example (sample provided) (5 ms)
+// × single element array (7 ms)
+// × two elements, test various queries (1 ms)
+// √ edge case: zero-length query range
+// √ big numbers
+// √ all zeroes
+// √ last index query only
+// × full range query
+// × query out of bounds (right>total possible)
+// √ multiple identical queries (1 ms)

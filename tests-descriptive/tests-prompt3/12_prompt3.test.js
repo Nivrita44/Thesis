@@ -1,4 +1,4 @@
-import solve from '../../solutions-descriptive/12.js';
+import {solve} from '../../solutions-descriptive/12.js';
 
 test('Single test case, minimal input', () => {
   const input = [
@@ -125,3 +125,13 @@ test('Multiple test cases mixed', () => {
   expect(output[0]).toEqual([1, 3, 6]);
   expect(output[1]).toEqual([0, 8]);
 });
+
+
+// √ Single test case, minimal input (3 ms)
+// × Test case 1 from provided solution (6 ms)
+// × Test case 2 from provided solution
+// × Test case 3 from provided solution (1 ms)
+// √ Edge case: all equal sizes, no updates (1 ms)
+// × Edge case: decreasing order, push max range (1 ms)
+// × Edge case: increasing then big middle update (1 ms)
+// × Multiple test cases mixed (3 ms)

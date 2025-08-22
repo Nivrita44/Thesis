@@ -58,3 +58,17 @@ test('XOR threshold larger than maximum pair possible', () => {
   expect(solve(3, 100, [1, 2, 3])).toBe('-1');
   expect(solve(3, 20, [4, 4, 5])).toBe('-1');
 });
+
+
+
+  // √ k=0 should return 1 (any single element subarray is beautiful) (4 ms)
+  //   √ All elements in same high bits, diverse prefix NOT found, but possible further subarrays (9 ms)
+  //   √ Diverse bits in high positions, should return 2 (1 ms)
+  //   √ Short arrays should handle correctly (33 ms)
+  //   × Sample case: returns smallest segment that meets criteria (20 ms)
+  //   √ No beautiful subarray (11 ms)
+  //   √ Longest edge no solution (93 ms)
+  //   √ Edge: Diverse prefix detected for large array (43 ms)
+  //   √ Subarray of size >2 gives minimum when possible (14 ms)
+  //   × Cases where only the whole array works (10 ms)
+  //   √ XOR threshold larger than maximum pair possible (11 ms)

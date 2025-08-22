@@ -42,3 +42,16 @@ test('maximum allowed values', () => {
 test('all distinct small size', () => {
   expect(solve(3, [1,2,3])).toBe(4);
 });
+
+
+
+// × example 1 (3 ms)
+// × all elements equal (1 ms)
+// × strictly increasing (1 ms)
+// × strictly decreasing (1 ms)
+// × two types alternating (1 ms)
+// × single element (1 ms)
+// × odd array
+// × even length, only one good even subarray
+// × maximum allowed values (1 ms)
+// × all distinct small size (1 ms)

@@ -65,3 +65,19 @@ test('large input with identical elements, no solution', () => {
   const arr = Array(1000).fill(59);
   expect(solve(arr.length, 31, arr)).toBe('-1');
 });
+
+
+// √ xorLimit is 0, should return "1" (3 ms)
+//   √ diversePrefixFound, should return "2" (1 ms)
+//   × all prefix groups same, no solution, returns "-1" (9 ms)
+//   √ all prefix groups same, has solution (23 ms)
+//   √ minimal array, length 1 (6 ms)
+//   √ edge case xorLimit one bit (18 ms)
+//   √ negative case, long array no solution (8 ms)
+//   √ xorLimit is power of two (5 ms)
+//   √ all values same, diverse prefix not found, no solution (13 ms)
+//   √ diverse lower bits solution, smallest valid segment (4 ms)
+//   √ minimumLength > 2, correct minimal segment found (6 ms)
+//   × xorLimit bigger than all array elements, diverse prefix (6 ms)
+//   √ single bit difference creates valid segment (2 ms)
+//   √ large input with identical elements, no solution (9 ms)

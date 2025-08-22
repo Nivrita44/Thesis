@@ -106,3 +106,15 @@ test('Edge: single query, single element', () => {
   const arr = [-10,0,10];
   expect(solve(n, arr, [[1,1],[2,2],[3,3]])).toEqual(["-10","-10","0"]);
 });
+
+
+// √ Example case from description (4 ms)
+//   √ Single element array (1 ms)
+//   × All negative elements (4 ms)
+//   √ All zeros (2 ms)
+//   √ Mixed positive and negative, n = 2
+//   √ Edge query case, full sum
+//   √ Single query, last element only (1 ms)
+//   √ Query for a portion of b
+//   √ Large numbers: stress, single query
+//   √ Edge: single query, single element (1 ms)

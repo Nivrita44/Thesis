@@ -51,3 +51,20 @@ test('conflict makes impossible', () => {
 test('conflicting colors, must be impossible', () => {
   expect(solve(10, 10, 2, [[1,1,0],[1,2,1]])).toBe(0);
 });
+
+
+
+
+// × single 3x3 cell all green (2 ms)
+//   × single 3x3 cell, one white
+//   × single 3x3 cell, one black
+//   × 4x4, 0 preset cells
+//   × 5x5, one cell fixed black (1 ms)
+//   × 3x4, two fixed cells different colors (1 ms)
+//   × 3x3, two adjacent cells with same color (1 ms)
+//   × 3x3, two adjacent cells with different colors (1 ms)
+//   × 4x3, k=2, same parity cells different colors (1 ms)
+//   × 4x4, k=4, checkerboard preset (1 ms)
+//   × n and m large, but only two preset
+//   × conflict makes impossible
+//   × conflicting colors, must be impossible
