@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-descriptive/27.js';
+import { solve } from '../../../solutions-descriptive/27.js';
 
 test('returns unique point for typical case', () => {
   expect(

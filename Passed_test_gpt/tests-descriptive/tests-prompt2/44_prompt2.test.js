@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-descriptive/44.js';
+import { solve } from '../../../solutions-descriptive/44.js';
 
 test('typical case: [3,2,9]', () => {
     expect(solve([3, 2, 9])).toBe('Bob');

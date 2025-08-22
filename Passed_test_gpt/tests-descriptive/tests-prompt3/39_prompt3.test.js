@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-descriptive/39.js';
+import { solve } from '../../../solutions-descriptive/39.js';
 
 test('single element array - minimum case', () => {
     expect(solve(1, [0])).toBe(1);

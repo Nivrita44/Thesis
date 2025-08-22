@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-descriptive/43.js';
+import { solve } from '../../../solutions-descriptive/43.js';
 
 test('single node', () => {
     expect(solve(1, 10, [5], [])).toBe(5);

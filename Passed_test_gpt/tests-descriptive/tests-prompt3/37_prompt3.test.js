@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-descriptive/37.js';
+import { solve } from '../../../solutions-descriptive/37.js';
 
 test('k=0 should return 1 (any single element subarray is beautiful)', () => {
   expect(solve(5, 0, [1, 2, 3, 4, 5])).toBe('1');

@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-descriptive/50.js';
+import { solve } from '../../../solutions-descriptive/50.js';
 
 test('two coprime numbers', () => {
   expect(solve([3, 5])).toBe(2);

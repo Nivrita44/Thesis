@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-descriptive/40.js';
+import { solve } from '../../../solutions-descriptive/40.js';
 
 test('n=4, various patterns', () => {
     const r1 = solve(4, [2, 1, -1, 1]);

@@ -1,4 +1,3 @@
-// File: __tests__/1.test.js
 import { solve } from '../../solutions-descriptive/1.js';
 
 describe('solve', () => {

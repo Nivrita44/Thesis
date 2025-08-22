@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-descriptive/35.js';
+import { solve } from '../../../solutions-descriptive/35.js';
 
 test('n=1, k=0, single element', () => {
     expect(solve(1, 0, [42])).toBe(42);

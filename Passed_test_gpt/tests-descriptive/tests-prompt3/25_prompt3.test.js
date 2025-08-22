@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-descriptive/25.js';
+import { solve } from '../../../solutions-descriptive/25.js';
 
 test('n=1, k=1', () => {
   expect(solve(1, 1)).toEqual([['1']]);

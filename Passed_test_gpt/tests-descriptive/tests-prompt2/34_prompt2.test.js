@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-descriptive/34.js';
+import { solve } from '../../../solutions-descriptive/34.js';
 
 test('solve totalX < totalY', () => {
     expect(solve([1, 2, 3], [10, 10, 10])).toBe("-1");

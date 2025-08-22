@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-descriptive/36.js';
+import { solve } from '../../../solutions-descriptive/36.js';
 
 test('all border non-corner cells queried, odd black', () => {
   let n = 4, m = 4;

@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-descriptive/10.js';
+import { solve } from '../../../solutions-descriptive/10.js';
 
 test('single node, li=ri', () => {
     expect(solve(1, [7], [7], [])).toBe(7);

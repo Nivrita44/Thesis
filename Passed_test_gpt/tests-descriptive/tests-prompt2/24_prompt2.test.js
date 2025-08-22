@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-descriptive/24.js';
+import { solve } from '../../../solutions-descriptive/24.js';
 
 test('all zeros', () => {
   expect(solve(0, 0, 0, 0)).toBe(0);

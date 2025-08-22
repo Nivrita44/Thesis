@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-descriptive/28.js';
+import { solve } from '../../../solutions-descriptive/28.js';
 
 test('x and y are equal and small', () => {
   expect(solve(3n, 3n)).toBe(0n);

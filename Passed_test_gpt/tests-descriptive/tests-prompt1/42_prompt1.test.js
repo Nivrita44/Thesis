@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-descriptive/42.js'
+import { solve } from '../../../solutions-descriptive/42.js'
 
 test('edge case: n = 1, p = 10000 (always inserted)', () => {
   expect(solve(1, [7], [10000])).toBe(49);

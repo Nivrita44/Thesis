@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-descriptive/34.js';
+import { solve } from '../../../solutions-descriptive/34.js';
 
 test('simple k, mod is 3', () => {
     expect(solve([4, 7, 10], [1, 1, 1])).toBe('3');

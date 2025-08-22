@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-algorithm/10.js';
+import { solve } from '../../../solutions-algorithm/10.js';
 
 test('Common input: 5009', () => {
   expect(solve(5009)).toEqual([2, [5000, 9]]);

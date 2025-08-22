@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-descriptive/43.js';
+import { solve } from '../../../solutions-descriptive/43.js';
 
 test('single camp, positive gold', () => {
     expect(solve(1, 1, [10], [])).toBe(10);

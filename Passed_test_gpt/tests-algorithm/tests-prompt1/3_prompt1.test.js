@@ -1,6 +1,6 @@
 import {
     solve
-} from '../../solutions-algorithm/3.js';
+} from '../../../solutions-algorithm/3.js';
 
 test('single element array', () => {
     expect(solve(1, [5])).toBe('YES');

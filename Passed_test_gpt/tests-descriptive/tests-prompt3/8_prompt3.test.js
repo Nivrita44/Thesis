@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-descriptive/8.js';
+import { solve } from '../../../solutions-descriptive/8.js';
 
 test('minimum input (n=1, m=1)', () => {
     expect(solve(1, 1, [0], [0])).toBe('0');

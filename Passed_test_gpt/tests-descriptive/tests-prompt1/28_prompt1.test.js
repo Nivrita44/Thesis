@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-descriptive/28.js'
+import { solve } from '../../../solutions-descriptive/28.js'
 
 test('example from description', () => {
   expect(solve(8n, 3n)).toBe(10n);

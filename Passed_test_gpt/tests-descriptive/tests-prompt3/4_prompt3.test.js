@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-descriptive/4.js';
+import { solve } from '../../../solutions-descriptive/4.js';
 
 test('n=3, all 1s', () => {
     expect(solve([1, 1, 1])).toBe(1);

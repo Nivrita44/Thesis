@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-descriptive/20.js';
+import { solve } from '../../../solutions-descriptive/20.js';
 
 test('Example 2: All same already', () => {
     expect(solve([5, 5, 5, 5])).toBe(0);

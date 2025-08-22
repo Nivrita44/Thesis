@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-descriptive/7.js'
+import { solve } from '../../../solutions-descriptive/7.js';
 
 test('n = 1 (single node)', () => {
   const input = ['1']

@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-descriptive/18.js';
+import { solve } from '../../../solutions-descriptive/18.js';
 
 test('1x1 same matrix', () => {
   expect(solve(1,1,[[42]],[[42]])).toBe("Yes\n");

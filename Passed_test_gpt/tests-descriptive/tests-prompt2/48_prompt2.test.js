@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-descriptive/48.js';
+import { solve } from '../../../solutions-descriptive/48.js';
 
 test('Typical case with partial matches [6,3,3,3,5,5]', () => {
   expect(solve(6, [6, 3, 3, 3, 5, 5])).toBe(3);

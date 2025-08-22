@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-descriptive/26.js';
+import { solve } from '../../../solutions-descriptive/26.js';
 
 
 test('n=1, s=1', () => {

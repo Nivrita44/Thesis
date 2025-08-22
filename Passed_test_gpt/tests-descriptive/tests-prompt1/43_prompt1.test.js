@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-descriptive/43.js';
+import { solve } from '../../../solutions-descriptive/43.js';
 
 test('single camp', () => {
     expect(

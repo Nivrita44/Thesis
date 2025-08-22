@@ -1,4 +1,4 @@
-import {solve} from '../../solutions-algorithm/48.js';
+import {solve} from '../../../solutions-algorithm/48.js';
 
 test('sample test 1', () => {
   const m = 3, k = 2, p = 1;

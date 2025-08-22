@@ -1,4 +1,4 @@
-    import { solve } from '../../solutions-descriptive/44.js';
+    import { solve } from '../../../solutions-descriptive/44.js';
 
     test('single pile, 2 stones', () => {
         expect(solve(1, [2])).toBe('Bob');

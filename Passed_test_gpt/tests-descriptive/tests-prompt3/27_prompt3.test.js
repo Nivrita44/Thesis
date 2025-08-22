@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-descriptive/27.js'
+import { solve } from '../../../solutions-descriptive/27.js';
 
 test('Single lightbulb on at (0,0)', () => {
   expect(solve(1, [[0, 0]])).toEqual([0, 0])

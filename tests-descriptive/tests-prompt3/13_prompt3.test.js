@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-descriptive/13.js'
+import { solve } from '../../solutions-descriptive/13.js';
 
 test('single element arrays', () => {
   expect(solve([[1]])).toEqual([1])

@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-descriptive/29.js';
+import { solve } from '../../../solutions-descriptive/29.js';
 
 test('single element, minimal k', () => {
   expect(solve(1, 1, [10])).toBe('YES');

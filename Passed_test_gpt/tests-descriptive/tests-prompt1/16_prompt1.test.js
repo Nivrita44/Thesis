@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-descriptive/16.js'
+import { solve } from '../../../solutions-descriptive/16.js'
 
 test('tricky: prohibited AA, impossible to split', () => {
     expect(solve('AA', 2, 0, 0, 0)).toBe('NO');

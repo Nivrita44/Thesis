@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-descriptive/45.js';
+import { solve } from '../../../solutions-descriptive/45.js';
 
 test('simple chain path, should reach node 1 with time 0', () => {
     expect(

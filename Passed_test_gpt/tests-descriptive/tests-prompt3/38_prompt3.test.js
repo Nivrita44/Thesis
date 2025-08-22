@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-descriptive/38.js';
+import { solve } from '../../../solutions-descriptive/38.js';
 
 test('01 string', () => {
     expect(solve('01')).toBe(1);

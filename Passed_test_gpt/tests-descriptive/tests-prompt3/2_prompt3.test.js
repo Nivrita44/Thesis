@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-descriptive/2.js';
+import { solve } from '../../../solutions-descriptive/2.js';
 
 test('Example from description: n=9, k=3n', () => {
   expect(solve(9, 3n)).toBe(10);

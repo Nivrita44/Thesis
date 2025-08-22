@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-algorithm/26.js';
+import { solve } from '../../../solutions-algorithm/26.js';
 
 test('Common cases', () => {
   expect(solve([[5, 3], [6, 1], [7, 4], [8, 8]])).toEqual(["yes", "yes", "no", "yes"]);

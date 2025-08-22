@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-descriptive/5.js';
+import { solve } from '../../../solutions-descriptive/5.js';
 
 test('n is 81 (edge where digit sum maximum for <=10^9)', () => {
   expect(solve(81)).toEqual(["!"]);

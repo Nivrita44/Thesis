@@ -1,6 +1,6 @@
 import {
     solve
-} from '../../solutions-algorithm/8.js';
+} from '../../../solutions-algorithm/8.js';
 
 test('Basic small test', () => {
     expect(solve(

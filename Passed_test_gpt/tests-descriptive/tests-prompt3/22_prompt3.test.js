@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-descriptive/22.js';
+import { solve } from '../../../solutions-descriptive/22.js';
 
 test('single enemy, exactly match health', () => {
   expect(solve(1, 5, 1, [7], [100])).toBe(2);

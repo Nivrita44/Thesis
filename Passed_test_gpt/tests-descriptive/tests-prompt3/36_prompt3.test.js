@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-descriptive/36.js';
+import { solve } from '../../../solutions-descriptive/36.js';
 
 test('all border (not corner) cells filled (odd black count), 3x3', () => {
   const colors = [

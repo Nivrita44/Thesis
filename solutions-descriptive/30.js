@@ -21,27 +21,10 @@ class Queue {
 }
 
 export function solve(...args) {
-    // Case 1: solve(n, arr) — used in 20_prompt1.test.js
+    // Case 1: solve(n, arr) — used in prompt1 tests
     if (args.length === 2 && typeof args[0] === 'number' && Array.isArray(args[1])) {
         const [n, arr] = args;
-
-        // Logic section (replace this with your real logic)
-        // This sample computes the number of cycles in the permutation graph
-        let visited = Array(n).fill(false);
-        let cycles = 0;
-
-        for (let i = 0; i < n; i++) {
-            if (!visited[i]) {
-                cycles++;
-                let current = i;
-                while (!visited[current]) {
-                    visited[current] = true;
-                    current = arr[current] - 1;
-                }
-            }
-        }
-
-        return cycles;
+        return findFirstStableYear(n, arr);
     }
 
     // Case 2: solve(readInt, writeInt)
@@ -62,96 +45,50 @@ export function solve(...args) {
         arr.push(readInt());
     }
 
-    // Same logic as above
-    let visited = Array(n).fill(false);
-    let cycles = 0;
-
-    for (let i = 0; i < n; i++) {
-        if (!visited[i]) {
-            cycles++;
-            let current = i;
-            while (!visited[current]) {
-                visited[current] = true;
-                current = arr[current] - 1;
-            }
-        }
-    }
-
-    writeInt(cycles, true);
+    const result = findFirstStableYear(n, arr);
+    writeInt(result, true);
 }
 
-
-
-// export function solve() {
-//     let n = readInt();
-//     let adj = Array(n).fill().map(() => []);
-//     let indegree = new Uint32Array(n);
-
-//     for (let i = 0; i < n; i++) {
-//         let c = readInt() - 1;
-//         adj[i].push(c);
-//         indegree[c]++;
-//     }
-
-//     let q = new Queue();
-//     let dist = new Uint32Array(n);
-//     let mx = 0;
-
-//     for (let i = 0; i < n; i++) {
-//         if (indegree[i] === 0) {
-//             q.push(i);
-//             dist[i] = 1;
-//             mx = 1;
-//         }
-//     }
-
-//     while (q.size()) {
-//         let v = q.pop();
-//         for (let u of adj[v]) {
-//             dist[u] += dist[v];
-//             indegree[u]--;
-//             if (indegree[u] === 0) {
-//                 dist[u]++;
-//                 mx = Math.max(mx, dist[u]);
-//                 q.push(u);
-//             }
-//         }
-//     }
-
-//     writeInt(mx + 2, true);
-// }
-
-// function testing_test() {
-//     const inputs = [
-//         { n: 2, edges: [2, 1] },
-//         { n: 5, edges: [2, 3, 4, 5, 1] },
-//         { n: 5, edges: [2, 1, 4, 2, 3] },
-//         { n: 5, edges: [4, 1, 1, 5, 4] },
-//         { n: 10, edges: [4, 3, 9, 1, 6, 7, 9, 10, 10, 3] }
-//     ];
-//     const expectedOutputs = [2, 2, 5, 5, 5];
-
-//     for (let i = 0; i < inputs.length; i++) {
-//         let input = inputs[i];
-//         let expected = expectedOutputs[i];
-
-//         let inputIndex = -1;
-//         global.readInt = () => {
-//             inputIndex++;
-//             return inputIndex === 0 ? input.n : input.edges[inputIndex - 1];
-//         };
-
-//         let output = [];
-//         global.writeInt = (value) => output.push(value);
-
-//         solve();
-
-//         if (output[0] !== expected) {
-//             console.error(`❌ Test case ${i + 1} failed. Expected ${expected}, got ${output[0]}`);
-//         } else {
-//             console.log(`✅ Test case ${i + 1} passed.`);
-//         }
-//     }
-// }
-
-// testing_test();
+function findFirstStableYear(n, recipients) {
+    // Convert to 0-based indexing
+    const r = recipients.map(x => x - 1);
+    
+    // Track states at the beginning of each year (before exchange)
+    let states = [];
+    let currentPlushies = new Array(n).fill(1); // Initial state
+    
+    let year = 1;
+    
+    while (true) {
+        // Store the state at the beginning of this year (before exchange)
+        states.push([...currentPlushies]);
+        
+        // Check if this year is stable (year > 1 and same as previous year's beginning state)
+        if (year > 1 && states[year-1].every((count, i) => count === states[year-2][i])) {
+            return year;
+        }
+        
+        // Simulate plushie exchange for this year
+        const newPlushies = new Array(n).fill(0);
+        
+        for (let i = 0; i < n; i++) {
+            if (currentPlushies[i] > 0) {
+                // Spider i gives 1 plushie to recipient r[i]
+                newPlushies[r[i]]++;
+                // Spider i keeps remaining plushies
+                newPlushies[i] += currentPlushies[i] - 1;
+            }
+            // If spider i has 0 plushies, they do nothing
+        }
+        
+        currentPlushies = newPlushies;
+        year++;
+        
+        // Safety check to prevent infinite loop
+        if (year > 1000000) {
+            break;
+        }
+    }
+    
+    return year;
+}

@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-descriptive/19.js'
+import { solve } from '../../../solutions-descriptive/19.js';
 
 test('GCD base: solve(10, 5) should be 5', () => {
     expect(solve(10, 5)).toBe(5)

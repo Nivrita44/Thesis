@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-descriptive/15.js';
+import { solve } from '../../../solutions-descriptive/15.js';
 
 test('minimal size deck', () => {
     expect(

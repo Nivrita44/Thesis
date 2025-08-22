@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-descriptive/14.js';
+import { solve } from '../../../solutions-descriptive/14.js';
 
 test('Single scarecrow at 0, k=3, l=5', () => {
     expect(solve(1, 3, 5, [0])).toBe(4);

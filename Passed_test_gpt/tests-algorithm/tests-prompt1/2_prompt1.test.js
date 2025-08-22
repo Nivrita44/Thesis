@@ -1,6 +1,6 @@
 import {
     solve
-} from '../../solutions-algorithm/2.js';
+} from '../../../solutions-algorithm/2.js';
 
 
 test('handles minimal input', () => {

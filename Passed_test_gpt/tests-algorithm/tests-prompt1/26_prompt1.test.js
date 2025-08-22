@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-algorithm/26.js';
+import { solve } from '../../../solutions-algorithm/26.js';
 
 test('example: n = 7, k = 3', () => {
   expect(solve([[7n, 3n]])[0]).toBe('yes');

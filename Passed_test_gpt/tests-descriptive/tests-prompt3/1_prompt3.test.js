@@ -1,5 +1,5 @@
 // File: __tests__/1.test.js
-import { solve } from '../../solutions-descriptive/1.js';
+import { solve } from '../../../solutions-descriptive/1.js';
 
 describe('solve', () => {
     // Trivial case: x === y, zero steps

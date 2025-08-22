@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-descriptive/9.js';
+import { solve } from '../../../solutions-descriptive/9.js';
 
 test('single node tree', () => {
     expect(solve(1, [1], [])).toBe(1);

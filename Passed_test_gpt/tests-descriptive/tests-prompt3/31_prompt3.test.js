@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-descriptive/31.js';
+import { solve } from '../../../solutions-descriptive/31.js';
 
 test('n=1, m=2', () => {
   const n = 1;

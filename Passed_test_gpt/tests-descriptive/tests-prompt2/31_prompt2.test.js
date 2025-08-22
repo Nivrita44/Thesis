@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-descriptive/31.js';
+import { solve } from '../../../solutions-descriptive/31.js';
 
 test('solve with P = [1n, 2n], k = 1n', () => {
   expect(solve([1n, 2n], 1n)).toEqual([1n, 2n]);

@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-descriptive/46.js';
+import { solve } from '../../../solutions-descriptive/46.js';
 
 test('typical case 1', () => {
   expect(solve(2, [5, 6, 7])).toBe(7);

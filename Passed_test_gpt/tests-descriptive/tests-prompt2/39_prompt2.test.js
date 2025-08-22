@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-descriptive/39.js';
+import { solve } from '../../../solutions-descriptive/39.js';
 
 test('array contains zeros interleaved', () => {
     expect(solve(6, [1, 0, 2, 3, 0, 4])).toBe(5);

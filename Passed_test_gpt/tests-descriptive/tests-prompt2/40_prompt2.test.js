@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-descriptive/40.js';
+import { solve } from '../../../solutions-descriptive/40.js';
 
 test('negOneGroup only', () => {
     expect(solve(1, [-1])).toEqual([1]);

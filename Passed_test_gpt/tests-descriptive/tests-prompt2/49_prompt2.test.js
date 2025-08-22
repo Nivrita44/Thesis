@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-descriptive/49.js';
+import { solve } from '../../../solutions-descriptive/49.js';
 
 test('single node, no edges', () => {
   expect(solve('1 0')).toEqual([0]);

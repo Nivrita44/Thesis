@@ -1,4 +1,4 @@
-import {solve} from '../../solutions-algorithm/43.js';
+import {solve} from '../../../solutions-algorithm/43.js';
 
 
 test('n=2, reversed permutation [1,0]', () => {

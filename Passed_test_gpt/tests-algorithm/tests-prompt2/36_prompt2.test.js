@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-algorithm/36.js';
+import { solve } from '../../../solutions-algorithm/36.js';
 
 test('typical 5-digit number', () => {
   expect(solve('75619')).toEqual(['9', '7', '561']);

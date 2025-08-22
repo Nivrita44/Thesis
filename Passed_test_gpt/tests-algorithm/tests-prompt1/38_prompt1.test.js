@@ -1,4 +1,4 @@
-import {solve} from '../../solutions-algorithm/38.js';
+import {solve} from '../../../solutions-algorithm/38.js';
 
 test('GCD of range where a == b', () => {
   expect(solve('1', '1')).toBe('1');

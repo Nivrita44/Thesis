@@ -1,4 +1,4 @@
-import {solve} from '../../solutions-descriptive/12.js';
+import { solve } from '../../../solutions-descriptive/12.js';
 
 test('Single test case, minimal input', () => {
   const input = [

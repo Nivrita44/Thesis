@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-descriptive/21.js';
+import { solve } from '../../../solutions-descriptive/21.js';
 
 test('Basic case: all cities have GCD at least 2 with each other', () => {
   expect(solve([2, 4])).toBe(1);

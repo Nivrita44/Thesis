@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-descriptive/42.js';
+import { solve } from '../../../solutions-descriptive/42.js';
 
 test('Typical: Two different bits, 50-50 probability', () => {
   expect(solve(2, [1, 2], [5000, 5000])).toBe(500000007);

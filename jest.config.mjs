@@ -14,6 +14,7 @@ export default {
 
     // Explicitly exclude Claude folder tests
     testPathIgnorePatterns: [
-
+        "Claude/",
+        "Passed_test_gpt/"
     ]
 };

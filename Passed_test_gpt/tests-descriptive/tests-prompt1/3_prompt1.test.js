@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-descriptive/3.js';
+import { solve } from '../../../solutions-descriptive/3.js';
 
 test('single 1x1 region', () => {
     expect(solve(0, 1, 0, 1)).toBe(1);

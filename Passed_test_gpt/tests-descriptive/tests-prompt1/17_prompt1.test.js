@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-descriptive/17.js';
+import { solve } from '../../../solutions-descriptive/17.js';
 
 test('n=2, m=2', () => {
     const lines = solve(2, 2).trim().split('\n');

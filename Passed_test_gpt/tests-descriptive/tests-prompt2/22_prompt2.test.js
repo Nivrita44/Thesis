@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-descriptive/22.js';
+import { solve } from '../../../solutions-descriptive/22.js';
 
 test('all enemies with one hit', () => {
     expect(solve(

@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-descriptive/16.js';
+import { solve } from '../../../solutions-descriptive/16.js';
 
 test('example from description: s = "ABBA", a=1 b=1 ab=1 ba=1', () => {
   expect(solve("ABBA\n1 1 1 1")).toBe("YES");

@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-descriptive/29.js';
+import { solve } from '../../../solutions-descriptive/29.js';
 
 test('Single element, k = n = 1, trivial case', () => {
   expect(solve(1, 1, [1])).toBe(true);

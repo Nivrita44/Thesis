@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-descriptive/28.js';
+import { solve } from '../../../solutions-descriptive/28.js';
 
 test('x=0n, y=1n (description case)', () => {
   expect(solve(0n, 1n)).toBe(2n);

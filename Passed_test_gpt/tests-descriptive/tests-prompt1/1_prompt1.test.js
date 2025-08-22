@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-descriptive/1.js';
+import { solve } from '../../../solutions-descriptive/1.js';
 
 describe('solve', () => {
     test('x and y are equal: no operations needed', () => {

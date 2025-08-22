@@ -1,6 +1,6 @@
 import {
     solve
-} from '../../solutions-algorithm/5.js';
+} from '../../../solutions-algorithm/5.js';
 
 test('all elements unique', () => {
     expect(solve([1, 2, 3, 4])).toBe(0);

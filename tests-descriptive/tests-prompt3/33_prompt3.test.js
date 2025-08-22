@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-descriptive/33.js'
+import { solve } from '../../solutions-descriptive/33.js';
 
 const setKattioInput = (inputArr) => {
     global.Kattio = {

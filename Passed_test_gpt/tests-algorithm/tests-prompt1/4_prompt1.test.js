@@ -1,6 +1,6 @@
 import {
     solve
-} from '../../solutions-algorithm/4.js';
+} from '../../../solutions-algorithm/4.js';
 
 test('sample test 1', () => {
     expect(solve([

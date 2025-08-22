@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-descriptive/23.js';
+import { solve } from '../../../solutions-descriptive/23.js';
 
 test('simple case, all zeros', () => {
   expect(solve(0n, 0n, 0n, 0n)).toBe(0n);

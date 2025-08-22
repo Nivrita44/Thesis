@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-descriptive/11.js'
+import { solve } from '../../../solutions-descriptive/11.js';
 
 test('Simple 2-node, 1-edge graph, 1 query k=1', () => {
     const n = 2,

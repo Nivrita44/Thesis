@@ -1,6 +1,6 @@
 import {
     solve
-} from '../../solutions-algorithm/14.js';
+} from '../../../solutions-algorithm/14.js';
 
 test('single boy, single girl, t=1', () => {
     expect(solve(2, 1, 'BG')).toBe('GB');

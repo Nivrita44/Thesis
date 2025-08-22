@@ -1,4 +1,4 @@
-import { solve } from '../../solutions-algorithm/36.js';
+import { solve } from '../../../solutions-algorithm/36.js';
 
 function isPrime(num) {
   if (num < 2n) return false;
