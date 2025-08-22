@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">13.33% </span>
+                <span class="strong">86.66% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>2/15</span>
+                <span class='fraction'>13/15</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">90% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/10</span>
+                <span class='fraction'>9/10</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">50% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>1/2</span>
+                <span class='fraction'>2/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">15.38% </span>
+                <span class="strong">84.61% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>2/13</span>
+                <span class='fraction'>11/13</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -110,26 +110,26 @@
 <a name='L45'></a><a href='#L45'>45</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">9x</span>
 <span class="cline-any cline-yes">9x</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">9x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">40x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">40x</span>
+<span class="cline-any cline-yes">34x</span>
+<span class="cline-any cline-yes">34x</span>
+<span class="cline-any cline-yes">17x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">40x</span>
+<span class="cline-any cline-yes">9x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -154,26 +154,26 @@
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">export function solve(arrayLength, array) {
     const seen = new Set();
     const firstZeroIndex = array.includes(0) ? array.indexOf(0) : -1;
-    let mex = <span class="cstat-no" title="statement not covered" >0;</span>
+    let mex = 0;
 &nbsp;
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    for (let i = <span class="cstat-no" title="statement not covered" >arrayLength - 1;</span> i &gt;= 0; i--) {</span>
-<span class="cstat-no" title="statement not covered" >        if (array[i] &lt; mex) {</span>
+    for (let i = arrayLength - 1; i &gt;= 0; i--) {
+        <span class="missing-if-branch" title="if path not taken" >I</span>if (array[i] &lt; mex) {
 <span class="cstat-no" title="statement not covered" >            mex = 0;</span>
 <span class="cstat-no" title="statement not covered" >            break;</span>
         }
 &nbsp;
 &nbsp;
-<span class="cstat-no" title="statement not covered" >        if (array[i] !== 0 || i === firstZeroIndex) {</span>
-<span class="cstat-no" title="statement not covered" >            seen.add(array[i]);</span>
-<span class="cstat-no" title="statement not covered" >            while (seen.has(mex)) {</span>
-<span class="cstat-no" title="statement not covered" >                mex++;</span>
+        if (array[i] !== 0 || i === firstZeroIndex) {
+            seen.add(array[i]);
+            while (seen.has(mex)) {
+                mex++;
             }
         }
     }
 &nbsp;
-    const countZeros = <span class="cstat-no" title="statement not covered" >array.filter(<span class="fstat-no" title="function not covered" >va</span>lue =&gt; <span class="cstat-no" title="statement not covered" >value === 0)</span>.length;</span>
-<span class="cstat-no" title="statement not covered" >    return arrayLength - countZeros + (mex !== 0 ? 1 : 0);</span>
+    const countZeros = array.filter(value =&gt; value === 0).length;
+    return arrayLength - countZeros + (mex !== 0 ? 1 : 0);
 }
 &nbsp;
 //function testing_test() {
@@ -202,7 +202,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-08-10T15:17:27.671Z
+                at 2025-08-22T05:17:35.916Z
             </div>
         <script src="prettify.js"></script>
         <script>

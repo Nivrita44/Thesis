@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">18.75% </span>
+                <span class="strong">68.75% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>6/32</span>
+                <span class='fraction'>22/32</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">50% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/4</span>
+                <span class='fraction'>2/4</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">22.22% </span>
+                <span class="strong">74.07% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>6/27</span>
+                <span class='fraction'>20/27</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line medium'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -167,26 +167,26 @@
 <span class="cline-any cline-yes">9x</span>
 <span class="cline-any cline-yes">9x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">265x</span>
+<span class="cline-any cline-yes">265x</span>
+<span class="cline-any cline-yes">265x</span>
+<span class="cline-any cline-yes">532x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">265x</span>
+<span class="cline-any cline-yes">230x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">35x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -261,26 +261,26 @@
         let remainingOperations = k;
         const initialValues = [...a];
 &nbsp;
-<span class="cstat-no" title="statement not covered" >        while (high - low &gt; 1) {</span>
-            const mid = <span class="cstat-no" title="statement not covered" >Math.floor((high + low) / 2);</span>
-            let totalIterations = <span class="cstat-no" title="statement not covered" >0;</span>
-<span class="cstat-no" title="statement not covered" >            for (let i = <span class="cstat-no" title="statement not covered" >0;</span> i &lt; n; i++) {</span>
-<span class="cstat-no" title="statement not covered" >                totalIterations += Math.max(0, Math.floor((initialValues[i] - mid) / b[i]) + 1);</span>
+        while (high - low &gt; 1) {
+            const mid = Math.floor((high + low) / 2);
+            let totalIterations = 0;
+            for (let i = 0; i &lt; n; i++) {
+                totalIterations += Math.max(0, Math.floor((initialValues[i] - mid) / b[i]) + 1);
             }
-<span class="cstat-no" title="statement not covered" >            if (totalIterations &lt;= k) {</span>
-<span class="cstat-no" title="statement not covered" >                high = mid;</span>
+            if (totalIterations &lt;= k) {
+                high = mid;
             } else {
-<span class="cstat-no" title="statement not covered" >                low = mid;</span>
+                low = mid;
             }
         }
 &nbsp;
-        let totalScore = <span class="cstat-no" title="statement not covered" >0;</span>
-        const updatedValues = <span class="cstat-no" title="statement not covered" >[...a];</span>
+        let totalScore = 0;
+        const updatedValues = [...a];
 &nbsp;
-<span class="cstat-no" title="statement not covered" >        for (let i = <span class="cstat-no" title="statement not covered" >0;</span> i &lt; n; i++) {</span>
-            let iterations = <span class="cstat-no" title="statement not covered" >Math.max(0, Math.floor((updatedValues[i] - high) / b[i]) + 1);</span>
-<span class="cstat-no" title="statement not covered" >            remainingOperations -= iterations;</span>
-<span class="cstat-no" title="statement not covered" >            totalScore += BigInt(iterations) * BigInt(updatedValues[i] + updatedValues[i] - (iterations - 1) * b[i]) / 2n;</span>
+        for (let i = 0; i &lt; n; i++) {
+            let iterations = Math.max(0, Math.floor((updatedValues[i] - high) / b[i]) + 1);
+            remainingOperations -= iterations;
+            totalScore += BigInt(iterations) * BigInt(updatedValues[i] + updatedValues[i] - (iterations - 1) * b[i]) / 2n;
 <span class="cstat-no" title="statement not covered" >            updatedValues[i] -= b[i] * iterations;</span>
         }
 &nbsp;
@@ -352,7 +352,7 @@
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-08-10T15:18:29.083Z
+                at 2025-08-22T05:29:42.160Z
             </div>
         <script src="prettify.js"></script>
         <script>

@@ -8,7 +8,7 @@ export function solve(targetRows, targetCols, sourceMatrix, targetMatrix) {
                 mismatchMask |= (sourceMatrix[row][col] ^ targetMatrix[row][col]) & sourceMatrix[row][col];
             }
 
-            const clearMask = ((1n << 31n) - 1n) ^ BigInt(mismatchMask);
+            const clearMask = ((1 n << 31 n) - 1 n) ^ BigInt(mismatchMask);
             for (let col = 0; col < targetCols; col++) {
                 sourceMatrix[row][col] &= Number(clearMask);
             }

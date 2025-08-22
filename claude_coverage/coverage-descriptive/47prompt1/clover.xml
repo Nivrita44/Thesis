@@ -1,29 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1754839109107" clover="3.2.0">
-  <project timestamp="1754839109107" name="All files">
-    <metrics statements="27" coveredstatements="6" conditionals="4" coveredconditionals="0" methods="2" coveredmethods="1" elements="33" coveredelements="7" complexity="0" loc="27" ncloc="27" packages="1" files="1" classes="1"/>
-    <file name="47.js" path="E:\desktop\Thesis\solutions-descriptive\47.js">
-      <metrics statements="27" coveredstatements="6" conditionals="4" coveredconditionals="0" methods="2" coveredmethods="1"/>
+<coverage generated="1755840582184" clover="3.2.0">
+  <project timestamp="1755840582184" name="All files">
+    <metrics statements="27" coveredstatements="20" conditionals="4" coveredconditionals="2" methods="2" coveredmethods="1" elements="33" coveredelements="23" complexity="0" loc="27" ncloc="27" packages="1" files="1" classes="1"/>
+    <file name="47.js" path="C:\Users\ASUS\OneDrive\Documents\GitHub\Thesis\solutions-descriptive\47.js">
+      <metrics statements="27" coveredstatements="20" conditionals="4" coveredconditionals="2" methods="2" coveredmethods="1"/>
       <line num="2" count="9" type="stmt"/>
       <line num="4" count="9" type="stmt"/>
       <line num="6" count="9" type="stmt"/>
       <line num="7" count="9" type="stmt"/>
       <line num="8" count="9" type="stmt"/>
       <line num="9" count="9" type="stmt"/>
-      <line num="11" count="0" type="stmt"/>
-      <line num="12" count="0" type="stmt"/>
-      <line num="13" count="0" type="stmt"/>
-      <line num="14" count="0" type="stmt"/>
-      <line num="15" count="0" type="stmt"/>
-      <line num="17" count="0" type="cond" truecount="0" falsecount="2"/>
-      <line num="18" count="0" type="stmt"/>
-      <line num="20" count="0" type="stmt"/>
-      <line num="24" count="0" type="stmt"/>
-      <line num="25" count="0" type="stmt"/>
-      <line num="27" count="0" type="stmt"/>
-      <line num="28" count="0" type="stmt"/>
-      <line num="29" count="0" type="stmt"/>
-      <line num="30" count="0" type="stmt"/>
+      <line num="11" count="9" type="stmt"/>
+      <line num="12" count="265" type="stmt"/>
+      <line num="13" count="265" type="stmt"/>
+      <line num="14" count="265" type="stmt"/>
+      <line num="15" count="532" type="stmt"/>
+      <line num="17" count="265" type="cond" truecount="2" falsecount="0"/>
+      <line num="18" count="230" type="stmt"/>
+      <line num="20" count="35" type="stmt"/>
+      <line num="24" count="9" type="stmt"/>
+      <line num="25" count="9" type="stmt"/>
+      <line num="27" count="9" type="stmt"/>
+      <line num="28" count="9" type="stmt"/>
+      <line num="29" count="9" type="stmt"/>
+      <line num="30" count="9" type="stmt"/>
       <line num="31" count="0" type="stmt"/>
       <line num="34" count="0" type="stmt"/>
       <line num="35" count="0" type="stmt"/>

@@ -1,37 +1,93 @@
 import { solve } from '../../../solutions-descriptive/47.js';
 
-test('example from description', () => {
-  expect(solve([3, 2, 4], [1, 2, 1], 3n)).toBe(9n);
-});
+describe('solve', () => {
+    test('example from description', () => {
+        const input = [{
+            n: 3,
+            k: 3,
+            a: [3, 2, 4],
+            b: [1, 2, 1]
+        }];
+        expect(solve(input)).toEqual(['9']);
+    });
 
-test('minimal case', () => {
-  expect(solve([1], [1], 1n)).toBe(1n);
-});
+    test('minimal case', () => {
+        const input = [{
+            n: 1,
+            k: 1,
+            a: [1],
+            b: [1]
+        }];
+        expect(solve(input)).toEqual(['1']);
+    });
 
-test('all elements consumed in single operation', () => {
-  expect(solve([5, 5, 5], [10, 10, 10], 3n)).toBe(15n);
-});
+    test('all elements consumed in single operation', () => {
+        const input = [{
+            n: 3,
+            k: 3,
+            a: [5, 5, 5],
+            b: [10, 10, 10]
+        }];
+        expect(solve(input)).toEqual(['15']);
+    });
 
-test('repeated operations on same element', () => {
-  expect(solve([10], [3], 4n)).toBe(16n);
-});
+    test('repeated operations on same element', () => {
+        const input = [{
+            n: 1,
+            k: 4,
+            a: [10],
+            b: [3]
+        }];
+        expect(solve(input)).toEqual(['16']);
+    });
 
-test('large k but limited by array depletion', () => {
-  expect(solve([2, 3], [1, 1], 1000n)).toBe(7n);
-});
+    test('large k but limited by array depletion', () => {
+        const input = [{
+            n: 2,
+            k: 1000,
+            a: [2, 3],
+            b: [1, 1]
+        }];
+        expect(solve(input)).toEqual(['7']);
+    });
 
-test('optimal selection order matters', () => {
-  expect(solve([5, 3, 4], [2, 1, 2], 4n)).toBe(14n);
-});
+    test('optimal selection order matters', () => {
+        const input = [{
+            n: 3,
+            k: 4,
+            a: [5, 3, 4],
+            b: [2, 1, 2]
+        }];
+        expect(solve(input)).toEqual(['14']);
+    });
 
-test('large numbers within bounds', () => {
-  expect(solve([1000000000, 999999999], [1, 999999999], 2n)).toBe(1999999999n);
-});
+    test('large numbers within bounds', () => {
+        const input = [{
+            n: 2,
+            k: 2,
+            a: [1000000000, 999999999],
+            b: [1, 999999999]
+        }];
+        expect(solve(input)).toEqual(['1999999999']);
+    });
 
-test('single element multiple operations', () => {
-  expect(solve([7], [2], 5n)).toBe(15n);
-});
+    test('single element multiple operations', () => {
+        const input = [{
+            n: 1,
+            k: 5,
+            a: [7],
+            b: [2]
+        }];
+        expect(solve(input)).toEqual(['15']);
+    });
 
-test('alternating between elements', () => {
-  expect(solve([6, 6], [2, 3], 4n)).toBe(18n);
+    test('alternating between elements', () => {
+        const input = [{
+            n: 2,
+            k: 4,
+            a: [6, 6],
+            b: [2, 3]
+        }];
+        expect(solve(input)).toEqual(['18']);
+    });
 });

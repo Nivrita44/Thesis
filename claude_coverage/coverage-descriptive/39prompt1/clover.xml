@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1754839047702" clover="3.2.0">
-  <project timestamp="1754839047702" name="All files">
-    <metrics statements="13" coveredstatements="2" conditionals="10" coveredconditionals="0" methods="2" coveredmethods="1" elements="25" coveredelements="3" complexity="0" loc="13" ncloc="13" packages="1" files="1" classes="1"/>
-    <file name="39.js" path="E:\desktop\Thesis\solutions-descriptive\39.js">
-      <metrics statements="13" coveredstatements="2" conditionals="10" coveredconditionals="0" methods="2" coveredmethods="1"/>
+<coverage generated="1755839855938" clover="3.2.0">
+  <project timestamp="1755839855938" name="All files">
+    <metrics statements="13" coveredstatements="11" conditionals="10" coveredconditionals="9" methods="2" coveredmethods="2" elements="25" coveredelements="22" complexity="0" loc="13" ncloc="13" packages="1" files="1" classes="1"/>
+    <file name="39.js" path="C:\Users\ASUS\OneDrive\Documents\GitHub\Thesis\solutions-descriptive\39.js">
+      <metrics statements="13" coveredstatements="11" conditionals="10" coveredconditionals="9" methods="2" coveredmethods="2"/>
       <line num="2" count="9" type="stmt"/>
-      <line num="3" count="9" type="cond" truecount="0" falsecount="2"/>
-      <line num="4" count="0" type="stmt"/>
-      <line num="7" count="0" type="stmt"/>
-      <line num="8" count="0" type="cond" truecount="0" falsecount="2"/>
+      <line num="3" count="9" type="cond" truecount="2" falsecount="0"/>
+      <line num="4" count="9" type="stmt"/>
+      <line num="7" count="9" type="stmt"/>
+      <line num="8" count="40" type="cond" truecount="1" falsecount="1"/>
       <line num="9" count="0" type="stmt"/>
       <line num="10" count="0" type="stmt"/>
-      <line num="14" count="0" type="cond" truecount="0" falsecount="4"/>
-      <line num="15" count="0" type="stmt"/>
-      <line num="16" count="0" type="stmt"/>
-      <line num="17" count="0" type="stmt"/>
-      <line num="22" count="0" type="stmt"/>
-      <line num="23" count="0" type="cond" truecount="0" falsecount="2"/>
+      <line num="14" count="40" type="cond" truecount="4" falsecount="0"/>
+      <line num="15" count="34" type="stmt"/>
+      <line num="16" count="34" type="stmt"/>
+      <line num="17" count="17" type="stmt"/>
+      <line num="22" count="40" type="stmt"/>
+      <line num="23" count="9" type="cond" truecount="2" falsecount="0"/>
     </file>
   </project>
 </coverage>

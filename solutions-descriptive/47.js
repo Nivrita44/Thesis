@@ -21,14 +21,21 @@ export function solve(testCases) {
             }
         }
 
-        let totalScore = 0;
+        let totalScore = 0 n; // start as BigInt
         const updatedValues = [...a];
 
         for (let i = 0; i < n; i++) {
             let iterations = Math.max(0, Math.floor((updatedValues[i] - high) / b[i]) + 1);
             remainingOperations -= iterations;
-            totalScore += BigInt(iterations) * BigInt(updatedValues[i] + updatedValues[i] - (iterations - 1) * b[i]) / 2n;
-            updatedValues[i] -= b[i] * iterations;
+
+            // Convert all numbers to BigInt
+            const iter = BigInt(iterations);
+            const val = BigInt(updatedValues[i]);
+            const dec = BigInt(b[i]);
+            totalScore += (iter * (val + val - (iter - 1 n) * dec)) / (2 n);
+
+
+            updatedValues[i] -= iterations * b[i];
         }
 
         updatedValues.sort((x, y) => y - x);

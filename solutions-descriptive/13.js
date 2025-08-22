@@ -7,7 +7,7 @@ export function solve(testCases) {
 
     for (const array of testCases) {
         const length = array.length;
-        let totalSubarrays = BigInt(length) * BigInt(length + 1) / 2n;
+        let totalSubarrays = BigInt(length) * BigInt(length + 1) / 2 n;
 
         for (let threshold = 1; threshold <= 10; threshold++) {
             let resetPointer = 0;
