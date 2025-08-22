@@ -55,3 +55,20 @@ test('Test with k=0 and many elements', () => {
 test('All pairs have same xor', () => {
   expect(solve(4, 15, [8, 7, 8, 7])).toBe(2);
 });
+
+
+
+// × Single element, k=0 (5 ms)
+// × Single element, k>0 (4 ms)
+// × All zeroes, k=0 (1 ms)
+// × All zeroes, k=1 (4 ms)
+// × Minimum length 2 present (17 ms)
+// × Full array needed (5 ms)
+// × Multiple subarrays, smallest picked (8 ms)
+// × No subarray beautiful (5 ms)
+// × Edge case: longest xor (12 ms)
+// × Edge case: k = maximum possible xor (5 ms)
+// × Test with repeated pattern (1 ms)
+// × Test with large k, no answer (4 ms)
+// × Test with k=0 and many elements (1 ms)
+// × All pairs have same xor (7 ms)

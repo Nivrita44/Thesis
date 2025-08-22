@@ -43,3 +43,16 @@ test('Large array of 100 random 1-10 elements', () => {
   const arr = Array(100).fill(1);
   expect(solve([arr])).toEqual([5050]);
 });
+
+
+
+
+// × Typical cases (7 ms)
+//   √ Empty array (1 ms)
+//   √ Single element arrays (3 ms)
+//   × Multiple test cases (2 ms)
+//   √ Edge threshold values (2 ms)
+//   × Repetitive types (2 ms)
+//   × Descending and ascending (2 ms)
+//   × All elements are threshold boundary (1 ms)
+//   √ Large array of 100 random 1-10 elements (2 ms)

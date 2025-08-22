@@ -84,17 +84,17 @@ export function solve(arraySize, array, queries) {
         currentSum -= (arraySize - i + 1) * array[i - 1];
     }
 
-    const prefixTriangleSum = Array(arraySize + 2).fill(0 n);
+    const prefixTriangleSum = Array(arraySize + 2).fill(0n);
     for (let i = 1; i <= arraySize; i++) {
         prefixTriangleSum[i] = prefixTriangleSum[i - 1] + BigInt(triangleWeightedSum[i]);
     }
 
-    const prefixArray = Array(arraySize + 1).fill(0 n);
+    const prefixArray = Array(arraySize + 1).fill(0n);
     for (let i = 1; i <= arraySize; i++) {
         prefixArray[i] = prefixArray[i - 1] + BigInt(array[i - 1]);
     }
 
-    const prefixOfPrefix = Array(arraySize + 2).fill(0 n);
+    const prefixOfPrefix = Array(arraySize + 2).fill(0n);
     for (let i = 1; i <= arraySize; i++) {
         prefixOfPrefix[i] = prefixOfPrefix[i - 1] + prefixArray[i];
     }
@@ -120,7 +120,7 @@ export function solve(arraySize, array, queries) {
     }
 
     function calculate(position) {
-        if (position <= 0) return 0 n;
+        if (position <= 0) return 0n;
 
         const baseIndex = binarySearch(1, arraySize, i => trianglePrefix[i] <= position);
         const remaining = position - trianglePrefix[baseIndex];

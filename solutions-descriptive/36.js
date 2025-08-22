@@ -20,10 +20,10 @@ function pow(a, b) {
     let r = 1;
     let base = a;
     while (b) {
-        if (b & 1 n) {
+        if (b & 1n) {
             r = mul(r, base);
         }
-        b /= 2 n;
+        b /= 2n;
         base = mul(base, base);
     }
     return r;
@@ -49,7 +49,7 @@ export function solve(n, m, k, queries) {
     if (count === 2 * (n + m - 4)) {
         return (black & 1) ? 0 : pow(2, total);
     } else {
-        return pow(2, total - 1 n);
+        return pow(2, total - 1);
     }
 }
 

@@ -48,7 +48,17 @@ test('maximize with gaps', () => {
     expect(solve(8, [2, 3, 1, 5, 0, 6, 4, 7])).toBe(8);
 });
 
-// FAIL tests - descriptive / tests - prompt1 / 39 _prompt1.test.js√ single element(2 ms)√ all different consecutive numbers× all zeroes(4 ms)√ strictly decreasing√ works with missing numbers√ all same numbers× alternating numbers(2 ms)√ large values× only zero and one(1 ms)√ contains all from 0 to n - 1 shuffled× cannot use all√ maximize with gaps
+// FAIL tests - descriptive / tests - prompt1 / 39 _prompt1.test.js
+// √ single element(2 ms)
+// √ all different consecutive numbers
+// × all zeroes(4 ms)
+// √ strictly decreasing
+// √ works with missing numbers
+// √ all same numbers× alternating numbers(2 ms)
+// √ large values× only zero and one(1 ms)
+// √ contains all from 0 to n - 1 shuffled
+// × cannot use all
+// √ maximize with gaps
 
 // ● all zeroes
 

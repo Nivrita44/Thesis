@@ -65,3 +65,19 @@ test('edge case: single large subarray with different elements', () => {
 test('array with consecutive duplicate segments', () => {
   expect(solve([[1,1,2,2,3,3]])).toEqual([12])
 })
+
+
+// √ single element arrays (4 ms)
+// √ two element arrays with equal numbers (1 ms)
+// √ two element arrays with different numbers (1 ms)
+// √ small length arrays, odd and even (2 ms)
+// √ array with unique increasing elements (1 ms)
+// √ array with unique decreasing elements (1 ms)
+// √ array with all the same number (1 ms)
+// × mixed values including edge ai=10 (5 ms)
+// × minimal and maximal values (4 ms)
+// √ multiple test cases (7 ms)
+// √ edge case: alternating high and low (1 ms)
+// √ array length maximum n=10^5, all the same (394 ms)
+// × edge case: single large subarray with different elements (2 ms)
+// × array with consecutive duplicate segments (1 ms)

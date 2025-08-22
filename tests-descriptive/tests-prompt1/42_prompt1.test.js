@@ -1,44 +1,47 @@
-import { solve } from '../../solutions-descriptive/42.js';
+import { solve } from '../../solutions-descriptive/42.js'
 
-test('single element, probability 1', () => {
-  expect(solve(1, [5], [10000])).toBe(25);
+test('example from description', () => {
+  expect(solve(2, [1, 2], [5000, 5000])).toBe(750000025);
 });
 
-test('single element, probability 0', () => {
-  expect(solve(1, [7], [0])).toBe(0);
+test('edge case: n = 1, p = 10000 (always inserted)', () => {
+  expect(solve(1, [7], [10000])).toBe(49);
 });
 
-test('two elements, both always inserted', () => {
-  expect(solve(2, [3, 5], [10000, 10000])).toBe(64);
-});
-
-test('two elements, one never inserted', () => {
-  expect(solve(2, [10, 20], [0, 10000])).toBe(400);
-});
-
-test('two elements, half probability', () => {
-  expect(solve(2, [2, 4], [5000, 5000])).toBe(6000);
-});
-
-test('three elements, mix probabilities', () => {
-  expect(solve(3, [1, 2, 3], [10000, 5000, 2500])).toBe(324765619);
-});
-
-test('multi elements, all never inserted', () => {
-  expect(solve(4, [13, 27, 56, 1023], [0, 0, 0, 0])).toBe(0);
-});
-
-test('multi elements, all always inserted', () => {
-  expect(solve(3, [1, 2, 1023], [10000, 10000, 10000])).toBe(1052676);
-});
-
-test('two elements, different probabilities', () => {
-  expect(solve(2, [2, 2], [3000, 7000])).toBe(4200);
-});
-
-test('edge case, max values', () => {
-  const n = 2e5 | 0;
-  const a = Array(n).fill(1023);
+test('upper-bound case: n = 200000, a = [1]*n, p = [10000]*n', () => {
+  const n = 200000;
+  const a = Array(n).fill(1);
   const p = Array(n).fill(10000);
-  expect(typeof solve(n, a, p)).toBe('number');
+  expect(solve(n, a, p)).toBe(1);
 });
+
+test('minimal case: n = 1, a = [1], p = [1] (almost never inserted)', () => {
+  expect(solve(1, [1], [1])).toBe(1);
+});
+
+test('tricky case: n = 2, same a, one p = 10000, one p = 0 (never inserted)', () => {
+  expect(solve(2, [5, 5], [10000, 0])).toBe(25);
+});
+
+test('random valid case 1', () => {
+  expect(solve(3, [1, 2, 3], [10000, 5000, 2500])).toBe(287500006);
+});
+
+test('random valid case 2', () => {
+  expect(solve(4, [2, 4, 8, 16], [4000, 6000, 8000, 2000])).toBe(116800002);
+});
+
+test('random valid case 3', () => {
+  expect(solve(3, [10, 20, 30], [3000, 7000, 5000])).toBe(50750020);
+});
+
+
+
+// × example from description (5 ms)
+//   √ edge case: n = 1, p = 10000 (always inserted) (1 ms)
+//   × upper-bound case: n = 200000, a = [1]*n, p = [10000]*n (304 ms)
+//   × minimal case: n = 1, a = [1], p = [1] (almost never inserted) (1 ms)
+//   √ tricky case: n = 2, same a, one p = 10000, one p = 0 (never inserted)
+//   × random valid case 1
+//   × random valid case 2 (1 ms)
+//   × random valid case 3

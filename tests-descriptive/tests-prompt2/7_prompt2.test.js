@@ -39,3 +39,15 @@ test('Five node star', () => {
 test('Unbalanced tree', () => {
   expect(solve(['6', '1 2', '1 3', '2 4', '4 5', '4 6'])).toBe('15');
 });
+
+
+// √ Single node tree (3 ms)
+//   √ Two node tree (1 ms)
+//   × Three node straight line (3 ms)
+//   × Three node star (1 ms)
+//   × Four node straight line
+//   × Four node star (1 ms)
+//   × Four node l-shaped
+//   × Five node straight line (1 ms)
+//   × Five node star (1 ms)
+//   × Unbalanced tree

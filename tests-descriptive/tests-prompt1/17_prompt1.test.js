@@ -61,7 +61,16 @@ test('Maximum n and m', () => {
     expect(typeof result).toBe('string');
     expect(result.length).toBeGreaterThan(0);
 });
-// FAIL tests - descriptive / tests - prompt1 / 17 _prompt1.test.js× n = 1, m = 1(5 ms)× n = 1, m = 3(4 ms)× n = 2, m = 1√ n = 2, m = 2(1 ms)√ n = 3, m = 2(1 ms)× n = 1, m = 2(1 ms)√ n = 5, m = 1(3 ms)√ n = 4, m = 3(3 ms)√ Maximum n and m(527 ms)
+// FAIL tests - descriptive / tests - prompt1 / 17 _prompt1.test.js
+// × n = 1, m = 1(5 ms)
+// × n = 1, m = 3(4 ms)
+// × n = 2, m = 1
+// √ n = 2, m = 2(1 ms)
+// √ n = 3, m = 2(1 ms)
+// × n = 1, m = 2(1 ms)
+// √ n = 5, m = 1(3 ms)
+// √ n = 4, m = 3(3 ms)
+// √ Maximum n and m(527 ms)
 
 // ● n = 1, m = 1
 

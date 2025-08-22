@@ -121,3 +121,19 @@ test('random bits convertible', () => {
   ];
   expect(solve(2, 2, JSON.parse(JSON.stringify(source)), target)).toBe("Yes\n");
 });
+
+
+
+
+// √ identical matrices (2 ms)
+// × single element different (6 ms)
+// √ convertible with mask
+// √ not convertible cause of missing bits (1 ms)
+// √ single cell, matching (1 ms)
+// × single cell, not matching
+// √ larger matrix, possible
+// √ zero-dim matrix
+// √ columns only (2 ms)
+// √ rows only (1 ms)
+// √ random bits non-convertible
+// √ random bits convertible

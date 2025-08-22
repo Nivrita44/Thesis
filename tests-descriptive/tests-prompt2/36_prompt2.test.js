@@ -62,3 +62,16 @@ test('single border non-corner, grid 3x2', () => {
 test('full queries over center cell only', () => {
   expect(solve(5, 5, 1, [[3,3,1]])).toBe(549755813888);
 });
+
+
+// × no queries, small grid (26 ms)
+// × single border non-corner query
+// × query at corner
+// × two opposite border non-corner queries
+// × all border non-corner cells queried, even black (1 ms)
+// √ all border non-corner cells queried, odd black (1 ms)
+// × large grid, no queries
+// × all border non-corner cells queried, large grid, even blacks
+// × empty grid (1x1), no queries
+// × single border non-corner, grid 3x2
+// × full queries over center cell only

@@ -1,6 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1754575409235" clover="3.2.0">
-  <project timestamp="1754575409235" name="All files">
-    <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0" elements="0" coveredelements="0" complexity="0" loc="0" ncloc="0" packages="0" files="0" classes="0"/>
+<coverage generated="1755790535662" clover="3.2.0">
+  <project timestamp="1755790535662" name="All files">
+    <metrics statements="20" coveredstatements="20" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1" elements="23" coveredelements="23" complexity="0" loc="20" ncloc="20" packages="1" files="1" classes="1"/>
+    <file name="18.js" path="E:\desktop\Thesis\solutions-descriptive\18.js">
+      <metrics statements="20" coveredstatements="20" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
+      <line num="2" count="12" type="stmt"/>
+      <line num="4" count="12" type="stmt"/>
+      <line num="5" count="31" type="stmt"/>
+      <line num="6" count="60" type="stmt"/>
+      <line num="7" count="60" type="stmt"/>
+      <line num="8" count="124" type="stmt"/>
+      <line num="11" count="60" type="stmt"/>
+      <line num="12" count="60" type="stmt"/>
+      <line num="13" count="124" type="stmt"/>
+      <line num="17" count="31" type="stmt"/>
+      <line num="18" count="60" type="stmt"/>
+      <line num="19" count="60" type="stmt"/>
+      <line num="20" count="124" type="stmt"/>
+      <line num="23" count="60" type="stmt"/>
+      <line num="24" count="124" type="stmt"/>
+      <line num="29" count="12" type="stmt"/>
+      <line num="30" count="19" type="stmt"/>
+      <line num="31" count="36" type="cond" truecount="2" falsecount="0"/>
+      <line num="32" count="2" type="stmt"/>
+      <line num="37" count="10" type="stmt"/>
+    </file>
   </project>
 </coverage>

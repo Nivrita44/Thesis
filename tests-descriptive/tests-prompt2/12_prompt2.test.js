@@ -1,4 +1,4 @@
-import solve from '../../solutions-descriptive/12.js';
+import {solve} from '../../solutions-descriptive/12.js';
 
 test('typical case 1', () => {
     const input = [{
@@ -144,3 +144,14 @@ test('multiple test cases', () => {
         [0, 0, 0, 0, 0, 0]
     ]);
 });
+
+
+
+// × typical case 1 (8 ms)
+// × typical case 2 (2 ms)
+// × typical case 3 (2 ms)
+// √ empty input
+// √ edge case: single element, no updates
+// √ edge case: all elements the same
+// × edge case: negative values (1 ms)
+// × multiple test cases (1 ms)

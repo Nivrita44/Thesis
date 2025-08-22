@@ -7,19 +7,19 @@
 
 // const testFolders = isClaude
 //   ? [
-//       'Claude/tests-algorithm/tests-prompt1',
-//       'Claude/tests-algorithm/tests-prompt2',
-//       'Claude/tests-algorithm/tests-prompt3'
+//       'Claude/tests-descriptive/tests-prompt1',
+//       'Claude/tests-descriptive/tests-prompt2',
+//       'Claude/tests-descriptive/tests-prompt3'
 //     ]
 //   : [
-//       'tests-algorithm/tests-prompt1',
-//       'tests-algorithm/tests-prompt2',
-//       'tests-algorithm/tests-prompt3'
+//       'tests-descriptive/tests-prompt1',
+//       'tests-descriptive/tests-prompt2',
+//       'tests-descriptive/tests-prompt3'
 //     ];
 
 // const coverageRoot = isClaude
-//   ? 'Claude/coverage-algorithm'
-//   : 'coverage-algorithm';
+//   ? 'Claude/coverage-descriptive'
+//   : 'coverage-descriptive';
 
 // // Make sure coverage directory exists
 // if (!fs.existsSync(coverageRoot)) {
@@ -56,11 +56,11 @@ import path from 'path';
 import fs from 'fs';
 
 const testFolders = [
-  'tests-algorithm/tests-prompt1',
-  'tests-algorithm/tests-prompt2',
-  'tests-algorithm/tests-prompt3'
+  'tests-descriptive/tests-prompt1',
+  'tests-descriptive/tests-prompt2',
+  'tests-descriptive/tests-prompt3'
 ];
-const coverageRoot = 'coverage-algorithm';
+const coverageRoot = 'coverage-descriptive';
 
 // Make sure coverage directory exists
 if (!fs.existsSync(coverageRoot)) {
@@ -76,7 +76,7 @@ for (const folder of testFolders) {
     const coverageDir = path.join(coverageRoot, problemId);
 
     // Using the arguments passed from the npm script
-    const args = process.argv.slice(2); // Gets ['1', 'algorithm']
+    const args = process.argv.slice(2); // Gets ['1', 'descriptive']
     // Check if the current test file matches the arguments
     if (args.length > 0 && !args.some(arg => testPath.includes(arg))) {
         continue; // Skip if it doesn't match
