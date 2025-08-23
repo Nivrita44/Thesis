@@ -9,7 +9,7 @@ export default {
     },
 
     testMatch: [
-        "<rootDir>/Passed_test_gpt/tests-algorithm/tests-prompt2/*.test.js"
+        "<rootDir>/Passed_test_gpt/tests-algorithm/tests-prompt3/*.test.js"
     ],
 
     // Explicitly exclude problematic folders

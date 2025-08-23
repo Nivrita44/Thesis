@@ -1,0 +1,48 @@
+{
+  "$schema": "./node_modules/@stryker-mutator/core/schema/stryker-schema.json",
+  "packageManager": "npm",
+  "reporters": [
+    "html",
+    "clear-text",
+    "progress"
+  ],
+  "testRunner": "jest",
+  "coverageAnalysis": "off",
+  "mutate": [
+    "solutions-algorithm/*.js"
+  ],
+  "jest": {
+    "projectType": "custom",
+    "configFile": "jest.config.mjs"
+  },
+  "tempDirName": "stryker-tmp-algorithm-solutions-prompt3",
+  "htmlReporter": {
+    "fileName": "mutation-reports/algorithm-solutions-prompt3/index.html"
+  },
+  "thresholds": {
+    "high": 80,
+    "low": 60,
+    "break": 50
+  },
+  "concurrency": 2,
+  "testRunnerNodeArgs": ["--experimental-vm-modules"],
+  "logLevel": "info",
+  "timeoutMS": 30000,
+  
+  "disableTypeChecks": false,
+  
+  "ignorePatterns": [
+    "Claude/**",
+    "solutions-descriptive/**",
+    "tests-descriptive/**",
+    "tests-algorithm/**",
+    "coverage/**",
+    "coverage-algorithm/**",
+    "coverage-descriptive/**",
+    "claude_coverage/**",
+    "claude_logs/**",
+    "mutation-reports/**",
+    "node_modules/**",
+    "stryker-tmp*/**"
+  ]
+}

@@ -19,3 +19,4 @@ Passed_test_gpt/tests-descriptive/
 !package.json
 !jest.config.mjs
 !stryker*.config.json
+
