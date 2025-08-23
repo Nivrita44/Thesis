@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1754677133272" clover="3.2.0">
+  <project timestamp="1754677133272" name="All files">
+    <metrics statements="20" coveredstatements="20" conditionals="10" coveredconditionals="10" methods="3" coveredmethods="3" elements="33" coveredelements="33" complexity="0" loc="20" ncloc="20" packages="1" files="1" classes="1"/>
+    <file name="43.js" path="E:\desktop\Thesis\solutions-algorithm\43.js">
+      <metrics statements="20" coveredstatements="20" conditionals="10" coveredconditionals="10" methods="3" coveredmethods="3"/>
+      <line num="5" count="180" type="stmt"/>
+      <line num="6" count="180" type="stmt"/>
+      <line num="9" count="14" type="stmt"/>
+      <line num="10" count="152" type="stmt"/>
+      <line num="11" count="10230" type="cond" truecount="2" falsecount="0"/>
+      <line num="12" count="10230" type="cond" truecount="2" falsecount="0"/>
+      <line num="17" count="14" type="stmt"/>
+      <line num="18" count="14" type="stmt"/>
+      <line num="19" count="152" type="stmt"/>
+      <line num="20" count="5039" type="cond" truecount="2" falsecount="0"/>
+      <line num="24" count="14" type="stmt"/>
+      <line num="25" count="14" type="stmt"/>
+      <line num="27" count="14" type="stmt"/>
+      <line num="28" count="152" type="stmt"/>
+      <line num="30" count="5039" type="stmt"/>
+      <line num="37" count="5039" type="cond" truecount="2" falsecount="0"/>
+      <line num="38" count="5019" type="cond" truecount="2" falsecount="0"/>
+      <line num="39" count="122" type="stmt"/>
+      <line num="40" count="122" type="stmt"/>
+      <line num="45" count="14" type="stmt"/>
+    </file>
+  </project>
+</coverage>

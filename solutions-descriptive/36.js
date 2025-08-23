@@ -20,10 +20,10 @@ function pow(a, b) {
     let r = 1;
     let base = a;
     while (b) {
-        if (b & 1 n) {
+        if (b & 1n) {
             r = mul(r, base);
         }
-        b /= 2 n;
+        b /= 2n;
         base = mul(base, base);
     }
     return r;

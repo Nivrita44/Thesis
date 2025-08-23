@@ -1,0 +1,335 @@
+// @ts-nocheck
+import { solve } from '../../solutions-descriptive/45.js';
+
+test('Example 1: basic path, forced walk during call', () => {
+    expect(
+        solve(
+            5,
+            5, [
+                [1, 5, 30, 100],
+                [1, 2, 20, 50],
+                [2, 3, 20, 50],
+                [3, 4, 20, 50],
+                [4, 5, 20, 50]
+            ],
+            100,
+            20,
+            80
+        )
+    ).toBe(0);
+});
+
+test('Example 2: impossible to arrive on time', () => {
+    expect(
+        solve(
+            2,
+            1, [
+                [1, 2, 55, 110]
+            ],
+            100,
+            50,
+            60
+        )
+    ).toBe(-1);
+});
+
+test('Example 3: multiple paths, alternative fastest', () => {
+    expect(
+        solve(
+            4,
+            4, [
+                [1, 2, 30, 100],
+                [2, 4, 30, 100],
+                [1, 3, 20, 50],
+                [3, 4, 20, 50]
+            ],
+            100,
+            40,
+            60
+        )
+    ).toBe(60);
+});
+
+test('Example 4: prefer bus up to phone, forced to walk through call', () => {
+    expect(
+        solve(
+            3,
+            3, [
+                [1, 2, 1, 10],
+                [2, 3, 10, 50],
+                [1, 3, 20, 21]
+            ],
+            100,
+            80,
+            90
+        )
+    ).toBe(80);
+});
+
+test('Example 5: Short network, complex transfer close to phone window', () => {
+    expect(
+        solve(
+            3,
+            2, [
+                [2, 1, 1, 3],
+                [2, 3, 3, 4]
+            ],
+            58,
+            55,
+            57
+        )
+    ).toBe(53);
+});
+
+test('Example 6: Just enough time to walk and arrive after call', () => {
+    expect(
+        solve(
+            2,
+            1, [
+                [2, 1, 6, 10]
+            ],
+            12,
+            9,
+            10
+        )
+    ).toBe(3);
+});
+
+test('Example 7: Path with several short segments', () => {
+    expect(
+        solve(
+            5,
+            5, [
+                [2, 1, 1, 8],
+                [2, 3, 4, 8],
+                [4, 2, 2, 4],
+                [5, 3, 3, 4],
+                [4, 5, 2, 6]
+            ],
+            8,
+            5,
+            6
+        )
+    ).toBe(2);
+});
+
+test('Phone call occupies almost all available time', () => {
+    expect(
+        solve(
+            3,
+            2, [
+                [1, 2, 4, 10],
+                [2, 3, 4, 10]
+            ],
+            15,
+            10,
+            14
+        )
+    ).toBe(-1);
+});
+
+test('Simple two node, just enough time with fastest bus', () => {
+    expect(
+        solve(
+            2,
+            1, [
+                [1, 2, 5, 7]
+            ],
+            20,
+            7,
+            12
+        )
+    ).toBe(13);
+});
+
+test('Large input: long chain, can take only bus, no phone call', () => {
+    const n = 1000;
+    const m = 999;
+    const edges = [];
+    for (let i = 1; i < n; ++i) {
+        edges.push([i, i + 1, 1, 10]);
+    }
+    expect(
+        solve(
+            n,
+            m,
+            edges,
+            2000,
+            1210,
+            1789
+        )
+    ).toBe(1000);
+});
+
+test('Large input: long chain, just enough to always walk', () => {
+    const n = 1000;
+    const m = 999;
+    const edges = [];
+    for (let i = 1; i < n; ++i) {
+        edges.push([i, i + 1, 1, 2]);
+    }
+    expect(
+        solve(
+            n,
+            m,
+            edges,
+            3000,
+            1050,
+            2050
+        )
+    ).toBe(2000);
+});
+
+test('Chain, but phone call window in middle, walking required during call', () => {
+    expect(
+        solve(
+            5,
+            4, [
+                [1, 2, 1, 10],
+                [2, 3, 1, 10],
+                [3, 4, 1, 10],
+                [4, 5, 1, 10]
+            ],
+            100,
+            50,
+            70
+        )
+    ).toBe(46);
+});
+
+test('Impossible: All paths require bus during phone call', () => {
+    expect(
+        solve(
+            3,
+            2, [
+                [1, 2, 100, 200],
+                [2, 3, 100, 200]
+            ],
+            240,
+            70,
+            230
+        )
+    ).toBe(-1);
+});
+
+test('Tiny graph: transition exactly at call boundaries', () => {
+    expect(
+        solve(
+            2,
+            1, [
+                [1, 2, 2, 5]
+            ],
+            15,
+            7,
+            10
+        )
+    ).toBe(13);
+});
+
+test('Graph with equal bus/foot time edges, prefer bus after call', () => {
+    expect(
+        solve(
+            4,
+            3, [
+                [1, 2, 3, 6],
+                [2, 3, 3, 6],
+                [3, 4, 3, 6]
+            ],
+            20,
+            7,
+            10
+        )
+    ).toBe(11);
+});
+
+// FAIL tests - descriptive / tests - prompt3 / 45 _prompt3.test.js√ Example 1: basic path, forced walk during call(3 ms)√ Example 2: impossible to arrive on time√ Example 3: multiple paths, alternative fastest(1 ms)√ Example 4: prefer bus up to phone, forced to walk through call(1 ms)√ Example 5: Short network, complex transfer close to phone window(1 ms)√ Example 6: Just enough time to walk and arrive after call(1 ms)√ Example 7: Path with several short segments(1 ms)× Phone call occupies almost all available time(4 ms)× Simple two node, just enough time with fastest bus(1 ms)× Large input: long chain, can take only bus, no phone call(3 ms)× Large input: long chain, just enough to always walk(4 ms)× Chain, but phone call window in middle, walking required during call(1 ms)√ Impossible: All paths require bus during phone call(1 ms)√ Tiny graph: transition exactly at call boundaries(1 ms)√ Graph with equal bus / foot time edges, prefer bus after call
+
+// ● Phone call occupies almost all available time
+
+// expect(received).toBe(expected) // Object.is equality
+
+// Expected: -1
+// Received: 2
+
+// 133 | 14
+// 134 | ) >
+// 135 | ).toBe(-1); |
+// ^
+// 136 |
+// });
+// 137 |
+//     138 | test('Simple two node, just enough time with fastest bus', () => {
+
+//             at Object.toBe(tests - descriptive / tests - prompt3 / 45 _prompt3.test.js: 135: 5)
+
+//             ● Simple two node, just enough time with fastest bus
+
+//             expect(received).toBe(expected) // Object.is equality
+
+//             Expected: 13
+//             Received: 15
+
+//             148 | 12
+//             149 | ) >
+//         150 | ).toBe(13); |
+// ^
+// 151 |
+// });
+// 152 |
+//     153 | test('Large input: long chain, can take only bus, no phone call', () => {
+
+//             at Object.toBe(tests - descriptive / tests - prompt3 / 45 _prompt3.test.js: 150: 5)
+
+//             ● Large input: long chain, can take only bus, no phone call
+
+//             expect(received).toBe(expected) // Object.is equality
+
+//             Expected: 1000
+//             Received: 479
+
+//             167 | 1789
+//             168 | ) >
+//         169 | ).toBe(1000); |
+// ^
+// 170 |
+// });
+// 171 |
+//     172 | test('Large input: long chain, just enough to always walk', () => {
+
+//             at Object.toBe(tests - descriptive / tests - prompt3 / 45 _prompt3.test.js: 169: 5)
+
+//             ● Large input: long chain, just enough to always walk
+
+//             expect(received).toBe(expected) // Object.is equality
+
+//             Expected: 2000
+//             Received: 1952
+
+//             186 | 2050
+//             187 | ) >
+//         188 | ).toBe(2000); |
+// ^
+// 189 |
+// });
+// 190 |
+//     191 | test('Chain, but phone call window in middle, walking required during call', () => {
+
+//             at Object.toBe(tests - descriptive / tests - prompt3 / 45 _prompt3.test.js: 188: 5)
+
+//             ● Chain, but phone call window in middle, walking required during call
+
+//             expect(received).toBe(expected) // Object.is equality
+
+//             Expected: 46
+//             Received: 96
+
+//             204 | 70
+//             205 | ) >
+//         206 | ).toBe(46); |
+// ^
+// 207 |
+// });
+// 208 |
+//     209 | test('Impossible: All paths require bus during phone call', () => {
+
+//             at Object.toBe(tests - descriptive / tests - prompt3 / 45 _prompt3.test.js: 206: 5)

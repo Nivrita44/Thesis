@@ -1,0 +1,34 @@
+You are given a connected undirected graph, the vertices of which are numbered with integers from 1
+ to n
+. Your task is to minimize the number of pairs of vertices 1≤u<v≤n
+ between which there exists a path in this graph. To achieve this, you can remove exactly one edge from the graph.
+
+Find the smallest number of pairs of vertices!
+
+Input
+Each test consists of several sets of input data. The first line contains a single integer t
+ (1≤t≤10^4
+) — the number of sets of input data. Then follows their description.
+
+The first line of each set of input data contains two integers n
+ and m
+ (2≤n≤10^5, n−1≤m≤min(10^5,n⋅(n−1)/2)
+) — the number of vertices in the graph and the number of edges.
+
+Each of the next m
+ lines contains two integers u
+ and v
+ (1≤u,v≤n,u≠v
+), indicating that there is an undirected edge in the graph between vertices u
+ and v
+.
+
+It is guaranteed that the given graph is connected and without multiple edges.
+
+It is guaranteed that the sum of n
+ and the sum of m
+ over all sets of input data does not exceed 2⋅10^5
+.
+
+Output
+For each set of input data, output the smallest number of pairs of reachable vertices, if exactly one edge can be removed.

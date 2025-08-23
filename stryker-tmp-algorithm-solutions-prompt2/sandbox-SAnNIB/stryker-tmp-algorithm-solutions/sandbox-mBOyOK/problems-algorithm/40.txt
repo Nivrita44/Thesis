@@ -1,0 +1,16 @@
+A certain number 1≤x≤10^9 is chosen. You are given two integers a and b, which are the two largest divisors of the number x. At the same time, the condition 1≤a<b<x is satisfied.
+
+For the given numbers a, b, you need to find the value of x.
+
+†
+ The number y is a divisor of the number x if there is an integer k such that x=y⋅k.
+
+Input
+The only line of test cases contains two integers a, b (1≤a<b≤10^9).
+
+It is guaranteed that a, b are the two largest divisors for some number 1≤x≤10^9.
+
+Output
+For test case, output the number x, such that a and b are the two largest divisors of the number x.
+
+If there are several answers, print any of them.

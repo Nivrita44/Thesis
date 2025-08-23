@@ -1,3 +1,4 @@
+// Core logic function
 export function solve(testCases) {
     const results = [];
 
@@ -21,7 +22,7 @@ export function solve(testCases) {
             }
         }
 
-        let totalScore = 0 n; // start as BigInt
+        let totalScore = 0n; // start as BigInt
         const updatedValues = [...a];
 
         for (let i = 0; i < n; i++) {
@@ -32,8 +33,7 @@ export function solve(testCases) {
             const iter = BigInt(iterations);
             const val = BigInt(updatedValues[i]);
             const dec = BigInt(b[i]);
-            totalScore += (iter * (val + val - (iter - 1 n) * dec)) / (2 n);
-
+            totalScore += (iter * (val + val - (iter - 1n) * dec)) / 2n;
 
             updatedValues[i] -= iterations * b[i];
         }

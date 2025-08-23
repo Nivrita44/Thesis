@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1755798154563" clover="3.2.0">
+  <project timestamp="1755798154563" name="All files">
+    <metrics statements="64" coveredstatements="64" conditionals="4" coveredconditionals="4" methods="9" coveredmethods="9" elements="77" coveredelements="77" complexity="0" loc="64" ncloc="64" packages="1" files="1" classes="1"/>
+    <file name="7.js" path="E:\desktop\Thesis\solutions-descriptive\7.js">
+      <metrics statements="64" coveredstatements="64" conditionals="4" coveredconditionals="4" methods="9" coveredmethods="9"/>
+      <line num="2" count="17" type="stmt"/>
+      <line num="3" count="17" type="stmt"/>
+      <line num="4" count="17" type="stmt"/>
+      <line num="5" count="4116" type="stmt"/>
+      <line num="6" count="2058" type="stmt"/>
+      <line num="8" count="17" type="stmt"/>
+      <line num="10" count="17" type="stmt"/>
+      <line num="11" count="17" type="stmt"/>
+      <line num="12" count="17" type="stmt"/>
+      <line num="14" count="17" type="stmt"/>
+      <line num="15" count="2075" type="stmt"/>
+      <line num="16" count="2075" type="stmt"/>
+      <line num="17" count="2075" type="cond" truecount="2" falsecount="0"/>
+      <line num="18" count="2058" type="stmt"/>
+      <line num="22" count="17" type="stmt"/>
+      <line num="23" count="17" type="stmt"/>
+      <line num="24" count="1052" type="stmt"/>
+      <line num="27" count="17" type="stmt"/>
+      <line num="28" count="17" type="stmt"/>
+      <line num="29" count="2075" type="stmt"/>
+      <line num="30" count="2075" type="stmt"/>
+      <line num="33" count="17" type="stmt"/>
+      <line num="34" count="1052" type="stmt"/>
+      <line num="37" count="17" type="stmt"/>
+      <line num="38" count="2075" type="stmt"/>
+      <line num="39" count="2075" type="stmt"/>
+      <line num="40" count="2058" type="stmt"/>
+      <line num="42" count="2075" type="stmt"/>
+      <line num="43" count="2075" type="stmt"/>
+      <line num="46" count="17" type="stmt"/>
+      <line num="51" count="17" type="stmt"/>
+      <line num="52" count="17" type="stmt"/>
+      <line num="53" count="17" type="stmt"/>
+      <line num="54" count="17" type="stmt"/>
+      <line num="55" count="17" type="stmt"/>
+      <line num="56" count="17" type="stmt"/>
+      <line num="57" count="17" type="stmt"/>
+      <line num="58" count="17" type="stmt"/>
+      <line num="59" count="17" type="stmt"/>
+      <line num="63" count="2058" type="stmt"/>
+      <line num="67" count="4150" type="stmt"/>
+      <line num="68" count="4150" type="stmt"/>
+      <line num="69" count="8232" type="stmt"/>
+      <line num="71" count="4150" type="stmt"/>
+      <line num="75" count="4116" type="stmt"/>
+      <line num="76" count="2092" type="stmt"/>
+      <line num="77" count="17" type="stmt"/>
+      <line num="78" count="17" type="stmt"/>
+      <line num="79" count="4116" type="stmt"/>
+      <line num="80" count="4116" type="stmt"/>
+      <line num="81" count="4116" type="stmt"/>
+      <line num="84" count="17" type="stmt"/>
+      <line num="85" count="17" type="stmt"/>
+      <line num="86" count="17" type="stmt"/>
+      <line num="87" count="17" type="stmt"/>
+      <line num="89" count="17" type="stmt"/>
+      <line num="90" count="2075" type="stmt"/>
+      <line num="91" count="4116" type="cond" truecount="2" falsecount="0"/>
+      <line num="92" count="2058" type="stmt"/>
+      <line num="93" count="2058" type="stmt"/>
+      <line num="94" count="2058" type="stmt"/>
+      <line num="99" count="17" type="stmt"/>
+      <line num="103" count="2075" type="stmt"/>
+      <line num="107" count="4116" type="stmt"/>
+    </file>
+  </project>
+</coverage>

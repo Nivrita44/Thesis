@@ -1,0 +1,43 @@
+We call a sequence a1,a2,…,an
+ magical if for all 1≤i≤n−1
+ it holds that: min(a1,…,ai)≥mex(ai+1,…,an)
+. In particular, any sequence of length 1
+ is considered magical.
+
+The minimum excluded (MEX) of a collection of integers a1,a2,…,ak
+ is defined as the smallest non-negative integer t
+ which does not occur in the collection a
+.
+
+You are given a sequence a
+ of n
+ non-negative integers. Find the maximum possible length of a magical subsequence∗
+ of the sequence a
+.
+
+∗
+A sequence a
+ is a subsequence of a sequence b
+ if a
+ can be obtained from b
+ by the deletion of several (possibly, zero or all) element from arbitrary positions.
+
+Input
+
+The first line of each test case contains an integer n
+ (1≤n≤2⋅10^5
+) — the length of the sequence a
+.
+
+The second line of each test case contains n
+ integers a1,a2,…,an
+ (0≤ai≤10^9
+) — the elements of the sequence a
+.
+
+It is guaranteed that the sum of n
+ across all test cases does not exceed 2⋅10^5
+.
+
+Output
+For each test case, output a single number — the maximum possible length of a magical subsequence of the sequence a

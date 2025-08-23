@@ -1,0 +1,27 @@
+{
+    "type": "module",
+    "devDependencies": {
+        "@babel/core": "^7.28.0",
+        "@babel/preset-env": "^7.28.0",
+        "@stryker-mutator/core": "^9.0.1",
+        "@stryker-mutator/jest-runner": "^9.0.1",
+        "babel-jest": "^30.0.4",
+        "cross-env": "^7.0.3",
+        "jest": "^30.0.4"
+    },
+    "dependencies": {
+        "@anthropic-ai/sdk": "^0.59.0",
+        "cheerio": "^1.1.0",
+        "csv-parser": "^3.2.0",
+        "dotenv": "^17.2.0",
+        "openai": "^5.10.1"
+    },
+    "scripts": {
+        "test:problem": "node --experimental-vm-modules scripts/run_problem_tests.js",
+        "coverage:split": "cross-env NODE_OPTIONS=--experimental-vm-modules node generate_individual_coverage.js",
+        "mutation:gpt:algo:prompt1": "stryker run stryker.config.json",
+        "mutation:test": "npm run mutation:gpt:algo:prompt1",
+        "mutation:algorithm": "stryker run stryker-algorithm.config.json",
+        "mutation:run": "node --experimental-vm-modules scripts/run_mutation_testing.js"
+    }
+}

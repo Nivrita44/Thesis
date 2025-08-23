@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1754546981015" clover="3.2.0">
+  <project timestamp="1754546981015" name="All files">
+    <metrics statements="16" coveredstatements="16" conditionals="4" coveredconditionals="4" methods="1" coveredmethods="1" elements="21" coveredelements="21" complexity="0" loc="16" ncloc="16" packages="1" files="1" classes="1"/>
+    <file name="6.js" path="C:\Users\ASUS\OneDrive\Documents\GitHub\Thesis\solutions-descriptive\6.js">
+      <metrics statements="16" coveredstatements="16" conditionals="4" coveredconditionals="4" methods="1" coveredmethods="1"/>
+      <line num="48" count="22" type="stmt"/>
+      <line num="49" count="22" type="stmt"/>
+      <line num="52" count="22" type="stmt"/>
+      <line num="53" count="107" type="stmt"/>
+      <line num="56" count="22" type="stmt"/>
+      <line num="57" count="22" type="stmt"/>
+      <line num="59" count="22" type="stmt"/>
+      <line num="60" count="107" type="stmt"/>
+      <line num="61" count="107" type="stmt"/>
+      <line num="62" count="107" type="cond" truecount="2" falsecount="0"/>
+      <line num="63" count="107" type="cond" truecount="2" falsecount="0"/>
+      <line num="66" count="107" type="stmt"/>
+      <line num="70" count="22" type="stmt"/>
+      <line num="71" count="22" type="stmt"/>
+      <line num="72" count="62" type="stmt"/>
+      <line num="75" count="22" type="stmt"/>
+    </file>
+  </project>
+</coverage>

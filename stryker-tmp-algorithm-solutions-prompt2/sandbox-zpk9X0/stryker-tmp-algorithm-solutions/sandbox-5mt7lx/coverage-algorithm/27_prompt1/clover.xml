@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1754640786079" clover="3.2.0">
+  <project timestamp="1754640786079" name="All files">
+    <metrics statements="2" coveredstatements="2" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="2" elements="6" coveredelements="6" complexity="0" loc="2" ncloc="2" packages="1" files="1" classes="1"/>
+    <file name="27.js" path="C:\Users\ASUS\OneDrive\Documents\GitHub\Thesis\solutions-algorithm\27.js">
+      <metrics statements="2" coveredstatements="2" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="2"/>
+      <line num="5" count="12" type="stmt"/>
+      <line num="6" count="12" type="cond" truecount="2" falsecount="0"/>
+    </file>
+  </project>
+</coverage>

@@ -1,0 +1,11 @@
+You are given two integers n and k.
+
+In one operation, you can subtract any power of k from n. Formally, in one operation, you can replace n by (n−kx) for any non-negative integer x.
+
+Find the minimum number of operations required to make n equal to 0.
+
+Input
+The only line of test case contains two integers n and k (1≤n,k≤10^9).
+
+Output
+For test case, output the minimum number of operations on a new line.

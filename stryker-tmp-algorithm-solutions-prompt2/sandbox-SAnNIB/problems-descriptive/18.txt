@@ -1,0 +1,64 @@
+You are given two matrices A
+ and B
+ of size n×m
+, filled with integers between 0
+ and 109
+. You can perform the following operations on matrix A
+ in any order and any number of times:
+
+&=: choose two integers i
+ and x
+ (1≤i≤n
+, x≥0
+) and replace each element in row i
+ with the result of the bitwise AND operation between x
+ and that element. Formally, for every j∈[1,m]
+, the element Ai,j
+ is replaced with Ai,j & x
+;
+|=: choose two integers j
+ and x
+ (1≤j≤m
+, x≥0
+) and replace each element in column j
+ with the result of the bitwise OR operation between x
+ and that element. Formally, for every i∈[1,n]
+, the element Ai,j
+ is replaced with Ai,j | x
+.
+The value of x
+ may be chosen differently for different operations.
+
+Determine whether it is possible to transform matrix A
+ into matrix B
+ using the given operations any number of times (including zero).
+
+Input
+
+Each test case is given as follows:
+
+the first line contains two integers n
+ and m
+ (1≤n,m≤10^3
+; n⋅m≤10^3
+) — the dimensions of the matrices A
+ and B
+;
+the following n
+ lines describe the matrix A
+, where the i
+-th line contains m
+ integers Ai,1,Ai,2,…,Ai,m
+ (0≤Ai,j≤10^9
+);
+the following n
+ lines describe the matrix B
+, where the i
+-th line contains m
+ integers Bi,1,Bi,2,…,Bi,m
+ (0≤Bi,j≤10^9
+).
+Output
+For each test case, output Yes if it is possible to transform the matrix A
+ into the matrix B
+; otherwise, output No. Each letter can be output in any case, upper or lower.

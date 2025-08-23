@@ -1,0 +1,32 @@
+Given an integer x
+ and an integer k
+. In one operation, you can perform one of two actions:
+
+choose an integer 1≤a≤k
+ and assign x=x⋅a
+;
+choose an integer 1≤a≤k
+ and assign x=xa
+, where the value of xa
+ must be an integer.
+Find the minimum number of operations required to make the number x
+ equal to y
+, or determine that it is impossible.
+
+Input
+
+The only line of each test case contains three integers x
+, y
+ and k
+ (1≤x,y,k≤10^6
+).
+
+It is guaranteed that the sum of x
+ and the sum of y
+ across all test cases does not exceed 10^8
+.
+
+Output
+For each test case, output −1
+ if it is impossible to achieve x=y
+ using the given operations, and the minimum number of required operations otherwise.

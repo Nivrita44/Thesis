@@ -1,0 +1,213 @@
+// @ts-nocheck
+// 
+import { solve } from '../../solutions-descriptive/45.js';
+
+test('simple chain path, should reach node 1 with time 0', () => {
+    expect(
+        solve(
+            5,
+            5, [
+                [1, 5, 30, 100],
+                [1, 2, 20, 50],
+                [2, 3, 20, 50],
+                [3, 4, 20, 50],
+                [4, 5, 20, 50],
+            ],
+            100,
+            20,
+            80
+        )
+    ).toBe(0);
+});
+
+test('impossible case due to insufficient initial time', () => {
+    expect(
+        solve(
+            2,
+            1, [
+                [1, 2, 55, 110],
+            ],
+            100,
+            50,
+            60
+        )
+    ).toBe(-1);
+});
+
+test('diamond path, path through 1-2-4 gives maxTime 60', () => {
+    expect(
+        solve(
+            4,
+            4, [
+                [1, 2, 30, 100],
+                [2, 4, 30, 100],
+                [1, 3, 20, 50],
+                [3, 4, 20, 50],
+            ],
+            100,
+            40,
+            60
+        )
+    ).toBe(60);
+});
+
+test('edge chooses shortest safe path, not direct path', () => {
+    expect(
+        solve(
+            3,
+            3, [
+                [1, 2, 1, 10],
+                [2, 3, 10, 50],
+                [1, 3, 20, 21],
+            ],
+            100,
+            80,
+            90
+        )
+    ).toBe(80);
+});
+
+test('multiple intermediates, edge costs force minimum', () => {
+    expect(
+        solve(
+            3,
+            2, [
+                [2, 1, 1, 3],
+                [2, 3, 3, 4],
+            ],
+            58,
+            55,
+            57
+        )
+    ).toBe(53);
+});
+
+test('minimal path with threshold edge reduction', () => {
+    expect(
+        solve(
+            2,
+            1, [
+                [2, 1, 6, 10],
+            ],
+            12,
+            9,
+            10
+        )
+    ).toBe(3);
+});
+
+test('5 nodes, edge types force intermediate routing', () => {
+    expect(
+        solve(
+            5,
+            5, [
+                [2, 1, 1, 8],
+                [2, 3, 4, 8],
+                [4, 2, 2, 4],
+                [5, 3, 3, 4],
+                [4, 5, 2, 6],
+            ],
+            8,
+            5,
+            6
+        )
+    ).toBe(2);
+});
+
+test('no edges, single node graph, answer should be initialTime if node=1', () => {
+    expect(
+        solve(
+            1,
+            0, [],
+            50,
+            10,
+            20
+        )
+    ).toBe(50);
+});
+
+test('graph where every step just barely meets threshold', () => {
+    expect(
+        solve(
+            3,
+            2, [
+                [1, 2, 10, 12],
+                [2, 3, 10, 12]
+            ],
+            20,
+            10,
+            15
+        )
+    ).toBe(0);
+});
+
+test('graph with loop, ensure it does not get stuck', () => {
+    expect(
+        solve(
+            3,
+            3, [
+                [1, 2, 3, 5],
+                [2, 3, 4, 6],
+                [3, 1, 2, 7]
+            ],
+            10,
+            5,
+            8
+        )
+    ).toBe(3);
+});
+
+test('path where no edge can be used due to thresholds', () => {
+    expect(
+        solve(
+            2,
+            1, [
+                [2, 1, 20, 40]
+            ],
+            5,
+            10,
+            30
+        )
+    ).toBe(-1);
+});
+
+// FAIL tests - descriptive / tests - prompt2 / 45 _prompt2.test.js√ simple chain path, should reach node 1 with time 0(4 ms)√ impossible
+// case due to insufficient initial time(1 ms)√ diamond path, path through 1 - 2 - 4 gives maxTime 60√ edge chooses shortest safe path, not direct path√ multiple intermediates, edge costs force minimum(1 ms)√ minimal path with threshold edge reduction(1 ms)√ 5 nodes, edge types force intermediate routing(1 ms)√ no edges, single node graph, answer should be initialTime
+// if node = 1× graph where every step just barely meets threshold(5 ms)× graph with loop, ensure it does not get stuck(1 ms)√ path where no edge can be used due to thresholds
+
+// ● graph where every step just barely meets threshold
+
+// expect(received).toBe(expected) // Object.is equality
+
+// Expected:
+//     0
+//     Received: -1
+
+//     146 | 15
+//     147 | ) >
+//     148 | ).toBe(0); |
+//     ^
+//     149 |
+// });
+//     150 |
+//         151 | test('graph with loop, ensure it does not get stuck', () => {
+
+//                 at Object.toBe(tests - descriptive / tests - prompt2 / 45 _prompt2.test.js: 148: 5)
+
+//                 ● graph with loop, ensure it does not get stuck
+
+//                 expect(received).toBe(expected) // Object.is equality
+
+//                 Expected: 3
+//                 Received: 8
+
+//                 163 | 8
+//                 164 | ) >
+//             165 | ).toBe(3); |
+//     ^
+//     166 |
+// });
+//     167 |
+//         168 | test('path where no edge can be used due to thresholds', () => {
+
+//                 at Object.toBe(tests - descriptive / tests - prompt2 / 45 _prompt2.test.js: 165: 5)

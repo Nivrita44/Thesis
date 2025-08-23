@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1754838813225" clover="3.2.0">
+  <project timestamp="1754838813225" name="All files">
+    <metrics statements="64" coveredstatements="64" conditionals="4" coveredconditionals="4" methods="9" coveredmethods="9" elements="77" coveredelements="77" complexity="0" loc="64" ncloc="64" packages="1" files="1" classes="1"/>
+    <file name="7.js" path="E:\desktop\Thesis\solutions-descriptive\7.js">
+      <metrics statements="64" coveredstatements="64" conditionals="4" coveredconditionals="4" methods="9" coveredmethods="9"/>
+      <line num="2" count="8" type="stmt"/>
+      <line num="3" count="8" type="stmt"/>
+      <line num="4" count="8" type="stmt"/>
+      <line num="5" count="86" type="stmt"/>
+      <line num="6" count="43" type="stmt"/>
+      <line num="8" count="8" type="stmt"/>
+      <line num="10" count="8" type="stmt"/>
+      <line num="11" count="8" type="stmt"/>
+      <line num="12" count="8" type="stmt"/>
+      <line num="14" count="8" type="stmt"/>
+      <line num="15" count="51" type="stmt"/>
+      <line num="16" count="51" type="stmt"/>
+      <line num="17" count="51" type="cond" truecount="2" falsecount="0"/>
+      <line num="18" count="43" type="stmt"/>
+      <line num="22" count="8" type="stmt"/>
+      <line num="23" count="8" type="stmt"/>
+      <line num="24" count="39" type="stmt"/>
+      <line num="27" count="8" type="stmt"/>
+      <line num="28" count="8" type="stmt"/>
+      <line num="29" count="51" type="stmt"/>
+      <line num="30" count="51" type="stmt"/>
+      <line num="33" count="8" type="stmt"/>
+      <line num="34" count="39" type="stmt"/>
+      <line num="37" count="8" type="stmt"/>
+      <line num="38" count="51" type="stmt"/>
+      <line num="39" count="51" type="stmt"/>
+      <line num="40" count="43" type="stmt"/>
+      <line num="42" count="51" type="stmt"/>
+      <line num="43" count="51" type="stmt"/>
+      <line num="46" count="8" type="stmt"/>
+      <line num="51" count="8" type="stmt"/>
+      <line num="52" count="8" type="stmt"/>
+      <line num="53" count="8" type="stmt"/>
+      <line num="54" count="8" type="stmt"/>
+      <line num="55" count="8" type="stmt"/>
+      <line num="56" count="8" type="stmt"/>
+      <line num="57" count="8" type="stmt"/>
+      <line num="58" count="8" type="stmt"/>
+      <line num="59" count="8" type="stmt"/>
+      <line num="63" count="43" type="stmt"/>
+      <line num="67" count="102" type="stmt"/>
+      <line num="68" count="102" type="stmt"/>
+      <line num="69" count="172" type="stmt"/>
+      <line num="71" count="102" type="stmt"/>
+      <line num="75" count="86" type="stmt"/>
+      <line num="76" count="59" type="stmt"/>
+      <line num="77" count="8" type="stmt"/>
+      <line num="78" count="8" type="stmt"/>
+      <line num="79" count="86" type="stmt"/>
+      <line num="80" count="86" type="stmt"/>
+      <line num="81" count="86" type="stmt"/>
+      <line num="84" count="8" type="stmt"/>
+      <line num="85" count="8" type="stmt"/>
+      <line num="86" count="8" type="stmt"/>
+      <line num="87" count="8" type="stmt"/>
+      <line num="89" count="8" type="stmt"/>
+      <line num="90" count="51" type="stmt"/>
+      <line num="91" count="86" type="cond" truecount="2" falsecount="0"/>
+      <line num="92" count="43" type="stmt"/>
+      <line num="93" count="43" type="stmt"/>
+      <line num="94" count="43" type="stmt"/>
+      <line num="99" count="8" type="stmt"/>
+      <line num="103" count="51" type="stmt"/>
+      <line num="107" count="86" type="stmt"/>
+    </file>
+  </project>
+</coverage>

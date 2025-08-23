@@ -1,0 +1,61 @@
+Dr. TC has a new patient called Goblin. He wants to test Goblin's intelligence, but he has gotten bored of his standard test. So, he decided to make it a bit harder.
+
+First, he creates a binary string∗
+ s
+ having n
+ characters. Then, he creates n
+ binary strings a1,a2,…,an
+. It is known that ai
+ is created by first copying s
+, then flipping the i
+-th character (1
+ becomes 0
+ and vice versa). After creating all n
+ strings, he arranges them into an n×n
+ grid g
+ where gi,j=aij
+.
+
+A set S
+ of size k
+ containing distinct integer pairs {(x1,y1),(x2,y2),…,(xk,yk)}
+ is considered good if:
+
+1≤xi,yi≤n
+ for all 1≤i≤k
+.
+gxi,yi=0
+ for all 1≤i≤k
+.
+For any two integers i
+ and j
+ (1≤i,j≤k
+), coordinate (xi,yi)
+ is reachable from coordinate (xj,yj)
+ by traveling through a sequence of adjacent cells (which share a side) that all have a value of 0
+.
+Goblin's task is to find the maximum possible size of a good set S
+. Because Dr. TC is generous, this time he gave him two seconds to find the answer instead of one. Goblin is not known for his honesty, so he has asked you to help him cheat.
+
+∗
+A binary string is a string that only consists of characters 1
+ and 0
+.
+
+Input
+
+The first line of each test contains a single integer n
+ (1≤n≤2⋅10^5)
+ — the length of the binary string s
+.
+
+The second line of each test contains a single binary string s
+ of length n
+.
+
+It is guaranteed that the sum of n
+ over all test cases does not exceed 2⋅10^5
+.
+
+Output
+For each test case, output a single number, the maximum possible size of a good set of cells from the grid. 

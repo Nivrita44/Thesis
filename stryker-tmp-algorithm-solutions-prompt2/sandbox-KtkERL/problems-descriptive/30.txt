@@ -1,0 +1,30 @@
+This is the hard version of the problem. The key difference between the two versions is highlighted in bold.
+
+A group of n
+ spiders has come together to exchange plushies. Initially, each spider has 1
+ plushie. Every year, if spider i
+ has at least one plushie, he will give exactly one plushie to spider ri
+. Otherwise, he will do nothing. Note that all plushie transfers happen at the same time. In this version, each spider is allowed to have more than 1 plushie at any point in time.
+
+The process is stable in the current year if each spider has the same number of plushies (before the current year's exchange) as he did the previous year (before the previous year's exchange). Note that year 1
+ can never be stable.
+
+Find the first year in which the process becomes stable.
+
+Input
+
+The first line of each test case contains an integer n
+ (2≤n≤2⋅10^5
+) — the number of spiders.
+
+The following line contains n
+ integers r1,r2,…,rn
+ (1≤ri≤n,ri≠i
+) — the recipient of the plushie of each spider.
+
+It is guaranteed that the sum of n
+ over all test cases does not exceed 2⋅10^5
+.
+
+Output
+For each test case, output an integer on a new line, the first year in which the process becomes stable.

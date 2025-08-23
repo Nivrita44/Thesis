@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1754543917492" clover="3.2.0">
+  <project timestamp="1754543917492" name="All files">
+    <metrics statements="21" coveredstatements="21" conditionals="8" coveredconditionals="8" methods="3" coveredmethods="3" elements="32" coveredelements="32" complexity="0" loc="21" ncloc="21" packages="1" files="1" classes="1"/>
+    <file name="3.js" path="C:\Users\ASUS\OneDrive\Documents\GitHub\Thesis\solutions-descriptive\3.js">
+      <metrics statements="21" coveredstatements="21" conditionals="8" coveredconditionals="8" methods="3" coveredmethods="3"/>
+      <line num="56" count="12" type="stmt"/>
+      <line num="57" count="12" type="stmt"/>
+      <line num="58" count="12" type="stmt"/>
+      <line num="59" count="12" type="stmt"/>
+      <line num="61" count="12" type="stmt"/>
+      <line num="62" count="12" type="stmt"/>
+      <line num="63" count="17" type="stmt"/>
+      <line num="64" count="49" type="stmt"/>
+      <line num="65" count="49" type="stmt"/>
+      <line num="68" count="12" type="stmt"/>
+      <line num="73" count="464" type="cond" truecount="4" falsecount="0"/>
+      <line num="74" count="34" type="stmt"/>
+      <line num="75" count="34" type="stmt"/>
+      <line num="78" count="430" type="stmt"/>
+      <line num="81" count="430" type="cond" truecount="2" falsecount="0"/>
+      <line num="82" count="430" type="cond" truecount="2" falsecount="0"/>
+      <line num="86" count="49" type="stmt"/>
+      <line num="87" count="64" type="stmt"/>
+      <line num="88" count="64" type="stmt"/>
+      <line num="89" count="64" type="stmt"/>
+      <line num="91" count="49" type="stmt"/>
+    </file>
+  </project>
+</coverage>

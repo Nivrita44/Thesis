@@ -1,0 +1,38 @@
+Sparkle gives you two arrays a
+ and b
+ of length n
+. Initially, your score is 0
+. In one operation, you can choose an integer i
+ and add ai
+ to your score. Then, you must set ai
+ = max(0,ai−bi)
+.
+
+You only have time to perform k
+ operations before Sparkle sets off a nuclear bomb! What is the maximum score you can acquire after k
+ operations?
+
+Input
+
+The first line of each test case contains n
+ and k
+ (1≤n≤2⋅10^5,1≤k≤10^9
+) — the length of the arrays and the number of operations you can perform.
+
+The following line contains n
+ integers a1,a2,...an
+ (1≤ai≤10^9
+).
+
+The following line contains n
+ integers b1,b2,...bn
+ (1≤bi≤10^9
+).
+
+It is guaranteed that the sum of n
+ for all test cases does not exceed 2⋅10^5
+.
+
+Output
+For each test case, output an integer, the maximum score you can acquire after k
+ operations.

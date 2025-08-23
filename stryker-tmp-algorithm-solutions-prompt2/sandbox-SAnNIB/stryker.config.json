@@ -1,0 +1,26 @@
+{
+  "$schema": "./node_modules/@stryker-mutator/core/schema/stryker-schema.json",
+  "testRunner": "jest",
+  "reporters": ["clear-text", "progress", "html", "json"],
+  "coverageAnalysis": "off",
+  
+  "mutate": [
+    "solutions-algorithm/**/*.js"
+  ],
+
+  "jest": {
+    "projectType": "custom",
+    "configFile": "jest.config.mjs"
+  },
+
+  "tempDirName": "stryker-tmp-gpt-algo-prompt1",
+  "htmlReporter": {
+    "baseDir": "mutation-reports/gpt/algorithm/prompt1"
+  },
+  
+  "thresholds": {
+    "high": 80,
+    "low": 60,
+    "break": 50
+  }
+}

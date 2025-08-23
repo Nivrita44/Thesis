@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1755798324946" clover="3.2.0">
+  <project timestamp="1755798324946" name="All files">
+    <metrics statements="19" coveredstatements="19" conditionals="6" coveredconditionals="6" methods="3" coveredmethods="3" elements="28" coveredelements="28" complexity="0" loc="19" ncloc="19" packages="1" files="1" classes="1"/>
+    <file name="24.js" path="E:\desktop\Thesis\solutions-descriptive\24.js">
+      <metrics statements="19" coveredstatements="19" conditionals="6" coveredconditionals="6" methods="3" coveredmethods="3"/>
+      <line num="2" count="472" type="stmt"/>
+      <line num="6" count="472" type="cond" truecount="2" falsecount="0"/>
+      <line num="8" count="472" type="stmt"/>
+      <line num="10" count="472" type="stmt"/>
+      <line num="11" count="6342" type="stmt"/>
+      <line num="12" count="6342" type="stmt"/>
+      <line num="14" count="6342" type="cond" truecount="2" falsecount="0"/>
+      <line num="16" count="6337" type="stmt"/>
+      <line num="19" count="472" type="stmt"/>
+      <line num="23" count="10" type="stmt"/>
+      <line num="25" count="10" type="stmt"/>
+      <line num="26" count="482" type="stmt"/>
+      <line num="27" count="482" type="stmt"/>
+      <line num="29" count="482" type="cond" truecount="2" falsecount="0"/>
+      <line num="30" count="10" type="stmt"/>
+      <line num="31" count="10" type="stmt"/>
+      <line num="34" count="472" type="stmt"/>
+      <line num="42" count="472" type="stmt"/>
+      <line num="45" count="10" type="stmt"/>
+    </file>
+  </project>
+</coverage>

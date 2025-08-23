@@ -1,0 +1,66 @@
+his is the easy version of the problem. The difference between the versions is that in this version, there is an additional constraint on m
+. You can hack only if you solved all versions of this problem.
+
+Recently, the instructors of "T-generation" needed to create a training contest. They were missing one problem, and there was not a single problem on graphs in the contest, so they came up with the following problem.
+
+You are given a connected weighted undirected graph with n
+ vertices and m
+ edges, which does not contain self-loops or multiple edges.
+
+There are q
+ queries of the form (a,b,k)
+: among all paths from vertex a
+ to vertex b
+, find the smallest k
+-th maximum weight of edges on the path†
+.
+
+The instructors thought that the problem sounded very interesting, but there is one catch. They do not know how to solve it. Help them and solve the problem, as there are only a few hours left until the contest starts.
+
+†
+ Let w1≥w2≥…≥wh
+ be the weights of all edges in a path, in non-increasing order. The k
+-th maximum weight of the edges on this path is wk
+.
+
+Input
+
+
+The first line of each set of test case contains three integers n,m
+ and q
+ (2≤n≤400
+, n−1≤m≤min(400,n⋅(n−1)/2)
+, 1≤q≤3⋅10^5
+) — the number of vertices, the number of edges, and the number of questions, respectively.
+
+Each of the following m
+ lines of each set of test case contains three integers v,u
+ and w
+ (1≤v,u≤n
+, 1≤w≤10^9
+) — the ends of the next edge of the graph and its weight, respectively. It is guaranteed that the graph does not contain self-loops and multiple edges.
+
+Each of the following q
+ lines of each set of test case contains three integers a,b
+ and k
+ (1≤a,b≤n
+, k≥1
+) — the next question. It is guaranteed that any path from vertex a
+ to vertex b
+ contains at least k
+ edges.
+
+It is guaranteed that the sum of the values of n
+ across all sets of test cases does not exceed 400
+.
+
+It is guaranteed that the sum of the values of m
+ across all sets of test cases does not exceed 400
+.
+
+It is guaranteed that the sum of the values of q
+ across all sets of test cases does not exceed 3⋅105
+.
+
+Output
+For each test case, output the answers to all questions.
