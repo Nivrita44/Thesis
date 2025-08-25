@@ -1,0 +1,66 @@
+Even Little John needs money to buy a house. But he recently lost his job; how will he earn money now? Of course, by playing a game that gives him money as a reward! Oh well, maybe not those kinds of games you are thinking about.
+There are n+m
+ distinct points (a1,0),(a2,0),…,(an,0),(b1,2),(b2,2),…,(bm,2)
+ on the plane. Initially, your score is 0
+. To increase your score, you can perform the following operation:
+
+Choose three distinct points which are not collinear;
+Increase your score by the area of the triangle formed by these three points;
+Then, erase the three points from the plane.
+
+//image
+
+Let kmax
+ be the maximum number of operations that can be performed. For example, if it is impossible to perform any operation, kmax
+ is 0
+. Additionally, define f(k)
+ as the maximum possible score achievable by performing the operation exactly k
+ times. Here, f(k)
+ is defined for all integers k
+ such that 0≤k≤kmax
+.
+
+Find the value of kmax
+, and find the values of f(x)
+ for all integers x=1,2,…,kmax
+ independently.
+
+Input
+
+
+The first line of each test case contains two integers n
+ and m
+ (1≤n,m≤2⋅10^5
+).
+
+The second line of each test case contains n
+ pairwise distinct integers a1,a2,…,an
+ — the points on y=0
+ (−10^9≤ai≤10^9
+).
+
+The third line of each test case contains m
+ pairwise distinct integers b1,b2,…,bm
+ — the points on y=2
+ (−10^9≤bi≤10^9
+).
+
+It is guaranteed that both the sum of n
+ and the sum of m
+ over all test cases do not exceed 2⋅10^5
+.
+
+Output
+For each test case, given that the maximum number of operations is kmax
+, you must output at most two lines:
+
+The first line contains the value of kmax
+;
+The second line contains kmax
+ integers denoting f(1),f(2),…,f(kmax)
+. You are allowed to omit this line if kmax
+ is 0
+.
+Note that under the constraints of this problem, it can be shown that all values of f(x)
+ are integers no greater than 10^16
+.

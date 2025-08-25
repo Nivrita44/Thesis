@@ -1,0 +1,51 @@
+Serval has just found a Kaitenzushi buffet restaurant. Kaitenzushi means that there is a conveyor belt in the restaurant, delivering plates of sushi in front of the customer, Serval.
+
+In this restaurant, each plate contains exactly k
+ pieces of sushi and the i
+-th plate has a deliciousness di
+. Serval will have a meal in this restaurant for n
+ minutes, and within the n
+ minutes, he must eat up all the pieces of sushi he took from the belt.
+
+Denote the counter for uneaten taken pieces of sushi as r
+. Initially, r=0
+. In the i
+-th minute (1≤i≤n
+), only the i
+-th plate of sushi will be delivered in front of Serval, and he can do one of the following:
+
+Take the i
+-th plate of sushi (whose deliciousness is di
+) from the belt, and r
+ will be increased by k
+;
+Eat one uneaten piece of sushi that he took from the belt before, and r
+ will be decreased by 1
+. Note that you can do this only if r>0
+;
+Or, do nothing, and r
+ will remain unchanged.
+Note that after the n
+ minutes, the value of r
+ must be 0
+.
+
+Serval wants to maximize the sum of the deliciousnesses of all the plates he took. Help him find it out!
+
+Input
+
+The first line of each test case contains two integers n
+ and k
+ (1≤k<n≤2⋅10^5
+) — the number of minutes of the meal and the number of sushi pieces in each plate.
+
+The second line contains n
+ integers d1,d2,…,dn
+ (1≤di≤10^9
+) — the deliciousness of each plate.
+
+It is guaranteed that the sum of n
+ over all test cases does not exceed 2⋅10^5.
+
+Output
+For each test case, print a single integer — the maximum possible sum of the deliciousnesses of all the plates Serval took.

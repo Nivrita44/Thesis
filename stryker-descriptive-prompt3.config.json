@@ -1,0 +1,80 @@
+{
+  "$schema": "./node_modules/@stryker-mutator/core/schema/stryker-schema.json",
+  "packageManager": "npm",
+  "reporters": [
+    "html",
+    "clear-text",
+    "progress"
+  ],
+  "testRunner": "jest",
+  "coverageAnalysis": "off",
+  "mutate": [
+    "solutions-descriptive/1.js",
+    "solutions-descriptive/3.js",
+    "solutions-descriptive/4.js",
+    "solutions-descriptive/5.js",
+    "solutions-descriptive/6.js",
+    "solutions-descriptive/7.js",
+    "solutions-descriptive/8.js",
+    "solutions-descriptive/10.js",
+    "solutions-descriptive/11.js",
+    "solutions-descriptive/12.js",
+    "solutions-descriptive/13.js",
+    "solutions-descriptive/14.js",
+    "solutions-descriptive/15.js",
+    "solutions-descriptive/16.js",
+    "solutions-descriptive/17.js",
+    "solutions-descriptive/18.js",
+    "solutions-descriptive/19.js",
+    "solutions-descriptive/20.js",
+    "solutions-descriptive/21.js",
+    "solutions-descriptive/22.js",
+    "solutions-descriptive/25.js",
+    "solutions-descriptive/26.js",
+    "solutions-descriptive/27.js",
+    "solutions-descriptive/28.js",
+    "solutions-descriptive/31.js",
+    "solutions-descriptive/34.js",
+    "solutions-descriptive/36.js",
+    "solutions-descriptive/37.js",
+    "solutions-descriptive/39.js",
+    "solutions-descriptive/40.js",
+    "solutions-descriptive/41.js",
+    "solutions-descriptive/43.js",
+    "solutions-descriptive/44.js"
+  ],
+  "jest": {
+    "projectType": "custom",
+    "configFile": "jest.config.mjs"
+  },
+  "testRunnerNodeArgs": ["--experimental-vm-modules"],
+  "tempDirName": "stryker-tmp-descriptive-solutions-prompt3",
+  "htmlReporter": {
+    "fileName": "mutation-reports/descriptive-solutions-prompt3/index.html"
+  },
+  "thresholds": {
+    "high": 80,
+    "low": 60,
+    "break": 50
+  },
+  "concurrency": 4,
+  "logLevel": "info",
+  "timeoutMS": 15000,
+  
+  "disableTypeChecks": false,
+  
+  "ignorePatterns": [
+    "Claude/**",
+    "solutions-algorithm/**",
+    "tests-algorithm/**",
+    "tests-descriptive/**",
+    "coverage/**",
+    "coverage-algorithm/**",
+    "coverage-descriptive/**",
+    "claude_coverage/**",
+    "claude_logs/**",
+    "mutation-reports/**",
+    "node_modules/**",
+    "stryker-tmp*/**"
+  ]
+}

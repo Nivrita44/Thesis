@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>10/10</span>
+                <span class='fraction'>6/6</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>9/9</span>
+                <span class='fraction'>6/6</span>
             </div>
         
             
@@ -94,28 +94,17 @@
 <a name='L29'></a><a href='#L29'>29</a>
 <a name='L30'></a><a href='#L30'>30</a>
 <a name='L31'></a><a href='#L31'>31</a>
-<a name='L32'></a><a href='#L32'>32</a>
-<a name='L33'></a><a href='#L33'>33</a>
-<a name='L34'></a><a href='#L34'>34</a>
-<a name='L35'></a><a href='#L35'>35</a>
-<a name='L36'></a><a href='#L36'>36</a>
-<a name='L37'></a><a href='#L37'>37</a>
-<a name='L38'></a><a href='#L38'>38</a>
-<a name='L39'></a><a href='#L39'>39</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">12x</span>
-<span class="cline-any cline-yes">12x</span>
-<span class="cline-any cline-yes">12x</span>
+<a name='L32'></a><a href='#L32'>32</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">12x</span>
-<span class="cline-any cline-yes">200044x</span>
-<span class="cline-any cline-yes">9x</span>
-<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">200035x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -136,55 +125,45 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">export function solve(arr) {
-    const n = arr.length;
-    const seen = {};
-    let moves = 0;
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">export function solve(n) {
+    const steps = [];
 &nbsp;
-    for (let j = n - 1; j &gt;= 0; j--) {
-        if (seen[arr[j]] === 1) {
-            moves = j + 1;
-            break;
-        } else {
-            seen[arr[j]] = 1;
-        }
+    if (n === 81) {
+        steps.push("!");
+    } else {
+        steps.push(`add ${n - 81}`);
+        steps.push("!");
     }
 &nbsp;
-    return moves;
+    return steps;
 }
-&nbsp;
-// Test function
 // function testing_test() {
 //     const testCases = [
-//         { input: [3, 1, 4, 3], expected: 1 },
-//         { input: [1, 1, 1, 1, 1], expected: 4 },
-//         { input: [1], expected: 0 },
-//         { input: [6, 5, 4, 3, 2, 1], expected: 0 },
-//         { input: [1, 2, 1, 7, 1, 2, 1], expected: 5 },
+//         { input: 100, expected: ["add -19", "!"] },
+//         { input: 0, expected: ["add -81", "!"] },
+//         { input: 1, expected: ["add -80", "!"] },
+//         { input: 5, expected: ["add -76", "!"] }
 //     ];
 &nbsp;
-//     for (let i = 0; i &lt; testCases.length; i++) {
-//         const { input, expected } = testCases[i];
+//     console.log("Running Tests...\n");
+//     testCases.forEach(({ input, expected }, i) =&gt; {
 //         const result = solve(input);
-//         const status = result === expected ? "PASS" : "FAIL";
-//         console.log(`Test ${i + 1}: Expected = ${expected}, Got = ${result} =&gt; ${status}`);
-//     }
+//         console.log(`Test ${i+1}:`);
+//         console.log(`Input: ${input}`);
+//         console.log(`Expected: ${JSON.stringify(expected)}`);
+//         console.log(`Received: ${JSON.stringify(result)}`);
+//         console.log(`Status: ${JSON.stringify(result) === JSON.stringify(expected) ? "PASS" : "FAIL"}\n`);
+//     });
 // }
 &nbsp;
-// // Run tests if file is executed directly
-// if (require.main === module) {
-//     testing_test();
-// }</pre></td></tr></table></pre>
+//  testing_test();</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
             </div><!-- /wrapper -->
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-08-23T20:33:22.675Z
+                at 2025-08-24T10:23:57.041Z
             </div>
         <script src="prettify.js"></script>
         <script>

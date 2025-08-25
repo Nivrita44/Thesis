@@ -2,9 +2,9 @@ const MOD = BigInt(998244353);
 
 function convolution(P, Q) {
     let len = P.length;
-    let R = new Array(len).fill(0 n);
+    let R = new Array(len).fill(0n);
     for (let i = 0; i < len; i++) {
-        let suma = 0 n;
+        let suma = 0n;
         for (let j = 0; j <= i; j++) {
             suma += P[j] * Q[i - j];
             suma %= MOD;
@@ -16,14 +16,14 @@ function convolution(P, Q) {
 
 export function solve(P, k) {
     let len = P.length;
-    let R = new Array(len).fill(0 n);
-    R[0] = 1 n;
+    let R = new Array(len).fill(0n);
+    R[0] = 1n;
     while (k > 0) {
-        if (k % 2 n == 1 n) {
+        if (k % 2n == 1n) {
             R = convolution(R, P);
         }
         P = convolution(P, P);
-        k >>= 1 n;
+        k >>= 1n;
     }
     return R;
 }

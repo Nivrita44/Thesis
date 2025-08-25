@@ -1,0 +1,31 @@
+After three hundred years of slime farming, Akito finally obtained the magical number n
+. Upon reaching the merchant, he wanted to exchange the number for gold, but the merchant gave the hero a quest.
+
+The merchant said that for the quest, the skill rev(n,p)
+ would be required, which Akito, by happy coincidence, had recently learned. rev(n,p)
+ represents the following procedure:
+
+1. Write the number n in base p, let this representation be n=nℓ−1…n1n0¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯, where ℓ is the length of the base p
+ representation of the number n.
+
+2.Reverse the base p representation, let this be m=n0n1…nℓ−1¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯.
+
+3.Convert the number m back to decimal and return it as the result. 
+
+The merchant's quest was to calculate the sum x=∑p=2krev(n,p). Since this number can be quite large, only the remainder of x
+ when divided by 109+7
+ is required. The merchant also mentioned that the previous traveler had been calculating this sum for three hundred years and had not finished it. But you will help Akito finish it faster, right?
+
+Input
+
+In the only line of each test case, two numbers n
+ and k
+ are given (1≤n≤3⋅10^5,2≤k≤10^18
+) — the magical number and the upper limit for summation.
+
+Note that the sum of n
+ across all test cases is not bounded.
+
+Output
+For each test case, you need to output a single number — the remainder of x=∑p=2krev(n,p)
+ when divided by 10^9+7.
