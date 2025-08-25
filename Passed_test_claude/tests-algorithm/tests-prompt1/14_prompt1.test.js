@@ -1,0 +1,23 @@
+import { solve } from '../../../solutions-algorithm/14.js'
+
+test('example case from description', () => {
+  expect(solve(5, 1, 'BGGBG')).toBe('GBGGB');
+});
+
+
+test('max length with alternating pattern', () => {
+  expect(solve(50, 1, 'BGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBG')).toBe('GBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGBGB');
+});
+
+test('minimal length single swap', () => {
+  expect(solve(2, 1, 'BG')).toBe('GB');
+});
+
+test('zero time transformation', () => {
+  expect(solve(3, 0, 'BGG')).toBe('BGG');
+});
+
+
+test('all girls no movement needed', () => {
+  expect(solve(5, 10, 'GGGGG')).toBe('GGGGG');
+});
