@@ -1,0 +1,52 @@
+The folk hero Robin Hood has been troubling Sheriff of Nottingham greatly. Sheriff knows that Robin Hood is about to attack his camps and he wants to be prepared.
+
+Sheriff of Nottingham built the camps with strategy in mind and thus there are exactly n
+ camps numbered from 1
+ to n
+ and n−1
+ trails, each connecting two camps. Any camp can be reached from any other camp. Each camp i
+ has initially ai
+ gold.
+
+As it is now, all camps would be destroyed by Robin. Sheriff can strengthen a camp by subtracting exactly c
+ gold from each of its neighboring camps and use it to build better defenses for that camp. Strengthening a camp doesn't change its gold, only its neighbors' gold. A camp can have negative gold.
+
+After Robin Hood's attack, all camps that have been strengthened survive the attack, all others are destroyed.
+
+What's the maximum gold Sheriff can keep in his surviving camps after Robin Hood's attack if he strengthens his camps optimally?
+
+Camp a
+ is neighboring camp b
+ if and only if there exists a trail connecting a
+ and b
+. Only strengthened camps count towards the answer, as others are destroyed.
+
+Input
+
+Each test case begins with two integers n
+, c
+ (1≤n≤2⋅10^5,1≤c≤10^9
+) — the number of camps and the gold taken from each neighboring camp for strengthening.
+
+The second line of each test case contains n
+ integers a1,a2,…,an
+ (−10^9≤ai≤10^9
+) — the initial gold of each camp.
+
+Then follow n−1
+ lines, each with integers u
+, v
+ (1≤u,v≤n
+, u≠v
+) — meaning that there is a trail between u
+ and v
+.
+
+The sum of n
+ over all test cases doesn't exceed 2⋅10^5
+.
+
+It is guaranteed that any camp is reachable from any other camp.
+
+Output
+Output a single integer, the maximum gold Sheriff of Nottingham can keep in his surviving camps after Robin Hood's attack.

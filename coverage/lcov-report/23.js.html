@@ -25,14 +25,14 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>17/17</span>
+                <span class='fraction'>3/3</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>4/4</span>
+                <span class='fraction'>0/0</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>15/15</span>
+                <span class='fraction'>3/3</span>
             </div>
         
             
@@ -113,49 +113,16 @@
 <a name='L48'></a><a href='#L48'>48</a>
 <a name='L49'></a><a href='#L49'>49</a>
 <a name='L50'></a><a href='#L50'>50</a>
-<a name='L51'></a><a href='#L51'>51</a>
-<a name='L52'></a><a href='#L52'>52</a>
-<a name='L53'></a><a href='#L53'>53</a>
-<a name='L54'></a><a href='#L54'>54</a>
-<a name='L55'></a><a href='#L55'>55</a>
-<a name='L56'></a><a href='#L56'>56</a>
-<a name='L57'></a><a href='#L57'>57</a>
-<a name='L58'></a><a href='#L58'>58</a>
-<a name='L59'></a><a href='#L59'>59</a>
-<a name='L60'></a><a href='#L60'>60</a>
-<a name='L61'></a><a href='#L61'>61</a>
-<a name='L62'></a><a href='#L62'>62</a>
-<a name='L63'></a><a href='#L63'>63</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">9x</span>
-<span class="cline-any cline-yes">18x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">18x</span>
-<span class="cline-any cline-yes">16x</span>
+<a name='L51'></a><a href='#L51'>51</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">18x</span>
-<span class="cline-any cline-yes">18x</span>
-<span class="cline-any cline-yes">11x</span>
-<span class="cline-any cline-yes">11x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">11x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">11x</span>
-<span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">18x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">9x</span>
-<span class="cline-any cline-yes">9x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -187,76 +154,73 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">export function solve(left, right, bitIndex, xorConstant) {
-  const computeXor = (limit, bitIndex, xorConstant) =&gt; {
-      let xorResult = 0n;
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">'use strict';
 &nbsp;
-      
-      for (let rem = 0n; rem &lt; limit % 4n; rem++) {
-          xorResult ^= limit - (limit % 4n) + rem;
-      }
-&nbsp;
-      
-      limit -= xorConstant + 1n;
-      if (limit &gt;= 0n) {
-          let shiftedCount = limit / (1n &lt;&lt; bitIndex);
-          shiftedCount += 1n;
-&nbsp;
-          
-          for (let rem = 0n; rem &lt; shiftedCount % 4n; rem++) {
-              xorResult ^= (shiftedCount - (shiftedCount % 4n) + rem) * (1n &lt;&lt; bitIndex);
-          }
-&nbsp;
-          
-          if (shiftedCount % 2n === 1n) {
-              xorResult ^= xorConstant;
-          }
-      }
-&nbsp;
-      return xorResult;
-  };
-&nbsp;
-  const finalXor = computeXor(right + 1n, bitIndex, xorConstant) ^ computeXor(left, bitIndex, xorConstant);
-  return finalXor;
+// Pure function
+export function solve(testCases) {
+    return testCases.map(([a, b, n]) =&gt; {
+        const x = Math.floor((n - b) / a);
+        return a * x + b;
+    });
 }
 &nbsp;
-  // function testing_test() {
-  //   const testCases = [
-  //     { input: [1n, 3n, 1n, 0n], expected: 2n },
-  //     { input: [2n, 28n, 3n, 7n], expected: 2n },
-  //     { input: [15n, 43n, 1n, 0n], expected: 13n },
-  //     { input: [57n, 2007n, 1n, 0n], expected: 0n },
-  //     { input: [1010n, 1993n, 2n, 2n], expected: 4n },
-  //     { input: [1n, 1000000000n, 30n, 1543n], expected: 1000000519n },
-  //   ];
-  
-  //   let passed = true;
-  
-  //   for (let i = 0; i &lt; testCases.length; i++) {
-  //     const { input, expected } = testCases[i];
-  //     const result = solve(...input);
-  //     if (result === expected) {
-  //       console.log(`Test case ${i + 1}: ✅ Passed`);
-  //     } else {
-  //       console.log(`Test case ${i + 1}: ❌ Failed (Got ${result}, Expected ${expected})`);
-  //       passed = false;
-  //     }
-  //   }
-  
-  //   if (passed) {
-  //     console.log("All test cases passed! 🎉");
-  //   }
-  // }
-  
-  // testing_test();
-  </pre></td></tr></table></pre>
+// Test function
+// function testing_test() {
+//     const testCases = [{
+//         input: [
+//             [7, 5, 12345],
+//             [5, 0, 4],
+//             [10, 5, 15],
+//             [17, 8, 54321],
+//             [499999993, 9, 1000000000],
+//             [10, 5, 187],
+//             [2, 0, 999999999]
+//         ],
+//         expected: [
+//             12339,
+//             0,
+//             15,
+//             54306,
+//             999999995,
+//             185,
+//             999999998
+//         ]
+//     }];
+&nbsp;
+//     console.log("Running Tests...\n");
+//     testCases.forEach(({ input, expected }, index) =&gt; {
+//         const result = solve(input);
+//         const pass = JSON.stringify(result) === JSON.stringify(expected);
+&nbsp;
+//         console.log(`Test Case ${index + 1}:`);
+//         input.forEach(([a, b, n], i) =&gt; {
+//             const actual = result[i];
+//             const expect = expected[i];
+//             const status = actual === expect ? 'PASS ✅' : 'FAIL ❌';
+//             console.log(`Input: a=${a}, b=${b}, n=${n} | Expected: ${expect} | Got: ${actual} | ${status}`);
+//         });
+//         console.log(`Overall Status: ${pass ? 'PASS ✅' : 'FAIL ❌'}\n`);
+//     });
+// }
+&nbsp;
+// // Run test
+// testing_test();</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
             </div><!-- /wrapper -->
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-08-24T10:23:57.041Z
+                at 2025-08-26T20:32:09.801Z
             </div>
         <script src="prettify.js"></script>
         <script>

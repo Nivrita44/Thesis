@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>21/21</span>
+                <span class='fraction'>14/14</span>
             </div>
         
             
@@ -39,14 +39,14 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>2/2</span>
+                <span class='fraction'>1/1</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>19/19</span>
+                <span class='fraction'>12/12</span>
             </div>
         
             
@@ -118,48 +118,29 @@
 <a name='L53'></a><a href='#L53'>53</a>
 <a name='L54'></a><a href='#L54'>54</a>
 <a name='L55'></a><a href='#L55'>55</a>
-<a name='L56'></a><a href='#L56'>56</a>
-<a name='L57'></a><a href='#L57'>57</a>
-<a name='L58'></a><a href='#L58'>58</a>
-<a name='L59'></a><a href='#L59'>59</a>
-<a name='L60'></a><a href='#L60'>60</a>
-<a name='L61'></a><a href='#L61'>61</a>
-<a name='L62'></a><a href='#L62'>62</a>
-<a name='L63'></a><a href='#L63'>63</a>
-<a name='L64'></a><a href='#L64'>64</a>
-<a name='L65'></a><a href='#L65'>65</a>
-<a name='L66'></a><a href='#L66'>66</a>
-<a name='L67'></a><a href='#L67'>67</a>
-<a name='L68'></a><a href='#L68'>68</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L56'></a><a href='#L56'>56</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">16x</span>
-<span class="cline-any cline-yes">16x</span>
-<span class="cline-any cline-yes">16x</span>
-<span class="cline-any cline-yes">354x</span>
-<span class="cline-any cline-yes">354x</span>
-<span class="cline-any cline-yes">7854x</span>
-<span class="cline-any cline-yes">7854x</span>
+<span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">354x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">16x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-yes">10x</span>
-<span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">10x</span>
-<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">200105x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -192,76 +173,59 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">const MOD = BigInt(998244353);
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">'use strict';
 &nbsp;
-function convolution(P, Q) {
-    let len = P.length;
-    let R = new Array(len).fill(0n);
-    for (let i = 0; i &lt; len; i++) {
-        let suma = 0n;
-        for (let j = 0; j &lt;= i; j++) {
-            suma += P[j] * Q[i - j];
-            suma %= MOD;
+export function solve(t, values) {
+    const results = [];
+&nbsp;
+    for (let i = 0; i &lt; t; i++) {
+        const value = values[i];
+        let result = "";
+&nbsp;
+        if (value === 3) {
+            result = "-1";
+        } else {
+            const arr = [value, value - 1];
+            for (let j = 1; j &lt; value - 1; j++) {
+                arr.push(j);
+            }
+            result = arr.join(' ');
         }
-        R[i] = suma;
+&nbsp;
+        results.push(result);
     }
-    return R;
+&nbsp;
+    return results;
 }
 &nbsp;
-export function solve(P, k) {
-    let len = P.length;
-    let R = new Array(len).fill(0n);
-    R[0] = 1n;
-    while (k &gt; 0) {
-        if (k % 2n == 1n) {
-            R = convolution(R, P);
-        }
-        P = convolution(P, P);
-        k &gt;&gt;= 1n;
-    }
-    return R;
-}
-&nbsp;
+// Test Function
 // function testing_test() {
-//     const testCases = [
-//         { input: [500n, 500n], expected: [84693741n] },
-//         { input: [2n, 2n], expected: [2n] }
-//     ];
+//     const testCases = {
+//         input: {
+//             t: 5,
+//             values: [4, 3, 7, 5, 2]
+//         },
+//         expected: [
+//             "4 3 1 2",
+//             "-1",
+//             "7 6 1 2 3 4 5",
+//             "5 4 1 2 3",
+//             "2 1"
+//         ]
+//     };
 &nbsp;
-//     for (const { input, expected } of testCases) {
-//         const [n, m] = input;
+//     const result = solve(testCases.input.t, testCases.input.values);
+//     console.log("Running Tests...\n");
 &nbsp;
-//         let dp = new Array(Number(m) + 1).fill(0n);
-//         dp[0] = 1n;
-&nbsp;
-//         for (let _ = 0; _ &lt; m; _++) {
-//             let prev = dp.slice();
-//             dp.fill(0n);
-//             for (let c = 0; c &lt;= m; c++) {
-//                 if (c - 1 &gt;= 0) dp[c] += prev[c - 1];
-//                 if (c + 1 &lt;= m) dp[c] += prev[c + 1];
-//                 dp[c] %= MOD;
-//             }
-//         }
-&nbsp;
-//         let dpp = solve(dp, n - 1n);
-//         let ans = 0n;
-&nbsp;
-//         for (let c = 0; c &lt;= m; c++) {
-//             ans += dp[c] * dpp[c];
-//             ans %= MOD;
-//         }
-&nbsp;
-//         console.log(`Input: ${input}, Output: ${ans}, Expected: ${expected[0]}`);
-//         console.assert(ans === expected[0], `❌ Test failed for input ${input}`);
+//     for (let i = 0; i &lt; testCases.expected.length; i++) {
+//         const res = result[i];
+//         const exp = testCases.expected[i];
+//         const status = res === exp ? "PASS" : `FAIL (Expected: "${exp}")`;
+//         console.log(`Output: ${res} | ${status}`);
 //     }
 &nbsp;
-//     console.log("✅ All tests completed.");
+//     const overall = JSON.stringify(result) === JSON.stringify(testCases.expected);
+//     console.log(`\nOverall Status: ${overall ? "PASS" : "FAIL"}`);
 // }
 &nbsp;
 // testing_test();</pre></td></tr></table></pre>
@@ -271,7 +235,7 @@ export function solve(P, k) {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-08-24T17:04:08.917Z
+                at 2025-08-26T20:32:09.801Z
             </div>
         <script src="prettify.js"></script>
         <script>
