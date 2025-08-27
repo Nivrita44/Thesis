@@ -20,14 +20,8 @@
         "test:problem": "node --experimental-vm-modules scripts/run_problem_tests.js",
         "coverage:split": "cross-env NODE_OPTIONS=--experimental-vm-modules node generate_individual_coverage.js",
         "mutation:gpt:algo:prompt1": "stryker run stryker.config.json",
-        "mutation:test": "npm run mutation:gpt:algo:prompt1",
-        "mutation:algorithm": "stryker run stryker-algorithm.config.json",
-        "mutation:algorithm:prompt2": "stryker run stryker-algorithm-prompt2.config.json",
-        "mutation:algorithm:prompt3": "stryker run stryker-algorithm-prompt3.config.json",
-        "mutation:descriptive:prompt1": "stryker run stryker-descriptive-prompt1.config.json",
-        "mutation:descriptive:prompt2": "stryker run stryker-descriptive-prompt2.config.json",
-        "mutation:descriptive:prompt3": "stryker run stryker-descriptive-prompt3.config.json",
         "mutation:claude:algorithm:prompt1": "stryker run stryker-claude-algorithm-prompt1.config.json",
-        "mutation:run": "node --experimental-vm-modules scripts/run_mutation_testing.js"
+        "mutation:claude:algorithm:prompt2": "stryker run stryker-claude-algorithm-prompt2.config.json",
+        "mutation:claude:algorithm:prompt3": "stryker run stryker-claude-algorithm-prompt3.config.json"
     }
 }

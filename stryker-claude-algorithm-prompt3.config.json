@@ -15,9 +15,9 @@
     "projectType": "custom",
     "configFile": "jest.config.mjs"
   },
-  "tempDirName": "stryker-tmp-claude-algorithm-solutions-prompt1",
+  "tempDirName": "stryker-tmp-claude-algorithm-solutions-prompt3",
   "htmlReporter": {
-    "fileName": "mutation-reports/claude_mutation/claude-algorithm-solutions-prompt1/index.html"
+    "fileName": "mutation-reports/claude_mutation/claude-algorithm-solutions-prompt3/index.html"
   },
   "thresholds": {
     "high": 80,
@@ -28,9 +28,7 @@
   "testRunnerNodeArgs": ["--experimental-vm-modules"],
   "logLevel": "info",
   "timeoutMS": 30000,
-  
   "disableTypeChecks": false,
-  
   "ignorePatterns": [
     "Claude/**",
     "solutions-descriptive/**",
@@ -46,5 +44,6 @@
     "stryker-tmp*/**"
   ]
 }
+
 
 

@@ -12,7 +12,17 @@ test('identical matrices', () => {
   expect(solve(2, 2, JSON.parse(JSON.stringify(source)), target)).toBe("Yes\n");
 });
 
-// Removed failing test case
+test('single element different', () => {
+  const source = [
+    [1, 2],
+    [3, 5]
+  ];
+  const target = [
+    [1, 2],
+    [3, 4]
+  ];
+  expect(solve(2, 2, JSON.parse(JSON.stringify(source)), target)).toBe("No\n");
+});
 
 test('convertible with mask', () => {
   const source = [
@@ -44,7 +54,11 @@ test('single cell, matching', () => {
   expect(solve(1, 1, JSON.parse(JSON.stringify(source)), target)).toBe("Yes\n");
 });
 
-// Removed failing test case
+test('single cell, not matching', () => {
+  const source = [[3]];
+  const target = [[1]];
+  expect(solve(1, 1, JSON.parse(JSON.stringify(source)), target)).toBe("No\n");
+});
 
 test('larger matrix, possible', () => {
   const source = [

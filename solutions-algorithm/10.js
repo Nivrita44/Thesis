@@ -2,7 +2,7 @@
 export function solve(n) {
     // Ensure valid number
     if (typeof n !== 'number' || n < 0 || !Number.isInteger(n)) {
-        return [0, []];
+        return { count: 0, parts: [] };
     }
 
     let m = n;
@@ -20,10 +20,7 @@ export function solve(n) {
         place *= 10;
     }
 
-    // Reverse to keep left-to-right order (like 4000 before 20)
-    parts.reverse();
-
-    return [count, parts];
+    return { count, parts };
 }
 
 

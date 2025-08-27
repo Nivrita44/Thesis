@@ -1,5 +1,23 @@
-node_modules
-echo ".stryker-tmp/" >> .gitignore
-echo "coverage/" >> .gitignore
-echo "reports/" >> .gitignore
+# Dependencies
+node_modules/
+package-lock.json
+
+# Environment variables
 .env
+
+# Stryker temporary directories
+.stryker-tmp/
+stryker-tmp-*/
+
+# Logs
+claude_logs/
+
+# Reports (keeping this for collaboration - remove if you want to ignore)
+# reports/
+
+# VS Code settings
+.vscode/
+
+# Jest configuration files (optional - remove if you want to track them)
+jest.claude.algorithm.prompt2.config.mjs
+jest.claude.algorithm.prompt3.config.mjs

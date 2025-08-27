@@ -1,55 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1756240329950" clover="3.2.0">
-  <project timestamp="1756240329950" name="All files">
-    <metrics statements="416" coveredstatements="396" conditionals="158" coveredconditionals="129" methods="85" coveredmethods="84" elements="659" coveredelements="609" complexity="0" loc="416" ncloc="416" packages="1" files="46" classes="46"/>
+<coverage generated="1756306665857" clover="3.2.0">
+  <project timestamp="1756306665858" name="All files">
+    <metrics statements="415" coveredstatements="412" conditionals="168" coveredconditionals="161" methods="84" coveredmethods="83" elements="667" coveredelements="656" complexity="0" loc="415" ncloc="415" packages="1" files="44" classes="44"/>
     <file name="1.js" path="E:\desktop\Thesis\solutions-algorithm\1.js">
       <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
       <line num="3" count="8" type="stmt"/>
-      <line num="6" count="49" type="stmt"/>
+      <line num="6" count="47" type="stmt"/>
     </file>
     <file name="10.js" path="E:\desktop\Thesis\solutions-algorithm\10.js">
-      <metrics statements="15" coveredstatements="14" conditionals="7" coveredconditionals="6" methods="1" coveredmethods="1"/>
-      <line num="4" count="3" type="cond" truecount="4" falsecount="1"/>
+      <metrics statements="14" coveredstatements="13" conditionals="7" coveredconditionals="6" methods="1" coveredmethods="1"/>
+      <line num="4" count="8" type="cond" truecount="4" falsecount="1"/>
       <line num="5" count="0" type="stmt"/>
-      <line num="8" count="3" type="stmt"/>
-      <line num="9" count="3" type="stmt"/>
-      <line num="10" count="3" type="stmt"/>
-      <line num="11" count="3" type="stmt"/>
-      <line num="13" count="3" type="stmt"/>
-      <line num="14" count="7" type="stmt"/>
-      <line num="15" count="7" type="cond" truecount="2" falsecount="0"/>
-      <line num="16" count="3" type="stmt"/>
-      <line num="17" count="3" type="stmt"/>
-      <line num="19" count="7" type="stmt"/>
-      <line num="20" count="7" type="stmt"/>
-      <line num="24" count="3" type="stmt"/>
-      <line num="26" count="3" type="stmt"/>
+      <line num="8" count="8" type="stmt"/>
+      <line num="9" count="8" type="stmt"/>
+      <line num="10" count="8" type="stmt"/>
+      <line num="11" count="8" type="stmt"/>
+      <line num="13" count="8" type="stmt"/>
+      <line num="14" count="27" type="stmt"/>
+      <line num="15" count="27" type="cond" truecount="2" falsecount="0"/>
+      <line num="16" count="16" type="stmt"/>
+      <line num="17" count="16" type="stmt"/>
+      <line num="19" count="27" type="stmt"/>
+      <line num="20" count="27" type="stmt"/>
+      <line num="23" count="8" type="stmt"/>
     </file>
     <file name="11.js" path="E:\desktop\Thesis\solutions-algorithm\11.js">
       <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
       <line num="5" count="8" type="stmt"/>
-      <line num="6" count="8" type="stmt"/>
-      <line num="7" count="8" type="stmt"/>
-      <line num="8" count="8" type="stmt"/>
-    </file>
-    <file name="12.js" path="E:\desktop\Thesis\solutions-algorithm\12.js">
-      <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-      <line num="4" count="5" type="stmt"/>
-      <line num="5" count="5" type="stmt"/>
+      <line num="6" count="26" type="stmt"/>
+      <line num="7" count="26" type="stmt"/>
+      <line num="8" count="26" type="stmt"/>
     </file>
     <file name="13.js" path="E:\desktop\Thesis\solutions-algorithm\13.js">
-      <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
-      <line num="5" count="8" type="stmt"/>
+      <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="1"/>
+      <line num="5" count="1" type="stmt"/>
     </file>
     <file name="14.js" path="E:\desktop\Thesis\solutions-algorithm\14.js">
       <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
       <line num="5" count="5" type="stmt"/>
       <line num="6" count="5" type="stmt"/>
-      <line num="7" count="13" type="stmt"/>
+      <line num="7" count="16" type="stmt"/>
       <line num="9" count="5" type="stmt"/>
     </file>
     <file name="15.js" path="E:\desktop\Thesis\solutions-algorithm\15.js">
-      <metrics statements="24" coveredstatements="20" conditionals="8" coveredconditionals="6" methods="1" coveredmethods="1"/>
+      <metrics statements="24" coveredstatements="24" conditionals="8" coveredconditionals="8" methods="1" coveredmethods="1"/>
       <line num="5" count="7" type="stmt"/>
       <line num="6" count="7" type="stmt"/>
       <line num="8" count="7" type="stmt"/>
@@ -59,499 +53,498 @@
       <line num="14" count="7" type="stmt"/>
       <line num="15" count="7" type="stmt"/>
       <line num="17" count="7" type="stmt"/>
-      <line num="18" count="25" type="stmt"/>
-      <line num="19" count="25" type="cond" truecount="2" falsecount="0"/>
-      <line num="20" count="17" type="stmt"/>
-      <line num="21" count="17" type="stmt"/>
-      <line num="22" count="8" type="cond" truecount="1" falsecount="1"/>
-      <line num="23" count="0" type="stmt"/>
-      <line num="24" count="0" type="stmt"/>
-      <line num="27" count="25" type="cond" truecount="2" falsecount="0"/>
-      <line num="28" count="17" type="stmt"/>
-      <line num="29" count="17" type="stmt"/>
-      <line num="30" count="8" type="cond" truecount="1" falsecount="1"/>
-      <line num="31" count="0" type="stmt"/>
-      <line num="32" count="0" type="stmt"/>
-      <line num="35" count="25" type="stmt"/>
+      <line num="18" count="31" type="stmt"/>
+      <line num="19" count="31" type="cond" truecount="2" falsecount="0"/>
+      <line num="20" count="22" type="stmt"/>
+      <line num="21" count="22" type="stmt"/>
+      <line num="22" count="9" type="cond" truecount="2" falsecount="0"/>
+      <line num="23" count="7" type="stmt"/>
+      <line num="24" count="7" type="stmt"/>
+      <line num="27" count="31" type="cond" truecount="2" falsecount="0"/>
+      <line num="28" count="10" type="stmt"/>
+      <line num="29" count="10" type="stmt"/>
+      <line num="30" count="21" type="cond" truecount="2" falsecount="0"/>
+      <line num="31" count="14" type="stmt"/>
+      <line num="32" count="14" type="stmt"/>
+      <line num="35" count="31" type="stmt"/>
       <line num="38" count="7" type="stmt"/>
     </file>
     <file name="16.js" path="E:\desktop\Thesis\solutions-algorithm\16.js">
       <metrics statements="9" coveredstatements="9" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
-      <line num="5" count="6" type="stmt"/>
-      <line num="6" count="6" type="stmt"/>
-      <line num="8" count="6" type="cond" truecount="2" falsecount="0"/>
-      <line num="9" count="3" type="stmt"/>
-      <line num="10" count="3" type="stmt"/>
-      <line num="13" count="6" type="stmt"/>
-      <line num="14" count="6" type="stmt"/>
-      <line num="15" count="100011" type="stmt"/>
-      <line num="18" count="6" type="stmt"/>
+      <line num="5" count="8" type="stmt"/>
+      <line num="6" count="8" type="stmt"/>
+      <line num="8" count="8" type="cond" truecount="2" falsecount="0"/>
+      <line num="9" count="5" type="stmt"/>
+      <line num="10" count="5" type="stmt"/>
+      <line num="13" count="8" type="stmt"/>
+      <line num="14" count="8" type="stmt"/>
+      <line num="15" count="50061" type="stmt"/>
+      <line num="18" count="8" type="stmt"/>
     </file>
     <file name="17.js" path="E:\desktop\Thesis\solutions-algorithm\17.js">
       <metrics statements="1" coveredstatements="1" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="2"/>
-      <line num="5" count="2" type="cond" truecount="2" falsecount="0"/>
+      <line num="5" count="21" type="cond" truecount="2" falsecount="0"/>
+    </file>
+    <file name="18.js" path="E:\desktop\Thesis\solutions-algorithm\18.js">
+      <metrics statements="2" coveredstatements="2" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="2"/>
+      <line num="5" count="8" type="stmt"/>
+      <line num="6" count="16" type="cond" truecount="2" falsecount="0"/>
     </file>
     <file name="19.js" path="E:\desktop\Thesis\solutions-algorithm\19.js">
       <metrics statements="1" coveredstatements="1" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
-      <line num="5" count="8" type="cond" truecount="2" falsecount="0"/>
+      <line num="5" count="9" type="cond" truecount="2" falsecount="0"/>
     </file>
     <file name="2.js" path="E:\desktop\Thesis\solutions-algorithm\2.js">
       <metrics statements="3" coveredstatements="3" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
-      <line num="3" count="8" type="stmt"/>
-      <line num="4" count="8" type="stmt"/>
-      <line num="5" count="8" type="cond" truecount="2" falsecount="0"/>
+      <line num="3" count="9" type="stmt"/>
+      <line num="4" count="9" type="stmt"/>
+      <line num="5" count="9" type="cond" truecount="2" falsecount="0"/>
     </file>
     <file name="20.js" path="E:\desktop\Thesis\solutions-algorithm\20.js">
       <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
-      <line num="5" count="121" type="stmt"/>
-      <line num="6" count="9" type="stmt"/>
+      <line num="5" count="123" type="stmt"/>
+      <line num="6" count="8" type="stmt"/>
     </file>
     <file name="21.js" path="E:\desktop\Thesis\solutions-algorithm\21.js">
       <metrics statements="2" coveredstatements="2" conditionals="5" coveredconditionals="5" methods="2" coveredmethods="2"/>
       <line num="5" count="7" type="stmt"/>
-      <line num="6" count="7" type="cond" truecount="2" falsecount="0"/>
+      <line num="6" count="9" type="cond" truecount="2" falsecount="0"/>
     </file>
     <file name="22.js" path="E:\desktop\Thesis\solutions-algorithm\22.js">
-      <metrics statements="1" coveredstatements="1" conditionals="2" coveredconditionals="1" methods="2" coveredmethods="2"/>
-      <line num="5" count="6" type="cond" truecount="1" falsecount="1"/>
+      <metrics statements="1" coveredstatements="1" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="2"/>
+      <line num="5" count="30" type="cond" truecount="2" falsecount="0"/>
     </file>
     <file name="23.js" path="E:\desktop\Thesis\solutions-algorithm\23.js">
       <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
       <line num="5" count="8" type="stmt"/>
-      <line num="6" count="8" type="stmt"/>
-      <line num="7" count="8" type="stmt"/>
+      <line num="6" count="14" type="stmt"/>
+      <line num="7" count="14" type="stmt"/>
     </file>
     <file name="24.js" path="E:\desktop\Thesis\solutions-algorithm\24.js">
       <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
-      <line num="5" count="9" type="stmt"/>
+      <line num="5" count="16" type="stmt"/>
     </file>
     <file name="25.js" path="E:\desktop\Thesis\solutions-algorithm\25.js">
       <metrics statements="11" coveredstatements="10" conditionals="8" coveredconditionals="8" methods="3" coveredmethods="3"/>
-      <line num="5" count="4" type="stmt"/>
-      <line num="6" count="18" type="stmt"/>
-      <line num="8" count="4" type="cond" truecount="4" falsecount="0"/>
-      <line num="10" count="1" type="stmt"/>
-      <line num="11" count="1" type="stmt"/>
-      <line num="13" count="1" type="stmt"/>
-      <line num="14" count="2" type="cond" truecount="2" falsecount="0"/>
-      <line num="15" count="1" type="stmt"/>
-      <line num="17" count="2" type="cond" truecount="2" falsecount="0"/>
-      <line num="18" count="1" type="stmt"/>
+      <line num="5" count="7" type="stmt"/>
+      <line num="6" count="1029" type="stmt"/>
+      <line num="8" count="7" type="cond" truecount="4" falsecount="0"/>
+      <line num="10" count="5" type="stmt"/>
+      <line num="11" count="5" type="stmt"/>
+      <line num="13" count="5" type="stmt"/>
+      <line num="14" count="507" type="cond" truecount="2" falsecount="0"/>
+      <line num="15" count="506" type="stmt"/>
+      <line num="17" count="507" type="cond" truecount="2" falsecount="0"/>
+      <line num="18" count="5" type="stmt"/>
       <line num="22" count="0" type="stmt"/>
     </file>
     <file name="27.js" path="E:\desktop\Thesis\solutions-algorithm\27.js">
-      <metrics statements="2" coveredstatements="2" conditionals="2" coveredconditionals="1" methods="2" coveredmethods="2"/>
-      <line num="5" count="5" type="stmt"/>
-      <line num="6" count="5" type="cond" truecount="1" falsecount="1"/>
+      <metrics statements="2" coveredstatements="2" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="2"/>
+      <line num="5" count="6" type="stmt"/>
+      <line num="6" count="23" type="cond" truecount="2" falsecount="0"/>
     </file>
     <file name="28.js" path="E:\desktop\Thesis\solutions-algorithm\28.js">
-      <metrics statements="10" coveredstatements="9" conditionals="10" coveredconditionals="8" methods="1" coveredmethods="1"/>
-      <line num="5" count="9" type="stmt"/>
-      <line num="7" count="9" type="stmt"/>
-      <line num="9" count="9" type="stmt"/>
-      <line num="11" count="9" type="cond" truecount="3" falsecount="2"/>
-      <line num="13" count="0" type="stmt"/>
-      <line num="14" count="9" type="cond" truecount="5" falsecount="0"/>
+      <metrics statements="10" coveredstatements="10" conditionals="10" coveredconditionals="10" methods="1" coveredmethods="1"/>
+      <line num="5" count="8" type="stmt"/>
+      <line num="7" count="8" type="stmt"/>
+      <line num="9" count="10" type="stmt"/>
+      <line num="11" count="10" type="cond" truecount="5" falsecount="0"/>
+      <line num="13" count="2" type="stmt"/>
+      <line num="14" count="8" type="cond" truecount="5" falsecount="0"/>
       <line num="16" count="2" type="stmt"/>
-      <line num="19" count="7" type="stmt"/>
-      <line num="22" count="9" type="stmt"/>
-      <line num="25" count="9" type="stmt"/>
+      <line num="19" count="6" type="stmt"/>
+      <line num="22" count="10" type="stmt"/>
+      <line num="25" count="8" type="stmt"/>
     </file>
     <file name="29.js" path="E:\desktop\Thesis\solutions-algorithm\29.js">
-      <metrics statements="8" coveredstatements="8" conditionals="2" coveredconditionals="1" methods="2" coveredmethods="2"/>
-      <line num="5" count="2" type="stmt"/>
-      <line num="6" count="2" type="stmt"/>
-      <line num="7" count="2" type="stmt"/>
-      <line num="8" count="2" type="stmt"/>
-      <line num="9" count="8" type="cond" truecount="1" falsecount="1"/>
-      <line num="10" count="8" type="stmt"/>
-      <line num="11" count="8" type="stmt"/>
-      <line num="13" count="2" type="stmt"/>
+      <metrics statements="8" coveredstatements="8" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="2"/>
+      <line num="5" count="8" type="stmt"/>
+      <line num="6" count="13" type="stmt"/>
+      <line num="7" count="13" type="stmt"/>
+      <line num="8" count="13" type="stmt"/>
+      <line num="9" count="52" type="cond" truecount="2" falsecount="0"/>
+      <line num="10" count="52" type="stmt"/>
+      <line num="11" count="52" type="stmt"/>
+      <line num="13" count="13" type="stmt"/>
     </file>
     <file name="3.js" path="E:\desktop\Thesis\solutions-algorithm\3.js">
       <metrics statements="6" coveredstatements="6" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="2"/>
-      <line num="4" count="74" type="stmt"/>
+      <line num="4" count="70" type="stmt"/>
       <line num="6" count="9" type="stmt"/>
       <line num="7" count="9" type="stmt"/>
       <line num="8" count="66" type="cond" truecount="2" falsecount="0"/>
       <line num="9" count="3" type="stmt"/>
       <line num="12" count="6" type="stmt"/>
     </file>
+    <file name="30.js" path="E:\desktop\Thesis\solutions-algorithm\30.js">
+      <metrics statements="14" coveredstatements="14" conditionals="12" coveredconditionals="10" methods="2" coveredmethods="2"/>
+      <line num="4" count="2" type="stmt"/>
+      <line num="6" count="2" type="stmt"/>
+      <line num="7" count="2" type="stmt"/>
+      <line num="8" count="2" type="stmt"/>
+      <line num="10" count="2" type="cond" truecount="2" falsecount="0"/>
+      <line num="11" count="2" type="cond" truecount="2" falsecount="0"/>
+      <line num="12" count="2" type="stmt"/>
+      <line num="13" count="2" type="cond" truecount="5" falsecount="1"/>
+      <line num="15" count="8" type="stmt"/>
+      <line num="16" count="2" type="stmt"/>
+      <line num="17" count="2" type="stmt"/>
+      <line num="18" count="2" type="stmt"/>
+      <line num="23" count="2" type="cond" truecount="1" falsecount="1"/>
+      <line num="26" count="2" type="stmt"/>
+    </file>
     <file name="31.js" path="E:\desktop\Thesis\solutions-algorithm\31.js">
       <metrics statements="12" coveredstatements="12" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
       <line num="4" count="7" type="stmt"/>
       <line num="6" count="7" type="stmt"/>
-      <line num="7" count="7" type="stmt"/>
-      <line num="8" count="7" type="stmt"/>
-      <line num="10" count="7" type="cond" truecount="2" falsecount="0"/>
-      <line num="11" count="1" type="stmt"/>
-      <line num="13" count="6" type="stmt"/>
-      <line num="14" count="6" type="stmt"/>
-      <line num="15" count="200105" type="stmt"/>
-      <line num="17" count="6" type="stmt"/>
-      <line num="20" count="7" type="stmt"/>
+      <line num="7" count="16" type="stmt"/>
+      <line num="8" count="16" type="stmt"/>
+      <line num="10" count="16" type="cond" truecount="2" falsecount="0"/>
+      <line num="11" count="4" type="stmt"/>
+      <line num="13" count="12" type="stmt"/>
+      <line num="14" count="12" type="stmt"/>
+      <line num="15" count="39" type="stmt"/>
+      <line num="17" count="12" type="stmt"/>
+      <line num="20" count="16" type="stmt"/>
       <line num="23" count="7" type="stmt"/>
     </file>
     <file name="32.js" path="E:\desktop\Thesis\solutions-algorithm\32.js">
-      <metrics statements="31" coveredstatements="30" conditionals="10" coveredconditionals="8" methods="1" coveredmethods="1"/>
-      <line num="10" count="3" type="stmt"/>
-      <line num="11" count="3" type="stmt"/>
-      <line num="13" count="3" type="stmt"/>
-      <line num="15" count="3" type="stmt"/>
-      <line num="16" count="3" type="stmt"/>
-      <line num="17" count="8" type="stmt"/>
-      <line num="20" count="3" type="stmt"/>
-      <line num="21" count="3" type="stmt"/>
-      <line num="22" count="8" type="cond" truecount="2" falsecount="0"/>
-      <line num="25" count="3" type="stmt"/>
-      <line num="26" count="3" type="stmt"/>
-      <line num="28" count="3" type="stmt"/>
-      <line num="29" count="8" type="cond" truecount="2" falsecount="0"/>
-      <line num="30" count="4" type="stmt"/>
-      <line num="31" count="4" type="stmt"/>
-      <line num="32" count="4" type="stmt"/>
-      <line num="33" count="8" type="stmt"/>
-      <line num="34" count="8" type="stmt"/>
-      <line num="35" count="8" type="stmt"/>
-      <line num="37" count="4" type="stmt"/>
-      <line num="41" count="3" type="stmt"/>
-      <line num="42" count="3" type="stmt"/>
-      <line num="43" count="4" type="stmt"/>
-      <line num="44" count="4" type="stmt"/>
-      <line num="45" count="5" type="cond" truecount="2" falsecount="0"/>
-      <line num="46" count="4" type="stmt"/>
-      <line num="47" count="4" type="stmt"/>
-      <line num="51" count="4" type="cond" truecount="2" falsecount="2"/>
-      <line num="52" count="0" type="stmt"/>
-      <line num="56" count="3" type="stmt"/>
-      <line num="59" count="3" type="stmt"/>
+      <metrics statements="31" coveredstatements="31" conditionals="10" coveredconditionals="10" methods="1" coveredmethods="1"/>
+      <line num="10" count="7" type="stmt"/>
+      <line num="11" count="7" type="stmt"/>
+      <line num="13" count="7" type="stmt"/>
+      <line num="15" count="8" type="stmt"/>
+      <line num="16" count="8" type="stmt"/>
+      <line num="17" count="46" type="stmt"/>
+      <line num="20" count="8" type="stmt"/>
+      <line num="21" count="8" type="stmt"/>
+      <line num="22" count="46" type="cond" truecount="2" falsecount="0"/>
+      <line num="25" count="8" type="stmt"/>
+      <line num="26" count="8" type="stmt"/>
+      <line num="28" count="8" type="stmt"/>
+      <line num="29" count="46" type="cond" truecount="2" falsecount="0"/>
+      <line num="30" count="25" type="stmt"/>
+      <line num="31" count="25" type="stmt"/>
+      <line num="32" count="25" type="stmt"/>
+      <line num="33" count="46" type="stmt"/>
+      <line num="34" count="46" type="stmt"/>
+      <line num="35" count="46" type="stmt"/>
+      <line num="37" count="25" type="stmt"/>
+      <line num="41" count="8" type="stmt"/>
+      <line num="42" count="8" type="stmt"/>
+      <line num="43" count="25" type="stmt"/>
+      <line num="44" count="25" type="stmt"/>
+      <line num="45" count="37" type="cond" truecount="2" falsecount="0"/>
+      <line num="46" count="8" type="stmt"/>
+      <line num="47" count="8" type="stmt"/>
+      <line num="51" count="25" type="cond" truecount="4" falsecount="0"/>
+      <line num="52" count="8" type="stmt"/>
+      <line num="56" count="8" type="stmt"/>
+      <line num="59" count="7" type="stmt"/>
     </file>
     <file name="33.js" path="E:\desktop\Thesis\solutions-algorithm\33.js">
-      <metrics statements="22" coveredstatements="18" conditionals="6" coveredconditionals="4" methods="1" coveredmethods="1"/>
-      <line num="9" count="2" type="stmt"/>
-      <line num="11" count="2" type="stmt"/>
-      <line num="13" count="2" type="stmt"/>
-      <line num="14" count="2" type="stmt"/>
-      <line num="15" count="2" type="stmt"/>
-      <line num="16" count="2" type="stmt"/>
-      <line num="17" count="2" type="stmt"/>
-      <line num="19" count="2" type="stmt"/>
-      <line num="20" count="5" type="stmt"/>
-      <line num="21" count="5" type="cond" truecount="1" falsecount="1"/>
-      <line num="22" count="0" type="stmt"/>
-      <line num="24" count="5" type="stmt"/>
-      <line num="28" count="2" type="stmt"/>
-      <line num="29" count="2" type="cond" truecount="2" falsecount="0"/>
-      <line num="31" count="1" type="stmt"/>
-      <line num="32" count="1" type="stmt"/>
-      <line num="33" count="1" type="cond" truecount="1" falsecount="1"/>
-      <line num="34" count="0" type="stmt"/>
-      <line num="35" count="0" type="stmt"/>
-      <line num="36" count="0" type="stmt"/>
-      <line num="41" count="2" type="stmt"/>
-      <line num="44" count="2" type="stmt"/>
+      <metrics statements="22" coveredstatements="22" conditionals="6" coveredconditionals="6" methods="1" coveredmethods="1"/>
+      <line num="9" count="5" type="stmt"/>
+      <line num="11" count="5" type="stmt"/>
+      <line num="13" count="6" type="stmt"/>
+      <line num="14" count="6" type="stmt"/>
+      <line num="15" count="6" type="stmt"/>
+      <line num="16" count="6" type="stmt"/>
+      <line num="17" count="6" type="stmt"/>
+      <line num="19" count="6" type="stmt"/>
+      <line num="20" count="20" type="stmt"/>
+      <line num="21" count="20" type="cond" truecount="2" falsecount="0"/>
+      <line num="22" count="4" type="stmt"/>
+      <line num="24" count="16" type="stmt"/>
+      <line num="28" count="6" type="stmt"/>
+      <line num="29" count="18" type="cond" truecount="2" falsecount="0"/>
+      <line num="31" count="12" type="stmt"/>
+      <line num="32" count="16" type="stmt"/>
+      <line num="33" count="16" type="cond" truecount="2" falsecount="0"/>
+      <line num="34" count="12" type="stmt"/>
+      <line num="35" count="12" type="stmt"/>
+      <line num="36" count="12" type="stmt"/>
+      <line num="41" count="6" type="stmt"/>
+      <line num="44" count="5" type="stmt"/>
     </file>
     <file name="34.js" path="E:\desktop\Thesis\solutions-algorithm\34.js">
       <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
-      <line num="9" count="6" type="stmt"/>
+      <line num="9" count="18" type="stmt"/>
     </file>
     <file name="35.js" path="E:\desktop\Thesis\solutions-algorithm\35.js">
-      <metrics statements="8" coveredstatements="7" conditionals="2" coveredconditionals="1" methods="3" coveredmethods="3"/>
-      <line num="10" count="5" type="cond" truecount="1" falsecount="1"/>
-      <line num="11" count="0" type="stmt"/>
-      <line num="13" count="5" type="stmt"/>
-      <line num="14" count="5" type="stmt"/>
-      <line num="15" count="13" type="stmt"/>
-      <line num="16" count="13" type="stmt"/>
-      <line num="18" count="5" type="stmt"/>
-      <line num="27" count="5" type="stmt"/>
+      <metrics statements="8" coveredstatements="8" conditionals="2" coveredconditionals="2" methods="3" coveredmethods="3"/>
+      <line num="10" count="11" type="cond" truecount="2" falsecount="0"/>
+      <line num="11" count="1" type="stmt"/>
+      <line num="13" count="10" type="stmt"/>
+      <line num="14" count="10" type="stmt"/>
+      <line num="15" count="26" type="stmt"/>
+      <line num="16" count="26" type="stmt"/>
+      <line num="18" count="10" type="stmt"/>
+      <line num="27" count="11" type="stmt"/>
     </file>
     <file name="37.js" path="E:\desktop\Thesis\solutions-algorithm\37.js">
       <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-      <line num="3" count="2" type="stmt"/>
-      <line num="4" count="2" type="stmt"/>
-      <line num="5" count="65" type="stmt"/>
-      <line num="7" count="2" type="stmt"/>
+      <line num="3" count="7" type="stmt"/>
+      <line num="4" count="7" type="stmt"/>
+      <line num="5" count="126" type="stmt"/>
+      <line num="7" count="7" type="stmt"/>
     </file>
     <file name="38.js" path="E:\desktop\Thesis\solutions-algorithm\38.js">
       <metrics statements="1" coveredstatements="1" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
-      <line num="3" count="7" type="cond" truecount="2" falsecount="0"/>
+      <line num="3" count="8" type="cond" truecount="2" falsecount="0"/>
     </file>
     <file name="39.js" path="E:\desktop\Thesis\solutions-algorithm\39.js">
       <metrics statements="5" coveredstatements="5" conditionals="6" coveredconditionals="6" methods="1" coveredmethods="1"/>
-      <line num="3" count="63" type="cond" truecount="4" falsecount="0"/>
+      <line num="3" count="62" type="cond" truecount="4" falsecount="0"/>
       <line num="4" count="4" type="stmt"/>
-      <line num="6" count="59" type="cond" truecount="2" falsecount="0"/>
-      <line num="7" count="4" type="stmt"/>
-      <line num="9" count="55" type="stmt"/>
+      <line num="6" count="58" type="cond" truecount="2" falsecount="0"/>
+      <line num="7" count="5" type="stmt"/>
+      <line num="9" count="53" type="stmt"/>
     </file>
     <file name="4.js" path="E:\desktop\Thesis\solutions-algorithm\4.js">
       <metrics statements="9" coveredstatements="9" conditionals="2" coveredconditionals="2" methods="3" coveredmethods="3"/>
-      <line num="3" count="6" type="stmt"/>
-      <line num="4" count="29" type="stmt"/>
-      <line num="5" count="6" type="stmt"/>
-      <line num="6" count="6" type="stmt"/>
-      <line num="8" count="6" type="stmt"/>
-      <line num="9" count="23" type="cond" truecount="2" falsecount="0"/>
+      <line num="3" count="8" type="stmt"/>
+      <line num="4" count="30" type="stmt"/>
+      <line num="5" count="8" type="stmt"/>
+      <line num="6" count="8" type="stmt"/>
+      <line num="8" count="8" type="stmt"/>
+      <line num="9" count="30" type="cond" truecount="2" falsecount="0"/>
       <line num="10" count="15" type="stmt"/>
-      <line num="12" count="8" type="stmt"/>
-      <line num="16" count="6" type="stmt"/>
+      <line num="12" count="15" type="stmt"/>
+      <line num="16" count="8" type="stmt"/>
     </file>
     <file name="40.js" path="E:\desktop\Thesis\solutions-algorithm\40.js">
-      <metrics statements="14" coveredstatements="13" conditionals="8" coveredconditionals="5" methods="2" coveredmethods="2"/>
-      <line num="3" count="4" type="stmt"/>
-      <line num="4" count="4" type="stmt"/>
-      <line num="5" count="4" type="stmt"/>
-      <line num="6" count="4" type="cond" truecount="2" falsecount="0"/>
-      <line num="7" count="4" type="cond" truecount="1" falsecount="1"/>
-      <line num="9" count="4" type="stmt"/>
-      <line num="11" count="4" type="stmt"/>
-      <line num="16" count="4" type="stmt"/>
-      <line num="17" count="4" type="stmt"/>
-      <line num="18" count="4" type="cond" truecount="1" falsecount="1"/>
-      <line num="19" count="4" type="cond" truecount="1" falsecount="1"/>
-      <line num="20" count="4" type="stmt"/>
+      <metrics statements="14" coveredstatements="13" conditionals="8" coveredconditionals="7" methods="2" coveredmethods="2"/>
+      <line num="3" count="8" type="stmt"/>
+      <line num="4" count="8" type="stmt"/>
+      <line num="5" count="8" type="stmt"/>
+      <line num="6" count="8" type="cond" truecount="2" falsecount="0"/>
+      <line num="7" count="12" type="cond" truecount="2" falsecount="0"/>
+      <line num="9" count="8" type="stmt"/>
+      <line num="11" count="8" type="stmt"/>
+      <line num="16" count="8" type="stmt"/>
+      <line num="17" count="8" type="stmt"/>
+      <line num="18" count="8" type="cond" truecount="2" falsecount="0"/>
+      <line num="19" count="5" type="cond" truecount="1" falsecount="1"/>
+      <line num="20" count="5" type="stmt"/>
       <line num="22" count="0" type="stmt"/>
-      <line num="25" count="4" type="stmt"/>
+      <line num="25" count="8" type="stmt"/>
     </file>
     <file name="41.js" path="E:\desktop\Thesis\solutions-algorithm\41.js">
-      <metrics statements="30" coveredstatements="24" conditionals="6" coveredconditionals="3" methods="6" coveredmethods="5"/>
-      <line num="3" count="2" type="stmt"/>
-      <line num="4" count="8" type="stmt"/>
-      <line num="5" count="2" type="stmt"/>
-      <line num="6" count="1" type="cond" truecount="1" falsecount="1"/>
-      <line num="9" count="2" type="stmt"/>
-      <line num="10" count="2" type="stmt"/>
-      <line num="11" count="2" type="stmt"/>
-      <line num="13" count="8" type="stmt"/>
-      <line num="14" count="2" type="stmt"/>
-      <line num="15" count="2" type="stmt"/>
-      <line num="17" count="2" type="stmt"/>
-      <line num="18" count="3" type="stmt"/>
-      <line num="19" count="3" type="stmt"/>
-      <line num="20" count="1" type="stmt"/>
-      <line num="21" count="1" type="cond" truecount="1" falsecount="1"/>
-      <line num="22" count="1" type="stmt"/>
-      <line num="23" count="1" type="stmt"/>
-      <line num="24" count="1" type="stmt"/>
-      <line num="29" count="2" type="cond" truecount="1" falsecount="1"/>
-      <line num="31" count="0" type="stmt"/>
-      <line num="32" count="0" type="stmt"/>
-      <line num="33" count="0" type="stmt"/>
-      <line num="34" count="0" type="stmt"/>
-      <line num="35" count="0" type="stmt"/>
-      <line num="37" count="0" type="stmt"/>
-      <line num="43" count="2" type="stmt"/>
-      <line num="47" count="3" type="stmt"/>
-      <line num="48" count="3" type="stmt"/>
-      <line num="52" count="3" type="stmt"/>
-      <line num="56" count="5" type="stmt"/>
-    </file>
-    <file name="42.js" path="E:\desktop\Thesis\solutions-algorithm\42.js">
-      <metrics statements="11" coveredstatements="11" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
-      <line num="5" count="7" type="stmt"/>
-      <line num="6" count="7" type="stmt"/>
-      <line num="7" count="27" type="stmt"/>
-      <line num="8" count="27" type="stmt"/>
-      <line num="9" count="27" type="stmt"/>
-      <line num="10" count="29" type="stmt"/>
-      <line num="11" count="29" type="cond" truecount="2" falsecount="0"/>
-      <line num="12" count="19" type="stmt"/>
-      <line num="14" count="10" type="stmt"/>
-      <line num="17" count="27" type="stmt"/>
-      <line num="19" count="7" type="stmt"/>
+      <metrics statements="30" coveredstatements="30" conditionals="6" coveredconditionals="5" methods="6" coveredmethods="6"/>
+      <line num="3" count="9" type="stmt"/>
+      <line num="4" count="100031" type="stmt"/>
+      <line num="5" count="9" type="stmt"/>
+      <line num="6" count="100021" type="cond" truecount="1" falsecount="1"/>
+      <line num="9" count="9" type="stmt"/>
+      <line num="10" count="9" type="stmt"/>
+      <line num="11" count="9" type="stmt"/>
+      <line num="13" count="100031" type="stmt"/>
+      <line num="14" count="9" type="stmt"/>
+      <line num="15" count="9" type="stmt"/>
+      <line num="17" count="9" type="stmt"/>
+      <line num="18" count="100028" type="stmt"/>
+      <line num="19" count="100028" type="stmt"/>
+      <line num="20" count="100022" type="stmt"/>
+      <line num="21" count="100022" type="cond" truecount="2" falsecount="0"/>
+      <line num="22" count="100019" type="stmt"/>
+      <line num="23" count="100019" type="stmt"/>
+      <line num="24" count="100019" type="stmt"/>
+      <line num="29" count="9" type="cond" truecount="2" falsecount="0"/>
+      <line num="31" count="7" type="stmt"/>
+      <line num="32" count="7" type="stmt"/>
+      <line num="33" count="7" type="stmt"/>
+      <line num="34" count="100020" type="stmt"/>
+      <line num="35" count="100020" type="stmt"/>
+      <line num="37" count="7" type="stmt"/>
+      <line num="43" count="9" type="stmt"/>
+      <line num="47" count="100028" type="stmt"/>
+      <line num="48" count="100028" type="stmt"/>
+      <line num="52" count="100028" type="stmt"/>
+      <line num="56" count="100037" type="stmt"/>
     </file>
     <file name="43.js" path="E:\desktop\Thesis\solutions-algorithm\43.js">
-      <metrics statements="20" coveredstatements="20" conditionals="10" coveredconditionals="7" methods="3" coveredmethods="3"/>
-      <line num="5" count="4" type="stmt"/>
-      <line num="6" count="4" type="stmt"/>
-      <line num="9" count="1" type="stmt"/>
-      <line num="10" count="2" type="stmt"/>
-      <line num="11" count="4" type="cond" truecount="2" falsecount="0"/>
-      <line num="12" count="4" type="cond" truecount="2" falsecount="0"/>
-      <line num="17" count="1" type="stmt"/>
-      <line num="18" count="1" type="stmt"/>
-      <line num="19" count="2" type="stmt"/>
-      <line num="20" count="1" type="cond" truecount="1" falsecount="1"/>
-      <line num="24" count="1" type="stmt"/>
-      <line num="25" count="1" type="stmt"/>
-      <line num="27" count="1" type="stmt"/>
-      <line num="28" count="2" type="stmt"/>
-      <line num="30" count="1" type="stmt"/>
-      <line num="37" count="1" type="cond" truecount="1" falsecount="1"/>
-      <line num="38" count="1" type="cond" truecount="1" falsecount="1"/>
-      <line num="39" count="1" type="stmt"/>
-      <line num="40" count="1" type="stmt"/>
-      <line num="45" count="1" type="stmt"/>
+      <metrics statements="20" coveredstatements="20" conditionals="10" coveredconditionals="10" methods="3" coveredmethods="3"/>
+      <line num="5" count="54" type="stmt"/>
+      <line num="6" count="54" type="stmt"/>
+      <line num="9" count="7" type="stmt"/>
+      <line num="10" count="40" type="stmt"/>
+      <line num="11" count="264" type="cond" truecount="2" falsecount="0"/>
+      <line num="12" count="264" type="cond" truecount="2" falsecount="0"/>
+      <line num="17" count="7" type="stmt"/>
+      <line num="18" count="7" type="stmt"/>
+      <line num="19" count="40" type="stmt"/>
+      <line num="20" count="112" type="cond" truecount="2" falsecount="0"/>
+      <line num="24" count="7" type="stmt"/>
+      <line num="25" count="7" type="stmt"/>
+      <line num="27" count="7" type="stmt"/>
+      <line num="28" count="40" type="stmt"/>
+      <line num="30" count="112" type="stmt"/>
+      <line num="37" count="112" type="cond" truecount="2" falsecount="0"/>
+      <line num="38" count="99" type="cond" truecount="2" falsecount="0"/>
+      <line num="39" count="20" type="stmt"/>
+      <line num="40" count="20" type="stmt"/>
+      <line num="45" count="7" type="stmt"/>
     </file>
     <file name="44.js" path="E:\desktop\Thesis\solutions-algorithm\44.js">
       <metrics statements="11" coveredstatements="11" conditionals="8" coveredconditionals="8" methods="3" coveredmethods="3"/>
-      <line num="3" count="4" type="cond" truecount="4" falsecount="0"/>
-      <line num="5" count="14" type="stmt"/>
-      <line num="6" count="3" type="stmt"/>
-      <line num="9" count="5" type="cond" truecount="4" falsecount="0"/>
-      <line num="10" count="1" type="stmt"/>
-      <line num="11" count="1" type="stmt"/>
-      <line num="12" count="1" type="stmt"/>
-      <line num="13" count="1" type="stmt"/>
-      <line num="14" count="1" type="stmt"/>
-      <line num="17" count="3" type="stmt"/>
-      <line num="18" count="3" type="stmt"/>
+      <line num="3" count="8" type="cond" truecount="4" falsecount="0"/>
+      <line num="5" count="1035" type="stmt"/>
+      <line num="6" count="6" type="stmt"/>
+      <line num="9" count="2028" type="cond" truecount="4" falsecount="0"/>
+      <line num="10" count="1011" type="stmt"/>
+      <line num="11" count="1011" type="stmt"/>
+      <line num="12" count="1011" type="stmt"/>
+      <line num="13" count="1011" type="stmt"/>
+      <line num="14" count="1011" type="stmt"/>
+      <line num="17" count="6" type="stmt"/>
+      <line num="18" count="6" type="stmt"/>
     </file>
     <file name="45.js" path="E:\desktop\Thesis\solutions-algorithm\45.js">
-      <metrics statements="18" coveredstatements="18" conditionals="12" coveredconditionals="8" methods="4" coveredmethods="4"/>
+      <metrics statements="18" coveredstatements="18" conditionals="12" coveredconditionals="11" methods="4" coveredmethods="4"/>
       <line num="1" count="1" type="stmt"/>
-      <line num="4" count="1" type="stmt"/>
-      <line num="5" count="1" type="stmt"/>
-      <line num="6" count="16" type="stmt"/>
-      <line num="8" count="1" type="stmt"/>
-      <line num="9" count="1" type="stmt"/>
-      <line num="10" count="2" type="stmt"/>
-      <line num="14" count="3" type="cond" truecount="2" falsecount="0"/>
-      <line num="15" count="2" type="cond" truecount="2" falsecount="0"/>
-      <line num="16" count="1" type="cond" truecount="1" falsecount="1"/>
-      <line num="18" count="1" type="stmt"/>
-      <line num="19" count="1" type="cond" truecount="2" falsecount="2"/>
-      <line num="20" count="1" type="stmt"/>
-      <line num="22" count="1" type="cond" truecount="1" falsecount="1"/>
-      <line num="23" count="1" type="stmt"/>
-      <line num="26" count="1" type="stmt"/>
-      <line num="27" count="1" type="stmt"/>
-      <line num="30" count="1" type="stmt"/>
+      <line num="4" count="7" type="stmt"/>
+      <line num="5" count="7" type="stmt"/>
+      <line num="6" count="382" type="stmt"/>
+      <line num="8" count="7" type="stmt"/>
+      <line num="9" count="7" type="stmt"/>
+      <line num="10" count="34" type="stmt"/>
+      <line num="14" count="245" type="cond" truecount="2" falsecount="0"/>
+      <line num="15" count="216" type="cond" truecount="2" falsecount="0"/>
+      <line num="16" count="189" type="cond" truecount="2" falsecount="0"/>
+      <line num="18" count="123" type="stmt"/>
+      <line num="19" count="123" type="cond" truecount="4" falsecount="0"/>
+      <line num="20" count="115" type="stmt"/>
+      <line num="22" count="123" type="cond" truecount="1" falsecount="1"/>
+      <line num="23" count="123" type="stmt"/>
+      <line num="26" count="123" type="stmt"/>
+      <line num="27" count="123" type="stmt"/>
+      <line num="30" count="7" type="stmt"/>
     </file>
     <file name="46.js" path="E:\desktop\Thesis\solutions-algorithm\46.js">
       <metrics statements="12" coveredstatements="12" conditionals="4" coveredconditionals="3" methods="2" coveredmethods="2"/>
-      <line num="3" count="7" type="stmt"/>
-      <line num="4" count="7" type="stmt"/>
-      <line num="7" count="7" type="stmt"/>
-      <line num="8" count="34" type="stmt"/>
-      <line num="9" count="34" type="cond" truecount="1" falsecount="1"/>
-      <line num="10" count="34" type="cond" truecount="2" falsecount="0"/>
-      <line num="11" count="34" type="stmt"/>
-      <line num="16" count="41" type="stmt"/>
-      <line num="17" count="41" type="stmt"/>
-      <line num="18" count="34" type="stmt"/>
-      <line num="22" count="7" type="stmt"/>
-      <line num="23" count="7" type="stmt"/>
+      <line num="3" count="9" type="stmt"/>
+      <line num="4" count="9" type="stmt"/>
+      <line num="7" count="9" type="stmt"/>
+      <line num="8" count="48" type="stmt"/>
+      <line num="9" count="48" type="cond" truecount="1" falsecount="1"/>
+      <line num="10" count="48" type="cond" truecount="2" falsecount="0"/>
+      <line num="11" count="48" type="stmt"/>
+      <line num="16" count="57" type="stmt"/>
+      <line num="17" count="57" type="stmt"/>
+      <line num="18" count="48" type="stmt"/>
+      <line num="22" count="9" type="stmt"/>
+      <line num="23" count="9" type="stmt"/>
     </file>
     <file name="47.js" path="E:\desktop\Thesis\solutions-algorithm\47.js">
       <metrics statements="4" coveredstatements="4" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
-      <line num="3" count="4" type="stmt"/>
-      <line num="4" count="4" type="stmt"/>
-      <line num="5" count="18" type="cond" truecount="2" falsecount="0"/>
-      <line num="7" count="4" type="stmt"/>
+      <line num="3" count="8" type="stmt"/>
+      <line num="4" count="8" type="stmt"/>
+      <line num="5" count="100030" type="cond" truecount="2" falsecount="0"/>
+      <line num="7" count="8" type="stmt"/>
     </file>
     <file name="48.js" path="E:\desktop\Thesis\solutions-algorithm\48.js">
-      <metrics statements="38" coveredstatements="38" conditionals="6" coveredconditionals="4" methods="3" coveredmethods="3"/>
-      <line num="3" count="3" type="stmt"/>
-      <line num="4" count="3" type="stmt"/>
-      <line num="5" count="3" type="stmt"/>
-      <line num="6" count="3" type="stmt"/>
-      <line num="7" count="3" type="stmt"/>
-      <line num="8" count="3" type="stmt"/>
-      <line num="9" count="3" type="stmt"/>
-      <line num="10" count="3" type="stmt"/>
-      <line num="13" count="24" type="stmt"/>
-      <line num="14" count="24" type="stmt"/>
-      <line num="15" count="24" type="stmt"/>
-      <line num="18" count="3" type="stmt"/>
-      <line num="19" count="12" type="stmt"/>
-      <line num="20" count="12" type="stmt"/>
-      <line num="24" count="15" type="stmt"/>
-      <line num="25" count="15" type="stmt"/>
-      <line num="26" count="15" type="stmt"/>
-      <line num="27" count="24" type="stmt"/>
-      <line num="28" count="24" type="cond" truecount="2" falsecount="0"/>
-      <line num="29" count="12" type="stmt"/>
-      <line num="33" count="3" type="stmt"/>
-      <line num="35" count="3" type="stmt"/>
-      <line num="36" count="3" type="stmt"/>
-      <line num="37" count="7" type="stmt"/>
-      <line num="38" count="7" type="stmt"/>
-      <line num="40" count="7" type="stmt"/>
-      <line num="41" count="7" type="stmt"/>
-      <line num="42" count="7" type="stmt"/>
-      <line num="43" count="6" type="stmt"/>
-      <line num="44" count="6" type="stmt"/>
-      <line num="45" count="6" type="stmt"/>
-      <line num="46" count="6" type="cond" truecount="1" falsecount="1"/>
-      <line num="47" count="6" type="stmt"/>
-      <line num="50" count="7" type="stmt"/>
-      <line num="51" count="7" type="stmt"/>
-      <line num="52" count="7" type="cond" truecount="1" falsecount="1"/>
-      <line num="53" count="7" type="stmt"/>
-      <line num="56" count="3" type="stmt"/>
-    </file>
-    <file name="49.js" path="E:\desktop\Thesis\solutions-algorithm\49.js">
-      <metrics statements="1" coveredstatements="1" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
-      <line num="3" count="5" type="cond" truecount="2" falsecount="0"/>
+      <metrics statements="38" coveredstatements="38" conditionals="6" coveredconditionals="6" methods="3" coveredmethods="3"/>
+      <line num="3" count="7" type="stmt"/>
+      <line num="4" count="7" type="stmt"/>
+      <line num="5" count="7" type="stmt"/>
+      <line num="6" count="7" type="stmt"/>
+      <line num="7" count="7" type="stmt"/>
+      <line num="8" count="7" type="stmt"/>
+      <line num="9" count="7" type="stmt"/>
+      <line num="10" count="7" type="stmt"/>
+      <line num="13" count="42" type="stmt"/>
+      <line num="14" count="42" type="stmt"/>
+      <line num="15" count="42" type="stmt"/>
+      <line num="18" count="7" type="stmt"/>
+      <line num="19" count="21" type="stmt"/>
+      <line num="20" count="21" type="stmt"/>
+      <line num="24" count="28" type="stmt"/>
+      <line num="25" count="28" type="stmt"/>
+      <line num="26" count="28" type="stmt"/>
+      <line num="27" count="42" type="stmt"/>
+      <line num="28" count="42" type="cond" truecount="2" falsecount="0"/>
+      <line num="29" count="21" type="stmt"/>
+      <line num="33" count="7" type="stmt"/>
+      <line num="35" count="7" type="stmt"/>
+      <line num="36" count="7" type="stmt"/>
+      <line num="37" count="14" type="stmt"/>
+      <line num="38" count="14" type="stmt"/>
+      <line num="40" count="14" type="stmt"/>
+      <line num="41" count="14" type="stmt"/>
+      <line num="42" count="14" type="stmt"/>
+      <line num="43" count="9" type="stmt"/>
+      <line num="44" count="9" type="stmt"/>
+      <line num="45" count="9" type="stmt"/>
+      <line num="46" count="9" type="cond" truecount="2" falsecount="0"/>
+      <line num="47" count="7" type="stmt"/>
+      <line num="50" count="14" type="stmt"/>
+      <line num="51" count="14" type="stmt"/>
+      <line num="52" count="14" type="cond" truecount="2" falsecount="0"/>
+      <line num="53" count="14" type="stmt"/>
+      <line num="56" count="7" type="stmt"/>
     </file>
     <file name="5.js" path="E:\desktop\Thesis\solutions-algorithm\5.js">
       <metrics statements="9" coveredstatements="9" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
-      <line num="2" count="6" type="stmt"/>
-      <line num="3" count="6" type="stmt"/>
-      <line num="4" count="6" type="stmt"/>
-      <line num="6" count="6" type="stmt"/>
-      <line num="7" count="20" type="cond" truecount="2" falsecount="0"/>
-      <line num="8" count="4" type="stmt"/>
-      <line num="9" count="4" type="stmt"/>
-      <line num="11" count="16" type="stmt"/>
-      <line num="15" count="6" type="stmt"/>
-    </file>
-    <file name="50.js" path="E:\desktop\Thesis\solutions-algorithm\50.js">
-      <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
-      <line num="3" count="6" type="stmt"/>
-      <line num="5" count="6" type="stmt"/>
-      <line num="6" count="49" type="stmt"/>
-      <line num="7" count="49" type="stmt"/>
-      <line num="10" count="6" type="stmt"/>
-    </file>
-    <file name="6.js" path="E:\desktop\Thesis\solutions-algorithm\6.js">
-      <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
-      <line num="3" count="30" type="stmt"/>
-      <line num="4" count="5" type="stmt"/>
-    </file>
-    <file name="7.js" path="E:\desktop\Thesis\solutions-algorithm\7.js">
-      <metrics statements="10" coveredstatements="10" conditionals="4" coveredconditionals="4" methods="2" coveredmethods="2"/>
+      <line num="2" count="7" type="stmt"/>
       <line num="3" count="7" type="stmt"/>
       <line num="4" count="7" type="stmt"/>
       <line num="6" count="7" type="stmt"/>
-      <line num="7" count="27" type="cond" truecount="2" falsecount="0"/>
-      <line num="8" count="13" type="stmt"/>
-      <line num="10" count="14" type="cond" truecount="2" falsecount="0"/>
+      <line num="7" count="24" type="cond" truecount="2" falsecount="0"/>
+      <line num="8" count="5" type="stmt"/>
+      <line num="9" count="5" type="stmt"/>
+      <line num="11" count="19" type="stmt"/>
+      <line num="15" count="7" type="stmt"/>
+    </file>
+    <file name="50.js" path="E:\desktop\Thesis\solutions-algorithm\50.js">
+      <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+      <line num="3" count="8" type="stmt"/>
+      <line num="5" count="8" type="stmt"/>
+      <line num="6" count="100036" type="stmt"/>
+      <line num="7" count="100036" type="stmt"/>
+      <line num="10" count="23" type="stmt"/>
+    </file>
+    <file name="7.js" path="E:\desktop\Thesis\solutions-algorithm\7.js">
+      <metrics statements="10" coveredstatements="10" conditionals="4" coveredconditionals="4" methods="2" coveredmethods="2"/>
+      <line num="3" count="9" type="stmt"/>
+      <line num="4" count="9" type="stmt"/>
+      <line num="6" count="9" type="stmt"/>
+      <line num="7" count="40" type="cond" truecount="2" falsecount="0"/>
+      <line num="8" count="24" type="stmt"/>
+      <line num="10" count="16" type="cond" truecount="2" falsecount="0"/>
       <line num="11" count="3" type="stmt"/>
-      <line num="13" count="11" type="stmt"/>
-      <line num="14" count="11" type="stmt"/>
-      <line num="18" count="7" type="stmt"/>
+      <line num="13" count="26" type="stmt"/>
+      <line num="14" count="13" type="stmt"/>
+      <line num="18" count="9" type="stmt"/>
     </file>
     <file name="8.js" path="E:\desktop\Thesis\solutions-algorithm\8.js">
       <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
-      <line num="4" count="6" type="stmt"/>
-      <line num="5" count="6" type="stmt"/>
-      <line num="7" count="6" type="stmt"/>
-      <line num="8" count="31" type="stmt"/>
-      <line num="9" count="31" type="stmt"/>
-      <line num="13" count="18" type="stmt"/>
+      <line num="4" count="7" type="stmt"/>
+      <line num="5" count="7" type="stmt"/>
+      <line num="7" count="7" type="stmt"/>
+      <line num="8" count="39" type="stmt"/>
+      <line num="9" count="39" type="stmt"/>
+      <line num="13" count="24" type="stmt"/>
     </file>
     <file name="9.js" path="E:\desktop\Thesis\solutions-algorithm\9.js">
       <metrics statements="20" coveredstatements="20" conditionals="8" coveredconditionals="8" methods="1" coveredmethods="1"/>
       <line num="4" count="8" type="stmt"/>
       <line num="5" count="8" type="stmt"/>
-      <line num="6" count="35" type="cond" truecount="2" falsecount="0"/>
+      <line num="6" count="36" type="cond" truecount="2" falsecount="0"/>
       <line num="9" count="8" type="stmt"/>
-      <line num="10" count="27" type="stmt"/>
+      <line num="10" count="28" type="stmt"/>
       <line num="14" count="8" type="stmt"/>
-      <line num="15" count="26" type="cond" truecount="2" falsecount="0"/>
+      <line num="15" count="22" type="cond" truecount="2" falsecount="0"/>
       <line num="16" count="8" type="stmt"/>
       <line num="17" count="8" type="stmt"/>
       <line num="22" count="8" type="stmt"/>
       <line num="23" count="8" type="stmt"/>
-      <line num="24" count="35" type="cond" truecount="2" falsecount="0"/>
+      <line num="24" count="36" type="cond" truecount="2" falsecount="0"/>
       <line num="27" count="8" type="stmt"/>
-      <line num="28" count="19" type="stmt"/>
+      <line num="28" count="20" type="stmt"/>
       <line num="31" count="8" type="stmt"/>
       <line num="34" count="8" type="stmt"/>
-      <line num="35" count="21" type="cond" truecount="2" falsecount="0"/>
+      <line num="35" count="30" type="cond" truecount="2" falsecount="0"/>
       <line num="36" count="8" type="stmt"/>
       <line num="37" count="8" type="stmt"/>
       <line num="41" count="8" type="stmt"/>
