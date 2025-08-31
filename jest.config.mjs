@@ -9,14 +9,14 @@ export default {
     },
 
     testMatch: [
-        "<rootDir>/Passed_test_claude/tests-algorithm/tests-prompt2/*.test.js"
+        "<rootDir>/Passed_test_claude/tests-descriptive/tests-prompt3/*.test.js"
     ],
 
     // Explicitly exclude problematic folders
     testPathIgnorePatterns: [
         "Claude/",
-        "solutions-descriptive/",
-        "tests-descriptive/",
+        "solutions-algorithm/",
+        "tests-algorithm/",
         "Passed_test_gpt/",
         "coverage/",
         "node_modules/"
@@ -35,5 +35,10 @@ export default {
     moduleFileExtensions: ["js", "json"],
     
     // Clear mocks between tests
-    clearMocks: true
+    clearMocks: true,
+    
+    // Expose Jest globals
+    globals: {
+        jest: true
+    }
 };

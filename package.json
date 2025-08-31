@@ -22,6 +22,9 @@
         "mutation:gpt:algo:prompt1": "stryker run stryker.config.json",
         "mutation:claude:algorithm:prompt1": "stryker run stryker-claude-algorithm-prompt1.config.json",
         "mutation:claude:algorithm:prompt2": "stryker run stryker-claude-algorithm-prompt2.config.json",
-        "mutation:claude:algorithm:prompt3": "stryker run stryker-claude-algorithm-prompt3.config.json"
+        "mutation:claude:algorithm:prompt3": "stryker run stryker-claude-algorithm-prompt3.config.json",
+        "mutation:claude:descriptive:prompt1": "stryker run stryker-claude-descriptive-prompt1.config.json",
+        "mutation:claude:descriptive:prompt2": "stryker run stryker-claude-descriptive-prompt2.config.json",
+        "mutation:claude:descriptive:prompt3": "stryker run stryker-claude-descriptive-prompt3.config.json"
     }
 }
