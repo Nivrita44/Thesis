@@ -1,0 +1,5 @@
+[2025-10-21T19:56:06.276Z] Test: Register - Status: FAIL
+[2025-10-21T19:56:06.493Z] Test: Login - Status: FAIL
+[2025-10-21T19:56:09.115Z] Test: AddToCart - Status: PASS
+[2025-10-21T19:56:10.770Z] Test: VerifyCart - Status: PASS
+[2025-10-21T19:56:10.904Z] Test: Checkout - Status: FAIL
