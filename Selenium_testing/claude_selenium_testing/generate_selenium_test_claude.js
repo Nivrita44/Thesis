@@ -1,8 +1,8 @@
-// generate_selenium_tests.js
+// generate_selenium_test_claude.js
 
 import dotenv from "dotenv";
 import fs from "fs/promises";
-import { OpenAI } from "openai";
+import Anthropic from "@anthropic-ai/sdk";
 import path from "path";
 import { fileURLToPath } from "url";
 
@@ -15,14 +15,14 @@ const __dirname = path.dirname(__filename);
 // Import dummy config to embed variables in the prompt
 const { websiteURL, usernamePrefix, password, productName, TIMEOUT } = await import("./config/config.js");
 
-const OPENAI_API_KEY = process.env.OPENAI_API_KEYY;
-if (!OPENAI_API_KEY) {
-  console.error("Error: OPENAI_API_KEYY not found in .env file.");
+const Claude_API_KEY= process.env.CLAUDE_API_KEYY;
+if (!Claude_API_KEY){
+  console.error("Error: Claude_API_KEY not found in .env file.");
   process.exit(1);
 }
 
-const openai = new OpenAI({ apiKey: OPENAI_API_KEY });
-const LLM_MODEL = "gpt-4o"; // Can use gpt-4o-mini for faster response
+const anthropic = new Anthropic({ apiKey: Claude_API_KEY });
+const LLM_MODEL = "claude-3-5-sonnet-20241022"; // Latest Claude model
 
 const PATHS = {
   testsSelenium1: path.join(__dirname, "e2e_tests", "ecommerce.test.js"),
@@ -39,27 +39,29 @@ function cleanLLMResponse(responseText) {
 
 async function generateTestCode(prompt) {
   try {
-    console.log("  Sending request to OpenAI...");
-    const response = await openai.chat.completions.create({
+    console.log("  Sending request to Claude...");
+    const response = await anthropic.messages.create({
       model: LLM_MODEL,
+      max_tokens: 4000,
       messages: [
         {
-          role: "system",
+          role: "user",
           content: `
 You are a senior QA automation engineer.
 Generate a **Node.js Selenium WebDriver script** that fully automates a realistic e-commerce test workflow.
 Each test should be isolated, reliable, and run sequentially with clear logging.
 Use async/await syntax throughout.
 Output **only runnable JavaScript code**.
+
+${prompt}
           `,
         },
-        { role: "user", content: prompt },
       ],
     });
-    console.log("  Received response from OpenAI.");
-    return cleanLLMResponse(response.choices[0].message.content);
+    console.log("  Received response from Claude.");
+    return cleanLLMResponse(response.content[0].text);
   } catch (err) {
-    console.error("  Error calling OpenAI:", err);
+    console.error("  Error calling Claude:", err);
     return `// Failed to generate Selenium tests: ${err.message}`;
   }
 }
