@@ -1,0 +1,11 @@
+FillAndSubmitTextBoxForm: FAIL
+SelectCheckBox: PASS
+SelectRadioButton: PASS
+SelectWebTables: PASS
+FillAndSubmitAddNewRecordForm: PASS
+SearchForRecord: PASS
+EditFirstRecord: PASS
+DeleteSecondRecord: FAIL
+DoubleClickButton: FAIL
+RightClickButton: PASS
+Test Summary: 7 passed, 3 failed out of 10 total tests

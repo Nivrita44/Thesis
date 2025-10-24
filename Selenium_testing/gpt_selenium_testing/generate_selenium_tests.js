@@ -14,7 +14,7 @@ const __dirname = path.dirname(__filename);
 
 const OPENAI_API_KEY = process.env.OPENAI_API_KEYY;
 if (!OPENAI_API_KEY) {
-  console.error("Error: OPENAI_API_KEYY not found in .env file.");
+  console.error("Error: OPENAI_API_KEY not found in .env file.");
   process.exit(1);
 }
 
@@ -73,15 +73,22 @@ const websiteConfigs = {
     configFile: "./config/config.js",
     testFile1: "ecommerce.test.js",
     testFile2: "ecommerce.test2.js",
-    logFile1: "test_results.txt",
-    logFile2: "test_results2.txt"
+    logFile1: "../logs/test_results.txt",
+    logFile2: "../logs/test_results2.txt"
   },
   sauce_demo: {
     configFile: "./config/sauce_demo.js",
     testFile1: "sauce_demo.test.js",
     testFile2: "sauce_demo.test2.js",
-    logFile1: "sauce_demo_results.txt",
-    logFile2: "sauce_demo_results2.txt"
+    logFile1: "../logs/sauce_demo_results.txt",
+    logFile2: "../logs/sauce_demo_results2.txt"
+  },
+  demoqa: {
+    configFile: "./config/demoqa.js",
+    testFile1: "demoqa.test.js",
+    testFile2: "demoqa.test2.js",
+    logFile1: "../logs/demoqa_results.txt",
+    logFile2: "../logs/demoqa_results2.txt"
   }
 };
 
@@ -638,6 +645,283 @@ Output only raw JavaScript code — no Markdown, no explanation.
 `;
 }
 
+// --- DEMOQA PROMPT GENERATORS ---
+
+function generateDemoQAPrompt1(config, inputsContext) {
+  return `
+Write a **complete runnable Selenium WebDriver test in Node.js** that performs full end-to-end flow on DemoQA website with PROPER TIMING and STABILITY.
+
+The script should:
+- Import { Builder, By, until, Key } from 'selenium-webdriver'.
+- Import { Options } from 'selenium-webdriver/chrome.js'.
+- Import { websiteURL, formValues, elements, newRecordData, searchTerm, editRecordData, TIMEOUT } from '../config/demoqa.js' (note: ../ means go up one directory from e2e_tests to find config folder).
+- Import fs from 'fs/promises'.
+- Import path from 'path'.
+- Import { fileURLToPath } from 'url'.
+- CRITICAL: Define __filename and __dirname for ES modules: const __filename = fileURLToPath(import.meta.url); const __dirname = path.dirname(__filename);
+- Define logFilePath using path.join(__dirname, '../logs/demoqa_results.txt')
+- CRITICAL: Create logs directory if it doesn't exist using fs.mkdir(path.dirname(logFilePath), { recursive: true })
+- Implement helper 'logResult(testName, status)' using fs.writeFile to overwrite '../logs/demoqa_results.txt'.
+- Each test must log its individual result: 'PASS' or 'FAIL' with timestamp
+- Log format: '[timestamp] Test: [testName] - Status: [PASS/FAIL]'
+- Each test should log its result immediately after completion
+- At the end, log a summary: 'Test Summary: X passed, Y failed out of 10 total tests'
+- CRITICAL: Each individual test function must call logResult() to track success/failure per task
+- Implement helper 'waitForElementToBeStable(driver, element, timeout)' for element stability.
+- The waitForElementToBeStable function should only use: await driver.wait(until.elementIsVisible(element), timeout); await driver.wait(until.elementIsEnabled(element), timeout);
+- Launch Chrome browser with stability options, go to the website, and perform tasks below sequentially.
+
+CRITICAL IMPORT PATH REQUIREMENT:
+- The test file will be saved in e2e_tests/ folder
+- The config file is in config/ folder (one level up from e2e_tests/)
+- Use '../config/demoqa.js' for the import path (NOT './config/demoqa.js')
+- Use '../logs/demoqa_results.txt' for the log file path
+- CRITICAL: Create logs directory if it doesn't exist using fs.mkdir(path.dirname(logFilePath), { recursive: true })
+
+IMPORTANT: This is for demoqa.com website. Use the EXACT selectors and flow that work:
+
+CRITICAL BROWSER SETUP:
+- Use incognito mode to completely avoid Chrome Password Manager popups
+- Keep browser visible (no --headless) so you can monitor test execution
+- Incognito mode prevents all password manager, security warnings, and data breach notifications
+- Browser will be visible on screen during test execution for debugging and monitoring
+
+CRITICAL TIMING REQUIREMENTS:
+- Use driver.sleep(3000-4000) for page loads and stabilization
+- Use driver.sleep(1000-2000) for form interactions and navigation
+- Use driver.sleep(500-1000) between form field inputs
+- Use driver.sleep(2000-3000) between each test function
+- Always wait for elements to be located, visible, AND enabled before interaction
+- Wait for page loads and transitions to complete
+- Log all important states and transitions
+
+Define and execute these separate test functions with EXACT demoqa.com selectors:
+
+1. **@Test FillAndSubmitTextBoxForm**: 
+   - Navigate to website, wait 3s for page load
+   - Fill Full Name field: By.id('${config.elements.fullName}')
+   - Fill Email field: By.id('${config.elements.email}')
+   - Fill Current Address field: By.id('${config.elements.currentAddress}')
+   - Fill Permanent Address field: By.id('${config.elements.permanentAddress}')
+   - Click Submit button: By.id('${config.elements.submitButton}')
+   - Wait 3s for form submission
+   - Verify submission success by checking output section is displayed: By.id('${config.elements.outputSection}')
+   - Log individual result: logResult('FillAndSubmitTextBoxForm', 'PASS') or logResult('FillAndSubmitTextBoxForm', 'FAIL')
+
+2. **@Test SelectCheckBox**: 
+   - Click Check Box menu item: By.id('${config.elements.checkBoxMenuItem}')
+   - Wait 3s for page load
+   - Click expand button first: By.className('${config.elements.expandButton}')
+   - Wait 1s for expansion
+   - Click Home checkbox: By.className('${config.elements.homeCheckbox}')
+   - Wait 2s for checkbox selection
+   - Verify checkbox is selected by checking result display: By.className('${config.elements.checkboxResult}')
+   - Log individual result: logResult('SelectCheckBox', 'PASS') or logResult('SelectCheckBox', 'FAIL')
+
+3. **@Test SelectRadioButton**: 
+   - Click Radio Button menu item: By.id('${config.elements.radioButtonMenuItem}')
+   - Wait 3s for page load
+   - Use JavaScript executor to click Yes radio button: By.id('${config.elements.yesRadio}')
+   - Wait 2s for radio button selection
+   - If Yes radio doesn't work, try Impressive radio: By.id('${config.elements.impressiveRadio}')
+   - Verify radio button is selected by checking result text: By.className('${config.elements.radioResult}')
+   - Log individual result: logResult('SelectRadioButton', 'PASS') or logResult('SelectRadioButton', 'FAIL')
+
+4. **@Test SelectWebTables**: 
+   - Click Web Tables menu item: By.id('${config.elements.webTablesMenuItem}')
+   - Wait 3s for page load
+   - Verify web tables are displayed: By.className('${config.elements.webTable}')
+   - Log individual result: logResult('SelectWebTables', 'PASS') or logResult('SelectWebTables', 'FAIL')
+
+5. **@Test FillAndSubmitAddNewRecordForm**: 
+   - Click Add button: By.id('${config.elements.addNewRecordButton}')
+   - Wait 2s for form to appear
+   - Fill First Name field: By.id('${config.elements.firstName}')
+   - Fill Last Name field: By.id('${config.elements.lastName}')
+   - Fill Email field: By.id('${config.elements.userEmail}')
+   - Fill Age field: By.id('${config.elements.age}')
+   - Fill Salary field: By.id('${config.elements.salary}')
+   - Fill Department field: By.id('${config.elements.department}')
+   - Click Submit button: By.id('${config.elements.submitButton}')
+   - Wait 3s for form submission
+   - Verify new record is added to the table by searching for the name
+   - Log individual result: logResult('FillAndSubmitAddNewRecordForm', 'PASS') or logResult('FillAndSubmitAddNewRecordForm', 'FAIL')
+
+6. **@Test SearchForRecord**: 
+   - Enter search term in search box: By.id('${config.elements.searchBox}')
+   - Wait 2s for search results
+   - Verify search results contain the expected record by checking table content
+   - Log individual result: logResult('SearchForRecord', 'PASS') or logResult('SearchForRecord', 'FAIL')
+
+7. **@Test EditFirstRecord**: 
+   - Find and click Edit button for first record: By.xpath('${config.elements.editRecord1}')
+   - Wait 2s for form to appear
+   - Clear and fill form fields with new data
+   - Click Submit button: By.id('${config.elements.submitButton}')
+   - Wait 3s for form submission
+   - Find search box: By.id('${config.elements.searchBox}')
+   - IMPORTANT: Clear the search box first using .clear() method
+   - Enter updated name in search box
+   - Wait 2s for search results
+   - Verify record is updated by checking table content
+   - Log individual result: logResult('EditFirstRecord', 'PASS') or logResult('EditFirstRecord', 'FAIL')
+
+8. **@Test DeleteSecondRecord**: 
+   - Find and click Delete button for second record: By.xpath('${config.elements.deleteRecord2}')
+   - Wait 2s for record deletion
+   - Verify record is deleted by checking table content
+   - Log individual result: logResult('DeleteSecondRecord', 'PASS') or logResult('DeleteSecondRecord', 'FAIL')
+
+9. **@Test DoubleClickButton**: 
+   - Click Buttons menu item: By.id('${config.elements.buttonsMenuItem}')
+   - Wait 3s for page load
+   - Perform double click on Double Click button: By.id('${config.elements.doubleClickBtn}')
+   - Wait 2s for double click action
+   - Verify double click message is displayed: By.id('${config.elements.doubleClickMessage}')
+   - Log individual result: logResult('DoubleClickButton', 'PASS') or logResult('DoubleClickButton', 'FAIL')
+
+10. **@Test RightClickButton**: 
+    - Perform right click on Right Click button: By.id('${config.elements.rightClickBtn}')
+    - Wait 2s for right click action
+    - Verify right click message is displayed: By.id('${config.elements.rightClickMessage}')
+    - Log individual result: logResult('RightClickButton', 'PASS') or logResult('RightClickButton', 'FAIL')
+
+CRITICAL: You MUST implement ALL 10 test functions completely. Do NOT comment out or skip any test functions. Each test function must be fully implemented with proper error handling and logging.
+
+MAIN RUNNER REQUIREMENTS:
+- Call ALL 10 test functions in sequence
+- Add 3-second waits between each test function
+- Add visual separators with console.log("=".repeat(50)) between tests
+- Log completion status for each test
+- Add progress logging with emojis (🚀, ✅, ❌, 🎉)
+- Use fs.writeFile (not appendFile) to overwrite log file each run
+- CRITICAL: Create logs directory if it doesn't exist using fs.mkdir(path.dirname(logFilePath), { recursive: true })
+
+CHROME OPTIONS REQUIREMENTS:
+- Add --no-sandbox, --disable-dev-shm-usage, --disable-gpu
+- Add --disable-blink-features=AutomationControlled, --disable-extensions
+- Add --incognito, --disable-web-security, --disable-features=VizDisplayCompositor
+- Set window size to 1920,1080
+
+${inputsContext}
+
+Output only raw JavaScript code — no Markdown, no explanation.
+`;
+}
+
+function generateDemoQAPrompt2(config, inputsContext) {
+  return `
+Write a **complete runnable Selenium WebDriver test in Node.js** for demoqa.com website.
+
+The script should:
+- Import { Builder, By, until, Key } from 'selenium-webdriver'.
+- Import { Options } from 'selenium-webdriver/chrome.js'.
+- Import { websiteURL, formValues, elements, newRecordData, searchTerm, editRecordData, TIMEOUT } from '../config/demoqa.js' (note: ../ means go up one directory from e2e_tests to find config folder).
+- Import fs from 'fs/promises'.
+- Import path from 'path'.
+- Import { fileURLToPath } from 'url'.
+- CRITICAL: Define __filename and __dirname for ES modules: const __filename = fileURLToPath(import.meta.url); const __dirname = path.dirname(__filename);
+- Define logFilePath using path.join(__dirname, '../logs/demoqa_results2.txt')
+- CRITICAL: Create logs directory if it doesn't exist using fs.mkdir(path.dirname(logFilePath), { recursive: true })
+- Implement helper 'logResult(testName, status)' using fs.writeFile to overwrite '../logs/demoqa_results2.txt'.
+- Launch Chrome browser with basic options and perform workflow.
+
+CHROME OPTIONS REQUIREMENTS:
+- Add --no-sandbox, --disable-dev-shm-usage, --disable-gpu
+- Add --disable-blink-features=AutomationControlled, --disable-extensions
+- Add --incognito (this prevents Chrome Password Manager popups completely)
+- Add --disable-web-security, --disable-features=VizDisplayCompositor
+- Set window size to 1920,1080
+- DO NOT add --headless (keep browser visible for monitoring)
+- Incognito mode prevents all password manager and security popups
+
+CRITICAL IMPORT PATH REQUIREMENT:
+- The test file will be saved in e2e_tests/ folder
+- The config file is in config/ folder (one level up from e2e_tests/)
+- Use '../config/demoqa.js' for the import path (NOT './config/demoqa.js')
+- Use '../logs/demoqa_results2.txt' for the log file path
+- CRITICAL: Create logs directory if it doesn't exist using fs.mkdir(path.dirname(logFilePath), { recursive: true })
+
+Create these test functions with proper implementation:
+
+1. **testFillAndSubmitTextBoxForm**: 
+   - Navigate to website, fill text box form
+   - Full Name: By.id('${config.elements.fullName}')
+   - Email: By.id('${config.elements.email}')
+   - Current Address: By.id('${config.elements.currentAddress}')
+   - Permanent Address: By.id('${config.elements.permanentAddress}')
+   - Submit button: By.id('${config.elements.submitButton}')
+   - Verify submission success by checking output section is displayed: By.id('${config.elements.outputSection}')
+   - Log result: logResult('FillAndSubmitTextBoxForm', 'PASS') or logResult('FillAndSubmitTextBoxForm', 'FAIL')
+
+2. **testSelectCheckBox**: 
+   - Click Check Box menu item: By.id('${config.elements.checkBoxMenuItem}')
+   - Click expand button first: By.className('${config.elements.expandButton}')
+   - Click Home checkbox: By.className('${config.elements.homeCheckbox}')
+   - Verify checkbox is selected by checking result display: By.className('${config.elements.checkboxResult}')
+   - Log result: logResult('SelectCheckBox', 'PASS') or logResult('SelectCheckBox', 'FAIL')
+
+3. **testSelectRadioButton**: 
+   - Click Radio Button menu item: By.id('${config.elements.radioButtonMenuItem}')
+   - Use JavaScript executor to click Yes radio button: By.id('${config.elements.yesRadio}')
+   - If Yes radio doesn't work, try Impressive radio: By.id('${config.elements.impressiveRadio}')
+   - Verify radio button is selected by checking result text: By.className('${config.elements.radioResult}')
+   - Log result: logResult('SelectRadioButton', 'PASS') or logResult('SelectRadioButton', 'FAIL')
+
+4. **testSelectWebTables**: 
+   - Click Web Tables menu item: By.id('${config.elements.webTablesMenuItem}')
+   - Verify web tables are displayed: By.className('${config.elements.webTable}')
+   - Log result: logResult('SelectWebTables', 'PASS') or logResult('SelectWebTables', 'FAIL')
+
+5. **testFillAndSubmitAddNewRecordForm**: 
+   - Click Add button: By.id('${config.elements.addNewRecordButton}')
+   - Fill form fields with data from config
+   - Click Submit button: By.id('${config.elements.submitButton}')
+   - Verify new record is added by searching for the name
+   - Log result: logResult('FillAndSubmitAddNewRecordForm', 'PASS') or logResult('FillAndSubmitAddNewRecordForm', 'FAIL')
+
+6. **testSearchForRecord**: 
+   - Enter search term in search box: By.id('${config.elements.searchBox}')
+   - Verify search results contain the expected record by checking table content
+   - Log result: logResult('SearchForRecord', 'PASS') or logResult('SearchForRecord', 'FAIL')
+
+7. **testEditFirstRecord**: 
+   - Find and click Edit button for first record: By.xpath('${config.elements.editRecord1}')
+   - Update form fields with new data
+   - Click Submit button: By.id('${config.elements.submitButton}')
+   - Find search box: By.id('${config.elements.searchBox}')
+   - IMPORTANT: Clear the search box first using .clear() method
+   - Enter updated name in search box
+   - Verify record is updated by checking table content
+   - Log result: logResult('EditFirstRecord', 'PASS') or logResult('EditFirstRecord', 'FAIL')
+
+8. **testDeleteSecondRecord**: 
+   - Find and click Delete button for second record: By.xpath('${config.elements.deleteRecord2}')
+   - Verify record is deleted by checking table content
+   - Log result: logResult('DeleteSecondRecord', 'PASS') or logResult('DeleteSecondRecord', 'FAIL')
+
+9. **testDoubleClickButton**: 
+   - Click Buttons menu item: By.id('${config.elements.buttonsMenuItem}')
+   - Perform double click on button: By.id('${config.elements.doubleClickBtn}')
+   - Verify double click message is displayed: By.id('${config.elements.doubleClickMessage}')
+   - Log result: logResult('DoubleClickButton', 'PASS') or logResult('DoubleClickButton', 'FAIL')
+
+10. **testRightClickButton**: 
+    - Perform right click on button: By.id('${config.elements.rightClickBtn}')
+    - Verify right click message is displayed: By.id('${config.elements.rightClickMessage}')
+    - Log result: logResult('RightClickButton', 'PASS') or logResult('RightClickButton', 'FAIL')
+
+MAIN RUNNER REQUIREMENTS:
+- Call ALL 10 test functions in sequence
+- Log summary at the end: 'Test Summary: X passed, Y failed out of 10 total tests'
+- CRITICAL: Create logs directory if it doesn't exist using fs.mkdir(path.dirname(logFilePath), { recursive: true })
+
+${inputsContext}
+
+Output only raw JavaScript code — no Markdown, no explanation.
+`;
+}
+
 // --- MAIN FUNCTIONS ---
 
 async function generateTestsForWebsite(websiteName) {
@@ -665,6 +949,19 @@ ${Object.entries(websiteConfig).map(([key, value]) => `- ${key}: ${value}`).join
     prompt1 = generateDemoblazePrompt1(websiteConfig, inputsContext);
   } else if (websiteName === 'sauce_demo') {
     prompt1 = generateSauceDemoPrompt1(websiteConfig, inputsContext);
+  } else if (websiteName === 'demoqa') {
+    prompt1 = generateDemoQAPrompt1(websiteConfig, inputsContext);
+  }
+
+  // Generate Prompt 2 (without timing)
+  console.log("  Generating Prompt 2 (without timing)...");
+  let prompt2;
+  if (websiteName === 'demoblaze') {
+    prompt2 = generateDemoblazePrompt2(websiteConfig, inputsContext);
+  } else if (websiteName === 'sauce_demo') {
+    prompt2 = generateSauceDemoPrompt2(websiteConfig, inputsContext);
+  } else if (websiteName === 'demoqa') {
+    prompt2 = generateDemoQAPrompt2(websiteConfig, inputsContext);
   }
 
   const testCode1 = await generateTestCode(prompt1);
@@ -676,7 +973,6 @@ ${Object.entries(websiteConfig).map(([key, value]) => `- ${key}: ${value}`).join
 
   // Generate Prompt 2 (without timing)
   console.log("  Generating Prompt 2 (without timing)...");
-  let prompt2;
   if (websiteName === 'demoblaze') {
     prompt2 = generateDemoblazePrompt2(websiteConfig, inputsContext);
   } else if (websiteName === 'sauce_demo') {
