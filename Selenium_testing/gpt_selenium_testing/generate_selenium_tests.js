@@ -89,6 +89,13 @@ const websiteConfigs = {
     testFile2: "demoqa.test2.js",
     logFile1: "../logs/demoqa_results.txt",
     logFile2: "../logs/demoqa_results2.txt"
+  },
+  magento: {
+    configFile: "./config/magento.js",
+    testFile1: "magento.test.js",
+    testFile2: "magento.test2.js",
+    logFile1: "../logs/magento_results.txt",
+    logFile2: "../logs/magento_results2.txt"
   }
 };
 
@@ -951,6 +958,8 @@ ${Object.entries(websiteConfig).map(([key, value]) => `- ${key}: ${value}`).join
     prompt1 = generateSauceDemoPrompt1(websiteConfig, inputsContext);
   } else if (websiteName === 'demoqa') {
     prompt1 = generateDemoQAPrompt1(websiteConfig, inputsContext);
+  } else if (websiteName === 'magento') {
+    prompt1 = generateMagentoPrompt1(websiteConfig, inputsContext);
   }
 
   // Generate Prompt 2 (without timing)
@@ -962,6 +971,8 @@ ${Object.entries(websiteConfig).map(([key, value]) => `- ${key}: ${value}`).join
     prompt2 = generateSauceDemoPrompt2(websiteConfig, inputsContext);
   } else if (websiteName === 'demoqa') {
     prompt2 = generateDemoQAPrompt2(websiteConfig, inputsContext);
+  } else if (websiteName === 'magento') {
+    prompt2 = generateMagentoPrompt2(websiteConfig, inputsContext);
   }
 
   const testCode1 = await generateTestCode(prompt1);
@@ -977,6 +988,10 @@ ${Object.entries(websiteConfig).map(([key, value]) => `- ${key}: ${value}`).join
     prompt2 = generateDemoblazePrompt2(websiteConfig, inputsContext);
   } else if (websiteName === 'sauce_demo') {
     prompt2 = generateSauceDemoPrompt2(websiteConfig, inputsContext);
+  } else if (websiteName === 'demoqa') {
+    prompt2 = generateDemoQAPrompt2(websiteConfig, inputsContext);
+  } else if (websiteName === 'magento') {
+    prompt2 = generateMagentoPrompt2(websiteConfig, inputsContext);
   }
 
   const testCode2 = await generateTestCode(prompt2);
@@ -996,6 +1011,284 @@ async function mainSelenium2() {
   console.log("Starting Selenium test generation 2...");
   // This would be handled by the new structure
 }
+
+// --- MAGENTO PROMPT GENERATORS ---
+
+function generateMagentoPrompt1(config, inputsContext) {
+  return `
+Write a **complete runnable Selenium WebDriver test in Node.js** that performs full end-to-end flow on Magento Demo website with PROPER TIMING and STABILITY.
+
+The script should:
+- Import { Builder, By, until, Key } from 'selenium-webdriver'.
+- Import { Options } from 'selenium-webdriver/chrome.js'.
+- Import { websiteURL, elements, TIMEOUT } from '../config/magento.js' (note: ../ means go up one directory from e2e_tests to find config folder).
+- Import fs from 'fs/promises'.
+- Import path from 'path'.
+- Import { fileURLToPath } from 'url'.
+- CRITICAL: Define __filename and __dirname for ES modules: const __filename = fileURLToPath(import.meta.url); const __dirname = path.dirname(__filename);
+- Define logFilePath using path.join(__dirname, '../logs/magento_results.txt')
+- CRITICAL: Create logs directory if it doesn't exist using fs.mkdir(path.dirname(logFilePath), { recursive: true })
+- Implement helper 'logResult(testName, status)' using fs.writeFile to append to '../logs/magento_results.txt'.
+- Each test must log its individual result: 'PASS' or 'FAIL' with timestamp
+- Log format: '[timestamp] Test: [testName] - Status: [PASS/FAIL]'
+- Each test should log its result immediately after completion
+- At the end, log a summary: 'Test Summary: X passed, Y failed out of 10 total tests'
+- Implement helper 'waitForElementToBeStable(driver, element, timeout)' for element stability.
+- The waitForElementToBeStable function should only use: await driver.wait(until.elementIsVisible(element), timeout); await driver.wait(until.elementIsEnabled(element), timeout);
+- Launch Chrome browser with stability options, go to the website, and perform tasks below sequentially.
+
+IMPORTANT: This is for magento.softwaretestingboard.com website. Use the EXACT selectors and flow that work:
+
+CRITICAL BROWSER SETUP:
+- Use incognito mode to completely avoid Chrome Password Manager popups
+- Keep browser visible (no --headless) for monitoring
+- Incognito mode prevents all password manager and security popups
+- Add --disable-web-security, --disable-features=VizDisplayCompositor
+
+CRITICAL TIMING REQUIREMENTS:
+- Use driver.sleep(3000-5000) for page loads and stabilization
+- Use driver.sleep(1000-2000) for modal animations and form interactions
+- Use driver.sleep(500-1000) between form field inputs
+
+Define and execute these separate test functions with EXACT Magento selectors:
+
+1. **@Test CreateAccount**: 
+   - Navigate to website, wait 3s for page load
+   - Click 'Create an Account' link using By.linkText('Create an Account')
+   - create an Account id : id008Ktuww
+   - Wait 3s for page load
+   - Fill form fields: By.id('firstname'), By.id('lastname'), By.id('is_subscribed')
+   - Generate random email: \`test\${Math.floor(Math.random() * 10000)}@exampleeee.com\`
+   - Fill By.id('email_address'), By.id('password'), By.id('password-confirmation')
+   - Click submit button: By.css('button.submit')
+   - Wait 5s for account creation
+   - Verify success by checking URL contains 'customer/account/'
+   - Log individual result: logResult('CreateAccount', 'PASS') or logResult('CreateAccount', 'FAIL')
+
+2. **@Test WhatsNew**: 
+   - Navigate to website, wait 3s for page load
+   - Click "What's New" link using By.linkText("What's New")
+   - Wait 3s for page load
+   - Scroll down to see products: driver.executeScript("window.scrollBy(0, 500)")
+   - Wait 2s for scroll
+   - Click on product: By.linkText('Echo Fit Compression Short')
+   - Wait 3s for product page
+   - Verify success by checking URL contains 'echo-fit-compression-short'
+   - Log individual result: logResult('WhatsNew', 'PASS') or logResult('WhatsNew', 'FAIL')
+
+3. **@Test AddToCart**: 
+   - Wait 3s for page stabilization
+   - Select size 28: By.id('option-label-size-144-item-171')
+   - Wait 1s for selection
+   - Select color black: By.id('option-label-color-93-item-49')
+   - Wait 1s for selection
+   - Click add to cart button: By.id('product-addtocart-button')
+   - Wait 3s for cart update
+   - Verify success message: By.css('.message-success')
+   - Log individual result: logResult('AddToCart', 'PASS') or logResult('AddToCart', 'FAIL')
+
+4. **@Test AddToWishlist**: 
+   - Wait 3s for page stabilization
+   - Click add to wishlist using XPath: By.xpath('//*[@id="maincontent"]/div[2]/div/div[3]/div[5]/div/a[1]/span')
+   - Wait 5s for wishlist update
+   - Verify success by checking URL contains 'wishlist'
+   - Log individual result: logResult('AddToWishlist', 'PASS') or logResult('AddToWishlist', 'FAIL')
+
+5. **@Test EditCart**: 
+   - Wait 3s for page stabilization
+   - Click on cart icon: By.css('.action.showcart')
+   - Wait 2s for cart dropdown
+   - Click on View and Edit Cart: By.linkText('View and Edit Cart')
+   - Wait 3s for cart page
+   - Update quantity to 2: By.css('input.input-text.qty')
+   - Wait 1s for input
+   - Click Update Cart button using XPath: By.css('button.action.update')
+   - Wait 3s for cart update
+   - Verify success by checking URL still contains 'checkout/cart'
+   - Log individual result: logResult('EditCart', 'PASS') or logResult('EditCart', 'FAIL')
+
+6. **@Test Checkout**: 
+   - Wait 3s for page stabilization
+   - Click on Proceed to Checkout using XPath: By.xpath('//*[@id="maincontent"]/div[3]/div/div[2]/div[1]/ul/li[1]/button')
+   - Wait 5s for checkout page
+   - Verify success by checking URL contains 'checkout'
+   - Log individual result: logResult('Checkout', 'PASS') or logResult('Checkout', 'FAIL')
+
+7. **@Test CheckoutForm**: 
+   - Wait 5s for form load
+   - Fill email if not already filled: By.id('customer-email')
+   - Fill shipping address: By.name('firstname'), By.name('lastname'), By.name('street[0]'), By.name('city')
+   - Select state: By.name('region_id')
+   - Fill postcode and telephone: By.name('postcode'), By.name('telephone')
+   - Select shipping method using XPath: By.xpath('//*[@id="checkout-shipping-method-load"]/table/tbody/tr[1]/td[1]/input')
+   - Click next button: By.css('.button.action.continue.primary')
+   - Wait 5s for payment page
+   - Verify success by checking URL contains 'payment'
+   - Log individual result: logResult('CheckoutForm', 'PASS') or logResult('CheckoutForm', 'FAIL')
+
+8. **@Test Subscribe**: 
+   - Navigate to website, wait 3s for page load
+   - Fill newsletter input: By.id('newsletter')
+   - Click subscribe button: By.css('.action.subscribe.primary')
+   - Wait 3s for subscription
+   - Log individual result: logResult('Subscribe', 'PASS') or logResult('Subscribe', 'FAIL')
+
+9. **@Test SignOut**: 
+   - Wait 3s for page stabilization
+   - Try to find and click account menu: By.css('.action.switch')
+   - Wait 2s for menu
+   - Try to click Sign Out link: By.linkText('Sign Out')
+   - If not found, try alternative approach with customer menu: By.css('.customer-name')
+   - Wait 5s for sign out
+   - Verify success by checking URL contains 'logoutSuccess' or equals base URL
+   - Log individual result: logResult('SignOut', 'PASS') or logResult('SignOut', 'FAIL')
+
+CRITICAL: You MUST implement ALL 9 test functions completely. Do NOT comment out or skip any test functions. Each test function must be fully implemented with proper error handling and logging.
+
+MAIN RUNNER REQUIREMENTS:
+- Call ALL 9 test functions in sequence: CreateAccount, WhatsNew, AddToCart, AddToWishlist, EditCart, Checkout, CheckoutForm, Subscribe, SignOut
+- Add 3-second waits between each test function
+- Add visual separators with console.log("=".repeat(50)) between tests
+- Log completion status for each test
+- Use fs.writeFile (not appendFile) to overwrite log file each run
+- Use driver.sleep(500-1000) between form field inputs
+- Use driver.sleep(2000-3000) between each test function
+- Always wait for elements to be located, visible, AND enabled before interaction
+- Handle alerts with proper timing - wait for alert, log text, wait 1s, accept, wait 2-3s after
+- ALWAYS wait for alerts to be present before interacting with them
+- Log alert text for debugging purposes
+- Wait for alerts to be fully dismissed before proceeding to next step
+
+
+ERROR HANDLING:
+- Catch and log all errors without stopping execution
+- Provide detailed error messages with context
+- Log actual vs expected values in errors
+- Always run driver.quit() in finally block
+- Handle alerts with try-catch blocks
+- If an alert appears unexpectedly, dismiss it and continue
+
+${inputsContext}
+
+Output only raw JavaScript code — no Markdown, no explanation.
+`;
+}
+
+function generateMagentoPrompt2(config, inputsContext) {
+   return `
+ Write a **complete runnable Selenium WebDriver test in Node.js** that performs full end-to-end flow on Magento Demo website with PROPER STABILITY (no time-based sleeps).
+ 
+ The script should:
+ - Import { Builder, By, until, Key } from 'selenium-webdriver'.
+ - Import { Options } from 'selenium-webdriver/chrome.js'.
+ - Import { websiteURL, elements, TIMEOUT } from '../config/magento.js' (note: ../ means go up one directory from e2e_tests to find config folder).
+ - Import fs from 'fs/promises'.
+ - Import path from 'path'.
+ - Import { fileURLToPath } from 'url'.
+ - CRITICAL: Define __filename and __dirname for ES modules: const __filename = fileURLToPath(import.meta.url); const __dirname = path.dirname(__filename);
+ - Define logFilePath using path.join(__dirname, '../logs/magento_results2.txt')
+ - CRITICAL: Create logs directory if it doesn't exist using fs.mkdir(path.dirname(logFilePath), { recursive: true })
+ - Implement helper 'logResult(testName, status)' using fs.writeFile to append to '../logs/magento_results2.txt'.
+ - Each test must log its individual result: 'PASS' or 'FAIL' with timestamp
+ - Log format: '[timestamp] Test: [testName] - Status: [PASS/FAIL]'
+ - Each test should log its result immediately after completion
+ - At the end, log a summary: 'Test Summary: X passed, Y failed out of 10 total tests'
+ - Implement helper 'waitForElementToBeStable(driver, element, timeout)' for element stability.
+ - The waitForElementToBeStable function should only use: await driver.wait(until.elementIsVisible(element), timeout); await driver.wait(until.elementIsEnabled(element), timeout);
+ - Launch Chrome browser with stability options, go to the website, and perform tasks below sequentially.
+ 
+ IMPORTANT: This is for magento.softwaretestingboard.com website. Use the EXACT selectors and flow that work:
+ 
+ CRITICAL BROWSER SETUP:
+ - Use incognito mode to completely avoid Chrome Password Manager popups
+ - Keep browser visible (no --headless)
+ - Incognito mode prevents all password manager and security popups
+ - Add --disable-web-security, --disable-features=VizDisplayCompositor
+ 
+ Define and execute these separate test functions with EXACT Magento selectors:
+ 
+ 1. **@Test CreateAccount**: 
+    - Navigate to website
+    - Click 'Create an Account' link using By.linkText('Create an Account')
+    - Fill form fields: By.id('firstname'), By.id('lastname'), By.id('is_subscribed')
+    - Generate random email: \`test\${Math.floor(Math.random() * 10000)}@exampl.com\`
+    - Fill By.id('email_address'), By.id('password'), By.id('password-confirmation')
+    - Click submit button: By.css('button.submit')
+    - Verify success by checking URL contains 'customer/account/'
+    - Log result: logResult('CreateAccount', 'PASS') or logResult('CreateAccount', 'FAIL')
+ 
+ 2. **@Test WhatsNew**: 
+    - Navigate to website
+    - Click "What's New" link using By.linkText("What's New")
+    - Scroll down to see products: driver.executeScript("window.scrollBy(0, 500)")
+    - Click on product: By.linkText('Echo Fit Compression Short')
+    - Verify success by checking URL contains 'echo-fit-compression-short'
+    - Log result: logResult('WhatsNew', 'PASS') or logResult('WhatsNew', 'FAIL')
+ 
+ 3. **@Test AddToCart**: 
+    - Select size 28: By.id('option-label-size-144-item-171')
+    - Select color black: By.id('option-label-color-93-item-49')
+    - Click add to cart button: By.id('product-addtocart-button')
+    - Verify success message: By.css('.message-success')
+    - Log result: logResult('AddToCart', 'PASS') or logResult('AddToCart', 'FAIL')
+ 
+ 4. **@Test AddToWishlist**: 
+    - Click add to wishlist using XPath: By.xpath('//*[@id="maincontent"]/div[2]/div/div[3]/div[5]/div/a[1]/span')
+    - Verify success by checking URL contains 'wishlist'
+    - Log result: logResult('AddToWishlist', 'PASS') or logResult('AddToWishlist', 'FAIL')
+ 
+ 5. **@Test EditCart**: 
+    - Click on cart icon: By.css('.action.showcart')
+    - Click on View and Edit Cart: By.linkText('View and Edit Cart')
+    - Update quantity to 2: By.css('input.input-text.qty')
+    - Click Update Cart button using css: By.css('button.action.update')
+    - Verify success by checking URL still contains 'checkout/cart'
+    - Log result: logResult('EditCart', 'PASS') or logResult('EditCart', 'FAIL')
+ 
+ 6. **@Test Checkout**: 
+    - Click on Proceed to Checkout using XPath: By.xpath('//*[@id="maincontent"]/div[3]/div/div[2]/div[1]/ul/li[1]/button')
+    - Verify success by checking URL contains 'checkout'
+    - Log result: logResult('Checkout', 'PASS') or logResult('Checkout', 'FAIL')
+ 
+ 7. **@Test CheckoutForm**: 
+    - Fill email if not already filled: By.id('customer-email')
+    - Fill shipping address: By.name('firstname'), By.name('lastname'), By.name('street[0]'), By.name('city')
+    - Select state: By.name('region_id')
+    - Fill postcode and telephone: By.name('postcode'), By.name('telephone')
+    - Select shipping method using XPath: By.xpath('//*[@id="checkout-shipping-method-load"]/table/tbody/tr[1]/td[1]/input')
+    - Click next button: By.css('.button.action.continue.primary')
+    - Verify success by checking URL contains 'payment'
+    - Log result: logResult('CheckoutForm', 'PASS') or logResult('CheckoutForm', 'FAIL')
+ 
+ 8. **@Test Subscribe**: 
+    - Navigate to website
+    - Fill newsletter input: By.id('newsletter')
+    - Click subscribe button: By.css('.action.subscribe.primary')
+    - Log result: logResult('Subscribe', 'PASS') or logResult('Subscribe', 'FAIL')
+ 
+ 9. **@Test SignOut**: 
+    - Try to find and click account menu: By.css('.action.switch')
+    - Try to click Sign Out link: By.linkText('Sign Out')
+    - If not found, try alternative: By.css('.customer-name')
+    - Verify success by checking URL contains 'logoutSuccess' or equals base URL
+    - Log result: logResult('SignOut', 'PASS') or logResult('SignOut', 'FAIL')
+ 
+ MAIN RUNNER REQUIREMENTS:
+ - Call ALL 9 test functions in sequence: CreateAccount, WhatsNew, AddToCart, AddToWishlist, EditCart, Checkout, CheckoutForm, Subscribe, SignOut
+ - Add visual separators with console.log("=".repeat(50)) between tests
+ - Log completion status for each test
+ - Use fs.writeFile (not appendFile) to overwrite log file each run
+ - Always wait for elements to be located, visible, AND enabled before interaction
+ - Handle alerts with proper timing using waitForElementToBeStable
+ - Handle alerts safely with try-catch, log text, and accept them
+ - Always run driver.quit() in finally block
+ 
+ ${inputsContext}
+ 
+ Output only raw JavaScript code — no Markdown, no explanation.
+ `;
+ }
+ 
 
 // --- MAIN EXECUTION ---
 
