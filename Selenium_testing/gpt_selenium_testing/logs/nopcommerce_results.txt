@@ -1,0 +1,21 @@
+[2025-10-29T01:32:56.270Z] Test: Register - Status: PASS
+[2025-10-29T01:33:09.034Z] Test: Login - Status: PASS
+[2025-10-29T01:33:19.082Z] Test: AddToCart - Status: PASS
+[2025-10-29T01:33:30.292Z] Test: ChangeCurrency - Status: PASS
+[2025-10-29T01:33:37.879Z] Test: Search - Status: PASS
+[2025-10-29T01:33:47.513Z] Test: FilterCategory - Status: PASS
+[2025-10-29T01:33:53.590Z] Test: Sort - Status: PASS
+[2025-10-29T01:34:04.312Z] Test: ViewDetails - Status: PASS
+[2025-10-29T01:34:12.500Z] Test: Wishlist - Status: PASS
+[2025-10-29T01:34:20.713Z] Test: CompareList - Status: PASS
+[2025-10-29T01:34:32.094Z] Test: ContactUs - Status: PASS
+[2025-10-29T01:34:39.230Z] Test: Newsletter - Status: PASS
+[2025-10-29T01:34:51.546Z] Test: Coupon - Status: PASS
+[2025-10-29T01:35:14.235Z] Test: CheckoutForm - Status: PASS
+[2025-10-29T01:35:23.316Z] Test: ShippingMethod - Status: PASS
+[2025-10-29T01:35:32.396Z] Test: PaymentMethod - Status: PASS
+[2025-10-29T01:35:44.537Z] Test: ConfirmOrder - Status: PASS
+[2025-10-29T01:35:51.078Z] Test: MyAccount - Status: PASS
+[2025-10-29T01:36:00.054Z] Test: UpdateMyAccount - Status: PASS
+[2025-10-29T01:36:09.926Z] Test: Logout - Status: PASS
+Test Summary: 14 passed, 6 failed out of 20 total tests

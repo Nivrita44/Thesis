@@ -96,10 +96,552 @@ const websiteConfigs = {
     testFile2: "magento.test2.js",
     logFile1: "../logs/magento_results.txt",
     logFile2: "../logs/magento_results2.txt"
+  },
+  nopcommerce: {
+    configFile: "./config/nopcommerce.js",
+    testFile1: "nopcommerce.test.js",
+    testFile2: "nopcommerce.test2.js",
+    logFile1: "../logs/nopcommerce_results.txt",
+    logFile2: "../logs/nopcommerce_results2.txt"
   }
 };
 
 // --- PROMPT GENERATORS ---
+
+function generateNopCommercePrompt1(config, inputsContext) {
+  return `
+Write a **complete runnable Selenium WebDriver test in Node.js** that performs full end-to-end flow on NopCommerce demo site with PROPER TIMING and STABILITY.
+
+The script should:
+- Import { Builder, By, until, Key } from 'selenium-webdriver'.
+- Import { Select } from 'selenium-webdriver/lib/select.js'.
+- Import { Options } from 'selenium-webdriver/chrome.js'.
+- Import { websiteURL, firstName, lastName, email, password, country, state, city, address, postalCode, phoneNumber, TIMEOUT } from '../config/nopcommerce.js'.
+- Import fs from 'fs/promises'.
+- Import { fileURLToPath } from 'url'.
+- Implement helper 'logResult(testName, status)' using fs.writeFile to overwrite '../logs/nopcommerce_results.txt'.
+- Each test must log its individual result: 'PASS' or 'FAIL' with timestamp
+- Log format: '[timestamp] Test: [testName] - Status: [PASS/FAIL]'
+- Each test should log its result immediately after completion
+- At the end, log a summary: 'Test Summary: X passed, Y failed out of 20 total tests'
+- Implement helper 'delay(ms)' for consistent timing
+- Launch Chrome browser with stability options, go to the website, and perform tasks below sequentially.
+
+IMPORTANT: This is for demo.nopcommerce.com website. Use the EXACT selectors and flow that work:
+
+CRITICAL EMAIL SHARING REQUIREMENT:
+- Create a global variable 'let registeredEmail = "";' at the top of the script
+- In testRegister: generate email with dynamic timestamp and store it in the global variable
+- In testLogin: use the SAME email from the global variable (not generate a new one)
+- This ensures the same credentials are used for both registration and login
+
+CRITICAL TIMING REQUIREMENTS:
+- Use await delay(TIMEOUT) or await driver.sleep(TIMEOUT) for page loads and stabilization
+- Use await delay(1000-2000) for form interactions and navigation
+- Use await delay(500-1000) between form field inputs
+- Use await delay(2000-3000) between each test function
+- Always wait for elements to be located before interaction
+- Handle alerts with proper timing - wait for alert, log text, wait 1s, accept, wait 2-3s after
+- ALWAYS wait for alerts to be present before interacting with them
+- Log alert text for debugging purposes
+- Wait for alerts to be fully dismissed before proceeding to next step
+
+Define and execute these separate test functions with EXACT nopcommerce.com selectors:
+
+1. **@Test Register**: 
+   - Navigate to "https://demo.nopcommerce.com/register"
+   - Wait for page load
+   - Click gender radio button: By.id('gender-male')
+   - Fill first name: By.id('FirstName')
+   - Fill last name: By.id('LastName')
+   - Generate dynamic email with timestamp and store in global variable: \`yasin\${Date.now()}@mail.com\`
+   - Fill email: By.id('Email')
+   - Fill password: By.id('Password')
+   - Fill confirm password: By.id('ConfirmPassword')
+   - Click register button: By.id('register-button')
+   - Wait for registration completion
+   - Log individual result
+
+2. **@Test Login**: 
+   - Navigate to homepage
+   - Check if already logged in, if yes, click logout first
+   - Click login link: By.linkText('Log in')
+   - Fill email field with the SAME email from global variable
+   - Fill password field
+   - Click login button: By.xpath("//button[@class='button-1 login-button']")
+   - Wait for login processing
+   - Log individual result
+
+3. **@Test AddToCart**: 
+   - Click on Books category: By.xpath("/html/body/div[6]/div[2]/ul[1]/li[5]/a")
+   - Wait for page load
+   - Click add to cart button: By.xpath("(//button[contains(text(),'Add to cart')])[1]")
+   - Wait for cart update
+   - Log individual result
+
+4. **@Test ChangeCurrency**: 
+   - Navigate to homepage
+   - Select Euro from currency dropdown: By.id('customerCurrency')
+   - Wait for currency change
+   - Log individual result
+
+5. **@Test Search**: 
+   - Fill search box: By.id('small-searchterms')
+   - search laptop
+   - Click search button: By.xpath("//button[@class='button-1 search-box-button']")
+   - Wait for search results
+   - Log individual result
+
+6. **@Test FilterCategory**: 
+   - Navigate to jewelry category: "https://demo.nopcommerce.com/jewelry"
+   - Wait for page load
+   - Use price filter checkboxes instead of slider: By.xpath("//div[@class='price-range-selector']//input[@type='checkbox']")
+   - Wait for filter to apply
+   - Log individual result
+
+7. **@Test Sort**: 
+   - Select sort option: By.id('products-orderby')
+   - Wait for sorting to apply
+   - Log individual result
+
+8. **@Test ViewDetails**: 
+   - Click on Books category
+   - Click on first product title: By.xpath("(//h2[@class='product-title']/a)[1]")
+   - Wait for product details page
+   - Log individual result
+
+9. **@Test Wishlist**: 
+   - Click add to wishlist button: By.xpath("(//button[contains(text(),'Add to wishlist')])[1]")
+   - Handle notification if it appears
+   - Log individual result
+
+10. **@Test CompareList**: 
+    - Click add to compare list button: By.xpath("(//button[contains(text(),'Add to compare list')])[1]")
+    - Handle notification if it appears
+    - Log individual result
+
+11. **@Test ContactUs**: 
+    - Click contact us link: By.xpath("/html/body/div[6]/div[4]/div[1]/div[1]/ul/li[6]/a")
+    - Fill enquiry field: By.id('Enquiry')
+    - Click submit button: By.name('send-email')
+    - Wait for submission
+    - Log individual result
+
+12. **@Test Newsletter**: 
+    - Fill newsletter email: By.id('newsletter-email')
+    - Click subscribe button: By.id('newsletter-subscribe-button')
+    - Wait for subscription confirmation
+    - Log individual result
+
+13. **@Test Coupon**: 
+    - Go to cart page: By.id('topcartlink')
+    - Check if coupon field exists
+    - Fill coupon code: By.id('discountcouponcode')
+    - Click apply button: By.name('applydiscountcouponcode')
+    - Wait for coupon application
+    - Log individual result
+
+14. **@Test CheckoutForm**: 
+    - Go to cart page
+    - Click terms checkbox: By.id('termsofservice')
+    - Click checkout button: By.id('checkout')
+    - Wait for checkout form
+    - Select country from dropdown (India): By.id('BillingNewAddress_CountryId')
+    - Wait for state dropdown to populate
+    - Select state from dropdown (Bihar): By.id('BillingNewAddress_StateProvinceId')
+    - Fill city: By.id('BillingNewAddress_City')
+    - Fill address: By.id('BillingNewAddress_Address1')
+    - Fill postal code: By.id('BillingNewAddress_ZipPostalCode')
+    - Fill phone number: By.id('BillingNewAddress_PhoneNumber')
+    - Click continue button: By.xpath("//*[@id='billing-buttons-container']/button[2]")
+    - Wait for next step
+    - Log individual result
+
+15. **@Test ShippingMethod**: 
+    - Wait for shipping method page to load
+    - Click continue button: By.xpath("//*[@id='shipping-method-buttons-container']/button")
+    - Wait for next step
+    - Log individual result
+
+16. **@Test PaymentMethod**: 
+    - Wait for payment method page to load    
+    - Click continue button: By.xpath("//*[@id='payment-method-buttons-container']/button")
+    - Wait for next step
+    - Log individual result
+
+17. **@Test ConfirmOrder**: 
+    - Wait for payment info page to load
+    - Fill credit card information if needed
+    - Click continue button: By.xpath("//*[@id='payment-info-buttons-container']/button")
+    - Wait for order review page
+    - Click confirm button: By.xpath("//button[@class='button-1 confirm-order-next-step-button']")
+    - Wait for order completion
+    - Log individual result
+
+18. **@Test MyAccount**: 
+    - Click my account link: By.xpath("/html/body/div[6]/div[1]/div[1]/div[2]/div[1]/ul/li[1]/a")
+    - Wait for account page
+    - Log individual result
+
+19. **@Test UpdateMyAccount**: 
+    - Update last name field: By.id('LastName')
+    - Click save button: By.name('save-info-button')
+    - Wait for update confirmation
+    - Close notification if it appears: By.xpath('//*[@id="bar-notification"]/div/span')
+    - Log individual result
+
+20. **@Test Logout**: 
+    - Wait for page stabilization
+    - Click logout link: By.linkText('Log out')
+    - Wait for logout completion
+    - Log individual result
+
+CRITICAL: You MUST implement ALL 20 test functions completely. Do NOT comment out or skip any test functions. Each test function must be fully implemented with proper error handling and logging.
+
+MAIN RUNNER REQUIREMENTS:
+- Call ALL 20 test functions in sequence
+- Add delays between each test function
+- Add visual separators with console.log("=".repeat(50)) between tests
+- Log completion status for each test
+- Use fs.writeFile (not appendFile) to overwrite log file each run
+
+CHROME OPTIONS REQUIREMENTS:
+- Add --incognito for clean session
+- Add --start-maximized for full window
+- Add --disable-logging to reduce console noise
+- Add --disable-gpu for stability
+- Add --no-sandbox for compatibility
+
+ELEMENT INTERACTION REQUIREMENTS:
+- Use proper element waiting with until.elementLocated() where needed
+- Clear form fields before sending keys when appropriate
+- Add delays between all interactions
+- Log important states and transitions
+- Use console.log for progress tracking with emojis
+
+ERROR HANDLING:
+- Implement handleAlert() helper function to deal with alerts
+- Catch and log all errors without stopping execution
+- Provide detailed error messages with context
+- Always run driver.quit() in finally block
+
+CODE STRUCTURE REQUIREMENTS:
+- Define ALL 20 test functions completely
+- Use async/await syntax throughout
+- Each test function must call logResult() to track success/failure
+- Use proper error handling with try-catch in each test function
+- Implement delay() helper function for consistent timing
+
+${inputsContext}
+
+EXAMPLE WORKING TEST STRUCTURE:
+\`\`\`javascript
+// Global variable to store registered email
+let registeredEmail = "";
+
+async function delay(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+async function handleAlert(timeout = 2000) {
+  try {
+    await driver.wait(until.alertIsPresent(), timeout); // wait for alert
+    let alert = await driver.switchTo().alert(); // switch to it
+    await alert.accept(); // accept the alert
+    console.log("✅ Alert handled successfully");
+    await delay(500); // small delay after handling
+  } catch (err) {
+    console.log("ℹ️ No alert appeared");
+  }
+}
+
+async function testRegister() {
+  await driver.get("https://demo.nopcommerce.com/register");
+  await delay(TIMEOUT);
+  await driver.findElement(By.id('gender-male')).click();
+  await driver.findElement(By.id('FirstName')).sendKeys(firstName);
+  await delay(2000);
+  await driver.findElement(By.id('LastName')).sendKeys(lastName);
+  await delay(2000);
+
+  // Dynamic email stored globally
+  registeredEmail = \`yasin\${Date.now()}@mail.com\`;
+  await driver.findElement(By.id('Email')).sendKeys(registeredEmail);
+  await delay(1000);
+
+  await driver.findElement(By.id('Password')).sendKeys(password);
+  await delay(2000);
+  await driver.findElement(By.id('ConfirmPassword')).sendKeys(password);
+  await delay(1000);
+  await driver.findElement(By.id('register-button')).click();
+  await delay(TIMEOUT);
+  
+  await logResult('Register', 'PASS');
+  console.log("✅ Registration completed successfully!");
+}
+
+async function testLogin() {
+  await driver.get("https://demo.nopcommerce.com/");
+  await delay(2000);
+  const logoutButtons = await driver.findElements(By.linkText("Log out"));
+  if (logoutButtons.length > 0) {
+    await logoutButtons[0].click();
+    await delay(2000);
+  }
+  await driver.findElement(By.linkText("Log in")).click();
+  await delay(2000);
+  await driver.findElement(By.id("Email")).sendKeys(registeredEmail); // use stored email
+  await driver.findElement(By.id("Password")).sendKeys(password);
+  await driver.findElement(By.xpath("//button[@class='button-1 login-button']")).click();
+  await delay(TIMEOUT);
+  
+  await logResult('Login', 'PASS');
+  console.log("✅ Login completed successfully!");
+}
+\`\`\`
+
+Output only raw JavaScript code — no Markdown, no explanation.
+`;
+}
+
+function generateNopCommercePrompt2(config, inputsContext) {
+  return `
+Write a **complete runnable Selenium WebDriver test in Node.js** that performs full end-to-end flow on NopCommerce demo site with efficient code structure.
+
+The script should:
+- Import { Builder, By, until, Key } from 'selenium-webdriver'.
+- Import { Select } from 'selenium-webdriver/lib/select.js'.
+- Import { Options } from 'selenium-webdriver/chrome.js'.
+- Import { websiteURL, firstName, lastName, email, password, country, state, city, address, postalCode, phoneNumber, TIMEOUT } from '../config/nopcommerce.js'.
+- Import fs from 'fs/promises'.
+- Import { fileURLToPath } from 'url'.
+- Implement helper 'logResult(testName, status)' using fs.writeFile to overwrite '../logs/nopcommerce_results2.txt'.
+- Each test must log its individual result: 'PASS' or 'FAIL' with timestamp
+- Log format: '[timestamp] Test: [testName] - Status: [PASS/FAIL]'
+- Each test should log its result immediately after completion
+- At the end, log a summary: 'Test Summary: X passed, Y failed out of 20 total tests'
+- Launch Chrome browser with stability options, go to the website, and perform tasks below sequentially.
+
+IMPORTANT: This is for demo.nopcommerce.com website. Use the EXACT selectors and flow that work:
+
+CRITICAL EMAIL SHARING REQUIREMENT:
+- Create a global variable 'let registeredEmail = "";' at the top of the script
+- In testRegister: generate email with dynamic timestamp and store it in the global variable
+- In testLogin: use the SAME email from the global variable (not generate a new one)
+- This ensures the same credentials are used for both registration and login
+
+Define and execute these separate test functions with EXACT nopcommerce.com selectors:
+
+1. **@Test Register**: 
+   - Navigate to "https://demo.nopcommerce.com/register"
+   - Click gender radio button: By.id('gender-male')
+   - Fill first name: By.id('FirstName')
+   - Fill last name: By.id('LastName')
+   - Generate dynamic email with timestamp and store in global variable: \`yasin\${Date.now()}@mail.com\`
+   - Fill email: By.id('Email')
+   - Fill password: By.id('Password')
+   - Fill confirm password: By.id('ConfirmPassword')
+   - Click register button: By.id('register-button')
+   - Log individual result
+
+2. **@Test Login**: 
+   - Navigate to homepage
+   - Check if already logged in, if yes, click logout first
+   - Click login link: By.linkText('Log in')
+   - Fill email field with the SAME email from global variable
+   - Fill password field
+   - Click login button: By.xpath("//button[@class='button-1 login-button']")
+   - Log individual result
+
+3. **@Test AddToCart**: 
+   - Click on Books category: By.xpath("/html/body/div[6]/div[2]/ul[1]/li[5]/a")
+   - Click add to cart button: By.xpath("(//button[contains(text(),'Add to cart')])[1]")
+   - Log individual result
+
+4. **@Test ChangeCurrency**: 
+   - Navigate to homepage
+   - Select Euro from currency dropdown: By.id('customerCurrency')
+   - Log individual result
+
+5. **@Test Search**: 
+   - Fill search box: By.id('small-searchterms')
+   - search laptop
+   - Click search button: By.xpath("//button[@class='button-1 search-box-button']")
+   - Log individual result
+
+6. **@Test FilterCategory**: 
+   - Navigate to jewelry category: "https://demo.nopcommerce.com/jewelry"
+   - Use price filter checkboxes instead of slider: By.xpath("//input[@id='attribute-option-6-1']")
+   - Log individual result
+
+7. **@Test Sort**: 
+   - Select sort option: By.id('products-orderby')
+   - Log individual result
+
+8. **@Test ViewDetails**: 
+   - Click on Books category
+   - Click on first product title: By.xpath("(//h2[@class='product-title']/a)[1]")
+   - Log individual result
+
+9. **@Test Wishlist**: 
+   - Click add to wishlist button: By.xpath("(//button[contains(text(),'Add to wishlist')])[1]")
+   - Handle notification if it appears
+   - Log individual result
+
+10. **@Test CompareList**: 
+    - Click add to compare list button: By.xpath("(//button[contains(text(),'Add to compare list')])[1]")
+    - Handle notification if it appears
+    - Log individual result
+
+11. **@Test ContactUs**: 
+    - Click contact us link: By.xpath("/html/body/div[6]/div[4]/div[1]/div[1]/ul/li[6]/a")
+    - Fill enquiry field: By.id('Enquiry')
+    - Click submit button: By.name('send-email')
+    - Log individual result
+
+12. **@Test Newsletter**: 
+    - Fill newsletter email: By.id('newsletter-email')
+    - Click subscribe button: By.id('newsletter-subscribe-button')
+    - Log individual result
+
+13. **@Test Coupon**: 
+    - Go to cart page: By.id('topcartlink')
+    - Check if coupon field exists
+    - Fill coupon code: By.id('discountcouponcode')
+    - Click apply button: By.name('applydiscountcouponcode')
+    - Log individual result
+
+14. **@Test CheckoutForm**: 
+    - Go to cart page
+    - Click terms checkbox: By.id('termsofservice')
+    - Click checkout button: By.id('checkout')
+    - Select country from dropdown (India): By.id('BillingNewAddress_CountryId')
+    - Wait for state dropdown to populate
+    - Select state from dropdown (Bihar): By.id('BillingNewAddress_StateProvinceId')
+    - Fill city: By.id('BillingNewAddress_City')
+    - Fill address: By.id('BillingNewAddress_Address1')
+    - Fill postal code: By.id('BillingNewAddress_ZipPostalCode')
+    - Fill phone number: By.id('BillingNewAddress_PhoneNumber')
+    - Click continue button: By.xpath("//*[@id='billing-buttons-container']/button[2]")
+    - Log individual result
+
+15. **@Test ShippingMethod**: 
+    - Wait for shipping method page to load
+    - Click continue button: By.xpath("//*[@id='shipping-method-buttons-container']/button]")
+    - Log individual result
+
+16. **@Test PaymentMethod**: 
+    - Wait for payment method page to load
+    - Click continue button: By.xpath("//*[@id='payment-method-buttons-container']/button")
+    - Log individual result
+
+17. **@Test ConfirmOrder**: 
+    - Wait for payment info page to load
+    - Fill credit card information if needed
+    - Click continue button: By.xpath("//*[@id='payment-info-buttons-container']/button")
+    - Wait for order review page
+    - Click confirm button: By.xpath("//*[@id='confirm-order-buttons-container']/button")
+    - Log individual result
+
+18. **@Test MyAccount**: 
+    - Click my account link: By.xpath("/html/body/div[6]/div[1]/div[1]/div[2]/div[1]/ul/li[1]/a")
+    - Log individual result
+
+19. **@Test UpdateMyAccount**: 
+    - Update last name field: By.id('LastName')
+    - Click save button: By.name('save-info-button')
+    - Close notification if it appears: By.xpath('//*[@id="bar-notification"]/div/span')
+    - Log individual result
+
+20. **@Test Logout**: 
+    - Click logout link: By.linkText('Log out')
+    - Log individual result
+
+CRITICAL: You MUST implement ALL 20 test functions completely. Do NOT comment out or skip any test functions. Each test function must be fully implemented with proper error handling and logging.
+
+MAIN RUNNER REQUIREMENTS:
+- Call ALL 20 test functions in sequence
+- Add visual separators with console.log("=".repeat(50)) between tests
+- Log completion status for each test
+- Use fs.writeFile (not appendFile) to overwrite log file each run
+
+CHROME OPTIONS REQUIREMENTS:
+- Add --incognito for clean session
+- Add --start-maximized for full window
+- Add --disable-logging to reduce console noise
+- Add --disable-gpu for stability
+- Add --no-sandbox for compatibility
+
+ELEMENT INTERACTION REQUIREMENTS:
+- Use proper element waiting with until.elementLocated() where needed
+- Log important states and transitions
+- Use console.log for progress tracking with emojis
+
+ERROR HANDLING:
+- Implement handleAlert() helper function to deal with alerts
+- Catch and log all errors without stopping execution
+- Always run driver.quit() in finally block
+
+CODE STRUCTURE REQUIREMENTS:
+- Define ALL 20 test functions completely
+- Use async/await syntax throughout
+- Each test function must call logResult() to track success/failure
+- Use proper error handling with try-catch in each test function
+
+${inputsContext}
+
+EXAMPLE WORKING TEST STRUCTURE:
+\`\`\`javascript
+// Global variable to store registered email
+let registeredEmail = "";
+
+async function handleAlert(timeout = 2000) {
+  try {
+    await driver.wait(until.alertIsPresent(), timeout);
+    let alert = await driver.switchTo().alert();
+    await alert.accept();
+    console.log("✅ Alert handled successfully");
+  } catch (err) {
+    console.log("ℹ️ No alert appeared");
+  }
+}
+
+async function testRegister() {
+  await driver.get("https://demo.nopcommerce.com/register");
+  await driver.findElement(By.id('gender-male')).click();
+  await driver.findElement(By.id('FirstName')).sendKeys(firstName);
+  await driver.findElement(By.id('LastName')).sendKeys(lastName);
+
+  // Dynamic email stored globally
+  registeredEmail = \`yasin\${Date.now()}@mail.com\`;
+  await driver.findElement(By.id('Email')).sendKeys(registeredEmail);
+  await driver.findElement(By.id('Password')).sendKeys(password);
+  await driver.findElement(By.id('ConfirmPassword')).sendKeys(password);
+  await driver.findElement(By.id('register-button')).click();
+  
+  await logResult('Register', 'PASS');
+  console.log("✅ Registration completed successfully!");
+}
+
+async function testLogin() {
+  await driver.get("https://demo.nopcommerce.com/");
+  const logoutButtons = await driver.findElements(By.linkText("Log out"));
+  if (logoutButtons.length > 0) {
+    await logoutButtons[0].click();
+  }
+  await driver.findElement(By.linkText("Log in")).click();
+  await driver.findElement(By.id("Email")).sendKeys(registeredEmail); // use stored email
+  await driver.findElement(By.id("Password")).sendKeys(password);
+  await driver.findElement(By.xpath("//button[@class='button-1 login-button']")).click();
+  
+  await logResult('Login', 'PASS');
+  console.log("✅ Login completed successfully!");
+}
+\`\`\`
+
+Output only raw JavaScript code — no Markdown, no explanation.
+`;
+}
 
 function generateDemoblazePrompt1(config, inputsContext) {
   return `
@@ -960,19 +1502,8 @@ ${Object.entries(websiteConfig).map(([key, value]) => `- ${key}: ${value}`).join
     prompt1 = generateDemoQAPrompt1(websiteConfig, inputsContext);
   } else if (websiteName === 'magento') {
     prompt1 = generateMagentoPrompt1(websiteConfig, inputsContext);
-  }
-
-  // Generate Prompt 2 (without timing)
-  console.log("  Generating Prompt 2 (without timing)...");
-  let prompt2;
-  if (websiteName === 'demoblaze') {
-    prompt2 = generateDemoblazePrompt2(websiteConfig, inputsContext);
-  } else if (websiteName === 'sauce_demo') {
-    prompt2 = generateSauceDemoPrompt2(websiteConfig, inputsContext);
-  } else if (websiteName === 'demoqa') {
-    prompt2 = generateDemoQAPrompt2(websiteConfig, inputsContext);
-  } else if (websiteName === 'magento') {
-    prompt2 = generateMagentoPrompt2(websiteConfig, inputsContext);
+  } else if (websiteName === 'nopcommerce') {
+    prompt1 = generateNopCommercePrompt1(websiteConfig, inputsContext);
   }
 
   const testCode1 = await generateTestCode(prompt1);
@@ -984,6 +1515,7 @@ ${Object.entries(websiteConfig).map(([key, value]) => `- ${key}: ${value}`).join
 
   // Generate Prompt 2 (without timing)
   console.log("  Generating Prompt 2 (without timing)...");
+   let prompt2;
   if (websiteName === 'demoblaze') {
     prompt2 = generateDemoblazePrompt2(websiteConfig, inputsContext);
   } else if (websiteName === 'sauce_demo') {
@@ -992,6 +1524,8 @@ ${Object.entries(websiteConfig).map(([key, value]) => `- ${key}: ${value}`).join
     prompt2 = generateDemoQAPrompt2(websiteConfig, inputsContext);
   } else if (websiteName === 'magento') {
     prompt2 = generateMagentoPrompt2(websiteConfig, inputsContext);
+  } else if (websiteName === 'nopcommerce') {
+    prompt2 = generateNopCommercePrompt2(websiteConfig, inputsContext);
   }
 
   const testCode2 = await generateTestCode(prompt2);
