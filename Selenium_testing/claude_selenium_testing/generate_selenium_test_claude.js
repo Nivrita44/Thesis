@@ -7,7 +7,7 @@ import path from "path";
 import { fileURLToPath } from "url";
 
 // --- CONFIGURATION ---
-dotenv.config({ path: path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../.env") });
+dotenv.config({ path: path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../../.env") });
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -22,7 +22,7 @@ if (!Claude_API_KEY){
 }
 
 const anthropic = new Anthropic({ apiKey: Claude_API_KEY });
-const LLM_MODEL = "claude-3-5-sonnet-20241022"; // Latest Claude model
+const LLM_MODEL = "claude-sonnet-4-20250514"; // Latest Claude model
 
 const PATHS = {
   testsSelenium1: path.join(__dirname, "e2e_tests", "ecommerce.test.js"),
@@ -75,6 +75,8 @@ async function saveTestFile(filePath, content) {
     console.error(`  Error saving file ${filePath}:`, err);
   }
 }
+
+
 
 // --- MAIN ---
 async function mainSelenium1() {
@@ -406,6 +408,9 @@ Output only raw JavaScript code — no Markdown, no explanation.
   console.log("\n✅ Selenium Test Generation 2 Finished!");
   console.log(`Run with: node ${path.relative(__dirname, PATHS.testsSelenium2)}`);
 }
+
+// await checkAvailableModels();
+
 
 // Run both generators
 async function main() {

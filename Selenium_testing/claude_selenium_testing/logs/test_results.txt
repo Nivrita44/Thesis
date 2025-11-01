@@ -1,0 +1,6 @@
+[2025-11-01T09:28:25.686Z] Test: Register - Status: PASS
+[2025-11-01T09:28:25.686Z] Test: Login - Status: PASS
+[2025-11-01T09:28:25.686Z] Test: AddToCart - Status: PASS
+[2025-11-01T09:28:25.686Z] Test: VerifyCart - Status: PASS
+[2025-11-01T09:28:25.686Z] Test: Checkout - Status: PASS
+Test Summary: 5 passed, 0 failed out of 5 total tests
