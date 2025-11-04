@@ -116,6 +116,13 @@ const websiteConfigs = {
     logFile1: "../logs/magento_results.txt",
     logFile2: "../logs/magento_results2.txt"
   },
+  magento1: {
+    configFile: "./config/magento.js",
+    testFile1: "magento_chunk1.test.js",   // placeholders
+    testFile2: "magento_chunk2.test.js",
+    logFile1: "../logs/magento_results.txt",
+    logFile2: "../logs/magento_results.txt"
+  },
   nopcommerce: {
     configFile: "./config/nopcommerce.js",
     testFile1: "nopcommerce.test.js",
@@ -1696,6 +1703,29 @@ async function generateTestsForWebsite(websiteName) {
      // DO NOT RUN PROMPT2 FOR demoqa1
      return;
    }
+
+
+   // Magento1 chunked prompt generation
+  if (websiteName === 'magento1') {
+    // chunk1
+    const prompt1_chunk1 = generateMagentoPrompt1_chunk1(websiteConfig, inputsContext);
+    const testCode_chunk1 = await generateTestCode(prompt1_chunk1);
+    const testPath_chunk1 = path.join(__dirname, "e2e_tests", "magento_chunk1.test.js");
+    await saveTestFile(testPath_chunk1, testCode_chunk1);
+    console.log(`✅ magento1 Test Chunk 1 Finished!`);
+    console.log(`Run with: node ${path.relative(__dirname, testPath_chunk1)}`);
+
+    // chunk2
+    const prompt1_chunk2 = generateMagentoPrompt1_chunk2(websiteConfig, inputsContext);
+    const testCode_chunk2 = await generateTestCode(prompt1_chunk2);
+    const testPath_chunk2 = path.join(__dirname, "e2e_tests", "magento_chunk2.test.js");
+    await saveTestFile(testPath_chunk2, testCode_chunk2);
+    console.log(`✅ magento1 Test Chunk 2 Finished!`);
+    console.log(`Run with: node ${path.relative(__dirname, testPath_chunk2)}`);
+
+    // skip prompt2 for magento1
+    return;
+  }
  
    // ==== PROMPT 1 (all except 'demoqa1') ====
    console.log("  Generating Prompt 1 (with timing)...");
@@ -1755,7 +1785,7 @@ async function mainSelenium2() {
 
 // --- MAGENTO PROMPT GENERATORS ---
 
-function generateMagentoPrompt1(config, inputsContext) {
+function generateMagentoPrompt1_chunk1(config, inputsContext) {
   return `
 Write a **complete runnable Selenium WebDriver test in Node.js** that performs full end-to-end flow on Magento Demo website with PROPER TIMING and STABILITY.
 
@@ -1773,7 +1803,7 @@ The script should:
 - Each test must log its individual result: 'PASS' or 'FAIL' with timestamp
 - Log format: '[timestamp] Test: [testName] - Status: [PASS/FAIL]'
 - Each test should log its result immediately after completion
-- At the end, log a summary: 'Test Summary: X passed, Y failed out of 10 total tests'
+- At the end, log a summary: 'Test Summary: X passed, Y failed out of 5 total tests'
 - Implement helper 'waitForElementToBeStable(driver, element, timeout)' for element stability.
 - The waitForElementToBeStable function should only use: await driver.wait(until.elementIsVisible(element), timeout); await driver.wait(until.elementIsEnabled(element), timeout);
 - Launch Chrome browser with stability options, go to the website, and perform tasks below sequentially.
@@ -1848,6 +1878,66 @@ Define and execute these separate test functions with EXACT Magento selectors:
    - Verify success by checking URL still contains 'checkout/cart'
    - Log individual result: logResult('EditCart', 'PASS') or logResult('EditCart', 'FAIL')
 
+CRITICAL: You MUST implement ALL 5 test functions completely. Do NOT comment out or skip any test functions. Each test function must be fully implemented with proper error handling and logging.
+
+MAIN RUNNER REQUIREMENTS:
+- Call ALL 5 test functions in sequence
+- Add 3-second waits between each test function
+- Add visual separators with console.log("=".repeat(50)) between tests
+- Log completion status for each test
+- Use fs.writeFile (not appendFile) to overwrite log file each run
+- Use driver.sleep(500-1000) between form field inputs
+- Use driver.sleep(2000-3000) between each test function
+- Always wait for elements to be located, visible, AND enabled before interaction
+- Handle alerts with proper timing - wait for alert, log text, wait 1s, accept, wait 2-3s after
+- ALWAYS wait for alerts to be present before interacting with them
+- Log alert text for debugging purposes
+- Wait for alerts to be fully dismissed before proceeding to next step
+
+${inputsContext}
+
+Output only raw JavaScript code — no Markdown, no explanation.
+`;
+}
+
+function generateMagentoPrompt1_chunk2(config, inputsContext) {
+  return `
+Write a **complete runnable Selenium WebDriver test in Node.js** that performs full end-to-end flow on Magento Demo website with PROPER TIMING and STABILITY.
+
+The script should:
+- Import { Builder, By, until, Key } from 'selenium-webdriver'.
+- Import { Options } from 'selenium-webdriver/chrome.js'.
+- Import { websiteURL, elements, TIMEOUT } from '../config/magento.js' (note: ../ means go up one directory from e2e_tests to find config folder).
+- Import fs from 'fs/promises'.
+- Import path from 'path'.
+- Import { fileURLToPath } from 'url'.
+- CRITICAL: Define __filename and __dirname for ES modules: const __filename = fileURLToPath(import.meta.url); const __dirname = path.dirname(__filename);
+- Define logFilePath using path.join(__dirname, '../logs/magento_results.txt')
+- CRITICAL: Create logs directory if it doesn't exist using fs.mkdir(path.dirname(logFilePath), { recursive: true })
+- Implement helper 'logResult(testName, status)' using fs.writeFile to append to '../logs/magento_results.txt'.
+- Each test must log its individual result: 'PASS' or 'FAIL' with timestamp
+- Log format: '[timestamp] Test: [testName] - Status: [PASS/FAIL]'
+- Each test should log its result immediately after completion
+- At the end, log a summary: 'Test Summary: X passed, Y failed out of 4 total tests'
+- Implement helper 'waitForElementToBeStable(driver, element, timeout)' for element stability.
+- The waitForElementToBeStable function should only use: await driver.wait(until.elementIsVisible(element), timeout); await driver.wait(until.elementIsEnabled(element), timeout);
+- Launch Chrome browser with stability options, go to the website, and perform tasks below sequentially.
+
+IMPORTANT: This is for magento.softwaretestingboard.com website. Use the EXACT selectors and flow that work:
+
+CRITICAL BROWSER SETUP:
+- Use incognito mode to completely avoid Chrome Password Manager popups
+- Keep browser visible (no --headless) for monitoring
+- Incognito mode prevents all password manager and security popups
+- Add --disable-web-security, --disable-features=VizDisplayCompositor
+
+CRITICAL TIMING REQUIREMENTS:
+- Use driver.sleep(3000-5000) for page loads and stabilization
+- Use driver.sleep(1000-2000) for modal animations and form interactions
+- Use driver.sleep(500-1000) between form field inputs
+
+Define and execute these separate test functions with EXACT Magento selectors:
+
 6. **@Test Checkout**: 
    - Wait 3s for page stabilization
    - Click on Proceed to Checkout using XPath: By.xpath('//*[@id="maincontent"]/div[3]/div/div[2]/div[1]/ul/li[1]/button')
@@ -1884,10 +1974,10 @@ Define and execute these separate test functions with EXACT Magento selectors:
    - Verify success by checking URL contains 'logoutSuccess' or equals base URL
    - Log individual result: logResult('SignOut', 'PASS') or logResult('SignOut', 'FAIL')
 
-CRITICAL: You MUST implement ALL 9 test functions completely. Do NOT comment out or skip any test functions. Each test function must be fully implemented with proper error handling and logging.
+CRITICAL: You MUST implement ALL 4 test functions completely. Do NOT comment out or skip any test functions. Each test function must be fully implemented with proper error handling and logging.
 
 MAIN RUNNER REQUIREMENTS:
-- Call ALL 9 test functions in sequence: CreateAccount, WhatsNew, AddToCart, AddToWishlist, EditCart, Checkout, CheckoutForm, Subscribe, SignOut
+- Call ALL 4 test functions in sequence
 - Add 3-second waits between each test function
 - Add visual separators with console.log("=".repeat(50)) between tests
 - Log completion status for each test
@@ -1900,20 +1990,12 @@ MAIN RUNNER REQUIREMENTS:
 - Log alert text for debugging purposes
 - Wait for alerts to be fully dismissed before proceeding to next step
 
-
-ERROR HANDLING:
-- Catch and log all errors without stopping execution
-- Provide detailed error messages with context
-- Log actual vs expected values in errors
-- Always run driver.quit() in finally block
-- Handle alerts with try-catch blocks
-- If an alert appears unexpectedly, dismiss it and continue
-
 ${inputsContext}
 
 Output only raw JavaScript code — no Markdown, no explanation.
 `;
 }
+
 
 function generateMagentoPrompt2(config, inputsContext) {
    return `
