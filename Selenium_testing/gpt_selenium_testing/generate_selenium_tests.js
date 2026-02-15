@@ -774,7 +774,7 @@ MAIN RUNNER REQUIREMENTS:
 - Add 3-second waits between each test function
 - Add visual separators with console.log("=".repeat(50)) between tests
 - Log completion status for each test
-- Add progress logging with emojis (🚀, ✅, ❌, 🎉)
+- Add progress logging with emojis
 - Use fs.writeFile (not appendFile) to overwrite log file each run
 
 ${inputsContext}
@@ -1019,7 +1019,7 @@ MAIN RUNNER REQUIREMENTS:
 - Add 3-second waits between each test function
 - Add visual separators with console.log("=".repeat(50)) between tests
 - Log completion status for each test
-- Add progress logging with emojis (🚀, ✅, ❌, 🎉)
+- Add progress logging with emojis 
 - Use fs.writeFile (not appendFile) to overwrite log file each run
 
 ${inputsContext}

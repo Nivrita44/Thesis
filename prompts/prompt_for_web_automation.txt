@@ -1,0 +1,97 @@
+Write a **complete runnable Selenium WebDriver test in Node.js** for demoqa.com website.
+The script should:
+- Import { Builder, By, until, Key } from 'selenium-webdriver'.
+- Import { Options } from 'selenium-webdriver/chrome.js'.
+- Import { websiteURL, formValues, elements, newRecordData, searchTerm, editRecordData, TIMEOUT } from '../config/demoqa.js' (note: ../ means go up one directory from e2e_tests to find config folder).
+- Import fs from 'fs/promises'.
+- Import path from 'path'.
+- Import { fileURLToPath } from 'url'.
+- CRITICAL: Define __filename and __dirname for ES modules: const __filename = fileURLToPath(import.meta.url); const __dirname = path.dirname(__filename);
+- Define logFilePath using path.join(__dirname, '../logs/demoqa_results2.txt')
+- CRITICAL: Create logs directory if it doesn't exist using fs.mkdir(path.dirname(logFilePath), { recursive: true })
+- Implement helper 'logResult(testName, status)' using fs.writeFile to overwrite '../logs/demoqa_results2.txt'.
+- Launch Chrome browser with basic options and perform workflow.
+
+CHROME OPTIONS REQUIREMENTS:
+- Add --no-sandbox, --disable-dev-shm-usage, --disable-gpu
+- Add --disable-blink-features=AutomationControlled, --disable-extensions
+- Add --incognito (this prevents Chrome Password Manager popups completely)
+- Add --disable-web-security, --disable-features=VizDisplayCompositor
+- Set window size to 1920,1080
+- DO NOT add --headless (keep browser visible for monitoring)
+- Incognito mode prevents all password manager and security popups
+
+CRITICAL IMPORT PATH REQUIREMENT:
+- The test file will be saved in e2e_tests/ folder
+- The config file is in config/ folder (one level up from e2e_tests/)
+- Use '../config/demoqa.js' for the import path (NOT './config/demoqa.js')
+- Use '../logs/demoqa_results2.txt' for the log file path
+- CRITICAL: Create logs directory if it doesn't exist using fs.mkdir(path.dirname(logFilePath), { recursive: true })
+
+Create these test functions with proper implementation:
+
+1. **testFillAndSubmitTextBoxForm**: 
+   - Navigate to website, fill text box form
+   - Full Name: By.id('${config.elements.fullName}')
+   - Email: By.id('${config.elements.email}')
+   - Current Address: By.id('${config.elements.currentAddress}')
+   - Permanent Address: By.id('${config.elements.permanentAddress}')
+   - Submit button: By.id('${config.elements.submitButton}')
+   - Verify submission success by checking output section is displayed: By.id('${config.elements.outputSection}')
+   - Log result: logResult('FillAndSubmitTextBoxForm', 'PASS') or logResult('FillAndSubmitTextBoxForm', 'FAIL')
+
+2. **testSelectCheckBox**: 
+   - Click Check Box menu item: By.id('${config.elements.checkBoxMenuItem}')
+   - Click expand button first: By.className('${config.elements.expandButton}')
+   - Click Home checkbox: By.className('${config.elements.homeCheckbox}')
+   - Verify checkbox is selected by checking result display: By.className('${config.elements.checkboxResult}')
+   - Log result: logResult('SelectCheckBox', 'PASS') or logResult('SelectCheckBox', 'FAIL')
+
+3. **testSelectRadioButton**: 
+   - Click Radio Button menu item: By.id('${config.elements.radioButtonMenuItem}')
+   - Use JavaScript executor to click Yes radio button: By.id('${config.elements.yesRadio}')
+   - If Yes radio doesn't work, try Impressive radio: By.id('${config.elements.impressiveRadio}')
+   - Verify radio button is selected by checking result text: By.className('${config.elements.radioResult}')
+   - Log result: logResult('SelectRadioButton', 'PASS') or logResult('SelectRadioButton', 'FAIL')
+4. **testSelectWebTables**: 
+   - Click Web Tables menu item: By.id('${config.elements.webTablesMenuItem}')
+   - Verify web tables are displayed: By.className('${config.elements.webTable}')
+   - Log result: logResult('SelectWebTables', 'PASS') or logResult('SelectWebTables', 'FAIL')
+5. **testFillAndSubmitAddNewRecordForm**: 
+   - Click Add button: By.id('${config.elements.addNewRecordButton}')
+   - Fill form fields with data from config
+   - Click Submit button: By.id('${config.elements.submitButton}')
+   - Verify new record is added by searching for the name
+   - Log result: logResult('FillAndSubmitAddNewRecordForm', 'PASS') or logResult('FillAndSubmitAddNewRecordForm', 'FAIL')
+6. **testSearchForRecord**: 
+   - Enter search term in search box: By.id('${config.elements.searchBox}')
+   - Verify search results contain the expected record by checking table content
+   - Log result: logResult('SearchForRecord', 'PASS') or logResult('SearchForRecord', 'FAIL')
+7. **testEditFirstRecord**: 
+   - Find and click Edit button for first record: By.xpath('${config.elements.editRecord1}')
+   - Update form fields with new data
+   - Click Submit button: By.id('${config.elements.submitButton}')
+   - Find search box: By.id('${config.elements.searchBox}')
+   - IMPORTANT: Clear the search box first using .clear() method
+   - Enter updated name in search box
+   - Verify record is updated by checking table content
+   - Log result: logResult('EditFirstRecord', 'PASS') or logResult('EditFirstRecord', 'FAIL')
+8. **testDeleteSecondRecord**: 
+   - Find and click Delete button for second record: By.xpath('${config.elements.deleteRecord2}')
+   - Verify record is deleted by checking table content
+   - Log result: logResult('DeleteSecondRecord', 'PASS') or logResult('DeleteSecondRecord', 'FAIL')
+9. **testDoubleClickButton**: 
+   - Click Buttons menu item: By.id('${config.elements.buttonsMenuItem}')
+   - Perform double click on button: By.id('${config.elements.doubleClickBtn}')
+   - Verify double click message is displayed: By.id('${config.elements.doubleClickMessage}')
+   - Log result: logResult('DoubleClickButton', 'PASS') or logResult('DoubleClickButton', 'FAIL')
+10. **testRightClickButton**: 
+    - Perform right click on button: By.id('${config.elements.rightClickBtn}')
+    - Verify right click message is displayed: By.id('${config.elements.rightClickMessage}')
+    - Log result: logResult('RightClickButton', 'PASS') or logResult('RightClickButton', 'FAIL')
+MAIN RUNNER REQUIREMENTS:
+- Call ALL 10 test functions in sequence
+- Log summary at the end: 'Test Summary: X passed, Y failed out of 10 total tests'
+- CRITICAL: Create logs directory if it doesn't exist using fs.mkdir(path.dirname(logFilePath), { recursive: true })
+${inputsContext}
+Output only raw JavaScript code — no Markdown, no explanation.

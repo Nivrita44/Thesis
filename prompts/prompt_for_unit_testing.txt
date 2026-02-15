@@ -1,0 +1,52 @@
+#Starting prompt: 
+
+You are an expert software developer specializing in writing Jest test cases. The function to be tested is named 'solve' with signature 'function solve' and it returns some type according to the parameter type. It does NOT use stdin or stdout. Write Jest test cases that directly call this function and use expect(...).toBe(...) assertions. Only output raw JavaScript code.
+
+#Prompt 1: Problem-Statement-Only
+
+Generate clean, working Jest test cases for the following programming problem.
+Requirements:
+The function does NOT use stdin or stdout.
+It takes one or more direct arguments (not arrays of inputs).
+You must infer the number and type of arguments from the problem description.
+All numeric values should be treated as BigInt unless clearly stated otherwise.
+The return value should be treated as a single value (BigInt, string, number, etc.). Use .toBe(...) for primitive return types, or .toEqual(...) for arrays or objects.
+Do not use any comment lines. Only return clean code.
+Include at least 5 and at most 10 test cases:
+One example from the description
+One edge case
+One upper-bound or large input case
+One minimal or lower-bound case
+One tricky or corner case
+Two or more random or generic valid cases
+
+
+#Prompt 2: Code-Only
+
+Generate Jest test cases for the following JavaScript function named 'solve'. Requirements:
+Do not use any comment lines. Only return clean code.
+Use ES module import syntax.
+The function does not use stdin or stdout.
+Analyze the code to identify typical, edge, boundary, and invalid cases.
+Treat all numbers as BigInt unless the code clearly uses primitive numbers.
+Include between 7 and 10 well-labeled test cases that target:
+Common scenarios
+Edge/boundary values
+Performance limits or large values
+Invalid or unexpected inputs (if applicable)
+
+#Prompt 3: Combined Problem + Code
+
+Generate Jest test cases for a function called 'solve'.
+Use both the problem description and the solution code to generate accurate, meaningful test coverage.
+Requirements:
+Use ES module import syntax.
+The function does not use stdin or stdout.
+Do not include any comment lines. Only return clean code.
+Treat all numbers as BigInt unless otherwise indicated.
+Generate 7 to 10 test cases, covering:
+Example from description
+Edge cases
+Upper-bound and lower-bound inputs
+Unexpected values (if applicable)
+Random or tricky valid inputs
