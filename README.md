@@ -1,4 +1,4 @@
-G :
+
 # Evaluating Large Language Models for Automated Test Case Generation and Web Automation
 
 This repository contains the experimental materials and implementation associated with the research study **"Evaluating Large Language Models for Automated Test Case Generation and Web Automation."**
@@ -24,8 +24,7 @@ The repository preserves the prompts, benchmark problems, reference implementati
 - [7. Running the Experiments](#7-running-the-experiments)
 - [8. Experimental Artifacts](#8-experimental-artifacts)
 - [9. Reproducibility](#9-reproducibility)
-- [10. Citation](#10-citation)
-- [11. License](#11-license)
+
 
 ---
 
@@ -250,37 +249,30 @@ The precise software versions and configurations used during the experiments sho
 ```bash
 git clone https://github.com/Nivrita44/Thesis.git
 cd Thesis
+npm install
 ```
 
-### 6.2. Install Dependencies
-
-The root directory contains `package.json` and `package-lock.json`.
-
-To install the dependencies specified in the lock file, run:
+To regenerate LLM outputs, create a `.env` file in the repository root (never commit it):
 
 ```bash
-npm ci
+OPENAI_API_KEY=your_key_here
+ANTHROPIC_API_KEY=your_key_here
 ```
 
-Alternatively, use `npm install` if you need to resolve or update dependencies.
+### **6.2. Selenium Environment**
 
-### 6.3. API Configuration
+Both GPT and Claude Selenium experiments follow the same setup and execution procedure. Navigate to the respective project directory and install the required dependencies.
 
-Some scripts support direct communication with LLM providers through their respective SDKs.
+```
+npm install
+node path/to/(webname).test.js
+```
 
-If you intend to execute API-based generation workflows, configure the required API credentials locally.
+For example, to execute the DemoQA test:
 
-Do not include API keys, access tokens, or other sensitive credentials in the repository.
-
-**Note:** API credentials are not required merely to inspect or execute previously generated test cases and available experimental artifacts.
-
-### 6.4. Selenium Environment
-
-The Selenium experiment is maintained separately in `Selenium_testing/`.
-
-Before executing those experiments, ensure that the required Node.js dependencies, Selenium WebDriver configuration, Google Chrome, and compatible ChromeDriver are available.
-
-Refer to the experiment-specific files and configurations within that directory for the corresponding setup and execution instructions.
+```
+node e2e_tests/demoqa.test.js
+```
 
 ## 7. Running the Experiments
 
@@ -308,238 +300,6 @@ This command runs `generate_individual_coverage.js` to generate individual cover
 
 ### 7.3. Run Mutation Testing
 
-Mutation testing is configured using StrykerJS with separate configurations for the evaluated models, problem categories, and prompting conditions.
-
-**ChatGPT-4 – Algorithmic Problems (Prompt 1):**
-
-```bash
-npm run mutation:gpt:algo:prompt1
-```
-
-**Claude 3.5 Sonnet – Algorithmic Problems:**
-
-```bash
-npm run mutation:claude:algorithm:prompt1
-npm run mutation:claude:algorithm:prompt2
-npm run mutation:claude:algorithm:prompt3
-```
-
-**Claude 3.5 Sonnet – Descriptive Problems:**
-
-```bash
-npm run mutation:claude:descriptive:prompt1
-npm run mutation:claude:descriptive:prompt2
-npm run mutation:claude:descriptive:prompt3
-```
-
-Each command invokes its corresponding StrykerJS configuration file.
-
-Additional configurations are available in the repository for other experimental conditions. Their availability as configuration files does not necessarily mean that a dedicated npm script is defined for each one.
-
-For further information about mutation testing, see [MUTATION_TESTING_README.md](MUTATION_TESTING_README.md).
-
-## 8. Experimental Artifacts
-
-The repository includes the materials produced and used throughout the experiments.
-
-These artifacts include:
-
-- Original programming problem descriptions.
-- Reference JavaScript implementations.
-- Prompt templates for the three prompting configurations.
-- Generated test cases from both evaluated models.
-- Test execution outputs.
-- Statement, branch, and function coverage reports.
-- StrykerJS mutation testing configurations and reports.
-- Experimental logs and datasets.
-- Selenium WebDriver scripts and associated execution materials.
-
-These resources are provided to support the inspection of the experimental process and the analysis of the reported findings.
-
-## 9. Reproducibility
-
-Reproducibility is an important consideration in empirical software engineering research.
-
-To support independent examination of the study, this repository preserves the primary experimental inputs, generated artifacts, testing configurations, and evaluation outputs.
-
-However, reproducing the exact experimental results may depend on several factors:
-
-- Availability of the original LLM versions used in the study.
-- Model API behavior and provider-side changes.
-- Dependency and runtime versions.
-- Browser and ChromeDriver compatibility.
-- Website availability and changes to web application interfaces.
-- Execution environment and timing conditions.
-
-Consequently, previously generated artifacts provide a reference for examining the reported experiments, while rerunning the complete workflow may require recreating the original experimental environment.
-
-The research paper provides the detailed methodology, experimental settings, and analysis of the results.
-
-## 10. Citation
-
-If you use this repository or its experimental materials in your research, please cite the associated publication:
-
-```text
-[Author(s)]. (Year). Evaluating Large Language Models for Automated
-Test Case Generation and Web Automation.
-[Conference/Journal Name].
-[DOI or Publication URL]
-```
-
-The citation information will be updated with the final publication details.
-
-## 11. License
-
-Please refer to the repository's `LICENSE` file for the terms governing the use, distribution, and modification of the materials.
-
-If no license file is provided, permission to reuse or redistribute the repository contents should not be assumed.
-
-
-Cl :
-<div align="center">
-
-# Evaluating Large Language Models for Automated Test Case Generation and Web Automation
-
-**Replication package for a two-phase empirical comparison of ChatGPT-4 and Claude 3.5 Sonnet**
-
-![Node.js](https://img.shields.io/badge/Node.js-%E2%89%A518-339933?logo=node.js&logoColor=white)
-![Jest](https://img.shields.io/badge/Jest-30.x-C21325?logo=jest&logoColor=white)
-![StrykerJS](https://img.shields.io/badge/StrykerJS-9.x-E74C3C)
-![Selenium](https://img.shields.io/badge/Selenium-WebDriver-43B02A?logo=selenium&logoColor=white)
-![License](https://img.shields.io/badge/license-TODO-lightgrey)
-<!-- TODO: add paper badge, e.g. ![Paper](https://img.shields.io/badge/paper-DOI-blue) -->
-
-[Paper](TODO_PAPER_LINK) · [Dataset](dataset.csv) · [Prompts](prompts/) · [Citation](#citation)
-
-</div>
-
----
-
-## Table of Contents
-
-1. [Overview](#1-overview)
-2. [Research Questions](#2-research-questions)
-3. [Experimental Design](#3-experimental-design)
-4. [Repository Structure](#4-repository-structure)
-5. [Requirements](#5-requirements)
-6. [Installation](#6-installation)
-7. [Reproducing the Experiments](#7-reproducing-the-experiments)
-8. [Key Results](#8-key-results)
-9. [Reproducibility Notes and Limitations](#9-reproducibility-notes-and-limitations)
-10. [Citation](#citation)
-11. [License](#license)
-12. [Contact](#contact)
-
----
-
-## 1. Overview
-
-This repository is the replication package for the paper **"Evaluating Large Language Models for Automated Test Case Generation and Web Automation"**. It contains the prompts, problem sets, reference solutions, LLM-generated tests and scripts, configuration files, execution logs, and coverage and mutation reports used in the study.
-
-The study compares **ChatGPT-4** and **Claude 3.5 Sonnet** in two phases:
-
-| Phase | Task | Evaluation |
-|---|---|---|
-| **1** | Generate JavaScript unit tests for algorithmic and descriptive programming problems | Pass rate, statement / branch / function coverage, fully passed solutions, mutation score |
-| **2** | Generate Selenium WebDriver (JavaScript) scripts for web interaction tasks | Task success, with and without explicit time-thread synchronization |
-
-## 2. Research Questions
-
-<!-- TODO: replace with the exact RQs from the paper -->
-
-- **RQ1.** How effective are ChatGPT-4 and Claude 3.5 Sonnet at generating correct, high-coverage test cases for algorithmic and descriptive problems?
-- **RQ2.** How does the prompt configuration (problem statement only, source code only, or both) affect test quality?
-- **RQ3.** How reliably can each model generate Selenium automation scripts for real web tasks, and how does explicit synchronization affect success?
-
-## 3. Experimental Design
-
-### Phase 1: Automated Test Case Generation
-
-- **Problem categories:** algorithmic problems and descriptive (long-statement, reasoning-heavy) problems.
-- **Prompt configurations:**
-
-  | ID | Input given to the model |
-  |---|---|
-  | `prompt1` | Problem statement only |
-  | `prompt2` | Source code only |
-  | `prompt3` | Problem statement + source code |
-
-  <!-- TODO: confirm the prompt1/2/3 mapping above matches the files in prompts/ -->
-
-- **Pipeline:** `prompts/` → LLM → generated tests (`tests-*`) → Jest execution (pass rate, coverage) → StrykerJS (mutation score).
-- **Metrics:** pass rate, statement coverage, branch coverage, function coverage, fully passed solutions, mutation score.
-
-### Phase 2: Selenium-Based Web Automation
-
-- **Scope:** 5 websites × 10 tasks = 50 web interaction tasks (registration/login, form submission, navigation/search, edit/delete records, add to cart, logout).
-- **Conditions:** (a) with explicit time-thread synchronization, (b) without.
-- **Metric:** successful end-to-end task execution.
-
-## 4. Repository Structure
-
-```text
-.
-├── prompts/                    # Prompt templates for the three input configurations
-├── problems-algorithm/         # Algorithmic problem statements
-├── problems-descriptive/       # Descriptive problem statements
-├── solutions-algorithm/        # JavaScript reference solutions (algorithmic)
-├── solutions-descriptive/      # JavaScript reference solutions (descriptive)
-├── tests-algorithm/            # LLM-generated tests (algorithmic)
-├── tests-descriptive/          # LLM-generated tests (descriptive)
-├── Passed_test_gpt/            # Tests by ChatGPT-4 that passed
-├── Passed_test_claude/         # Tests by Claude 3.5 Sonnet that passed
-├── Claude/                     # Claude-specific experiment materials
-├── coverage*/                  # Jest/Istanbul coverage outputs
-├── claude_coverage/            # Coverage outputs for Claude
-├── mutation-reports/           # StrykerJS mutation reports
-├── reports/mutation/           # Additional mutation reports
-├── logs/, claude_logs/         # Execution logs (ChatGPT-4, Claude)
-├── Selenium_testing/           # Phase 2: Selenium scripts and materials
-├── scripts/                    # Helper scripts (e.g., run_problem_tests.js)
-├── dataset.csv                 # Experimental dataset
-├── generate_tests.js           # Calls LLM APIs to generate tests
-├── generate_individual_coverage.js
-├── claude_test.js
-├── run_coverage.ps1, run_single_test.ps1
-├── jest.config.mjs, babel.config.json
-├── stryker*.config.json        # Per-model / per-prompt / per-category Stryker configs
-└── package.json
-```
-
-> `stryker-tmp-*` directories are intermediate Stryker sandboxes retained from the original runs. They are not needed for reproduction.
-
-## 5. Requirements
-
-| Component | Version |
-|---|---|
-| OS (original experiments) | Windows 11 |
-| Node.js | TODO (≥ 18 recommended; ES modules required) |
-| Jest | ^30.0.4 |
-| StrykerJS (`core`, `jest-runner`) | ^9.0.1 |
-| Babel (`core`, `preset-env`) | ^7.28.0 |
-| Selenium WebDriver | TODO |
-| Google Chrome / ChromeDriver | TODO (must match) |
-| LLM SDKs | `openai` ^5.10.1, `@anthropic-ai/sdk` ^0.59.0 |
-
-API keys are **only** needed to regenerate tests or scripts from the LLMs. Re-running the evaluation on the provided artifacts needs no keys.
-
-## 6. Installation
-
-```bash
-git clone https://github.com/Nivrita44/Thesis.git
-cd Thesis
-npm install
-```
-
-To regenerate LLM outputs, create a `.env` file in the repository root (never commit it):
-
-```bash
-OPENAI_API_KEY=your_key_here
-ANTHROPIC_API_KEY=your_key_here
-```
-
-<!-- TODO: verify variable names against generate_tests.js -->
-
 ## 7. Reproducing the Experiments
 
 ### 7.1 Phase 1: Test generation and evaluation
@@ -556,10 +316,15 @@ npm run test:problem
 npm run coverage:split
 ```
 
-**Mutation testing, ChatGPT-4 (algorithmic, prompt1)**
+**Mutation testing, ChatGPT-4**
 
 ```bash
 npm run mutation:gpt:algo:prompt1
+npm run mutation:gpt:algo:prompt2
+npm run mutation:gpt:algo:prompt3
+npm run mutation:gpt:descriptive:prompt1
+npm run mutation:gpt:descriptive:prompt2
+npm run mutation:gpt:descriptive:prompt3
 ```
 
 **Mutation testing, Claude 3.5 Sonnet**
@@ -581,63 +346,30 @@ npx stryker run stryker-descriptive-prompt1.config.json
 
 Outputs are written to `mutation-reports/` (HTML and JSON). See [`MUTATION_TESTING_README.md`](MUTATION_TESTING_README.md) for Stryker details and troubleshooting.
 
-### 7.2 Phase 2: Selenium web automation
+## 8. Experimental Artifacts
 
-```bash
-cd Selenium_testing
-# TODO: add install and run commands, e.g.
-# npm install selenium-webdriver
-# node <script>.js
-```
+The repository includes the materials produced and used throughout the experiments.
 
-<!-- TODO: document the 5 websites, the folder layout of Selenium_testing/, how to toggle explicit synchronization, and where results are recorded. -->
+These artifacts include:
 
-### 7.3 Expected outputs and runtime
+- Original programming problem descriptions.
+- Reference JavaScript implementations.
+- Prompt templates for the three prompting configurations.
+- Generated test cases from both evaluated models.
+- Test execution outputs.
+- Statement, branch, and function coverage reports.
+- StrykerJS mutation testing configurations and reports.
+- Experimental logs and datasets.
+- Selenium WebDriver scripts and associated execution materials.
 
-<!-- TODO: state approximate runtime for one full mutation run and where the final numbers in the paper's tables can be found (file/path per table). -->
+These resources are provided to support the inspection of the experimental process and the analysis of the reported findings.
 
-## 8. Key Results
+## **9. Reproducibility**
 
-<!-- TODO: fill with the paper's headline numbers. A reviewer-friendly summary table is the single most useful addition. -->
-
-| Metric | ChatGPT-4 | Claude 3.5 Sonnet |
-|---|---|---|
-| Pass rate | TODO | TODO |
-| Statement coverage | TODO | TODO |
-| Branch coverage | TODO | TODO |
-| Function coverage | TODO | TODO |
-| Mutation score | TODO | TODO |
-| Selenium success (with sync) | TODO | TODO |
-| Selenium success (without sync) | TODO | TODO |
-
-See the paper for the full analysis.
-
-## 9. Reproducibility Notes and Limitations
-
-- **Model versions:** results correspond to ChatGPT-4 (TODO exact model ID) and Claude 3.5 Sonnet (TODO snapshot, e.g. `claude-3-5-sonnet-YYYYMMDD`) accessed via TODO (API / web UI) between TODO and TODO. Hosted models change over time, so regenerated outputs may differ. The shipped generated artifacts are the authoritative record.
-- **Non-determinism:** LLM outputs are stochastic (temperature/settings: TODO).
-- **Dependencies:** versions in `package.json` may differ from those used originally; `package-lock.json` pins the current resolution.
-- **Platform:** `.ps1` helpers assume Windows PowerShell. On Linux/macOS, use the `npm run` scripts.
-- **Web targets:** Phase 2 depends on live third-party websites, which may change or become unavailable.
-
-## Citation
-
-If you use this work, please cite:
-
-```bibtex
-@inproceedings{TODO_key,
-  title     = {Evaluating Large Language Models for Automated Test Case Generation and Web Automation},
-  author    = {TODO},
-  booktitle = {TODO},
-  year      = {TODO},
-  doi       = {TODO}
-}
-```
-
-## License
-
-TODO: add a `LICENSE` file (e.g., MIT for code, CC BY 4.0 for data/prompts) and state it here.
-
-## Contact
-
-TODO: name, affiliation, email
+- **LLM versions:** The results are based on the specific GPT-4 and Claude 3.5 Sonnet versions used in the experiments. Newer model versions may produce different results.
+- **Model behavior:** LLM-generated outputs may vary between runs, even when using the same prompts.
+- **Dependencies:** Different versions of Node.js, Jest, StrykerJS, Selenium WebDriver, or other dependencies may affect the results.
+- **Execution environment:** Browser and ChromeDriver versions, operating systems, and system configurations may influence test execution.
+- **Website changes:** The Selenium experiments use third-party websites. Changes to their interfaces or functionality may affect the execution of previously generated scripts.
+- **API availability:** Re-running the experiments requires access to the relevant model APIs, which may have changes in availability, pricing, or behavior.
+- **Original results:** The generated scripts and recorded results are included in the repository for reference and comparison with future experiments.
