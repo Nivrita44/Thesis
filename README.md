@@ -300,21 +300,6 @@ This command runs `generate_individual_coverage.js` to generate individual cover
 
 ### 7.3. Run Mutation Testing
 
-## 7. Reproducing the Experiments
-
-### 7.1 Phase 1: Test generation and evaluation
-
-**Run problem tests**
-
-```bash
-npm run test:problem
-```
-
-**Generate per-solution coverage reports**
-
-```bash
-npm run coverage:split
-```
 
 **Mutation testing, ChatGPT-4**
 
