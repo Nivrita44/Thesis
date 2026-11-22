@@ -7,7 +7,6 @@ The study presents a comparative empirical evaluation of ChatGPT-4 and Claude 3.
 
 The repository preserves the prompts, benchmark problems, reference implementations, LLM-generated test cases, testing configurations, execution scripts, and experimental results used in the study.
 
-**Repository:** https://github.com/Nivrita44/Thesis
 
 ---
 
@@ -125,6 +124,7 @@ The repository is organized into directories containing the benchmark problems, 
 
 The main directory structure is presented below.
 
+
 ```text
 Thesis/
 │
@@ -133,50 +133,41 @@ Thesis/
 ├── Passed_test_gpt/
 │
 ├── Selenium_testing/
-│
-├── problems-algorithm/
-├── problems-descriptive/
-│
-├── solutions-algorithm/
-├── solutions-descriptive/
-│
-├── tests-algorithm/
-├── tests-descriptive/
-│
-├── prompts/
 ├── scripts/
 │
-├── coverage/
-├── coverage-algorithm/
-├── coverage-descriptive/
-├── claude_coverage/
-│
-├── claude_logs/
-├── logs/
-│
-├── mutation-reports/
-├── reports/
-│   └── mutation/
-│
-├── stryker-tmp-*/
+├── results/
+│   ├── prompts/
+│   ├── problems-algorithm/
+│   ├── problems-descriptive/
+│   ├── solutions-algorithm/
+│   ├── solutions-descriptive/
+│   ├── tests-algorithm/
+│   ├── tests-descriptive/
+│   ├── coverage/
+│   ├── coverage-algorithm/
+│   ├── coverage-descriptive/
+│   ├── claude_coverage/
+│   ├── claude_logs/
+│   ├── logs/
+│   ├── mutation-reports/
+│   ├── reports/
+│   │   └── mutation/
+│   └── stryker-tmp-*/
 │
 ├── dataset.csv
 ├── generate_tests.js
 ├── generate_individual_coverage.js
 ├── claude_test.js
-│
 ├── jest.config.mjs
 ├── babel.config.json
-│
 ├── stryker*.config.json
-│
 ├── run_coverage.ps1
 ├── run_single_test.ps1
-│
 ├── package.json
 ├── package-lock.json
 ├── .gitignore
 ├── .strykerignore
+├── .zenodo.json
 ├── MUTATION_TESTING_README.md
 └── README.md
 ```
