@@ -29,8 +29,8 @@ const LLM_MODEL = "claude-3-5-sonnet-20241022";
 
 const PATHS = {
     dataset: path.join(__dirname, "dataset.csv"),
-    problems: path.join(__dirname, "problems-descriptive"),
-    solutions: path.join(__dirname, "solutions-descriptive"),
+    problems: path.join(__dirname, "datafiles", "problems-descriptive"),
+    solutions: path.join(__dirname, "datafiles", "solutions-descriptive"),
     testsPrompt1: path.join(__dirname, "Claude", "tests-descriptive", "tests-prompt1"),
     testsPrompt2: path.join(__dirname, "Claude", "tests-descriptive", "tests-prompt2"),
     testsPrompt3: path.join(__dirname, "Claude", "tests-descriptive", "tests-prompt3"),

@@ -1,5 +1,0 @@
-node_modules
-echo ".stryker-tmp/" >> .gitignore
-echo "coverage/" >> .gitignore
-echo "reports/" >> .gitignore
-.env

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1754685904109" clover="3.2.0">
+  <project timestamp="1754685904109" name="All files">
+    <metrics statements="11" coveredstatements="11" conditionals="8" coveredconditionals="8" methods="3" coveredmethods="3" elements="22" coveredelements="22" complexity="0" loc="11" ncloc="11" packages="1" files="1" classes="1"/>
+    <file name="44.js" path="E:\desktop\Thesis\solutions-algorithm\44.js">
+      <metrics statements="11" coveredstatements="11" conditionals="8" coveredconditionals="8" methods="3" coveredmethods="3"/>
+      <line num="3" count="12" type="cond" truecount="4" falsecount="0"/>
+      <line num="5" count="100051" type="stmt"/>
+      <line num="6" count="8" type="stmt"/>
+      <line num="9" count="200032" type="cond" truecount="4" falsecount="0"/>
+      <line num="10" count="100012" type="stmt"/>
+      <line num="11" count="100012" type="stmt"/>
+      <line num="12" count="100012" type="stmt"/>
+      <line num="13" count="100012" type="stmt"/>
+      <line num="14" count="100012" type="stmt"/>
+      <line num="17" count="8" type="stmt"/>
+      <line num="18" count="8" type="stmt"/>
+    </file>
+  </project>
+</coverage>
