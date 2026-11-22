@@ -276,32 +276,56 @@ node e2e_tests/demoqa.test.js
 
 ## 7. Running the Experiments
 
-The following commands are defined in the root `package.json` for the automated test generation and evaluation workflow.
+The experimental workflow consists of test-case generation, test execution, coverage analysis, and mutation testing.
 
-### 7.1. Execute Generated Problem Tests
+### 7.1. Generate Test Cases
+
+The generation scripts use `dataset.csv` to identify the problem statements and their corresponding reference solutions. Update the problem number in the CSV to select the problem for test generation.
+
+For example:
+
+```csv
+problem_path,solution_path
+16.txt,16.js
+```
+
+Run the appropriate script from the repository root:
+
+```bash
+# GPT-4.1
+node generate_tests.js
+
+# Claude 3.5 Sonnet
+node claude_test.js
+```
+
+Each script processes the entries in `dataset.csv` and generates test cases using the three prompting configurations. Ensure the respective API key is configured in `.env`.
+
+### 7.2. Execute Generated Tests
+
+Run the problem test runner:
 
 ```bash
 npm run test:problem
 ```
 
-This command executes the problem test runner:
+This executes `scripts/run_problem_tests.js` against the reference solutions.
 
-```text
-scripts/run_problem_tests.js
-```
+### 7.3. Generate Individual Coverage Reports
 
-### 7.2. Generate Individual Coverage Reports
+Generate separate coverage reports for the test suites:
 
 ```bash
 npm run coverage:split
 ```
 
-This command runs `generate_individual_coverage.js` to generate individual coverage results.
+This runs `generate_individual_coverage.js` and produces individual coverage results.
 
-### 7.3. Run Mutation Testing
+### 7.4. Run Mutation Testing
 
+Mutation testing is performed using StrykerJS to evaluate the effectiveness of the generated test suites.
 
-**Mutation testing, ChatGPT-4**
+**ChatGPT-4.1**
 
 ```bash
 npm run mutation:gpt:algo:prompt1
@@ -312,7 +336,7 @@ npm run mutation:gpt:descriptive:prompt2
 npm run mutation:gpt:descriptive:prompt3
 ```
 
-**Mutation testing, Claude 3.5 Sonnet**
+**Claude 3.5 Sonnet**
 
 ```bash
 npm run mutation:claude:algorithm:prompt1
@@ -323,13 +347,15 @@ npm run mutation:claude:descriptive:prompt2
 npm run mutation:claude:descriptive:prompt3
 ```
 
-Configurations for the remaining ChatGPT-4 runs are provided as `stryker-algorithm-prompt{2,3}.config.json` and `stryker-descriptive-prompt{1,2,3}.config.json`:
+Additional ChatGPT mutation configurations can be executed directly using Stryker:
 
 ```bash
 npx stryker run stryker-descriptive-prompt1.config.json
 ```
 
-Outputs are written to `mutation-reports/` (HTML and JSON). See [`MUTATION_TESTING_README.md`](MUTATION_TESTING_README.md) for Stryker details and troubleshooting.
+Mutation reports are saved in `results/mutation-reports/` in HTML and JSON formats.
+
+For configuration details and troubleshooting, see [`MUTATION_TESTING_README.md`](MUTATION_TESTING_README.md).
 
 ## 8. Experimental Artifacts
 
