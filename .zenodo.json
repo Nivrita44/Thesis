@@ -1,0 +1,17 @@
+{
+  "upload_type": "software",
+  "title": "Evaluating Large Language Models for Automated Test Case Generation and Web Automation",
+  "description": "An anonymized research software repository containing the experimental implementation and resources for evaluating large language models in automated test case generation and web automation.",
+  "creators": [
+    {
+      "name": "Anonymous Author"
+    }
+  ],
+  "keywords": [
+    "Large Language Models",
+    "Automated Testing",
+    "Test Case Generation",
+    "Selenium",
+    "Mutation Testing"
+  ]
+}
