@@ -135,25 +135,26 @@ Thesis/
 ├── Selenium_testing/
 ├── scripts/
 │
-├── results/
-│   ├── prompts/
+|── datafiles/
+|   ├── prompts/
 │   ├── problems-algorithm/
 │   ├── problems-descriptive/
 │   ├── solutions-algorithm/
 │   ├── solutions-descriptive/
-│   ├── tests-algorithm/
-│   ├── tests-descriptive/
+|   |── mutation-reports/ 
+| 
+├── results/
 │   ├── coverage/
-│   ├── coverage-algorithm/
-│   ├── coverage-descriptive/
+│   ├── gpt_coverage/
 │   ├── claude_coverage/
 │   ├── claude_logs/
 │   ├── logs/
-│   ├── mutation-reports/
 │   ├── reports/
 │   │   └── mutation/
 │   └── stryker-tmp-*/
-│
+|
+|── tests-algorithm/
+├── tests-descriptive/
 ├── dataset.csv
 ├── generate_tests.js
 ├── generate_individual_coverage.js
